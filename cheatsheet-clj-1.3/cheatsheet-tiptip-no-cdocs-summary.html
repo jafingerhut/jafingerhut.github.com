@@ -1573,6 +1573,7 @@ are the data to be formatted.
 
 The format control string is a string to be output with embedded 'format
 directives'
+
 [ documentation truncated.  Click link for the rest. ]</pre>">cl-format</a> also: (binding [*out* writer] ...)</code></td>
               </tr>
               <tr class="even">
@@ -1880,6 +1881,7 @@ Macro
 
   No implementations are provided. Docs can be specified for the
   protocol overall and for each method. The above yields a set of
+
 [ documentation truncated.  Click link for the rest. ]</pre>">defprotocol</a> <code>Slicey (slice [at]))</code></code></td>
               </tr>
               <tr class="even">
@@ -2199,6 +2201,7 @@ Macro
   For each clause, (pred test-expr expr) is evaluated. If it returns
   logical true, the clause is a match. If a binary clause matches, the
   result-expr is returned, if a ternary clause matches, its result-fn,
+
 [ documentation truncated.  Click link for the rest. ]</pre>">condp</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/case" class="tooltip" title="<pre>clojure.core/case
 ([e & clauses])
 Macro
@@ -2214,6 +2217,7 @@ Macro
   literals, and need not be quoted.  If the expression is equal to a
   test-constant, the corresponding result-expr is returned. A single
   default expression can follow the clauses, and its value will be
+
 [ documentation truncated.  Click link for the rest. ]</pre>">case</a></code></td>
               </tr>
               <tr class="odd">
@@ -2838,6 +2842,7 @@ Macro
   compiling. If :gen-class is not supplied, when compiled only an
   nsname__init.class will be generated. If :refer-clojure is not used, a
   default (refer 'clojure) is used.  Use of ns is preferred to
+
 [ documentation truncated.  Click link for the rest. ]</pre>">ns</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/in-ns" class="tooltip" title="<pre>clojure.core/in-ns
 ([name])
   Sets *ns* to the namespace named by the symbol, creating it if needed.</pre>">in-ns</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/create-ns" class="tooltip" title="<pre>clojure.core/create-ns
@@ -2890,6 +2895,7 @@ Macro
   something else in the current namespace. Filters can be used to
   select a subset, via inclusion or exclusion, or to provide a mapping
   to a symbol different from the var's name, in order to prevent
+
 [ documentation truncated.  Click link for the rest. ]</pre>">refer</a></code></td>
               </tr>
               <tr class="even">
@@ -2966,6 +2972,7 @@ Macro
   with a Clojure namespace and a Java package that share its name. A lib's
   name also locates its root directory within classpath using Java's
   package name to classpath-relative path mapping. All resources in a lib
+
 [ documentation truncated.  Click link for the rest. ]</pre>">require</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/use" class="tooltip" title="<pre>clojure.core/use
 ([& args])
   Like 'require, but also refers to each lib's namespace using
@@ -2996,6 +3003,7 @@ Macro
   something else in the current namespace. Filters can be used to
   select a subset, via inclusion or exclusion, or to provide a mapping
   to a symbol different from the var's name, in order to prevent
+
 [ documentation truncated.  Click link for the rest. ]</pre>">refer</a></code></td>
               </tr>
               <tr class="even">
@@ -3181,6 +3189,7 @@ Macro
   If metadata-map is supplied, it will be come the metadata on the
   ref. validate-fn must be nil or a side-effect-free fn of one
   argument, which will be passed the intended new state on any state
+
 [ documentation truncated.  Click link for the rest. ]</pre>">ref</a></code></td>
               </tr>
               <tr class="even">
@@ -3256,6 +3265,7 @@ Macro
 
   Thus fun should be commutative, or, failing that, you must accept
   last-one-in-wins behavior.  commute allows for more concurrency than
+
 [ documentation truncated.  Click link for the rest. ]</pre>">commute</a></code></td>
               </tr>
               <tr class="odd">
@@ -3304,6 +3314,7 @@ Macro
 
   If metadata-map is supplied, it will be come the metadata on the
   agent. validate-fn must be nil or a side-effect-free fn of one
+
 [ documentation truncated.  Click link for the rest. ]</pre>">agent</a></code></td>
               </tr>
               <tr class="even">
@@ -3385,6 +3396,7 @@ Macro
   are triggered only by root binding changes, not thread-local
   set!s. Keys must be unique per reference, and can be used to remove
   the watch with remove-watch, but are otherwise considered opaque by
+
 [ documentation truncated.  Click link for the rest. ]</pre>">add-watch</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/remove-watch" class="tooltip" title="<pre>clojure.core/remove-watch
 ([reference key])
   Alpha - subject to change.
@@ -3707,6 +3719,7 @@ Macro
   implements the named class/interface(s) by calling the supplied
   fns. A single class, if provided, must be first. If not provided it
   defaults to Object.
+
 [ documentation truncated.  Click link for the rest. ]</pre>">proxy</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/get-proxy-class" class="tooltip" title="<pre>clojure.core/get-proxy-class
 ([& bases])
   Takes an optional single class followed by zero or more
@@ -3835,6 +3848,7 @@ Macro
   (str prefix mymethod) (default prefix: &quot;-&quot;) in a
   Clojure namespace specified by :impl-ns
   (defaults to the current namespace). All inherited methods,
+
 [ documentation truncated.  Click link for the rest. ]</pre>">gen-class</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/gen-interface" class="tooltip" title="<pre>clojure.core/gen-interface
 ([& options])
 Macro
@@ -3850,6 +3864,7 @@ Macro
 
   Options should be a set of key/value pairs, all except for :name are
   optional:
+
 [ documentation truncated.  Click link for the rest. ]</pre>">gen-interface</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/loaded-libs" class="tooltip" title="<pre>clojure.core/loaded-libs
 ([])
   Returns a sorted set of symbols naming the currently loaded libs</pre>">loaded-libs</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/test" class="tooltip" title="<pre>clojure.core/test
