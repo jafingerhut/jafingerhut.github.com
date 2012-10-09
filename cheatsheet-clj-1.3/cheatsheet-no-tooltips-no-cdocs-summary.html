@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3, sheet v1.4)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 & 1.4, sheet v1.6)</title>
   <link rel="stylesheet" href="cheatsheet_files/26467729A.css" type="text/css" />
 
   <style type="text/css">
@@ -74,7 +74,7 @@
               </tr>
               <tr class="odd">
                 <td>Unchecked</td>
-                <td><code>unchecked-{<a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-add-int">add</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-dec-int">dec</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-divide-int">divide</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-inc-int">inc</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-multiply-int">multiply</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-negate-int">negate</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-remainder-int">remainder</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-subtract-int">subtract</a>}-int</code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/*unchecked-math*">*unchecked-math*</a> unchecked-{<a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-add-int">add</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-dec-int">dec</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-divide-int">divide</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-inc-int">inc</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-multiply-int">multiply</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-negate-int">negate</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-remainder-int">remainder</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-subtract-int">subtract</a>}-int</code></td>
               </tr>
             </tbody>
           </table>
@@ -121,6 +121,10 @@
               <tr class="odd">
                 <td>Symbols</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/symbol">symbol</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/symbol_q">symbol?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/gensym">gensym</a></code></td>
+              </tr>
+              <tr class="even">
+                <td>Data readers</td>
+                <td><code>(1.4) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/*data-readers*">*data-readers*</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/default-data-readers">default-data-readers</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -179,6 +183,10 @@
               <tr class="odd">
                 <td>'Change'</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/assoc">assoc</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/pop">pop</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/subvec">subvec</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/replace">replace</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/conj">conj</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/rseq">rseq</a></code></td>
+              </tr>
+              <tr class="even">
+                <td>Ops</td>
+                <td><code>(1.4) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/mapv">mapv</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/filterv">filterv</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/reduce-kv">reduce-kv</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -867,7 +875,7 @@
               </tr>
               <tr class="odd">
                 <td>Exceptions</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/throw">throw</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/try">try</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/catch">catch</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/finally">finally</a> <a href="http://clojuredocs.org/clojure_core/clojure.repl/pst">pst</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/throw">throw</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/try">try</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/catch">catch</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/finally">finally</a> <a href="http://clojuredocs.org/clojure_core/clojure.repl/pst">pst</a> (1.4) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/ex-info">ex-info</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/ex-data">ex-data</a></code></td>
               </tr>
             </tbody>
           </table>

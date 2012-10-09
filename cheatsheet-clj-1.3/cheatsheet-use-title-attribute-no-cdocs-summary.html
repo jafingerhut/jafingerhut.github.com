@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3, sheet v1.4)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 & 1.4, sheet v1.6)</title>
   <link rel="stylesheet" href="cheatsheet_files/26467729A.css" type="text/css" />
 
   <style type="text/css">
@@ -229,7 +229,9 @@ Macro
               </tr>
               <tr class="odd">
                 <td>Unchecked</td>
-                <td><code>unchecked-{<a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-add-int" title="clojure.core/unchecked-add-int
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/*unchecked-math*" title="clojure.core/*unchecked-math*
+  While bound to true, compilations of +, -, *, inc, dec and the
+  coercions will be done without overflow checks. Default: false.">*unchecked-math*</a> unchecked-{<a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-add-int" title="clojure.core/unchecked-add-int
 ([x y])
   Returns the sum of x and y, both int.
   Note - uses a primitive operator subject to overflow.">add</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-dec-int" title="clojure.core/unchecked-dec-int
@@ -448,6 +450,28 @@ format
   supplied, the name is prefix# where # is some unique number. If
   prefix is not supplied, the prefix is 'G__'.">gensym</a></code></td>
               </tr>
+              <tr class="even">
+                <td>Data readers</td>
+                <td><code>(1.4) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/*data-readers*" title="clojure.core/*data-readers*
+  Map from reader tag symbols to data reader Vars.
+
+  When Clojure starts, it searches for files named 'data_readers.clj'
+  at the root of the classpath. Each such file must contain a literal
+  map of symbols, like this:
+
+      {foo/bar my.project.foo/bar
+       foo/baz my.project/baz}
+
+  The first symbol in each pair is a tag that will be recognized by
+  the Clojure reader. The second symbol in the pair is the
+  fully-qualified name of a Var which will be invoked by the reader to
+  parse the form following the tag. For example, given the
+  data_readers.clj file above, the Clojure reader would parse this
+
+[ documentation truncated.  Click link for the rest. ]">*data-readers*</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/default-data-readers" title="clojure.core/default-data-readers
+  Default map of data reader functions provided by Clojure. May be
+  overridden by binding *data-readers*.">default-data-readers</a></code></td>
+              </tr>
             </tbody>
           </table>
         </div><!-- /section -->
@@ -640,6 +664,26 @@ format
   Returns, in constant time, a seq of the items in rev (which
   can be a vector or sorted-map), in reverse order. If rev is empty returns nil">rseq</a></code></td>
               </tr>
+              <tr class="even">
+                <td>Ops</td>
+                <td><code>(1.4) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/mapv" title="clojure.core/mapv
+([f coll] [f c1 c2] [f c1 c2 c3] [f c1 c2 c3 & colls])
+  Returns a vector consisting of the result of applying f to the
+  set of first items of each coll, followed by applying f to the set
+  of second items in each coll, until any one of the colls is
+  exhausted.  Any remaining items in other colls are ignored. Function
+  f should accept number-of-colls arguments.">mapv</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/filterv" title="clojure.core/filterv
+([pred coll])
+  Returns a vector of the items in coll for which
+  (pred item) returns true. pred must be free of side-effects.">filterv</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/reduce-kv" title="clojure.core/reduce-kv
+([f init coll])
+  Reduces an associative collection. f should be a function of 3
+  arguments. Returns the result of applying f to init, the first key
+  and the first value in coll, then applying f to that result and the
+  2nd key and value, etc. If coll contains no entries, returns init
+  and f is not called. Note that reduce-kv is supported on vectors,
+  where the keys will be the ordinals.">reduce-kv</a></code></td>
+              </tr>
             </tbody>
           </table>
           <h3>Sets</h3>
@@ -760,8 +804,8 @@ comparator.">sorted-map-by</a> <a href="http://clojuredocs.org/clojure_core/cloj
   Returns the value mapped to key, not-found or nil if key not present.">get</a>  my-map :key)</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/get-in" title="clojure.core/get-in
 ([m ks] [m ks not-found])
   Returns the value in a nested associative structure,
-  where ks is a sequence of ke(ys. Returns nil if the key is not present,
-  or the not-found value if supplied.">get-in</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/contains_q" title="clojure.core/contains?
+  where ks is a sequence of keys. Returns nil if the key
+  is not present, or the not-found value if supplied.">get-in</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/contains_q" title="clojure.core/contains?
 ([coll key])
   Returns true if key is present in the given collection, otherwise
   returns false.  Note that for numerically indexed collections like
@@ -1107,7 +1151,7 @@ Macro
   Returns a lazy sequence of all but the first n items in coll.">drop</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/drop-while" title="clojure.core/drop-while
 ([pred coll])
   Returns a lazy sequence of the items in coll starting from the first
-  item for which (pred item) returns nil.">drop-while</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/take-last" title="clojure.core/take-last
+  item for which (pred item) returns logical false.">drop-while</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/take-last" title="clojure.core/take-last
 ([n coll])
   Returns a seq of the last n items in coll.  Depending on the type
   of coll may be no better than linear time.  For vectors, see also subvec.">take-last</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/for" title="clojure.core/for
@@ -1165,7 +1209,7 @@ supplied colls.">concat</a> <a href="http://clojuredocs.org/clojure_core/clojure
 ([x])
   Takes any nested combination of sequential things (lists, vectors,
   etc.) and returns their contents as a single, flat sequence.
-  (flatten nil) returns nil.">flatten</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/group-by" title="clojure.core/group-by
+  (flatten nil) returns an empty sequence.">flatten</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/group-by" title="clojure.core/group-by
 ([f coll])
   Returns a map of the elements of coll keyed by the result of
   f on each element. The value at each key will be a vector of the
@@ -1758,12 +1802,13 @@ Special Form
   Defines a function
 
   Please see http://clojure.org/special_forms#fn">fn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defn" title="clojure.core/defn
-([name doc-string? attr-map? [params*] body] [name doc-string? attr-map?
-([params*] body) + attr-map?])
+([name doc-string? attr-map? [params*] prepost-map? body] [name doc-string?
+attr-map? ([params*] prepost-map? body) + attr-map?])
 Macro
   Same as (def name (fn [params* ] exprs*)) or (def
     name (fn ([params* ] exprs*)+)) with any doc-string or attrs added
-    to the var metadata">defn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defn-" title="clojure.core/defn-
+    to the var metadata. prepost-map defines a map with optional keys
+    :pre and :post that contain collections of pre or post conditions.">defn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defn-" title="clojure.core/defn-
 ([name & decls])
 Macro
   same as defn, yielding non-public def">defn-</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/definline" title="clojure.core/definline
@@ -2626,12 +2671,13 @@ Special Form
   Defines a function
 
   Please see http://clojure.org/special_forms#fn">fn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defn" title="clojure.core/defn
-([name doc-string? attr-map? [params*] body] [name doc-string? attr-map?
-([params*] body) + attr-map?])
+([name doc-string? attr-map? [params*] prepost-map? body] [name doc-string?
+attr-map? ([params*] prepost-map? body) + attr-map?])
 Macro
   Same as (def name (fn [params* ] exprs*)) or (def
     name (fn ([params* ] exprs*)+)) with any doc-string or attrs added
-    to the var metadata">defn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defmacro" title="clojure.core/defmacro
+    to the var metadata. prepost-map defines a map with optional keys
+    :pre and :post that contain collections of pre or post conditions.">defn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defmacro" title="clojure.core/defmacro
 ([name doc-string? attr-map? [params*] body] [name doc-string? attr-map?
 ([params*] body) + attr-map?])
 Macro
@@ -2692,12 +2738,13 @@ Special Form
   not supplied, the root binding of the var is unaffected.
 
   Please see http://clojure.org/special_forms#def">def</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defn" title="clojure.core/defn
-([name doc-string? attr-map? [params*] body] [name doc-string? attr-map?
-([params*] body) + attr-map?])
+([name doc-string? attr-map? [params*] prepost-map? body] [name doc-string?
+attr-map? ([params*] prepost-map? body) + attr-map?])
 Macro
   Same as (def name (fn [params* ] exprs*)) or (def
     name (fn ([params* ] exprs*)+)) with any doc-string or attrs added
-    to the var metadata">defn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defn-" title="clojure.core/defn-
+    to the var metadata. prepost-map defines a map with optional keys
+    :pre and :post that contain collections of pre or post conditions.">defn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defn-" title="clojure.core/defn-
 ([name & decls])
 Macro
   same as defn, yielding non-public def">defn-</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/definline" title="clojure.core/definline
@@ -3362,8 +3409,8 @@ Macro
 ([timeout-ms & agents])
   Blocks the current thread until all actions dispatched thus
   far (from this thread or agent) to the agents have occurred, or the
-  timeout (in milliseconds) has elapsed. Returns nil if returning due
-  to timeout, non-nil otherwise.">await-for</a></code></td>
+  timeout (in milliseconds) has elapsed. Returns logical false if
+  returning due to timeout, logical true otherwise.">await-for</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Ref validators</td>
@@ -3586,7 +3633,15 @@ Special Form
 ([] [e-or-depth] [e depth])
   Prints a stack trace of the exception, to the depth requested. If none
 supplied, uses the root cause of the
-  most recent repl exception (*e), and a depth of 12.">pst</a></code></td>
+  most recent repl exception (*e), and a depth of 12.">pst</a> (1.4) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/ex-info" title="clojure.core/ex-info
+([msg map] [msg map cause])
+  Alpha - subject to change.
+   Create an instance of ExceptionInfo, a RuntimeException subclass
+   that carries a map of additional data.">ex-info</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/ex-data" title="clojure.core/ex-data
+([ex])
+  Alpha - subject to change.
+   Returns exception data (a map) if ex is an ExceptionInfo.
+   Otherwise returns nil.">ex-data</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -3881,7 +3936,9 @@ Macro
   If x is a Delay, returns the (possibly cached) value of its expression, else
 returns x">force</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/hash" title="clojure.core/hash
 ([x])
-  Returns the hash code of its argument">hash</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/name" title="clojure.core/name
+  Returns the hash code of its argument. Note this is the hash code
+  consistent with =, and thus is different than .hashCode for Integer,
+  Short, Byte and Clojure collections.">hash</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/name" title="clojure.core/name
 ([x])
   Returns the name String of a string, symbol or keyword.">name</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*clojure-version*" title="clojure.core/*clojure-version*
   The version info for Clojure core, as a map containing :major :minor

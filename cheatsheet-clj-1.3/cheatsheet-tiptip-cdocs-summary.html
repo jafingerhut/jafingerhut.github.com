@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3, sheet v1.4)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 & 1.4, sheet v1.6)</title>
   <link rel="stylesheet" href="cheatsheet_files/26467729A.css" type="text/css" />
 
   <style type="text/css">
@@ -343,7 +343,11 @@ Macro
               </tr>
               <tr class="odd">
                 <td>Unchecked</td>
-                <td><code>unchecked-{<a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-add-int" class="tooltip" title="<pre>clojure.core/unchecked-add-int
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/*unchecked-math*" class="tooltip" title="<pre>clojure.core/*unchecked-math*
+  While bound to true, compilations of +, -, *, inc, dec and the
+  coercions will be done without overflow checks. Default: false.
+
+0 examples, 1 comment on Sat Sep 29 2012</pre>">*unchecked-math*</a> unchecked-{<a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-add-int" class="tooltip" title="<pre>clojure.core/unchecked-add-int
 ([x y])
   Returns the sum of x and y, both int.
   Note - uses a primitive operator subject to overflow.
@@ -660,6 +664,28 @@ format
 
 2 examples totaling 14 lines on Sat Sep 29 2012</pre>">gensym</a></code></td>
               </tr>
+              <tr class="even">
+                <td>Data readers</td>
+                <td><code>(1.4) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/*data-readers*" class="tooltip" title="<pre>clojure.core/*data-readers*
+  Map from reader tag symbols to data reader Vars.
+
+  When Clojure starts, it searches for files named 'data_readers.clj'
+  at the root of the classpath. Each such file must contain a literal
+  map of symbols, like this:
+
+      {foo/bar my.project.foo/bar
+       foo/baz my.project/baz}
+
+  The first symbol in each pair is a tag that will be recognized by
+  the Clojure reader. The second symbol in the pair is the
+  fully-qualified name of a Var which will be invoked by the reader to
+  parse the form following the tag. For example, given the
+  data_readers.clj file above, the Clojure reader would parse this
+
+[ documentation truncated.  Click link for the rest. ]</pre>">*data-readers*</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/default-data-readers" class="tooltip" title="<pre>clojure.core/default-data-readers
+  Default map of data reader functions provided by Clojure. May be
+  overridden by binding *data-readers*.</pre>">default-data-readers</a></code></td>
+              </tr>
             </tbody>
           </table>
         </div><!-- /section -->
@@ -938,6 +964,26 @@ format
 
 1 example with 5 lines, 1 see also on Sat Sep 29 2012</pre>">rseq</a></code></td>
               </tr>
+              <tr class="even">
+                <td>Ops</td>
+                <td><code>(1.4) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/mapv" class="tooltip" title="<pre>clojure.core/mapv
+([f coll] [f c1 c2] [f c1 c2 c3] [f c1 c2 c3 & colls])
+  Returns a vector consisting of the result of applying f to the
+  set of first items of each coll, followed by applying f to the set
+  of second items in each coll, until any one of the colls is
+  exhausted.  Any remaining items in other colls are ignored. Function
+  f should accept number-of-colls arguments.</pre>">mapv</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/filterv" class="tooltip" title="<pre>clojure.core/filterv
+([pred coll])
+  Returns a vector of the items in coll for which
+  (pred item) returns true. pred must be free of side-effects.</pre>">filterv</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/reduce-kv" class="tooltip" title="<pre>clojure.core/reduce-kv
+([f init coll])
+  Reduces an associative collection. f should be a function of 3
+  arguments. Returns the result of applying f to init, the first key
+  and the first value in coll, then applying f to that result and the
+  2nd key and value, etc. If coll contains no entries, returns init
+  and f is not called. Note that reduce-kv is supported on vectors,
+  where the keys will be the ordinals.</pre>">reduce-kv</a></code></td>
+              </tr>
             </tbody>
           </table>
           <h3>Sets</h3>
@@ -1116,8 +1162,8 @@ comparator.
 4 examples totaling 32 lines, 1 see also on Sat Sep 29 2012</pre>">get</a>  my-map :key)</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/get-in" class="tooltip" title="<pre>clojure.core/get-in
 ([m ks] [m ks not-found])
   Returns the value in a nested associative structure,
-  where ks is a sequence of ke(ys. Returns nil if the key is not present,
-  or the not-found value if supplied.
+  where ks is a sequence of keys. Returns nil if the key
+  is not present, or the not-found value if supplied.
 
 2 examples totaling 49 lines, 2 see alsos on Sat Sep 29 2012</pre>">get-in</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/contains_q" class="tooltip" title="<pre>clojure.core/contains?
 ([coll key])
@@ -1609,7 +1655,7 @@ Macro
 1 example with 11 lines, 4 see alsos on Sat Sep 29 2012</pre>">drop</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/drop-while" class="tooltip" title="<pre>clojure.core/drop-while
 ([pred coll])
   Returns a lazy sequence of the items in coll starting from the first
-  item for which (pred item) returns nil.
+  item for which (pred item) returns logical false.
 
 1 example with 5 lines, 2 see alsos, 1 comment on Sat Sep 29 2012</pre>">drop-while</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/take-last" class="tooltip" title="<pre>clojure.core/take-last
 ([n coll])
@@ -1691,7 +1737,7 @@ supplied colls.
 ([x])
   Takes any nested combination of sequential things (lists, vectors,
   etc.) and returns their contents as a single, flat sequence.
-  (flatten nil) returns nil.
+  (flatten nil) returns an empty sequence.
 
 1 example with 24 lines, 3 comments on Sat Sep 29 2012</pre>">flatten</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/group-by" class="tooltip" title="<pre>clojure.core/group-by
 ([f coll])
@@ -2516,12 +2562,13 @@ Special Form
   Please see http://clojure.org/special_forms#fn
 
 2 examples totaling 40 lines on Sat Sep 29 2012</pre>">fn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defn" class="tooltip" title="<pre>clojure.core/defn
-([name doc-string? attr-map? [params*] body] [name doc-string? attr-map?
-([params*] body) + attr-map?])
+([name doc-string? attr-map? [params*] prepost-map? body] [name doc-string?
+attr-map? ([params*] prepost-map? body) + attr-map?])
 Macro
   Same as (def name (fn [params* ] exprs*)) or (def
     name (fn ([params* ] exprs*)+)) with any doc-string or attrs added
-    to the var metadata
+    to the var metadata. prepost-map defines a map with optional keys
+    :pre and :post that contain collections of pre or post conditions.
 
 3 examples totaling 51 lines, 2 see alsos on Sat Sep 29 2012</pre>">defn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defn-" class="tooltip" title="<pre>clojure.core/defn-
 ([name & decls])
@@ -3586,12 +3633,13 @@ Special Form
   Please see http://clojure.org/special_forms#fn
 
 2 examples totaling 40 lines on Sat Sep 29 2012</pre>">fn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defn" class="tooltip" title="<pre>clojure.core/defn
-([name doc-string? attr-map? [params*] body] [name doc-string? attr-map?
-([params*] body) + attr-map?])
+([name doc-string? attr-map? [params*] prepost-map? body] [name doc-string?
+attr-map? ([params*] prepost-map? body) + attr-map?])
 Macro
   Same as (def name (fn [params* ] exprs*)) or (def
     name (fn ([params* ] exprs*)+)) with any doc-string or attrs added
-    to the var metadata
+    to the var metadata. prepost-map defines a map with optional keys
+    :pre and :post that contain collections of pre or post conditions.
 
 3 examples totaling 51 lines, 2 see alsos on Sat Sep 29 2012</pre>">defn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defmacro" class="tooltip" title="<pre>clojure.core/defmacro
 ([name doc-string? attr-map? [params*] body] [name doc-string? attr-map?
@@ -3668,12 +3716,13 @@ Special Form
   Please see http://clojure.org/special_forms#def
 
 4 examples totaling 22 lines, 4 see alsos on Sat Sep 29 2012</pre>">def</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defn" class="tooltip" title="<pre>clojure.core/defn
-([name doc-string? attr-map? [params*] body] [name doc-string? attr-map?
-([params*] body) + attr-map?])
+([name doc-string? attr-map? [params*] prepost-map? body] [name doc-string?
+attr-map? ([params*] prepost-map? body) + attr-map?])
 Macro
   Same as (def name (fn [params* ] exprs*)) or (def
     name (fn ([params* ] exprs*)+)) with any doc-string or attrs added
-    to the var metadata
+    to the var metadata. prepost-map defines a map with optional keys
+    :pre and :post that contain collections of pre or post conditions.
 
 3 examples totaling 51 lines, 2 see alsos on Sat Sep 29 2012</pre>">defn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/defn-" class="tooltip" title="<pre>clojure.core/defn-
 ([name & decls])
@@ -4530,8 +4579,8 @@ Macro
 ([timeout-ms & agents])
   Blocks the current thread until all actions dispatched thus
   far (from this thread or agent) to the agents have occurred, or the
-  timeout (in milliseconds) has elapsed. Returns nil if returning due
-  to timeout, non-nil otherwise.
+  timeout (in milliseconds) has elapsed. Returns logical false if
+  returning due to timeout, logical true otherwise.
 
 0 examples, 1 see also on Sat Sep 29 2012</pre>">await-for</a></code></td>
               </tr>
@@ -4834,7 +4883,15 @@ Special Form
 supplied, uses the root cause of the
   most recent repl exception (*e), and a depth of 12.
 
-0 examples, 1 see also on Sat Sep 29 2012</pre>">pst</a></code></td>
+0 examples, 1 see also on Sat Sep 29 2012</pre>">pst</a> (1.4) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/ex-info" class="tooltip" title="<pre>clojure.core/ex-info
+([msg map] [msg map cause])
+  Alpha - subject to change.
+   Create an instance of ExceptionInfo, a RuntimeException subclass
+   that carries a map of additional data.</pre>">ex-info</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/ex-data" class="tooltip" title="<pre>clojure.core/ex-data
+([ex])
+  Alpha - subject to change.
+   Returns exception data (a map) if ex is an ExceptionInfo.
+   Otherwise returns nil.</pre>">ex-data</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -5257,7 +5314,9 @@ returns x
 
 2 examples totaling 143 lines, 1 see also on Sat Sep 29 2012</pre>">force</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/hash" class="tooltip" title="<pre>clojure.core/hash
 ([x])
-  Returns the hash code of its argument
+  Returns the hash code of its argument. Note this is the hash code
+  consistent with =, and thus is different than .hashCode for Integer,
+  Short, Byte and Clojure collections.
 
 1 example with 8 lines on Sat Sep 29 2012</pre>">hash</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/name" class="tooltip" title="<pre>clojure.core/name
 ([x])
