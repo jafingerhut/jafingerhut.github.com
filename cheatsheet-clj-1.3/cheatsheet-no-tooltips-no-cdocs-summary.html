@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 & 1.4, sheet v1.6)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 & 1.4, sheet v7)</title>
   <link rel="stylesheet" href="cheatsheet_files/26467729A.css" type="text/css" />
 
   <style type="text/css">
@@ -42,7 +42,7 @@
             <tbody>
               <tr class="odd">
                 <td>Literals</td>
-                <td><code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Long.html">Long</a>: 7 BigInt: 7N Ratio: -22/7 <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Double.html">Double</a>: 2.78 <a href="http://docs.oracle.com/javase/6/docs/api/java/math/BigDecimal.html">BigDecimal</a>: 4.2M</code></td>
+                <td><code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Long.html">Long</a>: 7, hex 0xff, oct 017, base 2 2r1011, base 36 36rCRAZY BigInt: 7N Ratio: -22/7 <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Double.html">Double</a>: 2.78 -1.2e-5 <a href="http://docs.oracle.com/javase/6/docs/api/java/math/BigDecimal.html">BigDecimal</a>: 4.2M</code></td>
               </tr>
               <tr class="even">
                 <td>Arithmetic</td>
@@ -69,7 +69,7 @@
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/rand">rand</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/rand-int">rand-int</a></code></td>
               </tr>
               <tr class="even">
-                <td>BigInt</td>
+                <td>BigDecimal</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/with-precision">with-precision</a></code></td>
               </tr>
               <tr class="odd">
@@ -136,7 +136,7 @@
             <tbody>
               <tr class="odd">
                 <td>Generic ops</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/count">count</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/empty">empty</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/not-empty">not-empty</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/into">into</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/conj">conj</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/count">count</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/empty">empty</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/not-empty">not-empty</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/into">into</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/conj">conj</a> (clojure.walk/) <a href="http://clojuredocs.org/clojure_core/clojure.walk/walk">walk</a> <a href="http://clojuredocs.org/clojure_core/clojure.walk/prewalk">prewalk</a> <a href="http://clojuredocs.org/clojure_core/clojure.walk/prewalk-demo">prewalk-demo</a> <a href="http://clojuredocs.org/clojure_core/clojure.walk/prewalk-replace">prewalk-replace</a> <a href="http://clojuredocs.org/clojure_core/clojure.walk/postwalk">postwalk</a> <a href="http://clojuredocs.org/clojure_core/clojure.walk/postwalk-demo">postwalk-demo</a> <a href="http://clojuredocs.org/clojure_core/clojure.walk/postwalk-replace">postwalk-replace</a></code></td>
               </tr>
               <tr class="even">
                 <td>Content tests</td>
@@ -438,13 +438,15 @@
               </tr>
               <tr class="even">
                 <td>Misc</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/flush">flush</a> (.close s) <a href="http://clojuredocs.org/clojure_core/clojure.core/file-seq">file-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*in*">*in*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*out*">*out*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*err*">*err*</a> (clojure.java.io/) <a href="http://clojuredocs.org/clojure_core/clojure.java.io/file">file</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/copy">copy</a> GitHub: <a href="http://github.com/Raynes/fs">fs</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/flush">flush</a> (.close s) <a href="http://clojuredocs.org/clojure_core/clojure.core/file-seq">file-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*in*">*in*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*out*">*out*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*err*">*err*</a> (clojure.java.io/) <a href="http://clojuredocs.org/clojure_core/clojure.java.io/file">file</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/copy">copy</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/delete-file">delete-file</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/resource">resource</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/as-file">as-file</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/as-url">as-url</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/as-relative-path">as-relative-path</a> GitHub: <a href="http://github.com/Raynes/fs">fs</a></code></td>
               </tr>
             </tbody>
           </table>
         </div><!-- /section -->
       </div><!-- /column -->
     </div><!-- /page -->
+    <p>&nbsp;
+    <p>&nbsp;
     <p>&nbsp;
     <p>&nbsp;
     <div class="page">
@@ -565,29 +567,33 @@
             <tbody>
               <tr class="odd">
                 <td>Create</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/defmacro">defmacro</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/definline">definline</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/macroexpand-1">macroexpand-1</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/macroexpand">macroexpand</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/defmacro">defmacro</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/definline">definline</a></code></td>
               </tr>
               <tr class="even">
+                <td>Debug</td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/macroexpand-1">macroexpand-1</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/macroexpand">macroexpand</a> (clojure.walk/) <a href="http://clojuredocs.org/clojure_core/clojure.walk/macroexpand-all">macroexpand-all</a></code></td>
+              </tr>
+              <tr class="odd">
                 <td>Branch</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/and">and</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/or">or</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/when">when</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/when-not">when-not</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/when-let">when-let</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/when-first">when-first</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/if-not">if-not</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/if-let">if-let</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/cond">cond</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/condp">condp</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/case">case</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>Loop</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/for">for</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/doseq">doseq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/dotimes">dotimes</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/while">while</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td>Arrange</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/_dot_dot">..</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/doto">doto</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/->">-&gt;</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>Scope</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/binding">binding</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/locking">locking</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/time">time</a> with-{<a href="http://clojuredocs.org/clojure_core/clojure.core/with-in-str">in-str</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-local-vars">local-vars</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-open">open</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-out-str">out-str</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-precision">precision</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-redefs">redefs</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-redefs-fn">redefs-fn</a>}</code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td>Lazy</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/lazy-cat">lazy-cat</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/lazy-seq">lazy-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/delay">delay</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>Doc.</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/assert">assert</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/comment">comment</a> <a href="http://clojuredocs.org/clojure_core/clojure.repl/doc">doc</a></code></td>
               </tr>
@@ -931,6 +937,10 @@
               <tr class="even">
                 <td>Misc</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/eval">eval</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/force">force</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/hash">hash</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/name">name</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*clojure-version*">*clojure-version*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/clojure-version">clojure-version</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*command-line-args*">*command-line-args*</a></code></td>
+              </tr>
+              <tr class="odd">
+                <td>Browser / Shell</td>
+                <td><code>(clojure.java.browse/) <a href="http://clojuredocs.org/clojure_core/clojure.java.browse/browse-url">browse-url</a> (clojure.java.shell/) <a href="http://clojuredocs.org/clojure_core/clojure.java.shell/sh">sh</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.shell/with-sh-dir">with-sh-dir</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.shell/with-sh-env">with-sh-env</a></code></td>
               </tr>
             </tbody>
           </table>

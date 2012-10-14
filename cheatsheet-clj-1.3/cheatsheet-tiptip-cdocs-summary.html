@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 & 1.4, sheet v1.6)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 & 1.4, sheet v7)</title>
   <link rel="stylesheet" href="cheatsheet_files/26467729A.css" type="text/css" />
 
   <style type="text/css">
@@ -78,7 +78,7 @@ supplied, uses the root cause of the
             <tbody>
               <tr class="odd">
                 <td>Literals</td>
-                <td><code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Long.html">Long</a>: 7 BigInt: 7N Ratio: -22/7 <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Double.html">Double</a>: 2.78 <a href="http://docs.oracle.com/javase/6/docs/api/java/math/BigDecimal.html">BigDecimal</a>: 4.2M</code></td>
+                <td><code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Long.html">Long</a>: 7, hex 0xff, oct 017, base 2 2r1011, base 36 36rCRAZY BigInt: 7N Ratio: -22/7 <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Double.html">Double</a>: 2.78 -1.2e-5 <a href="http://docs.oracle.com/javase/6/docs/api/java/math/BigDecimal.html">BigDecimal</a>: 4.2M</code></td>
               </tr>
               <tr class="even">
                 <td>Arithmetic</td>
@@ -327,7 +327,7 @@ data
 1 example with 8 lines, 2 see alsos on Sat Sep 29 2012</pre>">rand-int</a></code></td>
               </tr>
               <tr class="even">
-                <td>BigInt</td>
+                <td>BigDecimal</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/with-precision" class="tooltip" title="<pre>clojure.core/with-precision
 ([precision & exprs])
 Macro
@@ -720,7 +720,46 @@ format
     'added'. (conj nil item) returns (item).  The 'addition' may
     happen at different 'places' depending on the concrete type.
 
-2 examples totaling 24 lines, 1 see also on Sat Sep 29 2012</pre>">conj</a></code></td>
+2 examples totaling 24 lines, 1 see also on Sat Sep 29 2012</pre>">conj</a> (clojure.walk/) <a href="http://clojuredocs.org/clojure_core/clojure.walk/walk" class="tooltip" title="<pre>clojure.walk/walk
+([inner outer form])
+  Traverses form, an arbitrary data structure.  inner and outer are
+  functions.  Applies inner to each element of form, building up a
+  data structure of the same type, then applies outer to the result.
+  Recognizes all Clojure data structures. Consumes seqs as with doall.
+
+2 examples totaling 27 lines, 2 see alsos on Sat Sep 29 2012</pre>">walk</a> <a href="http://clojuredocs.org/clojure_core/clojure.walk/prewalk" class="tooltip" title="<pre>clojure.walk/prewalk
+([f form])
+  Like postwalk, but does pre-order traversal.
+
+1 example with 9 lines, 3 see alsos on Sat Sep 29 2012</pre>">prewalk</a> <a href="http://clojuredocs.org/clojure_core/clojure.walk/prewalk-demo" class="tooltip" title="<pre>clojure.walk/prewalk-demo
+([form])
+  Demonstrates the behavior of prewalk by printing each form as it is
+  walked.  Returns form.
+
+0 examples, 1 see also on Sat Sep 29 2012</pre>">prewalk-demo</a> <a href="http://clojuredocs.org/clojure_core/clojure.walk/prewalk-replace" class="tooltip" title="<pre>clojure.walk/prewalk-replace
+([smap form])
+  Recursively transforms form by replacing keys in smap with their
+  values.  Like clojure/replace but works on any data structure.  Does
+  replacement at the root of the tree first.
+
+1 example with 2 lines, 3 see alsos on Sat Sep 29 2012</pre>">prewalk-replace</a> <a href="http://clojuredocs.org/clojure_core/clojure.walk/postwalk" class="tooltip" title="<pre>clojure.walk/postwalk
+([f form])
+  Performs a depth-first, post-order traversal of form.  Calls f on
+  each sub-form, uses f's return value in place of the original.
+  Recognizes all Clojure data structures. Consumes seqs as with doall.
+
+1 example with 7 lines, 3 see alsos on Sat Sep 29 2012</pre>">postwalk</a> <a href="http://clojuredocs.org/clojure_core/clojure.walk/postwalk-demo" class="tooltip" title="<pre>clojure.walk/postwalk-demo
+([form])
+  Demonstrates the behavior of postwalk by printing each form as it is
+  walked.  Returns form.
+
+0 examples on Sat Sep 29 2012</pre>">postwalk-demo</a> <a href="http://clojuredocs.org/clojure_core/clojure.walk/postwalk-replace" class="tooltip" title="<pre>clojure.walk/postwalk-replace
+([smap form])
+  Recursively transforms form by replacing keys in smap with their
+  values.  Like clojure/replace but works on any data structure.  Does
+  replacement at the leaves of the tree first.
+
+0 examples, 2 see alsos on Sat Sep 29 2012</pre>">postwalk-replace</a></code></td>
               </tr>
               <tr class="even">
                 <td>Content tests</td>
@@ -2533,13 +2572,37 @@ Macro
   Does not close any streams except those it opens itself
   (on a File).
 
-1 example with 7 lines, 1 see also on Sat Sep 29 2012</pre>">copy</a> GitHub: <a href="http://github.com/Raynes/fs">fs</a></code></td>
+1 example with 7 lines, 1 see also on Sat Sep 29 2012</pre>">copy</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/delete-file" class="tooltip" title="<pre>clojure.java.io/delete-file
+([f & [silently]])
+  Delete file f. Raise an exception if it fails unless silently is true.
+
+1 example with 17 lines, 2 see alsos on Sat Sep 29 2012</pre>">delete-file</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/resource" class="tooltip" title="<pre>clojure.java.io/resource
+([n] [n loader])
+  Returns the URL for a named resource. Use the context class loader
+   if no loader is specified.
+
+0 examples on Sat Sep 29 2012</pre>">resource</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/as-file" class="tooltip" title="<pre>clojure.java.io/as-file
+([x])
+  Coerce argument to a file.
+
+1 example with 3 lines, 1 see also on Sat Sep 29 2012</pre>">as-file</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/as-url" class="tooltip" title="<pre>clojure.java.io/as-url
+([x])
+  Coerce argument to a URL.
+
+1 example with 17 lines on Sat Sep 29 2012</pre>">as-url</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/as-relative-path" class="tooltip" title="<pre>clojure.java.io/as-relative-path
+([x])
+  Take an as-file-able thing and return a string if it is
+   a relative path, else IllegalArgumentException.
+
+0 examples on Sat Sep 29 2012</pre>">as-relative-path</a> GitHub: <a href="http://github.com/Raynes/fs">fs</a></code></td>
               </tr>
             </tbody>
           </table>
         </div><!-- /section -->
       </div><!-- /column -->
     </div><!-- /page -->
+    <p>&nbsp;
+    <p>&nbsp;
     <p>&nbsp;
     <p>&nbsp;
     <div class="page">
@@ -3022,7 +3085,11 @@ Macro
   body is the expansion, calls to which may be expanded inline as if
   it were a macro. Cannot be used with variadic (&) args.
 
-0 examples on Sat Sep 29 2012</pre>">definline</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/macroexpand-1" class="tooltip" title="<pre>clojure.core/macroexpand-1
+0 examples on Sat Sep 29 2012</pre>">definline</a></code></td>
+              </tr>
+              <tr class="even">
+                <td>Debug</td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/macroexpand-1" class="tooltip" title="<pre>clojure.core/macroexpand-1
 ([form])
   If form represents a macro form, returns its expansion,
   else returns form.
@@ -3033,9 +3100,13 @@ Macro
   represents a macro form, then returns it.  Note neither
   macroexpand-1 nor macroexpand expand macros in subforms.
 
-2 examples totaling 28 lines, 2 see alsos on Sat Sep 29 2012</pre>">macroexpand</a></code></td>
+2 examples totaling 28 lines, 2 see alsos on Sat Sep 29 2012</pre>">macroexpand</a> (clojure.walk/) <a href="http://clojuredocs.org/clojure_core/clojure.walk/macroexpand-all" class="tooltip" title="<pre>clojure.walk/macroexpand-all
+([form])
+  Recursively performs all possible macroexpansions in form.
+
+1 example with 3 lines, 2 see alsos on Sat Sep 29 2012</pre>">macroexpand-all</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td>Branch</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/and" class="tooltip" title="<pre>clojure.core/and
 ([] [x] [x & next])
@@ -3137,7 +3208,7 @@ Macro
 
 1 example with 42 lines, 2 see alsos, 2 comments on Sat Sep 29 2012</pre>">case</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>Loop</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/for" class="tooltip" title="<pre>clojure.core/for
 ([seq-exprs body-expr])
@@ -3175,7 +3246,7 @@ Macro
 
 1 example with 15 lines on Sat Sep 29 2012</pre>">while</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td>Arrange</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/_dot_dot" class="tooltip" title="<pre>clojure.core/..
 ([x form] [x form & more])
@@ -3213,7 +3284,7 @@ Macro
 
 3 examples totaling 88 lines, 3 see alsos, 1 comment on Sat Sep 29 2012</pre>">-&gt;</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>Scope</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/binding" class="tooltip" title="<pre>clojure.core/binding
 ([bindings & body])
@@ -3304,7 +3375,7 @@ Macro
 
 0 examples, 1 see also on Sat Sep 29 2012</pre>">redefs-fn</a>}</code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td>Lazy</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/lazy-cat" class="tooltip" title="<pre>clojure.core/lazy-cat
 ([& colls])
@@ -3333,7 +3404,7 @@ Macro
 
 1 example with 13 lines, 3 see alsos on Sat Sep 29 2012</pre>">delay</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>Doc.</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/assert" class="tooltip" title="<pre>clojure.core/assert
 ([x] [x message])
@@ -5339,6 +5410,42 @@ returns x
   none were supplied
 
 1 example with 18 lines, 1 see also on Sat Sep 29 2012</pre>">*command-line-args*</a></code></td>
+              </tr>
+              <tr class="odd">
+                <td>Browser / Shell</td>
+                <td><code>(clojure.java.browse/) <a href="http://clojuredocs.org/clojure_core/clojure.java.browse/browse-url" class="tooltip" title="<pre>clojure.java.browse/browse-url
+([url])
+  Open url in a browser
+
+1 example with 3 lines on Sat Sep 29 2012</pre>">browse-url</a> (clojure.java.shell/) <a href="http://clojuredocs.org/clojure_core/clojure.java.shell/sh" class="tooltip" title="<pre>clojure.java.shell/sh
+([& args])
+  Passes the given strings to Runtime.exec() to launch a sub-process.
+
+  Options are
+
+  :in      may be given followed by any legal input source for
+           clojure.java.io/copy, e.g. InputStream, Reader, File, byte[],
+           or String, to be fed to the sub-process's stdin.
+  :in-enc  option may be given followed by a String, used as a character
+           encoding name (for example &quot;UTF-8&quot; or &quot;ISO-8859-1&quot;) to
+           convert the input string specified by the :in option to the
+           sub-process's stdin.  Defaults to UTF-8.
+           If the :in option provides a byte array, then the bytes are passed
+           unencoded, and this option is ignored.
+
+[ documentation truncated.  Click link for the rest. ]
+
+4 examples totaling 46 lines, 3 see alsos on Sat Sep 29 2012</pre>">sh</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.shell/with-sh-dir" class="tooltip" title="<pre>clojure.java.shell/with-sh-dir
+([dir & forms])
+Macro
+  Sets the directory for use with sh, see sh for details.
+
+0 examples, 1 see also on Sat Sep 29 2012</pre>">with-sh-dir</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.shell/with-sh-env" class="tooltip" title="<pre>clojure.java.shell/with-sh-env
+([env & forms])
+Macro
+  Sets the environment for use with sh, see sh for details.
+
+0 examples, 1 see also on Sat Sep 29 2012</pre>">with-sh-env</a></code></td>
               </tr>
             </tbody>
           </table>
