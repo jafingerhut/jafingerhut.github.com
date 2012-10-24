@@ -1,0 +1,35 @@
+Apparently the VMware tools installed on Ubuntu 11.10 and some other
+versions of Linux are not able to shrink an ext4 disk partition.
+
+    http://www.insomnihack.com/?p=387
+
+To do it another way, first fill up the empty parts of the virtual
+disk with zeros:
+
+% sudo apt-get clean
+# bs=20megabytes is simply the block size that will be written at a
+# time.  The command below will copy 2 megabytes of 0 bytes from
+# /dev/zero at a time to the file /0bits, until the virtual disk is
+# full.
+sudo dd if=/dev/zero of=/0bits bs=20971520
+# Now remove that file.
+sudo rm /0bits
+
+
+After you've executed these commands, shutdown your VM and use
+vmware-vdiskmanager to shrink the virtual drive file.
+
+Windows instructions:
+
+cd "C:\Program Files\VMware\VMware Workstation"
+vmware-vdiskmanager -k path\to\your\VirtualDisk.vmdk
+
+On my Mac:
+
+cd ~/Virtual Machines.localized/Ubuntu 11.04 32bit.vmwarevm
+
+# With VMware Fusion 4
+/Applications/VMware\ Fusion.app/Contents/Library/vmware-vdiskmanager -k Ubuntu\ 11.04\ 32bit.vmdk
+
+# Older cmd line with VMware Fusion 3
+/Library/Application\ Support/VMware\ Fusion/vmware-vdiskmanager -k Ubuntu\ 11.04\ 32bit.vmdk
