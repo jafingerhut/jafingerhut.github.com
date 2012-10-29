@@ -1,0 +1,3796 @@
+Transcript of: Clojure for Lispers, by Rich Hickey
+
+Presented Sep 29, 2008 at the Boston Lisp meeting.
+
+Available on http://clojure.blip.tv
+
+Note: I've got most of Rich's words transcribed correctly.  The
+audience members, I'm not so sure about.  They are much quieter in the
+recording, so sometimes I've guessed or left part or all of their
+questions as tbd (to be determined).  Feel free to send any
+corrections to andy_fingerhut at alum dot wustl dot edu (Andy
+Fingerhut).
+
+You can jump to slide numbers by searching for "slide 37", for
+example.  I've included book, article, and web citations for some
+things.
+
+
+(cover slide)
+
+Hi.  I'm here to talk about Clojure, which I've done several times,
+and never -- oh, yeah, once, at the European Common Lisp workshop
+-- for an audience of Lispers, but usually not.  So it's always
+nice to talk to a crowd of people who already know Lisp, because
+then I can talk about more advanced things and more interesting
+things.  I don't have to explain S-expressions and things like that.
+
+But I want to make sure that that presumption is correct.  Does
+everybody here know some dialect of Lisp?  Yes?  Anyone not?  OK.
+Somewhat.  I'm not going to cater to you, so you're just going to have
+to hang on.
+
+And amongst the people who know Lisp, how many are of the Common Lisp
+persuasion?  And Scheme?  OK, I won't make any Scheme jokes then.
+
+(laughter)
+
+Does this work.  Let's see.  Oh yeah, look at that.  (tries out slide
+control and slides advance)
+
+
+(slide 2)
+
+So I have a lot to talk about.  So it's nice that it's a Lisp group,
+because I can also presume that you are all very smart and I can talk
+_fast_.
+
+So first I just want to set this up.  What was I trying to do in
+building Clojure?  Well, I wanted to have a Lisp.  I fell in love with
+Lisp a long time ago and decided this is what I want to be able to do.
+In particular, I want Clojure to be a functional programming language,
+and there's a lot of reasons for that, one of which has to do with the
+robustness of programs, and the other of which has to do with
+concurrency, which we'll talk a lot about.  I want it to be a language
+that supports concurrency, and what I do, I haven't written a
+non-concurrent program in almost 20 years.  I do broadcast automation
+software and things like that, and there's always more than one thread
+or process.
+
+Clojure also is designed to run on the JVM.  Being on the JVM is not
+an implementation detail.  It's an objective.  Interoperating with
+Java is an objective, and an important part of Clojure.  It's not just
+something under the hood.  Which brings me to my next question.  How
+many people know Java?  Oh, good!  OK, I will make fun of Java.
+
+(laughter)
+
+But I hope, after this talk is done, that you have an appreciation of
+the difference between the JVM and Java.  It's OK to hate Java and
+like the JVM.  That's where I'm at.  Also, Clojure is open source
+because I think that's mandatory for adoption for a language.
+
+
+(slide 3)
+
+So why Lisp?  This is not an audience in which I have to justify why
+Lisp.  We all like Lisp.  It's dynamic.  In particular, for me it was
+great because it has got a small core.  We have to implement these 7
+primitives, and just macros and everything else takes you from there,
+which means I have a shot at getting it correct, unlike languages that
+have all that syntax, and therefore very complicated compilers and
+parsers and everything else.  We all like Lisp syntax.
+
+This is still an advantage of Lisp: code as data, and the resulting
+macro system and syntactic abstraction.  Also I saw in Clojure an
+opportunity to help along the never ending battle of having people not
+balk at the parentheses before they see the rest of the value.
+
+(slide 4)
+
+So one of the things I want to do, and one of the questions I expect
+to face in this room is, you know, we have these two great Lisps,
+which are standardized to some degree.  Why yet another Lisp?  And I
+think this is an important and valid question, which I am going to
+answer tonight.  I think any new dialect of Lisp should be asked this
+question, and should have a good answer.
+
+So some of the reasons why I couldn't use Common Lisp or Scheme for
+what I wanted to do was they are hard to change.  I don't know how you
+change Common Lisp.  Scheme just recently changed a little bit.
+Because I want a language that is functional, I want the core data
+structures to be immutable.  That's not something you can retrofit on
+either of those two Lisps.  There are no concurrency specs for those
+languages as they exist.  That is not to say that implementations
+don't provide concurrency semantics for the stuff that is already in
+the language, or facilities for dealing with threads, but it is not in
+the language.  It is not something you can presume.  It is not
+something that ports.
+
+And there are already good Lisps on the JVM.  Kawa, Armed Bear, SISC,
+they're all good.  So if you have as your objective -- I have all this
+code and I want to move it on the JVM for some reason, that is a
+solved problem, and there is no reason for me to take it on.
+
+The other thing has to do with languages and platforms, and I will
+talk more about that, but basically Lisps, like any language of their
+day are kind of their own platforms, and that's also true of languages
+like Python and Ruby.
+
+(slide 5)
+
+So why the JVM?  Well, it's coming around that, just like you would
+say, I want this language and I want it to talk to this operating
+system, you know, I'll port it to these operating systems as targets,
+virtual machines are targets.  In fact, they are the new targets.
+They are the new platforms.  Just like you would say, "Oh, Lisp is a
+platform" "Unix is a platform".  For businesses, these VMs are
+platforms, because they abstract away platforms, or what we used to
+call platforms, the hardware, the instruction set, the CPUs, no one
+wants to deal with that.  No one wants to deal with the OS level stuff
+any more.  So we've now got another layer of abstraction, which are
+these virtual machines.  The two big ones are .NET and Java.  And they
+provide a lot of facilities, more than just how do you access the file
+system, including type systems.  What is interesting, and surprising a
+little bit, is that the type systems in these VMs are dynamic.  They
+have dynamic enforcement, dynamic creation of types.  They're very
+dynamic, even though the languages that typically target them, Java
+and C#, are not particularly dynamic.
+
+The big story, of course, is this huge set of libraries you get to tap
+into.  All this code that other people wrote.  They also provide a
+bunch of high level services like garbage collection and memory
+management, resource management, meaning that garbage collection is no
+longer a language problem.  Garbage collection is a platform problem,
+which is good.  And also, I'll talk more in detail about this later,
+but they offer byte code, and in particular in the JVM, just in time
+compilation that is extremely sophisticated.  You know, run time
+analysis of your running program to find best paths, optimize short
+call paths.  These things will take apart your code, make a fast path,
+compile a special fast path.  All kinds of things that you absolutely
+cannot do with a static compiler.  The compilation technology on the
+JVM is state of the art.
+
+
+(slide 6)
+
+So old school was, well, we didn't have very great tools.  We were all
+writing our languages, or starting, bootstrapping with C, and every
+language sort of solved the same set of problems defining its own
+platform: its own garbage collector, its own byte code, its own type
+systems, and facilities for libraries.  Now we can look to these VMs
+to provide that stuff for us, and in particular, they can provide it
+in a way that is somewhat independent of language.  I wouldn't pretend
+that the JVM or the .NET run time, the CLR, are really independent of
+language, especially the CLR.  They talk so much about it.  But really
+any language can target this platform as long as it looks like C#.
+But it ends up that if you said, well, if I want to have an abstract
+machine, I could have like a little stack machine that did almost
+nothing, or I could have a stack machine that had this sort of a
+primitive object system.  Well, that is what these virtual machines
+have.  They have the primitive object systems that are supported by C#
+and Java.
+
+And a big thing for me is Clojure is designed to let me continue to
+work for a living.  And I know a lot of people in this room, or some
+people in this room, are extremely lucky and can write Common Lisp for
+money.  Great.  But most people can't.  And platforms are dictated by
+clients, just like they say, I have this Sun box and your program has
+to run on it, they also now say I have this JVM infrastructure, and
+your software has to run on it, because my guys know how to install
+it, secure it, scale it, and you have to target it.  If you don't,
+your language -- it's just like your language didn't support OS X.
+Your programs just couldn't run there.  And they have real
+investments, and they're not stupid.  This is a real requirement in a
+lot of commercial software.
+
+
+(slide 7)
+
+Again, as I said before, I'd like to hopefully get you to distinguish
+between Java and the JVM.  Unfortunately, Sun called them both Java
+for the longest period of time.  It was like Java the ecosystem, and
+Java the language, which made it difficult to split them apart.  But
+it's really always been the case.  There are hundreds of languages
+that target the JVM.  And now that the JVM is open source, you're
+seeing even more adoption and more targeting, more libraries, more
+infrastructure.  Any language always had to have an interop layer with
+something.  Typically that was C.  It ends up that that is pretty
+insufficient, because lots of the great new software, lots of the
+great new infrastructure, is not being written in C.  The old stuff
+was, but a lot of the new stuff isn't.  So some ability to call or
+consume Java is critical.  It's very difficult to do with a bridge.
+I've written two bridges for Common Lisp.  You may know of Jfli or
+Foil.  I wrote them.  I tried very hard to make that work, but it's
+not a satisfying experience.
+
+    http://jfli.sourceforge.net
+    http://foil.sourceforge.net
+
+So we look at Clojure as a language, and the JVM as a platform.
+
+
+(slide 8)
+
+Why functional programming?  Well, I think there are a couple of
+benefits before you even get to concurrency.  They are certainly
+easier to reason about, and easier to test.  Now everybody will say
+Lisp invented functional programming.  We've been doing functional
+programming from the beginning.  It's certainly possible to adopt a
+functional programming style in Lisps that already exist.  And that is
+both true and not true.  It's true in that yes, if you want to use
+lists only, and you promise each other never to modify them, you can
+take a functional approach.  But otherwise, you can't.  And I'll talk
+more in detail about why that is the case.
+
+When you get to concurrency, however, you need to take a much more
+serious view of what it means to be functional, and what it means to
+be immutable, because it is going to be the case that we simply cannot
+go into this multicore environment and keep scribbling on the same
+memory from different threads.
+
+There aren't too many dynamic functional languages.  Erlang is sort of
+a dynamic functional language, and Clojure is one, but most of the
+functional language like Haskell and ML couple this functional
+programming, and by that I mean, programming without side effects,
+with these ornate and very complex type systems, because that is where
+the hot research is.  But they don't need to go together, although
+people will dispute that.  In particular, it is my opinion, having
+tried to get people to do it for a pretty long time, that functional
+by convention is not good enough, both because people mess it up, and
+because it's not subject to the optimization that is available when
+things really really are immutable.  Something that is genuinely
+immutable, and provably immutable by the optimizer, is a different
+thing from something where two people have said in a conversation at
+lunch, "I promise not to change that."
+
+
+(slide 9)
+
+All right.  Why focus on concurrency?  Well, we've long since, I mean
+it has been a while now, we are not going to have our single-threaded
+programs have their performance improve by time passing and Moore's
+law kicking in.  That is over.  We've hit this plateau.  It is not
+going up.  If you have a program right now today, and it is only
+capable of running on one CPU, it will never ever be faster.  OK.
+That wasn't always the case.  It used to be you wrote a program and
+said, "Man, by the time we finish this, it will be fast enough."  And
+that's not the case.  So you really have to get a grip on this, but
+trying to do this with threads, with the conventional mechanisms, and
+Java has locks, and everybody has locks, and a lot of the languages,
+and a lot of the enhancements to Lisp that support multi-threading
+really have the same kind of trusty lock-based mechanisms for dealing
+with concurrency.  They don't work.  They're very very hard to use.
+They don't scale.  And even if you happen to get it right in one
+moment in time, in maintenance it breaks.
+
+Programming in a functional way helps.  Of course anything that is
+really immutable, you don't have to worry about.  Multiple threads can
+access it.  There's no sweat.  Nothing bad can happen.  But it ends up
+that most real programs that do real work, that people will pay for,
+are not functions.  You know, the things that a lot of the functional
+programming guys write are really functions.  A compiler is sort of a
+big function, right?  It takes the source code as an input, it
+calculates output, spits it on the disk.  A theorem prover is a sort
+of a function.  A broadcast automation system is not a function.  I
+work on the election system that runs on election night.  I can tell
+you that's not a function.  It's all we can do to make it function,
+but it's certainly not a function.
+
+So these kinds of real programs are more like models of processes.
+You know you go to businesses, they have this process.  Most things
+have to run indefinitely.  So you need something that is going to
+appear to change over time, that multiple parts of the program can
+access.  And typically we call that state, and it's a reality.  So
+Clojure couples this immutable approach to programming with some
+mechanisms for doing safe state.  And in particular, I think it's
+critical that the language provides both support and enforcement for
+that.  That it's not a convention, where locks are a convention.
+
+
+(slide 10)
+
+Clojure is not object oriented.  And there are many reasons, most of
+which have to do with the fact that I think we have to dig ourselves
+out of this rut we've gotten into with object oriented programming.
+We just haven't done anything novel with it in decades.  But in
+particular, for this problem space, it is a disaster.  Object oriented
+programming, as normally implemented, is inherently imperative.  It's
+about creating this object, and banging on it from multiple threads.
+There is encapsulation, but it doesn't ...  that is orthogonal to the
+problem of concurrency.  So this has got to change.
+
+Also, I think that the traditional style of object oriented
+programming, where you have methods inside a class, has been proven
+not as flexible as Common Lisp's generic functions, which show we
+should bring this polymorphism out of this box and apply it to a ...
+multiple arguments, for instance.  And I would go even further and
+say, "Why do we base polymorphism on types alone?"  In the real world,
+we don't categorize everything by a fundamental at-birth type.  Nobody
+is born a taxi driver, or a painter, or tall.  But these type systems
+work that way.  You shall be tall, and we'll make every decision about
+you based upon you being tall.  Whereas most systems and most reality
+supports some sort of polymorphism based upon value, or current state,
+or relationships to other things.  So we need to sort of pull this
+stuff apart, and traditional object orientation has just put us in
+this rut where we can't even see the difference between these things.
+
+
+(slide 11)
+
+So this is the question I want to answer, in addition to others
+tonight: Why is Clojure different?
+
+The first thing that is different about Clojure is it has more first
+class data structures.  So lists, if you interpreted Lisp as LISt
+Processing, there's definitely a primary data structure, which is the
+list, and everybody who uses Lisp, especially Common Lisp, knows that
+that ain't enough.  It's not a data structure that scales well.  It's
+not suitable for a lot of application domains.  And of course Common
+Lisp has other data structures.  It has vectors, and it has hash
+tables, but they're not first class.  There's no reader support.  They
+don't print well.  They're just not as nice as lists.  So Clojure
+enhances Lisp by making print-read representations for more data
+structures, and I'll show you the details of that.
+
+Another big difference with Clojure is that the common and core
+algorithms are defined in terms of abstractions.  As we'll see, a lot
+of the library in Lisps is based around a concrete data
+representation.  You know, the two cell cons.  That is really bad.  Of
+course, no on is blaming McCarthy for doing that 50 years ago.  It was
+brilliant.  But today, we can do better, and we have to do better.
+
+Clojure is different again because it embraces a host.  It is
+symbiotic with the platform, which means it is going to get a lot of
+leverage of that platform, and work other people have done.
+
+We're thread aware, and as you'll see, I am not constrained by
+backwards compatibility.  I am not going to compile your old code.
+That's not the objective of Clojure.  And that frees me up to, for
+instance, reuse words which, if they are to mean what they mean in
+Common Lisp and Scheme forever, you'll never have a Lisp with
+different semantics.  You just can't own the words.  Sorry.
+
+
+(slide 12)
+
+So I'm going to break this down.  We're sort of branching like a tree.
+We'll talk about Clojure as a Lisp.  We'll look at the data
+structures, I'll talk about abstraction and building algorithms on top
+of abstractions instead of concrete data structures.  We'll dig into
+how the immutability works in Clojure, and then I'll look at some grab
+bag of Lisp features.  You'll see how Clojure differs from Common Lisp
+or Scheme, and then we'll dig down into the concurrency mechanisms in
+Clojure, and finally look at the JVM, both how you interoperate with
+it, and how is it as a host platform.
+
+
+(slide 13)
+
+So Clojure meets all of the objectives of being a Lisp.  It's dynamic,
+code as data, which is a primary characteristic of Lisps, and it's the
+same in Clojure.  It's the same compilation model as Common Lisp.  I'm
+sort of a Common Lisp guy.  I'm not a Scheme guy.  So I like the
+reader, and the properties of the reader being well defined.  It has a
+small core.  You have a REPL.  It's lifted the notion of lists to this
+abstraction called sequences, and I'll talk a lot more about that.
+And it has macros, and the other goodies you expect from a Lisp.
+
+If you used Clojure, you would not be at all confused about it being a
+Lisp.
+
+
+(slide 14)
+
+As a Lisp, these are the details.  It's a Lisp-1.  It's lexically
+scoped.  It's a Lisp-1.  However, it has Common Lisp style full
+function macros.  You can do whatever you want in there.  And it has
+dynamic variables, which behave a lot like dynamic variables in Common
+Lisp, except they have threading semantics.  It's a case-sensitive
+language.  That's really got to go if you want to interoperate with
+XML, and sort of anything.  You have to be case sensitive.
+
+It has namespaces instead of packages, and I might have some time to
+talk about that in detail, but in particular, it is important to note
+that Clojure's reader is side effect free, which is a big benefit.
+
+Clojure is 100% compiled.  There is no interpreter.  It loads code, it
+compiles it right away to JVM byte code.  From there, there's a lot
+more compilation that goes on, which I didn't have to write.  As I
+said before, there's some very sophisticated optimizing compilers
+inside the JITs, inside Java VMs, in particular, HotSpot.
+
+Clojure does not have tail call optimization.  Not because I'm against
+it.  I'm all for it.  It's something I had to trade off in being on
+the JVM.  However, I was just at the JVM languages summit, and tail
+call optimization, every language designer who cam up there said "tail
+call optimization, tail call optimization".  And they've heard it, and
+hopefully it will come in a future VM, hopefully soon.
+
+A lot of the names are different.  As I said before, the names can't
+mean the same thing forever and ever and ever.  There's only a few
+good names, so these are the primitives in Clojure.  fn is like
+lambda.  if.  def is define.  let, loop, and recur I'll talk about a
+little bit later.  do is a block operation.  new, dot are Java things.
+Java interop things.  try and throw have to do with exceptions.
+There's set!, quote, and var, which I might have time to talk about,
+but this should be familiar in terms of their operation, if not the
+names.
+
+
+(slide 15)
+
+So the atomic data types are the things you would expect.  Clojure has
+good math with integers that don't truncate or wrap.  There are
+doubles, there are BigDecimal literals, which are important for people
+who deal with money.  There are ratios.  Strings are in double quotes.
+Characters are preceded by a slash, a backslash.
+
+There are symbols.  The thing about symbols is they are not places
+with values stuck on them.  Symbols and Vars are different in Clojure.
+They are two separate things.  So you can consider symbols in Clojure
+to be more simple names.  There's no interning of the symbol with
+associated values.
+
+Keywords start with a colon.  The colon doesn't participate in the
+package system like it would in Common Lisp, so there's no implication
+there other than the typical thing you would expect with keywords,
+which is that they evaluate to themselves.
+
+There are Boolean literals, true and false.  They unify with Java
+Boolean.  And there is nil, which unifies with Java null.  So Java
+null and nil are the same thing.  I have a whole slide on nil, so
+let's save the arguments and whatever for that.  And there are regex
+literals, but they really aren't any more atomic literals than these.
+
+
+(slide 16)
+
+So I said earlier Clojure has more first class data structures.
+Everybody knows you couldn't write a performant program with lists.
+It's just going to be a pig.  Yes, you can use a-lists and pretend you
+have an associative thing, but it's not good enough.
+
+The other ones are second class.  They don't have read/print support.
+In particular, though, they are not very Lispy.  A Lisp hash table is
+not Lispy at all.  You can't recur on it.  You can't build it up
+incrementally.  You can't unroll the stack and just pop off values and
+use it like you do a list.  You don't use hash tables like you do
+lists in Common Lisp.
+
+And the same thing with vectors.  And one of the reasons why is
+because they are destructive, right?  You add something to a hash
+table, and you trashed it, and you can't undo that trashing, which
+means that you do nice things with lists.  You make lists of a-lists
+as you go down, if you're writing a little evaluator or compiler,
+you'll have a list of a-lists, and you know you can just unroll that,
+and pop it right back off, right?  Because it's all nondestructive.
+You can't do that same job with hash tables.
+
+In Clojure, you can.  Because Clojure's data structures are
+structurally recursive.  You could say, "Pfff!  Lists and a-lists for
+an environment?  That is really not so great.  But I'd much rather
+have a stack of modifications to a nondestructive true performant
+associative data structure."  And that's what Clojure gives you.
+
+In particular, compared to the languages du jour, Python, Ruby,
+whatever, the lack of a first class associative data structure is
+really a bad blight on Lisp.  People look at that, and they're like, I
+can't work with this.  Because it is something you really need.  So
+Clojure has it.
+
+
+(slide 17)
+
+So what have we got?  We have lists.  We have lists.  They are singly
+linked.  They are exactly like what you know.  I've heard rumors that
+Clojure doesn't have cons cells.  Clojure does have cons cells.  What
+Clojure doesn't have is a giant beautiful library that is married to
+cons cells.  That's what it doesn't have.  It does have cons cells.
+
+Clojure has vectors.  It has maps, both hashed and sorted.  By maps, I
+mean associative data structures.  Hash tables.  A hash map is a hash
+table.
+
+It has sets.  Again, first class sets, both hashed and sorted.  They
+all have read/print support.  They are all structurally recursive.  In
+addition, they all support a uniform add operation, which is conj.
+Another S-J pun.  But it ends up being an extremely powerful thing.
+You can write algorithms that manipulate lists, vectors, maps, or sets
+uniformly.  Add things to them, look for things, map functions across
+them, and you could just substitute a map for a set, for a list, for a
+vector, and not change the rest of your code at all.  So if you have
+this presumption that, ooh, we have these data types.  More data types
+means more complexity for my macros, and I have all this gook, because
+now I have this heterogeneity to my data structure set, that's not
+true.  Because you have homogeneity in your algorithm set, and I'll
+show you more about that later.  And conj is one of the keys to that.
+
+
+(slide 18)
+
+This is what they look like.  Lists look like what you're familiar
+with.  Lists are parenthesized.  They are heterogeneous.  You can
+stick anything you want in there.  They grow at the front.  Every time
+I say grow, change, add, remove, there's quotes around it, OK, because
+none of these things actually change.  So just like a list in any of
+the Lisps, adding something to the list doesn't change the list.  It's
+a new list, right?  That logic applies to all the data structures in
+Clojure.
+
+Vectors support fast indexed access, like you'd expect.  They also
+grow at the end automatically, so you can conj onto a vector and it is
+going to grow at the tail.
+
+Maps are in curly braces.  This is just key, value, key, value.
+Commas are white space.  They make people coming from other languages
+feel more comfortable, so they can use them and we don't care if you
+want to use them.  You don't have to.  So commas are just ignored.
+And again, it's key, value, key, value, and the keys and the values
+can be anything.
+
+Sets are in curly braces preceded by a hash sign, and that's just
+going to be a set of unique things, which will support fast look up
+and detection of the things in there, and they have, as I said before,
+both of these, sets and maps, have hashed versions and sorted versions
+with different performance characteristics and sorting
+characteristics.
+
+And then, all of this stuff nests.
+
+
+(slide 19)
+
+This is just some code that uses some data structure literals so you
+can see what is going on.
+
+You put the literals in your code and you get versions of that.  Of
+course, as in all Lisps, lists by default get evaluated, so if you
+want a list you have to say 'list' or quote it.  But the nice thing is
+we have this uniform interface.  We can add to any collection some
+thing, and it will do the right thing for whatever kind of collection
+it is.  So we can add key/value pairs to maps, you can add to the
+beginning of lists and the end of vectors.  Making these changes
+doesn't really change anything.  You'll see we print, we get the
+changed versions and the unchanged versions.
+
+If at any point somebody has questions, just
+
+Audience: What does that program do?
+
+This program just shows you ...  It does nothing.  It creates a
+vector, a map, and a list.  It adds something to each of those, and it
+is returning a vector of the changed versions and the original
+versions.
+
+Audience: Oh, the brackets are
+
+It's a literal.  A literal vector.  Right.  So it is a vector of the
+answers and the originals.  And we get a vector of the answers,
+changed vector, changed map, changed list, and the originals:
+unchanged original vector, map, and list.
+
+Audience: Are commas white space everywhere, or just in maps?
+
+Everywhere!  Have at it!  Stick them anywhere you want!
+
+(laughter)
+
+Just whatever makes you feel good.
+
+Audience: Is the square bracket (tbd?)
+
+No, there are named functions for all of them things.  There are
+functions for all of them.  So you can map 'vector' and get vectors.
+
+Audience: ?
+
+Yes, the bracket is part of the let syntax.  You've seen some Schemes
+start to advocate using square brackets for lists that are not calls,
+right?  And then, like PLT or whatever, they treat them as lists.
+That same convention of using square brackets when things are not
+calls or operators happens in Clojure.  So these things, these are not
+calls, so people don't get confused when they see parens everywhere,
+they're like, "Is this a call?  Is this data?  I can't get my head
+around it."
+
+So that convention was a good one, except in Clojure, I don't want to
+waste square brackets on another kind of list, so I have real vectors.
+
+Audience: ?
+
+That's a vector.  When this is read, this is a list with a symbol, a
+vector with a symbol, a vector, symbol, map, symbol, list, vector,
+etc. etc. etc.  This is real code as data.  You read this in, it's
+fine.
+
+Audience: But it could have been ...  you couldn't have had a ?
+
+This is a hash table.
+
+Audience: No, as the first argument of the let.
+
+Oh, that's the destructuring stuff.  I'll show you that later.
+
+Audience: some question about comments
+
+Ignored.  Ignored.  It's the old ignored.  Ignored to the end of the
+line comment.  So nothing is produced by the reader for that.  It's a
+cool reader, though.  For instance, it captures all the line numbers,
+and associates them with the data structures as metadata.  I'll talk
+about metadata later.  OK?
+
+
+(slide 20)
+
+So, this is a big thing I want to talk about, and I want to kind of
+beat up on the existing Lisps.  Not because they made the choice, but
+because it's a choice that is getting moldy.
+
+Which is, you have so many great algorithms defined in terms of
+concrete data types.  That is really a mistake today.  It limits how
+general your code can be.  It limits the extensibility of your
+language.  How many people said "Oh, I wish this was a generic
+function" about some library function?  So yeah, you do.  Because the
+generic functions are the abstraction mechanism in Common Lisp, and
+they weren't used a lot in the standard library, because of the way
+the history was.  Again, I'm not blaming the people who wrote Lisp,
+Common Lisp and Scheme, for doing what they did.  It's just today,
+starting from scratch, that would be not a good idea, because there
+are so many efficient mechanisms for implementing abstractions that
+are fast.  That are super-optimized.  It ends up on the JVM.  That
+mechanism is interfaces and virtual function calls.  So under the
+hood, implementing this stuff, implementing these abstractions in
+terms of that mechanism, means it is super fast.  Because some people
+say, well, we can't make that thing in Common Lisp a generic function,
+because we just can't take the hit.  No hit.  These optimizers can
+make them all go away and inline virtual functions pretty much
+everywhere.
+
+
+(slide 21)
+
+So this happened a lot in Clojure, but I want to take as an example
+case of a cons cell.  Getting rid of the cons cell.  Getting it out of
+the library code.
+
+So the cons cell is just brimming with details.  It's so sad to see
+the Lisp books with pair of boxes, with arrows between the boxes.
+What a horrible way to start, right?  Because there is a great
+abstraction that's in there, that is inside conses.  We don't care
+that it has two slots.  We don't care about CAR and CDR at all.  We
+don't care about the contents, and in particular, we don't want to
+know that at all.  I don't want to promise that you'll give me back
+something that can change.  That is terrible.
+
+So if we were to lift the interaction pattern you have with these
+things, there's only two things, right?  Get me the first thing, and
+get me the rest.  Two functions.  Two functions that have nothing to
+do with pairs, with cons cells, with boxes, or arrows.  Right?  This
+is an abstraction in there, which is, there's this sequence
+potentially.  Now what if there is no sequence?  What do we have?
+Well, the Common Lispers will say you have nil.  And I do, too.  OK.
+But nil means nothing in Clojure.  It means you have nothing.  It does
+not mean some magic name that also means the empty list.  Because
+there's empty vectors, and there's empty all kinds of things.  Nil
+means you don't have something.  So either you have it, a sequence, or
+you have nothing, nil.  If you have a sequence, it's going to support
+these two functions.
+
+first is going to do what?  Return the first thing in the sequence.
+That's good.  Not surprising.  rest is going to do what?  It's going
+to return another sequence.  Again, no change, this is not an
+iterator.  This is the abstraction inside cons cells.  rest says "get
+me the rest", which is going to be either what?  A sequence or nil.
+That's it.  That is the abstraction that is inside there.
+
+Audience: No improper lists?
+
+No.
+
+Audience: ?
+
+Well at this point, I've stopped talking about lists, right?
+
+Audience: Right.  Fair enough.
+
+I have nothing to do with this.  In fact, the next thing I'm going to
+say is there is no reason you can't build an exemplar of this
+abstraction on top of vectors, right?  I can make something that
+implements first and rest on vectors.  I can implement something that
+implements first and rest on maps.  I can implement something that
+provides first and rest on anything, and that is what happens.  All
+the data structures in Clojure support a function called seq, which
+gets you something that implements this interface on that data
+structure.  Now you've got this separation of concerns.  Sequencing
+across a data structure, and the data structure, are separate.  So
+we've lifted that away.  That is a big deal.
+
+Audience: What does seq do if you give it a vector?
+
+It returns something that implements this interface on top of the
+vector.
+
+Audience: A cursor, right?
+
+You could consider it a cursor, if you want, as long as you don't
+associate that with anything like iterators in these broken languages.
+It is not a stateful thing.  It is literally this.  What is the
+difference between rest and move-next?
+
+Audience: That just gives you ?
+
+rest gives you _another thing_.  Right?  move-next is a cursor.  It is
+destructive on the iterator.  Iterators are _bad_, right?  Sequences
+and this abstraction is good.  Because it means, for instance, with an
+iterator you can't look at three things, and then hand the head again
+to somebody else.  That head, well that's toast.  You moved it.  You
+can't even get at it any more.  That is not true with these.
+
+So when you say to a vector, give me a seq on you, you get a new
+thing.  It is not the vector.  Of course, some things can implement
+first and rest themselves.  What can?  Actual lists!  What a beautiful
+thing.  So when you implement this thing on cons cells, they are
+non-allocating.  Exactly beautiful.  The same exact stuff you used to
+have.  It is just that we have separated this from that.  But that is
+still the most efficient implementation of this.
+
+Audience: Does seq on a list return the list?
+
+Yes it does.
+
+
+(slide 22)
+
+So this is a famous quote, and it is a good idea.  We have to go
+further now.  We should be implementing our functions or algorithms on
+top of abstractions, not data structures.  Pull out the abstraction.
+Seq is implemented for everything in Clojure.  In addition, I
+implemented seq on almost everything in Java.  Java collections.  Any
+Java Iterable.  Java Strings.  Java regex matches.  Lines from a file.
+etc. etc. etc.  There is a seq implementation for all of those, which
+means that all of the algorithms in Clojure work on everything.
+
+Audience: Do you ever have trouble with the object overhead?
+
+No!
+
+No.  Certainly.  Let's just take an example.  Vector.
+
+Audience: ?
+
+No, it isn't.
+
+Audience: ?
+
+No.  I disagree.  I disagree strongly.
+
+Audience: ?
+
+No, no, no.  No.  We have to stop doing this.
+
+(laughter)
+
+We have to stop doing this.  I'll tell you.  I have an anecdote, which
+I'll use a couple of times, because it was extremely cool.  I was just
+at the JVM languages summit, where there was a guy there who works for
+Azul systems.  This is a company that makes these mega-boxes that run
+Java.  They're dedicated to running Java.  They have hundreds of
+cores.  I gave him this little Clojure program I wrote in an
+afternoon.  It's less than a hundred lines.  It implements an ant
+colony optimization of the Traveling Salesman Problem.  I only had a 4
+core machine.  I did what I had to, and I used some of the stuff I'm
+going to show you later, the STM and the agent system.  But he said,
+"Oh, I want to try it on my thing."  So he tried it on his thing.  And
+boom!  He pulled up my program and it ran on 600 cores.  Boom!  Just
+like that.  He had these cool tools for watching the cores with LED
+graphs popping up and down.  It was so exciting.  And that program was
+churning.  You know how much it was churning?  It was churning 20 Gigs
+of garbage a second.
+
+(laughter)
+
+20 gigs of garbage a second.  Do you know how much of the overall CPU
+energy that used?  7%.  Guess what?  Ephemeral garbage on the JVM is
+cheap, and that is a design principle underlying Clojure.  Because you
+can't implement seq on a vector without allocating memory.  Right?
+What is a seq on a vector going to be?  It's going to be a thing that
+has an index in it, right?  And when you ask for the next, for the
+rest, what is it going to do?  Make a new one of those with an index
+that is 1 greater than that.  That's going to be an allocation.  So
+there are many data structures you can't sequence over without an
+allocation per step.  That's a beautiful thing.  You have to see the
+way these JVMs optimize that stuff away.  You cannot be concerned
+about ephemeral consing any more.  It's a real design misfeature to
+prioritize that.
+
+The other key thing which we'll see in Clojure is first and rest.
+They are so lightweight concepts that we don't actually have to have a
+sequence, do we?  How much of a sequence do we need to implement first
+and rest?
+
+Audience: First ?
+
+One thing, and some way to get at the other things.  Almost nothing.
+Right?  We don't have to have a realized sequence, or a realized data
+structure at all, do we?  So it means that we can implement first and
+rest lazily.  That ends up being an extremely powerful part of
+Clojure, leveraging that.
+
+Audience: So you implement seq over Java collections.
+
+Yes.
+
+Audience: ?  You lose some of the immutability here, it seems, when
+you start doing ? over collections.
+
+No.  You do not lose the immutability guarantees of this sequence.
+The sequence as it walks across the collection caches everything it
+finds.  So if you've made a pass, you will never get different
+answers.  If you've made that sequence on top of some crappy mutable
+Java thing, and you've mutated that thing from multiple threads,
+you're going to get the normal Java error from that, which is
+concurrent modification exception.
+
+But no, these seqs, they are immutable.  They're golden.  You walk
+through.  You get the same stuff.  You can share it.  You can share it
+between threads.  You can point at different parts of it.  No.
+Really.
+
+
+(slide 23)
+
+OK, so I've just shown you one, right?  The sequence.  We sort of
+broke that down.  But there is a similar abstraction behind all the
+associative things, the associative maps, and the indexed vectors, and
+the sets.  When I showed you those pictures of those literals, well
+there's a bunch of implementations of these abstractions.  One of the
+neat things about having a data structure that returns a changed
+version of itself, is you can have one type for when it's a tiny hash,
+and then as you add stuff to it, one of those adds could return a
+whole different type that is optimized for being slightly larger.  And
+when it gets bigger than that, one of those adds can give you yet
+another different type for being huge.  All that stuff happens under
+the hood in Clojure.  So the key thing is that we are working with
+abstractions and not any promises of the concrete type.
+
+Audience: ?
+
+Yes.
+
+Audience: ?
+
+Yes, numbers are always boxed all the time, but I'm going to
+... except when they're not.
+
+(laughs)
+
+Which I have the slides for, so I'll talk about that.  All the data
+structures have corresponding abstractions.  Callability itself is an
+abstraction.  There's no reason to say only lambdas can be called, and
+the Lisp-2 thing of the thing in the first position is going to be
+hard wired to this type of thing.  Callability is an abstraction, and
+it is implemented by several of the data structures.  Maps are
+functions of their keys.  Well guess what, it is because a map really
+is a function of a key, isn't it?  That's what it means to be
+associative.  It's a function.  So maps are functions.  Vectors are
+functions, and sets are functions of their keys, because that is
+really what it should be.  There are many implementations, as I said,
+and the cool thing is, this is an infrastructure.  I've given you the
+interfaces for these things.  You can extend this yourself.  You don't
+have to call me up and say, "Oh, I wish you had this kind of cool data
+structure.  Could you please add it?"  You can do that.  You can do
+that from Java, or from Clojure.  Anybody can do it.
+
+And all the algorithms you have, and all the algorithms that I've
+already written, and all of the algorithms all of the other people
+have already written, are going to work with your new data structure
+without change.  That's the power of abstraction.  You get a large
+library, and by building F functions and I implementations you get F
+times I power.
+
+Audience: ?
+
+Yes.
+
+Audience: How does that affect inlining?
+
+How does that affect inlining?
+
+Audience: ? do we really have to worry about this stuff?  Is it all ?
+
+Right.  If you were concerned about it affecting inlining, it would be
+because you were working with the biggest ones, and so that
+optimization is going to kick in after a number of times.  For
+instance, the JIT in Java will typically watch your function and say,
+"You know, you are calling this a lot.  I'm going to go set off a
+thread on the side and try to figure out how to do that fast."  By the
+time you're doing that, you're already on the big ones, typically.
+
+You're either already on the big ones, you're already on the big size,
+or you will always be on the small size.  In other words, you're not
+doing something that's really growing it.  But yes, that kind of
+polymorphism does impact inlining, and that's an ongoing challenge for
+the JIT guys.  All I can say is, they're doing it better than anyone
+ever has so far.  These compilers are amazing.
+
+
+(slide 24)
+
+All right.  So let's talk a little bit about laziness, because it's
+another key component of the way Clojure works.  The basis of it is
+very simple.  first and rest are not produced until requested.  How
+much of a list do we need to have?  It ends up: none at all.  We just
+need a recipe for finding the first thing, and a recipe for finding
+the rest of the things.  That is really all we need to say we have a
+sequence.  So there's an easy way to define your own lazy sequence
+producing functions.  It's called lazy-cons.  It takes two
+expressions.  It is a macro.  It takes two expressions.  One will
+produce the first value when requested.  The other will produce the
+rest, OK?
+
+Everybody is now going to raise their hands and say, "Oh, we've had
+lazy streams.  We know about lazy streams.  We have it.  Whatever."
+But all the lazy streams libraries, do they interoperate with the cons
+cells?  No!  There's lazy this, and lazy that, and lazy that, and lazy
+whatever, and lazy whatever, and you can't cons.  That is not the
+same.
+
+If you have first and rest, you are a seq.  You can cons concrete
+things onto lazy things, and then more concrete things, and then you
+can concatenate them all.  They are all the same from an interface
+perspective.  That is not the same as a lazy streams library.
+Although you can understand lazy conses by understanding the way lazy
+streams work, and libraries like the ones for Scheme.  You can use
+them like iterators or generators of other languages, but they are
+much better because they are not mutable.  And they interoperate, I
+already said.
+
+So this is what take looks like.  take is kind of more Haskell-ish
+lingo: take n things from some collection.  If it is still a positive
+number and there's stuff in the collection... OK, this is classic Lisp
+punning, there is a cons or there isn't.
+
+Yes.
+
+Audience: You're going to tell me later how to write a take that
+actually returns a value of an arbitrary type?  Because here you're
+writing a take, and it returns a sequence.
+
+take returns a sequence.
+
+Audience: It returns a seq.
+
+It returns anything that implements seq.  seq is an abstraction, so it
+can return any arbitrary type that implements seq, not one particular
+type.  seq is an interface, so that doesn't dictate the concrete type.
+That only says that whatever the concrete type is, it has to support
+this interface.
+
+Audience: Yeah, but what I get back is going to be a seq.
+
+An implementation of ISeq, yes.
+
+So that's pretty cool.  So we just lazy-cons, calling first on that,
+and then take on the rest.  OK?  Yes.
+
+Audience: So if I wanted to take the first 100 things out of a vector
+and have that put that some place I could have random access, I would
+want to do some ?
+
+Well, no, you could take that, and then dump it into a vector if you
+wanted to.  Or you can use sub-vector, which is a constant time way to
+get a window on another vector.  If you really wanted another vector
+with constant time look up.
+
+Audience: So there is still a difference in that sense.
+
+Yes, the sequence library is still a library of sequences.  It has the
+properties of sequences, which is linear access.  But there's so many
+things you do with that.  There's mapping, filtering, and all those
+great Lisp functions, now apply to everything.  That's the point.  It
+doesn't make sequences now the best data structure for all usages.
+Sometimes you're going to take that thing, and because you know you're
+going to need to hammer on it from a look up perspective, dump it into
+something where that look up is going to be fast, because it is not
+going to be fast on a seq.  But that is very easy to do.
+
+Any other question on this?
+
+
+(slide 25)
+
+So as I said before, Clojure is primarily a functional language.
+There was a great talk by Eric Meyer where he said we were all wrong
+about functional languages, and the only possible functional language
+is Haskell.  Because it has to be lazy, and it has to have this type
+system, and the type system has to let you declare effects,
+etc. etc. etc.  The rest of us sort of banded together and said, well,
+we still want to call our things functional, but we'll put this
+qualifier on it all of the time.
+
+So it is impure.  It certainly is.  I don't believe in disallowing
+dangerous things, because sometimes dangerous things are useful.  The
+idea behind Clojure is it gives you tools to do the right thing, and
+if you can do that most of the time, your program will be a better
+program.  If you have to do something ugly somewhere, I'm not going to
+stop you, because I know you have to do that, either for performance
+or whatever.
+
+So what does that mean for Clojure?  For Clojure it means the core
+data structures are immutable, the core library functions do not
+produce side effects.  let-bound locals are immutable, so no evil
+twiddling inside your function, because if you could, you'd have all
+kinds of other issues, because you could close over those twiddlable
+locals, etc. etc.  Also, it creates this awful style where in the
+whole world you're doing this nice thing with functions, and applying
+functions, and inside your functions you have this mess where you have
+loops that trash local variables and you just end up making spaghetti
+-- small bowls of spaghetti.
+
+(laughter)
+
+So we don't do that.  Because of the lack of tail calls, and the
+desire to have a sort of functional way of programming, I needed a
+special construct for looping, which I'll show you.
+
+
+(slide 26)
+
+So, this is what it sort of looks like to use.
+
+Drop 2 things from the vector, you get a sequence of that.
+
+Infinite sequences.  Why not?  cycle returns an infinite sequence
+looping through whatever was passed, over and over and over again.  As
+long as you don't try to print it at the REPL, because I haven't
+implemented *print-length*, you'll be fine.
+
+    Note that *print-length* has been added since this talk:
+    http://clojure.org/api#toc22
+
+That is really a beautiful thing.  It will change the way you write
+software, to have essentially all of these functions are lazy.  They
+all return a lazy sequence.  All of the algorithms in Clojure, that
+can.  I mean, some things can't be lazy.  But anything that can be
+lazy is.  So if you pass some huge mungo thing, partition 3 is going
+to return just the window on getting the first one.  It ends up that
+makes it really easy in Clojure to manipulate and work on data sets
+that don't fit in memory.
+
+Also, you've been paying a huge price by building your algorithms in
+terms of functions that return fully realized lists, and then of
+course n-reversing them or reversing them.  It's awful.  From a memory
+contention standpoint, it's a big deal.  Remember I talked about that
+ephemeral memory being cheap?  You know what else is really good?
+Ephemeral memory always lives in the generation that can get tossed
+for almost nothing.  Right?  Garbage acquisition, or memory
+acquisition in that generation is pointer bumping, and the collects
+are extremely fast.  But when you start allocating real lists, or real
+data structures, to accommodate interim values, interim results,
+pieces of your algorithm are creating these huge things.  Guess what?
+They're going to move into the next generation, and the garbage
+collection cost will be much higher than if you'd used a lazy
+approach.
+
+So this is really great.  interleave is lazy, partition, these are all
+lazy.  And there are just tons of functions in Clojure.
+
+Audience: Is the first line a typo, because you drop a vector and get
+a list back?
+
+No, you always get a sequence back from these.  These are the sequence
+functions.  They take anything, but they'll return a sequence, because
+they're returning a lazy sequence.  If I had to return a vector, I
+would have to realize it, and all the problems I just talked about
+would happen.  If you want a vector, it is really easy to say ... you
+can just say into an empty vector, drop whatever, and now you'll have
+it poured in.  In fact, into works with anything.  You could say into
+a set, empty set, or a set that has some stuff in it already.  So it's
+really beautiful.  You can say into something, take blah, and that
+will get dumped into the thing, whatever its concrete type is.
+
+So this is really neat, and it works on strings, and it works on
+whatever.  range is also a lazy producer of infinite lists, infinite
+sequences.
+
+Audience: ?
+
+Excuse me?
+
+Audience: into is just a representation ...
+
+into takes any type of collection, which is going to support conj, and
+then some sequence, and then its going to take things from the
+sequence and conj them into the collection, so it will do the right
+thing for the type.
+
+Audience: And then it returns the collection?
+
+It returns the collection.  That's right.  So for instance, you could
+write a completely generic map, right?  Because people say, "Oh, I
+wish I had map vector".  Well if you said into an empty vector, map
+this thing, you would get that.  So then what's different between
+different calls to that.  Just the thing, right?  Just the, I'm
+dumping into a vector, and I started with a vector, or I'm dumping
+into a set, and I had a set, or I'm dumping into a map, and I had a
+map.  Well, there's a function called empty, so if you had some
+collection called C, you could say into empty C, map this function on
+C.  And whatever C is, you'll get a copy of it, and that code is 100%
+generic.  You don't care.  It will work on anything.  That's cool.
+
+
+(slide 27)
+
+OK.  So this is some of what maps and sets look like.  This is def.
+It just creates a global thing called m, and we give it a map.  Maps
+are functions of their keys, so we can look something up by just
+calling the map itself.  Also, keywords are functions.  Keywords are
+functions of associative things.  They look themselves up in the
+thing, because keywords are so often used as names, as keys.  So it
+ends up supporting a really nice looking style.  And if you ever
+wished you had a better way to do attributes, this makes that nice
+looking.
+
+You can get to keys, you can get to values, you can do all kinds of
+stuff.  The basic operation for adding to an associative thing is
+assoc, which is short for associate.  Again, you can't own this word.
+So it takes some associative thing, and then an arbitrary number of
+keys, values, keys, values.  And it gives you a new map with those
+entries made to it.  If we look at m again, it will be the same thing
+that it was there.  In fact, this function, this call here, presumes m
+is the same way as it was, because it didn't change here.
+
+So merge-with is a very cool thing.  It will take one or more maps,
+and it will say, "Pour all the stuff from these successive maps into
+the baseline map.  OK, well what if there's already a key there?
+Well, use this function to arbitrate the value combination.  So if
+there's already a key, take the value you have at this key, and add
+it.  You can merge with conj and build data structures this way.  It's
+fun.
+
+There's a whole library for set logic that works on real sets.  Union,
+intersection, and all that stuff, and go a higher level still.  What's
+a relation?  A relation is a set of maps.  And guess what?  If you
+build relations, there's a whole library of stuff for that, like
+relational algebra stuff, like joins.
+
+Audience: When you get that union there, what determined the order of
+the new union?
+
+Because these are hash sets, the order is random.  Because it's
+hashed.  If they were sorted, you'd get a sorted thing.  All of the
+literals are the hashed versions.  The literal map is a hash map.  The
+literal set is a hash set.  But you can get the sorted version with
+function calls.
+
+Audience: In that line, couldn't you have done the association with
+conj, right?
+
+I could have written it with conj, but then you'd have to treat each
+guy as a pair.  The values in a collection that is associative are
+pairs, logically.  So like if you seq on m, you're going to get a set
+of key value little vectors.
+
+Audience: You said that a hash map is arbitrary in the order ...
+
+In the print, right.
+
+Audience: If I union two things twice, do I get the same thing?
+
+You get whatever you started with.  Are you going to get ... you're
+going to get whatever the left one is.
+
+Audience: So if I union these guys, if I union again
+
+Yeah.
+
+Audience: Suppose I union this guy and then union them again, am I
+guaranteed that the results will be the same?
+
+You are guaranteed the results are going to be _equal_.  I'm going to
+talk about equal.
+
+Audience: When you say that the reader versions are hashed, you don't
+mean that they're implemented literally with hashing, and that they're
+unordered?
+
+I mean that the concrete thing you get is the hash map or the hash
+set.  I have to pick one.  I'm reading, and I see a literal map,
+right?  I have to produce a real data structure.  The real data
+structure I'm going to produce is going to be in the hashed family,
+not the sorted family.
+
+Audience: Right.  The point is that it has unsorted semantics.
+
+I'm not going to promise what they are, but usually hashed things
+don't have any sorting, right?  Because maybe I'll come up with a new
+hashed/sorted hybrid.  I don't know.
+
+Audience: But you're not promising that it will actually really be a
+hash table underneath (that's small enough to just...?)
+
+Sometimes the fastest way to implement a hash is to do a skip list
+thing, right?  That's proven, when it gets small enough.  But it's
+still in the hash family in that, when that thing grows, it will
+become hashed.  There's ... oh, I should make a slide of that.
+There's this huge beautiful hierarchy of abstractions under Clojure.
+Somebody made a picture of it once.  It's scary.  So, for instance,
+there's an abstraction called Sorted, and one called Associative,
+which aren't even in the concrete tree of things, and Indexed, and
+Reversible, and stuff like that.  The abstraction set is good.
+
+
+(slide 28)
+
+So, just to get a feeling... Again, I can't... I don't expect you to
+totally be able to grok Clojure code, but just to get a feel for the
+weight of it, this is some Python.  Peter Norvig wrote this Python
+code.  It's a simple spell corrector.  He uses a little simple
+Bayesian thingy.  But Python is sort of the champ in terms of
+syntactic concision?  Because it has no grouping.  It uses white
+space.  and length
+
+
+(slide 29)
+
+and this is the Clojure version of the same thing.  Roughly the same.
+And we all know how to ignore this.  (laughter)
+
+As do our editors.  In fact, we know the superiority about being able
+to move these pieces around, vs. something that is whitespace based.
+
+So it's kind of neat.  You know, def and blah, and you see again where
+we are using lists for, what we would have used lists for, data, we're
+going to use vectors instead, and the syntax.  There's list
+comprehensions, or sequence comprehensions.  A bunch of other cool
+stuff.  But it lets you write code that is the same size and weight as
+Python.
+
+
+(slide 30)
+
+So, saying that everything is immutable, the first thing is "Oh, my
+god!  That is going to be slow!  You're going to be copying those
+things left and right."  But of course that need not be the case.  We
+know, for instance, that when you add something to a list, we don't
+copy the whole list.  We don't need to, because it has structural
+sharing.  And similarly, there are structurally shared versions of
+these data structures.
+
+So by persistent data structure here, we're not talking about the
+database persistence, right?  We're talking about the concept of
+having something that's immutable be subject to change, having the old
+version and the new version both be available after the change, with
+the same performance characteristics as before.  So this isn't a trick
+one.  There are some persistent algorithms that produce changed
+versions whose performance degrades over time.  As you add more new
+things, all the older versions start slipping out from the performance
+profile.  To me, that's not really persistence at all.  And it's not
+usable.  In particular, the way those things are implemented is
+usually with some real sharing, which means that they're a disaster
+from a concurrency standpoint.  Really, to do this correctly, you have
+to have immutable data structures, which Clojure does.
+
+The new versions are not full copies.  So there's structural sharing.
+This really is the Lisp way.  This is the kind of map, you know, or
+hash table, or vector, you should have in Lisp, because you want to do
+the same kinds of programming with these other data structures that
+you do with lists.  And so often, you have this beautiful thing you
+did with lists, then you try to scale it up, and ugh, lists are really
+not the right thing.  Then what do you do?  Completely change your
+program!  Right?  Because using the other data structures is nothing
+like using lists.  They don't have the same properties, they mutate,
+etc. etc.  That's not true in Clojure.  So you can use real maps for
+things like environments, which is just so beautiful, and very very
+fast.
+
+Oh, I don't have the slides for that.  So I will say that Clojure's
+data structures are the fastest persistent data structures I know
+about.  They're different.  They're based around Bagwell's hash map
+trees.  They have a depth of log 32 N, so they're very shallow.  And
+they're fast.  They're fast enough to use this for commercial
+development.  Compared to the Java data structures, they are ... for
+insertion times, like 4 times worse.  For look up times, they can be
+as fast or better, to twice as slow.  So that's way in the ballpark
+considering the benefits.  And when you start comparing them to having
+to lock those other things in concurrent scenarios, there's no
+contest.  So this is a small cost we're going to pay, and we're just
+going to be able to sleep from then on.
+
+    http://en.wikipedia.org/wiki/VList
+    http://lampwww.epfl.ch/papers/idealhashtrees.pdf
+
+
+(slide 31)
+
+All right.  So as I said before, we have two things impacting Clojure
+from a looping perspective.  One is, I don't want any mutable locals.
+The other is, the JVM won't let me do tail calls.  You've seen
+languages... SISC Scheme does tail calls in the JVM, right.  It does
+it with this whole other infrastructure.  They're calling scheme is
+nothing like Java's, right?  You have to pass additional things, or
+trampoline, or whatever.  Clojure does none of that.  Clojure has
+pedal to the metal calling conventions that match Java's, so I don't
+have tail recursion, because you can't do that unless the JVM does
+that.
+
+So we have a special construct called recur.  It does constant space
+recursive looping.  It's going to rebind and jump to the nearest loop,
+which is another special op, or function frame.  So you say I want to
+zipmap this thing, I say loop.  It is exactly like let.  loop is like
+let.  You let all these things, and then if we need to keep going, we
+recur.  recur is going to go and hit this loop, rebinding map, k, and
+v, to this, that, and that.
+
+Audience: So does the program compiler analyze and make sure it's a
+tail call?
+
+recur can only occur in the tail position, and I will flag you on
+that, right.  And it's a goto.  It's fast, under the hood.  But the
+semantics are the semantics of rebinding.
+
+Audience: What's going to happen to all this if the JVM actually gets
+tail calls?
+
+Well, this recur happens to target this, but you can have recur's that
+target the function arguments themselves, if there was no enclosing
+loop, so those recurs could be like a call to the same named function.
+But the biggest reason for true tail call is that you want to build
+some sort of network of recursive calls, not self calls.  And
+basically what will happen is, you can start doing that.  Right now if
+you do it, you're subject to stack overflow, and when they change
+this, you won't be.  It ends up that in Clojure, the cost of the lazy
+sequences and this loop/recur, people complain a lot before they start
+using Clojure, and they complain hardly at all, after they know how to
+do it the Clojure way.
+
+That's not to say I don't want tail calls.  I absolutely do, and I'm
+looking forward to the JVM guys doing it.  But that's what I have.  So
+that's a little zipmap, and you can create a set of keys and values,
+and they will get zipped together and you get a map out.  These two
+things will do the same thing.  You have apply, you can do that.  You
+can interleave, or you can dump into that into that I was talking
+about before.
+
+Audience: I assume that if you wrote the code using a self invocation,
+you wouldn't intentionally take it and turn it into something like
+this?
+
+I don't, and I don't on purpose, because I get a lot of people coming
+to Clojure from Scheme, and I really feel like I don't want to tease
+you, and I don't want you to be confused about when you will get a
+real tail call, because I think that is an unworkable position to be
+in.  Can I do this?  Will I get a tail call?  So I just say no, you
+will not.  The only time you will is if you do this.  When we have
+tail calls, you can do the other.  And that's really sort of clean,
+because otherwise people would be very frustrated, and understandably.
+So I do not optimize self calls, even though I easily could.
+
+
+(slide 32)
+
+OK, equality.  The equals sign is equality in Clojure.  There is also
+identical?, which is reference equality.  We really don't do that.
+It's there.  I know sometimes you need to do it, but it's not
+something you're going to do often in Clojure.
+
+Audience: ?
+
+Equal!  Equal!  Have you read Henry Baker's great paper on equality
+and object identity?  Anybody?
+
+    http://home.pipeline.com/~hbaker1/ObjectIdentity.html
+
+    http://portal.acm.org/citation.cfm?id=165593.165596&coll=Portal&dl=ACM&CFID=14076373&CFTOKEN=85491572
+
+    Baker, H. G. 1993. Equal rights for functional objects or, the
+    more things change, the more they are the same. SIGPLAN OOPS
+    Mess. 4, 4 (Oct. 1993), 2-27. DOI=
+    http://doi.acm.org/10.1145/165593.165596
+
+Audience: A while ago.
+
+It's a great paper.  It's still great, and it's still correct.  In it
+he says the only things you can really compare for equality are
+immutable things, because if you compare two things for equality that
+are mutable, and ever say true, and they're ever not the same thing,
+you are wrong.  Or you will become wrong at some point in the future.
+So he had this new operator he called egal.  He went through all this
+equal, and eq, and eql, and agh!  I need a new name.  So he came up
+with egal and defined these semantics for egal.  Those are the
+semantics of Clojure.  If you're comparing two reference types, they
+have to be the same thing in order for them to be equal.  Again, here
+I mean Clojure's stuff.  There is still Java stuff.  Java stuff has
+plenty of broken equals, and I can't fix them.  So if you call equal
+on some Java things, it's going to map to equals, and it will be
+broken sometimes, because they're broken.
+
+Audience: That maps to Java dot equals object?
+
+Yes, object dot equals.  I can't fix that.  Use Clojure's data
+structures.  They're much better.
+
+Audience: For cyclic structures, do you do the thing about considering
+two things that are observationally equivalence, even if they have
+distinct ... You know what I'm referring to here?
+
+Well, good luck trying to make a cyclic data structure out of all
+these immutable parts.
+
+Audience: So, you can't express ...
+
+Audience: tbd
+
+Which is not really a data structure.  It's a logical sequence.  I
+don't have any special tests for equality determination there, because
+I don't think ...
+
+Audience: I'm just recently out of Scheme, so I was curious if you
+followed tbd
+
+No, I haven't yet.  Don't do that.
+
+Audience: But if you call equals on a lazy, on a lazy generator that
+generates an infinite sequence, then what happens?
+
+It's the same as trying to print it at the REPL.  You're going to
+consume it all.  That's right.  I mean, it may terminate early.
+
+(laughter)
+
+No, not abnormally, but it may terminate early because it will find
+the things are not equal.
+
+Audience: Yeah.
+
+If one is finite, it's finite.
+
+Audience: Yeah.
+
+Audience: What if you do into, a cycle?
+
+Same thing.  I mean, a cycle is infinite.  What do you expect?  Take
+from cycle and build what you want.
+
+You don't get... There are no other infinite data structures.  There
+are infinite sequences.  There are not infinite vectors or infinite
+maps.
+
+OK, so that's how it works.  I haven't even talked about references,
+but Clojure does have some reference types.  They are the things that
+have the concurrency semantics.
+
+
+(slide 33)
+
+All right, the big religious debate.  nil, false, end of stream, or
+end of sequence, or end of list, and the empty list.  OK.  Let's just
+do it.
+
+Clojure has nil.  nil means nothing.  You don't have anything.  It's
+not the name of some magic thing.  It means nothing.  Common Lisp has
+nil and the empty list, and those notions are unified.  It might have
+made sense, because you really only had one primary aggregate data
+structure.  I don't, right?  Why should nil be the empty list?  Why
+shouldn't it be the empty vector, or the empty whatever?  There's no
+good reason.  Scheme punts on this, they don't like that nil punning
+or end of sequence stuff, and Java has null, and it means nothing in
+Java.  It could be any type.
+
+Clojure has real true and false.  Common Lisp has nil or not, right?
+Scheme has true and false, but they're broken, right?  And Java has
+true and false.
+
+Clojure's conditional logic is like Common Lisp's.  I like that.  I
+like nil punning.  I like saying nothing is conditional false.  But I
+have two cases, because I have to deal with false.  I have to deal
+with false.  false is in Java land.  It's going to come.  I'm going to
+encounter it.  I tried very hard.  There's no way to automatically or
+automagically do a nil/false translation in both directions.  It's not
+possible.  If you think it is, write it up and send it to me.  But I
+think it's not.  So I have these two things, or everything else, which
+is like Common Lisp's.  It's also like Scheme's.  Of course, this
+seems to be inherently wrong.  If you're going to do this, then do it,
+right?
+
+Audience: What's your objection to false?
+
+I don't have an objection to false.  I have an objection to, if you're
+going to say true and false, and this is logical false, but no, it's
+not logical false.
+
+Audience: I know, I meant earlier you said you were forced to use
+false because Java used false.
+
+Well, it would be nice if I didn't have to do both of these.  It would
+be nice if I could do nil and everything else.  I would be happy with
+true and nil.  I'm fine with Common Lisp's use of T and nil.  I would
+have been done.  I tried to make that work.
+
+OK, is there a special singleton, the empty list.  And the singleton
+is the key thing.  There are empty list values in Clojure.  In fact,
+they are not nothing.  Because an empty list is not nothing.  It's an
+empty list.  And it needs to be distinguishable from an empty vector,
+because you want to say into, into it.  If you only had nil, you have
+no power to have more than one special empty thing, so no.  Clojure,
+no.  We know Common Lisp and Scheme have the empty list.  Here again
+... yes?
+
+Audience: Plus then you can have metadata on an empty thing.
+
+You can have metadata on an empty thing.  You can tell the difference
+between an empty thing and nothing, because they're not the same.  An
+empty bucket is not "no bucket".
+
+Audience: I'm not getting the distinction.  Common Lisp has a specific
+empty list.  Clojure doesn't have an empty list?
+
+It doesn't have a singleton empty list.  You can have ten different
+ones whose identity differs.
+
+Audience: Oh, OK.
+
+And it's not represented by nil.  That's also sort of the key piece
+here.  I'm not actually trying to establish the rightness or wrongness
+of anything except this.
+
+(laughter)
+
+I'm just showing you how they're different, and the decisions I made,
+which generally, as you'll see through this, correspond to Common
+Lisp's choices.
+
+Audience: If all of those empty lists are immutable ...
+
+Yes.
+
+Audience: ... then why would you not want to put them all into the
+same representation?
+
+I do.
+
+(laughter - probably while he points at the '() representation)
+
+Why would I do otherwise?
+
+Audience: I thought you just said that each of those empty lists had a
+different unique identity?
+
+It could.  It could, but I don't want you to start doing identity
+stuff with that.  Use equals, OK?  equals is good.
+
+End of sequence.  OK, what happens when we are using a sequence -- it
+used to be a list -- we're walking through and there's no more.  Well,
+I say nil as Common Lisp did, because Common Lisp meant this when it
+said no more (probably referring to nil/'() equivalence in Common
+Lisp).  I mean there's no more.  There's nothing.  So that's the same.
+And of course, combined with this (probably the nil or false
+conditional in Clojure), it means you can do nice elegant little loop
+things, because that idiom of Common Lisp is good.
+
+I have host issues.  I have to deal with the host, so nil maps to
+null, true and false map to big T big F True and False in the Java
+land.  And the library does not use concrete types.
+
+Are we OK?  All right.  That was easy.
+
+
+(slide 34)
+
+So this is just some Clojure-y -- how does Clojure do some things that
+other languages do -- other Lisps do.  Clojure can have
+arity-overloaded functions.  OK, Clojure doesn't have optional
+arguments.  Instead it has real arity overloading.  That means that a
+single function object can hold inside it multiple function bodies
+overloaded by arity.  That is really fast in Java, and it's quite
+nice.  It means you can report all kinds of things, and you don't
+really have any conditionals to do this work inside.  So it's kind of
+a neat thing.  So this is an example, drop-last, there are two
+overloads.  You can pass it a thing, or you can pass n and a thing.
+
+It does support variable arity with ampersand, and the argument after
+that is bound to the rest of the things.  That maps to a sequence,
+which means you can theoretically pass an infinite set of things as
+arguments to a function, as long as you don't try to print them or do
+any of those things you shouldn't do.
+
+Audience: So if you wanted to have the Common Lisp optional arguments,
+you could just have something extract ...
+
+Really, you can build optional arguments or keyword parameters on
+this, so they are not primitive, in my opinion, and they don't belong
+in lambda or fn.  Make macros.
+
+
+(slide 35)
+
+I'm going to talk later about references, in the context of the
+concurrency primitives, and these are the mutable things in the
+language, but they're actually here because of the mapping to Vars
+from Common Lisp.
+
+So you can have Vars.  Unlike Common Lisp, where there is this sort of
+symbiosis between a symbol, and the value cell, and the Var, that's
+separated in Clojure.  There are Vars.  Vars are in namespaces.  Those
+are the things that really have the data associated with them.
+Symbols are lighter weight names.  Vars are named by symbols.  And
+they have dynamic scope.  They obey a stack discipline that is exactly
+like Common Lisp Vars, except that you can define a Var at the root
+with def, it could be unbound.  set! is restricted to apply only to
+Vars that have been bound thread-locally.  OK, so you can't set!, you
+can't whack the roots with set!.  Otherwise, they have the semantics
+of special Vars.
+
+Audience: I don't understand.  What do you mean by shared root
+binding?
+
+When you have a dynamic Var, a defvar in Common Lisp, there's a root
+value.  You can set it in Common Lisp.  You can setf it.  You can't in
+Clojure.  You could bind it locally, right?  And the special operator
+for that is called binding.  It's not let.  So there's a special way
+to bind these things.  When it's bound, then you can set it, and not
+otherwise.
+
+It can be unbound.  There's really nothing special to them.  Otherwise
+they are extremely similar to Vars, you know defvars, except they have
+real thread-local semantics.  It is guaranteed a binding in a thread
+will be distinct and invisible to any other thread.  And you can use
+that in concurrency programming.  That's a hard promise.
+
+Audience: When you bind a new (upper function?) that you set! and you
+fork off into a new thread ...
+
+You get a whole new set.  No binding propagation to threads.
+
+
+Well, there have been long arguments about this.  I decided no.
+
+Audience: Do you effectively copy that?
+
+No, you get a new binding set.  If you want to propagate bindings to a
+fn, and you're launching another thread, do it, because I'm not going
+to do it for you.
+
+Audience: It takes the global ...
+
+It's a new thread.  It's got root bindings.  Set up bindings that you
+want.  OK?
+
+So it's very neat.  The one neat thing, though, is because Clojure is
+a Lisp-1, and all Clojure functions are defined with def, they're all
+stored in dynamic Vars, which means you can dynamically bind functions
+in nested contexts.  That's really cool.  If you've been into ContextL
+or aspect oriented programming, you can do that with Clojure out of
+the box because of this behavior.  Because functions are stored in
+Vars, you can rebind them in context.  If you want to, in a particular
+context, add logging to a function, you can do that.  Change its
+behavior, swap out the algorithm, because you know the data set is
+going to be unusual in this call context, totally doable.  It's very
+powerful stuff.  And it sort of fell out of it.  It's easy.
+
+Audience: ??? How much do you have to actually do at runtime to make
+that happen?
+
+The thing about the JIT optimizations is, if you're calling something
+3 times, you do not care, right?  If you're calling it enough times,
+in a particular context, the JIT is gonna kick in and make a custom
+version.
+
+Audience: Is it in practice that they do that?
+
+I doubt it.  For dynamic rebindings, I doubt it.  Would I put it past
+them?  No.  What was neat about the JVM languages summit, was for some
+of these engineers, because they have a lot of the same guys that
+worked for JRockit and Azul, this is the first time they're sort of
+hearing the needs of these dynamic languages.  The kind of stuff that
+would matter to languages like this.  They all were highly informed by
+the presentations.  They were, "Ooh, we don't do that simple escape
+analysis, and if we did, all of these boxed numbers could disappear."
+And various other things could happen.
+
+Audience: ??? Do you sometimes have to locally re-bind something?
+
+Thread locals.  It's thread locals with a fast path that tests an
+atomic integer, which is spun up when things are bound, so if no one
+has rebound it, there's a fast test that doesn't involve thread
+locals, to say, pfff, can't be thread locally bound, fast.  It's more
+complicated than that, but that's the short answer.
+
+Audience: So if I have a let form and I (??? bind the first) it won't
+shadow the first function because you don't use binding ...
+
+No it will shadow.  It's still lexical.  It's still a lexical system.
+In other words, I have to get all the way down and say, this thing
+really means that Var at the root.  If you've lexically shadowed it,
+then that shadowing happens.  Otherwise, it's a dynamic system.  It's
+not really lexical then.
+
+Audience: Then why are you even doing it?
+
+Because I don't want to muck up let.  let is so confusing when let
+does dynamic binding and regular binding, in my opinion.  I want
+people to know when they're doing this.
+
+I'm going to talk about it.  There's only one let.  It's let star.
+It's sequential let.
+
+Audience: In talking about dynamic variables, if the JVM ever does get
+a true tail call (??? ...)
+
+It's not going to interact through dynamic bindings.
+
+Audience: ?
+
+It's still in tail position, right?  It's still got to test to see
+which one to call.  It's still tail.  So that still can be optimized
+through.  There's nothing about it that's inherently non-tail.  If you
+make a decision and use this, and that's the tail call, then that's
+still a tail call.  It's not like you're taking a result back, and
+then doing something with it, and now that's not a tail call any more.
+That's the only place where you run into trouble.  So I consider it
+optimizable, but it probably isn't yet.
+
+
+(slide 36)
+
+So, I say Clojure is a Lisp-1, and it has Common Lisp style defmacro.
+Typically, you would say, "Errrr!  That isn't going to work."  That's
+why Scheme has this hygienic system, because you're going to have these
+clashes.
+
+But it ends up you have a lot of these clashes because of the way the
+reader and packages work in Common Lisp, not because of any inherent
+problem.  So if you separate out Vars from symbols, then symbols can
+be really simple.  In fact, they can be read by the reader, and not
+impact the system.  In other words, there is no interning happening
+during reading.  In fact, there is interning, only of the names, so
+that symbols are still fast-comparable, but it's not interning of
+values, or mucking with your Var space.  There is no value cell or
+anything like that.  They have constant time equality.  So they're
+usable as fast keys and the things you typically use things for when
+you are doing symbolic programming.
+
+But the reader has no side effects.  It returns this.  Symbols can
+have a name space part, and even a name space qualified symbol is
+still just a name.  It doesn't say there is storage associated with
+this.  It does not say or imply there is a Var there, or anything
+else.  It is just a name with a namespace.  So namespaces really are a
+way to just qualify names.  They're not about packages or anything
+else.  You just say my namespace slash the thing, and you get a
+namespace-qualified symbol.  It's just a name.
+
+Then, the trick in Clojure is, there's a process called resolution,
+which resolves names.  So now you're in a namespace.  You've read in a
+bunch of these unadorned, or possibly namespace-qualified symbols.
+Now you need to say, "What does foo mean?"  OK?  Now we're going to go
+look up the Var namespace and say, "In this namespace, foo means this
+Var."  But we didn't mess with those namespaces just by reading some
+source code, or anything else.  It also means that macros are
+manipulating this name world, not this Var world, so they can easily
+manipulate names, and emit stuff, into a space in which they'll be
+qualified where the macro is defined, and the qualified version will
+be what the macro emits.  I'll show you that.
+
+
+(slide 37)
+
+So I call that syntax quote.  So we have regular quote.  quote foo is
+foo.
+
+  'foo -> foo
+
+It's a symbol.  So we're imagining a fresh REPL.  Nothing is defined.
+Backquote foo says, well, we're in the namespace user.  That name
+resolves to user/foo.
+
+  `foo -> user/foo
+
+There is no user/foo yet.  It's just saying this is the way the name
+is qualified, which means when you use backquote in macros, it's going
+to look up those names in your namespace and emit, again, names, that
+resolve to what their name means in your namespace.  But still just
+plain names.
+
+So we can see if these two things are equal, and they're not, OK?
+
+  (= 'foo `foo) -> false
+
+If they don't look equal, they ain't.  We're not in that namespace
+world.  If we try to use it, we can't.
+
+  foo -> Exception: Unable to resolve symbol: foo
+
+We didn't make any Vars called foo.  So let's define something called
+foo.
+
+  (def foo 5) -> #'user/foo
+
+No problem.  It gives us this.  This (the #') means something
+different in Clojure.  And now we can evaluate foo.
+
+  foo -> 5
+
+We get 5.  We can say ... we can refer to foo, qualified or
+unqualified.  We're talking about the same Var.  So it's the same
+value.
+
+  (= foo user/foo) -> true
+
+Audience: Why doesn't the first foo evaluate to 5?
+
+This (foo and user/foo) is 5 and 5.  5 and 5 are equal, still.  Even
+in Clojure.
+
+user/foo is just a fully qualified name.  We're in the user namespace,
+so this (foo) will resolve to user/foo, because we did this (I think
+that refers to the (def foo 5) above).
+
+And we did this, and we didn't get an error.  In fact, if there was
+already a foo in this namespace, this (the (def foo 5), I think) would
+have failed.  Clojure is stricter about names existing before you use
+them.vv
+
+So this works.  We can resolve foo, right?
+
+  (resolve 'foo) -> #'user/foo
+
+In this namespace, what does foo name?  This (the #'user/foo) is a
+Var.  I said sharp-quote is different.  This is the Var, the actual
+Var that is in the namespace, that has the value in it.  So we name
+them like this.  And the Var is called user/foo.  A Var _always_ has a
+namespace-qualified name.
+
+Audience: Vars aren't objects?
+
+Everything is an object, but Vars are the places where stuff gets
+stored, not symbols.
+
+Audience: What is the current namespace mean?
+
+You're in a namespace.  I'm presuming we just started the REPL, so
+we're in the user namespace.
+
+Audience: How do we know what namespace you're in?
+
+There's all kinds of functions for that: in-namespace, namespace,
+by-namespace, you can change namespaces.  It's a lot like Common Lisp
+that way.
+
+Audience: It's global state?  You can setq it?
+
+It's thread local state, because it's bound.  So it's thread local,
+and it will unwind when you do a compilation unit.  In a compilation
+unit, you can say I'm in this namespace, and the current namespace
+gets pushed, it gets bound, a new binding gets pushed and popped.  So
+it's not global.  There's no trashing from other threads.
+
+Audience: So you don't have to define a namespace before a symbol can
+be qualified in that namespace?
+
+No.  You can say anything you want.  These are plain names.  Until you
+get to resolution, it's fine, which is really the way it should be,
+right?  Who cares?  It's just this name.  In fact, you may want to use
+it because it names something in some XML file.  They're names.
+Symbols as names are more useful than symbols that are bound to be
+Vars.  The only cost, really, is that the reader can't read pointers.
+The Common Lisp reader can effectively read pointers.  That's a cool
+thing.  It has a huge cost.
+
+Audience: Can you elaborate on that?  ??? What can read pointers?
+
+If I read, right, I read a symbol.  It's interned.  It's storage.  If
+I read that in another file, I get the same storage.  Just by reading,
+I have two pointers to the same storage.  Which is cool, and there's
+some Common Lisp code that leverages that.  You can't do that in
+Clojure.  It is a cost.
+
+Audience: The videographer begs to pause for about 30 seconds so he
+can switch tapes.
+
+OK
+
+(Part 2)
+
+So in practice, this combination of things.  So look, we resolved foo,
+this was a local guy.  We got the local one.  Now list, we never
+defined in the user namespace.  In fact, all the Clojure functions are
+auto-imported into the user namespace, which means if we resolve list,
+we see it says clojure/list.  It's the system one, which is neat.
+Which means, if we write a macro that says backquote list foo x
+(referring to expression `(list foo ~x) on slide), and expand it, look
+what we get.  Data structures with symbols, but the symbols have
+qualifiers.  No matter what namespace I resolve this in, clojure/list
+resolves to clojure/list.
+
+So this system actually solves a lot of the hygiene issues from being
+a Lisp-1.  Separating symbols out.  I don't want to spend any more
+time on it, but I will say I think this goes a long way towards that
+...  oh, I also have auto-gensyms.  That is not to say you will never
+call gensym.  You will, but you'll have to be writing a more
+sophisticated macro, in which case you know what you're doing already.
+
+
+(slide 38)
+
+Clojure has pervasive destructuring.  Destructuring is pretty cool, I
+think.  Pattern matching is all the rage and I'm not exactly a fan.  I
+like the destructuring part of pattern matching, but I don't like the
+switch statement part of pattern matching.  So Clojure has
+destructuring, but it has it everywhere.  But like the other parts of
+Clojure, destructuring is based around abstractions.  It's what I
+called abstract structural binding.  So in let and loop and fn and
+binding lists really anywhere where you're doing bindings, or anything
+that's built on these things, which is basically everywhere you're
+doing bindings, you can use data structures where symbols would go,
+and you're going to get destructuring.
+
+So you would say let a1 or let a42, right?  Now, instead of saying a,
+you can put a data structure there, and there is interpretation, two
+interpretations.  If you have a vector as your binding form, it will
+destructure anything that's sequential, so that's anything that
+implements the Sequential interface.  You can destructure lists, and
+strings, and arrays, and anything that supports nth, and it will pull
+that apart.  Of course it will be a vector with names in it, and those
+names will be bound to the parts of the thing, and I'll show you this
+in a second.
+
+You can also have a map as a binding form, and that will destructure
+anything that is associative, which includes maps and vectors.
+Vectors are associative.  You could do a map style binding form and
+get the 17th thing out of a vector, and call it fred.
+
+
+(slide 39)
+
+So unfortunately, I think these examples are a little bit too verbose,
+but this first one, we might be able to understand.  So let, there's
+not a simple name here, right?  The first thing, it's a vector, so
+we're going to bind a to the first thing b to the second thing, c to
+the third thing, d to the rest, and we're going to call the whole
+thing e.  And then we're binding that to a literal vector of numbers.
+So a, b, c, d, e.  That's really cool.
+
+This nests, so this is a vector with two vectors, where we're naming
+the parts inside the vector, and then we're passing a vector two
+vectors, and we're naming the parts of it, so that all does the right
+thing.
+
+This one is particularly wordy, and too large, but the idea here is
+name, key, name, key, name, key, same :as thing, defaults, etc. etc.
+We bind it.  We pick the pieces out.  We can get defaults in.  We can
+name the whole structure.  a, b, c, I didn't have b, right?  So we got
+the default, and m is the argument.
+
+Audience: What does the :or do?
+
+:or says if you don't get the key, use this as the value.
+
+Audience: You said that destructuring works for function arguments?
+
+Yes, you can put these things in function arguments.  
+
+Audience: That means you can have optional arguments?  You can just
+:or them?
+
+A certain flavor of them.  Right?  If you're using :or, someone has to
+be passing you something that is Associative, which the argument list
+isn't by default, but if they pass you a map, they could get defaults
+that way.
+
+You can build all kinds of cool things with this.  They nest
+arbitrarily, so if you do a vector destructure, or a map destructure,
+and then for one of the arguments, you destructure that key as a
+vector, you can pull all the pieces out, and if you stare at this long
+enough, you can figure out what it says.  But the idea is that they
+nest.  The nest arbitrarily without limit, and it's very powerful.
+
+Audience: There's also the keys ...
+
+Yeah, it's not even on here, but there's other sugar that lets you
+avoid saying {a :a b :b c :c}.  If you want the same names, you can
+just say "keys a b c", and it will pull them out.  Similarly you can
+pull out strings that way or symbols that way, so there's lots of
+power, user features, inside this.  But the nice thing is, it's every
+place.
+
+    http://clojure.org/special_forms#let
+
+
+(slide 40)
+
+So polymorphism.  I said Clojure is not object oriented, but Clojure
+is not anti polymorphism.  I'm very pro polymorphism.  I have two
+fundamental ways to do polymorphism.  One is the Java way.  You have
+interfaces, all the abstractions in Clojure are defined in terms of
+interfaces.  The nice thing about doing that way is it's a bridge to
+Java.  If you want to allow extension via Java, Java can do that.
+Clojure can also do it.
+
+Multimethods are the other way.  That's kind of Clojure-specific,
+because Java doesn't have this kind of power.  But what I wanted to do
+was avoid marrying dispatch to types.  I'm sort of tired of types.
+I'm tired of having these rigid type systems that really incur a lot
+of accidental complexity for you.  Every time you make a class, you
+have all this complexity.  You don't necessarily realize any more.
+And fixing valuable feature like polymorphism to a type system, which
+usually you only get one taxonomy for your arguments.  So what
+Clojure's multimethods are is a complete generalization of dispatch.
+
+What is generic dispatch?  It's ...  there are these arguments.  I
+don't want to hard wire what happens when you call this function with
+these arguments.  I want to do something specific to the arguments,
+right?  In Java and C#, we're going to do something specific based
+around the type of the first argument.  OK.  In Common Lisp we have
+more flexibility.  You can use the types or the values of any of the
+arguments, but it's still a hard wired heuristic, right?  Unless
+you're getting into CLOS underpinnings, you're still saying it's
+either types or values, and there's an order dependency, and all this
+other stuff.  But the reality of it is, it should be an arbitrary
+function of the arguments that determines what your method is.  And
+that's what it is in Clojure.
+
+The dispatch function is an arbitrary function of the arguments.  You
+want to have a multimethod, give me a dispatch function.  I don't care
+what it is.  That dispatch function will return different values for
+different argument sets.  I don't care what they are.  You can
+associate actual methods with those values.  I don't care what they
+are either.  Have at it.  You want to build single dispatch, fine.
+You want to build CLOS style dispatch, fine.  You want to do something
+that compares the values of arguments, go for it.  You want to do
+something with the first and the third and ignore the middle guys, I
+don't really care.
+
+So how does it work?  You're going to give me a dispatch method, a
+dispatch function when you define the method.  When I'm called, I'm
+going to call it on the arguments to get a value.  Then I'm going to
+look up and see, have you associated a method with this value.  If you
+have, I'll call it.  If you haven't, and you've provided a default,
+I'll call that.  If you haven't defined a default, you'll get an
+error.
+
+
+(slide 41)
+
+So this is what it looks like in my silly bunny example.  The key
+thing to remember here is, so we're going to define a multimethod
+called encounter, and the dispatch function is: take two arguments,
+and pull out their species, and return a vector of the two species.
+The trick you have to remember here is that keywords are functions of
+Associative things.  So those are two function calls (referring to
+(:Species x) and (:Species y) expressions).  The species of the first
+thing and the species of the second thing.
+
+So we're faking types.  Although it's not the type of the first thing
+and the type of the second thing, because you only get one type.  It's
+an attribute of the first thing and an attribute of the second thing,
+which means you can have other methods, multimethods with different
+taxonomies.  You can look at metadata, which I haven't talked about.
+You could do whatever you want.
+
+So in this case, we're going to pull out the species.  So we
+encounter.  If the dispatch value is bunny lion, then we run away.  if
+it's lion and bunny, then we eat it.  Lion lion, they fight, bunny
+bunny, they mate.
+
+(laughter)
+
+Then we define a bunch of literals.  b1 has a species of bunny, and I
+don't care what else.  I don't care what type it is.  I don't care how
+many other attributes it has, or anything.  I don't care.  I shouldn't
+care, and I shouldn't dictate to you that it be this particular type
+in order to interact with my API.  That has to stop, right?  Let
+people just glom stuff on so they can talk to you, and not have to
+_be_ something so they can interact with you.
+
+Audience: something about map interface .. the species, but stored in
+a different way.   ... When you call :Species on it.
+
+Absolutely.  I don't care, right?  The way keywords act as functions
+is they look themselves up in the thing, using the map interface.
+Does it have to be a map?  No.  You could have species 1 and species
+2, and you could pass 2 vectors.  That would work.  You know, whatever
+you need to do.
+
+So then we define a bunch of data, and then the encounter things do
+what you want.  I haven't had time to update this slide, but I've
+enhanced this system substantially by making it such that the values
+that are produced by the dispatch methods are compared via an isa?
+relationship, which will work for equality, and two things that are
+equal will be isa?.  But it also allows you to define relationships
+between really any names as hierarchies.  It's called ad hoc
+hierarchies.  So you don't need to have hierarchies only in types.
+You can just have hierarchies.  You can say colon square isa? colon
+rectangle.  You just tell me that.  And then you can do this dispatch
+and say, if its rectangles, do this.  And if you pass squares, it will
+work.  Not types, right?  Why does hierarchy have to be in types?  Why
+stick it there?  It's a dungeon.  So hierarchy is about ...  Excuse
+me?
+
+Audience: So it's an ad hoc hierarchy per method?
+
+Ad hoc hierarchies.  No, it has nothing to do with methods.  It's just
+... you can leverage them here because the multimethod system uses
+isa? to determine what happens.
+
+    http://clojure.org/multimethods
+
+Audience: (Some question relating to performance of this mechanism.)
+
+It's a hash table look up.  So all that hierarchy stuff is looked up
+once and cached, and then it will track any changes to the hierarchy
+system.
+
+Audience: tbd
+
+Well, yeah, the overhead is a hash table look up.
+
+Audience: There's an extra function call.
+
+An extra function call, and a hash table look up.  Yes.  It's not bad.
+
+Audience: So if you're using the isa? test to ???  Don't you have
+ambiguity based on the ...
+
+Yes.  Yes.
+
+You could.  Let's just talk a little bit about that.  I'm sorry I
+don't have it on the slide.  So isa? works between any two names.  You
+define what the relationships are.  Then you say, what if I have a
+vector of these and those?  Vectors do a per-value isa?, OK?  Which
+still begs the question: there could be ambiguity.  Yes, there could
+be ambiguity.  For instance, you could use Java interfaces to do
+dispatch, and something could implement two different Java interfaces,
+so which one do you use?  If I get an ambiguity, I will tell you when
+you first call it, and it will fail, but you can then tell me, prefer,
+for this method, prefer this to that.  And that will resolve the
+ambiguity.
+
+Audience: So you actually test for applicability of every method that
+you defined, and then ...
+
+No, that only happens once.  Once I get it resolved once, I cache
+that, so it's just a hash table look up by value.  I see the same
+dispatch value, which is a result of the dispatch method, and it's a
+hash table look up.  If I fail to find it, now I have to do the work.
+If I do the work and find an ambiguity, I'll tell you.  If you want to
+resolve that ambiguity, you can by saying, for this method, prefer
+this to that.  Prefer this interface to that one, for instance.  Or
+some argument set.  It ends up being a pretty good compromise.
+
+Audience: So is this similar to the predicate dispatch thing?
+
+What it's missing from predicate dispatch, which I really haven't been
+able to figure out how to do fast, is logical implication.  Right?  A
+real predicate dispatch should know that being less than 10 implies
+being less than 100.  But this is not a predicate dispatch system.
+But it's pretty powerful, and very general.
+
+
+(slide 42)
+
+Clojure supports metadata.  This is the ability to attach data to any
+value that does not constitute part of the value's value.  It's
+_about_ the value.  It's not a component of the value.  So it's
+orthogonal to the logical value of the data.  You could have a vector,
+and you can say, "I got this vector from Fred", or "I found it on the
+Internet", or "I last read it 3 weeks ago," or anything else you want
+to say about it.  That's not part of the value, right?  If it's a
+vector of 1, 2, 3, it should still be equal to 1, 2, 3.  It's just,
+you found it on the Internet instead of pulled it out of the database.
+So it does not impact the equality semantics.  You don't see it when
+you do any operation on the value, but it allows you to adorn values,
+and it's a very important thing that's extremely hard to do in most
+systems, which is track trustworthiness, or age, or validity, or your
+source, or anything else.  So you have the ability to attach metadata
+to all the Clojure collections, and to symbols.
+
+Audience: But how is it that the namespace ...
+
+It has nothing to do with it.  It's attached to values.
+
+Audience: Yeah, so for the things that are in the namespace (something
+about not attached to the Var) ...
+
+Vars have a separate notion of metadata.  This is really the real
+deal.
+
+Audience: But if I wanted to have metadata attached to one of these
+tbd
+
+You can attach metadata to Vars, but this example is about real value
+operations.  Vars are not values.  Vars are references.  So they have
+separate semantics for metadata, but they do have metadata.  But I
+don't want to talk about that right now, because it's too confusing.
+
+Audience: But can't I just do metadata in Common Lisp by saying we
+have an object, and then there's this hash table that maps the objects
+to, I don't know
+
+Everybody has to know about that hash table.  It doesn't flow through
+your call chain.  Nobody can go an inspect it.  They have to play.
+Metadata you don't have to play.  And a real hash table where
+everybody had their metadata is a concurrency disaster.  It belongs on
+the object, so it should flow.  It should be copyable.  And if you do
+that, it has to be associated with identity.  These things are
+associated with values, right?  I can have 1, 2, 3, and then say I
+found it on the Internet.  I could have 1, 2, 3, and say I got it out
+of the database.  What am I going to put in my global hash table?
+Errrr.  I'm in trouble.  I'd have to put the identity of these things,
+but I don't want an identity system.  I want a value system.  I can't
+have a hash table by value, because they're the same value.  And I can
+talk more about it later, but it wouldn't work.
+
+Audience: Is this implemented using Java tbd ?
+
+No.  No, annotations are properties of 
+
+Not really.
+
+Audience: tbd
+
+Not everything.  It's attached to the class stuff, usually.  Not to
+every instance.
+
+Audience: It's attached to code.
+
+Yes.
+
+Audience: tbd   It avoids a lot of added overhead, tbd
+
+In real systems, I need this all the time.  As soon as you have a big
+enough system, you find you need this kind of thing all the time.  I
+have this huge calculation stack, right?  I source it with some data.
+I mean, I work on this election system.  So I source it with some data
+from counties, right?  But the data looks exactly the same as data
+that comes from precincts.  Now I'm in the middle of a calculation.
+Do I have to say precinct map of this, county map of this.  Putting it
+on types is wrong.  It's just where I got it from.  So I can flow that
+through.
+
+So essentially any of the Clojure data structures support detachment
+of a map of metadata, and you can use it for whatever you want.
+Clojure actually uses metadata in the reader.  You can adorn your code
+with metadata, and you can talk to the compiler that way.  In fact,
+that is how you give hints to the compiler.  Because there is literal
+support for metadata.
+
+So let's look at this.  We can define v.  It's the vector 1, 2, 3.
+Then I can say trusted-v is v, same value, with this metadata
+associated to it.  So one thing we know about with-meta is what?  It's
+returning a new value.  Right?  Because this can't actually be the
+same v.  Then we can look.  This caret is the same as saying meta of
+the thing.  The metadata of trusted-v is trusted.  I mean the source
+of the trusted-v is trusted.  The source of this thing (v), we don't
+have.  It's great.
+
+Audience: The caret gets you the metadata of
+
+Caret is reader syntax for meta of blah.
+
+Audience: tbd
+
+Most of the things, like assoc or whatever, will build only on the
+first guys.  They won't automatically incorporate.  But all the
+operations are metadata preserving.  OK, I can't really properly
+combine metadata.  I don't know what it means.  So I can't do that for
+you.  But it's really useful.
+
+Audience: tbd of a sequence will take the first thing tbd
+
+Probably.  I mean, when you're adorning with metadata, you don't want
+to have little pieces of metadata on sub-pieces of all kinds of
+things.  It's not that meaningful.  You're usually attaching it to
+things whose contents are going to be persistent, or you're going to
+be responsible for adding or removing, and those additions and
+removals will produce new values with the same metadata, so they are
+metadata preserving.  That's sort of as far as I'll go, and anything
+beyond that you can do.
+
+
+(slide 43)
+
+OK, let's get into some of the meat.  This is an important part of the
+talk, because everybody in every language is facing this.  Your
+programs, are they ready to run on 600 cores at one time?  Are they
+going to use them profitably?  I don't think so, but that's coming.
+What they're basically saying is, these cores are not getting any
+faster.  We're just going to give you more of them.  Making use of
+them?  Your problem, software developers.  Hardware guys are
+_punting_!  Punting!  They've left us out here.
+
+So I want to be clear about what I'm talking about in this part of the
+talk when I say concurrency, because there's a bunch of different
+things.  We're talking about interleaved execution, and now of course,
+there was always threads, and there were ways to do green threads and
+pretend, but the reality is we're getting _real_ interleaved execution
+now.  Multiple cores means really two things are happening at the same
+time.  We want to avoid seeing inconsistent data, or creating
+inconsistent data.  And as the complexity goes up, as your universe of
+work involves more things, it's get more and more difficult to keep
+consistency, especially if you're using locks.
+
+There are also whole other sets of concurrency things that have to do
+with parallelism, right?  I want to do this one logical operation and
+in the background this vector, you know, matrix multiply, just put it
+on all of these cores.  I'm not talking about that right now.  Java
+has a really nice library coming up in Java 7 for doing that kind of
+parallel math, and Clojure has a very beautiful wrapper for it.  So
+here I'm talking about task level parallelism.  Most typical
+applications are going to try to leverage these cores by setting up a
+few threads to watch the web interactions, and another couple to deal
+with the database, and maybe you have some streams coming in from this
+data source, and maybe you have a couple of calculation engines that
+you're going to use.  That kind of task level parallelism is what
+we're talking about here.
+
+
+
+(slide 44)
+
+So, this is my message.  I don't care what language you're using,
+except if you're using something like Haskell, or something already
+very purely functional.  If you're using a system where you're using
+objects or shared data structures that are mutable, it is not going to
+work.  It is not going to continue to work.  You absolutely have to
+find some different way to do it.  I think object oriented programs,
+when they get to a certain size, are just spaghetti.  I've never seen
+one that grew indefinitely and kept being maintainable.  So it's just
+a new spaghetti code.  It's all object oriented, but it's still a
+disaster.  It's very hard to understand a program, even an object
+oriented program, once you have all these relationships.  Once you
+create a graph of interconnected changing things.
+
+But one thing is for sure, whether or not you disagree with that, from
+a concurrency perspective, it's a disaster, and unfortunately, it's
+the default architecture of all of these languages, including Common
+Lisp.  You create objects, you get these mutable things.  And it ends
+up that, even if you know this, and you say, well, I'll take a
+different approach in my applications, doing the right thing is really
+hard, because it's not idiomatic.  It's almost anti-idiomatic.  So,
+for instance, try to do immutable data structures in Java, for
+instance.  Although I did.  That's what I'm giving you in the library
+that underlies Clojure.  But you look at the Java, you're like "Wow!
+That is nasty!"
+
+
+(slide 45)
+
+So what happens now?  I mean, even if you're using a Lisp, one of the
+more cutting edge Common Lisps that has threads and everything else,
+chances are good they have these same old concurrency constructs that
+people in Java and C# are already saying don't work.  So copying those
+is not really moving forward.  What do you have?  Applications have
+direct references to mutable things, right?  And what could you
+possibly do in that context?  It's essentially, each program is
+written to be imperative, like, "I own the world."  Each part of the
+program.  I own the world.
+
+When you don't own the world, you either have to stop the whole world,
+that doesn't work, or somehow somebody has to preserve your illusion
+that you see the whole world.  And doing that with locks is incredibly
+difficult, in particular because accomplishing that is completely
+convention.  You have to have meetings.  You say this data structure
+is going to be looked up from multiple threads.  If you're going to
+touch it, make sure you lock first, and then you have all this
+complexity.  Well, what if I'm touching data structure A, B, and C?
+Well, we have to grab the locks in the right order, or you're going to
+deadlock.  What if I'm only using C and B?  Well, you still have to
+grab all three.  Or maybe we'll have this global lock and our
+concurrency is going to go down.  It doesn't work.  If you're just
+starting to do this, just skip to the end.  It doesn't work.
+
+(laughter)
+
+It doesn't work.  I can save you years of grief, headache, and
+nightmares.  Because it is a nightmare.  I have been doing this in C++
+and in C# and Java for 20 years, and it just is awful.  You cannot
+ever believe that it's working.
+
+So, what do we do?  Instead of that, we're going to say we're going to
+have indirect references to immutable persistent data structures.  So
+this ref notion, it's kind of like Standard ML's ref notion.  If
+you're going to have something mutable, you're going to have to call
+it out.  This could change!  All right?  And then, Clojure has
+concurrency semantics for those references, so those references are
+like cells.  All they're going to do is point to some bigger immutable
+aggregate.  And if you're going to want to change those cells, because
+they can change, you're going to have enforced concurrency semantics.
+And your programs in Clojure do not do any locking.
+
+
+(slide 46)
+
+So this is what it looks like in the old school.  A bunch of parts of
+the program are pointing to the same block of memory.  The problem,
+fundamentally, is this: object oriented programming done the
+traditional way, unifies identity and value.  You want identities in
+your program.  Like tomorrow is going to mean different things as your
+program runs and runs and runs, right?  So you want that identity, but
+the value of tomorrow, or today's date, or the time is something that
+is going to change.  Unfortunately, when you say the identity of this
+thing is the address where we're keeping its value, game over.  You
+can't do the right thing.  Anything can change at any time, and the
+consistency problem goes to the users.
+
+
+(slide 47)
+
+So what do we do instead?  We have programs refer to the identity, and
+the identity is that cell.  That reference.  And that in turn points
+to some immutable aggregate thing.  It could be a Clojure vector or
+map or any of the Clojure stuff.  So now we've separated identity and
+value.  If you want to obtain the value, you need an explicit
+dereference.  At that point, you can have a pointer to this.  A
+hundred people could have a pointer to this.  Is that OK?  Sure.  This
+can't change.  It's immutable.  Have at it!  You want to look at it
+from a hundred threads, 600 cores, that's going to be great.  That's
+going to perform well, because there is no locking required to look at
+the value.
+
+So we're going to explicitly dereference, the values can never change.
+You could never see an inconsistent value, because they don't change.
+Somebody's going to make a consistent value, stick it in there.  You
+pull it out.  It's consistent.  Objects don't change in your hands.
+
+
+(slide 48)
+
+So what does it mean to do editing?  Well we've already seen with all
+of these data structures, we make new values by calling functions on
+the old values, and getting a new value.  So while everybody is
+referring to foo, and while foo is referring to this immutable thing,
+anybody who wants to could be saying, "I've got a new better, improved
+foo!" and make one.  It shares some structure, as we saw.  That's the
+way these data structures work.  It can share structure with the one
+that is already in there.  That's no problem.  They're all immutable.
+Nobody who is reading this is impeded by the creation of this new
+value.  It goes on in parallel, and it's not impeded by the fact that
+anybody is reading.  So nobody is in anybody else's way.
+
+
+(slide 49)
+
+Then when we want to edit, we want to change this reference atomically
+to refer to the new thing.  And that is always coordinated in Clojure.
+There are actually multiple semantics.  I haven't said how this
+happens, when it happens, right?  You can have different semantics for
+that, and Clojure has three.  Anybody who is consuming the value is
+unaffected.  If I was in the middle of doing a calculation on this,
+I'm still fine, right?
+
+
+(slide 50)
+
+So the only thing of Clojure's data structures that can change are
+these reference types.  There's three of them.  Refs, that's an
+unfortunate name in this context, which are about shared synchronized
+coordinated change.  What's the hardest problem in a system with
+multiple threads.  It's my unit of work touches three data structures.
+In other words, this composite unit of work.  It's very hard to pull
+off.  So Refs do that hardest job.  Change three things, and either
+have all of them happen, or none of them happen.  It uses a
+transaction system.  I'll show you that in a second.
+
+Agents are more of a lightweight autonomous change model, where you
+say, you know what, just eventually do this, and I don't care when.  I
+just want to return right away, and I want you to take care of this
+job for me.  Those things are asynchronous.  They're also independent.
+There's no way to move something from one collection to another with
+agents.
+
+And Vars you already saw.  Vars have concurrency semantics, when you
+set them, because they're all thread independent.  We saw we couldn't
+set it unless it was per-thread bound.
+
+
+(slide 51)
+
+So Clojure has something that's called software transactional memory
+system.  If you've ever worked with a database, this should all be
+familiar to you.  You can only change a Ref, and here I'm talking
+about that STM Ref, you can only change them in a transaction.  Any
+set of changes you make inside a transaction will happen atomically.
+Your transaction will see a consistent view of the world while it's
+running, as of a point in time.  In addition, Clojure as an STM is
+kind of unique in supporting consistency rules for the values that
+you're going to take on.  So you have isolation, you have atomicity,
+and then you have consistency.  You can attach to a Ref.  You can say
+validate any data anybody wants to put in here with this function.  If
+that validation fails, that transaction will fail.  I won't take the
+value.  You can attach those validation functions to Vars, Refs, or
+Agents.  So they all support consistency.
+
+No transaction sees any other transaction.  Essentially what happens
+is your transaction sees the world as if it was at a particular point
+in time, and when you commit, it is as if all the changes you made
+happened at a particular point in time.  The only caveat with this
+system is, unlike databases, which sort of do deadlock detection and
+keep guys waiting, and sort of have a big lock chain thing, in STM
+systems typically, what happens is they're semi-optimistic, or fully
+optimistic.  Clojure's is only semi-optimistic, which means you can
+proceed along down your transaction and determine, "Eh!  I am not
+gonna win.  I am not going to be able to maintain a consistent view of
+the world and have a successful commit."  So do over, and that's what
+happens in STMs.  You get an automatic retry.  Which is great, and it
+is absolutely what you want, but you have to avoid doing any side
+effects in the transaction.
+
+I can't enforce that, but if you have side effects, and you get
+retried, you'll have your side effects happen more than once.
+
+
+(slide 52)
+
+Using this is so simple.  Put dosync around your block of code.  Any
+changes you make to Refs inside that block participate in the same
+transaction, including inside nested functions, including if those
+nested functions run their own transactions.  They all join the
+enclosing transaction.
+
+Under the hood Clojure's STM is pretty unique.  If you've done any
+reading about STMs, it's a multi-version concurrency control system,
+which is unusual.  Yes?
+
+    http://wiki.zope.org/ZODB/MultiVersionConcurrencyControl
+
+Audience: Can you imagine mutations to Refs that aren't wrapped in a
+dosync as participating in just a very small transaction?
+
+No, you can imagine them throwing exceptions.
+
+(laughter)
+
+It's a very clear image, too, because that's what happens.  No, that's
+not OK.  Although you can do flying reads, because the contents of any
+reference is consistent.  So I don't care if you read it outside of a
+transaction.  That's perfectly fine.  If you want to read a bunch of
+things outside of a transaction, and you only cared that each one was
+consistent, that's also fine.  If you want to read a bunch of things
+and know that they're all consistent as of a point in time, even those
+reads need to be in a transaction.
+
+Audience: Sorry, I'm being stupid here.  You said that users have to
+carefully avoid side effects.
+
+Yes, in transactions.
+
+Audience: I thought this language doesn't have side effects.
+
+Well, you can call Java, you can print, you can read a database, you
+can ...
+
+Audience: Yeah, I'm trying to figure out what you mean by the language
+being functional, and not having side effects.
+
+Any language that has no side effects can only heat up your computer,
+right?
+
+Audience: Yeah, right.
+
+(laughter and applause)
+
+Yeah, that's not my line, but many times redone.
+
+Yeah, of course...  Clojure is a realistic language in saying, of
+course your programs do I/O.  Of course your program may want to have
+identities, which are associated with values that change over time.
+How can I help you do that right?  I can't help you with I/O.  You
+have to just do I/O separately.  I can help you completely with this
+data part.
+
+Audience: So if you were to send a function to an agent, it will
+produce a ...
+
+Ah.  No, no, no.  No.  In fact, I haven't talked about agents yet.  So
+hang on to that question.  No, that's beautiful.
+
+Audience: tbd
+
+Oh, how do you start multiple threads?  I don't care.  You can
+definitely use Java's Executor framework, or Thread.start, or
+whatever.  You can also use the Agents, which I haven't gotten to yet.
+
+Audience: tbd
+
+I don't care.  I guess I don't want to say, yes it would be the
+Agents, because that's one way, but I'm perfectly happy for you to use
+the Executor framework of Java to launch threads.  I don't care how
+they start.  Clojure does not require your threads to be adorned, by
+me, in any way, for this to work.  So any way you can start a thread
+in Java, this will work, including Agents, which I'm getting to.
+
+Audience: So on the previous slide, you put that note about don't do
+I/O.
+
+Right.
+
+Audience: It's kind of a footnote, but it's a pretty big one.
+
+It's a big thing.  That's true of all STMs.
+
+Audience: No, but like in past STMs, the type guarantees that you're
+not going to do I/O inside a transaction.  Well now ...
+
+Absolutely.  I think if you're in a strongly typed system, you can
+have more enforcement.  I'm telling you that I can't, in Clojure,
+because it's a dynamically typed.
+
+Audience: No, I'm talking about in practice, how easy is it to shoot
+yourself in the foot?  I don't think I'm doing I/O here, but in
+reality you are.
+
+It's the same as anything.  I mean, this is a dynamic language, so
+you'll get run time errors.  You'll start seeing things print three
+times and be like, hmm, Oh!  I'm in a transaction.  I got retried.
+And if you're in a dynamic language, you're used to dealing with
+problems that way.  There's no enforcement.  I can't enforce it.  I'm
+not anti-enforcement.  There are languages that try to enforce it.
+They come with very intricate type systems that are not yet expressive
+enough, in my opinion.  But that's another way, and if you do that,
+you could do more.  I would love to try to add just enough effect type
+system to this to help with that, and that's something that I'll
+probably research in the next couple of years, but right now it's on
+you.  It could happen.  OK?
+
+So, this is pretty cool.  This makes sense from a database standpoint.
+This is a particularly unique thing about Clojure's STM, which is,
+what happens in an STM?  Well, there could be multiple transactions
+going on that both want to increment this counter when they're done.
+In most STMs that means that one transaction is going to win.  The
+other transaction is going to retry, which means doing all their work
+again in order to get in there.  But it ends up that incrementing a
+counter does not need to be a read, modify, write action.  You could
+do it that way.  You could say: look up the counter.  It's 41!  Add
+one.  It's 42!  Set it back into the Ref.  It's 42.  Now if I do that
+in a transaction, and somebody else does that in a transaction, one of
+us will win and the other one will redo.  But, if you have something
+that I call commute, you could instead say: You know what?  I don't
+care what value is in there.  All I care is that when my transaction
+commits, it's one more than whatever it is.  If you have a way to say
+that, then both those transactions can get all the way to the end, and
+one could win, and the other could win.  They both can win.  Neither
+one needs to retry.  So commute is a beautiful facility.  It's
+actually ...  it was an old database thing called field calls, or
+something.  Great idea.  And it ends up that you can now build systems
+with even better concurrency, because if you only need to end up
+adding something to a map, or end up incrementing something, you can
+use commute instead of read-modify-write.
+
+    (Field calls are described in the book by Jim Gray and Andreas
+    Reuter referenced below.)
+
+Audience: So are you going to give an example of the syntax of commute
+...
+
+
+(slide 53)
+
+Sure!
+
+(laughter)
+
+OK, so what does this look like to you?  We define foo to be that map.
+
+  (def foo (ref {:a "fred" :b "ethel" :c 42 :d 17 :e 6}))
+
+So we have a map, but oop!  It's a reference to a map, which means
+that if we want to see the value, we have to dereference it.  This
+(@foo) is just reader syntax for deref of foo.
+
+  @foo -> {:d 17, :a "fred, :b "ethel", :c 42, :e 6}
+
+So just like quote, there's deref, meta, there's a couple of other
+ones that keep me from too many tedious parens.  So we deref foo.  We
+see that value.  Notice that it's in a different order, because it's a
+hash thing, so it's not necessarily what I typed in.
+
+I can use that value in calculations.  This is a flying read:
+
+  (assoc @foo :a "lucy")
+  -> {:d 17, :a "lucy, :b "ethel", :c 42, :e 6}
+
+Read the value, associate this thing with it.  Have not changed foo,
+right?  I got the value out.  It was this immutable thing.  I did some
+logic on it.  I got a new value.  This is just that value.  Nobody put
+it back in foo.  So that's totally fine.  I look at foo.  It's the
+same.
+
+  @foo -> {:d 17, :a "fred, :b "ethel", :c 42, :e 6}
+
+I haven't really changed foo.  Now, I can try to commute foo.  The way
+commute works is it says commute, this reference, with this function,
+and these values.  Well what will happen is that function will be
+passed the current state of the ref, and those values, and the return
+value of that function will become the new value in the ref.  It's
+beautiful.  There's also alter, which is the read, modify, write.  But
+commute is the one that says, whenever I'm done, do this.  So it's
+nice.  It's a functional interface.  You say apply this function to
+the value that's in that reference, and that result of that function
+becomes the new value in the reference.  So we do this:
+
+  (commute foo assoc :a "lucy")
+  -> IllegalStateException: No transaction running
+
+Errr!  Right?  We asked before, can we just do this with a single guy?
+No, you can't do this anywhere that's outside of a transaction.  This
+isn't OK, because we didn't start a transaction.  This is one in a
+transaction:
+
+  (dosync (commute foo assoc :a "lucy"))
+
+Start with dosync.  I do that.  I could have done a bunch of things
+inside this dosync, but this is just one.  Now this works, and when we
+dereference foo, we see the changed value:
+
+  @foo -> {:d 17, :a "lucy, :b "ethel", :c 42, :e 6}
+
+It's pretty easy.  It's very easy.  And the nice thing about it is,
+you end up reusing a lot of the functions you already wrote.  I could
+test this function right now.  I just did, right?  In fact, I could do
+it with any piece of data I want.  Because you're applying these
+functions inside transactions means you can test these functions on
+values, not burden your whole system with mock objects, and all this
+other nightmare stuff.  Test your functions.  You have some data, you
+are going to apply this function, it's supposed to do this
+transformation and return this result.  Do all that before you get
+involved in references.  There's nothing about that that involves
+references.  Then you say, oh, I want to store these things in
+references.  OK.
+
+
+(slide 54)
+
+Audience: Are there any requirements that the function actually be a
+function, and not write any other references inside of them?
+
+No, you can write other references.  They'll all participate in the
+same transaction.
+
+Audience: If I say commute it, then it will ...
+
+Same thing.  You can commute some references in a transaction and
+alter others.  It's totally fine.
+
+Audience: It seems like there is a way I could shoot myself in the
+foot.
+
+No.  Completely not.  Because all those things participate in the same
+transaction.  They're either all going to succeed, or none will
+succeed.
+
+Audience: So, if I'm commuting, so the function call, and the function
+is in a commute does some other random write to some other reference.
+
+Oh, the commuting function.  No, the commuting function has to be
+pure.
+
+Audience: Can you check that?
+
+No I can't check it.  I'm a dynamic language.  That 
+
+Audience: You could check it dynamically.
+
+No.  No.
+
+That's an interesting idea, though, checking it dynamically.  I guess
+I could do that.  Yeah, I could do that one.
+
+Audience: tbd
+
+It's already in the library, sure.  Right.  So you say commute x inc,
+and that will happen when it commits.
+
+Audience: Question about what happens if two transactions that do
+"commute foo inc" commit at the same time, and they seem to be leading
+up to wondering whether it is possible for both to read the current
+value, do the inc concurrently, and both write back the same value,
+ending up with 1 more than the original, instead of the desired two
+more than the original.
+
+They don't commit at the same time.  What ends up happening is
+commutes get all the way through, right, any transaction that involves
+a commute happens all the way through to commit time.  Right, now
+typically, if it's read, modify, write, you'll see the conflict.  Two
+guys tried to modify foo.  One will win.  The other one will go back.
+With commutes what ends up happening is, two guys try to commute foo,
+the second guy in will wait.  This guy will finish, he'll go.  So
+he'll do 42, he'll do 43.
+
+Audience: How do you get 43?  It read that value.
+
+No, no, no.  Whatever happened inside your transaction in a commute,
+is a temporary value.  It's just to make you feel good.  At commit
+time, whatever actual value is in the Ref is going to have that
+function applied to it then.
+
+Audience: Right, so then it has to read from this ...
+
+It's going to happen twice.  It's going to happen twice, and it's a
+pure function, and that's the cost.
+
+Audience: OK.  So there's no difference between doing that and redoing
+the transaction, right?
+
+Well, you could have done a hundred other things, though.  Let's say
+you have a really complicated transaction, and it's completely
+independent from this other one, but both of you have to increment the
+same counter.  Well, if you're really doing that with read, modify,
+write, you've made both of those transactions completely restart in
+conflict with each other.  With commute they're not.
+
+Audience: So you're only going to do a small part of it again.
+
+You do whatever you like.  I'm just saying you have this facility and
+it has this property, and you can leverage that in your designs to get
+more throughput.
+
+Audience: So you could only do I/O conditionally, say
+
+No.
+
+Audience: I'll only do I/O if I succeed.
+
+No.  Do not.  No side effects.  I'm going to give you a recipe for
+that in one second.
+
+Audience: If my ? is down, and I call alter early in a transaction,
+right, and you commute foo, does that make the
+
+That order will work.  The other order will not work.  I will track
+when you try to use that commuted value, which is really just a junk
+value to make you feel good.  It can be useful.  For instance, if you
+commuted something that was empty, your transaction would see that it
+had something in it.  If you didn't care about the value that was in
+it, you can at least see that non-emptiness, which is important
+sometimes.
+
+(TBD: I'd like to see an example where getting this junk value back
+from commute is useful.  It seems to me perhaps nice to have the
+option of a different variant of commute that only calls the function
+once at the end of the transaction, not twice.)
+
+Audience: If I commute first, and then try to alter it, that's
+
+You're going to get an exception.  Yes.
+
+Audience: Is there a way after you commute to find out in which order
+that, like after the fact.
+
+You can go back and read.  Not otherwise.
+
+Audience: This has all been worked out in the database world for a
+long time.  It works.
+
+It's very cool.  Except software transaction systems, you read the
+papers about, don't work like this.
+
+Audience: No.  No.  I said in the database world.
+
+Yeah.  This is very much database driven.  MVCC and everything else is
+really inspired by like Oracle, and PostgreSQL and that database
+stuff.  Yes.  This is a very database-y kind of thing.
+
+All right, let's talk about Agents.  So Agents are for managing
+independent state.  We saw transactions are super powerful.  They let
+you change more than one thing atomically, which is very powerful, but
+it has some overhead to it.  Sometimes you just don't care.  You want
+to make a system where you have loosely coupled processes and they
+just need to communicate with each other.  So Agents are a way to do
+that.  If you've read about the actor model, or whatever, Agents are
+sort of similar, but they're not the actor model.  In particular, the
+actor model requires messages to read the values.  Agents do not.
+
+So you get independent state.  You have actions, which are again, just
+functions, you say, apply this function to your state at some point in
+the future.  It will happen in a thread pool.  I don't care when.  And
+that will transform your state.  They happen immediately.  You call
+send or send-off, you pass this function, you return right away, and
+then some time later, that will happen.  And it ends up happening
+asynchronously in a thread pool.  The system makes sure that only one
+thing is happening to an agent at a time, and it makes all kinds of
+other great promises.
+
+(TBD: Can send/send-off block if there is no memory available to store
+the message, e.g. if they build up a backlog because they are being
+sent faster than they are being consumed?)
+
+
+(slide 55)
+
+You can dereference Agents and see their values, but remember, all
+kinds of stuff is happening at the same time.  You have to start
+programming that way.  If you're still programming from a perspective
+of, the world has stopped any time I want to look at it, you're
+going to have to change that.  When you have 600 cores, you have to
+start having looser ideas about how much of the world needs to be
+consistent in order for you to make decisions.  Agents let you do
+that.
+
+What's neat about this is if you send actions during an action,
+they'll be held.  Also if you send actions to Agent during a
+transaction, they'll be held.  So they will happen once, and once
+only, when you commit.  This is your way to do side effects, because
+Agents can do side effects.  So you're doing a transaction.  As part
+of that transaction, you send a message, "I'm done!  Woohoo!  Tell
+somebody."  And that will only go out when you commit.  So it's kind
+of a cool thing that those two systems work together.
+
+Audience: Does Clojure itself manage the (something about thread
+pools)
+
+Yes.  There are actually two
+
+Audience: tbd
+
+No, not so far, but I probably need to give you some more control to
+say these set of Agents live in this pool.  I don't have that now.
+Right now there are two pools for two different kinds of work.  And as
+I said, they're not actors, and the actor model is a distributed
+programming model.  The Agent model is only a local programming model
+-- the same process.
+
+(TBD: Same process means like a same JVM process with a common address
+space for the sender and the Agent?  Why is that a restriction?)
+
+
+(slide 56)
+
+So what does this look like?  It looks a lot like the transactions,
+which is a good thing.  We say def foo to be an Agent with this map
+value.  We can dereference it.  We can see what's in it.  No problem.
+We can send foo.  Look how similar this looks to commute blah, or
+alter blah.  So send foo, a function, and maybe some arguments.  That
+function will be applied to the state of foo.  The arguments will be
+passed to it as well, and that will become the new value of foo.  If I
+send this, and immediately go and look, it may not have happened yet,
+right?  It happens asynchronously.  await will make sure anything that
+has been sent from this thread has already been consumed.  Then if I
+look at it, I will see the change.  So this is a powerful way to do
+asynchronous programming.  And this is a way to launch threads.  There
+was a question about how do you launch threads.  Well, this does
+things in threads.
+
+Audience: tbd
+
+Effectively what happens is it puts a message in the queue, and then
+waits for it to be consumed.  It's a way to allow you to coordinate.
+I want to make sure you heard everything before I tell you more.  But
+other people could be talking to the same agent.
+
+
+(slide 57)
+
+OK, this is the last leg.  You guys are doing great.  Oh, look!  We're
+good.
+
+(laughter)
+
+Well, we are pretty good.
+
+I'd like to have enough time to have some good talk.  So I'll try to
+get through this quickly, so any lingering questions.  Now you'll see
+all of Clojure, maybe you can put it together.
+
+So Clojure is specifically hosted.  I haven't shown you much Java
+stuff, but again, the integration is not a mere implementation detail.
+I want to be able to call Java.  I want to be able to interact with
+it.  Java is my low level language.  And the nice thing about a
+language like Java being your low level language is it actually shares
+the same GC, and memory model, and threading model, and everything
+else.  Think about all those issues you have when you try to start
+doing multi-threaded programming, or even just GC.  The interactions
+between GC and calling out to C.  It's a nightmare.  Yeah, I'm sure
+people are like uuuuuhhhhhh.  You know, it's _bad_.
+
+So JVM is my runtime.  I can't say enough about how high quality the
+infrastructure is in these JVMs.  You have a wide range of choices.
+Sun has their thing, but you can also get JRockit, and IBM has
+excellent VMs.  I mean this is a really mature platform with a lot of
+competition.  A lot of extremely bright people working on it.  This is
+excellent technology.  As goofy as Java is, the JVM is stunning
+technology.  You cannot ignore it.  These just in time compilers and
+these GC systems are the state of the art.
+
+Clojure allows wrapper free interaction with Java.  A lot of languages
+that are hosted on Java, they put their own classes around every Java
+class.  There's none of that.  You call Java, you get a Java call.  Of
+course the other advantage of being on Java is there are libraries for
+absolutely every single thing you could ever possibly want to do.
+They may not be the best, but they're there.  Some are better than
+others.  I'm not saying Java is perfect, or anything like that.  But
+there will be choices of libraries, in every domain.
+
+
+(slide 58)
+
+So what is the integration, what form does it take?  There's as much
+unification as I can possibly make happen.  For instance, Java Strings
+are immutable.  Pfff!  That's perfectly fine for Clojure strings.
+They're immutable.  They're Unicode.  We're done.  Clojure strings are
+Java Strings.
+
+The numbers I use are the boxed Java Numbers.  The only thing I had to
+add to that set was Ratio.  Otherwise, I used the capital, you know, I
+integer, and things like that.
+
+All my collections implement the Collection interface of Java, so if
+you want to use them from Java, you can pass them.  If you have a
+thing that uses Collections, or Iterable, they're all Iterable.  All
+my functions are Callable and Runnable.  So if you want to use a
+Clojure fn, a Clojure closure as a callback for Swing, you don't have
+to do anything.  You just pass it, because it's Runnable.  And I
+showed you before, the Clojure sequence library works with everything
+Java.  You know, Iterables, Strings, Arrays, the works.
+
+You can implement Java classes and interfaces in Clojure, which is
+nice.  It keeps you from going there.  In addition, I do support
+primitives.  Java primitives as locals.  So if you have a core piece
+of code that's, you know, your inner loop, where you want to max out
+the performance, you can make a few little type declarations and say
+this is an int, this is a long, this is an array of floats, and you'll
+get the Java primitives that correspond to that.  In addition, when
+you start doing math with those things, you'll get unboxed primitive
+math.  And that doesn't mean you'll necessarily get unsafe math.  So
+there's two different levels.  There's do I have the boxing, which you
+can turn off with the declaration, and then you're going to have to
+tell me explicitly, I want bad, you know, plus, and I'll give you bad
+plus.  And it turns out that the boxing is much more overhead than the
+overflow detection.
+
+
+(slide 59)
+
+So this is what that looks like.  You can access static members
+directly.  It looks a lot like that namespace syntax, doesn't it?
+Because that's really what static class members are.  They are things
+in a namespace, where the namespace is the class, so I just unify
+that.
+
+You can call methods.  This is a macro, dot dot.  It says put dots
+in between everything.  As many as you want.
+
+(laughter)
+
+System dot get properties dot get Java version.  And it ends up, this
+has no more, it has fewer parentheses than the Java version.  You
+rapidly have fewer parentheses than the equivalent Java.  Anybody from
+Java is like, "Oh, Lisp!  Parens!"  You just show them _this_ one,
+right?
+
+Do to a new Jframe, add a new label with hello world, and then pack
+it, and then show it.  It has a third of the number of parentheses and
+lines, well, it has no lines, one line.  You can make Java completely
+easy.
+
+And interacting with Java stuff, if you use the sequence library, you
+don't even know it's Java.  You totally don't care.  Things like this.
+This doesn't look like Java, right?  This looks like Lisp.  into a
+map, filter, this is shorthand for fn, so this is like the most
+concise lambda expression you can do in Clojure, do this regular
+expression find across, ooh!  This is actually Java!  This is the only
+Java part of this.  But it's just transparent.  It doesn't turn your
+Lisp code into Java code.  It turns Java code into Lisp code.  That's
+the beauty of it.  So don't be afraid Clojure is Java with parens,
+because there have been Lisps from the JVM that went that way.
+
+
+(slide 60)
+
+This is what it looks like to do Swing.  Some imports.  You know, it's
+Lisp.  This is a callback, right?  We're proxying.  This is a one-off
+implementation of a Java interface.  It's an anonymous inner class,
+effectively, that you would use in Java.  And again, this is so much
+shorter.  The Java for this is three times the size.
+
+
+(slide 61)
+
+I really like the JVM.  It is a great platform.  It is a serious piece
+of technology.  My main complaint is lack of tail call optimization,
+as I've said before.  I'm hopeful that it will get that.  I can't also
+say enough about HotSpot, and I'm using HotSpot, which is like a Sun
+branded thing.  There are equivalent ones from IBM and from JRockit,
+and whatnot.  But these JITs are amazing.  For instance, I talked
+about that primitive math.  Actually Clojure doesn't emit any of the
+primitive arithmetic byte codes.  If I can get to a static method call
+on primitive types, those JITs will finish, and finish emitting (a)
+the byte codes for Java for arithmetic, and (b) turning that into the
+right instructions for the CPU.  In other words, I only have to get as
+far as a method call, and these optimizers get me to optimized machine
+code, which runs as fast as C, and often faster now, because they're
+doing run time profiling.  There are things you can optimize only by
+looking at a running program, and that's the way these optimizers
+work.
+
+As I said before, ephemeral garbage is extremely cheap.  I leverage
+that.  You should, too.  If you're not aware of it, it's great.
+
+And there's so many other features.  There's the verifier, the
+security, there's a lot of... the ability to load code over the wire.
+Java has a lot of stuff under the hood.
+
+
+(slide 62)
+
+So the benefits are, you can just focus on your language.  If you're
+looking to write a language and target this.  Of course, I recommend
+just starting with Clojure.  But for me, it really let me focus on the
+language.  The infrastructure was great.  Sharing with the
+implementation language, especially these kinds of things: GC, big
+deal.  You get tools for almost nothing.  I emit the correct stuff,
+the correct debugging information, you can debug Clojure, step debug,
+breakpoints, the whole works.  I mean, I'm a LispWorks user.  That
+stuff only came a couple years ago to LispWorks.  You have excellent
+debugging, excellent profilers, and your choice, all work out of the
+box with Clojure.
+
+And then there are libraries for everything.  Clojure users were
+instantly doing all kinds of stuff I had no ... I couldn't possibly
+imagine in advance.  They were just talking to databases, and doing
+net kernel stuff, and big document processing, map reduce, Hadoop,
+lots of cool stuff.  There's also excellent infrastructure on the JVM
+for implementing things like the STM.  This java.util.concurrent
+library is really good.
+
+
+(slide 63)
+
+There's a lot more to Clojure.  It has list comprehensions, ad hoc
+hierarchies I mentioned before.  With type hints you can get Java code
+to run exactly the same speed as Java, so Clojure's fast.  I hinted at
+the relational set algebra, and the parallel libraries for doing
+parallel computations -- automatically leverage all the CPUs to crunch
+big arrays.  And namespaces.  There's zippers, like Huet's paper, XML,
+and a whole bunch of other stuff.
+
+(applause)
+
+
+Any questions?
+
+Audience: So what does generic plus turn into in Java byte code, and
+then into, in practice, in execution?
+
+Generic plus, it turns into a Java type test quickly, and then branch
+to, in my library, individual types, which implement logic for that
+type.  They will do automatic promotion to the bigger type.
+
+Audience:  But how bad is the type dispatch in Java byte codes?
+
+The thing is that these optimizers optimize a lot of that stuff away,
+and in fact they really can take something where you haven't hand
+coded a fast path, and they'll chop it out, and they'll stick it over
+here, and they'll say, well, let me try running that in all cases, and
+they'll have a little very inexpensive test they'll use to see if it's
+still the right way to go, and then it'll slow path the others.
+
+So I couldn't say, because each JVM does different things, but it's
+pretty fast.  The main optimization required moving forward is
+something that they call escape analysis, where if you new up a boxed
+number, and immediately consume it, they should be able to completely
+avoid that allocation, and that is something that is just coming into
+the next generation of optimizers for the JVM, so that will help all
+of these things.  And in addition, like I said, if you really care,
+and you need to go right to the metal, you say int x and you're done.
+No dispatch, no nothing.
+
+Audience: Could you describe your development environment when you're
+writing in Clojure?  Do you use a debugger or something to debug ...
+
+I use Emacs.  There's Emacs plugins.  There's SLIME.  There's all
+kinds of cool stuff already ported for Clojure.  There's an Emacs
+mode, there's a VI mode, which is not as sophisticated.  There's an
+environment for NetBeans, a plugin for NetBeans, which has syntax
+highlighting and everything else.  That has the best debugger support
+right now.  The NetBeans plugin.  But you can use any debugger.  You
+can use JSwat, or jdb, or profile with YourKit, which is just a
+gorgeous piece of technology.  Really, all the tools work.
+
+But in terms of editing, I edit Java code with IntelliJ and I edit
+Clojure code with Emacs.  And I don't debug.
+
+(laughter)
+
+Audience: I was just about to ask, is there a Clojure language level
+debugger?
+
+No, I'm not going to do that.  Because these debuggers are so good.
+Oh, these debuggers, when debugging Clojure, debug Clojure language.
+When I'm setting breakpoints and stepping, you're stepping through
+Clojure code.  You're setting breakpoints in Clojure code.  Clojure
+emits a mapping file, and line number information that's necessary for
+Java debuggers to say, line 42 is over here in the Clojure file.
+
+Audience: But if I'm typing away at the REPL, and somewhere down
+inside somewhere I take the car of 5, and it says, no you don't
+
+Attach a debugger.  You can attach these debuggers ... you don't have
+to be in debug mode in Clojure.  If you start it with the debug API
+alive, you can attach a Java debugger to it whenever you want,
+including right then.  But I'm not going to reimplement Common Lisp
+style debugging, because this stuff is ...  You know, it's not the
+same, but it's really good, and I don't have time for the other.  If
+somebody wants to do it, they could, but.
+
+Audience: You said you've also programmed in C#
+
+Sure.
+
+Audience: tbd  the .NET tbd
+
+Yeah, they don't always do it, though.
+
+Audience: Well, it can always do it later.
+
+Yeah, well later is still ... I'm waiting for later, too.
+
+Audience: Is there anything in Clojure, other than STM stuff, which
+tbd
+
+No, I started Clojure for both platforms.  Clojure ran on both
+platforms for a long time.  I just got tired of doing everything
+twice.  I also wanted to make a decision about what will library
+authors do?  How will the library for Clojure grow?  And as much as
+I'm expert enough to do C# and Java, and many other people are,
+everybody isn't, and it's a big thing to take on having to do
+everything twice, and do the least common denominator, and everything
+else.  So I abandoned this C# port maybe 2 years ago now.  It
+certainly would be possible to do.  Yes.  C# has everything you need
+to do this.
+
+Audience: How long have you been doing this?
+
+Three years.  It's been out since last October, so it's coming around
+a year.  It's really taking off.  I mean, I have a big group of users.
+I have over 500 people on the mailing list, and we get 5 or 600
+messages a month, and I have thousands of SVN hits a month, so I think
+I have a couple of thousand users.
+
+Audience: What would you say is the most interesting tbd
+
+Well, you know, I don't hear from people unless they have a problem.
+
+(laughter)
+
+So I wish I knew.  I do know there's a couple of companies using it,
+and it's sort of like their secret weapon thing.  You know, they do
+document processing and some other stuff.  I've seen database work.
+I've seen interesting graphics work, and XML things.  There's some
+really neat stuff.  Like there's a zipper library which allows you to
+sort of pretend you're manipulating something in a destructive way,
+when you're really not, and producing a changed version of a data
+structure.  And somebody wrote a really neat, Xpath-like way for
+processing XML functionally with that.
+
+Audience: How large is the runtime?
+
+Excuse me?
+
+Audience: The runtime.  How large is it?
+
+400K.  Fits on a floppy disk.  If you could find a floppy disk.  And
+half of that is the ASM library that I use to emit the bytecode.
+Clojure is about 250, 300K.
+
+Audience: You've listed Common Lisp, Oracle, and Standard ML as
+influences.  Anything else?
+
+Sure.  Haskell, and all the STM work, and basically anything I could
+get my hands on to read.  A lot of database stuff went into STM.  That
+old Andreas Reuter book, or whatever, which will make you really not
+ever want to use a database that is not MVCC ever again.  Really
+whatever I could get my hands on to read.  I like to read.
+
+   "Transaction Processing: Concepts and Techniques", Jim Gray,
+   Andreas Reuter, 1992
+
+Audience: tbd
+
+Clojure versus Scala.  Well, Scala is statically typed, and has one of
+these sophisticated type systems.  I think Clojure is more strictly
+functional, because it defaults to immutability, and defaults to ...
+the data structures are these persistent data structures, but it also
+has a recipe for concurrency built in.  There is some library work for
+that, for Scala, but Scala is really still a multi-paradigm language
+where the objects are still those old
+share-the-reference-to-the-block-o-memory objects, and I think that is
+doomed.
+
+Audience: So you mentioned running on these Azul's 600 core boxes.
+
+Yeah.  I highly recommend it.  It's so much fun.
+
+Audience: So does the performance actually scale fairly linearly, or
+
+Well, he found it did on this problem.  Of course.  You know the whole
+thing with STMs -- everybody is like STM is this holy grail, and when
+you try to say something is the holy grail, it's going to fail,
+because nothing can do everything.  You still have to architect your
+programs.  You still have to have some sense of what is the contention
+profile in my program.  You still may run into performance bottlenecks
+that you have to solve by changing the contention profile of your
+program.  I mean, it's not a silver bullet.  What it is, is a way to
+write something that's correct easily.  And the tools for doing that.
+But there's still going to be work.
+
+Audience: So the moral is ... I was being sort of idiomatic here.  You
+can probably add a 100 times more cores than you an add ...
+
+If you've ever written programs with locks, you can be wrong on two
+cores right away.
+
+Audience: You can go to one core!
+
+You can be wrong on one core.  It's so easy to be wrong.  It's so easy
+to be wrong.
+
+Audience: Could you explain your logo?
+
+My brother did it for me.  It's pretty.  It's a little ying yang, a
+little lambda.  Yeah, he's good.
+
+Audience: In Haskell, it seems like every time a Haskell programmer
+runs into a speed or space issue, he goes through and makes everything
+strict.  Have you found that in Clojure?  Have you gotten around it?
+Is it just not happening?
+
+It's not the same thing.  Because in Haskell, everything is lazy, so
+that's a big difference.  When everything is lazy, it's very difficult
+to tell when you're going to have this explosion in memory
+requirements.  And that's the problem people run into with Haskell.
+With Clojure, the laziness is limited to these sequences.  And in
+particular, I'm very careful that inside of a sequence operation, as
+you move through, which is usually what you're doing -- usually you're
+just -- maybe you have a concatenated set of operations.  But you're
+walking that window through your data set.  I make sure, by cleaning
+up the stack that you don't retain the head.  It's easy to retain the
+head accidentally in Haskell, in which case, as soon as you've
+realized the thing, you've realized the thing.  As soon as you've
+walked it, or touched it, you have the whole thing.
+
+In Clojure, you walk it, you don't have the whole thing.  In fact, it
+can erase as you go.  I mean, it can get GCed as you go.  So I haven't
+seen that be a problem.  In fact, I think the laziness is a real
+attribute in the low memory utilization of Clojure programs.
+
+Audience: How much of Clojure is written in Clojure, and how much is
+written in Java?
+
+It's about 15,000 lines of Java and 4,000 lines of Clojure.
+
+Audience: tbd
+
+Absolutely.  In fact, when you define a Java class in Clojure, you end
+up with a Java class that is extremely dynamic, much more dynamic than
+a regular Java class.  In fact, all it is is a set of stubs that hook
+into Clojure Vars.  So you can, no, it's not funny.  It's very
+powerful.
+
+(laughter)
+
+You can write Java classes in Clojure that you can fix while they're
+running.  You can fix the definitions of methods.  You can also write
+transactional Java objects in Clojure.  You can write Java objects in
+Clojure whose data can only be changed inside transactions.  It's
+cool.
+
+Audience: I was a little surprised by your answer about the source
+code being 3 times more Java.  Are you planning on moving towards a
+system that is more bootstrap?
+
+Well, you know how it is when you have something that works?
+
+(laughter)
+
+There's a reason that the data structures are written in Java, and the
+interfaces are written in Java, and that's so that consumption from
+Java is straightforward.  Clojure does not yet have all of the
+mechanisms in Clojure's Java-emitting syntax to do the lowest level,
+like field type declarations you need for the highest performance
+classes, and I'm not sure I want to go there, because it'll end up
+being Java with parentheses.  By the time you have private, protected,
+whatever, and all the declarations you need to support exactly what
+you would do in Java.  So, the biggest thing that's in Java, that
+probably I would like not to be in Java, is the compiler itself, which
+is about 4,000 lines of Java.  And people have asked about
+bootstrapping that.  That certainly would be possible to do.  It's the
+old "it's working right now" kind of problem.  And I'd rather do new
+things.
+
+So I don't have a big thing, and I know it's like sort of a chest
+beating proof of whatever, and I really just don't care.
+
+(laughter)
+
+Audience: Could you do a mobile subset of Java?
+
+Some people have tried to do that.  Unfortunately, even 450K is a bit
+much, but one of the other challenges is just that I do need a fair
+amount of Java concurrency mojo.  Like I only go as low as Java 1.5,
+because I need a lot of the java.util.concurrent stuff to support some
+of the things.  So that's definitely something I'd like to do.
+Another thing that's tough on the mobile phones is dynamic code
+generation.  The byte code loaders, and some of the things are secured
+that way.  One of the things on my to do list is ahead-of-time
+compilation to byte code, which will let me target some of those
+static platforms, like Google Android.
+
+Audience: There's a standard problem with promises in Scheme, where it
+makes you streams moderately high when you filter out all of the
+integers, numbers that are ??? 10 billion, and then you try to get one
+of them.  If the promises were implemented naively, you'd get a string
+of 10 billion promises ???  Do you do the appropriate trampoline?
+
+I don't do it that way.  No, that will walk through -- you'll have to
+walk to get to 10 billion, but it's going to throw everything away on
+the way.
+
+Audience: So ...
+
+So it's not a chain.  There's no realized chain.  If you haven't hung
+on to the first thing, you don't have it.  If you say drop 10 billion
+from a cycle, whatever, and then take 3, you'll have the head of that
+3, and you won't have 10 billion of anything.  It's not a chain of
+promises.
+
+Audience: So there's a trampoline.
+
+No.  It cleans up as it moves.  That's the trick.  What happens is,
+there are suspended expressions, yes?  In the first, in the head.
+When they're realized, they're discarded.  Now the realized versions
+are cached.  Now we move to the next.  Now we have new expressions.
+Now we evaluate those.  Now the expressions are let go, of the value
+that they are.  In addition, if this was held on the stack, and this
+is a nested call, or some reduce or something like that, no one else
+is looking at this, we erase the reference to this, boom!  What's
+left?  One guy, 2 values.  No lingering anything.  So no is the
+answer.  It doesn't build up.
+
+Audience: tbd
+
+No, I can't talk about Haskell's implementation.  All I can say is, it
+is a known problem with some Haskell programs, that the laziness has
+this interactions that can make it difficult to predict the memory
+usage of your program in advance.  I'm saying in Clojure that's not
+the case because the laziness is limited to these sequences, and I've
+just told you their behavior that makes it so that they don't
+accumulate anything that you haven't asked to hang onto.  If you hang
+onto the head, and then go 4 billion nexts, or rests, well you're now
+holding on to a 4 billion item thing.  But you didn't have to do that,
+and I won't do that accidentally for you.
+
+Audience: ??? That's kind of a weak spot in ??
+
+Yeah, it is.
+
+There is hope.  Right now I hae the same as Java does.  Arrays of
+arrays of arrays.  Multidimensional arrays are arrays of arrays.  But
+I've seen some cool stuff in IBM's X10 language, where they take a
+giant array, and then they pretend its multidimensional, even though
+Java doesn't support it, and they have some very neat syntax for using
+little tuples to do subranges and to do multidimensional indexing, and
+I was inspired by that, and maybe if it comes to it, I may copy
+something like that.  That is the neatest I've seen that gets around
+those problems.
+
+Audience: ???
+
+Datalog.  Anybody know any good Datalog implementations?  Yes, I'd
+like to add some ...  Where Clojure is going is I'd like to add some
+declarative data access stuff.  Not really Prolog, because it's not
+that great for database stuff, but Datalog, which is sort of a subset
+of Prolog, for which a lot of research has been done in optimization,
+would be a good mini-rule system plus data access that's pretty.  You
+know, it supports recursion and things like that.  So I'm still
+researching whether I'm going to roll my own or use Iris Reasoner,
+which is a Java one that is open source.
+
+Audience: ???
+
+Maps.  Yes, there is actually something called a struct in Clojure,
+and its an optimized implementation of map, where you say, I know I'm
+going to have 10 million of these things, that are going to have
+fields a, b, and c.  So repeating a, b, and c in all of those little
+maps is kind of a waste of time.  So I can make that go away.  But it
+still implements the map interface, and for all intents and purposes,
+it is a map.  You can still add extra stuff to it, just like you do.
+You can still assoc them.  So it's nice.  It's the best of both
+worlds.
+
+Audience: And for multiple values do you ...
+
+Multiple values, you can do whatever you want, but I don't have them
+on the stack.  I can't do them.  Clojure is stack compatible with
+Java, so there's no multiple returns.
+
+Audience: Is there any interaction that we should know about between
+metadata and transactions?
+
+No.  No, I mean, like I said, most of the transformative functions of
+values will be metadata preservative.  And you're just going to pass a
+function to the transaction to say modify the value with this
+function, which will be something like assoc, or something you wrote
+based on assoc.  It will still preserve metadata.  Metadata is very
+neat.  You can do multimethods that key off metadata, so do this if
+it's data I don't trust.  That kind of polymorphism is something we
+need, and doing everything with types really has limited us.
+
+Audience: So I read that at the JVM summit there was some talk about
+these dynamic languages at the summit.  Did you learn anything
+interesting about these
+
+I learned that those guys need to learn a lot more about languages
+that aren't a lot like Smalltalk.
+
+(laughter)
+
+No, I mean their first cut is to try to support the popular languages
+there, which are JRuby and Jython, which have very similar object
+models, so they have a distinguished receiver, and stuff like that in
+the MOP, and I did try to tell the guy, look, just move the
+parenthesis over, and let's just realize that it's all functions.  Can
+we just do that?  There's really no such thing as methods.
+
+Audience: You made a note on the discussion board about how,
+basically, having all these defns, ? generation wasn't a big deal for
+Clojure.  Can you elaborate on that?  Was tbd
+
+Audience: Yeah, so you do a defn and it gets implemented as a class,
+right?
+
+Oh, the classes, right.  And there were some of these languages that
+need to generate tons of classes in order to, like for instance do
+these wrappers.  I said Clojure had wrapper free access to Java.  A
+lot of these languages don't.  In addition, a lot of these languages
+have, like Ruby and Python, they were written by guys who were writing
+something fun for themselves.  They weren't thinking about compiling
+those languages them when they wrote them.  Now these Java guys doing
+Jython and JRuby are trying to compile them, and it's very
+challenging.  So one of the things they're trying to do is polymorphic
+inline caches, and all that stuff, and when they generate any code in
+Java, you have to generate a class, because that's the unit of code.
+So they are doing a lot of ephemeral class generation, and classes
+have an impact on this Permgen.  Clojure really doesn't do any of
+that.
+
+Audience: tbd
+
+Yeah, which is not that many ...  unless you really need to fix that
+function a lot.
+
+(laughter)
+
+You should be OK.
+
+Audience: Were you doing genetic programming?
+
+Well, you know, those things are all compiled, so even if you see fns,
+that's not like a new class at runtime.  It's a class at compile time.
+See, that's the stuff that I'm talking about.  Yeah, if you were
+writing genetic programs, and you needed to do a lot of evaluation of
+function definitions, sure, you would get into permgen issues, yes.
+
+Audience: Any advice or hints about what sort of applications do you
+think would shine in Clojure?  ? the Lisp side ?
+
+I think anything.  I mean, right now, if you want to write a program
+... Clojure is designed to be useful anywhere you would use Java, and
+Java's being applied, you know, people already asked about phones and
+these 600 CPU machines, so it's a wide range.  It's the same question
+for Lisp.  I mean, what is Lisp good for?  Pretty much anything.
+
+Audience: What would be dramatic?  What would work really well as a
+600 core machine tbd
+
+Anything that you can think of a way to parallelize.  I mean, by the
+time you get to 600 cores.  I actually think most applications will
+never be able to leverage 600 cores.  There will be certain kinds of
+things that can, and I talked about that task parallelism.  Most
+applications will be able to number their tasks in the low dozens, I
+think, really.  So the job of those mega machines will be to run
+multiple of those applications.
+
+The main thing for Clojure is you can write that multiple dozens of
+tasks parallelism without error, and in terms of application domain,
+every application I've ever written has needed to do that, and
+struggled to get it correct, so I think it's good for a wide variety.
+I wouldn't want to pin it down.
+
+Audience: Can you talk about your STM implementation?  For instance,
+tbd
+
+No it's a runtime thing, a transaction.
+
+Audience: So how does that work?
+
+It's a thread local thing that we're in a transaction.  So a
+transaction is going to be in a thread, and then the transaction
+starts in the thread, and there's a transaction object.  References,
+all interaction with references, are going to test for the presence of
+that object and make sure that you are in a transaction.  That's how
+we got that exception before.
+
+Audience: So you have to go through references.
+
+You have to go through references.  That's the beauty of this STM.
+You have to have identified the things that can change.  Either
+they're in an Agent, they're in a Var, or they're in a Ref.
+
+(some people talking at once that are difficult to understand)
+
+Audience: That's where you track the writes and reads in order to 
+
+Correct, except I do not track reads.  Clojure's STM is unique.  It
+does not track reads.
+
+Audience: Oh, because you're doing MVCC.
+
+Right.  It's MVCC.
+
+Audience: What about the condition system?  You know, restarts ...
+
+    One description I like describing Common Lisp's condition system
+    is a chapter in this book:
+    "Practical Common Lisp", Peter Siebel, 2005
+    You can read that book on line.  The chapter on the condition
+    system is here:
+    http://gigamonkeys.com/book/beyond-exception-handling-conditions-and-restarts.html
+
+You know, I looked at that.  I mean, I actually think that the
+condition system is a hard coded special case in Common Lisp.  That if
+you had some more general primitives, the condition system would just
+be one thing you could implement with them.  In Clojure, you have two
+things you can utilize to help you with those kinds of problems.  One
+is the exception system, which allows you to travel up and down the
+stack.  The other is that dynamic binding of functions.  You want to
+have a function.  I'm going to bind this function to something that
+you should call if you have a problem.  Well now you've got that
+ability to call some code from above down low to see what you should
+be doing.  Combining dynamic functions and exceptions gives you some
+of the condition system.
+
+Audience: But it doesn't give you restarts.
+
+Audience: You can, once you throw an exception.
+
+But you don't throw an exception.  That's what I'm saying.  Let's say
+you're somebody who needs to talk to the file system.  And you say, if
+I have a problem talking to the file system, I'm going to call "I had
+a problem talking to the file system".  Somebody above you can bind
+that to do whatever you want.  You're going to call that and use the
+return value, and not throw.
+
+Right, and so I think that gets you most of the way there.
+Dynamically rebinding of functions and exceptions, I think, is enough.
+I like the condition system, but it seems to me to be a hard wired
+special construct, rather than two ...
+
+Audience: It's just throw with some tbd
+
+Right.
+
+Audience: Did you do ???  for that to be rebindable, or is the
+important thing just the presence of dynamic variables.
+
+I've looked at whether you should, instead of having everything be
+potentially dynamic, you call out the things that you're going to
+allow to be dynamic.  And the problem with that is, you don't know.
+Now your program is running, and you say, "Aww!  We're having this
+problem in here.  I wish I could log this function."  Well, you didn't
+declare it dynamic, so now let's stop the running system.  And so,
+rather than do that, I've made it so that all Vars are potentially
+rebindable, and I think that's the better way to go, only because I
+was able to make the check extremely inexpensive, so you can incur it
+everywhere.  So far that's worked out.
+
+(Note 1: Does this check occur on every fn call?  What exactly is that
+check again?)
+
+The cost of calling them out would be you wouldn't be able to, on an
+ad hoc basis, say "Oh! I wish I could dynamic rebind this."
+
+Audience: I take it you don't have first class continuations?
+
+    http://en.wikipedia.org/wiki/Continuation
+
+No.
+
+(pause. laughter)
+
+Audience: Well someone had to say it.
+
+There was a talk about it at the JVM.  I mean, if the JVM supports
+them, I don't know why I wouldn't, but otherwise, I think they're too
+complicated for me.
+
+Audience: First class what?
+
+Continuations.
+
+Audience: ???
+
+No.
+
+(applause)
+
+Audience: The way the symbols are tbd
+
+No, no.  I think the system is good.  If you're coming from Common
+Lisp, and you get your head around how this is different, you'll see.
+It does get rid of, I think, 80 plus percent of the hygiene issues
+really just go away.  Because when this macro was written, list meant
+the list function in Clojure.  It will emit something that will make
+sure that it gets that binding.  And that is what hygiene is about.
+But it doesn't have a sophisticated renaming system.
+
+Audience: Well, would you want to possibly get a hygienic macro
+system?
+
+I also don't understand those too well.  Especially the
+implementation.  It's like the sourdough implementation of that.  No
+one ever reimplements it.  Everybody just passes this one thing
+around, which means if your language isn't Scheme, you have to
+... what do you do?  I seem to see this one implementation of hygienic
+macros reused, let's say, everywhere.  It's complicated!
+
+Audience: Do you have a white paper or something specifically on
+macros tbd
+
+No, just the material on the site.  There's a lot of material on the
+site.  But we have a good group, and any question or dialog you start
+will inform everyone.  I encourage anyone who is using Clojure to join
+the Google group and I'll be happy to expound on any details.
+
+Audience: What's zipper?
+
+What's zipper?  Some French guy whose name I can't quite pronounce.
+Huet?  Huay?  Or Huet?  H U E T, wrote a beautiful functional pearl on
+zippers, which is a way to navigate through a tree-like data structure
+as if it was imperative, and you can go through, and you say boom, and
+you get here, and say replace this with something else, and then you
+can say up up up up up, and you go back up to the root of the tree,
+and what you have then is a changed thing.  There's an implementation
+of that here in Clojure.
+
+    http://en.wikipedia.org/wiki/Zipper_(data_structure)
+
+    In latest Clojure as of Aug 2009, the Clojure implementation is in
+    namespace clojure.zip
+
+Audience: I think we should probably stop here with the questions at
+this point.
+
+OK.  Thank you very much.
+
+
+
+TBD: I'd like to see an example of extending one of these abstractions
+from Clojure, as mentioned in slide 23 discussion.
+
+
+TBD: I guess a transaction is always run within a single thread?
+i.e. there is no real way to get another thread to do some of the work
+of computing some of the results of the transaction for you?
+
+Or if there is a way to do that, do those other threads automatically
+get joined into the transaction with you?
+
+Answer: Right now that doesn't work by default, but apparently it can
+be made to work if you go to some extra effort with copying certain
+thread-local bindings to other threads:
+
+http://groups.google.com/group/clojure/browse_thread/thread/df7f24285e50dec8
+
+It seems to me like in the longer term, it would be nice if it could
+work without such extra trouble on the programmer's part, especially
+if there start to be more common things in the Clojure library that do
+parallelism "under the hood".  Transactions should ideally be short
+things, if you can make them that way.
+
+
+TBD: If you use commute, can there be a "backlog" of commute
+operations that haven't finished yet, even after all transactions have
+completed?  Or I guess they are still synchronous, guaranteed to have
+"effectively completed" by the time the dosync is finished?  If not,
+then they would be more like Agents, right?
