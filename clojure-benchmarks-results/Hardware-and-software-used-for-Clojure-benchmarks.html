@@ -1,15 +1,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en-us"><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Hardware and software used for Clojure benchmarks</title>
-  <meta content="Andy Fingerhut" name="author">
-</head><body>
+<html lang="en-us"><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Hardware and software used for Clojure benchmarks</title>
+  <meta content="Andy Fingerhut" name="author"></head><body>
 <h2>Hardware and software used for Clojure benchmarks<br>
-</h2>
-
-TBD: Get hardware details for Mac Pro at the office.<br>
-
+</h2>A portion of the output of the "system_profiler" command on Mac OS X 10.6.8:<br>
 <br>
-
-32 Gbytes RAM<br>
+&nbsp;&nbsp;&nbsp; Hardware Overview:<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Model Name: Mac Pro<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Model Identifier: MacPro2,1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Processor Name: Quad-Core Intel Xeon<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Processor Speed: 3 GHz<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Number Of Processors: 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Total Number Of Cores: 8<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; L2 Cache (per processor): 4 MB<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Memory: 32 GB<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bus Speed: 1.33 GHz<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Boot ROM Version: MP21.007F.B06<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SMC Version (system): 1.15f3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number (system): 4073301VUPZ<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hardware UUID: 00000000-0000-1000-8000-0019E3F9D88A<br>
+<br>
+&nbsp;&nbsp;&nbsp; System Software Overview:<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System Version: Mac OS X 10.6.8 (10K549)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kernel Version: Darwin 10.8.0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Boot Volume: Macintosh HD<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Boot Mode: Normal<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Computer Name: Andy's Mac Pro<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; User Name: admin_andy (admin)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Secure Virtual Memory: Not Enabled<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 64-bit Kernel and Extensions: No<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time since boot: 19 days 10:42<br>
+<br>
 
 <br>
 
@@ -17,65 +40,92 @@ Output of "cat /proc/cpuinfo" for the first of 4 virtual processors inside the U
 
 <br>
 
-<pre style="margin-left: 40px;">processor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0</pre>
+<span style="font-family: monospace;">processor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0
 
-<pre style="margin-left: 40px;">vendor_id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : GenuineIntel</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">vendor_id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : GenuineIntel
 
-<pre style="margin-left: 40px;">cpu family&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 6</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">cpu family&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 6
 
-<pre style="margin-left: 40px;">model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 15</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 15
 
-<pre style="margin-left: 40px;">model name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Intel(R) Xeon(R) CPU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X5365&nbsp; @ 3.00GHz</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">model
+name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Intel(R) Xeon(R)
+CPU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+X5365&nbsp; @ 3.00GHz
 
-<pre style="margin-left: 40px;">stepping&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 7</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">stepping&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 7
 
-<pre style="margin-left: 40px;">cpu MHz&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 3000.783</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">cpu MHz&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 3000.783
 
-<pre style="margin-left: 40px;">cache size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 6144 KB</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">cache size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 6144 KB
 
-<pre style="margin-left: 40px;">physical id&nbsp;&nbsp;&nbsp;&nbsp; : 0</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">physical id&nbsp;&nbsp;&nbsp;&nbsp; : 0
 
-<pre style="margin-left: 40px;">siblings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 4</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">siblings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 4
 
-<pre style="margin-left: 40px;">core id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">core id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0
 
-<pre style="margin-left: 40px;">cpu cores&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 4</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">cpu cores&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 4
 
-<pre style="margin-left: 40px;">apicid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">apicid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0
 
-<pre style="margin-left: 40px;">initial apicid&nbsp; : 0</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">initial apicid&nbsp; : 0
 
-<pre style="margin-left: 40px;">fpu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : yes</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">fpu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : yes
 
-<pre style="margin-left: 40px;">fpu_exception&nbsp;&nbsp; : yes</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">fpu_exception&nbsp;&nbsp; : yes
 
-<pre style="margin-left: 40px;">cpuid level&nbsp;&nbsp;&nbsp;&nbsp; : 5</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">cpuid level&nbsp;&nbsp;&nbsp;&nbsp; : 5
 
-<pre style="margin-left: 40px;">wp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : yes</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">wp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : yes
 
-<pre style="margin-left: 40px;">flags&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx lm constant_tsc rep_good nopl pni ssse3 lahf_lm</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">flags&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat
+pse36 clflush mmx fxsr sse sse2 ht syscall nx lm constant_tsc rep_good
+nopl pni ssse3 lahf_lm
 
-<pre style="margin-left: 40px;">bogomips&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 6001.56</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">bogomips&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 6001.56
 
-<pre style="margin-left: 40px;">clflush size&nbsp;&nbsp;&nbsp; : 64</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">clflush size&nbsp;&nbsp;&nbsp; : 64
 
-<pre style="margin-left: 40px;">cache_alignment : 64</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">cache_alignment : 64
 
-<pre style="margin-left: 40px;">address sizes&nbsp;&nbsp; : 36 bits physical, 48 bits virtual</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">address sizes&nbsp;&nbsp; : 36 bits physical, 48 bits virtual
 
-<pre style="margin-left: 40px;">power management:</pre>
+</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">power management:</span><br>
+
 
 <br>
 
 <br>
+$ uname -a<br>
+Linux ubuntu-12 3.2.0-32-generic #51-Ubuntu SMP Wed Sep 26 21:33:09 UTC 2012 x86_64 x86_64 x86_64 GNU/Linux<br>
 
 <br>
-
-Mac OS X 10.6.8<br>
-
-<br>
-
-All Linux runs were made running Ubuntu 12.04.1 server 64-bit as a
+<br>All Linux runs were made running Ubuntu 12.04.1 server 64-bit as a
 virtual machine with VirtualBox 4.2.4 (TBD: get more version details),
 all on top of Mac OS X 10.6.8.&nbsp; The virtual machine was configured
 with 4 virtual processors and TBD GBytes of RAM.&nbsp; The virtual hard
