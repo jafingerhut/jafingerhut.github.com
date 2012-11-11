@@ -1,14 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html><head>
+<html lang="en-us"><head>
 
 
 
-<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>binarytrees benchmark</title></head><body>
+
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Clojure programs for the Computer Language Benchmarks Game</title>
+  <meta content="Andy Fingerhut" name="author">
+</head><body>
 <h1><a class="mozTocH1" name="mozTocId411050"></a>Clojure programs for the Computer Language Benchmarks Game</h1>The
 run times of these programs have been measured across many different
-Clojure versions.&nbsp; One possible use of these results is
+Clojure/JVM versions.&nbsp; One possible use of these results is
 identifying performance improvements or regressions as changes are made
-to the Clojure language.<br>
+to the Clojure implementation.&nbsp; See the <a href="Clojure-version-history.html">table of Clojure versions</a> for some details about the versions used, and why some were left out.<br>
 <br>
 For each of these programs, the tables below include:<br>
 <ul>
@@ -45,7 +48,7 @@ themselves, see the "hello" benchmark, which does nothing but print
 upon the Clojure version and JVM
 used, versus about 200 millisec for the Java hello program.<br>
 <br>
-See "Hardware and software used" below for details on what was running beneath the JVM in these measurements.&nbsp; The graphs
+See <a href="Hardware-and-software-used-for-Clojure-benchmarks.html">Hardware and software used</a> for details on what was running beneath the JVM in these measurements.&nbsp; The graphs
 themselves give information about the JVM and OS used.<br>
 <br>
 <table style="text-align: left; width: 90%;" border="1" cellpadding="2" cellspacing="2">
@@ -658,49 +661,4 @@ run-game: 1<br>
   </tbody>
 </table>
 <br>
-<h2><a class="mozTocH2" name="mozTocId874797"></a>Hardware and software used</h2>
-TBD: Get hardware details for Mac Pro at the office.<br>
-<br>
-32 Gbytes RAM<br>
-<br>
-Output of "cat /proc/cpuinfo" for the first of 4 virtual processors inside the Ubuntu Linux virtual machine:<br>
-<br>
-<pre style="margin-left: 40px;">processor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0</pre>
-<pre style="margin-left: 40px;">vendor_id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : GenuineIntel</pre>
-<pre style="margin-left: 40px;">cpu family&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 6</pre>
-<pre style="margin-left: 40px;">model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 15</pre>
-<pre style="margin-left: 40px;">model name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Intel(R) Xeon(R) CPU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X5365&nbsp; @ 3.00GHz</pre>
-<pre style="margin-left: 40px;">stepping&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 7</pre>
-<pre style="margin-left: 40px;">cpu MHz&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 3000.783</pre>
-<pre style="margin-left: 40px;">cache size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 6144 KB</pre>
-<pre style="margin-left: 40px;">physical id&nbsp;&nbsp;&nbsp;&nbsp; : 0</pre>
-<pre style="margin-left: 40px;">siblings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 4</pre>
-<pre style="margin-left: 40px;">core id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0</pre>
-<pre style="margin-left: 40px;">cpu cores&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 4</pre>
-<pre style="margin-left: 40px;">apicid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0</pre>
-<pre style="margin-left: 40px;">initial apicid&nbsp; : 0</pre>
-<pre style="margin-left: 40px;">fpu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : yes</pre>
-<pre style="margin-left: 40px;">fpu_exception&nbsp;&nbsp; : yes</pre>
-<pre style="margin-left: 40px;">cpuid level&nbsp;&nbsp;&nbsp;&nbsp; : 5</pre>
-<pre style="margin-left: 40px;">wp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : yes</pre>
-<pre style="margin-left: 40px;">flags&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx lm constant_tsc rep_good nopl pni ssse3 lahf_lm</pre>
-<pre style="margin-left: 40px;">bogomips&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 6001.56</pre>
-<pre style="margin-left: 40px;">clflush size&nbsp;&nbsp;&nbsp; : 64</pre>
-<pre style="margin-left: 40px;">cache_alignment : 64</pre>
-<pre style="margin-left: 40px;">address sizes&nbsp;&nbsp; : 36 bits physical, 48 bits virtual</pre>
-<pre style="margin-left: 40px;">power management:</pre>
-<br>
-<br>
-<br>
-Mac OS X 10.6.8<br>
-<br>
-All Linux runs were made running Ubuntu 12.04.1 server 64-bit as a
-virtual machine with VirtualBox 4.2.4 (TBD: get more version details),
-all on top of Mac OS X 10.6.8.&nbsp; The virtual machine was configured
-with 4 virtual processors and TBD GBytes of RAM.&nbsp; The virtual hard
-drive was created by pre-allocating all of its capacity at creation
-time.&nbsp; The option to create a dynamically growing virtual disk
-file was not used.&nbsp; VirtualBox gave reason to believe that the
-pre-allocation of virtual disk should lead to better performance for
-file I/O.&nbsp; The graphs show the Linux kernel version number.<br>
 </body></html>

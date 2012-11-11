@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en-us"><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Hardware and software used for Clojure benchmarks</title>
+  <meta content="Andy Fingerhut" name="author">
+</head><body>
+<h2>Hardware and software used for Clojure benchmarks<br>
+</h2>
+
+TBD: Get hardware details for Mac Pro at the office.<br>
+
+<br>
+
+32 Gbytes RAM<br>
+
+<br>
+
+Output of "cat /proc/cpuinfo" for the first of 4 virtual processors inside the Ubuntu Linux virtual machine:<br>
+
+<br>
+
+<pre style="margin-left: 40px;">processor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0</pre>
+
+<pre style="margin-left: 40px;">vendor_id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : GenuineIntel</pre>
+
+<pre style="margin-left: 40px;">cpu family&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 6</pre>
+
+<pre style="margin-left: 40px;">model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 15</pre>
+
+<pre style="margin-left: 40px;">model name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : Intel(R) Xeon(R) CPU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; X5365&nbsp; @ 3.00GHz</pre>
+
+<pre style="margin-left: 40px;">stepping&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 7</pre>
+
+<pre style="margin-left: 40px;">cpu MHz&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 3000.783</pre>
+
+<pre style="margin-left: 40px;">cache size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 6144 KB</pre>
+
+<pre style="margin-left: 40px;">physical id&nbsp;&nbsp;&nbsp;&nbsp; : 0</pre>
+
+<pre style="margin-left: 40px;">siblings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 4</pre>
+
+<pre style="margin-left: 40px;">core id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0</pre>
+
+<pre style="margin-left: 40px;">cpu cores&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 4</pre>
+
+<pre style="margin-left: 40px;">apicid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0</pre>
+
+<pre style="margin-left: 40px;">initial apicid&nbsp; : 0</pre>
+
+<pre style="margin-left: 40px;">fpu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : yes</pre>
+
+<pre style="margin-left: 40px;">fpu_exception&nbsp;&nbsp; : yes</pre>
+
+<pre style="margin-left: 40px;">cpuid level&nbsp;&nbsp;&nbsp;&nbsp; : 5</pre>
+
+<pre style="margin-left: 40px;">wp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : yes</pre>
+
+<pre style="margin-left: 40px;">flags&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx lm constant_tsc rep_good nopl pni ssse3 lahf_lm</pre>
+
+<pre style="margin-left: 40px;">bogomips&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 6001.56</pre>
+
+<pre style="margin-left: 40px;">clflush size&nbsp;&nbsp;&nbsp; : 64</pre>
+
+<pre style="margin-left: 40px;">cache_alignment : 64</pre>
+
+<pre style="margin-left: 40px;">address sizes&nbsp;&nbsp; : 36 bits physical, 48 bits virtual</pre>
+
+<pre style="margin-left: 40px;">power management:</pre>
+
+<br>
+
+<br>
+
+<br>
+
+Mac OS X 10.6.8<br>
+
+<br>
+
+All Linux runs were made running Ubuntu 12.04.1 server 64-bit as a
+virtual machine with VirtualBox 4.2.4 (TBD: get more version details),
+all on top of Mac OS X 10.6.8.&nbsp; The virtual machine was configured
+with 4 virtual processors and TBD GBytes of RAM.&nbsp; The virtual hard
+drive was created by pre-allocating all of its capacity at creation
+time.&nbsp; The option to create a dynamically growing virtual disk
+file was not used.&nbsp; VirtualBox gave reason to believe that the
+pre-allocation of virtual disk should lead to better performance for
+file I/O.&nbsp; The graphs show the Linux kernel version number.
+  
+
+</body></html>
