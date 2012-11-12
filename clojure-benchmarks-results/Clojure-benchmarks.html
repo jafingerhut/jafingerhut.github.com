@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en-us"><head>
+
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Clojure benchmarks</title>
+  <meta content="Andy Fingerhut" name="author"></head><body>
+<h1>Clojure benchmarks</h1>
+The performance measurements linked below are for Clojure on Java,
+versions 1.2.0 and later.&nbsp; All of these programs and the scripts
+used to measure them are available in the <a href="https://github.com/jafingerhut/clojure-benchmarks">clojure-benchmarks</a> Github project.&nbsp; For similar measurements of ClojureScript, see the <a href="https://github.com/netguy204/cljs-bench">cljs-bench project</a> on Github and the measurement results <a href="http://www.50ply.com/cljs-bench/">here</a>.<br>
+<br>
+The
+run times have been measured across many different
+Clojure versions.&nbsp; One possible use of these results is
+identifying performance improvements or regressions as changes are made
+to the implementation of Clojure.&nbsp; See the <a href="Clojure-version-history.html">table of Clojure versions</a> for some details about the versions used, and why some were left out.<br>
+<br>
+There are two sets of results presented here.<br>
+<h2>Whole program benchmarks</h2>
+The <a href="benchmarks-game-programs.html">whole program benchmarks</a>
+measure the run time of Clojure programs from the beginning until the
+end, i.e. from the time the "java" command is invoked to begin the JVM,
+until the Clojure program is finished and the JVM process exits.&nbsp;
+Most of the programs in this set solve problems on the <a href="http://shootout.alioth.debian.org/">Computer Language Benchmarks Game</a> web site, where programs written in many languages are measured in this way (<a href="http://shootout.alioth.debian.org/u64q/compare.php?lang=clojure">direct link</a>
+to some Clojure vs. Java run time comparisons).&nbsp; One program in
+this set is not on that web site: a "Hello, world!" program intended to
+measure the startup time of the JVM and Clojure.<br>
+<h2>Expression benchmarks<br>
+</h2>
+The <a href="Clojure-expression-benchmarks.html">expression benchmarks</a> measure the run time of
+individual Clojure expressions.&nbsp; Most of these expressions are
+identical to ones measured in the <a href="https://github.com/netguy204/cljs-bench">cljs-bench project</a> for ClojureScript.&nbsp; More details about the measurements are available on that page.<br>
+</body></html>

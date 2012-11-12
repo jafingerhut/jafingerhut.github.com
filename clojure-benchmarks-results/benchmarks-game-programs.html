@@ -5,24 +5,23 @@
 
 
 
+
+
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Clojure programs for the Computer Language Benchmarks Game</title>
   <meta content="Andy Fingerhut" name="author"></head><body>
-<h1><a class="mozTocH1" name="mozTocId411050"></a>Clojure programs for the Computer Language Benchmarks Game</h1>The
-run times of these programs have been measured across many different
-Clojure/JVM versions.&nbsp; One possible use of these results is
-identifying performance improvements or regressions as changes are made
-to the Clojure implementation.&nbsp; See the <a href="Clojure-version-history.html">table of Clojure versions</a> for some details about the versions used, and why some were left out.<br>
-<br>
-For each of these programs, the tables below include:<br>
+<h1><a class="mozTocH1" name="mozTocId411050"></a>Clojure whole program benchmarks</h1>For each program, the tables below include:<br>
 <ul>
-  <li>a description of what the program should do</li>
-  <li>a link to the source code of the Clojure and Java programs whose measurements are given here</li>
-  <li>the command line arguments used<br>
-  </li>
+  <li>a description of what the program should do.</li>
+  <li>a link to the source code of the Clojure and Java programs.</li>
+  <li>the command line arguments used.</li>
+  <li>any versions of Clojure that were not measured, and why.</li>
+
   <li>some
 statistics about the amount of input read, output written, and in the
 last table the number of function calls performed during an execution
-of the program</li>
+of the program.</li>
+  
+
 </ul>
 All Clojure programs were compiled AOT (Ahead Of Time) before they were
 executed.&nbsp; The compilation times are not included in the run time
@@ -37,7 +36,7 @@ measurements.&nbsp; What is included in the run time measurements are:<br>
 In other words, what you would get from the elapsed time measurement printed when you run the command:<br>
 <br>
 &nbsp;&nbsp;&nbsp; /usr/bin/time java -server&nbsp; <span style="font-style: italic;">extra-jvm-options</span>&nbsp; -classpath <span style="font-style: italic;">classpath</span>&nbsp; <span style="font-style: italic;">class_name</span>&nbsp; <span style="font-style: italic;">additional_args</span>&nbsp; &gt; output_file<br>
-<br>Each (benchmark, Clojure version, platform) combination was run 5
+<br>Each combination of (benchmark, Clojure version, platform) was run 5
 times, and only the smallest elapsed time among them is shown in the
 graph.&nbsp; By "platform" I mean the JVM, OS, and hardware running
 beneath Clojure.<br>
