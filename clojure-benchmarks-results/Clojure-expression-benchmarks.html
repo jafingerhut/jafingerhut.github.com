@@ -1,9 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en-us"><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Clojure expression benchmarks</title>
-  <meta content="Andy Fingerhut" name="author">
-</head><body>
+<html lang="en-us"><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Clojure expression benchmarks</title>
+  <meta content="Andy Fingerhut" name="author"></head><body>
 <h1>Clojure expression benchmarks</h1>
-For these benchmarks a slightly modified version of Hugo Duncan's <a href="https://github.com/hugoduncan/criterium">criterium</a> is used to perform the measurements (my slightly modified version is <a href="https://github.com/jafingerhut/criterium">here</a>).&nbsp; The basic idea of criterium is to first run the expression many times to cause the JVM's <a href="http://en.wikipedia.org/wiki/Just-in-time_compilation">JIT compiler</a>
+For these benchmarks a slightly modified version of Hugo Duncan's <a href="https://github.com/hugoduncan/criterium">criterium</a>
+is used to perform the measurements.&nbsp; See below for details on my
+changes.&nbsp; The basic idea of criterium is to first run the
+expression many times to cause the JVM's <a href="http://en.wikipedia.org/wiki/Just-in-time_compilation">JIT compiler</a>
 to optimize the code for that expression, and only after that to run
 the expression as many times as possible in about 30 seconds.&nbsp; The
 warmup time is at least 10 seconds in duration.&nbsp; The final measurement
@@ -21,24 +24,34 @@ The slightly modified version of criterium is available <a href="https://github.
 
 
 <ol>
-<li>include more information about the JVM being run and the
+<li><span style="font-weight: bold;"></span>Include more information about the JVM being run and the
 benchmarking options used in the Clojure map that is the return value
-of the "benchmark*" function.</li><li>Reduce the per-iteration overhead of the inner loop that
-repeatedly executes the expression to be measured.&nbsp; Inside of the inner
-timing loop that executed the expression being measured repeatedly and
-measured the total elapsed time, the version of criterium I started
-with used boxed arithmetic for the loop variables, and computed a hash
-function on the expression's return value.&nbsp; My modified version changes
-that inner measurement loop to use primitive arithmetic for the loop
+of the <span style="font-family: monospace;">benchmark*</span> function.</li><li>Reduce the per-iteration overhead of the inner loop in function <span style="font-family: monospace;">execute-expr</span> that
+repeatedly executes the expression to be measured.</li>
+</ol>Details for number 2:<br>
+<br>
+In criterium, the function <span style="font-family: monospace;">execute-expr</span>
+implements the inner loop that repeatedly executes the expression being
+measured and calculates the total elapsed time.&nbsp; In the version of
+criterium I started with, <span style="font-family: monospace;">execute-expr</span> uses boxed arithmetic for the loop variables, and computes a hash
+function on the expression's return value in each iteration.<br>
+<br>
+I modified <span style="font-family: monospace;">execute-expr</span> to use primitive arithmetic for the loop
 variables and to store the return value of the expression in a Java
 array.&nbsp; The final hash computation is still done, but only after the
-measurement loop is complete.&nbsp; These changes make no noticeable
-difference to the results if the expression takes a long time to
-complete (e.g. tens of milliseconds), but make a significant difference
-for expressions that take a few nanoseconds to complete.&nbsp; Even with
+measurement loop is complete.<br>
+<br>
+These changes make no noticeable
+difference to the measurements if the expression takes a long time to
+complete (e.g. tens of milliseconds), but they make a significant
+difference
+for expressions that take a few nanoseconds to complete.&nbsp; Even
+with
 these changes, note that for very fast expressions there is a
-significant fraction of the time reported that is for updating loop variables and storing the results in a Java array.</li>
-</ol>
+significant fraction of the time reported that is for the remaining
+overhead: updating primitive integer loop variables and storing the
+expression return value in a Java array.<br>
+
 
 
 
