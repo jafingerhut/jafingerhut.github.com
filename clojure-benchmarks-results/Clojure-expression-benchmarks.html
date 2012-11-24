@@ -1,22 +1,113 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en-us"><head>
+
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Clojure expression benchmarks</title>
   <meta content="Andy Fingerhut" name="author"></head><body>
 [<a href="Clojure-benchmarks.html">benchmarks main page</a>] [<a href="Clojure-whole-program-benchmarks.html">whole program benchmarks</a>] [expression benchmarks] [<a href="Clojure-version-history.html">Clojure version history</a>] [<a href="Hardware-and-software-used-for-Clojure-benchmarks.html">hardware and software used</a>]<br>
-<h1>Clojure expression benchmarks</h1>
+<h1>Clojure expression benchmarks</h1>Graphs of measurements are <a href="Clojure-expression-benchmark-graphs.html">here</a>.<br>
+<br>
+
 
 For these benchmarks a slightly modified version of Hugo Duncan's <a href="https://github.com/hugoduncan/criterium">criterium</a>
 is used to perform the measurements.&nbsp; See below for details on my
-changes.&nbsp; The basic idea of criterium is to first run the
-expression many times to cause the JVM's <a href="http://en.wikipedia.org/wiki/Just-in-time_compilation">JIT compiler</a>
-to optimize the code for that expression, and only after that to run
-the expression as many times as possible in about 30 seconds.&nbsp; The
-warmup time is at least 10 seconds in duration.&nbsp; The final measurement
-presented here is the average time it took each expression evaluation
-to complete, after the warmup time is complete.<br>
+changes.&nbsp; The basic idea of criterium is to do the following for each expression:<br>
+<ol>
+  <li>First run the
+expression many times to cause the JVM's <a href="http://en.wikipedia.org/wiki/Just-in-time_compilation">JIT compiler</a>to
+optimize the code for that expression.&nbsp; The expression is
+evaluated as many times as required until the total time is at least 10
+seconds.</li>
+  <li>Run the expression many times to determine how many times it must be evaluated to take about 1 second.&nbsp; The result is a number of executions "n-exec".<br>
+  </li>
+  <li>Run the expression n-exec times (taking about 1 second), and then do that 29 more times, taking a total of about 30 seconds.</li>
+</ol>
+The final measurement for 1 "run" is the average time it took each expression evaluation
+to complete in step 3 above, which is after all of the warmup is complete.<br>
+<br>
+In the graphs, each data point is the result of doing 3 runs.&nbsp; Only the <span style="font-weight: bold;">fastest</span>
+value among those 3 runs is charted.&nbsp; The 3 runs were done
+relatively far apart from each other in time, in hope of reducing any
+transient conditions that can slow down the results, e.g. other
+processes running on the machine.&nbsp; The machine was not being used
+for any other purposes during these performance measurements.<br>
+<br>
+Each expression begins with a "context" given in square brackets.&nbsp; For example:<br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="font-family: monospace;">[arr (object-array (range 1000000))] (reduce + 0 arr)</span><br>
+<br>
+The results for such a benchmark are obtained by binding the symbol <span style="font-family: monospace;">arr</span> to the value of <span style="font-family: monospace;">(object-array (range 1000000))</span>, and then in a lexical context where <span style="font-family: monospace;">arr</span> has that value, the expression <span style="font-family: monospace;">(reduce + 0 arr)</span> is repeatedly evaluated and measured.&nbsp; The evaluation of <span style="font-family: monospace;">(object-array (range 1000000))</span> is done only once, before any of steps 1 through 3 above are done, and thus before any measurements are performed.<br>
+<h2>FAQs</h2>
+I will update this section if any questions actually become frequently
+asked.&nbsp; This is my attempt to answer what I expect might become
+FAQs.<br>
+<h3>I can just take these results and use them to predict the performance I will get, right?</h3>
+The hardware and software I used to measure these results is described <a href="Hardware-and-software-used-for-Clojure-benchmarks.html">here</a>.&nbsp;
+Changing any of those things could change the results.&nbsp; If the
+results with a particular combination of hardware, OS, JVM, and Clojure
+version matter a lot to you, you should be doing your own benchmarks,
+preferably with your own application, a profiler, and, if you are
+really serious about tracking down performance issues in your
+application, by instrumenting your code with metrics, e.g. Coda Hale's <a href="http://metrics.codahale.com/manual/core/">Metrics Core</a> library.<br>
+<h3>For the 3 runs you did to take the minimum for one point on the graph, why would those 3 times differ?</h3>
+Even when I was keeping all of the hardware, OS, JVM version, and
+Clojure version exactly the same between the 3 runs I mention above for
+each data point, my results varied from run to run.&nbsp; Why?&nbsp;
+Minor variations of under 5% are likely due to differences in the state
+of hardware and software caches at the beginning of the run, or to
+process scheduling differences and what other processes were
+running.&nbsp; I was not using the computer that did the measurements
+for any other purposes during the measurements, but I did not monitor
+for occasional events like nightly or weekly log file cleanup tasks,
+software auto-checking for updates, network activity, etc.&nbsp; I
+don't expect any of those to have a noticable effect on the graphs,
+because I made the 3 runs far apart in time -- at least a day, often
+several days apart.&nbsp; It would take a big coincidence for one of
+those causes to affect the results on all 3 of those runs.<br>
+<br>
+For some results I saw more than 5% variation between the 3 runs.&nbsp;
+I don't yet know why that would be.&nbsp; I can tell you for certain
+that it was not due to changing the hardware, OS, JVM, or Clojure
+version (for a single data point in the graph).<br>
+<h3>But the point of benchmarks is to help me draw conclusions about how different pieces of code perform, right?</h3>
+Sure, just be careful not to extrapolate too far from what the results
+are actually saying.&nbsp; It would be very surprising if an expression
+I give measurements for
+takes 1/10 or 10x the time on similar hardware and software, and would
+bear close examination to see if a mistake had been made in measurement
+somewhere.<br>
+<br>
+These measurements were made while running the same expression
+repeatedly.&nbsp; The JVM should have already performed JIT
+optimization on this code before the measurements began.&nbsp; Note
+that some JIT compilers are able to use profiling information about
+polymorphic method calls and if they are called on only one type during
+warmup, they can create optimized versions that work only for that type
+and would be much slower if called on a different type.&nbsp; See <a href="https://groups.google.com/forum/#%21msg/clojure-dev/0c-VNhEKVkI/Z7R1qKqsfN0J">here</a>
+a mention of this behavior from Rich Hickey.&nbsp; I don't know of any
+links that give measurements demonstrating this effect -- please <a href="mailto:andy.fingerhut@gmail.com">email me</a> if you know of any and I can add them here.<br>
+<h3>What about earlier versions of Clojure?</h3>
+There are no JAR files for Clojure versions 1.3-alpha1 through
+1.3-alpha4 in the Maven repos that I could find, and I didn't bother to
+build my own JAR files for them for the purposes of these
+results.&nbsp; If someone could tell me a good source for those JARs,
+or exactly which git commit in the Clojure Github repository those
+versions correspond to, I would consider adding them.<br>
+<br>
+The criterium measurement library does not compile with Clojure
+versions 1.2 or 1.2.1.&nbsp; I'm sure it could be modified to do so,
+but that was not a high priority for me in creating these
+measurements.&nbsp; Contact me if you are interested in helping get
+criterium working with those versions of Clojure.<br>
+<h3>What about measuring other expressions?</h3>
+Let me know what you'd like to see, and I will consider adding
+it.&nbsp; I started with a list of expressions that are the same as, or
+very similar to, the ClojureScript expressions measured in the <a href="https://github.com/netguy204/cljs-bench">ClojureScript benchmarks</a>.<br>
+<h2>Details on my modifications to criterium library</h2>
 
 
 
+
+Note that Hugo Duncan has incorporated into criterium the changes described below as of Nov 19, 2012.<br>
 <br>
 
 
