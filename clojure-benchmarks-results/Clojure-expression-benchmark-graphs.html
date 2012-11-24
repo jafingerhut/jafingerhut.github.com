@@ -99,154 +99,156 @@
 </a></li>
 </ul>
 
+<hr>
 <p>
 <a id="bench-1">
 <img src="cljexprs-graphs/1.png"></a></p><p>(identity x) notes: It is a good bet that most of this measured time is the per-loop overhead in criterium of updating two primitive long loop locals, and saving the return value in a Java array.&nbsp; This same overhead is present in all of the benchmarks, but much less noticeable when the expression takes longer to evaluate.</p><p>Why the noticeably longer time for 32-bit JVMs than for 64-bit JVMs?&nbsp; My guess is that this is due to the 32-bit JVMs being less efficient at updating the primitive long values, but I'd love it if someone who knows for certain could tell me.<br><a id="bench-1">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-2">
 <img src="cljexprs-graphs/2.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-3">
 <img src="cljexprs-graphs/3.png"></a></p><p>(reduce + 0N arr) notes: TBD exactly which commit(s) between Clojure 1.3-beta1 and 1.3-beta2 led to the much better performance afterwards.<br><a id="bench-3">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-4">
 <img src="cljexprs-graphs/4.png"></a></p><p>(areduce arr i sum 0 (+ sum i)) notes: TBD which commit(s) between Clojure 1.3-beta3 and 1.3 led to the better performance on 32-bit JVMs afterwards.<a id="bench-4">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-5">
 <img src="cljexprs-graphs/5.png"></a></p><p>(areduce arr i sum 0N (+ sum i)) notes: TBD exactly which commit(s) between Clojure
 1.3-beta1 and 1.3-beta2 led to the much better performance afterwards.&nbsp; Likely it was the same changes that led to the better performance for (reduce + 0N arr) above.<a id="bench-5">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-6">
 <img src="cljexprs-graphs/6.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-7">
 <img src="cljexprs-graphs/7.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-8">
 <img src="cljexprs-graphs/8.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-9">
 <img src="cljexprs-graphs/9.png"></a></p><p>[coll (list 1 2 3)] (first coll) notes: The spikes of longer times in this graph are most likely due to the 3 runs made for each data point having significant variation from one run to the next, and if I had tried several more runs I would get one that was as low as the neighboring results on the same JVM.&nbsp; I don't know the reasons for the significant run-to-run variation.<br><a id="bench-9">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-10">
 <img src="cljexprs-graphs/10.png"></a></p><p>[coll (list 1 2 3)] (rest coll) notes: See previous graph for notes on the spikes in the graph.<br><a id="bench-10">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-11">
 <img src="cljexprs-graphs/11.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-12">
 <img src="cljexprs-graphs/12.png"></a></p><p>[] (list 1 2 3) notes: I find it odd that 2 out of the 5 JVMs tested have a noticeable increase in run time between Clojure 1.4-alpha4 and 1.4-beta1, but not the others.&nbsp; TBD: which commit(s) led to this change?<br><a id="bench-12">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-13">
 <img src="cljexprs-graphs/13.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-14">
 <img src="cljexprs-graphs/14.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-15">
 <img src="cljexprs-graphs/15.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-16">
 <img src="cljexprs-graphs/16.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-17">
 <img src="cljexprs-graphs/17.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-18">
 <img src="cljexprs-graphs/18.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-19">
 <img src="cljexprs-graphs/19.png"></a></p><p>[coll (seq [1 2 3])] (first coll) notes: See under the graph of [coll (list 1 2 3)] (first coll) for notes on the spikes in the graph.<a id="bench-19">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-20">
 <img src="cljexprs-graphs/20.png"></a></p><p>[coll (seq [1 2 3])] (rest coll) notes: See under the graph of [coll
 (list 1 2 3)] (first coll) for notes on the spikes in the graph.<a id="bench-20">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-21">
 <img src="cljexprs-graphs/21.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-22">
 <img src="cljexprs-graphs/22.png"></a></p><p>[] (reduce conj [] (range 40000)) notes: TBD why only the 64-bit Apple JDK 1.6 is significantly slower than the others.<br><a id="bench-22">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-23">
 <img src="cljexprs-graphs/23.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-24">
 <img src="cljexprs-graphs/24.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-25">
 <img src="cljexprs-graphs/25.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-26">
 <img src="cljexprs-graphs/26.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-27">
 <img src="cljexprs-graphs/27.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-28">
 <img src="cljexprs-graphs/28.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-29">
 <img src="cljexprs-graphs/29.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-30">
 <img src="cljexprs-graphs/30.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-31">
 <img src="cljexprs-graphs/31.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-32">
 <img src="cljexprs-graphs/32.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-33">
 <img src="cljexprs-graphs/33.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-34">
 <img src="cljexprs-graphs/34.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-35">
 <img src="cljexprs-graphs/35.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-36">
 <img src="cljexprs-graphs/36.png"></a></p><p>[key :f0] (hash key) notes: TBD exactly which commit(s) between Clojure
 1.4-alpha1 and 1.4-alpha2 led to the worse performance afterwards.<a id="bench-36">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-37">
 <img src="cljexprs-graphs/37.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-38">
 <img src="cljexprs-graphs/38.png"></a></p><p>[coll map1] (:f0 coll) notes: map1 has 30 key/value pairs where all keys are keywords.&nbsp; The increase in time from Clojure 1.4-alpha1 to 1.4-alpha2 is likely due to the same change as for the [key :f0] (hash key) benchmark above.<a id="bench-38">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-39">
 <img src="cljexprs-graphs/39.png"></a></p><p>[coll map1] (get coll :f0) notes: The previous graph's notes are relevant here, too.<br><a id="bench-39">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-40">
 <img src="cljexprs-graphs/40.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-41">
 <img src="cljexprs-graphs/41.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-42">
 <img src="cljexprs-graphs/42.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-43">
 <img src="cljexprs-graphs/43.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-44">
 <img src="cljexprs-graphs/44.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-45">
 <img src="cljexprs-graphs/45.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-46">
 <img src="cljexprs-graphs/46.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-47">
 <img src="cljexprs-graphs/47.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-48">
 <img src="cljexprs-graphs/48.png">
-</a></p><p>
+</a></p><hr><p>
 <a id="bench-49">
 <img src="cljexprs-graphs/49.png">
 </a></p>
+<hr>
