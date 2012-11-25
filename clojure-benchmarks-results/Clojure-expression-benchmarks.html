@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en-us"><head>
 
+
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Clojure expression benchmarks</title>
   <meta content="Andy Fingerhut" name="author"></head><body>
 [<a href="Clojure-benchmarks.html">benchmarks main page</a>] [<a href="Clojure-whole-program-benchmarks.html">whole program benchmarks</a>] [expression benchmarks] [<a href="Clojure-version-history.html">Clojure version history</a>] [<a href="Hardware-and-software-used-for-Clojure-benchmarks.html">hardware and software used</a>]<br>
@@ -13,11 +14,14 @@ is used to perform the measurements.&nbsp; See below for details on my
 changes.&nbsp; The basic idea of criterium is to do the following for each expression:<br>
 <ol>
   <li>First run the
-expression many times to cause the JVM's <a href="http://en.wikipedia.org/wiki/Just-in-time_compilation">JIT compiler</a>to
+expression many times to cause the JVM's <a href="http://en.wikipedia.org/wiki/Just-in-time_compilation">JIT compiler</a> to
 optimize the code for that expression.&nbsp; The expression is
 evaluated as many times as required until the total time is at least 10
 seconds.</li>
-  <li>Run the expression many times to determine how many times it must be evaluated to take about 1 second.&nbsp; The result is a number of executions "n-exec".<br>
+  <li>Run
+the expression many times to determine how many times it must be
+evaluated to take about 1 second.&nbsp; The result is a number of
+executions "n-exec".<br>
   </li>
   <li>Run the expression n-exec times (taking about 1 second), and then do that 29 more times, taking a total of about 30 seconds.</li>
 </ol>
@@ -107,7 +111,7 @@ very similar to, the ClojureScript expressions measured in the <a href="https://
 
 
 
-Note that Hugo Duncan has incorporated into criterium the changes described below as of Nov 19, 2012.<br>
+Note that Hugo Duncan has incorporated the changes described below into criterium version 0.3.1, released on Nov 25, 2012.<br>
 <br>
 
 
