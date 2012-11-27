@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en-us"><head>
 
+
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Hardware and software used for Clojure benchmarks</title>
   <meta content="Andy Fingerhut" name="author"></head><body>[<a href="Clojure-benchmarks.html">benchmarks main page</a>] [<a href="Clojure-whole-program-benchmarks.html">whole program benchmarks</a>] [<a href="Clojure-expression-benchmarks.html">expression benchmarks</a>] [<a href="Clojure-version-history.html">Clojure version history</a>] [hardware and software used]
 <h2>Hardware and software used for Clojure benchmarks<br>
@@ -37,7 +38,7 @@
 
 <br>
 
-Output of "cat /proc/cpuinfo" for the first of 4 virtual processors inside the Ubuntu Linux virtual machine:<br>
+Output of "cat /proc/cpuinfo" for the first of 8 virtual processors inside the Ubuntu Linux virtual machine:<br>
 
 <br>
 
@@ -71,13 +72,13 @@ X5365&nbsp; @ 3.00GHz
 <span style="font-family: monospace;">physical id&nbsp;&nbsp;&nbsp;&nbsp; : 0
 
 </span><br style="font-family: monospace;">
-<span style="font-family: monospace;">siblings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 4
+<span style="font-family: monospace;">siblings&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 8
 
 </span><br style="font-family: monospace;">
 <span style="font-family: monospace;">core id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0
 
 </span><br style="font-family: monospace;">
-<span style="font-family: monospace;">cpu cores&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 4
+<span style="font-family: monospace;">cpu cores&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 8
 
 </span><br style="font-family: monospace;">
 <span style="font-family: monospace;">apicid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 0
@@ -127,10 +128,10 @@ Linux ubuntu-12 3.2.0-32-generic #51-Ubuntu SMP Wed Sep 26 21:33:09 UTC 2012 x86
 
 <br>
 <br>All Linux runs were made running Ubuntu 12.04.1 server 64-bit as a
-virtual machine with VirtualBox 4.2.4 (TBD: get more version details),
+virtual machine with VirtualBox 4.2.4 r81684,
 all on top of Mac OS X 10.6.8.&nbsp; The virtual machine was configured
-with 4 virtual processors and TBD GBytes of RAM.&nbsp; The virtual hard
-drive was created by pre-allocating all of its capacity at creation
+with 8 virtual processors and 3 GBytes of RAM.&nbsp; The virtual hard
+drive was created by pre-allocating all of its capacity at virtual machine creation
 time.&nbsp; The option to create a dynamically growing virtual disk
 file was not used.&nbsp; VirtualBox gave reason to believe that the
 pre-allocation of virtual disk should lead to better performance for
