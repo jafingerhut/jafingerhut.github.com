@@ -1,0 +1,272 @@
+Tickets needing work for CLJ project
+Date: January 4, 2013
+
+If you are a Clojure contributor, the tickets below could use some
+work.  Some are easy, some are not.  If you've never added a patch
+before, or want a refresher on the mechanics, see (Note 1) near the
+bottom.
+
+Keep reading below for a list of tickets that:
+    (a) have patches, but they need updating, or
+    (b) don't have patches, but are vetted or are marked for Release
+        1.5 of Clojure
+
+Vetted tickets are marked with a "V".  Vetted means that a Clojure
+screener has verified that the ticket describes a real issue, and they
+would be interested in seeing a patch that addresses it.
+
+For a list of all tickets that don't have any patches, see (Note 2)
+near the bottom.
+
+Another way to help out is to try out, read, review, comment on, and
+vote for existing patches.  See the separate "List of prescreened
+patches" for those.
+
+----------------------------------------------------------------------
+Blocking bugs
+----------------------------------------------------------------------
+One or more contributors consider these bugs to be blocking,
+i.e. significant enough to warrant fixing before another release is
+made, by saying so on clojure-dev.  If someone from Clojure/core wants
+to veto that status, let me know and I'll remove it from this part of
+the report.
+
+   <none at this time>
+
+----------------------------------------------------------------------
+Tickets with prescreened patches, but they may need work, since the
+ticket is marked Incomplete (I) or Not Approved (N).
+----------------------------------------------------------------------
+      Doc string fixes only:
+
+I  CLJ-835  0001-CLJ-835-Refine-doc-string-for-defmulti-hierarchy-opt.patch
+I  CLJ-980  extended-type-doc-fix-v2.patch
+
+      Debug/tooling enhancement:
+
+I  CLJ-939  clj-939-report-load-exceptions-with-file-and-line-patch-v2.txt
+I  CLJ-1122 contributing.patch
+
+      Clojure language/library bug fixes:
+
+N  CLJ-945  capitalize-for-supplementary-chars-patch.txt
+      TBD: Stuart H marked the one patch Screened, then Rich changed it to
+      Not Approved with a comment.  Andy F answered his comment, but the
+      patch did not require any change in order to answer that comment.
+      Should it be marked as Screened again since the patch hasn't
+      changed?
+
+      Allow more correct-looking Clojure code to work:
+
+I  CLJ-373  0001-Support-empty-path-in-update-in.-CLJ-373.patch
+
+      Language/library enhancement:
+
+I  CLJ-771  clj-771-move-unchecked-casts-patch-v4.txt
+      TBD: The patch clj-771-move-unchecked-casts-patch-v4.txt applies
+      cleanly to latest master and passes all tests. Rich marked this ticket
+      as Incomplete on Dec 9 2011 with the comment "still considering when
+      to incorporate this" above. Is it reasonable to change it back to
+      Vetted or Screened so it can be considered again, perhaps after
+      Release 1.5 is made?
+N  CLJ-957  clj-957-allow-typehinting-of-method-signatures-in-deftype-patch2.txt
+      TBD: Why marked Not Approved by Rich?  Should this be closed, or does
+      he want something about the existing patches modified before
+      considering it?
+N  CLJ-958  0001-Make-APersistentVector.iterator-slightly-more-effici.patch
+      TBD: Why marked Not Approved by Rich?  Should this be closed, or does
+      he want something about the existing patches modified before
+      considering it?
+N  CLJ-1063 clj-1063-add-dissoc-in-patch-v2.txt
+      TBD: Open ticket for clojure.incubator for this.
+
+      Disable failing tests:
+
+N  CLJ-967  clj-967-disable-failing-io-copy-tests-on-ibm-jdk-16-patch1.txt
+      TBD: Stuart H marked the one patch Screened, then Rich changed it to
+      Not Approved without any comment as to why.  There is no guidance on
+      what Rich is looking for in order for this ticket to change state in
+      the future.
+
+----------------------------------------------------------------------
+Tickets marked for Clojure release 1.5 that have no prescreened
+patches (see also Note 3 at the bottom):
+----------------------------------------------------------------------
+
+<none>
+
+----------------------------------------------------------------------
+Tickets needing work that have no prescreened patches.  These are all
+Vetted (marked V), Incomplete (I), or Not Approved (N).  The number
+after the letter is the number of votes, and tickets have been sorted
+from most to fewest votes.  Note that Not Approved patches might be
+declined (I will try to confirm this), so don't spend time on them
+before finding out.
+----------------------------------------------------------------------
+V   3 [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
+      There are lots of different ideas discussed in the comments for
+      CLJ-124, and not clear to me if there is an agreed-upon set of
+      changes for the issue.  CLJ-959 could potentially be closed as a
+      duplicate of CLJ-124.
+I   2 [CLJ-415] smarter assert (prints locals)
+      The patch applies cleanly and passes tests, but gives a warning
+      because macro local-bindings is same name (and perhaps the same
+      author, since the body is almost the same) as a function
+      local-bindings in clojure.test.generative.  If the one in
+      clojure.test.generative were moved to clojure.core,
+      test.generative could use that one.
+I   2 [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
+N   1 [CLJ-148] Poor reporting of symbol conflicts when using (ns)
+V   1 [CLJ-1105] defrecord classes implement IPersistentCollection but not .empty, clojure.walk assumes collections support empty
+I   0 [CLJ-5] Unintuitive error response in clojure 1.0
+      One of two patches applied and built cleanly on May 4, 2012, but
+      not on May 10, 2012.  The second, clj-5-destructure-error.diff,
+      failed to apply as of Oct 4, 2012.
+V   0 [CLJ-47] GC Issue 43: Dead code in generated bytecode
+I   0 [CLJ-69] GC Issue 66: Add "keyset" to Clojure; make .keySet for APersistentMap return IPersistentSet
+I   0 [CLJ-84] GC Issue 81: compile gen-class fail when class returns self
+N   0 [CLJ-140] Single :tag for type hints conflates value's type with type of return value from an invoke
+N   0 [CLJ-150] Doc for array-map should mention its characteristics/caveats
+N   0 [CLJ-153] Suggest adding set-precision! API to accompany with-precision
+N   0 [CLJ-163] Enhance = and == docs
+N   0 [CLJ-190] enhance with-open to be extensible with a new close multimethod
+I   0 [CLJ-211] Support arbitrary functional destructuring via -> and ->>
+I   0 [CLJ-250] debug builds
+V   0 [CLJ-274] cannot close over mutable fields (in deftype)
+I   0 [CLJ-291] (take-nth 0 coll) redux...
+I   0 [CLJ-346] (pprint-newline :fill) is not handled correctly
+V   0 [CLJ-348] reify allows use of qualified name as method parameter
+V   0 [CLJ-420] Some compiler exceptions erroneously using REPL line numbers.
+V   0 [CLJ-701] Compiler loses 'loop's return type in some cases
+V   0 [CLJ-731] Create macro to variadically unroll a combinator function definition
+V   0 [CLJ-787] transient blows up when passed a vector created by subvec
+V   0 [CLJ-992] `iterate` reducer
+V   0 [CLJ-1033] pr-str and read-string don't handle @ symbols inside keywords properly
+V   0 [CLJ-1039] Using 'def with metadata {:type :anything} throws ClassCastException
+V   0 [CLJ-1056] defprotocol: invalid method overload syntax getting accepted 
+V   0 [CLJ-1058] StackOverflowError on exception in reducef for PersistentHashMap fold
+V   0 [CLJ-1082] Subvecs of primitive vectors cannot be reduced
+
+----------------------------------------------------------------------
+The tickets below are simply ones that seem like they might be a
+reasonable amount of effort to create a patch, found by manual browing
+through tickets.
+
+   CLJ-129 Add documentation to sorted-set-by detailing how the provided comparator may change set membership semantics
+      A thorough job of documenting this would require understanding
+      how Clojure functions are made to implement the Comparable
+      interface in AFunction.java of the Clojure source code, and the
+      restrictions in Java of what makes a "good" implementation of
+      the Comparator interface.  Doing that clearly is probably best
+      done in a form longer than is acceptable in a doc string for
+      sorted-set-by or sorted-map-by, but perhaps such documentation
+      could be put at a link that could be added to the doc string.
+   CLJ-668 Improve slurp performance by using native Java StringWriter and jio/copy
+        (looks related to CLJ-669, which does have a patch)
+   CLJ-750 clojure.lang.MapEntry violates .equals and .hashCode contracts of HashMap.Entry; leads to non-reflexive .equals, etc.
+   CLJ-766 Implicit casting behaviour of into-array differs from <primitive>-array
+
+----------------------------------------------------------------------
+These patches used to apply cleanly, but due to recent changes in
+Clojure master no longer do.  See (Note 1) for some tips on updating
+stale patches.
+
+      Language enhancement, new reducers planned for Clojure 1.5:
+
+   CLJ-994 none of the patches apply cleanly, but did on Jul 26, 2012
+
+      Language/library enhancement:
+
+   CLJ-976 clj-976-queue-literal-eval-and-synquote-patch-v3.txt
+      Applied cleanly until Oct 20 2012 when a conflicting patch for
+      CLJ-1070 was applied.
+   CLJ-1078 queue.patch
+      Applied cleanly as of Dec 11 2012 using patch command, but there
+      are more substantive changes to make per comments from Rich.
+
+----------------------------------------------------------------------
+These patches have comments/questions from a Clojure screener that
+should be addressed:
+
+   <none at this time>
+
+----------------------------------------------------------------------
+These patches would pass prescreening, except they fail one or more
+tests in the Clojure test suite:
+
+   <none at this time>
+
+----------------------------------------------------------------------
+The patches below would be prescreened, except that their authors are
+not on the list of Clojure contributors.  The authors have been
+contacted via email to ask if they are willing to sign CAs, but they
+may not be interested in doing so for the purpose of a single
+submitted patch.  Other contributors should feel free to implement
+their own changes for the ticket, _independently_ of the existing
+patches.
+
+CLJ-450 clj-450-add-default-pred-arg-to-core-fns-patch.txt (Jason Orendorff)
+CLJ-884 diff.patch (Rahul Pilani - patch actually does not apply cleanly as of June 2012, but did earlier in 2012)
+CLJ-983 proxy_super.patch (Valentin Mahrwald)
+CLJ-1095 0001-map-indexed-accepts-multiple-collections.patch (Bo Jeanes)
+
+
+The ones above may be easy to update.  The ones below are likely more
+work, where part of the work could be figuring out what ought to be
+done in the first place.
+
+Comments on the tickets below imply that authors or other contributors
+think more work should be done to create new patches.  Some of these
+might be significant hunks of work.
+
+CLJ-2 Scopes
+    Only patch fails to apply cleanly.
+CLJ-792 Refactor method resolution code out of Compiler and into Reflector
+    Patch clj-792-reorg-reflector-patch2.txt applied cleanly in Feb
+    2012, but didn't pass all tests.
+CLJ-821 should reify merge rather than replace on repeated specs?
+    Only patch fails to apply cleanly.
+CLJ-891 make (symbol foo "bar") work with foo being a namespace
+    Only patch applied and built cleanly until Oct 4, 2012, when
+    another committed patch caused it to no longer apply cleanly.
+
+----------------------------------------------------------------------
+
+(Note 1)
+
+Read the documentation under the headings "Development", "Adding
+patches", "Removing patches", and "Updating stale patches" on this
+page:
+
+    http://dev.clojure.org/display/design/JIRA+workflow
+
+(Note 2)
+
+As of the date of this report, there are 139 tickets matching a JIRA
+filter called "Needs a Patch (all)".  To see them, go to this link:
+
+    http://dev.clojure.org/jira/secure/ManageFilters.jspa#filterView=search
+
+In the box labeled Author, type in Andy Fingerhut.  Click on the
+choice that pops up and the contents should change to my user account
+name, jafingerhut.  Click on the Search button at the bottom.  Then
+click on the filter called "Needs a Patch (all)".  You can subscribe
+to the filter, after which it should show up in your list of filters
+under the Issues menu on this page:
+
+    http://dev.clojure.org/jira/browse/CLJ
+
+Most "Needs a Patch" tickets have no patches attached.  If it does
+have a patch, then its Patch attribute needs to be changed.  Read the
+documentation on adding patches at the link in (Note 1) above.
+
+Some of the older tickets have links to patches in the old Assembla
+ticket system.  If you add an attachment to the JIRA ticket, my
+automated patch prescreening code will pick it up the next time I run
+it (about once per week).
+
+(Note 3)
+
+To see a JIRA filter matching tickets that are marked for Release 1.5,
+but are not marked as having a patch, follow the instructions for Note
+2, except the filter name is "Needs a patch for Release 1.5"
