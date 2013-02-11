@@ -17,9 +17,10 @@
 
 Clojure developers have often used `clojure.core`'s `pr` and other
 similar printing functions for writing Clojure data, and `read` or
-`read-string` to read it.  For example, Leiningen's `project.clj`
-files are simply Clojure lists whose elements are symbols, keywords,
-strings, vectors, and maps.
+`read-string` to read it.  For example,
+[Leiningen](http://leiningen.org)'s `project.clj` files are simply
+Clojure lists whose elements are symbols, keywords, strings, vectors,
+and maps.
 
 A subset of the data that can be written and read in this way is a
 format called [edn](https://github.com/edn-format/edn), Extensible
