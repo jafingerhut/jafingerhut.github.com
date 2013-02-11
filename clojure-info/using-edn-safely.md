@@ -51,14 +51,13 @@ you can do so with:
 
 You can define `pr-edn` the same way, except use `pr` instead of
 `pr-str` in its definition, and it will print the objects to `*out*`.
+Then you could use the code below to print edn to any writer `w`.
 
     (binding [*out* w]
         (pr-edn x1 x2 ...))
 
-can then be used to print to any writer `w`.
-
 To read a single object in edn format from a string, use
-`clojure.edn/read-string`
+`clojure.edn/read-string`, which is new in Clojure 1.5:
 
     (ns my.name.space
       (:require [clojure.edn :as edn]))
@@ -88,23 +87,26 @@ The `default-data-readers` supplied with Clojure should be safe
 (i.e. it is considered a serious bug if they are not).  The safety of
 any other data reader functions you use is up to you.
 
-TBD: Describe what library authors should do to make their code safe,
-if they don't need the capabilities of `clojure.core`'s `read*`
-functions.  Give examples of converting multiple-argument
-`clojure.core/read` calls to `clojure.edn/read` calls with the correct
-options.
+TBD: Describe what Clojure library and application developers should
+do to make their code safe.  Give examples of converting one-argument
+and multiple-argument `clojure.core/read` calls to `clojure.edn/read`
+calls with the correct options.  Best to do it with an existing
+library that actually uses a multiple-argument `clojure.core/read`
+call.
 
 TBD: Include directions on using the new `clojure.read.eval=unknown`
 system property that may help find calls to `clojure.core`'s `read*`
 functions that do not explicitly bind `*read-eval*` to `true` or
 `false`.  Even with this, it is strongly recommended that all Clojure
 developers search through their code for all calls to `clojure.core`'s
-`read*` functions, change them to `clojure.edn` versions if they can.
-If not, bind `*read-eval*` to `false` immediately around any calls to
-`clojure.core` `read*` functions if you can, and pray that you are
-safe.  Send a message to the Clojure or Clojure Dev Google groups
-explaining why you believe `clojure.edn` will not work for you, and
-perhaps someone can help you figure out how to use them.
+`read*` functions, and change them to `clojure.edn` versions if they
+can.  If not, bind `*read-eval*` to `false` immediately around any
+calls to `clojure.core` `read*` functions if you can, and pray that
+you are safe.  Send a message to the Clojure or Clojure Dev Google
+groups explaining why you believe `clojure.edn` will not work for you,
+and perhaps someone can help you figure out how they can be made to
+work for you.  You may also wish to consider a different data
+serialization format such as JSON, if it fills your needs.
 
 TBD: Can `pprint` be used to write out data restricted to edn format?
 If so, what are the bindings to dynamic vars that are needed to
@@ -151,7 +153,7 @@ least not with Clojure 1.5.0-RC15:
 
 * regex patterns, e.g. `#"foo|bar"` or values returned by the function
   `re-pattern`.
-* Clojure records defined with `defrecord1, unless you define a data
+* Clojure records defined with `defrecord`, unless you define a data
   reader for them.  TBD: Give an example of how to do so.
 * Clojure types defined with `deftype`, unless you define a print
   method and a data reader for them.  TBD: Give an example of how to
@@ -228,30 +230,31 @@ formats]
 for a few more).
 
 JSON interchange can be done with many different libraries, including
-[`clojure.data.json`](http://dev.clojure.org/jira/browse/DJSON) and
+[`clojure.data.json`](http://github.com/clojure/data.json) and
 [Cheshire](https://github.com/dakrone/cheshire).
 
+
 XML interchange can also be done with many libraries, including
-[`clojure.data.xml`](http://dev.clojure.org/jira/browse/DXML).
+[`clojure.data.xml`](http://github.com/clojure/data.xml).
 
 
 # Open questions
 
-Is this the current edn spec? https://github.com/edn-format/edn
+Is this the current edn spec? [edn](https://github.com/edn-format/edn)
 
 There are several things that `clojure.edn/read*` can read in Clojure
 1.5.0-RC15 that are not in that spec.  For example:
 
 * integers
-** octal integers with a leading 0
-** hexadecimal integers with a leading 0x or 0X
+    * octal integers with a leading 0
+    * hexadecimal integers with a leading 0x or 0X
 * ratios, e.g. 5/4
 * escape sequences within strings
-** \uXXXX UTF-16 code units in strings
-** \DDD octal characters in strings
+    * \uXXXX UTF-16 code units in strings
+    * \DDD octal characters in strings
 * characters
-** \oDDD octal characters
-** \uXXXX UTF-16 code unit characters
+    * \oDDD octal characters
+    * \uXXXX UTF-16 code unit characters
 * metadata
 
 Is it the plan to add those to the edn spec some time?
