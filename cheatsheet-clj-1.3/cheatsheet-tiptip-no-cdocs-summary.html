@@ -467,6 +467,16 @@ format
   fully-qualified name of a Var which will be invoked by the reader to
   parse the form following the tag. For example, given the
   data_readers.clj file above, the Clojure reader would parse this
+  form:
+
+      #foo/bar [1 2 3]
+
+  by invoking the Var #'my.project.foo/bar on the vector [1 2 3]. The
+  data reader function is invoked on the form AFTER it has been read
+  as a normal Clojure data structure by the reader.
+
+  Reader tags without namespace qualifiers are reserved for
+  Clojure. Default reader tags are defined in
 
 [ documentation truncated.  Click link for the rest. ]</pre>">*data-readers*</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/default-data-readers" class="tooltip" title="<pre>clojure.core/default-data-readers
   Default map of data reader functions provided by Clojure. May be
@@ -1642,6 +1652,16 @@ are the data to be formatted.
 
 The format control string is a string to be output with embedded 'format
 directives'
+describing how to format the various arguments passed in.
+
+If writer is nil, cl-format returns the formatted result string. Otherwise,
+cl-format
+returns nil.
+
+For example:
+ (let [results [46 38 22]]
+        (cl-format true &quot;There ~[are~;is~:;are~]~:* ~d result~:p: ~{~d~^, ~}~%&quot;
+                   (count results) results))
 
 [ documentation truncated.  Click link for the rest. ]</pre>">cl-format</a> also: (binding [*out* writer] ...)</code></td>
               </tr>
@@ -1673,8 +1693,26 @@ Macro
   Reads the next line from stream that is the current value of *in* .</pre>">read-line</a> (clojure.tools.reader.edn/) <a href="http://github.com/clojure/tools.reader" class="tooltip" title="<pre>clojure.tools.reader.edn/read
 ([] [reader] [{:keys [eof], :as opts} reader] [reader eof-error? eof opts])
   Reads the first object from an IPushbackReader or a java.io.PushbackReader.
-Returns the object read. If EOF, throws if eof-error? is true. Otherwise returns
-eof.</pre>">read</a></code></td>
+   Returns the object read. If EOF, throws if eof-error? is true otherwise
+returns eof.
+   If no reader is provided, *in* will be used.
+
+   Reads data in the edn format (subset of Clojure data):
+   http://edn-format.org
+
+   clojure.tools.reader.edn/read doesn't depend on dynamic Vars, all
+configuration
+   is done by passing an opt map.
+
+   opts is a map that can include the following keys:
+   :eof - value to return on end-of-file. When not supplied, eof throws an
+exception.
+   :readers  - a map of tag symbols to data-reader functions to be considered
+before default-data-readers.
+              When not supplied, only the default-data-readers will be used.
+   :default - A function of two args, that will, if present and no reader is
+found for a tag,
+              be called with the tag and the value.</pre>">read</a></code></td>
               </tr>
               <tr class="even">
                 <td>from reader</td>
@@ -1684,13 +1722,26 @@ eof.</pre>">read</a></code></td>
   rdr must implement java.io.BufferedReader.</pre>">line-seq</a> (clojure.tools.reader.edn/) <a href="http://github.com/clojure/tools.reader" class="tooltip" title="<pre>clojure.tools.reader.edn/read
 ([] [reader] [{:keys [eof], :as opts} reader] [reader eof-error? eof opts])
   Reads the first object from an IPushbackReader or a java.io.PushbackReader.
-Returns the object read. If EOF, throws if eof-error? is true. Otherwise returns
-eof.</pre>">read</a> (clojure.core/) <a href="http://clojuredocs.org/clojure_core/clojure.core/read" class="tooltip" title="<pre>clojure.core/read
-([] [stream] [stream eof-error? eof-value] [stream eof-error? eof-value
-recursive?])
-  Reads the next object from stream, which must be an instance of
-  java.io.PushbackReader or some derivee.  stream defaults to the
-  current value of *in* .</pre>">read</a> (WARNING! side effects include arbitrary code execution) also: (binding [*in* reader] ...) <a href="http://docs.oracle.com/javase/6/docs/api/java/io/Reader.html">java.io.Reader</a></code></td>
+   Returns the object read. If EOF, throws if eof-error? is true otherwise
+returns eof.
+   If no reader is provided, *in* will be used.
+
+   Reads data in the edn format (subset of Clojure data):
+   http://edn-format.org
+
+   clojure.tools.reader.edn/read doesn't depend on dynamic Vars, all
+configuration
+   is done by passing an opt map.
+
+   opts is a map that can include the following keys:
+   :eof - value to return on end-of-file. When not supplied, eof throws an
+exception.
+   :readers  - a map of tag symbols to data-reader functions to be considered
+before default-data-readers.
+              When not supplied, only the default-data-readers will be used.
+   :default - A function of two args, that will, if present and no reader is
+found for a tag,
+              be called with the tag and the value.</pre>">read</a> also: (binding [*in* reader] ...) <a href="http://docs.oracle.com/javase/6/docs/api/java/io/Reader.html">java.io.Reader</a></code></td>
               </tr>
               <tr class="odd">
                 <td>from string</td>
@@ -1700,9 +1751,13 @@ Macro
   Evaluates body in a context in which *in* is bound to a fresh
   StringReader initialized with the string s.</pre>">with-in-str</a> (clojure.tools.reader.edn/) <a href="http://github.com/clojure/tools.reader" class="tooltip" title="<pre>clojure.tools.reader.edn/read-string
 ([s] [opts s])
-  Reads one object from the string s</pre>">read-string</a> (clojure.core/) <a href="http://clojuredocs.org/clojure_core/clojure.core/read-string" class="tooltip" title="<pre>clojure.core/read-string
-([s])
-  Reads one object from the string s</pre>">read-string</a> (WARNING! side effects include arbitrary code execution)</code></td>
+  Reads one object from the string s.
+   Returns nil when s is nil or empty.
+
+   Reads data in the edn format (subset of Clojure data):
+   http://edn-format.org
+
+   opts is a map as per clojure.tools.reader.edn/read</pre>">read-string</a></code></td>
               </tr>
               <tr class="even">
                 <td>Open</td>
@@ -1972,6 +2027,16 @@ Macro
 
   No implementations are provided. Docs can be specified for the
   protocol overall and for each method. The above yields a set of
+  polymorphic functions and a protocol object. All are
+  namespace-qualified by the ns enclosing the definition The resulting
+  functions dispatch on the type of their first argument, which is
+  required and corresponds to the implicit target object ('this' in
+  Java parlance). defprotocol is dynamic, has no special compile-time
+  effect, and defines no new types or classes. Implementations of
+  the protocol methods can be provided using extend.
+
+  defprotocol will automatically generate a corresponding interface,
+  with the same name as the protocol, i.e. given a protocol:
 
 [ documentation truncated.  Click link for the rest. ]</pre>">defprotocol</a> <code>Slicey (slice [at]))</code></code></td>
               </tr>
@@ -1992,7 +2057,14 @@ Macro
       (bar [x y] ...)
       (baz ([x] ...) ([x y & zs] ...)))
 
-[ documentation truncated.  Click link for the rest. ]</pre>">extend-type</a> <code>String Slicey (slice [at] ...))</code></code></td>
+  expands into:
+
+  (extend MyType
+   Countable
+     {:cnt (fn [c] ...)}
+   Foo
+     {:baz (fn ([x] ...) ([x y & zs] ...))
+      :bar (fn [x y] ...)})</pre>">extend-type</a> <code>String Slicey (slice [at] ...))</code></code></td>
               </tr>
               <tr class="odd">
                 <td>Extend null</td>
@@ -2011,7 +2083,14 @@ Macro
       (bar [x y] ...)
       (baz ([x] ...) ([x y & zs] ...)))
 
-[ documentation truncated.  Click link for the rest. ]</pre>">extend-type</a> <code>nil Slicey (slice [_] nil))</code></code></td>
+  expands into:
+
+  (extend MyType
+   Countable
+     {:cnt (fn [c] ...)}
+   Foo
+     {:baz (fn ([x] ...) ([x y & zs] ...))
+      :bar (fn [x y] ...)})</pre>">extend-type</a> <code>nil Slicey (slice [_] nil))</code></code></td>
               </tr>
               <tr class="even">
                 <td>Reify</td>
@@ -2029,6 +2108,17 @@ Macro
 
   protocol-or-interface-or-Object
   (methodName [args+] body)*
+
+  Methods should be supplied for all methods of the desired
+  protocol(s) and interface(s). You can also define overrides for
+  methods of Object. Note that the first parameter must be supplied to
+  correspond to the target object ('this' in Java parlance). Thus
+  methods for interfaces will take one more argument than do the
+  interface declarations.  Note also that recur calls to the method
+  head should *not* pass the target object, it will be supplied
+  automatically and can not be substituted.
+
+  The return type can be indicated by a type hint on the method name,
 
 [ documentation truncated.  Click link for the rest. ]</pre>">reify</a> <code>Slicey (slice [at] ...))</code></code></td>
               </tr>
@@ -2053,6 +2143,17 @@ Macro
 
   protocol-or-interface-or-Object
   (methodName [args*] body)*
+
+  Dynamically generates compiled bytecode for class with the given
+  name, in a package with the same name as the current namespace, the
+  given fields, and, optionally, methods for protocols and/or
+  interfaces.
+
+  The class will have the (immutable) fields named by
+  fields, which can have type hints. Protocols/interfaces and methods
+  are optional. The only methods that can be supplied are those
+  declared in the protocols/interfaces.  Note that method bodies are
+  not closures, the local environment includes only the named fields,
 
 [ documentation truncated.  Click link for the rest. ]</pre>">defrecord</a> <code>Pair [h t])</code></code></td>
               </tr>
@@ -2086,6 +2187,17 @@ Macro
   protocol-or-interface-or-Object
   (methodName [args*] body)*
 
+  Dynamically generates compiled bytecode for class with the given
+  name, in a package with the same name as the current namespace, the
+  given fields, and, optionally, methods for protocols and/or
+  interfaces.
+
+  The class will have the (by default, immutable) fields named by
+  fields, which can have type hints. Protocols/interfaces and methods
+  are optional. The only methods that can be supplied are those
+  declared in the protocols/interfaces.  Note that method bodies are
+  not closures, the local environment includes only the named fields,
+
 [ documentation truncated.  Click link for the rest. ]</pre>">deftype</a> <code>Pair [h t])</code></code></td>
               </tr>
               <tr class="even">
@@ -2112,6 +2224,17 @@ Macro
 
   protocol-or-interface-or-Object
   (methodName [args*] body)*
+
+  Dynamically generates compiled bytecode for class with the given
+  name, in a package with the same name as the current namespace, the
+  given fields, and, optionally, methods for protocols and/or
+  interfaces.
+
+  The class will have the (by default, immutable) fields named by
+  fields, which can have type hints. Protocols/interfaces and methods
+  are optional. The only methods that can be supplied are those
+  declared in the protocols/interfaces.  Note that method bodies are
+  not closures, the local environment includes only the named fields,
 
 [ documentation truncated.  Click link for the rest. ]</pre>">deftype</a> <code>Pair [h t]<br>&nbsp;&nbsp;Object<br>&nbsp;&nbsp;(toString [this] (str "<" h "," t ">")))</code></code></td>
               </tr>
@@ -2298,8 +2421,12 @@ Macro
   For each clause, (pred test-expr expr) is evaluated. If it returns
   logical true, the clause is a match. If a binary clause matches, the
   result-expr is returned, if a ternary clause matches, its result-fn,
-
-[ documentation truncated.  Click link for the rest. ]</pre>">condp</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/case" class="tooltip" title="<pre>clojure.core/case
+  which must be a unary function, is called with the result of the
+  predicate as its argument, the result of that call being the return
+  value of condp. A single default expression can follow the clauses,
+  and its value will be returned if no clause matches. If no default
+  expression is provided and no clause matches, an
+  IllegalArgumentException is thrown.</pre>">condp</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/case" class="tooltip" title="<pre>clojure.core/case
 ([e & clauses])
 Macro
   Takes an expression, and a set of clauses.
@@ -2314,8 +2441,16 @@ Macro
   literals, and need not be quoted.  If the expression is equal to a
   test-constant, the corresponding result-expr is returned. A single
   default expression can follow the clauses, and its value will be
+  returned if no clause matches. If no default expression is provided
+  and no clause matches, an IllegalArgumentException is thrown.
 
-[ documentation truncated.  Click link for the rest. ]</pre>">case</a></code></td>
+  Unlike cond and condp, case does a constant-time dispatch, the
+  clauses are not considered sequentially.  All manner of constant
+  expressions are acceptable in case, including numbers, strings,
+  symbols, keywords, and (Clojure) composites thereof. Note that since
+  lists are used to group multiple constants that map to the same
+  expression, a vector can be used to match a list if needed. The
+  test-constants need not be all of the same type.</pre>">case</a></code></td>
               </tr>
               <tr class="even">
                 <td>Loop</td>
@@ -2364,7 +2499,7 @@ Macro
 
   (. (. System (getProperties)) (get &quot;os.name&quot;))
 
-[ documentation truncated.  Click link for the rest. ]</pre>">..</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/doto" class="tooltip" title="<pre>clojure.core/doto
+  but is easier to write, read, and understand.</pre>">..</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/doto" class="tooltip" title="<pre>clojure.core/doto
 ([x & forms])
 Macro
   Evaluates x then calls all of the methods and functions with the
@@ -2843,6 +2978,17 @@ Macro
   protocol-or-interface-or-Object
   (methodName [args*] body)*
 
+  Dynamically generates compiled bytecode for class with the given
+  name, in a package with the same name as the current namespace, the
+  given fields, and, optionally, methods for protocols and/or
+  interfaces.
+
+  The class will have the (immutable) fields named by
+  fields, which can have type hints. Protocols/interfaces and methods
+  are optional. The only methods that can be supplied are those
+  declared in the protocols/interfaces.  Note that method bodies are
+  not closures, the local environment includes only the named fields,
+
 [ documentation truncated.  Click link for the rest. ]</pre>">defrecord</a></code></td>
               </tr>
               <tr class="even">
@@ -2941,8 +3087,14 @@ Macro
   compiling. If :gen-class is not supplied, when compiled only an
   nsname__init.class will be generated. If :refer-clojure is not used, a
   default (refer 'clojure) is used.  Use of ns is preferred to
+  individual calls to in-ns/require/use/import:
 
-[ documentation truncated.  Click link for the rest. ]</pre>">ns</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/in-ns" class="tooltip" title="<pre>clojure.core/in-ns
+  (ns foo.bar
+    (:refer-clojure :exclude [ancestors printf])
+    (:require (clojure.contrib sql combinatorics))
+    (:use (my.lib this that))
+    (:import (java.util Date Timer Random)
+             (java.sql Connection Statement)))</pre>">ns</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/in-ns" class="tooltip" title="<pre>clojure.core/in-ns
 ([name])
   Sets *ns* to the namespace named by the symbol, creating it if needed.</pre>">in-ns</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/create-ns" class="tooltip" title="<pre>clojure.core/create-ns
 ([sym])
@@ -2994,8 +3146,7 @@ Macro
   something else in the current namespace. Filters can be used to
   select a subset, via inclusion or exclusion, or to provide a mapping
   to a symbol different from the var's name, in order to prevent
-
-[ documentation truncated.  Click link for the rest. ]</pre>">refer</a></code></td>
+  clashes. Use :use in the ns macro in preference to calling this directly.</pre>">refer</a></code></td>
               </tr>
               <tr class="even">
                 <td>Find</td>
@@ -3071,6 +3222,15 @@ Macro
   with a Clojure namespace and a Java package that share its name. A lib's
   name also locates its root directory within classpath using Java's
   package name to classpath-relative path mapping. All resources in a lib
+  should be contained in the directory structure under its root directory.
+  All definitions a lib makes should be in its associated namespace.
+
+  'require loads a lib by loading its root resource. The root resource path
+  is derived from the lib name in the following manner:
+  Consider a lib named by the symbol 'x.y.z; it has the root directory
+  <classpath>/x/y/, and its root resource is <classpath>/x/y/z.clj. The root
+  resource should contain code to create the lib's namespace (usually by using
+  the ns macro) and load any additional lib resources.
 
 [ documentation truncated.  Click link for the rest. ]</pre>">require</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/use" class="tooltip" title="<pre>clojure.core/use
 ([& args])
@@ -3102,8 +3262,7 @@ Macro
   something else in the current namespace. Filters can be used to
   select a subset, via inclusion or exclusion, or to provide a mapping
   to a symbol different from the var's name, in order to prevent
-
-[ documentation truncated.  Click link for the rest. ]</pre>">refer</a></code></td>
+  clashes. Use :use in the ns macro in preference to calling this directly.</pre>">refer</a></code></td>
               </tr>
               <tr class="even">
                 <td>List loaded</td>
@@ -3288,8 +3447,15 @@ Macro
   If metadata-map is supplied, it will be come the metadata on the
   ref. validate-fn must be nil or a side-effect-free fn of one
   argument, which will be passed the intended new state on any state
+  change. If the new state is unacceptable, the validate-fn should
+  return false or throw an exception. validate-fn will be called on
+  transaction commit, when all refs have their final values.
 
-[ documentation truncated.  Click link for the rest. ]</pre>">ref</a></code></td>
+  Normally refs accumulate history dynamically as needed to deal with
+  read demands. If you know in advance you will need history you can
+  set :min-history to ensure it will be available when first needed (instead
+  of after a read fault). History is limited, and the limit can be set
+  with :max-history.</pre>">ref</a></code></td>
               </tr>
               <tr class="even">
                 <td>Examine</td>
@@ -3364,8 +3530,7 @@ Macro
 
   Thus fun should be commutative, or, failing that, you must accept
   last-one-in-wins behavior.  commute allows for more concurrency than
-
-[ documentation truncated.  Click link for the rest. ]</pre>">commute</a></code></td>
+  ref-set.</pre>">commute</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Validators</td>
@@ -3413,8 +3578,14 @@ Macro
 
   If metadata-map is supplied, it will be come the metadata on the
   agent. validate-fn must be nil or a side-effect-free fn of one
-
-[ documentation truncated.  Click link for the rest. ]</pre>">agent</a></code></td>
+  argument, which will be passed the intended new state on any state
+  change. If the new state is unacceptable, the validate-fn should
+  return false or throw an exception.  handler-fn is called if an
+  action throws an exception or if validate-fn rejects a new state --
+  see set-error-handler! for details.  The mode-keyword may be either
+  :continue (the default if an error-handler is given) or :fail (the
+  default if no error-handler is given) -- see set-error-mode! for
+  details.</pre>">agent</a></code></td>
               </tr>
               <tr class="even">
                 <td>Examine</td>
@@ -3495,8 +3666,7 @@ Macro
   are triggered only by root binding changes, not thread-local
   set!s. Keys must be unique per reference, and can be used to remove
   the watch with remove-watch, but are otherwise considered opaque by
-
-[ documentation truncated.  Click link for the rest. ]</pre>">add-watch</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/remove-watch" class="tooltip" title="<pre>clojure.core/remove-watch
+  the watch mechanism.</pre>">add-watch</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/remove-watch" class="tooltip" title="<pre>clojure.core/remove-watch
 ([reference key])
   Alpha - subject to change.
   Removes a watch (set by add-watch) from a reference</pre>">remove-watch</a></code></td>
@@ -3571,7 +3741,7 @@ Macro
 
   (. (. System (getProperties)) (get &quot;os.name&quot;))
 
-[ documentation truncated.  Click link for the rest. ]</pre>">..</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/doto" class="tooltip" title="<pre>clojure.core/doto
+  but is easier to write, read, and understand.</pre>">..</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/doto" class="tooltip" title="<pre>clojure.core/doto
 ([x & forms])
 Macro
   Evaluates x then calls all of the methods and functions with the
@@ -3827,6 +3997,16 @@ Macro
   fns. A single class, if provided, must be first. If not provided it
   defaults to Object.
 
+  The interfaces names must be valid interface types. If a method fn
+  is not provided for a class method, the superclass methd will be
+  called. If a method fn is not provided for an interface method, an
+  UnsupportedOperationException will be thrown should it be
+  called. Method fns are closures and can capture the environment in
+  which proxy is called. Each method fn takes an additional implicit
+  first arg, which is bound to 'this. Note that while method fns can
+  be provided to override protected methods, they have no other access
+  to protected members, nor to super, as these capabilities cannot be
+
 [ documentation truncated.  Click link for the rest. ]</pre>">proxy</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/get-proxy-class" class="tooltip" title="<pre>clojure.core/get-proxy-class
 ([& bases])
   Takes an optional single class followed by zero or more
@@ -3955,6 +4135,16 @@ Macro
   (str prefix mymethod) (default prefix: &quot;-&quot;) in a
   Clojure namespace specified by :impl-ns
   (defaults to the current namespace). All inherited methods,
+  generated methods, and init and main functions (see :methods, :init,
+  and :main below) will be found similarly prefixed. By default, the
+  static initializer for the generated class will attempt to load the
+  Clojure support code for the class as a resource from the classpath,
+  e.g. in the example case, ``org/mydomain/MyClass__init.class``. This
+  behavior can be controlled by :load-impl-ns
+
+  Note that methods with a maximum of 18 parameters are supported.
+
+  In all subsequent sections taking types, the primitive types can be
 
 [ documentation truncated.  Click link for the rest. ]</pre>">gen-class</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/gen-interface" class="tooltip" title="<pre>clojure.core/gen-interface
 ([& options])
@@ -3971,6 +4161,16 @@ Macro
 
   Options should be a set of key/value pairs, all except for :name are
   optional:
+
+  :name aname
+
+  The package-qualified name of the class to be generated
+
+  :extends [interface ...]
+
+  One or more interfaces, which will be extended by this interface.
+
+  :methods [ [name [param-types] return-type], ...]
 
 [ documentation truncated.  Click link for the rest. ]</pre>">gen-interface</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/loaded-libs" class="tooltip" title="<pre>clojure.core/loaded-libs
 ([])
@@ -4021,6 +4221,15 @@ returns x</pre>">force</a> <a href="http://clojuredocs.org/clojure_core/clojure.
            sub-process's stdin.  Defaults to UTF-8.
            If the :in option provides a byte array, then the bytes are passed
            unencoded, and this option is ignored.
+  :out-enc option may be given followed by :bytes or a String. If a
+           String is given, it will be used as a character encoding
+           name (for example &quot;UTF-8&quot; or &quot;ISO-8859-1&quot;) to convert
+           the sub-process's stdout to a String which is returned.
+           If :bytes is given, the sub-process's stdout will be stored
+           in a byte array and returned.  Defaults to UTF-8.
+  :env     override the process env with a map (or the underlying Java
+           String[] if you are a masochist).
+  :dir     override the process dir with a String or java.io.File.
 
 [ documentation truncated.  Click link for the rest. ]</pre>">sh</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.shell/with-sh-dir" class="tooltip" title="<pre>clojure.java.shell/with-sh-dir
 ([dir & forms])
