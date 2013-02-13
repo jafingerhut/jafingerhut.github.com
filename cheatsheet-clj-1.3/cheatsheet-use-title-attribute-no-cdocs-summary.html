@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 & 1.4, sheet v7)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 & 1.4, sheet v8)</title>
   <link rel="stylesheet" href="cheatsheet_files/26467729A.css" type="text/css" />
 
   <style type="text/css">
@@ -1670,34 +1670,39 @@ Macro
                 <td>from *in*</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/read-line" title="clojure.core/read-line
 ([])
-  Reads the next line from stream that is the current value of *in* .">read-line</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/read" title="clojure.core/read
-([] [stream] [stream eof-error? eof-value] [stream eof-error? eof-value
-recursive?])
-  Reads the next object from stream, which must be an instance of
-  java.io.PushbackReader or some derivee.  stream defaults to the
-  current value of *in* .">read</a></code></td>
+  Reads the next line from stream that is the current value of *in* .">read-line</a> (clojure.tools.reader.edn/) <a href="http://github.com/clojure/tools.reader" title="clojure.tools.reader.edn/read
+([] [reader] [{:keys [eof], :as opts} reader] [reader eof-error? eof opts])
+  Reads the first object from an IPushbackReader or a java.io.PushbackReader.
+Returns the object read. If EOF, throws if eof-error? is true. Otherwise returns
+eof.">read</a></code></td>
               </tr>
               <tr class="even">
                 <td>from reader</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/line-seq" title="clojure.core/line-seq
 ([rdr])
   Returns the lines of text from rdr as a lazy sequence of strings.
-  rdr must implement java.io.BufferedReader.">line-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/read" title="clojure.core/read
+  rdr must implement java.io.BufferedReader.">line-seq</a> (clojure.tools.reader.edn/) <a href="http://github.com/clojure/tools.reader" title="clojure.tools.reader.edn/read
+([] [reader] [{:keys [eof], :as opts} reader] [reader eof-error? eof opts])
+  Reads the first object from an IPushbackReader or a java.io.PushbackReader.
+Returns the object read. If EOF, throws if eof-error? is true. Otherwise returns
+eof.">read</a> (clojure.core/) <a href="http://clojuredocs.org/clojure_core/clojure.core/read" title="clojure.core/read
 ([] [stream] [stream eof-error? eof-value] [stream eof-error? eof-value
 recursive?])
   Reads the next object from stream, which must be an instance of
   java.io.PushbackReader or some derivee.  stream defaults to the
-  current value of *in* .">read</a> also: (binding [*in* reader] ...) <a href="http://docs.oracle.com/javase/6/docs/api/java/io/Reader.html">java.io.Reader</a></code></td>
+  current value of *in* .">read</a> (WARNING! side effects include arbitrary code execution) also: (binding [*in* reader] ...) <a href="http://docs.oracle.com/javase/6/docs/api/java/io/Reader.html">java.io.Reader</a></code></td>
               </tr>
               <tr class="odd">
                 <td>from string</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/read-string" title="clojure.core/read-string
-([s])
-  Reads one object from the string s">read-string</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-in-str" title="clojure.core/with-in-str
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/with-in-str" title="clojure.core/with-in-str
 ([s & body])
 Macro
   Evaluates body in a context in which *in* is bound to a fresh
-  StringReader initialized with the string s.">with-in-str</a></code></td>
+  StringReader initialized with the string s.">with-in-str</a> (clojure.tools.reader.edn/) <a href="http://github.com/clojure/tools.reader" title="clojure.tools.reader.edn/read-string
+([s] [opts s])
+  Reads one object from the string s">read-string</a> (clojure.core/) <a href="http://clojuredocs.org/clojure_core/clojure.core/read-string" title="clojure.core/read-string
+([s])
+  Reads one object from the string s">read-string</a> (WARNING! side effects include arbitrary code execution)</code></td>
               </tr>
               <tr class="even">
                 <td>Open</td>
