@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: February 7, 2013
+Date: February 14, 2013
 
 Tickets marked with a "V" have been vetted.
 
@@ -28,7 +28,6 @@ V  CLJ-1036 clj-1036-hasheq-for-biginteger-patch-v2.txt
       Was screened, the Not approved with no comments, then Andy
       marked it Vetted (perhaps overzealously), and it may need to go
       back to Not Approved.
-S  CLJ-1106 0001-Fixing-set-equality.patch
 
 ----------------------------------------------------------------------
 "Oddballs"
@@ -41,7 +40,7 @@ Clojure.
 ----------------------------------------------------------------------
 Tickets that can be closed since a patch has been committed for them
 ----------------------------------------------------------------------
-   CLJ-1153 Change *read-eval* default value to false
+   <none>
 
 ----------------------------------------------------------------------
 Tickets that might be closable without any code changes
@@ -68,10 +67,11 @@ Prescreened patches *not* marked with Fix Version/s = "Release 1.5"
 
 V  CLJ-1104 clj-1104-doc-unsafety-of-concurrent-with-redefs-v1.txt
    CLJ-1143 clj-1143-ns-doc-string-correction-v1.txt
+   CLJ-1164 CLJ-1164-typos-instant.patch
 
       Better error reporting:
 
-   CLJ-735 protocolerr.diff
+   CLJ-735  protocolerr.diff
    CLJ-1030 improved-int-char-casting-error-messages.diff
 V  CLJ-1083 better-throw-arity-messages.diff
    CLJ-1107 0001-CLJ-1107-Throw-exception-for-get-called-on-unsupport.patch
@@ -80,24 +80,25 @@ V  CLJ-1083 better-throw-arity-messages.diff
 
    CLJ-706  706-fix-deprecation-warnings-on-replicate.diff
       This patch is only to eliminate some use of deprecated symbols.
-      706-deprecated-var-warning.diff is the patch that implements the
-      warnings when using deprecated symbols, but fails tests when applied
-      by itself.  It needs test fixes in other 706-* patches and then they
-      pass.
+      706-deprecated-var-warning-patch-v2.txt is the patch that
+      implements the warnings when using deprecated symbols, but fails
+      tests when applied by itself.  It needs test fixes in other
+      706-* patches and then they pass.
    CLJ-840  clj840-2.diff
-   CLJ-849 CLJ-849-line-number-pesudo-variable.diff
-V  CLJ-1073 clj-1073-add-print-interruptibly-patch-v1.txt
+   CLJ-849  CLJ-849-line-number-pesudo-variable.diff
+V  CLJ-1073 clj-1073-add-print-interruptibly-patch-v2.txt
    CLJ-1076 clj-1076-fix-tests-on-windows-patch-v1.txt
    CLJ-1088 0001-Add-support-for-protocol-fns-to-repl-source.-CLJ-1088.patch
    CLJ-1112 0001-Allow-setting-loading-verbosely-by-system-property.patch
+   CLJ-1165 0001-Protocol-interface-method-declarations-don-t-allow-f.patch
 
       Clojure language/library bug fixes:
 
-   CLJ-457 CLJ-457-2.diff
+   CLJ-457  CLJ-457-2.diff
 V  CLJ-850  CLJ-850-conform-to-invokePrim.diff
-   CLJ-944 0001-Fix-for-CLJ-944.patch
-      See comments for another patch 0002-Fix-for-CLJ-944.patch and why it
-fails some tests, which are fixable.
+   CLJ-944  0001-Fix-for-CLJ-944.patch
+      See comments for another patch 0002-Fix-for-CLJ-944.patch and
+      why it fails some tests, which are fixable.
    CLJ-1029 ns-patch.diff
 V  CLJ-1036 clj-1036-hasheq-for-biginteger-patch-v2.txt
 V  CLJ-1059 001-clj-1059-make-persistentqueue-implement-list.diff
@@ -107,20 +108,16 @@ V  CLJ-1059 001-clj-1059-make-persistentqueue-implement-list.diff
    CLJ-1079 CLJ-1079.diff
 V  CLJ-1082 clj-1082.patch
 V  CLJ-1090 var-clear-locals.diff
-V  CLJ-1100 clj-1100-reader-literal-periods.patch
-      or CLJ-1100-periods-in-data-reader-tags.patch
    CLJ-1101 CLJ-1101-make-default-data-reader-fn-set-able-in-REPL.patch
 V  CLJ-1102 clj-1102-improve-empty-stack-trace-handling-v1.txt
 V  CLJ-1125 threadlocal-removal-tcrawley-2012-12-11.diff
    CLJ-1134 clj-1134-star-directive-in-cl-format.txt
    CLJ-1137 CLJ-1137-eval-metadata-once.diff
-   CLJ-1138 clj-1138-allow-data-reader-to-return-nil-instead-of-throwing.patch
-      and possibly also clj-1138-data-reader-return-nil-for-no-op.patch
    CLJ-1157 20130204_fix_classloader.diff
 
       Language enhancement, reducers:
 
-   CLJ-991 reducer-partition-by4.diff
+   CLJ-991  reducer-partition-by4.diff
    CLJ-1045 clj-1045-fold-by-halves-patch-v2.txt
    CLJ-1046 drop-while-reducer.patch
       As of Oct 28 2012, some patches for CLJ-992 and CLJ-993 apply, build,
@@ -132,7 +129,7 @@ V  CLJ-1125 threadlocal-removal-tcrawley-2012-12-11.diff
 
       Allow more correct-looking Clojure code to work:
 
-   CLJ-666 0001-Add-Big-support-to-Reflector-Updated.patch
+   CLJ-666  0001-Add-Big-support-to-Reflector-Updated.patch
    CLJ-700  clj-700-patch6.txt
       Was Screened, then Incomplete in Aug 2012, now Approval is empty.
    CLJ-1020 clj-1020-inspect-table-skip-nil-rows-patch1.txt
@@ -145,10 +142,10 @@ V  CLJ-1125 threadlocal-removal-tcrawley-2012-12-11.diff
 
       Language/library enhancement:
 
-   CLJ-107 clj-107-add-bit-count-v1.txt
-   CLJ-200 clj-200-cond-let-clauses-fixed-test-v2-patch.txt
-   CLJ-248 clj-248-SortedMap-SortedSet-interfaces-patch2.txt
-   CLJ-308 0001-Added-ClosableResource-protocol-for-with-open.patch
+   CLJ-107  clj-107-add-bit-count-v1.txt
+   CLJ-200  clj-200-cond-let-clauses-fixed-test-v2-patch.txt
+   CLJ-248  clj-248-SortedMap-SortedSet-interfaces-patch2.txt
+   CLJ-308  0001-Added-ClosableResource-protocol-for-with-open.patch
 V  CLJ-322  compile-interop-1.patch
       Patch compile-interop-1.patch applies and builds cleanly.  Comment
       discussion on various approaches to this ticket are extensive.
@@ -157,11 +154,14 @@ V  CLJ-322  compile-interop-1.patch
       command.
 V  CLJ-827  0001-add-unsigned-bit-shift-right.patch
       or 0001-CLJ-827-Add-bit-shift-right-logical.patch
-   CLJ-865 updated.patch
-V  CLJ-866 clj-866-test-vars.patch
-   CLJ-978 clojure--bean-support-for-private-implementation-classes-v3.diff
+   CLJ-865  updated.patch
+V  CLJ-866  clj-866-test-vars.patch
+   CLJ-978  clojure--bean-support-for-private-implementation-classes-v3.diff
    CLJ-1010 0001-CLJ-1010-Add-a-left-to-right-version-of-comp-comp.patch
    CLJ-1094 0001-Add-zero-arity-variants-for-every-pred-and-some-fn.patch
+   CLJ-1095 0001-map-indexed-accepts-multiple-collections.patch
+      0002-Add-test-for-multi-collection-map-indexed-fn.patch includes
+      new tests
    CLJ-1097 node-seq.diff
    CLJ-1103 clj-1103-make-conj-assoc-dissoc-handle-args-similarly-v1.txt
    CLJ-1108 clj-1108-enhance-future-call-patch-v2.txt
@@ -170,9 +170,9 @@ V  CLJ-866 clj-866-test-vars.patch
 
       Performance enhancement:
 
-   CLJ-99 clj-99-min-key-max-key-performance-v1.txt
-   CLJ-703 improve-writeclassfile-perf.patch
-   CLJ-862 pmap-chunking-862.diff
+   CLJ-99   clj-99-min-key-max-key-performance-v1.txt
+   CLJ-703  improve-writeclassfile-perf.patch
+   CLJ-862  pmap-chunking-862.diff
    CLJ-1080 clj-1080-eliminate-many-reflection-warnings-patch-v3.txt
    CLJ-1087 clj-1087-diff-perf-enhance-patch-v1.txt
    CLJ-1096 desctructure-keyword-lookup.diff
@@ -180,7 +180,7 @@ V  CLJ-866 clj-866-test-vars.patch
 
       Code cleanup:
 
-   CLJ-842 clj-842-update-clojure.pprint-metadata-v2.txt
+   CLJ-842  clj-842-update-clojure.pprint-metadata-v2.txt
 T  CLJ-1072 0001-CLJ-1072-Replace-old-metadata-reader-macro-syntax.patch
    CLJ-1151 tiny-reducers-cleanup.diff
 
@@ -192,19 +192,20 @@ Prescreened patches that are marked with Fix Version/s = "Release
 
 V  CLJ-863  clj-863-make-interleave-handle-odd-args-like-concat-patch-v1.txt
    CLJ-935  fix-trim-fns-different-whitespace-patch.txt
-   CLJ-937 cl-format-efg-coerce-ratios-to-doubes-patch1.txt
+   CLJ-937  cl-format-efg-coerce-ratios-to-doubes-patch1.txt
+   CLJ-1160 lazy-rmapcat.diff
 
       Language/library enhancement:
 
-   CLJ-394 clj-394-add-predicates-for-type-and-record.diff
-   CLJ-949 0001-let-undeclared-exceptions-continue-unchecked.patch
+   CLJ-394  clj-394-add-predicates-for-type-and-record.diff
+   CLJ-949  0001-let-undeclared-exceptions-continue-unchecked.patch
    CLJ-970  clj-970-extend-implement-parameterized-types-patch2.txt
    CLJ-1004 arraychunk-seq-10004.diff
 
       Performance enhancement:
 
-   CLJ-669 0001-use-java.nio-in-do-copy-method-for-Files.patch
-   CLJ-858 stm-rm-msecs-patch.diff
+   CLJ-669  0001-use-java.nio-in-do-copy-method-for-Files.patch
+   CLJ-858  stm-rm-msecs-patch.diff
    CLJ-1005 0001-Use-transient-map-in-zipmap.2.patch
 
 ----------------------------------------------------------------------
@@ -223,7 +224,6 @@ S  CLJ-1099 better-error-message-for-seq.patch
       Clojure language/library bug fixes:
 
 S  CLJ-783  clj-783-patch.txt
-S  CLJ-1106 0001-Fixing-set-equality.patch
 
       Allow more correct-looking Clojure code to work:
 

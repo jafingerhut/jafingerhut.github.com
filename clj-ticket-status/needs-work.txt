@@ -1,5 +1,5 @@
 Tickets needing work for CLJ project
-Date: February 7, 2013
+Date: February 14, 2013
 
 If you are a Clojure contributor, the tickets below could use some
 work.  Some are easy, some are not.  If you've never added a patch
@@ -62,8 +62,8 @@ I  CLJ-373  0001-Support-empty-path-in-update-in.-CLJ-373.patch
 
       Language/library enhancement:
 
-I  CLJ-771  clj-771-move-unchecked-casts-patch-v4.txt
-      TBD: The patch clj-771-move-unchecked-casts-patch-v4.txt applies
+I  CLJ-771  clj-771-move-unchecked-casts-patch-v5.txt
+      TBD: The patch clj-771-move-unchecked-casts-patch-v5.txt applies
       cleanly to latest master and passes all tests. Rich marked this ticket
       as Incomplete on Dec 9 2011 with the comment "still considering when
       to incorporate this" above. Is it reasonable to change it back to
@@ -117,6 +117,7 @@ I   2 [CLJ-415] smarter assert (prints locals)
       test.generative could use that one.
 I   2 [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
 N   1 [CLJ-148] Poor reporting of symbol conflicts when using (ns)
+V   1 [CLJ-1100] Reader literals cannot contain periods
 V   1 [CLJ-1105] defrecord classes implement IPersistentCollection but not .empty, clojure.walk assumes collections support empty
 I   0 [CLJ-5] Unintuitive error response in clojure 1.0
       One of two patches applied and built cleanly on May 4, 2012, but
@@ -206,10 +207,9 @@ submitted patch.  Other contributors should feel free to implement
 their own changes for the ticket, _independently_ of the existing
 patches.
 
-CLJ-450 clj-450-add-default-pred-arg-to-core-fns-patch.txt (Jason Orendorff)
-CLJ-884 diff.patch (Rahul Pilani - patch actually does not apply cleanly as of June 2012, but did earlier in 2012)
-CLJ-983 proxy_super.patch (Valentin Mahrwald)
-CLJ-1095 0001-map-indexed-accepts-multiple-collections.patch (Bo Jeanes)
+CLJ-450  clj-450-add-default-pred-arg-to-core-fns-patch.txt (Jason Orendorff)
+CLJ-884  diff.patch (Rahul Pilani - patch actually does not apply cleanly as of June 2012, but did earlier in 2012)
+CLJ-983  proxy_super.patch (Valentin Mahrwald)
 
 
 The ones above may be easy to update.  The ones below are likely more
@@ -220,14 +220,14 @@ Comments on the tickets below imply that authors or other contributors
 think more work should be done to create new patches.  Some of these
 might be significant hunks of work.
 
-CLJ-2 Scopes
+CLJ-2    Scopes
     Only patch fails to apply cleanly.
-CLJ-792 Refactor method resolution code out of Compiler and into Reflector
+CLJ-792  Refactor method resolution code out of Compiler and into Reflector
     Patch clj-792-reorg-reflector-patch2.txt applied cleanly in Feb
     2012, but didn't pass all tests.
-CLJ-821 should reify merge rather than replace on repeated specs?
+CLJ-821  should reify merge rather than replace on repeated specs?
     Only patch fails to apply cleanly.
-CLJ-891 make (symbol foo "bar") work with foo being a namespace
+CLJ-891  make (symbol foo "bar") work with foo being a namespace
     Only patch applied and built cleanly until Oct 4, 2012, when
     another committed patch caused it to no longer apply cleanly.
 
