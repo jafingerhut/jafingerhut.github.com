@@ -8,6 +8,7 @@
 
 
 
+
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Clojure whole program benchmarks</title>
   <meta content="Andy Fingerhut" name="author"></head><body>[<a href="Clojure-benchmarks.html">benchmarks main page</a>] [whole program benchmarks] [<a href="Clojure-expression-benchmarks.html">expression benchmarks</a>] [<a href="Clojure-version-history.html">Clojure version history</a>] [<a href="Hardware-and-software-used-for-Clojure-benchmarks.html">hardware and software used</a>]
 <h1><a class="mozTocH1" name="mozTocId411050"></a>Clojure whole program benchmarks</h1>For each program, the tables below include:<br>
@@ -72,7 +73,7 @@ themselves give information about the JVM and OS used.<br>
 
 
       
-      <th>Extra options to JVM besides "-server -classpath &lt;path&gt;"<br>
+      <th>Extra options to JVM besides "-server -Xmixed -XX:+TieredCompilation -XX:+AggressiveOpts -classpath &lt;path&gt;"<br>
 
       </th>
 
@@ -103,7 +104,7 @@ themselves give information about the JVM and OS used.<br>
       </td>
 
       
-      <td>(none)<br>
+      <td>&nbsp;(none)<br>
       </td>
       <td>20</td>
       <td>N/A<br>
@@ -126,7 +127,7 @@ themselves give information about the JVM and OS used.<br>
 [Results]</td>
 
       
-      <td>-Xmx16m<br>
+      <td>&nbsp;-Xmx16m<br>
       </td>
       <td>12<br>
       </td>
@@ -146,14 +147,14 @@ pseudo-random numbers via a particular method using integer arithmetic,
 and writing output.&nbsp; Pseudo-random generation portion is
 inherently sequential.<br>
       </td>
-      <td>[<a href="fasta.java-3.java">Java</a>]<br>
+      <td>[<a href="fasta.java-4.java">Java</a>]<br>
 
-[<a href="fasta.clj-11.clj">Clojure</a>]<br>
+[<a href="fasta.clj-8.clj">Clojure</a>]<br>
 
 [Results]</td>
 
       
-      <td>-Xmx16m<br>
+      <td>&nbsp;-Xmx16m<br>
       </td>
       <td>25000000<br>
       </td>
@@ -177,7 +178,7 @@ inherently sequential.<br>
 [Results]</td>
 
       
-      <td>-Xmx16m<br>
+      <td>&nbsp;-Xmx16m<br>
       </td>
       <td><br>
       </td>
@@ -201,7 +202,7 @@ inherently sequential.<br>
 [Results]</td>
 
       
-      <td>-XX:+TieredCompilation -XX:+AggressiveOpts -Xmx1024m<br>
+      <td>&nbsp;-Xmx1024m<br>
       </td>
       <td>&lt; input_file<br>
       </td>
@@ -224,7 +225,7 @@ inherently sequential.<br>
 [Results]</td>
 
       
-      <td>-Xmx16m<br>
+      <td>&nbsp;-Xmx16m<br>
       </td>
       <td>16000<br>
       </td>
@@ -248,7 +249,7 @@ inherently sequential.<br>
 [Results]</td>
 
       
-      <td>-Xmx8m<br>
+      <td>&nbsp;-Xmx8m<br>
       </td>
       <td>50000000<br>
       </td>
@@ -272,7 +273,7 @@ inherently sequential.<br>
 [Results]</td>
 
       
-      <td>-Xmx16m<br>
+      <td>&nbsp;-Xmx16m<br>
       </td>
       <td>10000<br>
       </td>
@@ -295,7 +296,7 @@ inherently sequential.<br>
 [Results]</td>
 
       
-      <td>-Xmx616m<br>
+      <td>&nbsp;-Xmx616m<br>
       </td>
       <td>&lt; input_file<br>
       </td>
@@ -318,7 +319,7 @@ inherently sequential.<br>
 [Results]</td>
 
       
-      <td>-XX:+TieredCompilation -XX:+AggressiveOpts -Xmx384m<br>
+      <td>&nbsp;-Xmx384m<br>
       </td>
       <td>&lt; input_file<br>
       </td>
@@ -339,7 +340,7 @@ inherently sequential.<br>
 [Results]</td>
 
       
-      <td>-Xmx8m<br>
+      <td>&nbsp;-Xmx8m<br>
       </td>
       <td>5500<br>
       </td>
