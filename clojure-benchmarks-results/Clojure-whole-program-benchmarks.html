@@ -11,6 +11,7 @@
 
 
 
+
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Clojure whole program benchmarks</title>
   <meta content="Andy Fingerhut" name="author"></head><body>[<a href="Clojure-benchmarks.html">benchmarks main page</a>] [whole program benchmarks] [<a href="Clojure-expression-benchmarks.html">expression benchmarks</a>] [<a href="Clojure-version-history.html">Clojure version history</a>] [<a href="Hardware-and-software-used-for-Clojure-benchmarks.html">hardware and software used</a>]
 <h1><a class="mozTocH1" name="mozTocId411050"></a>Clojure whole program benchmarks</h1>For each program, the tables below include:<br>
@@ -39,8 +40,8 @@ measurements.&nbsp; What is included in the run time measurements are:<br>
 </ul>
 In other words, what you would get from the elapsed time measurement printed when you run the command:<br>
 <br>
-&nbsp;&nbsp;&nbsp; /usr/bin/time java -server&nbsp; <span style="font-style: italic;">extra-jvm-options</span>&nbsp; -classpath <span style="font-style: italic;">classpath</span>&nbsp; <span style="font-style: italic;">class_name</span>&nbsp; <span style="font-style: italic;">additional_args</span>&nbsp; &gt; output_file<br>
-<br>Each combination of (benchmark, Clojure version, platform) was run 5
+&nbsp;&nbsp;&nbsp; /usr/bin/time java -server -Xmixed -XX:+TieredCompilation -XX:+AggressiveOpts&nbsp; <span style="font-style: italic;">extra-jvm-options</span>&nbsp; -classpath <span style="font-style: italic;">classpath</span>&nbsp; <span style="font-style: italic;">class_name</span>&nbsp; <span style="font-style: italic;">additional_args</span>&nbsp; &gt; output_file<br>
+<br>Each combination of (benchmark, Clojure version, platform) was run 3
 times, and only the smallest elapsed time among them is shown in the
 graph.&nbsp; By "platform" I mean the JVM, OS, and hardware running
 beneath Clojure.<br>
@@ -458,6 +459,8 @@ fannkuch: 1<br>
       
       
       <td style="vertical-align: top;">fasta.clj-11.clj<br>
+      <br>
+(TBD: update for fasta.clj-8.clj source file)<br>
       </td>
       
       
