@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 & 1.4, sheet v8)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.5, sheet v9)</title>
   <link rel="stylesheet" href="cheatsheet_files/26467729A.css" type="text/css" />
 
   <style type="text/css">
@@ -87,11 +87,11 @@
               </tr>
               <tr class="even">
                 <td>Use</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/count">count</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/get">get</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/subs">subs</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/compare">compare</a> (clojure.string/) <a href="http://clojuredocs.org/clojure_core/clojure.string/join">join</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/escape">escape</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/split">split</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/split-lines">split-lines</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/replace">replace</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/replace-first">replace-first</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/reverse">reverse</a> (<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html">java.lang.String</a>) <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html#indexOf%28java.lang.String%29">.indexOf</a> <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html#lastIndexOf%28java.lang.String%29">.lastIndexOf</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/count">count</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/get">get</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/subs">subs</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/compare">compare</a> (clojure.string/) <a href="http://clojuredocs.org/clojure_core/clojure.string/join">join</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/escape">escape</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/split">split</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/split-lines">split-lines</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/replace">replace</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/replace-first">replace-first</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/reverse">reverse</a> (<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html">java.lang.String</a>) <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html#indexOf%28java.lang.String%29">.indexOf</a> <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html#lastIndexOf%28java.lang.String%29">.lastIndexOf</a> (1.5) <a href="http://clojure.github.com/clojure/clojure.string-api.html#clojure.string/re-quote-replacement">re-quote-replacement</a></code></td>
               </tr>
               <tr class="odd">
                 <td><a href="http://www.regular-expressions.info">Regex</a></td>
-                <td><code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html">#"<var>pattern</var>"</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-find">re-find</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-seq">re-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-matches">re-matches</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-pattern">re-pattern</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-matcher">re-matcher</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-groups">re-groups</a> (clojure.string/) <a href="http://clojuredocs.org/clojure_core/clojure.string/replace">replace</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/replace-first">replace-first</a></code></td>
+                <td><code><a href="http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html">#"<var>pattern</var>"</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-find">re-find</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-seq">re-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-matches">re-matches</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-pattern">re-pattern</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-matcher">re-matcher</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-groups">re-groups</a> (clojure.string/) <a href="http://clojuredocs.org/clojure_core/clojure.string/replace">replace</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/replace-first">replace-first</a> (1.5) <a href="http://clojure.github.com/clojure/clojure.string-api.html#clojure.string/re-quote-replacement">re-quote-replacement</a></code></td>
               </tr>
               <tr class="even">
                 <td>Letters</td>
@@ -121,10 +121,6 @@
               <tr class="odd">
                 <td>Symbols</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/symbol">symbol</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/symbol_q">symbol?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/gensym">gensym</a></code></td>
-              </tr>
-              <tr class="even">
-                <td>Data readers</td>
-                <td><code>(1.4) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/*data-readers*">*data-readers*</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/default-data-readers">default-data-readers</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -440,6 +436,10 @@
                 <td>Misc</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/flush">flush</a> (.close s) <a href="http://clojuredocs.org/clojure_core/clojure.core/file-seq">file-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*in*">*in*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*out*">*out*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*err*">*err*</a> (clojure.java.io/) <a href="http://clojuredocs.org/clojure_core/clojure.java.io/file">file</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/copy">copy</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/delete-file">delete-file</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/resource">resource</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/as-file">as-file</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/as-url">as-url</a> <a href="http://clojuredocs.org/clojure_core/clojure.java.io/as-relative-path">as-relative-path</a> GitHub: <a href="http://github.com/Raynes/fs">fs</a></code></td>
               </tr>
+              <tr class="odd">
+                <td>Data readers</td>
+                <td><code>(1.4) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/*data-readers*">*data-readers*</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/default-data-readers">default-data-readers</a> (1.5) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/*default-data-reader-fn*">*default-data-reader-fn*</a></code></td>
+              </tr>
             </tbody>
           </table>
         </div><!-- /section -->
@@ -461,7 +461,7 @@
               </tr>
               <tr class="even">
                 <td>Call</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/->">-&gt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/->>">-&gt;&gt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/apply">apply</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/apply">apply</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/->">-&gt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/->>">-&gt;&gt;</a> (1.5) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/as->">as-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/cond->">cond-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/cond->>">cond-&gt;&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/some->">some-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/some->>">some-&gt;&gt;</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Test</td>
@@ -583,7 +583,7 @@
               </tr>
               <tr class="odd">
                 <td>Arrange</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/_dot_dot">..</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/doto">doto</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/->">-&gt;</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/_dot_dot">..</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/doto">doto</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/->">-&gt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/->>">-&gt;&gt;</a> (1.5) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/as->">as-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/cond->">cond-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/cond->>">cond-&gt;&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/some->">some-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/some->>">some-&gt;&gt;</a></code></td>
               </tr>
               <tr class="even">
                 <td>Scope</td>
@@ -840,7 +840,7 @@
               </tr>
               <tr class="odd">
                 <td>Change state</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/send">send</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/send-off">send-off</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/restart-agent">restart-agent</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/send">send</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/send-off">send-off</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/restart-agent">restart-agent</a> (1.5) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/send-via">send-via</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/set-agent-send-executor!">set-agent-send-executor!</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/set-agent-send-off-executor!">set-agent-send-off-executor!</a></code></td>
               </tr>
               <tr class="even">
                 <td>Block waiting</td>

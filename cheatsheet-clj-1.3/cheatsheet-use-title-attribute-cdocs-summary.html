@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 & 1.4, sheet v8)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.5, sheet v9)</title>
   <link rel="stylesheet" href="cheatsheet_files/26467729A.css" type="text/css" />
 
   <style type="text/css">
@@ -506,6 +506,20 @@ See also: split">split-lines</a> <a href="http://clojuredocs.org/clojure_core/cl
 
    See also replace-first.
 
+   The replacement is literal (i.e. none of its characters are treated
+   specially) for all cases above except pattern / string.
+
+   For pattern / string, $1, $2, etc. in the replacement string are
+   substituted with the string that matched the corresponding
+   parenthesized group in the pattern.  If you wish your replacement
+   string r to be used literally, use (re-quote-replacement r) as the
+   replacement argument.  See also documentation for
+   java.util.regex.Matcher's appendReplacement method.
+
+   Example:
+   (clojure.string/replace &quot;Almost Pig Latin&quot; #&quot;\b(\w)(\w+)\b&quot; &quot;$2$1ay&quot;)
+   -> &quot;lmostAay igPay atinLay&quot;
+
 4 examples totaling 37 lines, 1 comment on Sat Feb 23 2013
 See also: subs, split, replace-first">replace</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/replace-first" title="clojure.string/replace-first
 ([s match replacement])
@@ -517,14 +531,34 @@ See also: subs, split, replace-first">replace</a> <a href="http://clojuredocs.or
    string / string
    pattern / (string or function of match).
 
-   See also replace-all.
+   See also replace.
+
+   The replacement is literal (i.e. none of its characters are treated
+   specially) for all cases above except pattern / string.
+
+   For pattern / string, $1, $2, etc. in the replacement string are
+   substituted with the string that matched the corresponding
+   parenthesized group in the pattern.  If you wish your replacement
+   string r to be used literally, use (re-quote-replacement r) as the
+   replacement argument.  See also documentation for
+   java.util.regex.Matcher's appendReplacement method.
+
+   Example:
+   (clojure.string/replace-first &quot;swap first two words&quot;
+                                 #&quot;(\w+)(\s+)(\w+)&quot; &quot;$3$2$1&quot;)
+
+[ documentation truncated.  Click link for the rest. ]
 
 3 examples totaling 59 lines on Sat Feb 23 2013
 See also: replace, re-pattern">replace-first</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/reverse" title="clojure.string/reverse
 ([s])
   Returns s with its characters reversed.
 
-2 examples totaling 12 lines on Sat Feb 23 2013">reverse</a> (<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html">java.lang.String</a>) <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html#indexOf%28java.lang.String%29">.indexOf</a> <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html#lastIndexOf%28java.lang.String%29">.lastIndexOf</a></code></td>
+2 examples totaling 12 lines on Sat Feb 23 2013">reverse</a> (<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html">java.lang.String</a>) <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html#indexOf%28java.lang.String%29">.indexOf</a> <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html#lastIndexOf%28java.lang.String%29">.lastIndexOf</a> (1.5) <a href="http://clojure.github.com/clojure/clojure.string-api.html#clojure.string/re-quote-replacement" title="clojure.string/re-quote-replacement
+([replacement])
+  Given a replacement string that you wish to be a literal
+   replacement for a pattern match in replace or replace-first, do the
+   necessary escaping of special characters in the replacement.">re-quote-replacement</a></code></td>
               </tr>
               <tr class="odd">
                 <td><a href="http://www.regular-expressions.info">Regex</a></td>
@@ -581,6 +615,20 @@ See also: re-find">re-groups</a> (clojure.string/) <a href="http://clojuredocs.o
 
    See also replace-first.
 
+   The replacement is literal (i.e. none of its characters are treated
+   specially) for all cases above except pattern / string.
+
+   For pattern / string, $1, $2, etc. in the replacement string are
+   substituted with the string that matched the corresponding
+   parenthesized group in the pattern.  If you wish your replacement
+   string r to be used literally, use (re-quote-replacement r) as the
+   replacement argument.  See also documentation for
+   java.util.regex.Matcher's appendReplacement method.
+
+   Example:
+   (clojure.string/replace &quot;Almost Pig Latin&quot; #&quot;\b(\w)(\w+)\b&quot; &quot;$2$1ay&quot;)
+   -> &quot;lmostAay igPay atinLay&quot;
+
 4 examples totaling 37 lines, 1 comment on Sat Feb 23 2013
 See also: subs, split, replace-first">replace</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/replace-first" title="clojure.string/replace-first
 ([s match replacement])
@@ -592,10 +640,30 @@ See also: subs, split, replace-first">replace</a> <a href="http://clojuredocs.or
    string / string
    pattern / (string or function of match).
 
-   See also replace-all.
+   See also replace.
+
+   The replacement is literal (i.e. none of its characters are treated
+   specially) for all cases above except pattern / string.
+
+   For pattern / string, $1, $2, etc. in the replacement string are
+   substituted with the string that matched the corresponding
+   parenthesized group in the pattern.  If you wish your replacement
+   string r to be used literally, use (re-quote-replacement r) as the
+   replacement argument.  See also documentation for
+   java.util.regex.Matcher's appendReplacement method.
+
+   Example:
+   (clojure.string/replace-first &quot;swap first two words&quot;
+                                 #&quot;(\w+)(\s+)(\w+)&quot; &quot;$3$2$1&quot;)
+
+[ documentation truncated.  Click link for the rest. ]
 
 3 examples totaling 59 lines on Sat Feb 23 2013
-See also: replace, re-pattern">replace-first</a></code></td>
+See also: replace, re-pattern">replace-first</a> (1.5) <a href="http://clojure.github.com/clojure/clojure.string-api.html#clojure.string/re-quote-replacement" title="clojure.string/re-quote-replacement
+([replacement])
+  Given a replacement string that you wish to be a literal
+   replacement for a pattern match in replace or replace-first, do the
+   necessary escaping of special characters in the replacement.">re-quote-replacement</a></code></td>
               </tr>
               <tr class="even">
                 <td>Letters</td>
@@ -723,38 +791,6 @@ See also: var, var?, symbol?, name, namespace, keyword">symbol</a> <a href="http
   prefix is not supplied, the prefix is 'G__'.
 
 2 examples totaling 14 lines on Sat Feb 23 2013">gensym</a></code></td>
-              </tr>
-              <tr class="even">
-                <td>Data readers</td>
-                <td><code>(1.4) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/*data-readers*" title="clojure.core/*data-readers*
-  Map from reader tag symbols to data reader Vars.
-
-  When Clojure starts, it searches for files named 'data_readers.clj'
-  at the root of the classpath. Each such file must contain a literal
-  map of symbols, like this:
-
-      {foo/bar my.project.foo/bar
-       foo/baz my.project/baz}
-
-  The first symbol in each pair is a tag that will be recognized by
-  the Clojure reader. The second symbol in the pair is the
-  fully-qualified name of a Var which will be invoked by the reader to
-  parse the form following the tag. For example, given the
-  data_readers.clj file above, the Clojure reader would parse this
-  form:
-
-      #foo/bar [1 2 3]
-
-  by invoking the Var #'my.project.foo/bar on the vector [1 2 3]. The
-  data reader function is invoked on the form AFTER it has been read
-  as a normal Clojure data structure by the reader.
-
-  Reader tags without namespace qualifiers are reserved for
-  Clojure. Default reader tags are defined in
-
-[ documentation truncated.  Click link for the rest. ]">*data-readers*</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/default-data-readers" title="clojure.core/default-data-readers
-  Default map of data reader functions provided by Clojure. May be
-  overridden by binding *data-readers*.">default-data-readers</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -1023,7 +1059,8 @@ See also: next, first, drop">rest</a> <a href="http://clojuredocs.org/clojure_co
 3 examples totaling 65 lines on Sat Feb 23 2013
 See also: vec, vector?, vector-of, pop, into">vector</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vec" title="clojure.core/vec
 ([coll])
-  Creates a new vector containing the contents of coll.
+  Creates a new vector containing the contents of coll. Java arrays
+  will be aliased and should not be modified.
 
 2 examples totaling 41 lines on Sat Feb 23 2013
 See also: vector, vector?, vector-of">vec</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vector-of" title="clojure.core/vector-of
@@ -1144,16 +1181,20 @@ See also: hash-set, sorted-set, conj, join, select, difference,
 intersection, union, index, project, rename, rename-keys, map-invert,
 disj, distinct">set</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/hash-set" title="clojure.core/hash-set
 ([] [& keys])
-  Returns a new hash set with supplied keys.
+  Returns a new hash set with supplied keys.  Any equal keys are
+  handled as if by repeated uses of conj.
 
 1 example with 18 lines on Sat Feb 23 2013">hash-set</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/sorted-set" title="clojure.core/sorted-set
 ([& keys])
-  Returns a new sorted set with supplied keys.
+  Returns a new sorted set with supplied keys.  Any equal keys are
+  handled as if by repeated uses of conj.
 
 1 example with 4 lines on Sat Feb 23 2013
 See also: sorted-set-by, subseq, rsubseq, sorted-map">sorted-set</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/sorted-set-by" title="clojure.core/sorted-set-by
 ([comparator & keys])
-  Returns a new sorted set with supplied keys, using the supplied comparator.
+  Returns a new sorted set with supplied keys, using the supplied
+  comparator.  Any equal keys are handled as if by repeated uses of
+  conj.
 
 2 examples totaling 45 lines on Sat Feb 23 2013
 See also: sorted-set, sorted-map-by, compare">sorted-set-by</a></code></td>
@@ -1276,12 +1317,14 @@ See also: subset?, set">superset?</a></code></td>
                 <td><code>{} <a href="http://clojuredocs.org/clojure_core/clojure.core/hash-map" title="clojure.core/hash-map
 ([] [& keyvals])
   keyval => key val
-  Returns a new hash map with supplied mappings.
+  Returns a new hash map with supplied mappings.  If any keys are
+  equal, they are handled as if by repeated uses of assoc.
 
 4 examples totaling 28 lines on Sat Feb 23 2013
 See also: merge, assoc, dissoc">hash-map</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/array-map" title="clojure.core/array-map
 ([] [& keyvals])
-  Constructs an array-map.
+  Constructs an array-map. If any keys are equal, they are handled as
+  if by repeated uses of assoc.
 
 3 examples totaling 16 lines, 2 comments on Sat Feb 23 2013
 See also: assoc">array-map</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/zipmap" title="clojure.core/zipmap
@@ -1292,14 +1335,16 @@ See also: assoc">array-map</a> <a href="http://clojuredocs.org/clojure_core/cloj
 See also: interleave">zipmap</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/sorted-map" title="clojure.core/sorted-map
 ([& keyvals])
   keyval => key val
-  Returns a new sorted map with supplied mappings.
+  Returns a new sorted map with supplied mappings.  If any keys are
+  equal, they are handled as if by repeated uses of assoc.
 
 1 example with 2 lines on Sat Feb 23 2013
 See also: sorted-map-by, subseq, rsubseq, sorted-set">sorted-map</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/sorted-map-by" title="clojure.core/sorted-map-by
 ([comparator & keyvals])
   keyval => key val
   Returns a new sorted map with supplied mappings, using the supplied
-comparator.
+  comparator.  If any keys are equal, they are handled as if by
+  repeated uses of assoc.
 
 2 examples totaling 23 lines on Sat Feb 23 2013
 See also: sorted-map, subseq, rsubseq, sorted-set-by">sorted-map-by</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bean" title="clojure.core/bean
@@ -2052,16 +2097,18 @@ See also: prewalk-replace, postwalk-replace">replace</a> <a href="http://clojure
 See also: rseq">reverse</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/sort" title="clojure.core/sort
 ([coll] [comp coll])
   Returns a sorted sequence of the items in coll. If no comparator is
-  supplied, uses compare. comparator must
-  implement java.util.Comparator.
+  supplied, uses compare.  comparator must implement
+  java.util.Comparator.  If coll is a Java array, it will be modified.
+  To avoid this, sort a copy of the array.
 
 3 examples totaling 66 lines on Sat Feb 23 2013
 See also: sort-by">sort</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/sort-by" title="clojure.core/sort-by
 ([keyfn coll] [keyfn comp coll])
   Returns a sorted sequence of the items in coll, where the sort
   order is determined by comparing (keyfn item).  If no comparator is
-  supplied, uses compare. comparator must
-  implement java.util.Comparator.
+  supplied, uses compare.  comparator must implement
+  java.util.Comparator.  If coll is a Java array, it will be modified.
+  To avoid this, sort a copy of the array.
 
 6 examples totaling 55 lines on Sat Feb 23 2013
 See also: sort, compare">sort-by</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/compare" title="clojure.core/compare
@@ -2220,7 +2267,8 @@ See also: rand">rand-nth</a> <a href="http://clojuredocs.org/clojure_core/clojur
 Macro
   bindings => x xs
 
-  Same as (when (seq xs) (let [x (first xs)] body))
+  Roughly the same as (when (seq xs) (let [x (first xs)] body)) but xs is
+evaluated only once
 
 1 example with 6 lines on Sat Feb 23 2013">when-first</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/max-key" title="clojure.core/max-key
 ([k x] [k x y] [k x y & more])
@@ -2273,7 +2321,8 @@ See also: hash-set, sorted-set, conj, join, select, difference,
 intersection, union, index, project, rename, rename-keys, map-invert,
 disj, distinct">set</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vec" title="clojure.core/vec
 ([coll])
-  Creates a new vector containing the contents of coll.
+  Creates a new vector containing the contents of coll. Java arrays
+  will be aliased and should not be modified.
 
 2 examples totaling 41 lines on Sat Feb 23 2013
 See also: vector, vector?, vector-of">vec</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/into-array" title="clojure.core/into-array
@@ -2920,6 +2969,42 @@ See also: file">as-file</a> <a href="http://clojuredocs.org/clojure_core/clojure
 
 0 examples on Sat Feb 23 2013">as-relative-path</a> GitHub: <a href="http://github.com/Raynes/fs">fs</a></code></td>
               </tr>
+              <tr class="odd">
+                <td>Data readers</td>
+                <td><code>(1.4) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/*data-readers*" title="clojure.core/*data-readers*
+  Map from reader tag symbols to data reader Vars.
+
+  When Clojure starts, it searches for files named 'data_readers.clj'
+  at the root of the classpath. Each such file must contain a literal
+  map of symbols, like this:
+
+      {foo/bar my.project.foo/bar
+       foo/baz my.project/baz}
+
+  The first symbol in each pair is a tag that will be recognized by
+  the Clojure reader. The second symbol in the pair is the
+  fully-qualified name of a Var which will be invoked by the reader to
+  parse the form following the tag. For example, given the
+  data_readers.clj file above, the Clojure reader would parse this
+  form:
+
+      #foo/bar [1 2 3]
+
+  by invoking the Var #'my.project.foo/bar on the vector [1 2 3]. The
+  data reader function is invoked on the form AFTER it has been read
+  as a normal Clojure data structure by the reader.
+
+  Reader tags without namespace qualifiers are reserved for
+  Clojure. Default reader tags are defined in
+
+[ documentation truncated.  Click link for the rest. ]">*data-readers*</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/default-data-readers" title="clojure.core/default-data-readers
+  Default map of data reader functions provided by Clojure. May be
+  overridden by binding *data-readers*.">default-data-readers</a> (1.5) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/*default-data-reader-fn*" title="clojure.core/*default-data-reader-fn*
+  When no data reader is found for a tag and *default-data-reader-fn*
+  is non-nil, it will be called with two arguments,
+  the tag and the value.  If *default-data-reader-fn* is nil (the
+  default), an exception will be thrown for the unknown tag.">*default-data-reader-fn*</a></code></td>
+              </tr>
             </tbody>
           </table>
         </div><!-- /section -->
@@ -2989,7 +3074,8 @@ Macro
   Expands into code that creates a fn that expects to be passed an
   object and any args and calls the named instance method on the
   object passing the args. Use when you want to treat a Java method as
-  a first-class fn.
+  a first-class fn. name may be type-hinted with the method receiver's
+  type in order to avoid reflective calls.
 
 1 example with 6 lines on Sat Feb 23 2013">memfn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/comp" title="clojure.core/comp
 ([] [f] [f g] [f g h] [f1 f2 f3 & fs])
@@ -3006,7 +3092,7 @@ See also: partial, juxt">comp</a> <a href="http://clojuredocs.org/clojure_core/c
 
 1 example with 30 lines on Sat Feb 23 2013
 See also: not">complement</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/partial" title="clojure.core/partial
-([f arg1] [f arg1 arg2] [f arg1 arg2 arg3] [f arg1 arg2 arg3 & more])
+([f] [f arg1] [f arg1 arg2] [f arg1 arg2 arg3] [f arg1 arg2 arg3 & more])
   Takes a function f and fewer than the normal arguments to f, and
   returns a fn that takes a variable number of additional args. When
   called, the returned function calls f with args + additional args.
@@ -3064,7 +3150,13 @@ See also: every-pred">some-fn</a></code></td>
               </tr>
               <tr class="even">
                 <td>Call</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/->" title="clojure.core/->
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/apply" title="clojure.core/apply
+([f args] [f x args] [f x y args] [f x y z args] [f a b c d & args])
+  Applies fn f to the argument list formed by prepending intervening arguments
+to args.
+
+6 examples totaling 68 lines on Sat Feb 23 2013
+See also: map, eval, apply-macro, apply-template">apply</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/->" title="clojure.core/->
 ([x] [x form] [x form & more])
 Macro
   Threads the expr through the forms. Inserts x as the
@@ -3082,13 +3174,33 @@ Macro
   last item in second form, etc.
 
 2 examples totaling 24 lines, 3 comments on Sat Feb 23 2013
-See also: ->, -?>, -?>>">-&gt;&gt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/apply" title="clojure.core/apply
-([f args] [f x args] [f x y args] [f x y z args] [f a b c d & args])
-  Applies fn f to the argument list formed by prepending intervening arguments
-to args.
-
-6 examples totaling 68 lines on Sat Feb 23 2013
-See also: map, eval, apply-macro, apply-template">apply</a></code></td>
+See also: ->, -?>, -?>>">-&gt;&gt;</a> (1.5) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/as->" title="clojure.core/as->
+([expr name & forms])
+Macro
+  Binds name to expr, evaluates the first form in the lexical context
+  of that binding, then binds name to that result, repeating for each
+  successive form, returning the result of the last form.">as-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/cond->" title="clojure.core/cond->
+([expr & clauses])
+Macro
+  Takes an expression and a set of test/form pairs. Threads expr (via ->)
+  through each form for which the corresponding test
+  expression is true. Note that, unlike cond branching, cond-> threading does
+  not short circuit after the first true test expression.">cond-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/cond->>" title="clojure.core/cond->>
+([expr & clauses])
+Macro
+  Takes an expression and a set of test/form pairs. Threads expr (via ->>)
+  through each form for which the corresponding test expression
+  is true.  Note that, unlike cond branching, cond->> threading does not short
+circuit
+  after the first true test expression.">cond-&gt;&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/some->" title="clojure.core/some->
+([expr & forms])
+Macro
+  When expr is not nil, threads it into the first form (via ->),
+  and when that result is not nil, through the next etc">some-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/some->>" title="clojure.core/some->>
+([expr & forms])
+Macro
+  When expr is not nil, threads it into the first form (via ->>),
+  and when that result is not nil, through the next etc">some-&gt;&gt;</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Test</td>
@@ -3589,7 +3701,8 @@ See also: if-let, when, when-not, if">when-let</a> <a href="http://clojuredocs.o
 Macro
   bindings => x xs
 
-  Same as (when (seq xs) (let [x (first xs)] body))
+  Roughly the same as (when (seq xs) (let [x (first xs)] body)) but xs is
+evaluated only once
 
 1 example with 6 lines on Sat Feb 23 2013">when-first</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/if-not" title="clojure.core/if-not
 ([test then] [test then else])
@@ -3747,7 +3860,42 @@ Macro
   second item in second form, etc.
 
 3 examples totaling 88 lines, 1 comment on Sat Feb 23 2013
-See also: -?>, ->>, -?>>">-&gt;</a></code></td>
+See also: -?>, ->>, -?>>">-&gt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/->>" title="clojure.core/->>
+([x form] [x form & more])
+Macro
+  Threads the expr through the forms. Inserts x as the
+  last item in the first form, making a list of it if it is not a
+  list already. If there are more forms, inserts the first form as the
+  last item in second form, etc.
+
+2 examples totaling 24 lines, 3 comments on Sat Feb 23 2013
+See also: ->, -?>, -?>>">-&gt;&gt;</a> (1.5) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/as->" title="clojure.core/as->
+([expr name & forms])
+Macro
+  Binds name to expr, evaluates the first form in the lexical context
+  of that binding, then binds name to that result, repeating for each
+  successive form, returning the result of the last form.">as-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/cond->" title="clojure.core/cond->
+([expr & clauses])
+Macro
+  Takes an expression and a set of test/form pairs. Threads expr (via ->)
+  through each form for which the corresponding test
+  expression is true. Note that, unlike cond branching, cond-> threading does
+  not short circuit after the first true test expression.">cond-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/cond->>" title="clojure.core/cond->>
+([expr & clauses])
+Macro
+  Takes an expression and a set of test/form pairs. Threads expr (via ->>)
+  through each form for which the corresponding test expression
+  is true.  Note that, unlike cond branching, cond->> threading does not short
+circuit
+  after the first true test expression.">cond-&gt;&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/some->" title="clojure.core/some->
+([expr & forms])
+Macro
+  When expr is not nil, threads it into the first form (via ->),
+  and when that result is not nil, through the next etc">some-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/some->>" title="clojure.core/some->>
+([expr & forms])
+Macro
+  When expr is not nil, threads it into the first form (via ->>),
+  and when that result is not nil, through the next etc">some-&gt;&gt;</a></code></td>
               </tr>
               <tr class="even">
                 <td>Scope</td>
@@ -4651,7 +4799,7 @@ See also: ns-map">imports</a>}</code></td>
 See also: ns-resolve">resolve</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-resolve" title="clojure.core/ns-resolve
 ([ns sym] [ns env sym])
   Returns the var or Class to which a symbol will be resolved in the
-  namespace (unless found in the environement), else nil.  Note that
+  namespace (unless found in the environment), else nil.  Note that
   if the symbol is fully qualified, the var/Class to which it resolves
   need not be present in the namespace.
 
@@ -4813,7 +4961,7 @@ See also: read-string">load-string</a></code></td>
 
   :validator validate-fn
 
-  If metadata-map is supplied, it will be come the metadata on the
+  If metadata-map is supplied, it will become the metadata on the
   atom. validate-fn must be nil or a side-effect-free fn of one
   argument, which will be passed the intended new state on any state
   change. If the new state is unacceptable, the validate-fn should
@@ -4995,7 +5143,7 @@ See also: future, deliver, realized?">promise</a> <a href="http://clojuredocs.or
 ([promise val])
   Alpha - subject to change.
   Delivers the supplied value to the promise, releasing any pending
-  derefs. A subsequent call to deliver on a promise will throw an exception.
+  derefs. A subsequent call to deliver on a promise will have no effect.
 
 2 examples totaling 34 lines on Sat Feb 23 2013
 See also: promise">deliver</a></code></td>
@@ -5019,7 +5167,7 @@ See also: promise">deliver</a></code></td>
   :min-history (default 0)
   :max-history (default 10)
 
-  If metadata-map is supplied, it will be come the metadata on the
+  If metadata-map is supplied, it will become the metadata on the
   ref. validate-fn must be nil or a side-effect-free fn of one
   argument, which will be passed the intended new state on any state
   change. If the new state is unacceptable, the validate-fn should
@@ -5188,7 +5336,7 @@ See also: ref">max</a>}-history</code></td>
 
   :error-mode mode-keyword
 
-  If metadata-map is supplied, it will be come the metadata on the
+  If metadata-map is supplied, it will become the metadata on the
   agent. validate-fn must be nil or a side-effect-free fn of one
   argument, which will be passed the intended new state on any state
   change. If the new state is unacceptable, the validate-fn should
@@ -5247,7 +5395,17 @@ See also: send, agent, shutdown-agents">send-off</a> <a href="http://clojuredocs
   the agent is not failed.
 
 0 examples on Sat Feb 23 2013
-See also: agent-error, agent">restart-agent</a></code></td>
+See also: agent-error, agent">restart-agent</a> (1.5) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/send-via" title="clojure.core/send-via
+([executor a f & args])
+  Dispatch an action to an agent. Returns the agent immediately.
+  Subsequently, in a thread supplied by executor, the state of the agent
+  will be set to the value of:
+
+  (apply action-fn state-of-agent args)">send-via</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/set-agent-send-executor!" title="clojure.core/set-agent-send-executor!
+([executor])
+  Sets the ExecutorService to be used by send">set-agent-send-executor!</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/set-agent-send-off-executor!" title="clojure.core/set-agent-send-off-executor!
+([executor])
+  Sets the ExecutorService to be used by send-off">set-agent-send-off-executor!</a></code></td>
               </tr>
               <tr class="even">
                 <td>Block waiting</td>
@@ -5457,7 +5615,8 @@ Macro
   Expands into code that creates a fn that expects to be passed an
   object and any args and calls the named instance method on the
   object passing the args. Use when you want to treat a Java method as
-  a first-class fn.
+  a first-class fn. name may be type-hinted with the method receiver's
+  type in order to avoid reflective calls.
 
 1 example with 6 lines on Sat Feb 23 2013">memfn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/set!" title="set!
   (set! var-symbol expr)
@@ -5592,7 +5751,7 @@ See also: *e">pst</a> (1.4) <a href="http://clojure.github.com/clojure/clojure.c
    that carries a map of additional data.">ex-info</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/ex-data" title="clojure.core/ex-data
 ([ex])
   Alpha - subject to change.
-   Returns exception data (a map) if ex is an ExceptionInfo.
+   Returns exception data (a map) if ex is an IExceptionInfo.
    Otherwise returns nil.">ex-data</a></code></td>
               </tr>
             </tbody>
