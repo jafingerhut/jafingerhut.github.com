@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: February 21, 2013
+Date: March 1, 2013
 
 Tickets marked with a "V" have been vetted.
 
@@ -57,7 +57,7 @@ Is it OK to create a ticket for these now? (see Note 2 near the end)
    http://dev.clojure.org/display/design/Overriding+compile-time+var+values+at+expression-level+granularity
 
 ----------------------------------------------------------------------
-Prescreened patches *not* marked with Fix Version/s = "Release 1.5"
+Prescreened patches *not* marked with Fix Version/s = "Release 1.6"
 ----------------------------------------------------------------------
       Doc string fixes only:
 
@@ -83,17 +83,16 @@ V  CLJ-1083 better-throw-arity-messages.diff
    CLJ-840  clj840-2.diff
    CLJ-849  CLJ-849-line-number-pesudo-variable.diff
 V  CLJ-1073 clj-1073-add-print-interruptibly-patch-v2.txt
-   CLJ-1076 clj-1076-fix-tests-on-windows-patch-v1.txt
    CLJ-1088 0001-Add-support-for-protocol-fns-to-repl-source.-CLJ-1088.patch
    CLJ-1112 0001-Allow-setting-loading-verbosely-by-system-property.patch
-V  CLJ-1161 0001-CLJ-1161-Remove-version.properties-from-sources-JAR.patch
+T  CLJ-1161 0001-CLJ-1161-Remove-version.properties-from-sources-JAR.patch
    CLJ-1165 0001-Protocol-interface-method-declarations-don-t-allow-f.patch
 
       Clojure language/library bug fixes:
 
    CLJ-457  CLJ-457-2.diff
 V  CLJ-850  CLJ-850-conform-to-invokePrim.diff
-   CLJ-944  0001-Fix-for-CLJ-944.patch
+T  CLJ-944  0001-Fix-for-CLJ-944.patch
       See comments for another patch 0002-Fix-for-CLJ-944.patch and
       why it fails some tests, which are fixable.
    CLJ-1029 ns-patch.diff
@@ -110,7 +109,10 @@ V  CLJ-1102 clj-1102-improve-empty-stack-trace-handling-v1.txt
 V  CLJ-1125 threadlocal-removal-tcrawley-2012-12-11.diff
    CLJ-1134 clj-1134-star-directive-in-cl-format.txt
    CLJ-1137 CLJ-1137-eval-metadata-once.diff
-   CLJ-1157 20130204_fix_classloader.diff
+T  CLJ-1157 20130204_fix_classloader.diff
+   CLJ-1171 0002-CLJ-1171-Obey-lexical-scope-for-class-argument-in-in.patch
+      0001-* patch adds new tests, 0002-* fixes a bug, 0003-* relies
+      on 0002-* being applied before it.
 
       Language enhancement, reducers:
 
@@ -154,7 +156,9 @@ V  CLJ-827  0001-add-unsigned-bit-shift-right.patch
       or 0001-CLJ-827-Add-bit-shift-right-logical.patch
    CLJ-865  updated.patch
 V  CLJ-866  clj-866-test-vars.patch
+   CLJ-970  clj-970-extend-implement-parameterized-types-patch2.txt
    CLJ-978  clojure--bean-support-for-private-implementation-classes-v3.diff
+   CLJ-1004 arraychunk-seq-10004.diff
    CLJ-1010 0001-CLJ-1010-Add-a-left-to-right-version-of-comp-comp.patch
    CLJ-1094 0001-Add-zero-arity-variants-for-every-pred-and-some-fn.patch
    CLJ-1095 0001-map-indexed-accepts-multiple-collections.patch
@@ -179,16 +183,14 @@ V  CLJ-866  clj-866-test-vars.patch
       Code cleanup:
 
    CLJ-842  clj-842-update-clojure.pprint-metadata-v2.txt
-T  CLJ-1072 0001-CLJ-1072-Replace-old-metadata-reader-macro-syntax.patch
    CLJ-1151 tiny-reducers-cleanup.diff
 
 ----------------------------------------------------------------------
 Prescreened patches that are marked with Fix Version/s = "Release
-1.5", but not screened
+1.6", but not screened
 ----------------------------------------------------------------------
       Clojure language/library bug fixes:
 
-V  CLJ-863  clj-863-make-interleave-handle-odd-args-like-concat-patch-v1.txt
    CLJ-935  fix-trim-fns-different-whitespace-patch.txt
    CLJ-937  cl-format-efg-coerce-ratios-to-doubes-patch1.txt
    CLJ-1160 lazy-rmapcat.diff
@@ -197,8 +199,6 @@ V  CLJ-863  clj-863-make-interleave-handle-odd-args-like-concat-patch-v1.txt
 
    CLJ-394  clj-394-add-predicates-for-type-and-record.diff
    CLJ-949  0001-let-undeclared-exceptions-continue-unchecked.patch
-   CLJ-970  clj-970-extend-implement-parameterized-types-patch2.txt
-   CLJ-1004 arraychunk-seq-10004.diff
 
       Performance enhancement:
 
@@ -222,6 +222,7 @@ S  CLJ-1099 better-error-message-for-seq.patch
       Clojure language/library bug fixes:
 
 S  CLJ-783  clj-783-patch.txt
+S  CLJ-863  clj-863-make-interleave-handle-odd-args-like-concat-patch-v1.txt
 
       Allow more correct-looking Clojure code to work:
 
@@ -230,6 +231,10 @@ S  CLJ-1018 inconsistent_range_fix.diff
       Language/library enhancement:
 
 S  CLJ-873  clj-873-namespace-divides-patch.txt
+
+      Code cleanup:
+
+S  CLJ-1072 0001-CLJ-1072-Replace-old-metadata-reader-macro-syntax.patch
 
 ----------------------------------------------------------------------
 (Note 1) Warnings/errors explicitly allowed in output of 'ant' command
@@ -265,9 +270,9 @@ was used with the latest Clojure master as of the date of this report.
 * All authors listed in the patch have signed a CA.
 * Patch applies cleanly to latest master as of the date of the report
   with all of the OS/JDK combos listed below:
-    Mac OS X 10.6.8 + Oracle/Apple JDK 1.6.0_39 64-bit
-    Ubuntu 11.10 32-bit + Oracle JDK 1.6.0_39 32-bit
-    Ubuntu 11.10 32-bit + Oracle JDK 1.7.0_13 32-bit
+    Mac OS X 10.6.8 + Oracle/Apple JDK 1.6.0_41 64-bit
+    Ubuntu 12.04.2 64-bit + Oracle JDK 1.6.0_41 64-bit
+    Ubuntu 12.04.2 64-bit + Oracle JDK 1.7.0_15 64-bit
     NOT Ubuntu 11.10 + IBM JDK 1.6.0 J9 2.4 (I may add this back in to
       my prescreen testing if latest Clojure master builds and passes
       tests with this JVM again.)
