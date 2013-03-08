@@ -1,7 +1,9 @@
 List of prescreened patches for CLJ project
-Date: March 1, 2013
+Date: March 7, 2013
 
-Tickets marked with a "V" have been vetted.
+Tickets marked with a "V" have been vetted, and "T" have been triaged
+(an experimental marking for tickets by which a screener is suggesting
+to Rich Hickey that it should become vetted).
 
 Screeners: See Note 3 near the bottom of this message for the command
 to use when applying patches.  See Note 4 near the bottom for the
@@ -83,10 +85,12 @@ V  CLJ-1083 better-throw-arity-messages.diff
    CLJ-840  clj840-2.diff
    CLJ-849  CLJ-849-line-number-pesudo-variable.diff
 V  CLJ-1073 clj-1073-add-print-interruptibly-patch-v2.txt
+   CLJ-1076 clj-1076-fix-tests-on-windows-patch-v2.txt
    CLJ-1088 0001-Add-support-for-protocol-fns-to-repl-source.-CLJ-1088.patch
    CLJ-1112 0001-Allow-setting-loading-verbosely-by-system-property.patch
 T  CLJ-1161 0001-CLJ-1161-Remove-version.properties-from-sources-JAR.patch
    CLJ-1165 0001-Protocol-interface-method-declarations-don-t-allow-f.patch
+   CLJ-1176 0001-CLJ-1176-Bind-read-eval-true-in-clojure.repl-source-.patch
 
       Clojure language/library bug fixes:
 
@@ -113,6 +117,7 @@ T  CLJ-1157 20130204_fix_classloader.diff
    CLJ-1171 0002-CLJ-1171-Obey-lexical-scope-for-class-argument-in-in.patch
       0001-* patch adds new tests, 0002-* fixes a bug, 0003-* relies
       on 0002-* being applied before it.
+   CLJ-1175 delayed-exceptions.patch
 
       Language enhancement, reducers:
 
@@ -131,6 +136,7 @@ T  CLJ-1157 20130204_fix_classloader.diff
    CLJ-666  0001-Add-Big-support-to-Reflector-Updated.patch
    CLJ-700  clj-700-patch6.txt
       Was Screened, then Incomplete in Aug 2012, now Approval is empty.
+   CLJ-766  byte-short-array-ctors.diff
    CLJ-1020 clj-1020-inspect-table-skip-nil-rows-patch1.txt
    CLJ-1021 001-propagate-on-macro-meta.diff
    CLJ-1044 001-enable-factory-ctor-inside-deftype.diff
@@ -270,12 +276,9 @@ was used with the latest Clojure master as of the date of this report.
 * All authors listed in the patch have signed a CA.
 * Patch applies cleanly to latest master as of the date of the report
   with all of the OS/JDK combos listed below:
-    Mac OS X 10.6.8 + Oracle/Apple JDK 1.6.0_41 64-bit
+    Mac OS X 10.6.8 + Oracle/Apple JDK 1.6.0_43 64-bit
     Ubuntu 12.04.2 64-bit + Oracle JDK 1.6.0_41 64-bit
     Ubuntu 12.04.2 64-bit + Oracle JDK 1.7.0_15 64-bit
-    NOT Ubuntu 11.10 + IBM JDK 1.6.0 J9 2.4 (I may add this back in to
-      my prescreen testing if latest Clojure master builds and passes
-      tests with this JVM again.)
 * After applying the patch, the command "./antsetup.sh ; ant" compiles
   and passes all tests without warnings or errors (see Note 1 near the
   end for a short list of allowed warnings).

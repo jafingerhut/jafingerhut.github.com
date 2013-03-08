@@ -1,5 +1,5 @@
 Tickets needing work for CLJ project
-Date: March 1, 2013
+Date: March 7, 2013
 
 If you are a Clojure contributor, the tickets below could use some
 work.  Some are easy, some are not.  If you've never added a patch
@@ -8,12 +8,20 @@ bottom.
 
 Keep reading below for a list of tickets that:
     (a) have patches, but they need updating, or
-    (b) don't have patches, but are vetted or are marked for Release
-        1.6 of Clojure
+    (b) don't have patches, but are vetted, triaged, or are marked for
+        Release 1.6 of Clojure
 
 Vetted tickets are marked with a "V".  Vetted means that a Clojure
 screener has verified that the ticket describes a real issue, and they
 would be interested in seeing a patch that addresses it.
+
+Triaged tickets are marked "T".  Triaged is an experimental marking
+used by a screener suggesting to Rich Hickey that the ticket should
+become Vetted.
+
+Incomplete tickets are marked "I".  Incomplete means that a screener
+believes the ticket may have merit, but the ticket or a particular
+patch needs changes before it can be accepted.
 
 For a list of all tickets that don't have any patches, see (Note 2)
 near the bottom.
@@ -45,7 +53,6 @@ I  CLJ-980  extended-type-doc-fix-v2.patch
       Debug/tooling enhancement:
 
 I  CLJ-939  clj-939-report-load-exceptions-with-file-and-line-patch-v2.txt
-I  CLJ-1076 clj-1076-fix-tests-on-windows-patch-v1.txt
 I  CLJ-1122 contributing.patch
 
       Allow more correct-looking Clojure code to work:
@@ -71,9 +78,9 @@ patches (see also Note 3 at the bottom):
 
 ----------------------------------------------------------------------
 Tickets needing work that have no prescreened patches.  These are all
-Triaged (marked T), Vetted (V), Incomplete (I), or their approval is
-the initial blank state.  The number after the letter is the number of
-votes, and tickets have been sorted from most to fewest votes.
+Triaged (T), Vetted (V), or Incomplete (I).  The number after the
+letter is the number of votes, and tickets have been sorted from most
+to fewest votes.
 ----------------------------------------------------------------------
 V   3 [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
       There are lots of different ideas discussed in the comments for
@@ -133,7 +140,6 @@ through tickets.
    CLJ-668 Improve slurp performance by using native Java StringWriter and jio/copy
         (looks related to CLJ-669, which does have a patch)
    CLJ-750 clojure.lang.MapEntry violates .equals and .hashCode contracts of HashMap.Entry; leads to non-reflexive .equals, etc.
-   CLJ-766 Implicit casting behaviour of into-array differs from <primitive>-array
 
 ----------------------------------------------------------------------
 These patches used to apply cleanly, but due to recent changes in
@@ -178,6 +184,7 @@ CLJ-450  clj-450-add-default-pred-arg-to-core-fns-patch.txt (Jason Orendorff)
 CLJ-884  diff.patch (Rahul Pilani - patch actually does not apply cleanly as of June 2012, but did earlier in 2012)
 CLJ-983  proxy_super.patch (Valentin Mahrwald)
 CLJ-1155 suppress_tracebacks.patch (Wilfred Hughes)
+CLJ-1169 0001-* and 0002-* (Andrei Kleschinski)
 
 The ones above may be easy to update.  The ones below are likely more
 work, where part of the work could be figuring out what ought to be
