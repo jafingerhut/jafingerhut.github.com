@@ -73,8 +73,7 @@ I  CLJ-771  clj-771-move-unchecked-casts-patch-v5.txt
 Tickets marked for Clojure release 1.6 that have no prescreened
 patches (see also Note 3 at the bottom):
 ----------------------------------------------------------------------
-
-<none>
+    0 [CLJ-1190] Javadoc for public Java API
 
 ----------------------------------------------------------------------
 Tickets needing work that have no prescreened patches.  These are all
@@ -95,6 +94,7 @@ I   2 [CLJ-415] smarter assert (prints locals)
       clojure.test.generative were moved to clojure.core,
       test.generative could use that one.
 I   2 [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
+T   1 [CLJ-823] Piping seque into seque can deadlock
 V   1 [CLJ-1100] Reader literals cannot contain periods
 V   1 [CLJ-1105] defrecord classes implement IPersistentCollection but not .empty, clojure.walk assumes collections support empty
 T   1 [CLJ-1154] Compile.java closes out preventing java from reporting exceptions
@@ -120,6 +120,8 @@ V   0 [CLJ-1033] pr-str and read-string don't handle @ symbols inside keywords p
 V   0 [CLJ-1039] Using 'def with metadata {:type :anything} throws ClassCastException
 V   0 [CLJ-1056] defprotocol: invalid method overload syntax getting accepted 
 V   0 [CLJ-1058] StackOverflowError on exception in reducef for PersistentHashMap fold
+T   0 [CLJ-1184] Evaling #{do ...} or [do ...] is treated as the do special form
+T   0 [CLJ-1187] Clojure loses quoted metdata on empty literals
 
 ----------------------------------------------------------------------
 Tickets not fitting in previous categories, but they have a git format
