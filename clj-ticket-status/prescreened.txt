@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: April 18, 2013
+Date: April 25, 2013
 
 Tickets marked with a "V" have been vetted, and "T" have been triaged
 (an experimental marking for tickets by which a screener is suggesting
@@ -95,6 +95,7 @@ V  CLJ-1073 clj-1073-add-print-interruptibly-patch-v2.txt
 V  CLJ-1161 0001-CLJ-1161-Remove-version.properties-from-sources-JAR.patch
    CLJ-1165 0001-Protocol-interface-method-declarations-don-t-allow-f.patch
    CLJ-1191 clj-1191-patch-v1.txt
+   CLJ-1205 0001-nexus-2.4-releases.patch
 
       Clojure language/library bug fixes:
 
@@ -120,6 +121,8 @@ V  CLJ-1157 20130204_fix_classloader.diff
    CLJ-1180 001-CLJ-1180.patch
 T  CLJ-1182 fix-CLJ-1182.diff
    CLJ-1193 clj-1197-make-bigint-work-on-all-doubles-v1.txt
+   CLJ-1202 CLJ-1202.patch
+   CLJ-1204 clj-1204-make-hash-consistent-with-equal-for-bigintegers-v1.txt
 
       Language enhancement, reducers:
 
@@ -170,6 +173,7 @@ T  CLJ-1182 fix-CLJ-1182.diff
    CLJ-1108 clj-1108-enhance-future-call-patch-v2.txt
    CLJ-1115 multi-arity-into.diff
    CLJ-1120 0001-CLJ-1120-ex-message-ex-cause.patch
+   CLJ-1203 0001-Add-hasheq-based-fallback-to-Util.compare.patch
 
       Performance enhancement:
 
@@ -300,9 +304,9 @@ was used with the latest Clojure master as of the date of this report.
 * All authors listed in the patch have signed a CA.
 * Patch applies cleanly to latest master as of the date of the report
   with all of the OS/JDK combos listed below:
-    Mac OS X 10.6.8 + Oracle/Apple JDK 1.6.0_43 64-bit
-    Ubuntu 12.04.2 64-bit + Oracle JDK 1.6.0_41 64-bit
-    Ubuntu 12.04.2 64-bit + Oracle JDK 1.7.0_15 64-bit
+    Mac OS X 10.6.8 + Oracle/Apple JDK 1.6.0_45 64-bit
+    Ubuntu 12.04.2 64-bit + Oracle JDK 1.6.0_45 64-bit
+    Ubuntu 12.04.2 64-bit + Oracle JDK 1.7.0_21 64-bit
 * After applying the patch, the command "./antsetup.sh ; ant" compiles
   and passes all tests without warnings or errors (see Note 1 near the
   end for a short list of allowed warnings).
