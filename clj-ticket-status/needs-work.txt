@@ -75,6 +75,7 @@ patches (see also Note 3 at the bottom):
 ----------------------------------------------------------------------
 V   3 [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
 V   1 [CLJ-1105] defrecord classes implement IPersistentCollection but not .empty, clojure.walk assumes collections support empty
+V   1 [CLJ-1154] Compile.java closes out preventing java from reporting exceptions
 V   0 [CLJ-420] Some compiler exceptions erroneously using REPL line numbers.
 V   0 [CLJ-701] Compiler loses 'loop's return type in some cases
 V   0 [CLJ-787] transient blows up when passed a vector created by subvec
@@ -98,7 +99,6 @@ I   2 [CLJ-415] smarter assert (prints locals)
 I   2 [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
 V   1 [CLJ-823] Piping seque into seque can deadlock
 V   1 [CLJ-1100] Reader literals cannot contain periods
-V   1 [CLJ-1154] Compile.java closes out preventing java from reporting exceptions
 I   0 [CLJ-5] Unintuitive error response in clojure 1.0
       One of two patches applied and built cleanly on May 4, 2012, but
       not on May 10, 2012.  The second, clj-5-destructure-error.diff,
