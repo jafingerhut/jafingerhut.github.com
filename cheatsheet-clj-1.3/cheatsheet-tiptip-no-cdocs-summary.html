@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.5, sheet v9)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.5, sheet v10)</title>
   <link rel="stylesheet" href="cheatsheet_files/26467729A.css" type="text/css" />
 
   <style type="text/css">
@@ -2914,7 +2914,14 @@ Special Form
   the binding-forms are bound to their respective init-exprs or parts
   therein.
 
-  Please see http://clojure.org/special_forms#let</pre>">let</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/quote" class="tooltip" title="<pre>quote
+  Please see http://clojure.org/special_forms#let</pre>">let</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/letfn" class="tooltip" title="<pre>clojure.core/letfn
+  (letfn [fnspecs*] exprs*)
+Special Form
+  fnspec ==> (fname [params*] exprs) or (fname ([params*] exprs)+)
+
+  Takes a vector of function specs and a body, and generates a set of
+  bindings of functions to their names. All of the names are available
+  in all of the definitions of the functions, as well as the body.</pre>">letfn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/quote" class="tooltip" title="<pre>quote
   (quote form)
 Special Form
   Yields the unevaluated form.
