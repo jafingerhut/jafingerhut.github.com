@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: May 16, 2013
+Date: May 24, 2013
 
 Tickets marked with a "V" have been vetted, and "T" have been triaged
 (an experimental marking for tickets by which a screener is suggesting
@@ -52,7 +52,7 @@ commit since the issue was created, etc.
    <none>
 
 ----------------------------------------------------------------------
-Enhancements ideas for which it might be time to create a ticket
+Enhancement ideas for which it might be time to create a ticket
 ----------------------------------------------------------------------
 Is it OK to create a ticket for these now? (see Note 2 near the end)
 
@@ -64,12 +64,13 @@ Prescreened patches *not* marked with Fix Version/s = "Release 1.6"
       Doc string fixes only:
 
 V  CLJ-1104 clj-1104-doc-unsafety-of-concurrent-with-redefs-v1.txt
+   CLJ-1117 clj-1117.patch
 
       Better error reporting:
 
    CLJ-735  protocolerr.diff
    CLJ-1030 improved-int-char-casting-error-messages.diff
-   CLJ-1107 0001-CLJ-1107-Throw-exception-for-get-called-on-unsupport.patch
+   CLJ-1107 clj-1107-throw-on-get-for-unsupported-types-patch-v2.txt
 
       Debug/tooling enhancement:
 
@@ -101,7 +102,7 @@ V  CLJ-1073 clj-1073-add-print-interruptibly-patch-v2.txt
    CLJ-1029 ns-patch.diff
 V  CLJ-1059 001-clj-1059-make-persistentqueue-implement-list.diff
       or 002-clj-1059-asequential-rebased-to-cached-hasheq.diff
-   CLJ-1074 0001-Read-Infinity-and-NaN.patch
+   CLJ-1074 clj-1074-read-infinity-and-nan-patch-v2.txt
    CLJ-1077 thread-bound.diff
    CLJ-1079 CLJ-1079.diff
 V  CLJ-1082 clj-1082.patch
@@ -115,7 +116,6 @@ V  CLJ-1157 20130204_fix_classloader.diff
    CLJ-1177 clj-1177-patch-v1.txt
    CLJ-1180 001-CLJ-1180.patch
 T  CLJ-1182 fix-CLJ-1182.diff
-   CLJ-1193 clj-1197-make-bigint-work-on-all-doubles-v1.txt
    CLJ-1204 clj-1204-make-hash-consistent-with-equal-for-bigintegers-v1.txt
 
       Language enhancement, reducers:
@@ -189,50 +189,21 @@ T  CLJ-1182 fix-CLJ-1182.diff
 Prescreened patches that are marked with Fix Version/s = "Release
 1.6", but not screened
 ----------------------------------------------------------------------
-      Better error reporting:
-
-V  CLJ-1083 better-throw-arity-messages.diff
-
-      Debug/tooling enhancement:
-
-V  CLJ-1161 0001-CLJ-1161-Remove-version.properties-from-sources-JAR.patch
-V  CLJ-1176 0001-CLJ-1176-Bind-read-eval-true-in-clojure.repl-source-.patch
-
       Clojure language/library bug fixes:
 
-V  CLJ-850  CLJ-850-conform-to-invokePrim.diff
    CLJ-935  fix-trim-fns-different-whitespace-patch.txt
    CLJ-937  clj-937-cl-format-coerces-ratios-patch2.txt
-V  CLJ-944  0001-Fix-for-CLJ-944.patch
-      See comments for another patch 0002-Fix-for-CLJ-944.patch and
-      why it fails some tests, which are fixable.
-V  CLJ-1125 threadlocal-removal-tcrawley-2012-12-11.diff
    CLJ-1160 lazy-rmapcat.diff
-V  CLJ-1171 0002-CLJ-1171-Obey-lexical-scope-for-class-argument-in-in.patch
-      0001-* patch adds new tests, 0002-* fixes a bug, 0003-* relies
-      on 0002-* being applied before it.
-V  CLJ-1175 delayed-exceptions.patch
-V  CLJ-1187 001-CLJ-1187.patch
 V  CLJ-1202 CLJ-1202.patch
-
-      Allow more correct-looking Clojure code to work:
-
-V  CLJ-1121 0001-CLJ-1121-Reimplement-and-without-recursion.patch
 
       Language/library enhancement:
 
-V  CLJ-322  compile-interop-1.patch
-      Patch compile-interop-1.patch applies and builds cleanly.
-      Comment discussion on various approaches to this ticket are
-      extensive.
    CLJ-394  clj-394-add-predicates-for-type-and-record.diff
-V  CLJ-827  0001-add-unsigned-bit-shift-right.patch
-      or 0001-CLJ-827-Add-bit-shift-right-logical.patch
    CLJ-949  0001-let-undeclared-exceptions-continue-unchecked.patch
 
       Performance enhancement:
 
-   CLJ-669  0001-use-java.nio-in-do-copy-method-for-Files.patch
+   CLJ-669  clj-669-use-java.nio-in-do-copy-for-files-patch-v2.txt
    CLJ-858  stm-rm-msecs-patch.diff
    CLJ-1005 0001-Use-transient-map-in-zipmap.2.patch
 
@@ -242,32 +213,33 @@ Prescreened, and screened or accepted
       Doc string fixes only:
 
 O  CLJ-196  0002-Don-t-promise-the-value-of-file-in-the-REPL.patch
-S  CLJ-1143 clj-1143-ns-doc-string-correction-v1.txt
-S  CLJ-1164 CLJ-1164-typos-instant.patch
 
       Debug/tooling enhancement:
 
-O  CLJ-896  clj-896-browse-url-uses-xdg-open-patch2.txt
-O  CLJ-908  clj-908-Print-metadata-and-anonymous-classes-better-patch2.txt
-O  CLJ-1099 better-error-message-for-seq.patch
+S  CLJ-1122 contributing.patch
+S  CLJ-1161 0001-CLJ-1161-Remove-version.properties-from-sources-JAR.patch
+S  CLJ-1176 0001-CLJ-1176-Bind-read-eval-true-in-clojure.repl-source-.patch
 
       Clojure language/library bug fixes:
 
-O  CLJ-783  clj-783-patch.txt
-O  CLJ-863  clj-863-make-interleave-handle-odd-args-like-concat-patch-v1.txt
-S  CLJ-1101 CLJ-1101-make-default-data-reader-fn-set-able-in-REPL.patch
+S  CLJ-850  CLJ-850-conform-to-invokePrim.diff
+S  CLJ-944  0001-Fix-for-CLJ-944.patch
+      See comments for another patch 0002-Fix-for-CLJ-944.patch and
+      why it fails some tests, which are fixable.
+S  CLJ-1171 0002-CLJ-1171-Obey-lexical-scope-for-class-argument-in-in.patch
+      0001-* patch adds new tests, 0002-* fixes a bug, 0003-* relies
+      on 0002-* being applied before it.
+S  CLJ-1175 delayed-exceptions.patch
+S  CLJ-1187 001-CLJ-1187.patch
+S  CLJ-1193 clj-1197-make-bigint-work-on-all-doubles-v1.txt
 
       Allow more correct-looking Clojure code to work:
 
-O  CLJ-1018 inconsistent_range_fix.diff
+S  CLJ-1121 0001-CLJ-1121-Reimplement-and-without-recursion.patch
 
       Language/library enhancement:
 
-O  CLJ-873  clj-873-namespace-divides-patch.txt
-
-      Code cleanup:
-
-O  CLJ-1072 0001-CLJ-1072-Replace-old-metadata-reader-macro-syntax.patch
+S  CLJ-827  clj-827-unsigned-bit-shift-right-with-tests.patch
 
 ----------------------------------------------------------------------
 (Note 1) Warnings/errors explicitly allowed in output of 'ant' command
