@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: June 20, 2013
+Date: June 26, 2013
 
 Tickets marked with a "V" have been vetted, and "T" have been triaged
 (an experimental marking for tickets by which a screener is suggesting
@@ -120,6 +120,9 @@ T  CLJ-1182 fix-CLJ-1182.diff
    CLJ-1204 clj-1204-make-hash-consistent-with-equal-for-bigintegers-v1.txt
    CLJ-1216 0001-Create-a-DoExpr.Parser-class-that-delegates-to-BodyE.patch
    CLJ-1217 0001-Don-t-realize-seq-exprs-in-for-unless-necessary.patch
+   CLJ-1222 min_value_multiplication.diff
+   CLJ-1225 clj-1225-fix-division-overflow-patch-v1.txt
+   CLJ-1226 0001-fix-CLJ-1226.patch
 
       Language enhancement, reducers:
 
@@ -183,6 +186,7 @@ T  CLJ-1182 fix-CLJ-1182.diff
    CLJ-1096 desctructure-keyword-lookup.diff
    CLJ-1128 0002-Improve-merge-with.patch
    CLJ-1200 no-getComponentType--v001.patch
+   CLJ-1224 0001-CLJ-1224-cache-hasheq-and-hashCode-for-records.patch
 
       Code cleanup:
 
@@ -276,7 +280,7 @@ created for them before any ticket is created.
 ----------------------------------------------------------------------
 (Note 3) As documented in the "Screening Tickets" section of the JIRA
 Workflow wiki page at
-http://dev.clojure.org/display/design/JIRA+workflow, please use the
+http://dev.clojure.org/display/community/JIRA+workflow, please use the
 following command to apply git format patches:
 
 % git am --keep-cr -s --ignore-whitespace < patch_file
@@ -294,7 +298,7 @@ was used with the latest Clojure master as of the date of this report.
 * All authors listed in the patch have signed a CA.
 * Patch applies cleanly to latest master as of the date of the report
   with all of the OS/JDK combos listed below:
-    Mac OS X 10.6.8 + Oracle/Apple JDK 1.6.0_45 64-bit
+    Mac OS X 10.6.8 + Oracle/Apple JDK 1.6.0_51 64-bit
     Ubuntu 12.04.2 64-bit + OpenJDK 1.6.0_27 64-bit
     Ubuntu 12.04.2 64-bit + Oracle JDK 1.7.0_21 64-bit
 * After applying the patch, the command "./antsetup.sh ; ant" compiles
