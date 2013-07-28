@@ -1,5 +1,5 @@
 Tickets needing work for CLJ project
-Date: July 19, 2013
+Date: July 28, 2013
 
 If you are a Clojure contributor, the tickets below could use some
 work.  Some are easy, some are not.  If you've never added a patch
@@ -11,17 +11,11 @@ Keep reading below for a list of tickets that:
     (b) don't have patches, but are vetted, triaged, or are marked for
         Release 1.6 of Clojure
 
-Vetted tickets are marked with a "V".  Vetted means that a Clojure
-screener has verified that the ticket describes a real issue, and they
-would be interested in seeing a patch that addresses it.
-
-Triaged tickets are marked "T".  Triaged is an experimental marking
-used by a screener suggesting to Rich Hickey that the ticket should
-become Vetted.
-
-Incomplete tickets are marked "I".  Incomplete means that a screener
-believes the ticket may have merit, but the ticket or a particular
-patch needs changes before it can be accepted.
+The first letter on each patch summary line indicates the Approval of
+the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
+(CLJ-<number>) is the state of the ticket.  See the JIRA workflow
+diagram for details:
+    http://dev.clojure.org/display/community/JIRA+workflow
 
 For a list of all tickets that don't have any patches, see (Note 2)
 near the bottom.
@@ -47,48 +41,40 @@ ticket is marked Incomplete (I).
 ----------------------------------------------------------------------
       Doc string fixes only:
 
-I  CLJ-835  0001-CLJ-835-Refine-doc-string-for-defmulti-hierarchy-opt.patch
-I  CLJ-980  extended-type-doc-fix-v2.patch
+I  CLJ-835  Bad: Matches no state 0001-CLJ-835-Refine-doc-string-for-defmulti-hierarchy-opt.patch
+I  CLJ-980  Bad: Matches no state extended-type-doc-fix-v2.patch
 
       Better error reporting:
 
-I  CLJ-1083 better-throw-arity-messages.diff
+I  CLJ-1083 Incomplete   better-throw-arity-messages.diff
 
       Debug/tooling enhancement:
 
-I  CLJ-939  clj-939-report-load-exceptions-with-file-and-line-patch-v2.txt
+I  CLJ-939  Bad: Matches no state clj-939-report-load-exceptions-with-file-and-line-patch-v2.txt
 
       Allow more correct-looking Clojure code to work:
 
-I  CLJ-373  0001-Support-empty-path-in-update-in.-CLJ-373.patch
-I  CLJ-766  byte-short-array-ctors.diff
+I  CLJ-373  Bad: Matches no state 0001-Support-empty-path-in-update-in.-CLJ-373.patch
+I  CLJ-766  Incomplete   byte-short-array-ctors.diff
 
       Language/library enhancement:
 
-I  CLJ-322  compile-interop-1.patch
+I  CLJ-322  Incomplete   compile-interop-1.patch
       Patch compile-interop-1.patch applies and builds cleanly.
       Comment discussion on various approaches to this ticket are
       extensive.
-I  CLJ-771  clj-771-move-unchecked-casts-patch-v5.txt
-      TBD: The patch clj-771-move-unchecked-casts-patch-v5.txt applies
-      cleanly to latest master and passes all tests. Rich marked this
-      ticket as Incomplete on Dec 9 2011 with the comment "still
-      considering when to incorporate this" above. Is it reasonable
-      to change it back to Vetted or Screened so it can be considered
-      again, perhaps after Release 1.5 is made?
-I  CLJ-866  clj-866-test-vars.patch
+I  CLJ-866  Incomplete   clj-866-test-vars.patch
 
 ----------------------------------------------------------------------
-Tickets marked for Clojure release 1.6 that have no prescreened
+Tickets marked for Clojure Release 1.6 that have no prescreened
 patches (see also Note 3 at the bottom):
 ----------------------------------------------------------------------
 V   3 [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
-V   1 [CLJ-1105] defrecord classes implement IPersistentCollection but not .empty, clojure.walk assumes collections support empty
-V   1 [CLJ-1154] Compile.java closes out preventing java from reporting exceptions
+V   1 [CLJ-1105] clojure.walk should support records
 V   0 [CLJ-420] Some compiler exceptions erroneously using REPL line numbers.
 V   0 [CLJ-701] Compiler loses 'loop's return type in some cases
 V   0 [CLJ-1058] StackOverflowError on exception in reducef for PersistentHashMap fold
-    0 [CLJ-1190] Javadoc for public Java API
+V   0 [CLJ-1190] Javadoc for public Java API
 
 ----------------------------------------------------------------------
 Tickets needing work that have no prescreened patches.  These are all
@@ -96,34 +82,36 @@ Triaged (T), Vetted (V), or Incomplete (I).  The number after the
 letter is the number of votes, and tickets have been sorted from most
 to fewest votes.
 ----------------------------------------------------------------------
-I   2 [CLJ-415] smarter assert (prints locals)
+V   2 [CLJ-415] smarter assert (prints locals)
       The patch applies cleanly and passes tests, but gives a warning
       because macro local-bindings is same name (and perhaps the same
       author, since the body is almost the same) as a function
       local-bindings in clojure.test.generative.  If the one in
       clojure.test.generative were moved to clojure.core,
       test.generative could use that one.
-I   2 [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
+V   2 [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
 V   1 [CLJ-823] Piping seque into seque can deadlock
 V   1 [CLJ-1100] Reader literals cannot contain periods
-I   0 [CLJ-5] Unintuitive error response in clojure 1.0
+V   0 [CLJ-5] Unintuitive error response in clojure 1.0
       One of two patches applied and built cleanly on May 4, 2012, but
       not on May 10, 2012.  The second, clj-5-destructure-error.diff,
       failed to apply as of Oct 4, 2012.
 V   0 [CLJ-47] GC Issue 43: Dead code in generated bytecode
-I   0 [CLJ-69] GC Issue 66: Add "keyset" to Clojure; make .keySet for APersistentMap return IPersistentSet
-I   0 [CLJ-84] GC Issue 81: compile gen-class fail when class returns self
-I   0 [CLJ-211] Support arbitrary functional destructuring via -> and ->>
-I   0 [CLJ-250] debug builds
+V   0 [CLJ-69] GC Issue 66: Add "keyset" to Clojure; make .keySet for APersistentMap return IPersistentSet
+V   0 [CLJ-84] GC Issue 81: compile gen-class fail when class returns self
+V   0 [CLJ-211] Support arbitrary functional destructuring via -> and ->>
+V   0 [CLJ-250] debug builds
 V   0 [CLJ-274] cannot close over mutable fields (in deftype)
-I   0 [CLJ-291] (take-nth 0 coll) redux...
-I   0 [CLJ-346] (pprint-newline :fill) is not handled correctly
+V   0 [CLJ-291] (take-nth 0 coll) redux...
+V   0 [CLJ-326] add :as-of option to refer
+V   0 [CLJ-346] (pprint-newline :fill) is not handled correctly
 V   0 [CLJ-348] reify allows use of qualified name as method parameter
 V   0 [CLJ-731] Create macro to variadically unroll a combinator function definition
+V   0 [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
 V   0 [CLJ-992] `iterate` reducer
-V   0 [CLJ-1033] pr-str and read-string don't handle @ symbols inside keywords properly
 V   0 [CLJ-1039] Using 'def with metadata {:type :anything} throws ClassCastException
 V   0 [CLJ-1056] defprotocol: invalid method overload syntax getting accepted 
+T   0 [CLJ-1234] Accept whitespace in Record and Type reader forms
 
 ----------------------------------------------------------------------
 Tickets not fitting in previous categories, but they have a git format
@@ -174,9 +162,6 @@ stale patches.
    CLJ-976 clj-976-queue-literal-eval-and-synquote-patch-v3.txt
       Applied cleanly until Oct 20 2012 when a conflicting patch for
       CLJ-1070 was applied.
-   CLJ-1078 queue.patch
-      Applied cleanly as of Dec 11 2012 using patch command, but there
-      are more substantive changes to make per comments from Rich.
 
 ----------------------------------------------------------------------
 The patches below would be prescreened, except that their authors are
