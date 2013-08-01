@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: July 28, 2013
+Date: August 1, 2013
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -65,9 +65,12 @@ Prescreened patches *not* marked with Fix Version/s = "Release 1.6"
 ----------------------------------------------------------------------
       Doc string fixes only:
 
+   CLJ-835  Open         0001-CLJ-835-Refine-doc-string-for-defmulti-hierarchy-opt.patch
+T  CLJ-980  Triaged      extended-type-doc-fix-v2.patch
 V  CLJ-1104 Backlog      clj-1104-doc-unsafety-of-concurrent-with-redefs-v1.txt
    CLJ-1117 Open         clj-1117.patch
 T  CLJ-1228 Triaged      clj-1228-fix-multiple-typos-2.patch
+   CLJ-1240 Open         0001-CLJ-1240-Note-limits-of-clojure.walk-macroexpand-all.patch
 
       Better error reporting:
 
@@ -91,6 +94,7 @@ T  CLJ-1228 Triaged      clj-1228-fix-multiple-typos-2.patch
       added by the patch.  It did compile and test successfully as of
       Mar 14, 2013 using the command 'mvn package'.
    CLJ-840  Open         clj840-2.diff
+T  CLJ-939  Triaged      clj-939-report-load-exceptions-with-file-and-line-patch-v2.txt
 V  CLJ-1073 Vetted       clj-1073-add-print-interruptibly-patch-v2.txt
    CLJ-1076 Open         clj-1076-fix-tests-on-windows-patch-v2.txt
    CLJ-1088 Open         0001-Add-support-for-protocol-fns-to-repl-source.-CLJ-1088.patch
@@ -126,7 +130,9 @@ T  CLJ-1222 Triaged      min_value_multiplication.diff
 T  CLJ-1225 Triaged      clj-1225-fix-division-overflow-patch-v1.txt
    CLJ-1226 Open         0001-fix-CLJ-1226.patch
    CLJ-1229 Open         clj-1229-count-overflow-patch-v1.txt
-T  CLJ-1233 Triaged      clj-1233-minimal.diff
+T  CLJ-1233 Triaged      clj-1233-with-test.diff
+T  CLJ-1238 Triaged      0001-Fix-CLJ-873-for-EdnReader-too.patch
+T  CLJ-1241 Triaged      0001-fix-CLJ-1241.patch
 
       Language enhancement, reducers:
 
@@ -144,6 +150,7 @@ T  CLJ-1233 Triaged      clj-1233-minimal.diff
 
       Allow more correct-looking Clojure code to work:
 
+   CLJ-373  Open         0001-Support-empty-path-in-update-in.-CLJ-373.patch
    CLJ-666  Open         0001-Add-Big-support-to-Reflector-Updated.patch
    CLJ-700  Open         clj-700-patch6.txt
       Was Screened, then Incomplete in Aug 2012, now Approval is empty.
@@ -153,6 +160,7 @@ T  CLJ-1233 Triaged      clj-1233-minimal.diff
    CLJ-1060 Open         list-star-fix.diff
    CLJ-1086 Open         thread-last-arity-1.diff
    CLJ-1148 Open         0001-new-defonce-hotness.patch
+   CLJ-1242 Open         0001-fix-for-CLJ-1242-tests.patch
 
       Language/library enhancement:
 
@@ -184,6 +192,8 @@ V  CLJ-771  Backlog      clj-771-move-unchecked-casts-patch-v5.txt
    CLJ-1108 Open         clj-1108-enhance-future-call-patch-v2.txt
    CLJ-1115 Open         multi-arity-into.diff
    CLJ-1120 Open         0001-CLJ-1120-ex-message-ex-cause.patch
+   CLJ-1239 Open         0001-CLJ-1239-protocol-dispatch-for-clojure.walk.patch
+      This one is perhaps preferable to CLJ-1105
 
       Performance enhancement:
 
@@ -221,6 +231,8 @@ V  CLJ-1202 Screenable   CLJ-1202.patch
 
 V  CLJ-394  Screenable   clj-394-add-predicates-for-type-and-record.diff
 V  CLJ-949  Screenable   0001-let-undeclared-exceptions-continue-unchecked.patch
+V  CLJ-1105 Screenable   0001-CLJ-1105-Support-records-in-clojure.walk.patch
+      See also CLJ-1239, which might be preferable to this ticket
 
       Performance enhancement:
 
@@ -244,13 +256,6 @@ O  CLJ-1205 Ok           0001-nexus-2.4-releases.patch
       Clojure language/library bug fixes:
 
 S  CLJ-850  Screened     CLJ-850-conform-to-invokePrim.diff
-O  CLJ-873  Ok           0001-Fix-CLJ-873-for-EdnReader-too.patch
-      Currently has Approval "Ok" because an earlier patch was
-      approved and comitted for it, then the ticket was reopened with
-      another related patch for the EDN reader.  Most likely that
-      patch has not been screened, so either the current Approval is
-      misleading and should be changed, or perhaps a new ticket
-      created for the EDN reader change.
 S  CLJ-944  Screened     0001-Fix-for-CLJ-944.patch
       See comments for another patch 0002-Fix-for-CLJ-944.patch and
       why it fails some tests, which are fixable.
@@ -305,7 +310,7 @@ was used with the latest Clojure master as of the date of this report.
   with all of the OS/JDK combos listed below:
     Mac OS X 10.6.8 + Oracle/Apple JDK 1.6.0_51 64-bit
     Ubuntu 12.04.2 64-bit + OpenJDK 1.6.0_27 64-bit
-    Ubuntu 12.04.2 64-bit + Oracle JDK 1.7.0_21 64-bit
+    Ubuntu 12.04.2 64-bit + Oracle JDK 1.7.0_25 64-bit
 * After applying the patch, the command "./antsetup.sh ; ant" compiles
   and passes all tests without warnings or errors (see Note 1 near the
   end for a short list of allowed warnings).
