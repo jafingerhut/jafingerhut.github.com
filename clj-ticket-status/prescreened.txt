@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: August 7, 2013
+Date: August 14, 2013
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -58,6 +58,16 @@ commit since the issue was created, etc.
       Ticket CLJ-1121 had a patch committed for it on Aug 14 2013.
       That patch fixed this issue, too.  This ticket can be closed as
       "Resolved" with no other patches needing to be applied.
+   CLJ-1245
+      Ticket creator believes it should be closed.
+
+----------------------------------------------------------------------
+Tickets currently marked Incomplete that might be ready to advance
+----------------------------------------------------------------------
+
+   CLJ-944 Compiler makes different concrete maps then the reader
+      The patch clj944-plus-tests.patch does cause the problem in the
+      description to be eliminated.
 
 ----------------------------------------------------------------------
 Enhancement ideas for which it might be time to create a ticket
@@ -71,7 +81,7 @@ Prescreened patches *not* marked with Fix Version/s = "Release 1.6"
 ----------------------------------------------------------------------
       Doc string fixes only:
 
-   CLJ-835  Open         0001-CLJ-835-Refine-doc-string-for-defmulti-hierarchy-opt.patch
+T  CLJ-835  Triaged      0001-CLJ-835-Refine-doc-string-for-defmulti-hierarchy-opt.patch
 T  CLJ-980  Triaged      extended-type-doc-fix-v2.patch
 V  CLJ-1104 Backlog      clj-1104-doc-unsafety-of-concurrent-with-redefs-v1.txt
    CLJ-1117 Open         clj-1117.patch
@@ -80,7 +90,7 @@ T  CLJ-1228 Triaged      clj-1228-fix-multiple-typos-2.patch
 
       Better error reporting:
 
-   CLJ-735  Open         protocolerr.diff
+T  CLJ-735  Triaged      protocolerr.diff
    CLJ-1030 Open         improved-int-char-casting-error-messages.diff
    CLJ-1107 Open         clj-1107-throw-on-get-for-unsupported-types-patch-v2.txt
    CLJ-1162 Open         CLJ-1162-p1.patch
@@ -113,7 +123,7 @@ V  CLJ-1073 Vetted       clj-1073-add-print-interruptibly-patch-v2.txt
 
    CLJ-457  Open         CLJ-457-2.diff
    CLJ-1029 Open         ns-patch.diff
-   CLJ-1036 Open         clj-1036-hasheq-for-biginteger-patch-v2.txt
+T  CLJ-1036 Triaged      clj-1036-hasheq-for-biginteger-patch-v4.txt
    CLJ-1059 Open         001-clj-1059-make-persistentqueue-implement-list.diff
       or 002-clj-1059-asequential-rebased-to-cached-hasheq.diff
    CLJ-1077 Open         thread-bound.diff
@@ -122,7 +132,7 @@ V  CLJ-1082 Vetted       clj-1082.patch
 V  CLJ-1090 Vetted       var-clear-locals.diff
    CLJ-1093 Open         0001-CLJ-1093-fix-empty-records-literal-v2.patch
 V  CLJ-1102 Vetted       clj-1102-improve-empty-stack-trace-handling-v1.txt
-   CLJ-1118 Open         clj-1118-make-double-equals-true-for-more-bigdecimals-patch-v3.txt
+   CLJ-1118 Open         clj-1118-make-double-equals-true-for-more-bigdecimals-patch-v4.txt
    CLJ-1134 Open         clj-1134-star-directive-in-cl-format.txt
    CLJ-1137 Open         CLJ-1137-eval-metadata-once.diff
 V  CLJ-1157 Vetted       20130204_fix_classloader.diff
@@ -149,7 +159,6 @@ T  CLJ-1241 Triaged      0001-fix-CLJ-1241.patch
       and test cleanly if applied after the patches for CLJ-1045 and
       CLJ-1046.
    CLJ-1047 Open         001-simplify-fj-importing.patch
-   CLJ-1049 Open         0001-reduce-kv-transformations.diff
    CLJ-1113 Open         reductions-reducer.diff
    CLJ-1185 Open         CLJ-1181-v001.patch
    CLJ-1197 Open         foldable-seq.diff
@@ -164,7 +173,6 @@ T  CLJ-1241 Triaged      0001-fix-CLJ-1241.patch
    CLJ-1021 Open         001-propagate-on-macro-meta.diff
    CLJ-1044 Open         001-enable-factory-ctor-inside-deftype.diff
    CLJ-1060 Open         list-star-fix.diff
-   CLJ-1086 Open         thread-last-arity-1.diff
    CLJ-1148 Open         0001-new-defonce-hotness.patch
    CLJ-1242 Open         0001-fix-for-CLJ-1242-tests.patch
 
@@ -179,7 +187,7 @@ V  CLJ-771  Backlog      clj-771-move-unchecked-casts-patch-v5.txt
    CLJ-803  Open         0001-atom-interface.patch
       Both patches apply and build cleanly, iatom.patch using 'patch'
       command.
-   CLJ-865  Open         updated.patch
+T  CLJ-865  Triaged      clj-865-updated-v2-patch.txt
    CLJ-957  Open         clj-957-allow-typehinting-of-method-signatures-in-deftype-patch2.txt
    CLJ-958  Open         0001-Make-APersistentVector.iterator-slightly-more-effici.patch
    CLJ-970  Open         clj-970-extend-implement-parameterized-types-patch2.txt
@@ -196,7 +204,6 @@ V  CLJ-771  Backlog      clj-771-move-unchecked-casts-patch-v5.txt
    CLJ-1097 Open         node-seq.diff
    CLJ-1103 Open         clj-1103-make-conj-assoc-dissoc-handle-args-similarly-v1.txt
    CLJ-1108 Open         clj-1108-enhance-future-call-patch-v2.txt
-   CLJ-1115 Open         multi-arity-into.diff
    CLJ-1120 Open         0001-CLJ-1120-ex-message-ex-cause.patch
    CLJ-1239 Open         0001-CLJ-1239-protocol-dispatch-for-clojure.walk.patch
       This one is perhaps preferable to CLJ-1105
@@ -233,51 +240,35 @@ V  CLJ-1125 Screenable   threadlocal-removal-tcrawley-2013-06-14.diff
       Language/library enhancement:
 
 V  CLJ-394  Screenable   clj-394-add-predicates-for-type-and-record.diff
+V  CLJ-866  Screenable   clj-866-test-vars.patch
+      See also patch CLJ-866-test.patch, which contains tests for this
+      patch.
 V  CLJ-1105 Screenable   0001-CLJ-1105-Support-records-in-clojure.walk.patch
       See also CLJ-1239, which might be preferable to this ticket
 
       Performance enhancement:
 
-V  CLJ-858  Screenable   stm-rm-msecs-patch.diff
+V  CLJ-669  Screenable   clj-669-use-java.nio-in-do-copy-for-files-patch-v3.txt
 
 ----------------------------------------------------------------------
 Prescreened, and screened or accepted
 ----------------------------------------------------------------------
-      Doc string fixes only:
-
-O  CLJ-196  Ok           0002-Don-t-promise-the-value-of-file-in-the-REPL.patch
-
       Debug/tooling enhancement:
 
 S  CLJ-1122 Screened     contributing.patch
-S  CLJ-1161 Screened     0001-CLJ-1161-Remove-version.properties-from-sources-JAR.patch
 S  CLJ-1176 Screened     0001-CLJ-1176-Bind-read-eval-true-in-clojure.repl-source-.patch
-O  CLJ-1205 Ok           0001-nexus-2.4-releases.patch
 
       Clojure language/library bug fixes:
 
-S  CLJ-850  Screened     CLJ-850-conform-to-invokePrim.diff
-S  CLJ-944  Screened     0001-Fix-for-CLJ-944.patch
-      See comments for another patch 0002-Fix-for-CLJ-944.patch and
-      why it fails some tests, which are fixable.
-S  CLJ-1154 Screened     CLJ-1154.patch
-S  CLJ-1160 Screened     lazy-rmapcat2.diff
-S  CLJ-1171 Screened     0002-CLJ-1171-Obey-lexical-scope-for-class-argument-in-in.patch
-      0001-* patch adds new tests, 0002-* fixes a bug, 0003-* relies
-      on 0002-* being applied before it.
-S  CLJ-1175 Screened     delayed-exceptions.patch
-S  CLJ-1184 Screened     CLJ-1184-p3.patch
 S  CLJ-1187 Screened     001-CLJ-1187.patch
-S  CLJ-1193 Screened     clj-1197-make-bigint-work-on-all-doubles-v1.txt
-S  CLJ-1202 Screened     CLJ-1202.patch
-
-      Allow more correct-looking Clojure code to work:
-
-S  CLJ-1121 Screened     0001-CLJ-1121-Reimplement-and-without-recursion.patch
 
       Language/library enhancement:
 
 S  CLJ-827  Screened     clj-827-unsigned-bit-shift-right-with-tests.patch
+
+      Performance enhancement:
+
+S  CLJ-858  Screened     stm-rm-msecs-patch.diff
 
 ----------------------------------------------------------------------
 (Note 1) Warnings/errors explicitly allowed in output of 'ant' command
