@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: August 14, 2013
+Date: August 22, 2013
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -118,6 +118,7 @@ T  CLJ-1225 Triaged      clj-1225-fix-division-overflow-patch-v1.txt
 T  CLJ-1233 Triaged      clj-1233-with-test.diff
 T  CLJ-1238 Triaged      0001-Fix-CLJ-873-for-EdnReader-too.patch
 T  CLJ-1241 Triaged      0001-fix-CLJ-1241.patch
+   CLJ-1246 Open         clj-1246-fix-type-reflect-exception-patch-v1.txt
 
       Language enhancement, reducers:
 
@@ -136,8 +137,7 @@ T  CLJ-1241 Triaged      0001-fix-CLJ-1241.patch
 
    CLJ-373  Open         0001-Support-empty-path-in-update-in.-CLJ-373.patch
    CLJ-666  Open         0001-Add-Big-support-to-Reflector-Updated.patch
-   CLJ-700  Open         clj-700-patch6.txt
-      Was Screened, then Incomplete in Aug 2012, now Approval is empty.
+V  CLJ-700  Vetted       clj-700-patch6.txt
    CLJ-1020 Open         clj-1020-inspect-table-skip-nil-rows-patch2.txt
    CLJ-1021 Open         001-propagate-on-macro-meta.diff
    CLJ-1044 Open         001-enable-factory-ctor-inside-deftype.diff
@@ -199,12 +199,17 @@ T  CLJ-1200 Triaged      no-getComponentType--v001.patch
 Prescreened patches that are marked with Fix Version/s =
 "Release 1.6", but not screened
 ----------------------------------------------------------------------
+      Debug/tooling enhancement:
+
+V  CLJ-1176 Screenable   0001-CLJ-1176-Bind-read-eval-true-in-clojure.repl-source-.patch
+
       Clojure language/library bug fixes:
 
 V  CLJ-787  Screenable   CLJ-787-p1.patch
 V  CLJ-935  Screenable   fix-trim-fns-different-whitespace-patch.txt
 V  CLJ-937  Screenable   clj-937-cl-format-coerces-ratios-patch2.txt
 V  CLJ-1125 Screenable   threadlocal-removal-tcrawley-2013-06-14.diff
+V  CLJ-1187 Screenable   001-CLJ-1187.patch
 
       Language/library enhancement:
 
@@ -215,21 +220,16 @@ V  CLJ-866  Screenable   clj-866-test-vars.patch
 V  CLJ-1105 Screenable   0001-CLJ-1105-Support-records-in-clojure.walk.patch
       See also CLJ-1239, which might be preferable to this ticket
 
-      Performance enhancement:
-
-V  CLJ-669  Screenable   clj-669-use-java.nio-in-do-copy-for-files-patch-v3.txt
-
 ----------------------------------------------------------------------
 Prescreened, and screened or accepted
 ----------------------------------------------------------------------
       Debug/tooling enhancement:
 
 S  CLJ-1122 Screened     contributing.patch
-S  CLJ-1176 Screened     0001-CLJ-1176-Bind-read-eval-true-in-clojure.repl-source-.patch
 
       Clojure language/library bug fixes:
 
-S  CLJ-1187 Screened     001-CLJ-1187.patch
+S  CLJ-1184 Screened     CLJ-1184-p4.patch
 
       Language/library enhancement:
 
@@ -237,6 +237,7 @@ S  CLJ-827  Screened     clj-827-unsigned-bit-shift-right-with-tests.patch
 
       Performance enhancement:
 
+S  CLJ-669  Screened     clj-669-use-java.nio-in-do-copy-for-files-patch-v3.txt
 S  CLJ-858  Screened     stm-rm-msecs-patch.diff
 
 ----------------------------------------------------------------------
