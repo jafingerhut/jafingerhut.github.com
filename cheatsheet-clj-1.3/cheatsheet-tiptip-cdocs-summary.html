@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.5, sheet v10)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.5, sheet v11)</title>
   <link rel="stylesheet" href="cheatsheet_files/26467729A.css" type="text/css" />
 
   <style type="text/css">
@@ -308,17 +308,7 @@ See also: number?</pre>">num</a> <a href="http://clojuredocs.org/clojure_core/cl
               </tr>
               <tr class="even">
                 <td>Test</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/nil_q" class="tooltip" title="<pre>clojure.core/nil?
-([x])
-  Returns true if x is nil, false otherwise.
-
-1 example with 6 lines on Thu Aug 15 2013
-See also: identity</pre>">nil?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/identical_q" class="tooltip" title="<pre>clojure.core/identical?
-([x y])
-  Tests if 2 arguments are the same object
-
-2 examples totaling 21 lines on Thu Aug 15 2013
-See also: =, ==</pre>">identical?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/zero_q" class="tooltip" title="<pre>clojure.core/zero?
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/zero_q" class="tooltip" title="<pre>clojure.core/zero?
 ([x])
   Returns true if num is zero, else false
 
@@ -342,7 +332,32 @@ See also: odd?</pre>">even?</a> <a href="http://clojuredocs.org/clojure_core/clo
   Returns true if n is odd, throws an exception if n is not an integer
 
 1 example with 6 lines on Thu Aug 15 2013
-See also: even?</pre>">odd?</a></code></td>
+See also: even?</pre>">odd?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/number_q" class="tooltip" title="<pre>clojure.core/number?
+([x])
+  Returns true if x is a Number
+
+1 example with 10 lines on Thu Aug 15 2013
+See also: num</pre>">number?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/rational_q" class="tooltip" title="<pre>clojure.core/rational?
+([n])
+  Returns true if n is a rational number
+
+1 example with 8 lines on Thu Aug 15 2013</pre>">rational?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/integer_q" class="tooltip" title="<pre>clojure.core/integer?
+([n])
+  Returns true if n is an integer
+
+1 example with 4 lines on Thu Aug 15 2013</pre>">integer?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ratio_q" class="tooltip" title="<pre>clojure.core/ratio?
+([n])
+  Returns true if n is a Ratio
+
+1 example with 4 lines on Thu Aug 15 2013</pre>">ratio?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/decimal_q" class="tooltip" title="<pre>clojure.core/decimal?
+([n])
+  Returns true if n is a BigDecimal
+
+1 example with 14 lines on Thu Aug 15 2013</pre>">decimal?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/float_q" class="tooltip" title="<pre>clojure.core/float?
+([n])
+  Returns true if n is a floating point number
+
+1 example with 4 lines on Thu Aug 15 2013</pre>">float?</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Random</td>
@@ -3234,7 +3249,7 @@ See also: fn?</pre>">ifn?</a></code></td>
           </table>
         </div><!-- /section -->
         <div class="section">
-          <h2>Abstractions</h2>
+          <h2>Abstractions (<a href="https://github.com/cemerick/clojure-type-selection-flowchart">Clojure type selection flowchart</a>)</h2>
           <h3>Protocols (<a href="http://clojure.org/protocols">clojure.org/protocols</a>)</h3>
           <table>
             <tbody>
@@ -4633,7 +4648,23 @@ See also: with-redefs, with-redefs-fn, intern, var</pre>">alter-var-root</a> <a 
   Returns true if v is of type clojure.lang.Var
 
 2 examples totaling 29 lines on Thu Aug 15 2013
-See also: def, var, vars, var-get, var-set, with-local-vars</pre>">var?</a></code></td>
+See also: def, var, vars, var-get, var-set, with-local-vars</pre>">var?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bound_q" class="tooltip" title="<pre>clojure.core/bound?
+([& vars])
+  Returns true if all of the vars provided as arguments have any bound value,
+root or thread-local.
+   Implies that deref'ing the provided vars will succeed. Returns true if no
+vars are provided.
+
+1 example with 12 lines on Thu Aug 15 2013
+See also: thread-bound?</pre>">bound?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/thread-bound_q" class="tooltip" title="<pre>clojure.core/thread-bound?
+([& vars])
+  Returns true if all of the vars provided as arguments have thread-local
+bindings.
+   Implies that set!'ing the provided vars will succeed.  Returns true if no
+vars are provided.
+
+0 examples on Thu Aug 15 2013
+See also: bound-fn, bound-fn*</pre>">thread-bound?</a></code></td>
               </tr>
               <tr class="even">
                 <td>Var validators</td>
@@ -6001,7 +6032,7 @@ See also: long-array</pre>">longs</a> <a href="http://clojuredocs.org/clojure_co
               </tr>
             </tbody>
           </table>
-          <h3>Proxy</h3>
+          <h3>Proxy (<a href="https://github.com/cemerick/clojure-type-selection-flowchart">Clojure type selection flowchart</a>)</h3>
           <table>
             <tbody>
               <tr class="odd">
