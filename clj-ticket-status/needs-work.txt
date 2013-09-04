@@ -1,5 +1,5 @@
 Tickets needing work for CLJ project
-Date: August 29, 2013
+Date: September 3, 2013
 
 If you are a Clojure contributor, the tickets below could use some
 work.  Some are easy, some are not.  If you've never added a patch
@@ -39,19 +39,11 @@ the report.
 Tickets with prescreened patches, but they may need work, since the
 ticket is marked Incomplete (I).
 ----------------------------------------------------------------------
-      Better error reporting:
-
-I  CLJ-1083 Incomplete   clj-1083-better-throw-arity-messages-patch-v5.txt
-
       Clojure language/library bug fixes:
 
 I  CLJ-944  Incomplete   0001-Fix-for-CLJ-944.patch
       See comments for another patch 0002-Fix-for-CLJ-944.patch and
       why it fails some tests, which are fixable.
-
-      Allow more correct-looking Clojure code to work:
-
-I  CLJ-766  Incomplete   byte-short-array-ctors.diff
 
       Language/library enhancement:
 
@@ -60,7 +52,7 @@ I  CLJ-322  Incomplete   compile-interop-1.patch
       Comment discussion on various approaches to this ticket are
       extensive.
 I  CLJ-827  Incomplete   clj-827-unsigned-bit-shift-right-with-tests.patch
-I  CLJ-949  Incomplete   0001-let-undeclared-exceptions-continue-unchecked.patch
+I  CLJ-949  Incomplete   clj949-patch-v2.txt
 
 ----------------------------------------------------------------------
 Tickets marked for Clojure Release 1.6 that have no prescreened
@@ -86,9 +78,10 @@ V   2 [CLJ-415] smarter assert (prints locals)
       clojure.test.generative were moved to clojure.core,
       test.generative could use that one.
 V   2 [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
+T   2 [CLJ-1152] PermGen leak in multimethods and protocol fns
+T   2 [CLJ-1169] Add filename and line number to defn parameter declaration error
 V   1 [CLJ-823] Piping seque into seque can deadlock
 V   1 [CLJ-1100] Reader literals cannot contain periods
-T   1 [CLJ-1152] PermGen leak in multimethods and protocol fns
 V   0 [CLJ-5] Unintuitive error response in clojure 1.0
       One of two patches applied and built cleanly on May 4, 2012, but
       not on May 10, 2012.  The second, clj-5-destructure-error.diff,
@@ -109,6 +102,8 @@ T   0 [CLJ-976] Implement reader literal and print support for PersistentQueue d
 V   0 [CLJ-992] `iterate` reducer
 V   0 [CLJ-1039] Using 'def with metadata {:type :anything} throws ClassCastException
 T   0 [CLJ-1056] defprotocol: invalid method overload syntax getting accepted 
+T   0 [CLJ-1130] Invoking a static method with the wrong number of arguments results in a NoSuchFieldException, rather than a proper message that the arguments could not be matched to the method
+T   0 [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
 T   0 [CLJ-1234] Accept whitespace in Record and Type reader forms
 
 ----------------------------------------------------------------------
@@ -137,8 +132,6 @@ through tickets.
       could be put at a link that could be added to the doc string.
       A Clojure Google group thread at least partly on this topic:
       https://groups.google.com/forum/?fromgroups=#!topic/clojure/qfWY08hK6mc
-   CLJ-668 Improve slurp performance by using native Java StringWriter and jio/copy
-        (looks related to CLJ-669, which does have a patch)
    CLJ-750 clojure.lang.MapEntry violates .equals and .hashCode contracts of HashMap.Entry; leads to non-reflexive .equals, etc.
 
 ----------------------------------------------------------------------
@@ -156,45 +149,6 @@ stale patches.
       Language enhancement, reducers introduced in Clojure 1.5:
 
    CLJ-994 none of the patches apply cleanly, but did on Jul 26, 2012
-
-      Language/library enhancement:
-
-   CLJ-976 clj-976-queue-literal-eval-and-synquote-patch-v3.txt
-      Applied cleanly until Oct 20 2012 when a conflicting patch for
-      CLJ-1070 was applied.
-
-----------------------------------------------------------------------
-The patches below would be prescreened, except that their authors are
-not on the list of Clojure contributors.  The authors have been
-contacted via email to ask if they are willing to sign CAs, but they
-may not be interested in doing so for the purpose of a single
-submitted patch.  Other contributors should feel free to implement
-their own changes for the ticket, _independently_ of the existing
-patches.
-
-   CLJ-450  clj-450-add-default-pred-arg-to-core-fns-patch.txt (Jason Orendorff)
-   CLJ-884  diff.patch (Rahul Pilani - patch actually does not apply cleanly as of June 2012, but did earlier in 2012)
-   CLJ-983  proxy_super.patch (Valentin Mahrwald)
-   CLJ-1169 0001-* and 0002-* (Andrei Kleschinski)
-
-The ones above may be easy to update.  The ones below are likely more
-work, where part of the work could be figuring out what ought to be
-done in the first place.
-
-Comments on the tickets below imply that authors or other contributors
-think more work should be done to create new patches.  Some of these
-might be significant hunks of work.
-
-CLJ-2    Scopes
-    Only patch fails to apply cleanly.
-CLJ-792  Refactor method resolution code out of Compiler and into Reflector
-    Patch clj-792-reorg-reflector-patch2.txt applied cleanly in Feb
-    2012, but didn't pass all tests.
-CLJ-821  should reify merge rather than replace on repeated specs?
-    Only patch fails to apply cleanly.
-CLJ-891  make (symbol foo "bar") work with foo being a namespace
-    Only patch applied and built cleanly until Oct 4, 2012, when
-    another committed patch caused it to no longer apply cleanly.
 
 ----------------------------------------------------------------------
 
