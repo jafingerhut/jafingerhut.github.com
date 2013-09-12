@@ -1,5 +1,5 @@
 Tickets needing work for CLJ project
-Date: September 7, 2013
+Date: September 11, 2013
 
 If you are a Clojure contributor, the tickets below could use some
 work.  Some are easy, some are not.  If you've never added a patch
@@ -61,11 +61,8 @@ patches (see also Note 3 at the bottom):
 V   3 [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
 V   0 [CLJ-420] Undefined symbols raise exceptions with line/column number of enclosing expression
 V   0 [CLJ-701] Compiler loses 'loop's return type in some cases
-V   0 [CLJ-1056] defprotocol: invalid method overload syntax getting accepted 
 V   0 [CLJ-1058] StackOverflowError on exception in reducef for PersistentHashMap fold
-V   0 [CLJ-1130] Invoking a static method with the wrong number of arguments results in a NoSuchFieldException, rather than a proper message that the arguments could not be matched to the method
 V   0 [CLJ-1190] Javadoc for public Java API
-V   0 [CLJ-1234] Accept whitespace in Record and Type reader forms
 
 ----------------------------------------------------------------------
 Tickets needing work that have no prescreened patches.  These are all
@@ -74,6 +71,7 @@ letter is the number of votes, and tickets have been sorted from most
 to fewest votes.
 ----------------------------------------------------------------------
 T   5 [CLJ-440] java method calls cannot omit varargs
+T   3 [CLJ-825] Protocol implementation inconsistencies when overloading arity
 V   2 [CLJ-415] smarter assert (prints locals)
       The patch applies cleanly and passes tests, but gives a warning
       because macro local-bindings is same name (and perhaps the same
@@ -102,6 +100,7 @@ V   0 [CLJ-326] add :as-of option to refer
 V   0 [CLJ-346] (pprint-newline :fill) is not handled correctly
 V   0 [CLJ-348] reify allows use of qualified name as method parameter
 V   0 [CLJ-731] Create macro to variadically unroll a combinator function definition
+T   0 [CLJ-888] defprotocol should throw error when signatures include variable number of parameters
 T   0 [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
 V   0 [CLJ-992] `iterate` reducer
 V   0 [CLJ-1039] Using 'def with metadata {:type :anything} throws ClassCastException
