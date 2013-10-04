@@ -1,5 +1,5 @@
 Tickets needing work for CLJ project
-Date: September 26, 2013
+Date: October 3, 2013
 
 If you are a Clojure contributor, the tickets below could use some
 work.  Some are easy, some are not.  If you've never added a patch
@@ -39,6 +39,10 @@ the report.
 Tickets with prescreened patches, but they may need work, since the
 ticket is marked Incomplete (I).
 ----------------------------------------------------------------------
+      Doc string fixes only:
+
+I  CLJ-835  Incomplete   0001-CLJ-835-Refine-doc-string-for-defmulti-hierarchy-opt.patch
+
       Clojure language/library bug fixes:
 
 I  CLJ-944  Incomplete   0001-Fix-for-CLJ-944.patch
@@ -52,7 +56,6 @@ I  CLJ-322  Incomplete   compile-interop-1.patch
       Comment discussion on various approaches to this ticket are
       extensive.
 I  CLJ-827  Incomplete   clj-827-unsigned-bit-shift-right-with-tests.patch
-I  CLJ-949  Incomplete   clj949-patch-v2.txt
 
 ----------------------------------------------------------------------
 Tickets marked for Clojure Release 1.6 that have no prescreened
@@ -71,6 +74,7 @@ letter is the number of votes, and tickets have been sorted from most
 to fewest votes.
 ----------------------------------------------------------------------
 T   5 [CLJ-440] java method calls cannot omit varargs
+T   4 [CLJ-1250] Reducer (and folder) instances hold onto the head of seqs
 V   3 [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
 T   3 [CLJ-825] Protocol implementation inconsistencies when overloading arity
 V   2 [CLJ-415] smarter assert (prints locals)
@@ -85,7 +89,6 @@ T   2 [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
 T   2 [CLJ-1169] Add filename and line number to defn parameter declaration error
 V   1 [CLJ-823] Piping seque into seque can deadlock
 V   1 [CLJ-1100] Reader literals cannot contain periods
-T   1 [CLJ-1250] Reducer (and folder) instances hold onto the head of seqs
 V   0 [CLJ-5] Unintuitive error response in clojure 1.0
       One of two patches applied and built cleanly on May 4, 2012, but
       not on May 10, 2012.  The second, clj-5-destructure-error.diff,
@@ -106,6 +109,7 @@ T   0 [CLJ-976] Implement reader literal and print support for PersistentQueue d
 V   0 [CLJ-992] `iterate` reducer
 V   0 [CLJ-1039] Using 'def with metadata {:type :anything} throws ClassCastException
 T   0 [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
+V   0 [CLJ-1271] Protocol call sites emit many unused fields
 
 ----------------------------------------------------------------------
 Tickets not fitting in previous categories, but they have a git format

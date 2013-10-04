@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: September 26, 2013
+Date: October 3, 2013
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -72,11 +72,6 @@ T  CLJ-1261 Triaged      clj-1261-v1.txt
       implements the warnings when using deprecated symbols, but fails
       tests when applied by itself.  It needs test fixes in other
       706-* patches and then they pass.
-   CLJ-713  Open         asm41.patch
-      This patch applies cleanly, but fails to compile with
-      './antsetup.sh ; ant' due to some extra package dependencies
-      added by the patch.  It did compile and test successfully as of
-      Mar 14, 2013 using the command 'mvn package'.
    CLJ-840  Open         clj840-2.diff
 T  CLJ-1073 Triaged      clj-1073-add-print-interruptibly-patch-v2.txt
    CLJ-1088 Open         0001-Add-support-for-protocol-fns-to-repl-source.-CLJ-1088.patch
@@ -108,6 +103,7 @@ V  CLJ-1157 Vetted       20130204_fix_classloader.diff
    CLJ-1246 Open         clj-1246-fix-type-reflect-exception-patch-v1.txt
    CLJ-1253 Open         clj-1253-1.txt
    CLJ-1254 Open         clj-1254-v1.txt
+   CLJ-1275 Open         0001-Don-t-use-shorthand-for-typehints-when-print-dup.patch
 
       Language enhancement, reducers:
 
@@ -120,7 +116,6 @@ V  CLJ-1157 Vetted       20130204_fix_classloader.diff
    CLJ-1047 Open         001-simplify-fj-importing.patch
    CLJ-1113 Open         reductions-reducer.diff
    CLJ-1185 Open         CLJ-1181-v001.patch
-   CLJ-1197 Open         foldable-seq.diff
 
       Allow more correct-looking Clojure code to work:
 
@@ -184,7 +179,6 @@ T  CLJ-1259 Triaged      clj-1259-1.txt
 
    CLJ-842  Open         clj-842-update-clojure.pprint-metadata-v2.txt
    CLJ-1151 Open         tiny-reducers-cleanup.diff
-T  CLJ-1264 Triaged      clj-1264-1.txt
 
 ----------------------------------------------------------------------
 Prescreened patches that are marked with Fix Version/s =
@@ -192,7 +186,6 @@ Prescreened patches that are marked with Fix Version/s =
 ----------------------------------------------------------------------
       Doc string fixes only:
 
-V  CLJ-835  Screenable   0001-CLJ-835-Refine-doc-string-for-defmulti-hierarchy-opt.patch
 V  CLJ-980  Screenable   extended-type-doc-fix-v2.patch
 
       Better error reporting:
@@ -201,8 +194,14 @@ V  CLJ-1130 Screenable   clj-1130-v1.txt
 
       Debug/tooling enhancement:
 
-V  CLJ-939  Screenable   clj-939-report-load-exceptions-with-file-and-line-patch-v3.txt
+V  CLJ-713  Screenable   asm41.patch
+      Patch asm41.patch is more up to date of the two.  Patch
+      asm-split.txt applies cleanly, but fails to compile with
+      './antsetup.sh ; ant' due to some extra package dependencies
+      added by the patch.  It did compile and test successfully as of
+      Mar 14, 2013 using the command 'mvn package'.
 V  CLJ-1176 Screenable   0001-CLJ-1176-Bind-read-eval-true-in-clojure.repl-source-.patch
+V  CLJ-1268 Screenable   clj-1268.patch
 
       Clojure language/library bug fixes:
 
@@ -210,9 +209,7 @@ V  CLJ-787  Screenable   CLJ-787-p1.patch
 V  CLJ-937  Screenable   clj-937-cl-format-coerces-ratios-patch2.txt
 V  CLJ-1056 Screenable   clj-1056-1.txt
 V  CLJ-1058 Screenable   patch-for-clj-1058.diff
-V  CLJ-1082 Screenable   clj-1082-patch-v2.txt
 V  CLJ-1102 Screenable   clj-1102-improve-empty-stack-trace-handling-v2.txt
-V  CLJ-1118 Screenable   clj-1118-make-double-equals-true-for-more-bigdecimals-patch-v4.txt
 V  CLJ-1177 Screenable   clj-1177-patch-v2.txt
 V  CLJ-1187 Screenable   001-CLJ-1187.patch
 V  CLJ-1222 Screenable   min_value_multiplication.diff
@@ -228,6 +225,7 @@ V  CLJ-865  Screenable   clj-865-updated-v2-patch.txt
 V  CLJ-866  Screenable   clj-866-test-vars.patch
       See also patch CLJ-866-test.patch, which contains tests for this
       patch.
+V  CLJ-949  Screenable   clj949-patch-v2.txt
 V  CLJ-1105 Screenable   0001-CLJ-1105-Support-records-in-clojure.walk.patch
       See also CLJ-1239, which might be preferable to this ticket
 
@@ -248,13 +246,16 @@ S  CLJ-1083 Screened     clj-1083-better-throw-arity-messages-patch-v6.txt
 
       Debug/tooling enhancement:
 
+S  CLJ-939  Screened     clj-939-report-load-exceptions-with-file-and-line-patch-v3.txt
 S  CLJ-1076 Screened     clj-1076-v3.txt
 S  CLJ-1122 Screened     contributing.patch
 
       Clojure language/library bug fixes:
 
 S  CLJ-935  Screened     clj935-2.patch
+S  CLJ-1082 Screened     clj-1082-patch-v2.txt
 S  CLJ-1090 Screened     var-clear-locals-patch-v2.txt
+S  CLJ-1118 Screened     clj-1118-v6.txt
 S  CLJ-1125 Screened     threadlocal-removal-tcrawley-2013-06-14.diff
 S  CLJ-1184 Screened     CLJ-1184-p4.patch
 S  CLJ-1233 Screened     clj-1233-with-test-v2.txt
@@ -270,6 +271,10 @@ S  CLJ-766  Screened     clj766-2.patch
 
 S  CLJ-669  Screened     clj-669-use-java.nio-in-do-copy-for-files-patch-v3.txt
 S  CLJ-858  Screened     stm-rm-msecs-patch.diff
+
+      Code cleanup:
+
+S  CLJ-1264 Screened     clj-1264-1.txt
 
 ----------------------------------------------------------------------
 (Note 1) Warnings/errors explicitly allowed in output of 'ant' command
@@ -306,7 +311,7 @@ was used with the latest Clojure master as of the date of this report.
   with all of the OS/JDK combos listed below:
     Mac OS X 10.6.8 + Oracle/Apple JDK 1.6.0_51 64-bit
     Ubuntu 12.04.3 64-bit + OpenJDK 1.6.0_27 64-bit
-    Ubuntu 12.04.3 64-bit + Oracle JDK 1.7.0_25 64-bit
+    Ubuntu 12.04.3 64-bit + Oracle JDK 1.7.0_40 64-bit
 * After applying the patch, the command "./antsetup.sh ; ant" compiles
   and passes all tests without warnings or errors (see Note 1 near the
   end for a short list of allowed warnings).
