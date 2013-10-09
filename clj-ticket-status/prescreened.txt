@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: October 3, 2013
+Date: October 8, 2013
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -95,14 +95,14 @@ V  CLJ-1157 Vetted       20130204_fix_classloader.diff
    CLJ-1180 Open         001-CLJ-1180.patch
    CLJ-1216 Open         0001-Create-a-DoExpr.Parser-class-that-delegates-to-BodyE.patch
    CLJ-1217 Open         0001-Don-t-realize-seq-exprs-in-for-unless-necessary.patch
-   CLJ-1225 Open         clj-1225-2.txt
+T  CLJ-1225 Triaged      clj-1225-2.txt
    CLJ-1226 Open         0001-fix-CLJ-1226.patch
    CLJ-1229 Open         clj-1229-count-overflow-patch-v1.txt
    CLJ-1237 Open         CLJ-1237c.patch
    CLJ-1241 Open         0001-fix-CLJ-1241.patch
-   CLJ-1246 Open         clj-1246-fix-type-reflect-exception-patch-v1.txt
-   CLJ-1253 Open         clj-1253-1.txt
-   CLJ-1254 Open         clj-1254-v1.txt
+T  CLJ-1246 Triaged      clj-1246-fix-type-reflect-exception-patch-v1.txt
+T  CLJ-1253 Triaged      clj-1253-1.txt
+T  CLJ-1254 Triaged      clj-1254-v1.txt
    CLJ-1275 Open         0001-Don-t-use-shorthand-for-typehints-when-print-dup.patch
 
       Language enhancement, reducers:
@@ -188,20 +188,9 @@ Prescreened patches that are marked with Fix Version/s =
 
 V  CLJ-980  Screenable   extended-type-doc-fix-v2.patch
 
-      Better error reporting:
-
-V  CLJ-1130 Screenable   clj-1130-v1.txt
-
       Debug/tooling enhancement:
 
-V  CLJ-713  Screenable   asm41.patch
-      Patch asm41.patch is more up to date of the two.  Patch
-      asm-split.txt applies cleanly, but fails to compile with
-      './antsetup.sh ; ant' due to some extra package dependencies
-      added by the patch.  It did compile and test successfully as of
-      Mar 14, 2013 using the command 'mvn package'.
 V  CLJ-1176 Screenable   0001-CLJ-1176-Bind-read-eval-true-in-clojure.repl-source-.patch
-V  CLJ-1268 Screenable   clj-1268.patch
 
       Clojure language/library bug fixes:
 
@@ -222,16 +211,9 @@ V  CLJ-1148 Screenable   0001-new-defonce-hotness.patch
 
 V  CLJ-394  Screenable   clj-394-add-predicates-for-type-and-record.diff
 V  CLJ-865  Screenable   clj-865-updated-v2-patch.txt
-V  CLJ-866  Screenable   clj-866-test-vars.patch
-      See also patch CLJ-866-test.patch, which contains tests for this
-      patch.
 V  CLJ-949  Screenable   clj949-patch-v2.txt
 V  CLJ-1105 Screenable   0001-CLJ-1105-Support-records-in-clojure.walk.patch
       See also CLJ-1239, which might be preferable to this ticket
-
-      Performance enhancement:
-
-V  CLJ-1200 Screenable   no-getComponentType--v001.patch
 
 ----------------------------------------------------------------------
 Prescreened, and screened or accepted
@@ -243,12 +225,20 @@ S  CLJ-1228 Screened     clj-1228-fix-multiple-typos-2.patch
       Better error reporting:
 
 S  CLJ-1083 Screened     clj-1083-better-throw-arity-messages-patch-v6.txt
+S  CLJ-1130 Screened     clj-1130-v2.txt
 
       Debug/tooling enhancement:
 
+S  CLJ-713  Screened     asm41ws.patch
+      Patch asm41ws.patch is most up to date.  Patch asm-split.txt
+      applies cleanly, but fails to compile with './antsetup.sh ; ant'
+      due to some extra package dependencies added by the patch.  It
+      did compile and test successfully as of Mar 14, 2013 using the
+      command 'mvn package'.
 S  CLJ-939  Screened     clj-939-report-load-exceptions-with-file-and-line-patch-v3.txt
 S  CLJ-1076 Screened     clj-1076-v3.txt
 S  CLJ-1122 Screened     contributing.patch
+S  CLJ-1268 Screened     clj-1268.patch
 
       Clojure language/library bug fixes:
 
@@ -267,10 +257,17 @@ S  CLJ-1252 Screened     numkeyword.patch
 
 S  CLJ-766  Screened     clj766-2.patch
 
+      Language/library enhancement:
+
+S  CLJ-866  Screened     clj-866-test-vars.patch
+      See also patch CLJ-866-test.patch, which contains tests for this
+      patch.
+
       Performance enhancement:
 
 S  CLJ-669  Screened     clj-669-use-java.nio-in-do-copy-for-files-patch-v3.txt
 S  CLJ-858  Screened     stm-rm-msecs-patch.diff
+S  CLJ-1200 Screened     no-getComponentType--v002.patch
 
       Code cleanup:
 
