@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: October 8, 2013
+Date: October 12, 2013
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of each list are tickets with no
@@ -64,6 +64,8 @@ Defect
     1.25   2 --       --          Open         [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
              Chris Tennant (1)
              Chas Emerick (1/4)
+    1.00   1 Incomple Release 1.6 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
+             Anderson De Andrade (1)
     1.00   1 --       --          Open         [CLJ-1013] Clojure's classloader cannot handle out-of-order loading
              Daniel Kwiecinski (1)
     1.00   1 --       --          Open         [CLJ-1117] Partition does not follow docs
@@ -72,9 +74,7 @@ Defect
              Jean Niklas L'orange (1)
     1.00   1 --       --          Open         [CLJ-1183] java interop - cannot call a final method on non-public superclass 
              zoowar (1)
-    1.00   1 Vetted   Release 1.6 Screenable   [CLJ-787] transient blows up when passed a vector created by subvec
-             Anderson De Andrade (1)
-    1.00   1 Vetted   Release 1.6 Screenable   [CLJ-1177] java.io URL to File coercion and encoding of non-ASCII characters
+    1.00   1 Screened Release 1.6 Screened     [CLJ-1177] java.io URL to File coercion and encoding of non-ASCII characters
              Xavi Caballé (1)
     1.00   1 Vetted   --          Vetted       [CLJ-823] Piping seque into seque can deadlock
              Peter Monks (1)
@@ -82,6 +82,9 @@ Defect
              Michael Klishin (1/2)
              Dmitri Naumov (1/6)
              Mike Anderson (1/7)
+    0.75   2 --       --          Open         [CLJ-978] bean unable to handle non-public classes
+             Mike Rodriguez (1/2)
+             Gary Trakhman (1/4)
     0.73   3 Vetted   --          Vetted       [CLJ-700] contains? broken for TransientMaps
              Mark Engelberg (1/3)
              Jason Wolfe (1/5)
@@ -110,7 +113,7 @@ Defect
     0.45   2 --       --          Open         [CLJ-259] clojure.lang.Reflector.invokeMatchingMethod is not complete (rejects pontentially valid method invocations)
              Christoffer Sawicki (1/4)
              Jason Wolfe (1/5)
-    0.42   2 --       --          Open         [CLJ-1093] Empty PersistentCollections get incorrectly evaluated as their generic clojure counterpart
+    0.42   2 Triaged  --          Triaged      [CLJ-1093] Empty PersistentCollections get incorrectly evaluated as their generic clojure counterpart
              Alan Malloy (1/4)
              Max Penet (1/6)
     0.33   1 --       --          Open         [CLJ-1218] mapcat is not very lazy
@@ -120,8 +123,6 @@ Defect
     0.29   2 Incomple Release 1.5 Incomplete   [CLJ-944] Compiler makes different concrete maps then the reader
              Max Penet (1/6)
              Nicola Mometto (1/8)
-    0.25   1 --       --          Open         [CLJ-978] bean unable to handle non-public classes
-             Gary Trakhman (1/4)
     0.25   1 --       --          Open         [CLJ-1079] Don't squash explicit :line and :column metadata in the MetaReader
              Christoffer Sawicki (1/4)
     0.25   1 Vetted   Release 1.6 Screenable   [CLJ-1222] Multiplication overflow issues around Long/MIN_VALUE
@@ -148,13 +149,13 @@ Defect
     0.00   0 Vetted   Release 1.6 Screenable   [CLJ-980] Documentation for extend-type falsely implies that & is allowed in protocol fn signatures
     0.00   0 Vetted   Release 1.6 Screenable   [CLJ-1056] defprotocol: invalid method overload syntax getting accepted 
     0.00   0 Vetted   Release 1.6 Screenable   [CLJ-1058] StackOverflowError on exception in reducef for PersistentHashMap fold
-    0.00   0 Vetted   Release 1.6 Screenable   [CLJ-1102] Better handling of exceptions with empty stack traces
     0.00   0 Vetted   Release 1.6 Screenable   [CLJ-1176] clojure.repl/source fails when *read-eval* bound to :unknown
     0.00   0 Vetted   Release 1.6 Screenable   [CLJ-1187] Clojure loses quoted metadata on empty literals
     0.00   0 Screened Release 1.6 Screened     [CLJ-935] clojure.string/trim uses different defn of whitespace as triml, trimr
     0.00   0 Screened Release 1.6 Screened     [CLJ-939] Exceptions thrown in the top level ns form are reported without file or line number
     0.00   0 Screened Release 1.6 Screened     [CLJ-1082] Subvecs of primitive vectors cannot be reduced
     0.00   0 Screened Release 1.6 Screened     [CLJ-1090] Indirect function calls through Var instances fail to clear locals
+    0.00   0 Screened Release 1.6 Screened     [CLJ-1102] Better handling of exceptions with empty stack traces
     0.00   0 Screened Release 1.6 Screened     [CLJ-1130] Invoking a static method with the wrong number of arguments results in a NoSuchFieldException, rather than a proper message that the arguments could not be matched to the method
     0.00   0 Screened Release 1.6 Screened     [CLJ-1184] Evaling #{do ...} or [do ...] is treated as the do special form
     0.00   0 Screened Release 1.6 Screened     [CLJ-1228] Fix typos in 4 namespaces and 2 docs
@@ -172,7 +173,7 @@ Defect
 ========================================
 Enhancement
 
-    8.20  11 Incomple Release 1.6 Incomplete   [CLJ-827] unsigned-bit-shift-right
+    8.20  11 Screened Release 1.6 Screened     [CLJ-827] unsigned-bit-shift-right
              Brandon Bloom (1)
              Daniel Glauser (1)
              David Santiago (1)
@@ -207,7 +208,7 @@ Enhancement
              Phil Hagelberg (1/3)
              Gary Trakhman (1/4)
              Patrick Houk (1/5)
-    6.68  10 Vetted   Release 1.6 Screenable   [CLJ-865] Macroexpansion discards &form metadata
+    6.68  10 Screened Release 1.6 Screened     [CLJ-865] Macroexpansion discards &form metadata
              Chris Granger (1)
              Christophe Grand (1)
              Jarppe Lansio (1)
@@ -236,6 +237,9 @@ Enhancement
              David Nolen (1/2)
              Fogus (1/2)
              Michael Klishin (1/2)
+    2.00   2 --       --          Open         [CLJ-1278] Provide a useful implementation of toString() for Clojure functions
+             Dave Kincaid (1)
+             Oleksandr Shyshko (1)
     1.67   3 --       --          Open         [CLJ-272] load/ns/require/use overhaul
              Kevin Krouse (1)
              Paudi Moriarty (1/2)
@@ -251,19 +255,21 @@ Enhancement
     1.50   2 Vetted   Backlog     Backlog      [CLJ-415] smarter assert (prints locals)
              Kevin Sookocheff (1)
              Jeff Weiss (1/2)
-    1.50   2 Vetted   Release 1.6 Screenable   [CLJ-1105] clojure.walk should support records
-             Mike Rodriguez (1)
-             Joseph Smith (1/2)
     1.20   3 --       --          Open         [CLJ-891] make (symbol foo "bar") work with foo being a namespace
              Kevin Downey (1/2)
              Steve Miner (1/2)
              Ambrose Bonnaire-Sergeant (1/5)
+    1.00   2 Vetted   Release 1.6 Screenable   [CLJ-1105] clojure.walk should support records
+             Joseph Smith (1/2)
+             Mike Rodriguez (1/2)
     1.00   1 --       --          Open         [CLJ-2] Scopes
              Ivan Kozik (1)
     1.00   1 --       --          Open         [CLJ-373] update-in with empty key paths
              Gunnar Völkel (1)
     1.00   1 --       --          Open         [CLJ-1223] Improve App Engine Support by Providing an Option to Use the App Engine ThreadManger
              Stu West (1)
+    1.00   1 Triaged  --          Triaged      [CLJ-1277] Speed up printing of time instants
+             Alexander Kiel (1)
     0.96   3 --       --          Open         [CLJ-1078] Added queue, queue* and queue? to clojure.core
              Anthony Grimes (1/2)
              John Jacobsen (1/3)
@@ -339,9 +345,9 @@ Enhancement
     0.00   0 Vetted   Backlog     Backlog      [CLJ-1104] Concurrent with-redefs do not unwind properly, leaving a var permanently changed
     0.00   0 Vetted   Release 1.6 Needs Patch  [CLJ-1190] Javadoc for public Java API
     0.00   0 Vetted   Release 1.6 Screenable   [CLJ-394] Add marker Interfaces for defrecords and deftypes plus boolean test fns
-    0.00   0 Vetted   Release 1.6 Screenable   [CLJ-949] let undeclared exceptions continue unchecked
     0.00   0 Screened Release 1.6 Screened     [CLJ-669] clojure.java.io/do-copy: use java.nio for Files
     0.00   0 Screened Release 1.6 Screened     [CLJ-713] Upgrade ASM to a more current version
+    0.00   0 Screened Release 1.6 Screened     [CLJ-949] let undeclared exceptions continue unchecked
     0.00   0 Screened Release 1.6 Screened     [CLJ-1122] Add contributing.md file to github repository (shows clear message on issues/pull request create form)
     0.00   0 Screened Release 1.6 Screened     [CLJ-1238] Allow EdnReader to read foo// (CLJ-873 for EdnReader)
     0.00   0 Screened Release 1.6 Screened     [CLJ-1264] Minor change to Clojure source code to prevent warnings when compiled with JDK 8
