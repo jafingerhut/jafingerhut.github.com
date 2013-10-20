@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: October 12, 2013
+Date: October 17, 2013
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -63,6 +63,7 @@ T  CLJ-735  Triaged      protocolerr.diff
 T  CLJ-1248 Triaged      Include-type-information-in-reflection-warning-messa.patch
    CLJ-1257 Open         clj-1257-2.diff
 T  CLJ-1261 Triaged      clj-1261-v1.txt
+   CLJ-1279 Open         0001-Fix-macroexpand1-s-handling-of-ArityException.patch
 
       Debug/tooling enhancement:
 
@@ -187,37 +188,17 @@ T  CLJ-1277 Triaged      clj-1277-1.txt
 Prescreened patches that are marked with Fix Version/s =
 "Release 1.6", but not screened
 ----------------------------------------------------------------------
-      Doc string fixes only:
-
-V  CLJ-980  Screenable   extended-type-doc-fix-v2.patch
-
-      Debug/tooling enhancement:
-
-V  CLJ-1176 Screenable   0001-CLJ-1176-Bind-read-eval-true-in-clojure.repl-source-.patch
-
       Clojure language/library bug fixes:
 
-V  CLJ-937  Screenable   clj-937-cl-format-coerces-ratios-patch2.txt
-V  CLJ-1056 Screenable   clj-1056-1.txt
-V  CLJ-1058 Screenable   patch-for-clj-1058.diff
-V  CLJ-1187 Screenable   001-CLJ-1187.patch
-V  CLJ-1222 Screenable   min_value_multiplication.diff
-
-      Allow more correct-looking Clojure code to work:
-
-V  CLJ-1148 Screenable   0001-new-defonce-hotness.patch
-
-      Language/library enhancement:
-
-V  CLJ-394  Screenable   clj-394-add-predicates-for-type-and-record.diff
-V  CLJ-1105 Screenable   0001-CLJ-1105-Support-records-in-clojure.walk.patch
-      See also CLJ-1239, which might be preferable to this ticket
+V  CLJ-1058 Screenable   patch-with-tests-clj-1058.diff
+V  CLJ-1260 Screenable   clj-1260-fixws.diff
 
 ----------------------------------------------------------------------
 Prescreened, and screened or accepted
 ----------------------------------------------------------------------
       Doc string fixes only:
 
+S  CLJ-835  Screened     0001-CLJ-835-ReRefine-doc-string-for-defmulti-removing-examples-and-solidifying-language.patch
 S  CLJ-1228 Screened     clj-1228-fix-multiple-typos-2.patch
 
       Better error reporting:
@@ -236,11 +217,14 @@ S  CLJ-713  Screened     asm41ws.patch
 S  CLJ-939  Screened     clj-939-report-load-exceptions-with-file-and-line-patch-v3.txt
 S  CLJ-1076 Screened     clj-1076-v3.txt
 S  CLJ-1122 Screened     contributing.patch
+S  CLJ-1176 Screened     0001-CLJ-1176-Bind-read-eval-true-in-clojure.repl-source-.patch
 S  CLJ-1268 Screened     clj-1268.patch
 
       Clojure language/library bug fixes:
 
 S  CLJ-935  Screened     clj935-2.patch
+S  CLJ-937  Screened     clj-937-cl-format-coerces-ratios-patch2.txt
+S  CLJ-1056 Screened     clj-1056-2.txt
 S  CLJ-1082 Screened     clj-1082-patch-v2.txt
 S  CLJ-1090 Screened     var-clear-locals-patch-v2.txt
 S  CLJ-1102 Screened     clj-1102-improve-empty-stack-trace-handling-v2.txt
@@ -248,6 +232,7 @@ S  CLJ-1118 Screened     clj-1118-v6.txt
 S  CLJ-1125 Screened     threadlocal-removal-tcrawley-2013-06-14.diff
 S  CLJ-1177 Screened     clj-1177-patch-v2.txt
 S  CLJ-1184 Screened     CLJ-1184-p4.patch
+S  CLJ-1222 Screened     min_value_multiplication.diff
 S  CLJ-1233 Screened     clj-1233-with-test-v2.txt
 S  CLJ-1234 Screened     clj-1234-v1.txt
 S  CLJ-1238 Screened     0001-Fix-CLJ-873-for-EdnReader-too.patch
@@ -259,12 +244,15 @@ S  CLJ-766  Screened     clj766-2.patch
 
       Language/library enhancement:
 
+S  CLJ-394  Screened     clj-394-add-predicates-for-type-and-record-2.diff
 S  CLJ-827  Screened     clj-827-unsigned-bit-shift-right-with-tests.patch
 S  CLJ-865  Screened     2013-10-11_CLJ-865_Fix-With-Tests.diff
 S  CLJ-866  Screened     clj-866-test-vars.patch
       See also patch CLJ-866-test.patch, which contains tests for this
       patch.
 S  CLJ-949  Screened     clj949-patch-v2.txt
+S  CLJ-1105 Screened     0001-CLJ-1105-Support-records-in-clojure.walk.patch
+      See also CLJ-1239, which might be preferable to this ticket
 
       Performance enhancement:
 
@@ -311,7 +299,7 @@ was used with the latest Clojure master as of the date of this report.
   with all of the OS/JDK combos listed below:
     Mac OS X 10.6.8 + Oracle/Apple JDK 1.6.0_65 64-bit
     Ubuntu 12.04.3 64-bit + OpenJDK 1.6.0_27 64-bit
-    Ubuntu 12.04.3 64-bit + Oracle JDK 1.7.0_40 64-bit
+    Ubuntu 12.04.3 64-bit + Oracle JDK 1.7.0_45 64-bit
 * After applying the patch, the command "./antsetup.sh ; ant" compiles
   and passes all tests without warnings or errors (see Note 1 near the
   end for a short list of allowed warnings).
