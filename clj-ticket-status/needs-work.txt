@@ -1,5 +1,5 @@
 Tickets needing work for CLJ project
-Date: October 12, 2013
+Date: October 17, 2013
 
 If you are a Clojure contributor, the tickets below could use some
 work.  Some are easy, some are not.  If you've never added a patch
@@ -39,16 +39,17 @@ the report.
 Tickets with prescreened patches, but they may need work, since the
 ticket is marked Incomplete (I).
 ----------------------------------------------------------------------
-      Doc string fixes only:
-
-I  CLJ-835  Incomplete   0001-CLJ-835-Refine-doc-string-for-defmulti-hierarchy-opt.patch
-
       Clojure language/library bug fixes:
 
 I  CLJ-787  Incomplete   CLJ-787-p1.patch
 I  CLJ-944  Incomplete   0001-Fix-for-CLJ-944.patch
       See comments for another patch 0002-Fix-for-CLJ-944.patch and
       why it fails some tests, which are fixable.
+I  CLJ-1187 Incomplete   001-CLJ-1187.patch
+
+      Allow more correct-looking Clojure code to work:
+
+I  CLJ-1148 Incomplete   0001-new-defonce-hotness.patch
 
       Language/library enhancement:
 
@@ -62,10 +63,9 @@ Tickets marked for Clojure Release 1.6 that have no prescreened
 patches (see also Note 3 at the bottom):
 ----------------------------------------------------------------------
 V   3 [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
-V   0 [CLJ-420] Undefined symbols raise exceptions with line/column number of enclosing expression
+I   0 [CLJ-420] Undefined symbols raise exceptions with line/column number of enclosing expression
 V   0 [CLJ-701] Compiler loses 'loop's return type in some cases
 V   0 [CLJ-1190] Javadoc for public Java API
-V   0 [CLJ-1260] ConcurrentModificationException thrown during action dispatching after commit in LockingTransaction.run()
 
 ----------------------------------------------------------------------
 Tickets needing work that have no prescreened patches.  These are all
