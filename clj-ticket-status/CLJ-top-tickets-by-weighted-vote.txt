@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: October 22, 2013
+Date: October 24, 2013
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of each list are tickets with no
@@ -75,6 +75,8 @@ Defect
              zoowar (1)
     1.00   1 Open         [CLJ-1279] Fix confusing macroexpand1 ArityException handling
              César Bolaños (1)
+    1.00   1 Screenable   [CLJ-1058] StackOverflowError on exception in reducef for PersistentHashMap fold
+             Bruce Adams (1)
     1.00   1 Screened     [CLJ-1177] java.io URL to File coercion and encoding of non-ASCII characters
              Xavi Caballé (1)
     1.00   1 Vetted       [CLJ-823] Piping seque into seque can deadlock
@@ -83,27 +85,29 @@ Defect
              Michael Klishin (1/2)
              Dmitri Naumov (1/6)
              Mike Anderson (1/8)
-    0.75   2 Open         [CLJ-978] bean unable to handle non-public classes
-             Mike Rodriguez (1/2)
-             Gary Trakhman (1/4)
+    0.73   3 Triaged      [CLJ-1224] Records do not cache hash like normal maps
+             David Nolen (1/3)
+             Ambrose Bonnaire-Sergeant (1/5)
+             Gary Trakhman (1/5)
     0.73   3 Vetted       [CLJ-700] contains? broken for TransientMaps
              Mark Engelberg (1/3)
              Jason Wolfe (1/5)
              Patrick Houk (1/5)
+    0.70   2 Open         [CLJ-978] bean unable to handle non-public classes
+             Mike Rodriguez (1/2)
+             Gary Trakhman (1/5)
     0.70   2 Screened     [CLJ-1083] Incorrect ArityException message for function names containing ->
              Joshua Tilles (1/2)
              Ambrose Bonnaire-Sergeant (1/5)
     0.63   2 Open         [CLJ-1237] reduce gives a SO for pathological seqs
              Ghadi Shayban (1/2)
              Nicola Mometto (1/8)
-    0.58   2 Open         [CLJ-1242] get/= on sorted collections when types don't match result in a ClassCastException
+    0.53   2 Open         [CLJ-1242] get/= on sorted collections when types don't match result in a ClassCastException
              Marshall T. Vandegrift (1/3)
-             Gary Trakhman (1/4)
+             Gary Trakhman (1/5)
     0.53   2 Triaged      [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
              Alex Miller (1/3)
              Jason Wolfe (1/5)
-    0.50   1 Open         [CLJ-1029] ns defmacro allows arbitrary execution of clojure.core fns
-             David Nolen (1/2)
     0.50   1 Screened     [CLJ-835] defmulti doc string doesn't mention needing to be passed a var for the value of :hierarchy
              Fogus (1/2)
     0.50   1 Vetted       [CLJ-1100] Reader literals cannot contain periods
@@ -117,6 +121,8 @@ Defect
     0.42   2 Vetted       [CLJ-1093] Empty PersistentCollections get incorrectly evaluated as their generic clojure counterpart
              Alan Malloy (1/4)
              Max Penet (1/6)
+    0.33   1 Open         [CLJ-1029] ns defmacro allows arbitrary execution of clojure.core fns
+             David Nolen (1/3)
     0.33   1 Open         [CLJ-1218] mapcat is not very lazy
              John Jacobsen (1/3)
     0.33   1 Open         [CLJ-1229] count silently overflows for sequences with more than Integer/MAX_VALUE elements
@@ -127,8 +133,6 @@ Defect
     0.25   1 Open         [CLJ-1079] Don't squash explicit :line and :column metadata in the MetaReader
              Christoffer Sawicki (1/4)
     0.20   1 Open         [CLJ-130] Namespace metadata lost in AOT compile
-             Ambrose Bonnaire-Sergeant (1/5)
-    0.20   1 Open         [CLJ-1224] Records do not cache hash like normal maps
              Ambrose Bonnaire-Sergeant (1/5)
     0.20   1 Screened     [CLJ-1222] Multiplication overflow issues around Long/MIN_VALUE
              Andy Fingerhut (1/5)
@@ -147,7 +151,6 @@ Defect
     0.00   0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
     0.00   0 Incomplete   [CLJ-1187] Clojure loses quoted metadata on empty literals
     0.00   0 Ok           [CLJ-1228] Fix typos in 4 namespaces and 2 docs
-    0.00   0 Screenable   [CLJ-1058] StackOverflowError on exception in reducef for PersistentHashMap fold
     0.00   0 Screenable   [CLJ-1260] ConcurrentModificationException thrown during action dispatching after commit in LockingTransaction.run()
     0.00   0 Screened     [CLJ-420] Undefined symbols raise exceptions with line/column number of enclosing expression
     0.00   0 Screened     [CLJ-935] clojure.string/trim uses different defn of whitespace as triml, trimr
@@ -197,7 +200,7 @@ Enhancement
              Chris Allen (1/2)
              Phil Hagelberg (1/3)
              Alan Malloy (1/4)
-    6.78  11 Bad: Match n [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
+    6.73  11 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
              Laurent Petit (1)
              Lei Wang (1)
              Paul Gearon (1)
@@ -207,7 +210,7 @@ Enhancement
              Paudi Moriarty (1/2)
              Sean Corfield (1/2)
              Phil Hagelberg (1/3)
-             Gary Trakhman (1/4)
+             Gary Trakhman (1/5)
              Patrick Houk (1/5)
     6.63  10 Screened     [CLJ-865] Macroexpansion discards &form metadata
              Chris Granger (1)
@@ -238,11 +241,11 @@ Enhancement
              Alan Malloy (1/4)
              Max Penet (1/6)
              Nicola Mometto (1/8)
-    2.50   4 Open         [CLJ-899] Accept and ignore colon between key and value in map literals
+    2.33   4 Open         [CLJ-899] Accept and ignore colon between key and value in map literals
              Tavis Rudd (1)
-             David Nolen (1/2)
              Fogus (1/2)
              Michael Klishin (1/2)
+             David Nolen (1/3)
     1.67   3 Open         [CLJ-272] load/ns/require/use overhaul
              Kevin Krouse (1)
              Paudi Moriarty (1/2)
@@ -303,9 +306,9 @@ Enhancement
              Tim McCormack (1/2)
     0.50   1 Open         [CLJ-1141] Allow pre and post-conditions in defprotocol and deftype macros
              Joseph Smith (1/2)
-    0.45   2 Open         [CLJ-706] make use of deprecated namespaces/vars easier to spot
-             Gary Trakhman (1/4)
+    0.40   2 Open         [CLJ-706] make use of deprecated namespaces/vars easier to spot
              Andy Fingerhut (1/5)
+             Gary Trakhman (1/5)
     0.33   1 Open         [CLJ-200] Extend cond to support inline let, much like for
              Mark Engelberg (1/3)
     0.33   1 Triaged      [CLJ-1191] Improve apropos to show some indication of namespace of symbols found
@@ -363,4 +366,5 @@ Enhancement
     0.00   0 Triaged      [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
     0.00   0 Triaged      [CLJ-1248] Show type information in reflection warning messages when available
     0.00   0 Triaged      [CLJ-1259] Speed up pprint
+    0.00   0 Triaged      [CLJ-1281] Clojure 1.6 - reconsider what is "alpha" in core
     0.00   0 Vetted       [CLJ-992] `iterate` reducer
