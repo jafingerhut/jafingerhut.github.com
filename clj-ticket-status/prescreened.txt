@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: October 24, 2013
+Date: October 25, 2013
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -64,7 +64,6 @@ T  CLJ-888  Triaged      0001-Forbid-vararg-declaration-in-defprotocol-definterf
 T  CLJ-1248 Triaged      Include-type-information-in-reflection-warning-messa.patch
    CLJ-1257 Open         clj-1257-2.diff
 V  CLJ-1261 Vetted       clj-1261-v1.txt
-   CLJ-1279 Open         0001-Fix-macroexpand1-s-handling-of-ArityException.patch
 
       Debug/tooling enhancement:
 
@@ -125,7 +124,6 @@ T  CLJ-1254 Triaged      clj-1254-v1.txt
    CLJ-666  Open         0001-Add-Big-support-to-Reflector-Updated.patch
 V  CLJ-700  Vetted       clj-700-patch6.txt
    CLJ-1020 Open         clj-1020-inspect-table-skip-nil-rows-patch2.txt
-   CLJ-1021 Open         001-propagate-on-macro-meta.diff
    CLJ-1044 Open         001-enable-factory-ctor-inside-deftype.diff
    CLJ-1060 Open         list-star-fix.diff
    CLJ-1242 Open         0001-fix-for-CLJ-1242-tests.patch
@@ -175,7 +173,6 @@ T  CLJ-15   Triaged      lazy-incremental-hashes.diff
    CLJ-703  Open         improve-writeclassfile-perf.patch
    CLJ-862  Open         pmap-chunking-862.diff
 T  CLJ-1005 Triaged      0001-Use-transient-map-in-zipmap.2.patch
-   CLJ-1080 Open         clj-1080-v5.txt
    CLJ-1087 Open         clj-1087-diff-perf-enhance-patch-v1.txt
    CLJ-1096 Open         inline-get-keyword.diff
    CLJ-1128 Open         0002-Improve-merge-with.patch
@@ -199,58 +196,28 @@ V  CLJ-1190 Needs Patch  clj-1190-2.diff
       Clojure language/library bug fixes:
 
 V  CLJ-1058 Screenable   patch-with-tests-clj-1058.diff
-V  CLJ-1246 Screenable   clj-1246-fix-type-reflect-exception-patch-v1.txt
 V  CLJ-1260 Screenable   clj-1260-fixws.diff
+
+      Allow more correct-looking Clojure code to work:
+
+V  CLJ-1148 Screenable   defonce_fixes.patch
 
 ----------------------------------------------------------------------
 Prescreened, and screened or accepted
 ----------------------------------------------------------------------
-      Doc string fixes only:
-
-S  CLJ-835  Screened     0001-CLJ-835-ReRefine-doc-string-for-defmulti-removing-examples-and-solidifying-language.patch
-O  CLJ-1228 Ok           clj-1228-fix-multiple-typos-2.patch
-
-      Better error reporting:
-
-S  CLJ-1083 Screened     clj-1083-better-throw-arity-messages-patch-v6.diff
-S  CLJ-1130 Screened     clj-1130-v2.diff
-
       Debug/tooling enhancement:
 
-S  CLJ-420  Screened     CLJ-420-3.patch
-S  CLJ-713  Screened     asm41ws.patch
-      Patch asm41ws.patch is most up to date.  Patch asm-split.txt
-      applies cleanly, but fails to compile with './antsetup.sh ; ant'
-      due to some extra package dependencies added by the patch.  It
-      did compile and test successfully as of Mar 14, 2013 using the
-      command 'mvn package'.
-S  CLJ-939  Screened     clj-939-report-load-exceptions-with-file-and-line-patch-v3.diff
-O  CLJ-1076 Ok           clj-1076-v3.txt
+S  CLJ-713  Screened     clj-713-2.diff
+S  CLJ-939  Screened     clj-939-v4.diff
 S  CLJ-1122 Screened     contributing.patch
-S  CLJ-1176 Screened     0001-CLJ-1176-Bind-read-eval-true-in-clojure.repl-source-.patch
-S  CLJ-1268 Screened     clj-1268.patch
 
       Clojure language/library bug fixes:
 
 S  CLJ-935  Screened     clj935-2.patch
-S  CLJ-937  Screened     clj-937-cl-format-coerces-ratios-patch2.diff
-S  CLJ-1056 Screened     clj-1056-2.diff
 S  CLJ-1082 Screened     clj-1082-patch-v2.diff
-S  CLJ-1090 Screened     var-clear-locals-patch-v2.diff
-S  CLJ-1102 Screened     clj-1102-improve-empty-stack-trace-handling-v2.diff
 S  CLJ-1118 Screened     clj-1118-v7.patch
-O  CLJ-1125 Ok           threadlocal-removal-tcrawley-2013-06-14.diff
-S  CLJ-1177 Screened     clj-1177-patch-v2.diff
-S  CLJ-1184 Screened     CLJ-1184-p4.patch
 S  CLJ-1222 Screened     min_value_multiplication.diff
-S  CLJ-1233 Screened     clj-1233-with-test-v2.diff
-S  CLJ-1234 Screened     clj-1234-v1.diff
-S  CLJ-1238 Screened     0001-Fix-CLJ-873-for-EdnReader-too.patch
-S  CLJ-1252 Screened     numkeyword.patch
-
-      Allow more correct-looking Clojure code to work:
-
-S  CLJ-766  Screened     clj766-2.patch
+S  CLJ-1238 Screened     clj-1238-2.diff
 
       Language/library enhancement:
 
