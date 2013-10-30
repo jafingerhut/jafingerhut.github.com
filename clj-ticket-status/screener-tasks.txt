@@ -2,8 +2,42 @@ List of probably-quick tasks that require a screener's authorization
 Date: October 11, 2013
 
 ----------------------------------------------------------------------
+Strange contrib library test results
+----------------------------------------------------------------------
+
+Almost all of the contrib libraries failed their tests with Clojure
+1.6.0-master-SNAPSHOT and JDK 1.5 (both Sun and IBM) after the patch
+for CLJ-1268 was committed.
+
+    http://dev.clojure.org/jira/browse/CLJ-1268
+
+Strangely enough, a few contrib libraries do *not* fail these tests.
+It seems like something about their tests must be set up incorrectly.
+
+core.typed
+    http://build.clojure.org/job/core.typed-test-matrix/
+
+jvm.tools.analyzer
+    http://build.clojure.org/job/jvm.tools.analyzer-test-matrix/
+
+
+tools.nrepl
+    http://build.clojure.org/job/tools.nrepl-test-matrix/
+
+tools.nrepl is not exactly in the same category as the two above.
+They passed all of their tests after Oct 25 2013 when CLJ-1268's patch
+was committed.  tools.nrepl seems to be stuck in a state where it is
+not getting retested when new Clojure commits are made.
+
+----------------------------------------------------------------------
 Tickets that aren't clear how to proceed
 ----------------------------------------------------------------------
+
+   CLJ-1130 Invoking a static method with the wrong number of arguments ...
+
+      A patch was screened, but Rich marked incomplete because it was
+      difficult to review with a dozen lines or so of indentation
+      changes.
 
    CLJ-1241 NPE when AOTing overrided clojure.core/get
 
