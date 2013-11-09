@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: October 31, 2013
+Date: November 8, 2013
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -121,7 +121,7 @@ T  CLJ-1254 Triaged      clj-1254-v1.txt
 
    CLJ-373  Open         0001-Support-empty-path-in-update-in.-CLJ-373.patch
    CLJ-666  Open         0001-Add-Big-support-to-Reflector-Updated.patch
-V  CLJ-700  Vetted       clj-700-patch6.txt
+V  CLJ-700  Vetted       clj-700-7.diff
    CLJ-1020 Open         clj-1020-inspect-table-skip-nil-rows-patch2.txt
    CLJ-1044 Open         001-enable-factory-ctor-inside-deftype.diff
    CLJ-1060 Open         list-star-fix.diff
@@ -151,12 +151,12 @@ V  CLJ-771  Backlog      clj-771-move-unchecked-casts-patch-v5.txt
    CLJ-1063 Open         clj-1063-add-dissoc-in-patch-v2.txt
       TBD: Open ticket for clojure.incubator for this.
    CLJ-1078 Open         clj-1048-queue-takes-collections.diff
-   CLJ-1094 Open         0001-Add-zero-arity-variants-for-every-pred-and-some-fn.patch
+T  CLJ-1094 Triaged      0001-Add-zero-arity-variants-for-every-pred-and-some-fn.patch
    CLJ-1095 Open         0001-map-indexed-accepts-multiple-collections.patch
       0002-Add-test-for-multi-collection-map-indexed-fn.patch includes
       new tests
    CLJ-1097 Open         node-seq.diff
-   CLJ-1103 Open         clj-1103-make-conj-assoc-dissoc-handle-args-similarly-v1.txt
+   CLJ-1103 Open         clj-1103-2.diff
    CLJ-1108 Open         clj-1108-enhance-future-call-patch-v2.txt
    CLJ-1120 Open         0001-CLJ-1120-ex-message-ex-cause.patch
 T  CLJ-1219 Triaged      0001-CLJ-1219-make-identical-variadic.patch
@@ -164,6 +164,8 @@ T  CLJ-1219 Triaged      0001-CLJ-1219-make-identical-variadic.patch
       This one is perhaps preferable to CLJ-1105
    CLJ-1251 Open         update.patch
    CLJ-1266 Open         floats.diff
+   CLJ-1287 Open         clj-1287-2.diff
+T  CLJ-1293 Triaged      CLJ-1293-v001.patch
 
       Performance enhancement:
 
@@ -196,15 +198,18 @@ V  CLJ-1190 Needs Patch  clj-1190-2.diff
 
 V  CLJ-1058 Screenable   patch-with-tests-clj-1058.diff
 V  CLJ-1260 Screenable   clj-1260-fixws.diff
-V  CLJ-1285 Screenable   persistent-assoc-after-collision.diff
-
-      Allow more correct-looking Clojure code to work:
-
-V  CLJ-1148 Screenable   defonce_fixes.patch
 
 ----------------------------------------------------------------------
 Prescreened, and screened or accepted
 ----------------------------------------------------------------------
+      Doc string fixes only:
+
+S  CLJ-1281 Screened     alpha.patch
+
+      Better error reporting:
+
+S  CLJ-1130 Screened     clj-1130-v2.diff
+
       Debug/tooling enhancement:
 
 S  CLJ-713  Screened     clj-713-2.diff
@@ -218,6 +223,10 @@ S  CLJ-1082 Screened     clj-1082-patch-v2.diff
 S  CLJ-1118 Screened     clj-1118-v7.patch
 S  CLJ-1222 Screened     min_value_multiplication.diff
 S  CLJ-1238 Screened     0001-Fix-CLJ-873-for-EdnReader-too.patch
+
+      Allow more correct-looking Clojure code to work:
+
+S  CLJ-1148 Screened     defonce_fixes.patch
 
       Language/library enhancement:
 
