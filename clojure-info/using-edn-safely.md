@@ -143,9 +143,9 @@ The following types of data are all supported for printing and reading
 * sets of values surrounded by #{ }
 * tagged elements for instants in time tagged with #inst, and UUIDs
   tagged with #uuid.
-* Other tagged elements, as long as you define a data reader function
-  for them and add the tag and data reader function as a key/value
-  pair to `*data-readers*`
+* Other tagged elements, as long as you create an appropriate data
+  reader function and supply it as part of the argument 'opts' to
+  clojure.edn/read or read-string.
 
 The following types of data can be printed using the methods in the
 previous section, but cannot be read with `clojure.edn/read*`, at
