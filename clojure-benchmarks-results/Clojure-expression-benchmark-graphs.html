@@ -102,8 +102,7 @@
 <hr>
 <p>
 <a id="bench-1">
-<img src="cljexprs-graphs/1.png"></a></p><p>(identity x) notes: It is a good bet that most of this measured time is the per-loop overhead in criterium of updating two primitive long loop locals, and saving the return value in a Java array.&nbsp; This same overhead is present in all of the benchmarks, but much less noticeable when the expression takes longer to evaluate.</p><p>Why the noticeably longer time for 32-bit JVMs than for 64-bit JVMs?&nbsp; My guess is that this is due to the 32-bit JVMs being less efficient at updating the primitive long values, but I'd love it if someone who knows for certain could tell me.<br><a id="bench-1">
-</a></p><hr><p>
+<img src="cljexprs-graphs/1.png"></a></p><p>(identity x) notes: It is a good bet that most of this measured time is the per-loop overhead in criterium of updating two primitive long loop locals, and saving the return value in a Java array.&nbsp; This same overhead is present in all of the benchmarks, but much less noticeable when the expression takes longer to evaluate.</p><hr><p>
 <a id="bench-2">
 <img src="cljexprs-graphs/2.png">
 </a></p><hr><p>
@@ -136,7 +135,7 @@
 <img src="cljexprs-graphs/11.png">
 </a></p><hr><p>
 <a id="bench-12">
-<img src="cljexprs-graphs/12.png"></a></p><p>[] (list 1 2 3) notes: I find it odd that 2 out of the 5 JVMs tested have a noticeable increase in run time between Clojure 1.4-alpha4 and 1.4-beta1, but not the others.&nbsp; TBD: which commit(s) led to this change?<br><a id="bench-12">
+<img src="cljexprs-graphs/12.png"></a></p><p>[] (list 1 2 3) notes: I find it odd that several of the JVMs tested have a noticeable increase in run time between Clojure 1.5-beta1 and 1.5-beta2, but not the others.&nbsp; TBD: which commit(s) led to this change?<br><a id="bench-12">
 </a></p><hr><p>
 <a id="bench-13">
 <img src="cljexprs-graphs/13.png">
@@ -210,7 +209,7 @@
 </a></p><hr><p>
 <a id="bench-36">
 <img src="cljexprs-graphs/36.png"></a></p><p>[key :f0] (hash key) notes: TBD exactly which commit(s) between Clojure
-1.4-alpha1 and 1.4-alpha2 led to the worse performance afterwards.<a id="bench-36">
+1.4-alpha1 and 1.4-alpha2 led to the worse performance afterwards.&nbsp; It obviously appears to have been undone, or improved in some other way, in 1.5-beta2.<a id="bench-36">
 </a></p><hr><p>
 <a id="bench-37">
 <img src="cljexprs-graphs/37.png">
