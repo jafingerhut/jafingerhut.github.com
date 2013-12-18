@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: December 6, 2013
+Date: December 13, 2013
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -64,6 +64,7 @@ T  CLJ-1107 Triaged      clj-1107-throw-on-get-for-unsupported-types-patch-v2.tx
 T  CLJ-1248 Triaged      Include-type-information-in-reflection-warning-messa.patch
    CLJ-1257 Open         clj-1257-2.diff
 V  CLJ-1261 Vetted       clj-1261-2.diff
+   CLJ-1282 Open         CLJ-1282-p1.patch
 
       Debug/tooling enhancement:
 
@@ -104,10 +105,10 @@ T  CLJ-1225 Triaged      clj-1225-2.txt
    CLJ-1229 Open         clj-1229-count-overflow-patch-v1.txt
    CLJ-1237 Open         CLJ-1237c.patch
    CLJ-1241 Open         0001-fix-CLJ-1241.patch
+T  CLJ-1250 Triaged      CLJ-1250-20131211.patch
 T  CLJ-1253 Triaged      clj-1253-1.txt
 T  CLJ-1254 Triaged      clj-1254-2.diff
    CLJ-1275 Open         0001-Don-t-use-shorthand-for-typehints-when-print-dup.patch
-T  CLJ-1301 Triaged      clj-1301-1.diff
 
       Language enhancement, reducers:
 
@@ -188,6 +189,8 @@ T  CLJ-1295 Triaged      clj-1295-1.diff
 
    CLJ-842  Open         clj-842-update-clojure.pprint-metadata-v2.txt
    CLJ-1151 Open         tiny-reducers-cleanup.diff
+   CLJ-1303 Open         generalize-unquote.diff
+   CLJ-1304 Open         doc-comment-typos.diff
 
 ----------------------------------------------------------------------
 Prescreened patches that are marked with Fix Version/s =
@@ -197,6 +200,7 @@ Prescreened patches that are marked with Fix Version/s =
 
 V  CLJ-1058 Screenable   patch-with-tests-clj-1058.diff
 V  CLJ-1260 Screenable   clj-1260-fixws.diff
+V  CLJ-1301 Screenable   clj-1301-1.diff
 
 ----------------------------------------------------------------------
 Prescreened, and screened or accepted
@@ -204,6 +208,10 @@ Prescreened, and screened or accepted
       Doc string fixes only:
 
 S  CLJ-1190 Screened     clj-1190-3.diff
+
+      Better error reporting:
+
+S  CLJ-1130 Screened     clj-1130-v3.diff
 
       Debug/tooling enhancement:
 
@@ -258,6 +266,7 @@ was used with the latest Clojure master as of the date of this report.
     Mac OS X 10.6.8 + Oracle/Apple JDK 1.6.0_65 64-bit
     Ubuntu 12.04.3 64-bit + OpenJDK 1.6.0_27 64-bit
     Ubuntu 12.04.3 64-bit + Oracle JDK 1.7.0_45 64-bit
+    Ubuntu 12.04.3 64-bit + Oracle JDK 1.8.0-ea-b116 64-bit
 * After applying the patch, the command "./antsetup.sh ; ant" compiles
   and passes all tests without warnings or errors (see Note 1 near the
   end for a short list of allowed warnings).
