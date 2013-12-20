@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: December 18, 2013
+Date: December 20, 2013
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of each list are tickets with no
@@ -65,9 +65,6 @@ Defect
     1.25   2 Open         [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
              Chris Tennant (1)
              Chas Emerick (1/4)
-    1.20   2 Open         [CLJ-978] bean unable to handle non-public classes
-             Mike Rodriguez (1)
-             Gary Trakhman (1/5)
     1.00   1 Backlog      [CLJ-274] cannot close over mutable fields (in deftype)
              John Hume (1)
     1.00   1 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
@@ -91,6 +88,9 @@ Defect
     0.70   3 Triaged      [CLJ-1224] Records do not cache hash like normal maps
              Ambrose Bonnaire-Sergeant (1/4)
              David Nolen (1/4)
+             Gary Trakhman (1/5)
+    0.70   2 Open         [CLJ-978] bean unable to handle non-public classes
+             Mike Rodriguez (1/2)
              Gary Trakhman (1/5)
     0.67   2 Incomplete   [CLJ-1301] case expression uses different hash fn for constant values vs expression
              Gunnar Völkel (1/3)
@@ -140,8 +140,8 @@ Defect
     0.00   0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
     0.00   0 Incomplete   [CLJ-1176] clojure.repl/source fails when *read-eval* bound to :unknown
     0.00   0 Incomplete   [CLJ-1187] Clojure loses quoted metadata on empty literals
-    0.00   0 Screenable   [CLJ-935] clojure.string/trim uses different defn of whitespace as triml, trimr
     0.00   0 Screenable   [CLJ-1260] ConcurrentModificationException thrown during action dispatching after commit in LockingTransaction.run()
+    0.00   0 Screened     [CLJ-935] clojure.string/trim uses different defn of whitespace as triml, trimr
     0.00   0 Screened     [CLJ-1082] Subvecs of primitive vectors cannot be reduced
     0.00   0 Screened     [CLJ-1130] Invoking an n-arity method with 0 args results in a field-related exception
     0.00   0 Triaged      [CLJ-1225] quot overflow issues around Long/MIN_VALUE for BigInt
@@ -193,7 +193,7 @@ Enhancement
              Nick Klauer (1)
              Maris Orbidans (1/2)
              Christoffer Sawicki (1/4)
-    3.63   6 Screenable   [CLJ-1200] ArraySeq dead code cleanup and ArraySeq_short gap filling
+    3.63   6 Screened     [CLJ-1200] ArraySeq dead code cleanup and ArraySeq_short gap filling
              Chris Allen (1)
              TIm Jones (1)
              Zach Tellman (1)
@@ -264,6 +264,8 @@ Enhancement
              Shlomi (1)
     1.00   1 Triaged      [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
              Jonathan Halterman (1)
+    1.00   1 Triaged      [CLJ-1209] clojure.test does not print ex-info in error reports
+             Stuart Sierra (1)
     1.00   1 Triaged      [CLJ-1277] Speed up printing of time instants
              Alexander Kiel (1)
     0.92   3 Backlog      [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
@@ -285,6 +287,8 @@ Enhancement
              Christoffer Sawicki (1/4)
     0.50   1 Open         [CLJ-1201] There should also be writing in clojure.edn
              Trevor Hartman (1/2)
+    0.50   1 Open         [CLJ-1239] faster, more flexible dispatch for clojure.walk
+             Mike Rodriguez (1/2)
     0.45   2 Open         [CLJ-706] make use of deprecated namespaces/vars easier to spot
              Andy Fingerhut (1/4)
              Gary Trakhman (1/5)
