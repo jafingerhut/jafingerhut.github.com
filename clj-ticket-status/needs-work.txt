@@ -1,5 +1,5 @@
 Tickets needing work for CLJ project
-Date: December 13, 2013
+Date: January 2, 2014
 
 If you are a Clojure contributor, the tickets below could use some
 work.  Some are easy, some are not.  If you've never added a patch
@@ -39,24 +39,14 @@ the report.
 Tickets with prescreened patches, but they may need work, since the
 ticket is marked Incomplete (I).
 ----------------------------------------------------------------------
-      Debug/tooling enhancement:
-
-I  CLJ-1176 Incomplete   0001-CLJ-1176-Bind-read-eval-true-in-clojure.repl-source-.patch
-
       Clojure language/library bug fixes:
 
 I  CLJ-944  Incomplete   0001-Fix-for-CLJ-944.patch
       See comments for another patch 0002-Fix-for-CLJ-944.patch and
       why it fails some tests, which are fixable.
+I  CLJ-1058 Incomplete   patch-with-tests-clj-1058.diff
 I  CLJ-1187 Incomplete   001-CLJ-1187.patch
-
-      Allow more correct-looking Clojure code to work:
-
-I  CLJ-1148 Incomplete   defonce_fixes.patch
-
-      Performance enhancement:
-
-I  CLJ-1200 Incomplete   no-getComponentType--v002.patch
+I  CLJ-1301 Incomplete   clj-1301-1.diff
 
 ----------------------------------------------------------------------
 Tickets marked for Clojure Release 1.6 that have no prescreened
@@ -71,6 +61,7 @@ letter is the number of votes, and tickets have been sorted from most
 to fewest votes.
 ----------------------------------------------------------------------
 T   5 [CLJ-440] java method calls cannot omit varargs
+T   4 [CLJ-983] proxy-super does not restore original binding if call throws exception
 V   3 [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
 V   3 [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
 V   2 [CLJ-415] smarter assert (prints locals)
@@ -83,6 +74,7 @@ V   2 [CLJ-415] smarter assert (prints locals)
 T   2 [CLJ-1026] Mixed end-of-line endings in the source code
 T   2 [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
 T   2 [CLJ-1169] Add filename and line number to defn parameter declaration error
+V   1 [CLJ-274] cannot close over mutable fields (in deftype)
 V   1 [CLJ-823] Piping seque into seque can deadlock
 V   1 [CLJ-1100] Reader literals cannot contain periods
 T   1 [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
@@ -95,7 +87,6 @@ V   0 [CLJ-69] GC Issue 66: Add "keyset" to Clojure; make .keySet for APersisten
 V   0 [CLJ-84] GC Issue 81: compile gen-class fail when class returns self
 V   0 [CLJ-211] Support arbitrary functional destructuring via -> and ->>
 V   0 [CLJ-250] debug builds
-V   0 [CLJ-274] cannot close over mutable fields (in deftype)
 V   0 [CLJ-291] (take-nth 0 coll) redux...
 V   0 [CLJ-326] add :as-of option to refer
 V   0 [CLJ-346] (pprint-newline :fill) is not handled correctly
@@ -105,6 +96,7 @@ V   0 [CLJ-731] Create macro to variadically unroll a combinator function defini
 T   0 [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
 V   0 [CLJ-992] `iterate` reducer
 V   0 [CLJ-1039] Using 'def with metadata {:type :anything} throws ClassCastException
+T   0 [CLJ-1316] for doesn't support :let binding as it's first seq-expr
 
 ----------------------------------------------------------------------
 Tickets not fitting in previous categories, but they have a git format
