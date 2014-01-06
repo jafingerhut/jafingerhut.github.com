@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: December 13, 2013
+Date: January 2, 2014
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -78,7 +78,7 @@ T  CLJ-1073 Triaged      clj-1073-add-print-interruptibly-patch-v2.txt
    CLJ-1088 Open         0001-Add-support-for-protocol-fns-to-repl-source.-CLJ-1088.patch
    CLJ-1112 Open         0001-Allow-setting-loading-verbosely-by-system-property.patch
 T  CLJ-1191 Triaged      clj-1191-patch-v1.txt
-   CLJ-1209 Open         clj-test-print-ex-data.diff
+T  CLJ-1209 Triaged      0002-CLJ-1209-show-ex-data-in-clojure-test.patch
 T  CLJ-1274 Triaged      CLJ-1274.patch
    CLJ-1278 Open         CLJ-1278-2.patch
 
@@ -105,10 +105,11 @@ T  CLJ-1225 Triaged      clj-1225-2.txt
    CLJ-1229 Open         clj-1229-count-overflow-patch-v1.txt
    CLJ-1237 Open         CLJ-1237c.patch
    CLJ-1241 Open         0001-fix-CLJ-1241.patch
-T  CLJ-1250 Triaged      CLJ-1250-20131211.patch
+T  CLJ-1250 Triaged      CLJ-1250-AllInvokeSites-20131214.patch
 T  CLJ-1253 Triaged      clj-1253-1.txt
 T  CLJ-1254 Triaged      clj-1254-2.diff
    CLJ-1275 Open         0001-Don-t-use-shorthand-for-typehints-when-print-dup.patch
+   CLJ-1317 Open         0001-CLJ-1317-fix-seq-zip-to-avoid-spurious-nils.patch
 
       Language enhancement, reducers:
 
@@ -165,10 +166,12 @@ T  CLJ-1094 Triaged      0001-Add-zero-arity-variants-for-every-pred-and-some-fn
    CLJ-1108 Open         clj-1108-enhance-future-call-patch-v2.txt
    CLJ-1120 Open         0001-CLJ-1120-ex-message-ex-cause.patch
 T  CLJ-1219 Triaged      0001-CLJ-1219-make-identical-variadic.patch
+   CLJ-1239 Open         0002-CLJ-1239-protocol-dispatch-for-clojure.walk.patch
    CLJ-1251 Open         update.patch
    CLJ-1266 Open         floats.diff
    CLJ-1287 Open         clj-1287-2.diff
 T  CLJ-1293 Triaged      CLJ-1293-v001.patch
+T  CLJ-1315 Triaged      0001-Don-t-initialize-classes-during-import.patch
 
       Performance enhancement:
 
@@ -191,16 +194,24 @@ T  CLJ-1295 Triaged      clj-1295-1.diff
    CLJ-1151 Open         tiny-reducers-cleanup.diff
    CLJ-1303 Open         generalize-unquote.diff
    CLJ-1304 Open         doc-comment-typos.diff
+   CLJ-1313 Open         clj-1313-v1.diff
+   CLJ-1314 Open         clj-1314-v2.diff
 
 ----------------------------------------------------------------------
 Prescreened patches that are marked with Fix Version/s =
 "Release 1.6", but not screened
 ----------------------------------------------------------------------
+      Debug/tooling enhancement:
+
+V  CLJ-1176 Screenable   clj-1176-source-read-eval-2.patch
+
       Clojure language/library bug fixes:
 
-V  CLJ-1058 Screenable   patch-with-tests-clj-1058.diff
 V  CLJ-1260 Screenable   clj-1260-fixws.diff
-V  CLJ-1301 Screenable   clj-1301-1.diff
+
+      Allow more correct-looking Clojure code to work:
+
+V  CLJ-1148 Screenable   clj-1148-defonce-2.patch
 
 ----------------------------------------------------------------------
 Prescreened, and screened or accepted
@@ -229,6 +240,7 @@ S  CLJ-394  Screened     clj-394-add-predicate-for-record-3.diff
       Performance enhancement:
 
 S  CLJ-1125 Screened     threadlocal-removal-tcrawley-2013-11-24.diff
+S  CLJ-1200 Screened     no-getComponentType--v002.patch
 
 ----------------------------------------------------------------------
 (Note 1) Warnings/errors explicitly allowed in output of 'ant' command
