@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: January 6, 2014
+Date: January 8, 2014
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -57,12 +57,12 @@ Defect
              Dimitrios Piliouras (1)
              Phill Wolf (1/2)
              Colin Fleming (1/3)
-    2.17   5 Vetted       [CLJ-700] contains? broken for TransientMaps
+    2.12   5 Vetted       [CLJ-700] contains? broken for TransientMaps
              Laszlo Török (1)
              Mark Engelberg (1/3)
              Sean Corfield (1/3)
              Jason Wolfe (1/4)
-             Patrick Houk (1/4)
+             Patrick Houk (1/5)
     1.50   2 Open         [CLJ-1117] Partition does not follow docs
              Howard Lewis Ship (1)
              Phill Wolf (1/2)
@@ -92,19 +92,22 @@ Defect
              Michael Klishin (1/2)
              Dmitri Naumov (1/6)
              Mike Anderson (1/7)
-    0.70   3 Triaged      [CLJ-1224] Records do not cache hash like normal maps
-             Ambrose Bonnaire-Sergeant (1/4)
-             David Nolen (1/4)
-             Gary Trakhman (1/5)
     0.70   2 Open         [CLJ-978] bean unable to handle non-public classes
              Mike Rodriguez (1/2)
              Gary Trakhman (1/5)
     0.67   2 Incomplete   [CLJ-1301] case expression uses different hash fn for constant values vs expression
              Gunnar Völkel (1/3)
              Tim McCormack (1/3)
+    0.65   3 Triaged      [CLJ-1224] Records do not cache hash like normal maps
+             David Nolen (1/4)
+             Ambrose Bonnaire-Sergeant (1/5)
+             Gary Trakhman (1/5)
     0.60   2 Open         [CLJ-1237] reduce gives a SO for pathological seqs
              Ghadi Shayban (1/2)
              Nicola Mometto (1/10)
+    0.53   2 Open         [CLJ-1218] mapcat is not very lazy
+             John Jacobsen (1/3)
+             Patrick Houk (1/5)
     0.53   2 Open         [CLJ-1242] get/= on sorted collections when types don't match result in a ClassCastException
              Marshall T. Vandegrift (1/3)
              Gary Trakhman (1/5)
@@ -122,19 +125,17 @@ Defect
     0.43   2 Open         [CLJ-1074] Read/print round-trip for +/-Infinity and NaN
              Marshall T. Vandegrift (1/3)
              Nicola Mometto (1/10)
-    0.33   1 Open         [CLJ-1218] mapcat is not very lazy
-             John Jacobsen (1/3)
     0.33   1 Open         [CLJ-1229] count silently overflows for sequences with more than Integer/MAX_VALUE elements
              John Jacobsen (1/3)
     0.27   2 Incomplete   [CLJ-944] Compiler makes different concrete maps then the reader
              Max Penet (1/6)
              Nicola Mometto (1/10)
-    0.25   1 Open         [CLJ-130] Namespace metadata lost in AOT compile
-             Ambrose Bonnaire-Sergeant (1/4)
     0.25   1 Open         [CLJ-1029] ns defmacro allows arbitrary execution of clojure.core fns
              David Nolen (1/4)
     0.25   1 Open         [CLJ-1079] Don't squash explicit :line and :column metadata in the MetaReader
              Christoffer Sawicki (1/4)
+    0.20   1 Open         [CLJ-130] Namespace metadata lost in AOT compile
+             Ambrose Bonnaire-Sergeant (1/5)
     0.17   1 Triaged      [CLJ-888] defprotocol should throw error when signatures include variable number of parameters
              Tassilo Horn (1/6)
     0.14   1 Open         [CLJ-1231] fn and letfn don't support hinting the function's return type
@@ -175,7 +176,7 @@ Enhancement
              David Nolen (1/4)
              Tassilo Horn (1/6)
              Mike Anderson (1/7)
-    6.62  11 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
+    6.57  11 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
              Laurent Petit (1)
              Lei Wang (1)
              Paul Gearon (1)
@@ -185,8 +186,8 @@ Enhancement
              Paudi Moriarty (1/2)
              Phil Hagelberg (1/3)
              Sean Corfield (1/3)
-             Patrick Houk (1/4)
              Gary Trakhman (1/5)
+             Patrick Houk (1/5)
     5.03   7 Open         [CLJ-1297] try to catch using - instead of _ in filenames so the compiler can give a better error message for people who don't know that you need to use _ in file names
              Gary Fredericks (1)
              Obadz (1)
@@ -222,13 +223,13 @@ Enhancement
              Joshua Tilles (1)
              Norman Richards (1)
              Trevor Hartman (1/2)
-    2.28   6 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
+    2.23   6 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
              Eric Normand (1)
              Tim McCormack (1/3)
-             Ambrose Bonnaire-Sergeant (1/4)
              Chas Emerick (1/4)
              Colin Jones (1/4)
              Alex Miller (1/5)
+             Ambrose Bonnaire-Sergeant (1/5)
     2.00   2 Open         [CLJ-1141] Allow pre and post-conditions in defprotocol and deftype macros
              Joseph Smith (1)
              Vjeran Marcinko (1)
@@ -238,10 +239,10 @@ Enhancement
              Sean Corfield (1/3)
              Max Penet (1/6)
              Mike Anderson (1/7)
-    1.75   3 Open         [CLJ-891] make (symbol foo "bar") work with foo being a namespace
+    1.70   3 Open         [CLJ-891] make (symbol foo "bar") work with foo being a namespace
              Kevin Downey (1)
              Steve Miner (1/2)
-             Ambrose Bonnaire-Sergeant (1/4)
+             Ambrose Bonnaire-Sergeant (1/5)
     1.67   3 Open         [CLJ-272] load/ns/require/use overhaul
              Kevin Krouse (1)
              Paudi Moriarty (1/2)
@@ -249,14 +250,17 @@ Enhancement
     1.50   2 Backlog      [CLJ-415] smarter assert (prints locals)
              Kevin Sookocheff (1)
              Jeff Weiss (1/2)
-    1.45   3 Vetted       [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
-             Steven E. Harris (1)
-             Patrick Houk (1/4)
-             Alex Miller (1/5)
+    1.50   2 Open         [CLJ-1239] faster, more flexible dispatch for clojure.walk
+             Ryan Neufeld (1)
+             Mike Rodriguez (1/2)
     1.43   3 Open         [CLJ-1078] Added queue, queue* and queue? to clojure.core
              Anthony Grimes (1)
              John Jacobsen (1/3)
              Nicola Mometto (1/10)
+    1.40   3 Vetted       [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
+             Steven E. Harris (1)
+             Alex Miller (1/5)
+             Patrick Houk (1/5)
     1.25   2 Open         [CLJ-1255] Support Abstract Base Classes with "reify"
              Tomoharu Fujita (1)
              Alex Fowler (1/4)
@@ -286,9 +290,10 @@ Enhancement
              Maris Orbidans (1/2)
              Chas Emerick (1/4)
              Mike Anderson (1/7)
-    0.67   2 Open         [CLJ-373] update-in with empty key paths
+    0.87   3 Open         [CLJ-373] update-in with empty key paths
              Gunnar Völkel (1/3)
              Tim McCormack (1/3)
+             Ambrose Bonnaire-Sergeant (1/5)
     0.58   3 Open         [CLJ-308] protocol-ize with-open
              Jason Wolfe (1/4)
              Max Penet (1/6)
@@ -301,8 +306,6 @@ Enhancement
              Christoffer Sawicki (1/4)
     0.50   1 Open         [CLJ-1201] There should also be writing in clojure.edn
              Trevor Hartman (1/2)
-    0.50   1 Open         [CLJ-1239] faster, more flexible dispatch for clojure.walk
-             Mike Rodriguez (1/2)
     0.45   2 Open         [CLJ-706] make use of deprecated namespaces/vars easier to spot
              Andy Fingerhut (1/4)
              Gary Trakhman (1/5)
@@ -315,8 +318,6 @@ Enhancement
              Alan Malloy (1/3)
     0.33   1 Open         [CLJ-1298] More of essential type predicates in the core
              Gunnar Völkel (1/3)
-    0.25   1 Open         [CLJ-451] fn literals lack name/arglists/namespace metadata
-             Patrick Houk (1/4)
     0.25   1 Open         [CLJ-1256] Support type-hinted overrides of function parameters
              Alex Fowler (1/4)
     0.25   1 Open         [CLJ-1263] Allow static compilation of function invocations
@@ -327,6 +328,8 @@ Enhancement
              Andy Fingerhut (1/4)
     0.25   1 Triaged      [CLJ-1191] Improve apropos to show some indication of namespace of symbols found
              Colin Jones (1/4)
+    0.20   1 Open         [CLJ-451] fn literals lack name/arglists/namespace metadata
+             Patrick Houk (1/5)
     0.17   1 Open         [CLJ-148] Poor reporting of symbol conflicts when using (ns)
              Dmitri Naumov (1/6)
     0.17   1 Open         [CLJ-803] IAtom interface
@@ -361,6 +364,7 @@ Enhancement
     0.00   0 Ok           [CLJ-394] Add record? predicate
     0.00   0 Ok           [CLJ-713] Upgrade ASM to a more current version
     0.00   0 Ok           [CLJ-1190] Javadoc for public Java API
+    0.00   0 Screenable   [CLJ-1318] Support destructuring maps with namespaced keywords
     0.00   0 Triaged      [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
     0.00   0 Triaged      [CLJ-1005] Use transient map in zipmap
     0.00   0 Triaged      [CLJ-1073] Make print-sequential interruptible
