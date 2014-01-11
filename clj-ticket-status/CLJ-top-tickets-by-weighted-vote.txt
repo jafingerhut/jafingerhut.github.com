@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: January 10, 2014
+Date: January 11, 2014
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -31,28 +31,13 @@ where State is one of the states in the JIRA flow diagram at
 ========================================
 Defect
 
-   12.00  14 Ok           [CLJ-1125] Clojure can leak memory when used in a servlet container
-             Adrian Bendel (1)
-             Ben Mabey (1)
-             Cosmin Stejerean (1)
-             Ian Eslick (1)
-             Jim Crossley (1)
-             John Stoneham (1)
-             Justin Kramer (1)
-             Kanwei Li (1)
-             Nelson Morris (1)
-             Terje Sten Bjerkseth (1)
-             Zach Thompson (1)
-             Joshua Ballanco (1/2)
-             Chas Emerick (1/4)
-             Colin Jones (1/4)
     3.10   5 Triaged      [CLJ-1250] Reducer (and folder) instances hold onto the head of seqs
              Paul Butcher (1)
              Steffen Dienst (1)
              Ghadi Shayban (1/2)
              Jozef Wagner (1/2)
              Nicola Mometto (1/10)
-    2.83   4 Screenable   [CLJ-983] proxy-super does not restore original binding if call throws exception
+    2.83   4 Screened     [CLJ-983] proxy-super does not restore original binding if call throws exception
              Alex Baranosky (1)
              Dimitrios Piliouras (1)
              Phill Wolf (1/2)
@@ -66,9 +51,9 @@ Defect
     1.50   2 Open         [CLJ-1117] Partition does not follow docs
              Howard Lewis Ship (1)
              Phill Wolf (1/2)
-    1.25   2 Open         [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
+    1.33   2 Open         [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
              Chris Tennant (1)
-             Chas Emerick (1/4)
+             Chas Emerick (1/3)
     1.00   1 Backlog      [CLJ-274] cannot close over mutable fields (in deftype)
              John Hume (1)
     1.00   1 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
@@ -87,6 +72,11 @@ Defect
              Anders Sveen (1)
     1.00   1 Vetted       [CLJ-823] Piping seque into seque can deadlock
              Peter Monks (1)
+    0.98   4 Triaged      [CLJ-1224] Records do not cache hash like normal maps
+             Steve Miner (1/3)
+             David Nolen (1/4)
+             Ambrose Bonnaire-Sergeant (1/5)
+             Gary Trakhman (1/5)
     0.83   2 Triaged      [CLJ-1274] Unable to set compiler options via system properties except for AOT compilation
              Oleksandr Shyshko (1/2)
              Colin Fleming (1/3)
@@ -100,10 +90,6 @@ Defect
     0.67   2 Incomplete   [CLJ-1301] case expression uses different hash fn for constant values vs expression
              Gunnar Völkel (1/3)
              Tim McCormack (1/3)
-    0.65   3 Triaged      [CLJ-1224] Records do not cache hash like normal maps
-             David Nolen (1/4)
-             Ambrose Bonnaire-Sergeant (1/5)
-             Gary Trakhman (1/5)
     0.60   2 Open         [CLJ-1237] reduce gives a SO for pathological seqs
              Ghadi Shayban (1/2)
              Nicola Mometto (1/10)
@@ -119,8 +105,6 @@ Defect
     0.50   2 Vetted       [CLJ-1093] Empty PersistentCollections get incorrectly evaluated as their generic clojure counterpart
              Alan Malloy (1/3)
              Max Penet (1/6)
-    0.50   1 Vetted       [CLJ-1100] Reader literals cannot contain periods
-             Steve Miner (1/2)
     0.45   2 Triaged      [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
              Jason Wolfe (1/4)
              Alex Miller (1/5)
@@ -129,6 +113,8 @@ Defect
              Nicola Mometto (1/10)
     0.33   1 Open         [CLJ-1229] count silently overflows for sequences with more than Integer/MAX_VALUE elements
              John Jacobsen (1/3)
+    0.33   1 Vetted       [CLJ-1100] Reader literals cannot contain periods
+             Steve Miner (1/3)
     0.27   2 Incomplete   [CLJ-944] Compiler makes different concrete maps then the reader
              Max Penet (1/6)
              Nicola Mometto (1/10)
@@ -149,9 +135,8 @@ Defect
     0.00   0 Backlog      [CLJ-346] (pprint-newline :fill) is not handled correctly
     0.00   0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
     0.00   0 Bad: Match n [CLJ-1130] Invoking an n-arity method with 0 args results in a field-related exception
+    0.00   0 Incomplete   [CLJ-1176] clojure.repl/source fails when *read-eval* bound to :unknown
     0.00   0 Incomplete   [CLJ-1187] Clojure loses quoted metadata on empty literals
-    0.00   0 Ok           [CLJ-1082] Subvecs of primitive vectors cannot be reduced
-    0.00   0 Screenable   [CLJ-1176] clojure.repl/source fails when *read-eval* bound to :unknown
     0.00   0 Screenable   [CLJ-1260] ConcurrentModificationException thrown during action dispatching after commit in LockingTransaction.run()
     0.00   0 Screened     [CLJ-935] clojure.string/trim uses different defn of whitespace as triml, trimr
     0.00   0 Triaged      [CLJ-1225] quot overflow issues around Long/MIN_VALUE for BigInt
@@ -191,12 +176,12 @@ Enhancement
              Sean Corfield (1/3)
              Gary Trakhman (1/5)
              Patrick Houk (1/5)
-    5.03   7 Open         [CLJ-1297] try to catch using - instead of _ in filenames so the compiler can give a better error message for people who don't know that you need to use _ in file names
+    5.53   7 Open         [CLJ-1297] try to catch using - instead of _ in filenames so the compiler can give a better error message for people who don't know that you need to use _ in file names
              Gary Fredericks (1)
+             Joshua Ballanco (1)
              Obadz (1)
              Reid McKenzie (1)
              scott tudd (1)
-             Joshua Ballanco (1/2)
              Phil Hagelberg (1/3)
              Alex Miller (1/5)
     3.75   5 Triaged      [CLJ-440] java method calls cannot omit varargs
@@ -226,11 +211,11 @@ Enhancement
              Joshua Tilles (1)
              Norman Richards (1)
              Trevor Hartman (1/2)
-    2.23   6 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
+    2.40   6 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
              Eric Normand (1)
+             Chas Emerick (1/3)
+             Colin Jones (1/3)
              Tim McCormack (1/3)
-             Chas Emerick (1/4)
-             Colin Jones (1/4)
              Alex Miller (1/5)
              Ambrose Bonnaire-Sergeant (1/5)
     2.00   2 Open         [CLJ-1141] Allow pre and post-conditions in defprotocol and deftype macros
@@ -242,14 +227,14 @@ Enhancement
              Sean Corfield (1/3)
              Max Penet (1/6)
              Mike Anderson (1/7)
-    1.70   3 Open         [CLJ-891] make (symbol foo "bar") work with foo being a namespace
-             Kevin Downey (1)
-             Steve Miner (1/2)
-             Ambrose Bonnaire-Sergeant (1/5)
     1.67   3 Open         [CLJ-272] load/ns/require/use overhaul
              Kevin Krouse (1)
              Paudi Moriarty (1/2)
              Dmitri Naumov (1/6)
+    1.53   3 Open         [CLJ-891] make (symbol foo "bar") work with foo being a namespace
+             Kevin Downey (1)
+             Steve Miner (1/3)
+             Ambrose Bonnaire-Sergeant (1/5)
     1.50   2 Backlog      [CLJ-415] smarter assert (prints locals)
              Kevin Sookocheff (1)
              Jeff Weiss (1/2)
@@ -264,12 +249,12 @@ Enhancement
              Steven E. Harris (1)
              Alex Miller (1/5)
              Patrick Houk (1/5)
+    1.33   2 Triaged      [CLJ-735] Improve error message when a protocol method is not found
+             Antonio Terreno (1)
+             Colin Jones (1/3)
     1.25   2 Open         [CLJ-1255] Support Abstract Base Classes with "reify"
              Tomoharu Fujita (1)
              Alex Fowler (1/4)
-    1.25   2 Triaged      [CLJ-735] Improve error message when a protocol method is not found
-             Antonio Terreno (1)
-             Colin Jones (1/4)
     1.17   2 Open         [CLJ-304] contrib get-source no longer works with deftype
              Frank Siebenlist (1)
              Dmitri Naumov (1/6)
@@ -289,9 +274,9 @@ Enhancement
              Stuart Sierra (1)
     1.00   1 Triaged      [CLJ-1277] Speed up printing of time instants
              Alexander Kiel (1)
-    0.89   3 Backlog      [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
+    0.98   3 Backlog      [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
              Maris Orbidans (1/2)
-             Chas Emerick (1/4)
+             Chas Emerick (1/3)
              Mike Anderson (1/7)
     0.87   3 Open         [CLJ-373] update-in with empty key paths
              Gunnar Völkel (1/3)
@@ -321,6 +306,8 @@ Enhancement
              Alan Malloy (1/3)
     0.33   1 Open         [CLJ-1298] More of essential type predicates in the core
              Gunnar Völkel (1/3)
+    0.33   1 Triaged      [CLJ-1191] Improve apropos to show some indication of namespace of symbols found
+             Colin Jones (1/3)
     0.25   1 Open         [CLJ-1256] Support type-hinted overrides of function parameters
              Alex Fowler (1/4)
     0.25   1 Open         [CLJ-1263] Allow static compilation of function invocations
@@ -329,8 +316,6 @@ Enhancement
              Alex Fowler (1/4)
     0.25   1 Open         [CLJ-1280] Create reusable exception that can carry file/line/col info
              Andy Fingerhut (1/4)
-    0.25   1 Triaged      [CLJ-1191] Improve apropos to show some indication of namespace of symbols found
-             Colin Jones (1/4)
     0.20   1 Open         [CLJ-451] fn literals lack name/arglists/namespace metadata
              Patrick Houk (1/5)
     0.17   1 Open         [CLJ-148] Poor reporting of symbol conflicts when using (ns)
@@ -364,10 +349,7 @@ Enhancement
     0.00   0 Backlog      [CLJ-731] Create macro to variadically unroll a combinator function definition
     0.00   0 Backlog      [CLJ-771] Move unchecked-prim casts to clojure.unchecked
     0.00   0 Backlog      [CLJ-1104] Concurrent with-redefs do not unwind properly, leaving a var permanently changed
-    0.00   0 Ok           [CLJ-394] Add record? predicate
-    0.00   0 Ok           [CLJ-713] Upgrade ASM to a more current version
-    0.00   0 Ok           [CLJ-1190] Javadoc for public Java API
-    0.00   0 Screenable   [CLJ-1318] Support destructuring maps with namespaced keywords
+    0.00   0 Screened     [CLJ-1318] Support destructuring maps with namespaced keywords
     0.00   0 Triaged      [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
     0.00   0 Triaged      [CLJ-1005] Use transient map in zipmap
     0.00   0 Triaged      [CLJ-1073] Make print-sequential interruptible
