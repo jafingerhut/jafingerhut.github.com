@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: January 2, 2014
+Date: January 11, 2014
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -96,7 +96,6 @@ T  CLJ-971  Triaged      clj-971-2.patch
 V  CLJ-1093 Vetted       0001-CLJ-1093-fix-empty-records-literal-v2.patch
    CLJ-1134 Open         clj-1134-star-directive-in-cl-format.txt
    CLJ-1137 Open         CLJ-1137-eval-metadata-once.diff
-V  CLJ-1157 Vetted       20130204_fix_classloader.diff
    CLJ-1180 Open         001-CLJ-1180.patch
    CLJ-1216 Open         0001-Create-a-DoExpr.Parser-class-that-delegates-to-BodyE.patch
    CLJ-1217 Open         0001-Don-t-realize-seq-exprs-in-for-unless-necessary.patch
@@ -125,7 +124,7 @@ T  CLJ-1254 Triaged      clj-1254-2.diff
 
       Allow more correct-looking Clojure code to work:
 
-   CLJ-373  Open         0001-Support-empty-path-in-update-in.-CLJ-373.patch
+   CLJ-373  Open         CLJ-373-nested-ops.patch
    CLJ-666  Open         0001-Add-Big-support-to-Reflector-Updated.patch
 V  CLJ-700  Vetted       clj-700-7.diff
    CLJ-1020 Open         clj-1020-inspect-table-skip-nil-rows-patch2.txt
@@ -178,7 +177,6 @@ T  CLJ-1315 Triaged      0001-Don-t-initialize-classes-during-import.patch
 T  CLJ-15   Triaged      lazy-incremental-hashes.diff
    CLJ-99   Open         clj-99-v1.diff
    CLJ-703  Open         improve-writeclassfile-perf.patch
-   CLJ-862  Open         pmap-chunking-862.diff
 T  CLJ-1005 Triaged      0001-Use-transient-map-in-zipmap.2.patch
    CLJ-1087 Open         clj-1087-diff-perf-enhance-patch-v1.txt
    CLJ-1096 Open         inline-get-keyword.diff
@@ -193,7 +191,7 @@ T  CLJ-1295 Triaged      clj-1295-1.diff
    CLJ-842  Open         clj-842-update-clojure.pprint-metadata-v2.txt
    CLJ-1151 Open         tiny-reducers-cleanup.diff
    CLJ-1303 Open         generalize-unquote.diff
-   CLJ-1304 Open         doc-comment-typos.diff
+   CLJ-1304 Open         clj-1304-v2.diff
    CLJ-1313 Open         clj-1313-v1.diff
    CLJ-1314 Open         clj-1314-v2.diff
 
@@ -201,46 +199,29 @@ T  CLJ-1295 Triaged      clj-1295-1.diff
 Prescreened patches that are marked with Fix Version/s =
 "Release 1.6", but not screened
 ----------------------------------------------------------------------
-      Debug/tooling enhancement:
-
-V  CLJ-1176 Screenable   clj-1176-source-read-eval-2.patch
-
       Clojure language/library bug fixes:
 
 V  CLJ-1260 Screenable   clj-1260-fixws.diff
 
       Allow more correct-looking Clojure code to work:
 
-V  CLJ-1148 Screenable   clj-1148-defonce-2.patch
+V  CLJ-1148 Screenable   clj-1148-defonce-3.patch
 
 ----------------------------------------------------------------------
 Prescreened, and screened or accepted
 ----------------------------------------------------------------------
-      Doc string fixes only:
-
-S  CLJ-1190 Screened     clj-1190-3.diff
-
-      Better error reporting:
-
-S  CLJ-1130 Screened     clj-1130-v3.diff
-
-      Debug/tooling enhancement:
-
-S  CLJ-713  Screened     clj-713-2.diff
-
       Clojure language/library bug fixes:
 
 S  CLJ-935  Screened     clj935-3.patch
-S  CLJ-1082 Screened     clj-1082-patch-v3.diff
+S  CLJ-983  Screened     clj-983-2.patch
 
       Language/library enhancement:
 
-S  CLJ-394  Screened     clj-394-add-predicate-for-record-3.diff
+S  CLJ-1318 Screened     clj-1318-4.diff
 
       Performance enhancement:
 
-S  CLJ-1125 Screened     threadlocal-removal-tcrawley-2013-11-24.diff
-S  CLJ-1200 Screened     no-getComponentType--v002.patch
+O  CLJ-1200 Ok           no-getComponentType--v002.patch
 
 ----------------------------------------------------------------------
 (Note 1) Warnings/errors explicitly allowed in output of 'ant' command
