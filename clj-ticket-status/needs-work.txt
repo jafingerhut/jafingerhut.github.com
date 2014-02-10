@@ -1,5 +1,5 @@
 Tickets needing work for CLJ project
-Date: January 31, 2014
+Date: February 7, 2014
 
 If you are a Clojure contributor, the tickets below could use some
 work.  Some are easy, some are not.  If you've never added a patch
@@ -44,23 +44,16 @@ ticket is marked Incomplete (I).
 I  CLJ-944  Incomplete   0001-Fix-for-CLJ-944.patch
       See comments for another patch 0002-Fix-for-CLJ-944.patch and
       why it fails some tests, which are fixable.
-I  CLJ-971  Bad: Match no state clj-971-2.patch
-I  CLJ-1058 Incomplete   sneakyThrow-clj-1058.diff
 
       Allow more correct-looking Clojure code to work:
 
 I  CLJ-1148 Incomplete   clj-1148-defonce-3.patch
 
-      Code cleanup:
-
-I  CLJ-1313 Bad: Match no state clj-1313-v2.diff
-
 ----------------------------------------------------------------------
 Tickets marked for Clojure Release 1.6 that have no prescreened
 patches (see also Note 3 at the bottom):
 ----------------------------------------------------------------------
-V   0 [CLJ-1335] PersistentList$EmptyList and empty LazySeq still returns old value for hasheq
-V   0 [CLJ-1336] Allow external collections to use standard collection hashing
+S   0 [CLJ-1335] PersistentList$EmptyList and empty LazySeq still returns old value for hasheq
 
 ----------------------------------------------------------------------
 Tickets needing work that have no prescreened patches.  These are all
@@ -68,8 +61,8 @@ Triaged (T), Vetted (V), or Incomplete (I).  The number after the
 letter is the number of votes, and tickets have been sorted from most
 to fewest votes.
 ----------------------------------------------------------------------
+T   7 [CLJ-1107] 'get' should throw exception on non-Associative argument
 T   6 [CLJ-440] java method calls cannot omit varargs
-T   6 [CLJ-1107] 'get' should throw exception on non-Associative argument
 V   3 [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
 V   3 [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
 V   2 [CLJ-415] smarter assert (prints locals)
@@ -107,7 +100,7 @@ V   0 [CLJ-731] Create macro to variadically unroll a combinator function defini
 T   0 [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
 V   0 [CLJ-992] `iterate` reducer
 V   0 [CLJ-1039] Using 'def with metadata {:type :anything} throws ClassCastException
-I   0 [CLJ-1282] The quote special form should throw an exception if passed more than one form to quote
+T   0 [CLJ-1289] aset-* and aget perform poorly on multi-dimensional arrays even with type hints. 
 T   0 [CLJ-1316] for doesn't support :let binding as it's first seq-expr
 
 ----------------------------------------------------------------------

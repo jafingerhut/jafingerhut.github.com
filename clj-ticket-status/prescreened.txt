@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: January 31, 2014
+Date: February 7, 2014
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -64,6 +64,7 @@ V  CLJ-1130 Vetted       clj-1130-v5.diff
 T  CLJ-1248 Triaged      Include-type-information-in-reflection-warning-messa.patch
    CLJ-1257 Open         clj-1257-2.diff
 V  CLJ-1261 Vetted       clj-1261-2.diff
+T  CLJ-1282 Triaged      CLJ-1282-p2.patch
    CLJ-1319 Open         0001-CLJ-1319-Throw-on-odd-arguments-to-PersistentArrayMa.patch
 
       Debug/tooling enhancement:
@@ -85,6 +86,7 @@ T  CLJ-1274 Triaged      CLJ-1274.patch
 
    CLJ-457  Open         clj-457-3.diff
 T  CLJ-825  Triaged      clj-825-1.patch
+   CLJ-971  Open         clj-971-2.patch
    CLJ-1029 Open         ns-patch.diff
    CLJ-1059 Open         001-clj-1059-make-persistentqueue-implement-list.diff
       or 002-clj-1059-asequential-rebased-to-cached-hasheq.diff
@@ -104,7 +106,7 @@ T  CLJ-1225 Triaged      clj-1225-2.txt
    CLJ-1229 Open         clj-1229-count-overflow-patch-v1.txt
    CLJ-1237 Open         CLJ-1237c.patch
    CLJ-1241 Open         0001-fix-CLJ-1241.patch
-T  CLJ-1250 Triaged      CLJ-1250-AllInvokeSites-20140113.patch
+T  CLJ-1250 Triaged      CLJ-1250-AllInvokeSites-20140204.patch
 T  CLJ-1253 Triaged      clj-1253-1.txt
 T  CLJ-1254 Triaged      clj-1254-2.diff
    CLJ-1275 Open         0001-Don-t-use-shorthand-for-typehints-when-print-dup.patch
@@ -156,6 +158,7 @@ V  CLJ-771  Backlog      clj-771-move-unchecked-casts-patch-v5.txt
    CLJ-1010 Open         0001-CLJ-1010-Add-a-left-to-right-version-of-comp-comp.patch
    CLJ-1063 Open         clj-1063-add-dissoc-in-patch-v2.txt
       TBD: Open ticket for clojure.incubator for this.
+T  CLJ-1078 Triaged      clj-1048-add-queue-functions.diff
 T  CLJ-1094 Triaged      0001-Add-zero-arity-variants-for-every-pred-and-some-fn.patch
    CLJ-1095 Open         0001-map-indexed-accepts-multiple-collections.patch
       0002-Add-test-for-multi-collection-map-indexed-fn.patch includes
@@ -167,10 +170,11 @@ T  CLJ-1094 Triaged      0001-Add-zero-arity-variants-for-every-pred-and-some-fn
 T  CLJ-1219 Triaged      0001-CLJ-1219-make-identical-variadic.patch
    CLJ-1239 Open         0002-CLJ-1239-protocol-dispatch-for-clojure.walk.patch
    CLJ-1251 Open         update.patch
-   CLJ-1266 Open         floats.diff
+   CLJ-1266 Open         floats-intrinsics.diff
    CLJ-1287 Open         clj-1287-2.diff
 T  CLJ-1293 Triaged      CLJ-1293-v001.patch
 T  CLJ-1315 Triaged      0001-Don-t-initialize-classes-during-import.patch
+   CLJ-1340 Open         primitive-cohercion.diff
 
       Performance enhancement:
 
@@ -189,26 +193,36 @@ T  CLJ-1295 Triaged      clj-1295-1.diff
 
    CLJ-842  Open         clj-842-update-clojure.pprint-metadata-v2.txt
    CLJ-1151 Open         tiny-reducers-cleanup.diff
+T  CLJ-1313 Triaged      clj-1313-v2.diff
    CLJ-1314 Open         clj-1314-v2.diff
 
 ----------------------------------------------------------------------
 Prescreened patches that are marked with Fix Version/s =
 "Release 1.6", but not screened
 ----------------------------------------------------------------------
+      Doc string fixes only:
+
+V  CLJ-1345 Screenable   clj-1345.patch
+
       Clojure language/library bug fixes:
 
-V  CLJ-1331 Screenable   clj-1331-v1.diff
+V  CLJ-1344 Screenable   clj-1344-1.patch
 
-      Code cleanup:
+      Language/library enhancement:
 
-V  CLJ-1328 Screenable   clj-1328-v4.diff
+V  CLJ-1343 Screenable   clj-1343-1.patch
 
 ----------------------------------------------------------------------
 Prescreened, and screened or accepted
 ----------------------------------------------------------------------
-      Code cleanup:
+      Doc string fixes only:
 
-S  CLJ-1304 Bad: Match no state clj-1304-v2.diff
+S  CLJ-1302 Screened     clj-1302-2.patch
+
+      Clojure language/library bug fixes:
+
+S  CLJ-1331 Screened     clj-1331-v2.patch
+S  CLJ-1339 Screened     CLJ-1339.patch
 
 ----------------------------------------------------------------------
 (Note 1) Warnings/errors explicitly allowed in output of 'ant' command
