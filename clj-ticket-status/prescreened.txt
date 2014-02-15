@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: February 7, 2014
+Date: February 14, 2014
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -58,14 +58,15 @@ V  CLJ-1104 Backlog      clj-1104-doc-unsafety-of-concurrent-with-redefs-v1.txt
 T  CLJ-735  Triaged      protocolerr.diff
 T  CLJ-888  Triaged      0001-Forbid-vararg-declaration-in-defprotocol-definterfac.patch
    CLJ-1030 Open         string-coerce-to-int.diff
+T  CLJ-1107 Triaged      0003-CLJ-1107-Throw-exception-for-get-on-unsupported-type.patch
 V  CLJ-1130 Vetted       clj-1130-v5.diff
    CLJ-1162 Open         CLJ-1162-p1.patch
    CLJ-1189 Open         CLJ-1189-p1.patch
-T  CLJ-1248 Triaged      Include-type-information-in-reflection-warning-messa.patch
    CLJ-1257 Open         clj-1257-2.diff
 V  CLJ-1261 Vetted       clj-1261-2.diff
 T  CLJ-1282 Triaged      CLJ-1282-p2.patch
    CLJ-1319 Open         0001-CLJ-1319-Throw-on-odd-arguments-to-PersistentArrayMa.patch
+   CLJ-1341 Open         keyword-1341-2014-02-12.2.patch
 
       Debug/tooling enhancement:
 
@@ -127,7 +128,6 @@ T  CLJ-1330 Triaged      0001-Fix-CLJ-1330-make-top-level-named-functions-classn
 
       Allow more correct-looking Clojure code to work:
 
-   CLJ-373  Open         CLJ-373-nested-ops.patch
    CLJ-666  Open         0001-Add-Big-support-to-Reflector-Updated.patch
 V  CLJ-700  Vetted       clj-700-7.diff
    CLJ-1020 Open         clj-1020-inspect-table-skip-nil-rows-patch2.txt
@@ -145,7 +145,7 @@ V  CLJ-322  Vetted       compile-interop-1.patch
       Patch compile-interop-1.patch applies and builds cleanly.
       Comment discussion on various approaches to this ticket are
       extensive.
-   CLJ-428  Open         clj-428-change-Sorted-seqFrom-to-take-inclusive-patch-v3.txt
+   CLJ-428  Open         clj-428-v4.diff
 V  CLJ-771  Backlog      clj-771-move-unchecked-casts-patch-v5.txt
    CLJ-803  Open         0001-atom-interface.patch
       Both patches apply and build cleanly, iatom.patch using 'patch'
@@ -164,16 +164,16 @@ T  CLJ-1094 Triaged      0001-Add-zero-arity-variants-for-every-pred-and-some-fn
       0002-Add-test-for-multi-collection-map-indexed-fn.patch includes
       new tests
    CLJ-1097 Open         node-seq.diff
-   CLJ-1103 Open         clj-1103-3.diff
+   CLJ-1103 Open         clj-1103-4.diff
    CLJ-1108 Open         clj-1108-enhance-future-call-patch-v2.txt
    CLJ-1120 Open         0001-CLJ-1120-ex-message-ex-cause.patch
 T  CLJ-1219 Triaged      0001-CLJ-1219-make-identical-variadic.patch
    CLJ-1239 Open         0002-CLJ-1239-protocol-dispatch-for-clojure.walk.patch
-   CLJ-1251 Open         update.patch
    CLJ-1266 Open         floats-intrinsics.diff
-   CLJ-1287 Open         clj-1287-2.diff
+   CLJ-1287 Open         clj-1287-3.diff
 T  CLJ-1293 Triaged      CLJ-1293-v001.patch
 T  CLJ-1315 Triaged      0001-Don-t-initialize-classes-during-import.patch
+   CLJ-1324 Open         clj-1324-1.patch
    CLJ-1340 Open         primitive-cohercion.diff
 
       Performance enhancement:
@@ -187,6 +187,7 @@ T  CLJ-1005 Triaged      0001-Use-transient-map-in-zipmap.2.patch
 T  CLJ-1224 Triaged      0001-CLJ-1224-cache-hasheq-and-hashCode-for-records.patch
 T  CLJ-1259 Triaged      clj-1259-1.txt
 T  CLJ-1277 Triaged      clj-1277-1.txt
+T  CLJ-1289 Triaged      CLJ-1289-p1.patch
 T  CLJ-1295 Triaged      clj-1295-1.diff
 
       Code cleanup:
@@ -200,29 +201,12 @@ T  CLJ-1313 Triaged      clj-1313-v2.diff
 Prescreened patches that are marked with Fix Version/s =
 "Release 1.6", but not screened
 ----------------------------------------------------------------------
-      Doc string fixes only:
-
-V  CLJ-1345 Screenable   clj-1345.patch
-
-      Clojure language/library bug fixes:
-
-V  CLJ-1344 Screenable   clj-1344-1.patch
-
-      Language/library enhancement:
-
-V  CLJ-1343 Screenable   clj-1343-1.patch
+<none>
 
 ----------------------------------------------------------------------
 Prescreened, and screened or accepted
 ----------------------------------------------------------------------
-      Doc string fixes only:
-
-S  CLJ-1302 Screened     clj-1302-2.patch
-
-      Clojure language/library bug fixes:
-
-S  CLJ-1331 Screened     clj-1331-v2.patch
-S  CLJ-1339 Screened     CLJ-1339.patch
+<none>
 
 ----------------------------------------------------------------------
 (Note 1) Warnings/errors explicitly allowed in output of 'ant' command
