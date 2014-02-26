@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: February 14, 2014
+Date: February 24, 2014
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -52,6 +52,8 @@ Prescreened patches *not* marked with Fix Version/s = "Release 1.6"
 V  CLJ-1104 Backlog      clj-1104-doc-unsafety-of-concurrent-with-redefs-v1.txt
    CLJ-1117 Open         clj-1117.patch
    CLJ-1240 Open         0001-CLJ-1240-Note-limits-of-clojure.walk-macroexpand-all.patch
+   CLJ-1337 Open         0001-Update-defprotocol-s-docstring-to-remove-an-out-of-d.patch
+T  CLJ-1357 Triaged      CLJ-1357-its-typo.patch
 
       Better error reporting:
 
@@ -62,9 +64,11 @@ T  CLJ-1107 Triaged      0003-CLJ-1107-Throw-exception-for-get-on-unsupported-ty
 V  CLJ-1130 Vetted       clj-1130-v5.diff
    CLJ-1162 Open         CLJ-1162-p1.patch
    CLJ-1189 Open         CLJ-1189-p1.patch
+   CLJ-1210 Open         extend-io-factory-to-nil.diff
    CLJ-1257 Open         clj-1257-2.diff
 V  CLJ-1261 Vetted       clj-1261-2.diff
 T  CLJ-1282 Triaged      CLJ-1282-p2.patch
+   CLJ-1297 Open         better-error-messages-for-require.diff
    CLJ-1319 Open         0001-CLJ-1319-Throw-on-odd-arguments-to-PersistentArrayMa.patch
    CLJ-1341 Open         keyword-1341-2014-02-12.2.patch
 
@@ -107,12 +111,14 @@ T  CLJ-1225 Triaged      clj-1225-2.txt
    CLJ-1229 Open         clj-1229-count-overflow-patch-v1.txt
    CLJ-1237 Open         CLJ-1237c.patch
    CLJ-1241 Open         0001-fix-CLJ-1241.patch
-T  CLJ-1250 Triaged      CLJ-1250-AllInvokeSites-20140204.patch
 T  CLJ-1253 Triaged      clj-1253-1.txt
 T  CLJ-1254 Triaged      clj-1254-2.diff
    CLJ-1275 Open         0001-Don-t-use-shorthand-for-typehints-when-print-dup.patch
    CLJ-1317 Open         0001-CLJ-1317-fix-seq-zip-to-avoid-spurious-nils.patch
 T  CLJ-1330 Triaged      0001-Fix-CLJ-1330-make-top-level-named-functions-classnam.patch
+   CLJ-1358 Open         CLJ-1358.patch
+T  CLJ-1361 Triaged      simple-ns-pprint-fix.patch
+T  CLJ-1362 Triaged      clj-1362-v1.patch
 
       Language enhancement, reducers:
 
@@ -133,6 +139,7 @@ V  CLJ-700  Vetted       clj-700-7.diff
    CLJ-1020 Open         clj-1020-inspect-table-skip-nil-rows-patch2.txt
    CLJ-1044 Open         001-enable-factory-ctor-inside-deftype.diff
    CLJ-1060 Open         list-star-fix.diff
+V  CLJ-1148 Vetted       clj-1148-defonce-3.patch
    CLJ-1242 Open         0001-fix-for-CLJ-1242-tests.patch
 
       Language/library enhancement:
@@ -170,7 +177,6 @@ T  CLJ-1094 Triaged      0001-Add-zero-arity-variants-for-every-pred-and-some-fn
 T  CLJ-1219 Triaged      0001-CLJ-1219-make-identical-variadic.patch
    CLJ-1239 Open         0002-CLJ-1239-protocol-dispatch-for-clojure.walk.patch
    CLJ-1266 Open         floats-intrinsics.diff
-   CLJ-1287 Open         clj-1287-3.diff
 T  CLJ-1293 Triaged      CLJ-1293-v001.patch
 T  CLJ-1315 Triaged      0001-Don-t-initialize-classes-during-import.patch
    CLJ-1324 Open         clj-1324-1.patch
@@ -196,17 +202,27 @@ T  CLJ-1295 Triaged      clj-1295-1.diff
    CLJ-1151 Open         tiny-reducers-cleanup.diff
 T  CLJ-1313 Triaged      clj-1313-v2.diff
    CLJ-1314 Open         clj-1314-v2.diff
+T  CLJ-1351 Triaged      0001-remove-unused-swapThunk-method-generation.patch
 
 ----------------------------------------------------------------------
 Prescreened patches that are marked with Fix Version/s =
 "Release 1.6", but not screened
 ----------------------------------------------------------------------
-<none>
+      Clojure language/library bug fixes:
+
+V  CLJ-1355 Screenable   clj-1355-v2.patch
+V  CLJ-1363 Screenable   clj-1363-v2.patch
 
 ----------------------------------------------------------------------
 Prescreened, and screened or accepted
 ----------------------------------------------------------------------
-<none>
+      Doc string fixes only:
+
+O  CLJ-1359 Ok           clj-1359.patch
+
+      Language/library enhancement:
+
+O  CLJ-1354 Ok           0001-CLJ-1354-make-APersistentVector.SubVector-public.patch
 
 ----------------------------------------------------------------------
 (Note 1) Warnings/errors explicitly allowed in output of 'ant' command

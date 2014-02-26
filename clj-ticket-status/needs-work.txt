@@ -1,5 +1,5 @@
 Tickets needing work for CLJ project
-Date: February 14, 2014
+Date: February 24, 2014
 
 If you are a Clojure contributor, the tickets below could use some
 work.  Some are easy, some are not.  If you've never added a patch
@@ -45,16 +45,16 @@ I  CLJ-944  Incomplete   0001-Fix-for-CLJ-944.patch
       See comments for another patch 0002-Fix-for-CLJ-944.patch and
       why it fails some tests, which are fixable.
 
-      Allow more correct-looking Clojure code to work:
+      Performance enhancement:
 
-I  CLJ-1148 Incomplete   clj-1148-defonce-3.patch
+I  CLJ-1365 Incomplete   clj-1365-v1.patch
 
 ----------------------------------------------------------------------
 Tickets marked for Clojure Release 1.6 that have no prescreened
 patches (see also Note 3 at the bottom):
 ----------------------------------------------------------------------
-
-<none>
+O   1 [CLJ-1353] Prevent test app from appearing in Mac OS X dock
+O   0 [CLJ-1352] clojure.test/test-vars runs :each fixtures for vars without :test metadata
 
 ----------------------------------------------------------------------
 Tickets needing work that have no prescreened patches.  These are all
@@ -76,7 +76,6 @@ V   2 [CLJ-415] smarter assert (prints locals)
 T   2 [CLJ-1026] Mixed end-of-line endings in the source code
 T   2 [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
 T   2 [CLJ-1169] Add filename and line number to defn parameter declaration error
-T   1 [CLJ-15] Incremental hashcode calculation for collections
 V   1 [CLJ-274] cannot close over mutable fields (in deftype)
 V   1 [CLJ-787] transient blows up when passed a vector created by subvec
 V   1 [CLJ-823] Piping seque into seque can deadlock
@@ -98,9 +97,10 @@ V   0 [CLJ-346] (pprint-newline :fill) is not handled correctly
 V   0 [CLJ-348] reify allows use of qualified name as method parameter
 V   0 [CLJ-701] Compiler loses 'loop's return type in some cases
 V   0 [CLJ-731] Create macro to variadically unroll a combinator function definition
+V   0 [CLJ-771] Move unchecked-prim casts to clojure.unchecked
 V   0 [CLJ-992] `iterate` reducer
 V   0 [CLJ-1039] Using 'def with metadata {:type :anything} throws ClassCastException
-T   0 [CLJ-1316] for doesn't support :let binding as it's first seq-expr
+T   0 [CLJ-1316] for doesn't support :let binding as its first seq-expr
 V   0 [CLJ-1349] update to latest test.generative and prep for test.check
 
 ----------------------------------------------------------------------
@@ -112,6 +112,10 @@ contributor, and it does not build and pass tests.
       Language/library enhancement:
 
    CLJ-1115 Open         multi-arity-into.diff
+
+      Performance enhancement:
+
+   CLJ-15   Open         lazy-incremental-hashes.diff
 
 ----------------------------------------------------------------------
 The tickets below are simply ones that seem like they might be a
