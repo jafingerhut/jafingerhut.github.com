@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: March 11, 2014
+Date: March 14, 2014
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -37,20 +37,17 @@ Project ASYNC tickets
 ========================================
 Defect
 
-    1.00   1 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
-             Hugo Duncan (1)
-    1.00   1 Open         [ASYNC-31] put! does not throw on closed channel
-             Justin Balthrop (1)
-    1.00   1 Open         [ASYNC-42] (try (catch :default)) inside a cljs go block raises an exception
-             Kevin Neaton (1)
     0.00   0 Open         [ASYNC-4] record literals become ordinary maps
     0.00   0 Open         [ASYNC-8] Add constrained read/write-only ports
     0.00   0 Open         [ASYNC-21] CLJS -> ioc-macros/fixup-aliasses throws exception
     0.00   0 Open         [ASYNC-25] Dependency on clojurescript is introduced into clojure only projects
+    0.00   0 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
     0.00   0 Open         [ASYNC-28] try/catch inside go block may cause a reflection warning - 0.1.222.0-83d0c2-alpha
+    0.00   0 Open         [ASYNC-31] put! does not throw on closed channel
     0.00   0 Open         [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
     0.00   0 Open         [ASYNC-35] Using onto-chan with nonending sequence causes non-gc-able, infinitely-looping go block
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
+    0.00   0 Open         [ASYNC-42] (try (catch :default)) inside a cljs go block raises an exception
     0.00   0 Open         [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
     0.00   0 Open         [ASYNC-48] Recur fails within catch
     0.00   0 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
@@ -170,6 +167,7 @@ Project CRRBV tickets
 Defect
 
     0.00   0 Open         [CRRBV-4] Seq has broken support for reducers
+    0.00   0 Open         [CRRBV-5] Error when converting primitive value RRBT Vector to transient
 
 ========================================
 Enhancement
@@ -208,6 +206,8 @@ Defect
     0.00   0 Open         [CTYP-106] Else branch does not tighten scope to non-sequential
     0.00   0 Open         [CTYP-108] core.typed runs forever
     0.00   0 Open         [CTYP-114] Should blame correct line number if alias introduces a type error
+    0.00   0 Open         [CTYP-116] Apply doesn't work with dotted arguments
+    0.00   0 Open         [CTYP-117] Getting deprecated warning with fn>
 
 ========================================
 Enhancement
@@ -231,6 +231,7 @@ Enhancement
     0.00   0 Open         [CTYP-111] Clearer error message for misusing special type
     0.00   0 Open         [CTYP-112] Better error for type mismatch with loop/recur
     0.00   0 Open         [CTYP-113] Better documentation for override-method
+    0.00   0 Open         [CTYP-119] Record/datatypes should update like HMaps via occurrence typing
 
 ========================================
 Task
@@ -532,18 +533,21 @@ Enhancement
 
 Project TCHECK tickets
 ========================================
+Defect
+
+    0.00   0 Open         [TCHECK-11] clojure.test.check.generators/rand-range includes upper bound
+
+========================================
 Enhancement
 
-    0.50   1 Open         [TCHECK-2] pos-int is confusingly named
-             Chas Emerick (1/2)
-    0.50   1 Open         [TCHECK-8] Bound tests and shrinks in time
-             Chas Emerick (1/2)
     0.00   0 Open         [TCHECK-1] Namespace reorganization
+    0.00   0 Open         [TCHECK-2] pos-int is confusingly named
     0.00   0 Open         [TCHECK-3] Add ability to customize test output when a test fails
     0.00   0 Open         [TCHECK-4] Handle sigint
     0.00   0 Open         [TCHECK-5] Include a float generator
     0.00   0 Open         [TCHECK-6] Rose-filter may assume too much
     0.00   0 Open         [TCHECK-7] Add nested property support
+    0.00   0 Open         [TCHECK-8] Bound tests and shrinks in time
     0.00   0 Open         [TCHECK-9] Properly document how :max-size works 
     0.00   0 Open         [TCHECK-10] defspec makes it impossible to specify :max-size (and seed)
 
