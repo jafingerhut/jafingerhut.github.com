@@ -1,5 +1,5 @@
 Tickets needing work for CLJ project
-Date: March 9, 2014
+Date: March 20, 2014
 
 If you are a Clojure contributor, the tickets below could use some
 work.  Some are easy, some are not.  If you've never added a patch
@@ -58,6 +58,7 @@ T   6 [CLJ-440] java method calls cannot omit varargs
 V   3 [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
 V   3 [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
 T   3 [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
+T   3 [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
 V   2 [CLJ-415] smarter assert (prints locals)
       The patch applies cleanly and passes tests, but gives a warning
       because macro local-bindings is same name (and perhaps the same
@@ -66,7 +67,6 @@ V   2 [CLJ-415] smarter assert (prints locals)
       clojure.test.generative were moved to clojure.core,
       test.generative could use that one.
 T   2 [CLJ-1026] Mixed end-of-line endings in the source code
-T   2 [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
 T   2 [CLJ-1169] Add filename and line number to defn parameter declaration error
 V   1 [CLJ-274] cannot close over mutable fields (in deftype)
 V   1 [CLJ-738] <= is incorrect when args include Double/NaN
@@ -96,6 +96,7 @@ V   0 [CLJ-1039] Using 'def with metadata {:type :anything} throws ClassCastExce
 T   0 [CLJ-1316] for doesn't support :let binding as its first seq-expr
 T   0 [CLJ-1329] Unused local variable in PersistentVector.cons()
 V   0 [CLJ-1349] update to latest test.generative and prep for test.check
+T   0 [CLJ-1386] Add transient? predicate
 
 ----------------------------------------------------------------------
 Tickets not fitting in previous categories, but they have a git format

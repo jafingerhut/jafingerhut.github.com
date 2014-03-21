@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: March 9, 2014
+Date: March 20, 2014
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -120,7 +120,8 @@ T  CLJ-1330 Triaged      0001-Fix-CLJ-1330-make-top-level-named-functions-classn
    CLJ-1358 Open         CLJ-1358.patch
 T  CLJ-1361 Triaged      simple-ns-pprint-fix.patch
 T  CLJ-1362 Triaged      clj-1362-v1.patch
-   CLJ-1372 Open         clj-1372.diff
+   CLJ-1379 Open         fix-quoting-in-pass-case.diff
+T  CLJ-1388 Triaged      0001-FIX-CLJ-1388.patch
 
       Language enhancement, reducers:
 
@@ -183,6 +184,9 @@ T  CLJ-1315 Triaged      0001-Don-t-initialize-classes-during-import.patch
    CLJ-1324 Open         clj-1324-1.patch
    CLJ-1340 Open         primitive-cohercion.diff
    CLJ-1366 Open         0002-make-the-reader-return-the-same-empty-map-when-it-re.patch
+   CLJ-1375 Open         clj-1375-v1.patch
+T  CLJ-1378 Triaged      clj-1378-v2.diff
+   CLJ-1383 Open         clj-1383.diff
 
       Performance enhancement:
 
@@ -197,7 +201,8 @@ T  CLJ-1259 Triaged      clj-1259-1.txt
 T  CLJ-1277 Triaged      clj-1277-1.txt
 T  CLJ-1289 Triaged      CLJ-1289-p1.patch
 T  CLJ-1295 Triaged      clj-1295-1.diff
-   CLJ-1373 Open         clj-1373.diff
+T  CLJ-1373 Triaged      clj-1373.diff
+T  CLJ-1384 Triaged      CLJ-1384-p1.patch
 
       Code cleanup:
 
@@ -211,14 +216,14 @@ T  CLJ-1351 Triaged      0001-remove-unused-swapThunk-method-generation.patch
 Prescreened patches that are marked with Fix Version/s =
 "Release 1.6", but not screened
 ----------------------------------------------------------------------
-<none>
+      Clojure language/library bug fixes:
+
+V  CLJ-1387 Screenable   clj-1387-v2.diff
 
 ----------------------------------------------------------------------
 Prescreened, and screened or accepted
 ----------------------------------------------------------------------
-      Performance enhancement:
-
-S  CLJ-1365 Screened     clj-1365-v2.patch
+<none>
 
 ----------------------------------------------------------------------
 (Note 1) Warnings/errors explicitly allowed in output of 'ant' command
@@ -255,8 +260,8 @@ was used with the latest Clojure master as of the date of this report.
   with all of the OS/JDK combos listed below:
     Mac OS X 10.6.8 + Oracle/Apple JDK 1.6.0_65 64-bit
     Ubuntu 12.04.3 64-bit + OpenJDK 1.6.0_27 64-bit
-    Ubuntu 12.04.3 64-bit + Oracle JDK 1.7.0_45 64-bit
-    Ubuntu 12.04.3 64-bit + Oracle JDK 1.8.0-ea-b116 64-bit
+    Ubuntu 12.04.3 64-bit + Oracle JDK 1.7.0_51 64-bit
+    Ubuntu 12.04.3 64-bit + Oracle JDK 1.8.0 64-bit
 * After applying the patch, the command "./antsetup.sh ; ant" compiles
   and passes all tests without warnings or errors (see Note 1 near the
   end for a short list of allowed warnings).
