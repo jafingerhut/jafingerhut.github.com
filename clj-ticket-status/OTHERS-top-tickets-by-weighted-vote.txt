@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: March 25, 2014
+Date: March 30, 2014
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -63,6 +63,7 @@ Defect
     0.00   0 Open         [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
     0.00   0 Open         [ASYNC-59] Channel returned by cljs.core.async/map> is missing protocol method Channel.closed?
     0.00   0 Open         [ASYNC-60] close! should deblock putting operations like >!!
+    0.00   0 Open         [ASYNC-62] recur across try possible, leaks ExceptionFrames
 
 ========================================
 Enhancement
@@ -170,12 +171,6 @@ Enhancement
 
 Project CRRBV tickets
 ========================================
-Defect
-
-    0.00   0 Open         [CRRBV-4] Seq has broken support for reducers
-    0.00   0 Open         [CRRBV-5] Error when converting primitive value RRBT Vector to transient
-
-========================================
 Enhancement
 
     0.00   0 Open         [CRRBV-2] Efficient reverse resulting in reversed rrb-vector
@@ -216,6 +211,7 @@ Defect
     0.00   0 Open         [CTYP-116] Apply doesn't work with dotted arguments
     0.00   0 Open         [CTYP-117] Getting deprecated warning with fn>
     0.00   0 Open         [CTYP-123] Using clojure.core.typed.async requires calling typed-deps
+    0.00   0 Open         [CTYP-129] select-keys on HMap returns Map with union key and value types
 
 ========================================
 Enhancement
@@ -247,6 +243,7 @@ Task
 
     0.00   0 Bad: Unkn Fi [CTYP-15] Eliminate the need to specify all ancestors in alter-class.
     0.00   0 Bad: Unkn Fi [CTYP-16] Parameterise IFn instead of special function type.
+    0.00   0 Open         [CTYP-128] Trim down the AOT jar
 
 
 Project DAVL tickets
@@ -360,6 +357,7 @@ Enhancement
     0.00   0 Open         [JDBC-48] Support stored procedures with CallableStatement
     0.00   0 Open         [JDBC-64] Support multiple result sets?
     0.00   0 Open         [JDBC-92] Provide more intuitive db-spec format
+    0.00   0 Open         [JDBC-93] Add support for read-only transactions
 
 ========================================
 Task
@@ -428,6 +426,11 @@ Enhancement
     0.00   0 Open         [LOGIC-138] Allow tying multiple noms in one binder
     0.00   0 Open         [LOGIC-144] Extending cljs.core.logic with all of the functionality from clojure.core.logic 
     0.00   0 Open         [LOGIC-146] run macro should take * in addition to n
+
+========================================
+Task
+
+    0.00   0 Open         [LOGIC-157] A warning is thrown regarding the redefinition of record? in clojure 1.6.0
 
 
 Project MATCH tickets
@@ -509,6 +512,7 @@ Project TANAL tickets
 Defect
 
     0.00   0 Open         [TANAL-24] clojure.tools.analyzer.passes.jvm/validate throws an exception when :tag metadata cannot be resolved to a Class
+    0.00   0 Open         [TANAL-75] t.a(.jvm) form emitted from AST has ^{:tag Object} where original source had ^clojure.lang.IPersistentCollection
 
 ========================================
 Task
@@ -556,6 +560,7 @@ Enhancement
     0.00   0 Open         [TCHECK-7] Add nested property support
     0.00   0 Open         [TCHECK-9] Properly document how :max-size works 
     0.00   0 Open         [TCHECK-10] defspec makes it impossible to specify :max-size (and seed)
+    0.00   0 Open         [TCHECK-14] re-organize README and doc/
 
 
 Project TCLI tickets
