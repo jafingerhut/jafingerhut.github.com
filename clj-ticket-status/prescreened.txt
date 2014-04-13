@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: April 4, 2014
+Date: April 11, 2014
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -36,7 +36,6 @@ These are suggested changes to clojure.org web pages, not patches to
 Clojure.
 
    <suggested in email> Remove now-obsolete http://clojure.org/streams and any links to it (RH said in 2009 that streams lost to chunked sequences)
-   Copyright year range on many clojure.org pages (I think from a template somewhere) is 2008-2012.  Should be updated.
 
 ----------------------------------------------------------------------
 Enhancement ideas for which it might be time to create a ticket
@@ -55,6 +54,7 @@ T  CLJ-1117 Triaged      clj-1117.patch
    CLJ-1240 Open         0001-CLJ-1240-Note-limits-of-clojure.walk-macroexpand-all.patch
    CLJ-1337 Open         0001-Update-defprotocol-s-docstring-to-remove-an-out-of-d.patch
 T  CLJ-1357 Triaged      CLJ-1357-its-typo.patch
+   CLJ-1385 Open         CLJ-1385-reword-docstrings-on-transient-update-funct.patch
 
       Better error reporting:
 
@@ -125,7 +125,7 @@ T  CLJ-1361 Triaged      simple-ns-pprint-fix.patch
 T  CLJ-1362 Triaged      clj-1362-v1.patch
    CLJ-1379 Open         fix-quoting-in-pass-case.diff
 T  CLJ-1388 Triaged      0001-FIX-CLJ-1388.patch
-   CLJ-1390 Open         0001-CLJ-1390.patch
+   CLJ-1390 Open         CLJ-1390-pprint-GregorianCalendar.patch
    CLJ-1399 Open         clj-1399.diff
 
       Language enhancement, reducers:
@@ -195,6 +195,12 @@ T  CLJ-1378 Triaged      clj-1378-v2.diff
    CLJ-1383 Open         clj-1383.diff
 T  CLJ-1386 Triaged      0002-Add-transient-predicate.patch
    CLJ-1394 Open         pr-str-dispatch-value-safe.diff
+   CLJ-1398 Open         0001-update-apache-commons-javadoc-location.patch
+      There are 3 separate patches, and it appears the author is
+      suggesting all 3 should be applied.  The other two are:
+
+        0002-add-javadoc-lookup-for-guava-and-apache-commons-lang.patch
+        0003-add-javadoc-lookup-for-jdk8.patch
 
       Performance enhancement:
 
@@ -264,10 +270,10 @@ was used with the latest Clojure master as of the date of this report.
 * All authors listed in the patch have signed a CA.
 * Patch applies cleanly to latest master as of the date of the report
   with all of the OS/JDK combos listed below:
-    Mac OS X 10.6.8 + Oracle/Apple JDK 1.6.0_65 64-bit
-    Ubuntu 12.04.3 64-bit + OpenJDK 1.6.0_27 64-bit
-    Ubuntu 12.04.3 64-bit + Oracle JDK 1.7.0_51 64-bit
-    Ubuntu 12.04.3 64-bit + Oracle JDK 1.8.0 64-bit
+    Mac OS X 10.8.5 + Oracle/Apple JDK 1.7.0_51 64-bit
+    Ubuntu 12.04.4 64-bit + OpenJDK 1.6.0_30 64-bit
+    Ubuntu 12.04.4 64-bit + Oracle JDK 1.7.0_51 64-bit
+    Ubuntu 12.04.4 64-bit + Oracle JDK 1.8.0 64-bit
 * After applying the patch, the command "./antsetup.sh ; ant" compiles
   and passes all tests without warnings or errors (see Note 1 near the
   end for a short list of allowed warnings).
