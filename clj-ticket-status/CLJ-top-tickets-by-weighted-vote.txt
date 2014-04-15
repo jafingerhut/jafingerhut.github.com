@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: April 11, 2014
+Date: April 14, 2014
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -56,6 +56,10 @@ Defect
              David Nolen (1/5)
              Ambrose Bonnaire-Sergeant (1/10)
              Gary Trakhman (1/11)
+    2.20   3 Triaged      [CLJ-1185] `reductions should respect `reduced
+             David Welte (1)
+             Satshabad Khalsa (1)
+             Reid McKenzie (1/5)
     2.00   3 Triaged      [CLJ-1274] Unable to set compiler options via system properties except for AOT compilation
              Ron Pressler (1)
              Colin Fleming (1/2)
@@ -125,6 +129,8 @@ Defect
              César Bolaños (1/4)
     0.25   1 Open         [CLJ-1399] missing field munging when recreating deftypes serialized in to byte code
              Chas Emerick (1/4)
+    0.25   1 Open         [CLJ-1403] ns-resolve might throw ClassNotFoundException but should return nil
+             Mike Rodriguez (1/4)
     0.20   1 Open         [CLJ-1232] Functions with non-qualified return type hints force import of hinted classes when called from other namespace
              Max Penet (1/5)
     0.18   2 Open         [CLJ-130] Namespace metadata lost in AOT compile
@@ -141,6 +147,7 @@ Defect
     0.00   0 Backlog      [CLJ-346] (pprint-newline :fill) is not handled correctly
     0.00   0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
     0.00   0 Triaged      [CLJ-887] Error when calling primitive functions with destructuring in the arg vector
+    0.00   0 Triaged      [CLJ-1134] star-directive in clojure.pprint/cl-format with an at-prefix ("~n@*") do not obey its specifications
     0.00   0 Triaged      [CLJ-1192] vec function is substantially slower than into function
     0.00   0 Triaged      [CLJ-1225] quot overflow issues around Long/MIN_VALUE for BigInt
     0.00   0 Triaged      [CLJ-1253] Incorrect long division involving Long/MIN_VALUE
@@ -183,7 +190,7 @@ Enhancement
              Phil Hagelberg (1/3)
              Patrick Houk (1/6)
              Gary Trakhman (1/11)
-    4.94  10 Triaged      [CLJ-1297] try to catch using - instead of _ in filenames so the compiler can give a better error message for people who don't know that you need to use _ in file names
+    4.89  10 Triaged      [CLJ-1297] try to catch using - instead of _ in filenames so the compiler can give a better error message for people who don't know that you need to use _ in file names
              Alexander Redington (1)
              Obadz (1)
              scott tudd (1)
@@ -191,8 +198,8 @@ Enhancement
              Marc Limotte (1/3)
              Phil Hagelberg (1/3)
              Gary Fredericks (1/4)
-             Reid McKenzie (1/4)
              Alex Miller (1/5)
+             Reid McKenzie (1/5)
              Nicola Mometto (1/13)
     4.75   6 Triaged      [CLJ-440] java method calls cannot omit varargs
              Greg Chapman (1)
@@ -224,11 +231,11 @@ Enhancement
              Colin Jones (1/5)
              Michael van Acken (1/5)
              Ambrose Bonnaire-Sergeant (1/10)
-    2.35   5 Triaged      [CLJ-373] update-in with empty key paths
+    2.30   5 Triaged      [CLJ-373] update-in with empty key paths
              John Chijioke (1)
              Gunnar Völkel (1/2)
              Tim McCormack (1/2)
-             Reid McKenzie (1/4)
+             Reid McKenzie (1/5)
              Ambrose Bonnaire-Sergeant (1/10)
     2.26   4 Open         [CLJ-304] clojure.repl/source does not work with deftype
              Alex Walker (1)
@@ -256,21 +263,21 @@ Enhancement
              Kevin Krouse (1)
              Paudi Moriarty (1/2)
              Dmitri Naumov (1/6)
-    1.59   7 Triaged      [CLJ-1224] Records do not cache hash like normal maps
-             Mike Rodriguez (1/3)
+    1.51   7 Triaged      [CLJ-1224] Records do not cache hash like normal maps
              Steve Miner (1/3)
              Yongqian Li (1/3)
+             Mike Rodriguez (1/4)
              David Nolen (1/5)
              Michael van Acken (1/5)
              Ambrose Bonnaire-Sergeant (1/10)
              Gary Trakhman (1/11)
-    1.53   3 Open         [CLJ-1239] faster, more flexible dispatch for clojure.walk
-             Ryan Neufeld (1)
-             Mike Rodriguez (1/3)
-             Alex Miller (1/5)
     1.50   2 Backlog      [CLJ-415] smarter assert (prints locals)
              Kevin Sookocheff (1)
              Jeff Weiss (1/2)
+    1.45   3 Open         [CLJ-1239] faster, more flexible dispatch for clojure.walk
+             Ryan Neufeld (1)
+             Mike Rodriguez (1/4)
+             Alex Miller (1/5)
     1.43   3 Open         [CLJ-891] make (symbol foo "bar") work with foo being a namespace
              Kevin Downey (1)
              Steve Miner (1/3)
@@ -289,10 +296,10 @@ Enhancement
     1.20   2 Triaged      [CLJ-735] Improve error message when a protocol method is not found
              Antonio Terreno (1)
              Colin Jones (1/5)
-    1.08   3 Open         [CLJ-1201] There should also be writing in clojure.edn
+    1.03   3 Open         [CLJ-1201] There should also be writing in clojure.edn
              Trevor Hartman (1/2)
              Marc Limotte (1/3)
-             Reid McKenzie (1/4)
+             Reid McKenzie (1/5)
     1.00   1 Open         [CLJ-2] Scopes
              Ivan Kozik (1)
     1.00   1 Open         [CLJ-1223] Improve App Engine Support by Providing an Option to Use the App Engine ThreadManger
@@ -319,10 +326,10 @@ Enhancement
              Michael Klishin (1/2)
              Dmitri Naumov (1/6)
              Mike Anderson (1/7)
-    0.75   3 Triaged      [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
+    0.70   3 Triaged      [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
              César Bolaños (1/4)
              Gary Fredericks (1/4)
-             Reid McKenzie (1/4)
+             Reid McKenzie (1/5)
     0.67   2 Open         [CLJ-1367] Allow case statement to compare java constants
              Benjamin Peter (1/2)
              Patrick Houk (1/6)
@@ -353,9 +360,6 @@ Enhancement
     0.48   2 Open         [CLJ-428] subseq, rsubseq enhancements to support priority maps?
              Mark Engelberg (1/3)
              Andy Fingerhut (1/7)
-    0.42   2 Open         [CLJ-978] bean unable to handle non-public classes
-             Mike Rodriguez (1/3)
-             Gary Trakhman (1/11)
     0.35   2 Open         [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
              Gary Fredericks (1/4)
              Ambrose Bonnaire-Sergeant (1/10)
@@ -365,6 +369,9 @@ Enhancement
     0.34   2 Triaged      [CLJ-1169] Add filename and line number to defn parameter declaration error
              Alex Miller (1/5)
              Andy Fingerhut (1/7)
+    0.34   2 Open         [CLJ-978] bean unable to handle non-public classes
+             Mike Rodriguez (1/4)
+             Gary Trakhman (1/11)
     0.33   1 Open         [CLJ-200] Extend cond to support inline let, much like for
              Mark Engelberg (1/3)
     0.33   1 Triaged      [CLJ-1073] Make print-sequential interruptible
