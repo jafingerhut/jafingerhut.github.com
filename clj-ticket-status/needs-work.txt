@@ -1,5 +1,5 @@
 Tickets needing work for CLJ project
-Date: April 11, 2014
+Date: April 18, 2014
 
 If you are a Clojure contributor, the tickets below could use some
 work.  Some are easy, some are not.  If you've never added a patch
@@ -45,8 +45,15 @@ ticket is marked Incomplete (I).
 Tickets marked for Clojure Release 1.7 that have no prescreened
 patches (see also Note 3 at the bottom):
 ----------------------------------------------------------------------
-
-<none>
+V   3 [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
+V   1 [CLJ-738] <= is incorrect when args include Double/NaN
+V   1 [CLJ-787] transient blows up when passed a vector created by subvec
+V   1 [CLJ-823] Piping seque into seque can deadlock
+V   1 [CLJ-1100] Reader literals cannot contain periods
+V   1 [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
+V   1 [CLJ-1325] Add *warn-on-boxed-math* warning
+V   0 [CLJ-701] Compiler loses 'loop's return type in some cases
+V   0 [CLJ-1192] vec function is substantially slower than into function
 
 ----------------------------------------------------------------------
 Tickets needing work that have no prescreened patches.  These are all
@@ -58,7 +65,6 @@ T   6 [CLJ-440] java method calls cannot omit varargs
 V   3 [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
 V   3 [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
 T   3 [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
-T   3 [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
 V   2 [CLJ-415] smarter assert (prints locals)
       The patch applies cleanly and passes tests, but gives a warning
       because macro local-bindings is same name (and perhaps the same
@@ -69,13 +75,7 @@ V   2 [CLJ-415] smarter assert (prints locals)
 T   2 [CLJ-1026] Mixed end-of-line endings in the source code
 T   2 [CLJ-1169] Add filename and line number to defn parameter declaration error
 V   1 [CLJ-274] cannot close over mutable fields (in deftype)
-V   1 [CLJ-738] <= is incorrect when args include Double/NaN
-V   1 [CLJ-787] transient blows up when passed a vector created by subvec
-V   1 [CLJ-823] Piping seque into seque can deadlock
-V   1 [CLJ-1100] Reader literals cannot contain periods
 T   1 [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
-T   1 [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
-T   1 [CLJ-1325] Add *warn-on-boxed-math* warning
 V   0 [CLJ-5] Unintuitive error response in clojure 1.0
       One of two patches applied and built cleanly on May 4, 2012, but
       not on May 10, 2012.  The second, clj-5-destructure-error.diff,
@@ -89,12 +89,9 @@ V   0 [CLJ-291] (take-nth 0 coll) redux...
 V   0 [CLJ-326] add :as-of option to refer
 V   0 [CLJ-346] (pprint-newline :fill) is not handled correctly
 V   0 [CLJ-348] reify allows use of qualified name as method parameter
-V   0 [CLJ-701] Compiler loses 'loop's return type in some cases
 V   0 [CLJ-731] Create macro to variadically unroll a combinator function definition
 V   0 [CLJ-771] Move unchecked-prim casts to clojure.unchecked
 V   0 [CLJ-992] `iterate` reducer
-V   0 [CLJ-1039] Using 'def with metadata {:type :anything} throws ClassCastException during printing
-T   0 [CLJ-1192] vec function is substantially slower than into function
 T   0 [CLJ-1316] for doesn't support :let binding as its first seq-expr
 T   0 [CLJ-1329] Unused local variable in PersistentVector.cons()
 V   0 [CLJ-1349] update to latest test.generative and prep for test.check

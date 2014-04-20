@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: April 11, 2014
+Date: April 18, 2014
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -68,11 +68,11 @@ V  CLJ-1130 Vetted       clj-1130-v5.diff
    CLJ-1189 Open         CLJ-1189-p1.patch
    CLJ-1210 Open         extend-io-factory-to-nil.diff
    CLJ-1257 Open         clj-1257-2.diff
-V  CLJ-1261 Vetted       clj-1261-2.diff
 T  CLJ-1282 Triaged      CLJ-1282-p2.patch
 T  CLJ-1297 Triaged      better-error-messages-for-require.diff
    CLJ-1319 Open         0001-CLJ-1319-Throw-on-odd-arguments-to-PersistentArrayMa.patch
    CLJ-1341 Open         keyword-1341-2014-02-12.2.patch
+   CLJ-1406 Open         0001-modify-clojure.core-load-lib-so-that-it-removes-the-.patch
 
       Debug/tooling enhancement:
 
@@ -86,45 +86,34 @@ T  CLJ-1073 Triaged      clj-1073-add-print-interruptibly-patch-v2.txt
    CLJ-1112 Open         0001-Allow-setting-loading-verbosely-by-system-property.patch
 T  CLJ-1191 Triaged      clj-1191-patch-v1.txt
 T  CLJ-1209 Triaged      0002-CLJ-1209-show-ex-data-in-clojure-test.patch
-T  CLJ-1274 Triaged      CLJ-1274.patch
    CLJ-1278 Open         CLJ-1278-2.patch
 
       Clojure language/library bug fixes:
 
    CLJ-457  Open         clj-457-3.diff
 T  CLJ-825  Triaged      clj-825-1.patch
-T  CLJ-887  Triaged      0001-don-t-remove-meta-from-arg-vector-in-maybe-destructu.patch
-   CLJ-971  Open         clj-971-2.patch
    CLJ-1029 Open         ns-patch.diff
    CLJ-1059 Open         001-clj-1059-make-persistentqueue-implement-list.diff
       or 002-clj-1059-asequential-rebased-to-cached-hasheq.diff
    CLJ-1074 Open         clj-1074-read-infinity-and-nan-patch-v2-plus-edn-reader.patch
    CLJ-1077 Open         thread-bound.diff
    CLJ-1079 Open         CLJ-1079.diff
-V  CLJ-1093 Vetted       0001-CLJ-1093-fix-empty-records-literal-v2.patch
-   CLJ-1134 Open         clj-1134-star-directive-in-cl-format.txt
+T  CLJ-1134 Triaged      clj-1134-star-directive-in-cl-format.txt
    CLJ-1137 Open         CLJ-1137-eval-metadata-once.diff
-V  CLJ-1157 Vetted       20140121_fix_classloader.diff
    CLJ-1180 Open         001-CLJ-1180.patch
-V  CLJ-1187 Vetted       001-CLJ-1187.patch
    CLJ-1216 Open         0001-Create-a-DoExpr.Parser-class-that-delegates-to-BodyE.patch
    CLJ-1217 Open         0001-Don-t-realize-seq-exprs-in-for-unless-necessary.patch
 T  CLJ-1225 Triaged      clj-1225-2.txt
    CLJ-1226 Open         0001-fix-CLJ-1226.patch
    CLJ-1229 Open         clj-1229-count-overflow-patch-v1.txt
    CLJ-1237 Open         CLJ-1237c.patch
-T  CLJ-1241 Triaged      0001-fix-CLJ-1241.patch
-T  CLJ-1250 Triaged      CLJ-1250-AllInvokeSites-20140320.patch
 T  CLJ-1253 Triaged      clj-1253-1.txt
 T  CLJ-1254 Triaged      clj-1254-2.diff
    CLJ-1275 Open         0001-Don-t-use-shorthand-for-typehints-when-print-dup.patch
    CLJ-1317 Open         0001-CLJ-1317-fix-seq-zip-to-avoid-spurious-nils.patch
-T  CLJ-1330 Triaged      0001-Fix-CLJ-1330-make-top-level-named-functions-classnam.patch
    CLJ-1358 Open         CLJ-1358.patch
 T  CLJ-1361 Triaged      simple-ns-pprint-fix.patch
-T  CLJ-1362 Triaged      clj-1362-v1.patch
    CLJ-1379 Open         fix-quoting-in-pass-case.diff
-T  CLJ-1388 Triaged      0001-FIX-CLJ-1388.patch
    CLJ-1390 Open         CLJ-1390-pprint-GregorianCalendar.patch
    CLJ-1399 Open         clj-1399.diff
 
@@ -138,13 +127,12 @@ T  CLJ-1388 Triaged      0001-FIX-CLJ-1388.patch
       CLJ-1046.
    CLJ-1047 Open         001-simplify-fj-importing.patch
    CLJ-1113 Open         reductions-reducer.diff
-   CLJ-1185 Open         CLJ-1181-v001.patch
+T  CLJ-1185 Triaged      CLJ-1181-v001.patch
 
       Allow more correct-looking Clojure code to work:
 
 T  CLJ-373  Triaged      CLJ-373-nested-ops.patch
    CLJ-666  Open         0001-Add-Big-support-to-Reflector-Updated.patch
-V  CLJ-700  Vetted       clj-700-7.diff
    CLJ-1020 Open         clj-1020-inspect-table-skip-nil-rows-patch2.txt
    CLJ-1044 Open         001-enable-factory-ctor-inside-deftype.diff
    CLJ-1060 Open         list-star-fix.diff
@@ -230,7 +218,31 @@ T  CLJ-1351 Triaged      0001-remove-unused-swapThunk-method-generation.patch
 Prescreened patches that are marked with Fix Version/s =
 "Release 1.7", but not screened
 ----------------------------------------------------------------------
-<none>
+      Better error reporting:
+
+V  CLJ-1261 Screenable   clj-1261-2.diff
+
+      Debug/tooling enhancement:
+
+V  CLJ-1274 Screenable   CLJ-1274.patch
+
+      Clojure language/library bug fixes:
+
+V  CLJ-887  Screenable   0001-don-t-remove-meta-from-arg-vector-in-maybe-destructu.patch
+V  CLJ-971  Screenable   clj-971-2.patch
+V  CLJ-1039 Screenable   CLJ-1039-tolerate-misleading-type-metadata-on-var-wh.patch
+V  CLJ-1093 Screenable   0001-CLJ-1093-fix-empty-records-literal-v2.patch
+V  CLJ-1157 Screenable   20140121_fix_classloader.diff
+V  CLJ-1187 Screenable   001-CLJ-1187.patch
+V  CLJ-1241 Screenable   0001-fix-CLJ-1241.patch
+V  CLJ-1250 Screenable   CLJ-1250-AllInvokeSites-20140320.patch
+V  CLJ-1330 Screenable   0001-Fix-CLJ-1330-make-top-level-named-functions-classnam.patch
+V  CLJ-1362 Screenable   clj-1362-v1.patch
+V  CLJ-1388 Screenable   0001-FIX-CLJ-1388.patch
+
+      Allow more correct-looking Clojure code to work:
+
+V  CLJ-700  Screenable   clj-700-7.diff
 
 ----------------------------------------------------------------------
 Prescreened, and screened or accepted
