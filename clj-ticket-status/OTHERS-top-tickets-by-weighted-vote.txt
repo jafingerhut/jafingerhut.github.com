@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: April 18, 2014
+Date: April 21, 2014
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -35,6 +35,11 @@ Defect
 
     0.00   0 Open         [ALGOG-4] No method in multimethod 'fmap' for dispatch value: class clojure.lang.PersistentVector$ChunkedSeq
 
+========================================
+Enhancement
+
+    0.00   0 Open         [ALGOG-5] Addition of generic modulus
+
 
 Project ALGOM tickets
 
@@ -54,14 +59,12 @@ Defect
     0.00   0 Open         [ASYNC-25] Dependency on clojurescript is introduced into clojure only projects
     0.00   0 Open         [ASYNC-28] try/catch inside go block may cause a reflection warning - 0.1.222.0-83d0c2-alpha
     0.00   0 Open         [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
-    0.00   0 Open         [ASYNC-35] Using onto-chan with nonending sequence causes non-gc-able, infinitely-looping go block
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
     0.00   0 Open         [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
     0.00   0 Open         [ASYNC-48] Recur fails within catch
     0.00   0 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
     0.00   0 Open         [ASYNC-50] Add bang(!) to the names of channel ops with side effects
     0.00   0 Open         [ASYNC-51] Core.async memory leak in Safari and Mobile Safari
-    0.00   0 Open         [ASYNC-52] Go block run by multiple threads at the same time for a single chan instance
     0.00   0 Open         [ASYNC-53] Definition of UnblockingBuffer Protocol makes core.async incompatible with clojure 1.4
     0.00   0 Open         [ASYNC-54] MAX-QUEUE-SIZE has a wrong type-hint
     0.00   0 Open         [ASYNC-57] reify in go macro compile error
@@ -496,24 +499,20 @@ Defect
 
     1.00   1 Open         [NREPL-46] nREPL crashes when required more than one time with :reload-all
              Laurent Petit (1)
-    0.00   0 Bad: Unkn Fi [NREPL-36] Too many DynamicClassLoaders created
     0.00   0 Bad: Unkn Fi [NREPL-40] Thread leak in clojure.tools.nrepl.transport$fn_transport?
-    0.00   0 Bad: Unkn Fi [NREPL-47] Two deftests with same name cause reduced test coverage
-    0.00   0 Bad: Unkn Fi [NREPL-51] Pretty-printing reference returned by clojure.tools.nrepl.server/start-server causes multimethod exception
     0.00   0 Open         [NREPL-3] Adopt default port
     0.00   0 Open         [NREPL-24] :session key is overloaded
     0.00   0 Open         [NREPL-28] Clarify semantics for String encoding
     0.00   0 Open         [NREPL-33] Consider making session and eval functionality more accessible
+    0.00   0 Open         [NREPL-36] Too many DynamicClassLoaders created
     0.00   0 Open         [NREPL-48] *1/*2/*3/*e nil in cloned session
 
 ========================================
 Enhancement
 
-    1.00   1 Bad: Unkn Fi [NREPL-50] Configurable eval function
-             Reid McKenzie (1)
-    0.00   0 Bad: Unkn Fi [NREPL-29] Provide a mechanism for overriding an operation
     0.00   0 Open         [NREPL-4] Provide sane multiplexing of output in the face of multithreaded, asynchronous operation
     0.00   0 Open         [NREPL-15] Allow clients to specify an ID for newly-retained sessions
+    0.00   0 Open         [NREPL-29] Provide a mechanism for overriding an operation
     0.00   0 Open         [NREPL-43] Document the availability/usage of *e, *1, *2, ... in nREPL
     0.00   0 Open         [NREPL-44] Expose JMX MBean to provide list of available nREPL endpoints
 
@@ -553,6 +552,7 @@ Project TCHECK tickets
 Defect
 
     0.00   0 Open         [TCHECK-17] shrinking/test running treat ctrl-c (InterruptedException) as 
+    0.00   0 Open         [TCHECK-26] defspec does not respect (is (thrown? ...))
 
 ========================================
 Enhancement
