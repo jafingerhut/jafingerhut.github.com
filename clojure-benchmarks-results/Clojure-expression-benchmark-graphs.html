@@ -102,7 +102,7 @@
 <hr>
 <p>
 <a id="bench-1">
-<img src="cljexprs-graphs/1.png"></a></p><p>(identity x) notes: It is a good bet that most of this measured time is the per-loop overhead in criterium of updating two primitive long loop locals, and saving the return value in a Java array.&nbsp; This same overhead is present in all of the benchmarks, but much less noticeable when the expression takes longer to evaluate.</p><hr><p>
+<img src="cljexprs-graphs/1.png"></a></p><p>(identity x) notes: It is a good bet that most of this measured time is the per-loop overhead in criterium of updating two primitive long loop locals, and saving the return value in a Java array, although the version of criterium used may actually try to estimate and remove that overhead from the time values it reports.&nbsp; This same overhead is present in all of the benchmarks, but much less noticeable when the expression takes longer to evaluate.</p><hr><p>
 <a id="bench-2">
 <img src="cljexprs-graphs/2.png">
 </a></p><hr><p>
@@ -159,11 +159,11 @@
 <img src="cljexprs-graphs/19.png"></a></p><p>[coll (seq [1 2 3])] (first coll) notes: See under the graph of [coll (list 1 2 3)] (first coll) for notes on the spikes in the graph.<a id="bench-19">
 </a></p><hr><p>
 <a id="bench-20">
-<img src="cljexprs-graphs/20.png"></a></p><p>[coll (seq [1 2 3])] (rest coll) notes: See under the graph of [coll
-(list 1 2 3)] (first coll) for notes on the spikes in the graph.<a id="bench-20">
+<img src="cljexprs-graphs/20.png"></a></p><p><br><a id="bench-20">
 </a></p><hr><p>
 <a id="bench-21">
-<img src="cljexprs-graphs/21.png">
+<img src="cljexprs-graphs/21.png"></a></p><p>[coll (seq [1 2 3])] (next coll) notes: See under the graph of [coll
+(list 1 2 3)] (first coll) for notes on the spikes in the graph.<a id="bench-21">
 </a></p><hr><p>
 <a id="bench-22">
 <img src="cljexprs-graphs/22.png"></a></p><p>[] (reduce conj [] (range 40000)) notes: TBD why only the 64-bit Apple JDK 1.6 is significantly slower than the others.<br><a id="bench-22">
@@ -209,7 +209,7 @@
 </a></p><hr><p>
 <a id="bench-36">
 <img src="cljexprs-graphs/36.png"></a></p><p>[key :f0] (hash key) notes: TBD exactly which commit(s) between Clojure
-1.4-alpha1 and 1.4-alpha2 led to the worse performance afterwards.&nbsp; It obviously appears to have been undone, or improved in some other way, in 1.5-beta2.<a id="bench-36">
+1.4-alpha1 and 1.4-alpha2 led to the worse performance afterwards.&nbsp; It obviously appears to have been undone, or improved in some other way, in 1.5-beta2.</p><p>clj-1.6-beta1 is when a slower but higher quality hash function was introduced.&nbsp; The speedup in clj-1.6-rc2 may be due to caching the hash calculation for keywords (TBD).<br><a id="bench-36">
 </a></p><hr><p>
 <a id="bench-37">
 <img src="cljexprs-graphs/37.png">
@@ -221,7 +221,7 @@
 <img src="cljexprs-graphs/39.png"></a></p><p>[coll map1] (get coll :f0) notes: The previous graph's notes are relevant here, too.<br><a id="bench-39">
 </a></p><hr><p>
 <a id="bench-40">
-<img src="cljexprs-graphs/40.png">
+<img src="cljexprs-graphs/40.png"></a></p><p>This benchmark shows the biggest run time increase when the slower but higher-quality hashing was introduced in clj-1.6-beta1.&nbsp; While some of this extra time is due directly to the slower hash function calculations, most of it is due to the way the PersistentHashMap data structure is implemented, and the fact that the hash function changes cause the shape of the PersistentHashMap 'tree' to be significantly different after the hash change.&nbsp; If we had a different benchmark (TBD) that totaled the run time of assoc'ing several new key/value pairs into the original map, say perhaps 10, I would expect the run times to be much more similar to each other.</p><p>In particular, with clj-1.6-alpha3 and earlier, the PersistentHashMap has an ArrayNode as its root node type, with most of the key/value pairs directly inside of it.&nbsp; assoc on this with key :g0 returns another PersistentHashMap with only this root ArrayNode slightly different than the original.&nbsp; With clj-1.6-beta1 through clj-1.6, the PersistentHashMap has a BitmapIndexedNode as its root node type, and assoc on this data structure returns a PersistentHashMap with an ArrayNode in place of the BitmapIndexedNode, which requires significantly more computation time to initialize.<br><a id="bench-40">
 </a></p><hr><p>
 <a id="bench-41">
 <img src="cljexprs-graphs/41.png">
