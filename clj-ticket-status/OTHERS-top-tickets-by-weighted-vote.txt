@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: May 6, 2014
+Date: May 9, 2014
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -54,14 +54,11 @@ Defect
     1.00   1 Open         [ASYNC-42] (try (catch :default)) inside a cljs go block raises an exception
              Kevin Neaton (1)
     0.00   0 Open         [ASYNC-4] record literals become ordinary maps
-    0.00   0 Open         [ASYNC-8] Add constrained read/write-only ports
-    0.00   0 Open         [ASYNC-21] CLJS -> ioc-macros/fixup-aliasses throws exception
     0.00   0 Open         [ASYNC-25] Dependency on clojurescript is introduced into clojure only projects
     0.00   0 Open         [ASYNC-28] try/catch inside go block may cause a reflection warning - 0.1.222.0-83d0c2-alpha
     0.00   0 Open         [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
     0.00   0 Open         [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
-    0.00   0 Open         [ASYNC-48] Recur fails within catch
     0.00   0 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
     0.00   0 Open         [ASYNC-50] Add bang(!) to the names of channel ops with side effects
     0.00   0 Open         [ASYNC-51] Core.async memory leak in Safari and Mobile Safari
@@ -70,7 +67,6 @@ Defect
     0.00   0 Open         [ASYNC-57] reify in go macro compile error
     0.00   0 Open         [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
     0.00   0 Open         [ASYNC-59] Channel returned by cljs.core.async/map> is missing protocol method Channel.closed?
-    0.00   0 Open         [ASYNC-60] close! should deblock putting operations like >!!
     0.00   0 Open         [ASYNC-62] recur across try possible, leaks ExceptionFrames
     0.00   0 Open         [ASYNC-63] Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
     0.00   0 Open         [ASYNC-64] Race condition when closing mults
@@ -83,6 +79,11 @@ Enhancement
     0.00   0 Open         [ASYNC-46] Add optional default channel to 'pub'
     0.00   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
     0.00   0 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
+    0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
+    0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
+    0.00   0 Vetted       [ASYNC-67] Can we get a generic sink operation?
+    0.00   0 Vetted       [ASYNC-68] Improve error handling for map< and map>
+    0.00   0 Vetted       [ASYNC-69] How to better communicate "mix" lifecycle wrt coordination
 
 
 Project CCACHE tickets
@@ -232,6 +233,8 @@ Defect
     0.00   0 Open         [CTYP-135] pred does not create proper filters
     0.00   0 Open         [CTYP-136] annotation for last does not leverage non-empty collections
     0.00   0 Open         [CTYP-137] annotation for mapv does not leverage non-empty collections
+    0.00   0 Open         [CTYP-140] HSequential things should correctly erase dotted arguments
+    0.00   0 Open         [CTYP-141] Implement Difference type
 
 ========================================
 Enhancement
@@ -260,6 +263,8 @@ Enhancement
     0.00   0 Open         [CTYP-119] Record/datatypes should update like HMaps via occurrence typing
     0.00   0 Open         [CTYP-124] case should utilize negative information
     0.00   0 Open         [CTYP-131] Support (apply f (apply concat hmap))
+    0.00   0 Open         [CTYP-138] Support mutually recursive types
+    0.00   0 Open         [CTYP-139] Extend what can used as HMap key
 
 ========================================
 Task
@@ -533,7 +538,8 @@ Project TANAL tickets
 ========================================
 Defect
 
-    0.00   0 Open         [TANAL-24] clojure.tools.analyzer.passes.jvm/validate throws an exception when :tag metadata cannot be resolved to a Class
+    1.00   1 Open         [TANAL-24] clojure.tools.analyzer.passes.jvm/validate throws an exception when :tag metadata cannot be resolved to a Class
+             Sung Pae (1)
 
 ========================================
 Task
