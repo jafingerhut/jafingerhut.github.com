@@ -5,6 +5,7 @@
 
 
 
+
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Clojure expression benchmarks</title>
   <meta content="Andy Fingerhut" name="author"></head><body>
 [<a href="Clojure-benchmarks.html">benchmarks main page</a>] [<a href="Clojure-whole-program-benchmarks.html">whole program benchmarks</a>] [expression benchmarks] [<a href="Clojure-version-history.html">Clojure version history</a>] [<a href="Hardware-and-software-used-for-Clojure-benchmarks.html">hardware and software used</a>]<br>
@@ -90,8 +91,7 @@ that some JIT compilers are able to use profiling information about
 polymorphic method calls and if they are called on only one type during
 warmup, they can create optimized versions that work only for that type
 and would be much slower if called on a different type.&nbsp; See <a href="https://groups.google.com/forum/#%21msg/clojure-dev/0c-VNhEKVkI/Z7R1qKqsfN0J">here</a>
-a mention of this behavior from Rich Hickey.&nbsp; I don't know of any
-links that give measurements demonstrating this effect -- please <a href="mailto:andy.fingerhut@gmail.com">email me</a> if you know of any and I can add them here.<br>
+a mention of this behavior from Rich Hickey.&nbsp; The only article I have found about this topic is by Richard Warburton <a href="http://www.insightfullogic.com/blog/2014/may/12/fast-and-megamorphic-what-influences-method-invoca/">here</a>.&nbsp; If you know of any other articles that give measurements demonstrating this effect -- please <a href="mailto:andy.fingerhut@gmail.com">email me</a> and I can add them here.<br>
 <h3>What about earlier versions of Clojure?</h3>
 There are no JAR files for Clojure versions 1.3-alpha1 through
 1.3-alpha4 in the Maven repos that I could find, and I didn't bother to
