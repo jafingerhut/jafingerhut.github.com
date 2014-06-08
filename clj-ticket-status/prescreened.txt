@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: May 10, 2014
+Date: June 1, 2014
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -113,10 +113,12 @@ T  CLJ-1254 Triaged      clj-1254-2.diff
    CLJ-1317 Open         0001-CLJ-1317-fix-seq-zip-to-avoid-spurious-nils.patch
    CLJ-1358 Open         CLJ-1358.patch
 T  CLJ-1361 Triaged      simple-ns-pprint-fix.patch
+T  CLJ-1372 Triaged      0007-CLJ-1372-consistent-hasheq-for-java.util.-List-Map-M.patch
    CLJ-1379 Open         fix-quoting-in-pass-case.diff
    CLJ-1390 Open         CLJ-1390-pprint-GregorianCalendar.patch
    CLJ-1399 Open         clj-1399.diff
 T  CLJ-1408 Triaged      CLJ-1408.patch
+   CLJ-1423 Open         apply-var.patch
 
       Language enhancement, reducers:
 
@@ -191,6 +193,9 @@ T  CLJ-1386 Triaged      0002-Add-transient-predicate.patch
         0002-add-javadoc-lookup-for-guava-and-apache-commons-lang.patch
         0003-add-javadoc-lookup-for-jdk8.patch
    CLJ-1412 Open         0001-Add-2-arity-version-of-cycle-that-takes-the-number-o.patch
+   CLJ-1424 Open         clojure-feature-expressions.diff
+   CLJ-1425 Open         0001-Fix-map-unquote-splicing.patch
+T  CLJ-1429 Triaged      clj-1429.patch
 
       Performance enhancement:
 
@@ -198,7 +203,7 @@ T  CLJ-1386 Triaged      0002-Add-transient-predicate.patch
    CLJ-703  Open         improve-writeclassfile-perf.patch
 T  CLJ-1005 Triaged      0001-Use-transient-map-in-zipmap.2.patch
    CLJ-1087 Open         clj-1087-diff-perf-enhance-patch-v1.txt
-   CLJ-1096 Open         inline-get-keyword.diff
+T  CLJ-1096 Triaged      inline-get-keyword.diff
    CLJ-1128 Open         0002-Improve-merge-with.patch
 T  CLJ-1224 Triaged      0001-CLJ-1224-cache-hasheq-and-hashCode-for-records.patch
 T  CLJ-1259 Triaged      clj-1259-1.txt
@@ -208,6 +213,9 @@ T  CLJ-1295 Triaged      clj-1295-1.diff
 T  CLJ-1373 Triaged      clj-1373.diff
 T  CLJ-1384 Triaged      CLJ-1384-p1.patch
 T  CLJ-1410 Triaged      CLJ-1410.patch
+T  CLJ-1415 Triaged      faster-keywords.diff
+   CLJ-1416 Open         0001-CLJ-1416-transients-hash-caching-for-gvec-Object-met.patch
+V  CLJ-1420 Backlog      0001-rand-using-ThreadLocalRandom-and-tests-for-random.patch
 
       Code cleanup:
 
@@ -227,13 +235,8 @@ V  CLJ-1274 Screenable   CLJ-1274.patch
 
       Clojure language/library bug fixes:
 
-V  CLJ-887  Screenable   0001-don-t-remove-meta-from-arg-vector-in-maybe-destructu.patch
-V  CLJ-971  Screenable   clj-971-2.patch
-V  CLJ-1039 Screenable   CLJ-1039-tolerate-misleading-type-metadata-on-var-wh.patch
-V  CLJ-1100 Screenable   CLJ-1100-reader-tags-with-periods.patch
 V  CLJ-1157 Screenable   20140121_fix_classloader.diff
 V  CLJ-1187 Screenable   001-CLJ-1187.patch
-V  CLJ-1241 Screenable   0001-fix-CLJ-1241.patch
 V  CLJ-1250 Screenable   CLJ-1250-AllInvokeSites-20140320.patch
 V  CLJ-1330 Screenable   0001-Fix-CLJ-1330-make-top-level-named-functions-classnam.patch
 
@@ -244,10 +247,24 @@ V  CLJ-700  Screenable   clj-700-7.diff
 ----------------------------------------------------------------------
 Prescreened, and screened or accepted
 ----------------------------------------------------------------------
+      Better error reporting:
+
+S  CLJ-1261 Screened     clj-1261-5.diff
+
       Clojure language/library bug fixes:
 
 S  CLJ-738  Screened     clj-738-v2.diff
+S  CLJ-887  Screened     0001-don-t-remove-meta-from-arg-vector-in-maybe-destructu.patch
+S  CLJ-1039 Screened     CLJ-1039-tolerate-misleading-type-metadata-on-var-wh.patch
+S  CLJ-1100 Screened     clj-1100-v2.patch
+S  CLJ-1241 Screened     0001-fix-CLJ-1241.patch
 S  CLJ-1362 Screened     clj-1362-v1.patch
+S  CLJ-1388 Screened     CLJ-1388-record-equality-and-map-record-factory.patch
+
+      Language/library enhancement:
+
+S  CLJ-1251 Screened     CLJ-1251.patch
+S  CLJ-1325 Screened     clj-1325-v3.patch
 
 ----------------------------------------------------------------------
 (Note 1) Warnings/errors explicitly allowed in output of 'ant' command

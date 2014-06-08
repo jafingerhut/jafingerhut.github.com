@@ -1,5 +1,5 @@
 Tickets needing work for CLJ project
-Date: May 10, 2014
+Date: June 1, 2014
 
 If you are a Clojure contributor, the tickets below could use some
 work.  Some are easy, some are not.  If you've never added a patch
@@ -39,27 +39,22 @@ the report.
 Tickets with prescreened patches, but they may need work, since the
 ticket is marked Incomplete (I).
 ----------------------------------------------------------------------
-      Better error reporting:
-
-I  CLJ-1261 Incomplete   clj-1261-3.diff
-
       Clojure language/library bug fixes:
 
-I  CLJ-1093 Incomplete   0001-CLJ-1093-fix-empty-records-literal-v2.patch
-I  CLJ-1388 Incomplete   CLJ-1388-record-equality-and-map-record-factory.patch
+I  CLJ-971  Incomplete   clj-971-2.patch
 
 ----------------------------------------------------------------------
 Tickets marked for Clojure Release 1.7 that have no prescreened
 patches (see also Note 3 at the bottom):
 ----------------------------------------------------------------------
 V   3 [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
-V   1 [CLJ-787] transient blows up when passed a vector created by subvec
+I   1 [CLJ-787] transient blows up when passed a vector created by subvec
 V   1 [CLJ-823] Piping seque into seque can deadlock
 V   1 [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
-I   1 [CLJ-1325] Add *warn-on-boxed-math* warning
 V   0 [CLJ-701] Compiler loses 'loop's return type in some cases
 I   0 [CLJ-1161] sources jar has bad versions.properties resource
 V   0 [CLJ-1192] vec function is substantially slower than into function
+S   0 [CLJ-1430] Improve performance of partial
 
 ----------------------------------------------------------------------
 Tickets needing work that have no prescreened patches.  These are all
@@ -68,9 +63,10 @@ letter is the number of votes, and tickets have been sorted from most
 to fewest votes.
 ----------------------------------------------------------------------
 T   6 [CLJ-440] java method calls cannot omit varargs
+T   4 [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
+T   4 [CLJ-1208] Namespace is not loaded on defrecord class init
 V   3 [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
 V   3 [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
-T   3 [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
 V   2 [CLJ-415] smarter assert (prints locals)
       The patch applies cleanly and passes tests, but gives a warning
       because macro local-bindings is same name (and perhaps the same
@@ -84,7 +80,6 @@ T   2 [CLJ-1232] Functions with non-qualified return type hints force import of 
 V   1 [CLJ-274] cannot close over mutable fields (in deftype)
 T   1 [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
 T   1 [CLJ-1316] for doesn't support :let binding as its first seq-expr
-T   1 [CLJ-1415] Improve clojure.core/keyword performance
 V   0 [CLJ-5] Unintuitive error response in clojure 1.0
       One of two patches applied and built cleanly on May 4, 2012, but
       not on May 10, 2012.  The second, clj-5-destructure-error.diff,
