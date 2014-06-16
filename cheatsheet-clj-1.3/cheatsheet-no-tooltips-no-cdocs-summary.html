@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v13)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v14)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -567,7 +567,7 @@ tr.even {
               </tr>
               <tr class="even">
                 <td>Call</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/apply">apply</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/->">-&gt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/->>">-&gt;&gt;</a> (1.5) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/as->">as-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/cond->">cond-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/cond->>">cond-&gt;&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/some->">some-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/some->>">some-&gt;&gt;</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/apply">apply</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/->">-&gt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/->>">-&gt;&gt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/trampoline">trampoline</a> (1.5) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/as->">as-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/cond->">cond-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/cond->>">cond-&gt;&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/some->">some-&gt;</a> <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/some->>">some-&gt;&gt;</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Test</td>
@@ -597,6 +597,10 @@ tr.even {
                 <td>Reify</td>
                 <td><code><code>(</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/reify">reify</a> <code>Slicey (slice [at] ...))</code></code></td>
               </tr>
+              <tr class="odd">
+                <td>Test</td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/satisfies_q">satisfies?</a></code></td>
+              </tr>
             </tbody>
           </table>
           <h3>Records (<a href="http://clojure.org/datatypes">clojure.org/datatypes</a>)</h3>
@@ -613,6 +617,10 @@ tr.even {
               <tr class="odd">
                 <td>Create</td>
                 <td><code>Pair. -&gt;Pair map-&gt;Pair</code></td>
+              </tr>
+              <tr class="even">
+                <td>Test</td>
+                <td><code><a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/record?">record?</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -854,7 +862,7 @@ tr.even {
               </tr>
               <tr class="even">
                 <td>From symbol</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/resolve">resolve</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-resolve">ns-resolve</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/namespace">namespace</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/resolve">resolve</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-resolve">ns-resolve</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/namespace">namespace</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/the-ns">the-ns</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Remove</td>
@@ -981,7 +989,7 @@ tr.even {
             <tbody>
               <tr class="odd">
                 <td>General</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/_dot_dot">..</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/doto">doto</a> Classname/ Classname. <a href="http://clojuredocs.org/clojure_core/clojure.core/new">new</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bean">bean</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/comparator">comparator</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/enumeration-seq">enumeration-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/import">import</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/iterator-seq">iterator-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/memfn">memfn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/set!">set!</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/_dot_dot">..</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/doto">doto</a> Classname/ Classname. <a href="http://clojuredocs.org/clojure_core/clojure.core/new">new</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bean">bean</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/comparator">comparator</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/enumeration-seq">enumeration-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/import">import</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/iterator-seq">iterator-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/memfn">memfn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/set!">set!</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/class">class</a></code></td>
               </tr>
               <tr class="even">
                 <td>Cast</td>

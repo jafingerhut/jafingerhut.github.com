@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v13)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v14)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -3327,7 +3327,18 @@ Macro
   last item in second form, etc.
 
 2 examples totaling 24 lines, 4 comments on Sun Jun 01 2014
-See also: ->, -?>, -?>></pre>">-&gt;&gt;</a> (1.5) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/as->" class="tooltip" title="<pre>clojure.core/as->
+See also: ->, -?>, -?>></pre>">-&gt;&gt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/trampoline" class="tooltip" title="<pre>clojure.core/trampoline
+([f] [f & args])
+  trampoline can be used to convert algorithms requiring mutual
+  recursion without stack consumption. Calls f with supplied args, if
+  any. If f returns a fn, calls that fn with no arguments, and
+  continues to repeat, until the return value is not a fn, then
+  returns that non-fn value. Note that if you want to return a fn as a
+  final value, you must wrap it in some data structure and unpack it
+  after trampoline returns.
+
+1 example with 21 lines, 1 comment on Sun Jun 01 2014
+See also: loop, recur</pre>">trampoline</a> (1.5) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/as->" class="tooltip" title="<pre>clojure.core/as->
 ([expr name & forms])
 Macro
   Binds name to expr, evaluates the first form in the lexical context
@@ -3502,6 +3513,15 @@ Macro
 3 examples totaling 65 lines on Sun Jun 01 2014
 See also: proxy</pre>">reify</a> <code>Slicey (slice [at] ...))</code></code></td>
               </tr>
+              <tr class="odd">
+                <td>Test</td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/satisfies_q" class="tooltip" title="<pre>clojure.core/satisfies?
+([protocol x])
+  Returns true if x satisfies the protocol
+
+1 example with 22 lines on Sun Jun 01 2014
+See also: extend, defprotocol</pre>">satisfies?</a></code></td>
+              </tr>
             </tbody>
           </table>
           <h3>Records (<a href="http://clojure.org/datatypes">clojure.org/datatypes</a>)</h3>
@@ -3546,6 +3566,12 @@ See also: deftype, defstruct, defprotocol</pre>">defrecord</a> <code>Pair [h t])
               <tr class="odd">
                 <td>Create</td>
                 <td><code>Pair. -&gt;Pair map-&gt;Pair</code></td>
+              </tr>
+              <tr class="even">
+                <td>Test</td>
+                <td><code><a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/record?" class="tooltip" title="<pre>clojure.core/record?
+([x])
+  Returns true if x is a record</pre>">record?</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -5053,7 +5079,13 @@ See also: resolve</pre>">ns-resolve</a> <a href="http://clojuredocs.org/clojure_
   Returns the namespace String of a symbol or keyword, or nil if not present.
 
 1 example with 5 lines on Sun Jun 01 2014
-See also: ns, name</pre>">namespace</a></code></td>
+See also: ns, name</pre>">namespace</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/the-ns" class="tooltip" title="<pre>clojure.core/the-ns
+([x])
+  If passed a namespace, returns it. Else, when passed a symbol,
+  returns the namespace named by it, throwing an exception if not
+  found.
+
+1 example with 21 lines on Sun Jun 01 2014</pre>">the-ns</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Remove</td>
@@ -5881,7 +5913,12 @@ fields, and Java class static fields.
   Please see http://clojure.org/vars#set
 
 2 examples totaling 2 lines, 1 comment on Sun Jun 01 2014
-See also: reset!, binding, alter-var-root</pre>">set!</a></code></td>
+See also: reset!, binding, alter-var-root</pre>">set!</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/class" class="tooltip" title="<pre>clojure.core/class
+([x])
+  Returns the Class of x
+
+1 example with 8 lines on Sun Jun 01 2014
+See also: type, class?, instance?</pre>">class</a></code></td>
               </tr>
               <tr class="even">
                 <td>Cast</td>
