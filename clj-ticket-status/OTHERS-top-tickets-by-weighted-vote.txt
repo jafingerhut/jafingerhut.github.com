@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: June 19, 2014
+Date: June 23, 2014
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -53,10 +53,7 @@ Defect
              Justin Balthrop (1)
     1.00   1 Open         [ASYNC-42] (try (catch :default)) inside a cljs go block raises an exception
              Kevin Neaton (1)
-    0.00   0 Open         [ASYNC-4] record literals become ordinary maps
-    0.00   0 Open         [ASYNC-25] Dependency on clojurescript is introduced into clojure only projects
     0.00   0 Open         [ASYNC-28] try/catch inside go block may cause a reflection warning - 0.1.222.0-83d0c2-alpha
-    0.00   0 Open         [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
     0.00   0 Open         [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
     0.00   0 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
@@ -65,13 +62,16 @@ Defect
     0.00   0 Open         [ASYNC-53] Definition of UnblockingBuffer Protocol makes core.async incompatible with clojure 1.4
     0.00   0 Open         [ASYNC-54] MAX-QUEUE-SIZE has a wrong type-hint
     0.00   0 Open         [ASYNC-57] reify in go macro compile error
-    0.00   0 Open         [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
     0.00   0 Open         [ASYNC-59] Channel returned by cljs.core.async/map> is missing protocol method Channel.closed?
     0.00   0 Open         [ASYNC-62] recur across try possible, leaks ExceptionFrames
     0.00   0 Open         [ASYNC-63] Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
-    0.00   0 Open         [ASYNC-64] Race condition when closing mults
     0.00   0 Open         [ASYNC-70] documentation of thread macro should include behavior of nil (closes the channel)
     0.00   0 Open         [ASYNC-72] CLJS: mult becomes blocked after putting to a closed channel
+    0.00   0 Open         [ASYNC-73] try-catch-finally broken inside go-blocks
+    0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
+    0.00   0 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
+    0.00   0 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
+    0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
 
 ========================================
 Enhancement
@@ -82,6 +82,7 @@ Enhancement
     0.00   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
     0.00   0 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
     0.00   0 Open         [ASYNC-71] exception behavior for thread macro is hard coded
+    0.00   0 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
     0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
     0.00   0 Vetted       [ASYNC-67] Can we get a generic sink operation?
@@ -159,20 +160,14 @@ Project CLJCLR tickets
 Defect
 
     0.00   0 Open         [CLJCLR-24] build.proj ILMerge target broken
-    0.00   0 Open         [CLJCLR-26] Compiler.FnOnceSym initialized in wrong order relative to _duplicateTypeMap 
-    0.00   0 Open         [CLJCLR-30] Invoking parameterless static method with "new" modifier does not work
-    0.00   0 Open         [CLJCLR-31] ensure improperly locking ref
 
 ========================================
 Enhancement
 
     1.00   1 Open         [CLJCLR-11] Simplify integration of Clojure code with existing .NET code
              Devin Garner (1)
-    0.50   1 Open         [CLJCLR-25] Clojure.Compile.exe create single dll for all compiled .clj files
-             Antti Karanta (1/2)
-    0.50   1 Open         [CLJCLR-27] Add more support for attributes in gen-class
-             Antti Karanta (1/2)
-    0.00   0 Open         [CLJCLR-29] Add links to CLojureCLR ML, G+ community and JIRA to the README.
+    1.00   1 Open         [CLJCLR-25] Clojure.Compile.exe create single dll for all compiled .clj files
+             Antti Karanta (1)
 
 
 Project CMEMOIZE tickets
@@ -243,6 +238,7 @@ Defect
     0.00   0 Open         [CTYP-150] Fix constraint generation with intersections
     0.00   0 Open         [CTYP-157] Fails to properly load protocols as soon as a ns containing a protocol is required from another checked ns
     0.00   0 Open         [CTYP-158] Bogus deprecation messages from core.typed
+    0.00   0 Open         [CTYP-159] "swap!" doesn't work anymore due to missing type translation
 
 ========================================
 Enhancement
@@ -605,6 +601,8 @@ Defect
     0.00   0 Open         [TCHECK-27] stateful PRNG + bind => nondeterministic shrink tree
     0.00   0 Open         [TCHECK-29] Docstring typo
     0.00   0 Open         [TCHECK-32] Default sizing on gen/any needs re-evaluation
+    0.00   0 Open         [TCHECK-33] test.check is entangled with clojure.test
+    0.00   0 Open         [TCHECK-34] clojure.test reporting is uninformative
 
 ========================================
 Enhancement
