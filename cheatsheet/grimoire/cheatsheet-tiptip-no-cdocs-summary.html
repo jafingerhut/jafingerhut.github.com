@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v14)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v15)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -247,29 +247,29 @@ data
               </tr>
               <tr class="even">
                 <td>Bitwise</td>
-                <td><code>bit-{<a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_and" class="tooltip" title="<pre>clojure.core/bit-and
+                <td><code><a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_and" class="tooltip" title="<pre>clojure.core/bit-and
 ([x y] [x y & more])
-  Bitwise and</pre>">and</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_or" class="tooltip" title="<pre>clojure.core/bit-or
+  Bitwise and</pre>">bit-and</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_or" class="tooltip" title="<pre>clojure.core/bit-or
 ([x y] [x y & more])
-  Bitwise or</pre>">or</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_xor" class="tooltip" title="<pre>clojure.core/bit-xor
+  Bitwise or</pre>">bit-or</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_xor" class="tooltip" title="<pre>clojure.core/bit-xor
 ([x y] [x y & more])
-  Bitwise exclusive or</pre>">xor</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_not" class="tooltip" title="<pre>clojure.core/bit-not
+  Bitwise exclusive or</pre>">bit-xor</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_not" class="tooltip" title="<pre>clojure.core/bit-not
 ([x])
-  Bitwise complement</pre>">not</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_flip" class="tooltip" title="<pre>clojure.core/bit-flip
+  Bitwise complement</pre>">bit-not</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_flip" class="tooltip" title="<pre>clojure.core/bit-flip
 ([x n])
-  Flip bit at index n</pre>">flip</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_set" class="tooltip" title="<pre>clojure.core/bit-set
+  Flip bit at index n</pre>">bit-flip</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_set" class="tooltip" title="<pre>clojure.core/bit-set
 ([x n])
-  Set bit at index n</pre>">set</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_shift_DASH_right" class="tooltip" title="<pre>clojure.core/bit-shift-right
+  Set bit at index n</pre>">bit-set</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_shift_DASH_right" class="tooltip" title="<pre>clojure.core/bit-shift-right
 ([x n])
-  Bitwise shift right</pre>">shift-right</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_shift_DASH_left" class="tooltip" title="<pre>clojure.core/bit-shift-left
+  Bitwise shift right</pre>">bit-shift-right</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_shift_DASH_left" class="tooltip" title="<pre>clojure.core/bit-shift-left
 ([x n])
-  Bitwise shift left</pre>">shift-left</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_and_DASH_not" class="tooltip" title="<pre>clojure.core/bit-and-not
+  Bitwise shift left</pre>">bit-shift-left</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_and_DASH_not" class="tooltip" title="<pre>clojure.core/bit-and-not
 ([x y] [x y & more])
-  Bitwise and with complement</pre>">and-not</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_clear" class="tooltip" title="<pre>clojure.core/bit-clear
+  Bitwise and with complement</pre>">bit-and-not</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_clear" class="tooltip" title="<pre>clojure.core/bit-clear
 ([x n])
-  Clear bit at index n</pre>">clear</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_test" class="tooltip" title="<pre>clojure.core/bit-test
+  Clear bit at index n</pre>">bit-clear</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/bit_DASH_test" class="tooltip" title="<pre>clojure.core/bit-test
 ([x n])
-  Test bit at index n</pre>">test</a>} (1.6) <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/unsigned_DASH_bit_DASH_shift_DASH_right" class="tooltip" title="<pre>clojure.core/unsigned-bit-shift-right
+  Test bit at index n</pre>">bit-test</a> (1.6) <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/unsigned_DASH_bit_DASH_shift_DASH_right" class="tooltip" title="<pre>clojure.core/unsigned-bit-shift-right
 ([x n])
   Bitwise shift right, without sign-extension.</pre>">unsigned-bit-shift-right</a></code></td>
               </tr>
@@ -351,31 +351,25 @@ Macro
                 <td>Unchecked</td>
                 <td><code><a href="http://grimoire.arrdem.com/1.6.0/clojure.core/STAR_unchecked_DASH_math_STAR" class="tooltip" title="<pre>clojure.core/*unchecked-math*
   While bound to true, compilations of +, -, *, inc, dec and the
-  coercions will be done without overflow checks. Default: false.</pre>">*unchecked-math*</a> unchecked-{<a href="http://grimoire.arrdem.com/1.6.0/clojure.core/unchecked_DASH_add_DASH_int" class="tooltip" title="<pre>clojure.core/unchecked-add-int
+  coercions will be done without overflow checks. Default: false.</pre>">*unchecked-math*</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/unchecked_DASH_add" class="tooltip" title="<pre>clojure.core/unchecked-add
 ([x y])
-  Returns the sum of x and y, both int.
-  Note - uses a primitive operator subject to overflow.</pre>">add</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/unchecked_DASH_dec_DASH_int" class="tooltip" title="<pre>clojure.core/unchecked-dec-int
+  Returns the sum of x and y, both long.
+  Note - uses a primitive operator subject to overflow.</pre>">unchecked-add</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/unchecked_DASH_dec" class="tooltip" title="<pre>clojure.core/unchecked-dec
 ([x])
-  Returns a number one less than x, an int.
-  Note - uses a primitive operator subject to overflow.</pre>">dec</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/unchecked_DASH_divide_DASH_int" class="tooltip" title="<pre>clojure.core/unchecked-divide-int
-([x y])
-  Returns the division of x by y, both int.
-  Note - uses a primitive operator subject to truncation.</pre>">divide</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/unchecked_DASH_inc_DASH_int" class="tooltip" title="<pre>clojure.core/unchecked-inc-int
+  Returns a number one less than x, a long.
+  Note - uses a primitive operator subject to overflow.</pre>">unchecked-dec</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/unchecked_DASH_inc" class="tooltip" title="<pre>clojure.core/unchecked-inc
 ([x])
-  Returns a number one greater than x, an int.
-  Note - uses a primitive operator subject to overflow.</pre>">inc</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/unchecked_DASH_multiply_DASH_int" class="tooltip" title="<pre>clojure.core/unchecked-multiply-int
+  Returns a number one greater than x, a long.
+  Note - uses a primitive operator subject to overflow.</pre>">unchecked-inc</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/unchecked_DASH_multiply" class="tooltip" title="<pre>clojure.core/unchecked-multiply
 ([x y])
-  Returns the product of x and y, both int.
-  Note - uses a primitive operator subject to overflow.</pre>">multiply</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/unchecked_DASH_negate_DASH_int" class="tooltip" title="<pre>clojure.core/unchecked-negate-int
+  Returns the product of x and y, both long.
+  Note - uses a primitive operator subject to overflow.</pre>">unchecked-multiply</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/unchecked_DASH_negate" class="tooltip" title="<pre>clojure.core/unchecked-negate
 ([x])
-  Returns the negation of x, an int.
-  Note - uses a primitive operator subject to overflow.</pre>">negate</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/unchecked_DASH_remainder_DASH_int" class="tooltip" title="<pre>clojure.core/unchecked-remainder-int
+  Returns the negation of x, a long.
+  Note - uses a primitive operator subject to overflow.</pre>">unchecked-negate</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/unchecked_DASH_subtract" class="tooltip" title="<pre>clojure.core/unchecked-subtract
 ([x y])
-  Returns the remainder of division of x by y, both int.
-  Note - uses a primitive operator subject to truncation.</pre>">remainder</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/unchecked_DASH_subtract_DASH_int" class="tooltip" title="<pre>clojure.core/unchecked-subtract-int
-([x y])
-  Returns the difference of x and y, both int.
-  Note - uses a primitive operator subject to overflow.</pre>">subtract</a>}-int</code></td>
+  Returns the difference of x and y, both long.
+  Note - uses a primitive operator subject to overflow.</pre>">unchecked-subtract</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -2840,11 +2834,11 @@ Macro
 ([expr])
 Macro
   Evaluates expr and prints the time it took.  Returns the value of
- expr.</pre>">time</a> with-{<a href="http://grimoire.arrdem.com/1.6.0/clojure.core/with_DASH_in_DASH_str" class="tooltip" title="<pre>clojure.core/with-in-str
+ expr.</pre>">time</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/with_DASH_in_DASH_str" class="tooltip" title="<pre>clojure.core/with-in-str
 ([s & body])
 Macro
   Evaluates body in a context in which *in* is bound to a fresh
-  StringReader initialized with the string s.</pre>">in-str</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/with_DASH_local_DASH_vars" class="tooltip" title="<pre>clojure.core/with-local-vars
+  StringReader initialized with the string s.</pre>">with-in-str</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/with_DASH_local_DASH_vars" class="tooltip" title="<pre>clojure.core/with-local-vars
 ([name-vals-vec & body])
 Macro
   varbinding=> symbol init-expr
@@ -2852,19 +2846,19 @@ Macro
   Executes the exprs in a context in which the symbols are bound to
   vars with per-thread bindings to the init-exprs.  The symbols refer
   to the var objects themselves, and must be accessed with var-get and
-  var-set</pre>">local-vars</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/with_DASH_open" class="tooltip" title="<pre>clojure.core/with-open
+  var-set</pre>">with-local-vars</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/with_DASH_open" class="tooltip" title="<pre>clojure.core/with-open
 ([bindings & body])
 Macro
   bindings => [name init ...]
 
   Evaluates body in a try expression with names bound to the values
   of the inits, and a finally clause that calls (.close name) on each
-  name in reverse order.</pre>">open</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/with_DASH_out_DASH_str" class="tooltip" title="<pre>clojure.core/with-out-str
+  name in reverse order.</pre>">with-open</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/with_DASH_out_DASH_str" class="tooltip" title="<pre>clojure.core/with-out-str
 ([& body])
 Macro
   Evaluates exprs in a context in which *out* is bound to a fresh
   StringWriter.  Returns the string created by any nested printing
-  calls.</pre>">out-str</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/with_DASH_precision" class="tooltip" title="<pre>clojure.core/with-precision
+  calls.</pre>">with-out-str</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/with_DASH_precision" class="tooltip" title="<pre>clojure.core/with-precision
 ([precision & exprs])
 Macro
   Sets the precision and rounding mode to be used for BigDecimal operations.
@@ -2873,7 +2867,7 @@ Macro
   or:    (with-precision 10 :rounding HALF_DOWN (/ 1M 3))
 
   The rounding mode is one of CEILING, FLOOR, HALF_UP, HALF_DOWN,
-  HALF_EVEN, UP, DOWN and UNNECESSARY; it defaults to HALF_UP.</pre>">precision</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/with_DASH_redefs" class="tooltip" title="<pre>clojure.core/with-redefs
+  HALF_EVEN, UP, DOWN and UNNECESSARY; it defaults to HALF_UP.</pre>">with-precision</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/with_DASH_redefs" class="tooltip" title="<pre>clojure.core/with-redefs
 ([bindings & body])
 Macro
   binding => var-symbol temp-value-expr
@@ -2883,14 +2877,14 @@ Macro
   replace in parallel the root value of its Var.  After the body is
   executed, the root values of all the Vars will be set back to their
   old values.  These temporary changes will be visible in all threads.
-  Useful for mocking out functions during testing.</pre>">redefs</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/with_DASH_redefs_DASH_fn" class="tooltip" title="<pre>clojure.core/with-redefs-fn
+  Useful for mocking out functions during testing.</pre>">with-redefs</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/with_DASH_redefs_DASH_fn" class="tooltip" title="<pre>clojure.core/with-redefs-fn
 ([binding-map func])
   Temporarily redefines Vars during a call to func.  Each val of
   binding-map will replace the root value of its key which must be
   a Var.  After func is called with no args, the root values of all
   the Vars will be set back to their old values.  These temporary
   changes will be visible in all threads.  Useful for mocking out
-  functions during testing.</pre>">redefs-fn</a>}</code></td>
+  functions during testing.</pre>">with-redefs-fn</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Lazy</td>
@@ -3508,21 +3502,21 @@ Macro
               </tr>
               <tr class="odd">
                 <td>Examine</td>
-                <td><code>ns-{<a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ns_DASH_name" class="tooltip" title="<pre>clojure.core/ns-name
+                <td><code><a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ns_DASH_name" class="tooltip" title="<pre>clojure.core/ns-name
 ([ns])
-  Returns the name of the namespace, a symbol.</pre>">name</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ns_DASH_aliases" class="tooltip" title="<pre>clojure.core/ns-aliases
+  Returns the name of the namespace, a symbol.</pre>">ns-name</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ns_DASH_aliases" class="tooltip" title="<pre>clojure.core/ns-aliases
 ([ns])
-  Returns a map of the aliases for the namespace.</pre>">aliases</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ns_DASH_map" class="tooltip" title="<pre>clojure.core/ns-map
+  Returns a map of the aliases for the namespace.</pre>">ns-aliases</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ns_DASH_map" class="tooltip" title="<pre>clojure.core/ns-map
 ([ns])
-  Returns a map of all the mappings for the namespace.</pre>">map</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ns_DASH_interns" class="tooltip" title="<pre>clojure.core/ns-interns
+  Returns a map of all the mappings for the namespace.</pre>">ns-map</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ns_DASH_interns" class="tooltip" title="<pre>clojure.core/ns-interns
 ([ns])
-  Returns a map of the intern mappings for the namespace.</pre>">interns</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ns_DASH_publics" class="tooltip" title="<pre>clojure.core/ns-publics
+  Returns a map of the intern mappings for the namespace.</pre>">ns-interns</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ns_DASH_publics" class="tooltip" title="<pre>clojure.core/ns-publics
 ([ns])
-  Returns a map of the public intern mappings for the namespace.</pre>">publics</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ns_DASH_refers" class="tooltip" title="<pre>clojure.core/ns-refers
+  Returns a map of the public intern mappings for the namespace.</pre>">ns-publics</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ns_DASH_refers" class="tooltip" title="<pre>clojure.core/ns-refers
 ([ns])
-  Returns a map of the refer mappings for the namespace.</pre>">refers</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ns_DASH_imports" class="tooltip" title="<pre>clojure.core/ns-imports
+  Returns a map of the refer mappings for the namespace.</pre>">ns-refers</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ns_DASH_imports" class="tooltip" title="<pre>clojure.core/ns-imports
 ([ns])
-  Returns a map of the import mappings for the namespace.</pre>">imports</a>}</code></td>
+  Returns a map of the import mappings for the namespace.</pre>">ns-imports</a></code></td>
               </tr>
               <tr class="even">
                 <td>From symbol</td>
@@ -3685,19 +3679,19 @@ Macro
   invoke the body in another thread, and will cache the result and
   return it on all subsequent calls to deref/@. If the computation has
   not yet finished, calls to deref/@ will block, unless the variant of
-  deref with timeout is used. See also - realized?.</pre>">future</a> future-{<a href="http://grimoire.arrdem.com/1.6.0/clojure.core/future_DASH_call" class="tooltip" title="<pre>clojure.core/future-call
+  deref with timeout is used. See also - realized?.</pre>">future</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/future_DASH_call" class="tooltip" title="<pre>clojure.core/future-call
 ([f])
   Takes a function of no args and yields a future object that will
   invoke the function in another thread, and will cache the result and
   return it on all subsequent calls to deref/@. If the computation has
   not yet finished, calls to deref/@ will block, unless the variant
-  of deref with timeout is used. See also - realized?.</pre>">call</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/future_DASH_done_QMARK" class="tooltip" title="<pre>clojure.core/future-done?
+  of deref with timeout is used. See also - realized?.</pre>">future-call</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/future_DASH_done_QMARK" class="tooltip" title="<pre>clojure.core/future-done?
 ([f])
-  Returns true if future f is done</pre>">done?</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/future_DASH_cancel" class="tooltip" title="<pre>clojure.core/future-cancel
+  Returns true if future f is done</pre>">future-done?</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/future_DASH_cancel" class="tooltip" title="<pre>clojure.core/future-cancel
 ([f])
-  Cancels the future, if possible.</pre>">cancel</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/future_DASH_cancelled_QMARK" class="tooltip" title="<pre>clojure.core/future-cancelled?
+  Cancels the future, if possible.</pre>">future-cancel</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/future_DASH_cancelled_QMARK" class="tooltip" title="<pre>clojure.core/future-cancelled?
 ([f])
-  Returns true if future f is cancelled</pre>">cancelled?</a>} <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/future_QMARK" class="tooltip" title="<pre>clojure.core/future?
+  Returns true if future f is cancelled</pre>">future-cancelled?</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/future_QMARK" class="tooltip" title="<pre>clojure.core/future?
 ([x])
   Returns true if x is a future</pre>">future?</a></code></td>
               </tr>
@@ -3714,10 +3708,10 @@ Macro
   Returns a function, which will install the same bindings in effect as in
   the thread at the time bound-fn* was called and then call f with any given
   arguments. This may be used to define a helper function which runs on a
-  different thread, but needs the same bindings in place.</pre>">bound-fn*</a> {<a href="http://grimoire.arrdem.com/1.6.0/clojure.core/get_DASH_thread_DASH_bindings" class="tooltip" title="<pre>clojure.core/get-thread-bindings
+  different thread, but needs the same bindings in place.</pre>">bound-fn*</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/get_DASH_thread_DASH_bindings" class="tooltip" title="<pre>clojure.core/get-thread-bindings
 ([])
   Get a map with the Var/value pairs which is currently in effect for the
-  current thread.</pre>">get</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/push_DASH_thread_DASH_bindings" class="tooltip" title="<pre>clojure.core/push-thread-bindings
+  current thread.</pre>">get-thread-bindings</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/push_DASH_thread_DASH_bindings" class="tooltip" title="<pre>clojure.core/push-thread-bindings
 ([bindings])
   WARNING: This is a low-level function. Prefer high-level macros like
   binding where ever possible.
@@ -3730,10 +3724,10 @@ Macro
       (try
         ...
         (finally
-          (pop-thread-bindings)))</pre>">push</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/pop_DASH_thread_DASH_bindings" class="tooltip" title="<pre>clojure.core/pop-thread-bindings
+          (pop-thread-bindings)))</pre>">push-thread-bindings</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/pop_DASH_thread_DASH_bindings" class="tooltip" title="<pre>clojure.core/pop-thread-bindings
 ([])
   Pop one set of bindings pushed with push-binding before. It is an error to
-  pop bindings without pushing before.</pre>">pop</a>}-thread-bindings <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/thread_DASH_bound_QMARK" class="tooltip" title="<pre>clojure.core/thread-bound?
+  pop bindings without pushing before.</pre>">pop-thread-bindings</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/thread_DASH_bound_QMARK" class="tooltip" title="<pre>clojure.core/thread-bound?
 ([& vars])
   Returns true if all of the vars provided as arguments have thread-local
 bindings.
@@ -3902,11 +3896,11 @@ Macro
                 <td>History</td>
                 <td><code><a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ref_DASH_history_DASH_count" class="tooltip" title="<pre>clojure.core/ref-history-count
 ([ref])
-  Returns the history count of a ref</pre>">ref-history-count</a> ref-{<a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ref_DASH_min_DASH_history" class="tooltip" title="<pre>clojure.core/ref-min-history
+  Returns the history count of a ref</pre>">ref-history-count</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ref_DASH_min_DASH_history" class="tooltip" title="<pre>clojure.core/ref-min-history
 ([ref] [ref n])
-  Gets the min-history of a ref, or sets it and returns the ref</pre>">min</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ref_DASH_max_DASH_history" class="tooltip" title="<pre>clojure.core/ref-max-history
+  Gets the min-history of a ref, or sets it and returns the ref</pre>">ref-min-history</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/ref_DASH_max_DASH_history" class="tooltip" title="<pre>clojure.core/ref-max-history
 ([ref] [ref n])
-  Gets the max-history of a ref, or sets it and returns the ref</pre>">max</a>}-history</code></td>
+  Gets the max-history of a ref, or sets it and returns the ref</pre>">ref-max-history</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -4239,25 +4233,25 @@ supplied, uses the root cause of the
   the specified dimension(s).  Note that a class object is required.
   Class objects can be obtained by using their imported or
   fully-qualified name.  Class objects for the primitive types can be
-  obtained using, e.g., Integer/TYPE.</pre>">make-array</a> {<a href="http://grimoire.arrdem.com/1.6.0/clojure.core/object_DASH_array" class="tooltip" title="<pre>clojure.core/object-array
+  obtained using, e.g., Integer/TYPE.</pre>">make-array</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/object_DASH_array" class="tooltip" title="<pre>clojure.core/object-array
 ([size-or-seq])
-  Creates an array of objects</pre>">object</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/boolean_DASH_array" class="tooltip" title="<pre>clojure.core/boolean-array
+  Creates an array of objects</pre>">object-array</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/boolean_DASH_array" class="tooltip" title="<pre>clojure.core/boolean-array
 ([size-or-seq] [size init-val-or-seq])
-  Creates an array of booleans</pre>">boolean</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/byte_DASH_array" class="tooltip" title="<pre>clojure.core/byte-array
+  Creates an array of booleans</pre>">boolean-array</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/byte_DASH_array" class="tooltip" title="<pre>clojure.core/byte-array
 ([size-or-seq] [size init-val-or-seq])
-  Creates an array of bytes</pre>">byte</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/short_DASH_array" class="tooltip" title="<pre>clojure.core/short-array
+  Creates an array of bytes</pre>">byte-array</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/short_DASH_array" class="tooltip" title="<pre>clojure.core/short-array
 ([size-or-seq] [size init-val-or-seq])
-  Creates an array of shorts</pre>">short</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/char_DASH_array" class="tooltip" title="<pre>clojure.core/char-array
+  Creates an array of shorts</pre>">short-array</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/char_DASH_array" class="tooltip" title="<pre>clojure.core/char-array
 ([size-or-seq] [size init-val-or-seq])
-  Creates an array of chars</pre>">char</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/int_DASH_array" class="tooltip" title="<pre>clojure.core/int-array
+  Creates an array of chars</pre>">char-array</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/int_DASH_array" class="tooltip" title="<pre>clojure.core/int-array
 ([size-or-seq] [size init-val-or-seq])
-  Creates an array of ints</pre>">int</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/long_DASH_array" class="tooltip" title="<pre>clojure.core/long-array
+  Creates an array of ints</pre>">int-array</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/long_DASH_array" class="tooltip" title="<pre>clojure.core/long-array
 ([size-or-seq] [size init-val-or-seq])
-  Creates an array of longs</pre>">long</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/float_DASH_array" class="tooltip" title="<pre>clojure.core/float-array
+  Creates an array of longs</pre>">long-array</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/float_DASH_array" class="tooltip" title="<pre>clojure.core/float-array
 ([size-or-seq] [size init-val-or-seq])
-  Creates an array of floats</pre>">float</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/double_DASH_array" class="tooltip" title="<pre>clojure.core/double-array
+  Creates an array of floats</pre>">float-array</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/double_DASH_array" class="tooltip" title="<pre>clojure.core/double-array
 ([size-or-seq] [size init-val-or-seq])
-  Creates an array of doubles</pre>">double</a>}-array <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aclone" class="tooltip" title="<pre>clojure.core/aclone
+  Creates an array of doubles</pre>">double-array</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aclone" class="tooltip" title="<pre>clojure.core/aclone
 ([array])
   Returns a clone of the Java array. Works on arrays of known
   types.</pre>">aclone</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/to_DASH_array" class="tooltip" title="<pre>clojure.core/to-array
@@ -4283,23 +4277,23 @@ supplied, uses the root cause of the
   types.</pre>">aget</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aset" class="tooltip" title="<pre>clojure.core/aset
 ([array idx val] [array idx idx2 & idxv])
   Sets the value at the index/indices. Works on Java arrays of
-  reference types. Returns val.</pre>">aset</a> aset-{<a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aset_DASH_boolean" class="tooltip" title="<pre>clojure.core/aset-boolean
+  reference types. Returns val.</pre>">aset</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aset_DASH_boolean" class="tooltip" title="<pre>clojure.core/aset-boolean
 ([array idx val] [array idx idx2 & idxv])
-  Sets the value at the index/indices. Works on arrays of boolean. Returns val.</pre>">boolean</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aset_DASH_byte" class="tooltip" title="<pre>clojure.core/aset-byte
+  Sets the value at the index/indices. Works on arrays of boolean. Returns val.</pre>">aset-boolean</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aset_DASH_byte" class="tooltip" title="<pre>clojure.core/aset-byte
 ([array idx val] [array idx idx2 & idxv])
-  Sets the value at the index/indices. Works on arrays of byte. Returns val.</pre>">byte</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aset_DASH_short" class="tooltip" title="<pre>clojure.core/aset-short
+  Sets the value at the index/indices. Works on arrays of byte. Returns val.</pre>">aset-byte</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aset_DASH_short" class="tooltip" title="<pre>clojure.core/aset-short
 ([array idx val] [array idx idx2 & idxv])
-  Sets the value at the index/indices. Works on arrays of short. Returns val.</pre>">short</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aset_DASH_char" class="tooltip" title="<pre>clojure.core/aset-char
+  Sets the value at the index/indices. Works on arrays of short. Returns val.</pre>">aset-short</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aset_DASH_char" class="tooltip" title="<pre>clojure.core/aset-char
 ([array idx val] [array idx idx2 & idxv])
-  Sets the value at the index/indices. Works on arrays of char. Returns val.</pre>">char</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aset_DASH_int" class="tooltip" title="<pre>clojure.core/aset-int
+  Sets the value at the index/indices. Works on arrays of char. Returns val.</pre>">aset-char</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aset_DASH_int" class="tooltip" title="<pre>clojure.core/aset-int
 ([array idx val] [array idx idx2 & idxv])
-  Sets the value at the index/indices. Works on arrays of int. Returns val.</pre>">int</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aset_DASH_long" class="tooltip" title="<pre>clojure.core/aset-long
+  Sets the value at the index/indices. Works on arrays of int. Returns val.</pre>">aset-int</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aset_DASH_long" class="tooltip" title="<pre>clojure.core/aset-long
 ([array idx val] [array idx idx2 & idxv])
-  Sets the value at the index/indices. Works on arrays of long. Returns val.</pre>">long</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aset_DASH_float" class="tooltip" title="<pre>clojure.core/aset-float
+  Sets the value at the index/indices. Works on arrays of long. Returns val.</pre>">aset-long</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aset_DASH_float" class="tooltip" title="<pre>clojure.core/aset-float
 ([array idx val] [array idx idx2 & idxv])
-  Sets the value at the index/indices. Works on arrays of float. Returns val.</pre>">float</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aset_DASH_double" class="tooltip" title="<pre>clojure.core/aset-double
+  Sets the value at the index/indices. Works on arrays of float. Returns val.</pre>">aset-float</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/aset_DASH_double" class="tooltip" title="<pre>clojure.core/aset-double
 ([array idx val] [array idx idx2 & idxv])
-  Sets the value at the index/indices. Works on arrays of double. Returns val.</pre>">double</a>} <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/alength" class="tooltip" title="<pre>clojure.core/alength
+  Sets the value at the index/indices. Works on arrays of double. Returns val.</pre>">aset-double</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/alength" class="tooltip" title="<pre>clojure.core/alength
 ([array])
   Returns the length of the Java array. Works on arrays of all
   types.</pre>">alength</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/amap" class="tooltip" title="<pre>clojure.core/amap
@@ -4374,16 +4368,16 @@ Macro
   interfaces. If not supplied class defaults to Object.  Creates an
   returns an instance of a proxy class derived from the supplied
   classes. The resulting value is cached and used for any subsequent
-  requests for the same class set. Returns a Class object.</pre>">get-proxy-class</a> {<a href="http://grimoire.arrdem.com/1.6.0/clojure.core/construct_DASH_proxy" class="tooltip" title="<pre>clojure.core/construct-proxy
+  requests for the same class set. Returns a Class object.</pre>">get-proxy-class</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/construct_DASH_proxy" class="tooltip" title="<pre>clojure.core/construct-proxy
 ([c & ctor-args])
   Takes a proxy class and any arguments for its superclass ctor and
-  creates and returns an instance of the proxy.</pre>">construct</a>, <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/init_DASH_proxy" class="tooltip" title="<pre>clojure.core/init-proxy
+  creates and returns an instance of the proxy.</pre>">construct-proxy</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/init_DASH_proxy" class="tooltip" title="<pre>clojure.core/init-proxy
 ([proxy mappings])
   Takes a proxy instance and a map of strings (which must
   correspond to methods of the proxy superclass/superinterfaces) to
   fns (which must take arguments matching the corresponding method,
   plus an additional (explicit) first arg corresponding to this, and
-  sets the proxy's fn map.  Returns the proxy.</pre>">init</a>}-proxy</code></td>
+  sets the proxy's fn map.  Returns the proxy.</pre>">init-proxy</a></code></td>
               </tr>
               <tr class="even">
                 <td>Misc</td>

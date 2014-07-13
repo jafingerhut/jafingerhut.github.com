@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v14)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v15)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -247,29 +247,29 @@ data
               </tr>
               <tr class="even">
                 <td>Bitwise</td>
-                <td><code>bit-{<a href="http://clojuredocs.org/clojure_core/clojure.core/bit-and" title="clojure.core/bit-and
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/bit-and" title="clojure.core/bit-and
 ([x y] [x y & more])
-  Bitwise and">and</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-or" title="clojure.core/bit-or
+  Bitwise and">bit-and</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-or" title="clojure.core/bit-or
 ([x y] [x y & more])
-  Bitwise or">or</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-xor" title="clojure.core/bit-xor
+  Bitwise or">bit-or</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-xor" title="clojure.core/bit-xor
 ([x y] [x y & more])
-  Bitwise exclusive or">xor</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-not" title="clojure.core/bit-not
+  Bitwise exclusive or">bit-xor</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-not" title="clojure.core/bit-not
 ([x])
-  Bitwise complement">not</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-flip" title="clojure.core/bit-flip
+  Bitwise complement">bit-not</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-flip" title="clojure.core/bit-flip
 ([x n])
-  Flip bit at index n">flip</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-set" title="clojure.core/bit-set
+  Flip bit at index n">bit-flip</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-set" title="clojure.core/bit-set
 ([x n])
-  Set bit at index n">set</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-shift-right" title="clojure.core/bit-shift-right
+  Set bit at index n">bit-set</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-shift-right" title="clojure.core/bit-shift-right
 ([x n])
-  Bitwise shift right">shift-right</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-shift-left" title="clojure.core/bit-shift-left
+  Bitwise shift right">bit-shift-right</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-shift-left" title="clojure.core/bit-shift-left
 ([x n])
-  Bitwise shift left">shift-left</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-and-not" title="clojure.core/bit-and-not
+  Bitwise shift left">bit-shift-left</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-and-not" title="clojure.core/bit-and-not
 ([x y] [x y & more])
-  Bitwise and with complement">and-not</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-clear" title="clojure.core/bit-clear
+  Bitwise and with complement">bit-and-not</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-clear" title="clojure.core/bit-clear
 ([x n])
-  Clear bit at index n">clear</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-test" title="clojure.core/bit-test
+  Clear bit at index n">bit-clear</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-test" title="clojure.core/bit-test
 ([x n])
-  Test bit at index n">test</a>} (1.6) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/unsigned-bit-shift-right" title="clojure.core/unsigned-bit-shift-right
+  Test bit at index n">bit-test</a> (1.6) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/unsigned-bit-shift-right" title="clojure.core/unsigned-bit-shift-right
 ([x n])
   Bitwise shift right, without sign-extension.">unsigned-bit-shift-right</a></code></td>
               </tr>
@@ -351,31 +351,25 @@ Macro
                 <td>Unchecked</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/*unchecked-math*" title="clojure.core/*unchecked-math*
   While bound to true, compilations of +, -, *, inc, dec and the
-  coercions will be done without overflow checks. Default: false.">*unchecked-math*</a> unchecked-{<a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-add-int" title="clojure.core/unchecked-add-int
+  coercions will be done without overflow checks. Default: false.">*unchecked-math*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-add" title="clojure.core/unchecked-add
 ([x y])
-  Returns the sum of x and y, both int.
-  Note - uses a primitive operator subject to overflow.">add</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-dec-int" title="clojure.core/unchecked-dec-int
+  Returns the sum of x and y, both long.
+  Note - uses a primitive operator subject to overflow.">unchecked-add</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-dec" title="clojure.core/unchecked-dec
 ([x])
-  Returns a number one less than x, an int.
-  Note - uses a primitive operator subject to overflow.">dec</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-divide-int" title="clojure.core/unchecked-divide-int
-([x y])
-  Returns the division of x by y, both int.
-  Note - uses a primitive operator subject to truncation.">divide</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-inc-int" title="clojure.core/unchecked-inc-int
+  Returns a number one less than x, a long.
+  Note - uses a primitive operator subject to overflow.">unchecked-dec</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-inc" title="clojure.core/unchecked-inc
 ([x])
-  Returns a number one greater than x, an int.
-  Note - uses a primitive operator subject to overflow.">inc</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-multiply-int" title="clojure.core/unchecked-multiply-int
+  Returns a number one greater than x, a long.
+  Note - uses a primitive operator subject to overflow.">unchecked-inc</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-multiply" title="clojure.core/unchecked-multiply
 ([x y])
-  Returns the product of x and y, both int.
-  Note - uses a primitive operator subject to overflow.">multiply</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-negate-int" title="clojure.core/unchecked-negate-int
+  Returns the product of x and y, both long.
+  Note - uses a primitive operator subject to overflow.">unchecked-multiply</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-negate" title="clojure.core/unchecked-negate
 ([x])
-  Returns the negation of x, an int.
-  Note - uses a primitive operator subject to overflow.">negate</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-remainder-int" title="clojure.core/unchecked-remainder-int
+  Returns the negation of x, a long.
+  Note - uses a primitive operator subject to overflow.">unchecked-negate</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-subtract" title="clojure.core/unchecked-subtract
 ([x y])
-  Returns the remainder of division of x by y, both int.
-  Note - uses a primitive operator subject to truncation.">remainder</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-subtract-int" title="clojure.core/unchecked-subtract-int
-([x y])
-  Returns the difference of x and y, both int.
-  Note - uses a primitive operator subject to overflow.">subtract</a>}-int</code></td>
+  Returns the difference of x and y, both long.
+  Note - uses a primitive operator subject to overflow.">unchecked-subtract</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -2840,11 +2834,11 @@ Macro
 ([expr])
 Macro
   Evaluates expr and prints the time it took.  Returns the value of
- expr.">time</a> with-{<a href="http://clojuredocs.org/clojure_core/clojure.core/with-in-str" title="clojure.core/with-in-str
+ expr.">time</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-in-str" title="clojure.core/with-in-str
 ([s & body])
 Macro
   Evaluates body in a context in which *in* is bound to a fresh
-  StringReader initialized with the string s.">in-str</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-local-vars" title="clojure.core/with-local-vars
+  StringReader initialized with the string s.">with-in-str</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-local-vars" title="clojure.core/with-local-vars
 ([name-vals-vec & body])
 Macro
   varbinding=> symbol init-expr
@@ -2852,19 +2846,19 @@ Macro
   Executes the exprs in a context in which the symbols are bound to
   vars with per-thread bindings to the init-exprs.  The symbols refer
   to the var objects themselves, and must be accessed with var-get and
-  var-set">local-vars</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-open" title="clojure.core/with-open
+  var-set">with-local-vars</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-open" title="clojure.core/with-open
 ([bindings & body])
 Macro
   bindings => [name init ...]
 
   Evaluates body in a try expression with names bound to the values
   of the inits, and a finally clause that calls (.close name) on each
-  name in reverse order.">open</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-out-str" title="clojure.core/with-out-str
+  name in reverse order.">with-open</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-out-str" title="clojure.core/with-out-str
 ([& body])
 Macro
   Evaluates exprs in a context in which *out* is bound to a fresh
   StringWriter.  Returns the string created by any nested printing
-  calls.">out-str</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-precision" title="clojure.core/with-precision
+  calls.">with-out-str</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-precision" title="clojure.core/with-precision
 ([precision & exprs])
 Macro
   Sets the precision and rounding mode to be used for BigDecimal operations.
@@ -2873,7 +2867,7 @@ Macro
   or:    (with-precision 10 :rounding HALF_DOWN (/ 1M 3))
 
   The rounding mode is one of CEILING, FLOOR, HALF_UP, HALF_DOWN,
-  HALF_EVEN, UP, DOWN and UNNECESSARY; it defaults to HALF_UP.">precision</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-redefs" title="clojure.core/with-redefs
+  HALF_EVEN, UP, DOWN and UNNECESSARY; it defaults to HALF_UP.">with-precision</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-redefs" title="clojure.core/with-redefs
 ([bindings & body])
 Macro
   binding => var-symbol temp-value-expr
@@ -2883,14 +2877,14 @@ Macro
   replace in parallel the root value of its Var.  After the body is
   executed, the root values of all the Vars will be set back to their
   old values.  These temporary changes will be visible in all threads.
-  Useful for mocking out functions during testing.">redefs</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-redefs-fn" title="clojure.core/with-redefs-fn
+  Useful for mocking out functions during testing.">with-redefs</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-redefs-fn" title="clojure.core/with-redefs-fn
 ([binding-map func])
   Temporarily redefines Vars during a call to func.  Each val of
   binding-map will replace the root value of its key which must be
   a Var.  After func is called with no args, the root values of all
   the Vars will be set back to their old values.  These temporary
   changes will be visible in all threads.  Useful for mocking out
-  functions during testing.">redefs-fn</a>}</code></td>
+  functions during testing.">with-redefs-fn</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Lazy</td>
@@ -3508,21 +3502,21 @@ Macro
               </tr>
               <tr class="odd">
                 <td>Examine</td>
-                <td><code>ns-{<a href="http://clojuredocs.org/clojure_core/clojure.core/ns-name" title="clojure.core/ns-name
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/ns-name" title="clojure.core/ns-name
 ([ns])
-  Returns the name of the namespace, a symbol.">name</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-aliases" title="clojure.core/ns-aliases
+  Returns the name of the namespace, a symbol.">ns-name</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-aliases" title="clojure.core/ns-aliases
 ([ns])
-  Returns a map of the aliases for the namespace.">aliases</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-map" title="clojure.core/ns-map
+  Returns a map of the aliases for the namespace.">ns-aliases</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-map" title="clojure.core/ns-map
 ([ns])
-  Returns a map of all the mappings for the namespace.">map</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-interns" title="clojure.core/ns-interns
+  Returns a map of all the mappings for the namespace.">ns-map</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-interns" title="clojure.core/ns-interns
 ([ns])
-  Returns a map of the intern mappings for the namespace.">interns</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-publics" title="clojure.core/ns-publics
+  Returns a map of the intern mappings for the namespace.">ns-interns</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-publics" title="clojure.core/ns-publics
 ([ns])
-  Returns a map of the public intern mappings for the namespace.">publics</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-refers" title="clojure.core/ns-refers
+  Returns a map of the public intern mappings for the namespace.">ns-publics</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-refers" title="clojure.core/ns-refers
 ([ns])
-  Returns a map of the refer mappings for the namespace.">refers</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-imports" title="clojure.core/ns-imports
+  Returns a map of the refer mappings for the namespace.">ns-refers</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-imports" title="clojure.core/ns-imports
 ([ns])
-  Returns a map of the import mappings for the namespace.">imports</a>}</code></td>
+  Returns a map of the import mappings for the namespace.">ns-imports</a></code></td>
               </tr>
               <tr class="even">
                 <td>From symbol</td>
@@ -3685,19 +3679,19 @@ Macro
   invoke the body in another thread, and will cache the result and
   return it on all subsequent calls to deref/@. If the computation has
   not yet finished, calls to deref/@ will block, unless the variant of
-  deref with timeout is used. See also - realized?.">future</a> future-{<a href="http://clojuredocs.org/clojure_core/clojure.core/future-call" title="clojure.core/future-call
+  deref with timeout is used. See also - realized?.">future</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/future-call" title="clojure.core/future-call
 ([f])
   Takes a function of no args and yields a future object that will
   invoke the function in another thread, and will cache the result and
   return it on all subsequent calls to deref/@. If the computation has
   not yet finished, calls to deref/@ will block, unless the variant
-  of deref with timeout is used. See also - realized?.">call</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/future-done_q" title="clojure.core/future-done?
+  of deref with timeout is used. See also - realized?.">future-call</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/future-done_q" title="clojure.core/future-done?
 ([f])
-  Returns true if future f is done">done?</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/future-cancel" title="clojure.core/future-cancel
+  Returns true if future f is done">future-done?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/future-cancel" title="clojure.core/future-cancel
 ([f])
-  Cancels the future, if possible.">cancel</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/future-cancelled_q" title="clojure.core/future-cancelled?
+  Cancels the future, if possible.">future-cancel</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/future-cancelled_q" title="clojure.core/future-cancelled?
 ([f])
-  Returns true if future f is cancelled">cancelled?</a>} <a href="http://clojuredocs.org/clojure_core/clojure.core/future_q" title="clojure.core/future?
+  Returns true if future f is cancelled">future-cancelled?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/future_q" title="clojure.core/future?
 ([x])
   Returns true if x is a future">future?</a></code></td>
               </tr>
@@ -3714,10 +3708,10 @@ Macro
   Returns a function, which will install the same bindings in effect as in
   the thread at the time bound-fn* was called and then call f with any given
   arguments. This may be used to define a helper function which runs on a
-  different thread, but needs the same bindings in place.">bound-fn*</a> {<a href="http://clojuredocs.org/clojure_core/clojure.core/get-thread-bindings" title="clojure.core/get-thread-bindings
+  different thread, but needs the same bindings in place.">bound-fn*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/get-thread-bindings" title="clojure.core/get-thread-bindings
 ([])
   Get a map with the Var/value pairs which is currently in effect for the
-  current thread.">get</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/push-thread-bindings" title="clojure.core/push-thread-bindings
+  current thread.">get-thread-bindings</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/push-thread-bindings" title="clojure.core/push-thread-bindings
 ([bindings])
   WARNING: This is a low-level function. Prefer high-level macros like
   binding where ever possible.
@@ -3730,10 +3724,10 @@ Macro
       (try
         ...
         (finally
-          (pop-thread-bindings)))">push</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/pop-thread-bindings" title="clojure.core/pop-thread-bindings
+          (pop-thread-bindings)))">push-thread-bindings</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/pop-thread-bindings" title="clojure.core/pop-thread-bindings
 ([])
   Pop one set of bindings pushed with push-binding before. It is an error to
-  pop bindings without pushing before.">pop</a>}-thread-bindings <a href="http://clojuredocs.org/clojure_core/clojure.core/thread-bound_q" title="clojure.core/thread-bound?
+  pop bindings without pushing before.">pop-thread-bindings</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/thread-bound_q" title="clojure.core/thread-bound?
 ([& vars])
   Returns true if all of the vars provided as arguments have thread-local
 bindings.
@@ -3902,11 +3896,11 @@ Macro
                 <td>History</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/ref-history-count" title="clojure.core/ref-history-count
 ([ref])
-  Returns the history count of a ref">ref-history-count</a> ref-{<a href="http://clojuredocs.org/clojure_core/clojure.core/ref-min-history" title="clojure.core/ref-min-history
+  Returns the history count of a ref">ref-history-count</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ref-min-history" title="clojure.core/ref-min-history
 ([ref] [ref n])
-  Gets the min-history of a ref, or sets it and returns the ref">min</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ref-max-history" title="clojure.core/ref-max-history
+  Gets the min-history of a ref, or sets it and returns the ref">ref-min-history</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ref-max-history" title="clojure.core/ref-max-history
 ([ref] [ref n])
-  Gets the max-history of a ref, or sets it and returns the ref">max</a>}-history</code></td>
+  Gets the max-history of a ref, or sets it and returns the ref">ref-max-history</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -4239,25 +4233,25 @@ supplied, uses the root cause of the
   the specified dimension(s).  Note that a class object is required.
   Class objects can be obtained by using their imported or
   fully-qualified name.  Class objects for the primitive types can be
-  obtained using, e.g., Integer/TYPE.">make-array</a> {<a href="http://clojuredocs.org/clojure_core/clojure.core/object-array" title="clojure.core/object-array
+  obtained using, e.g., Integer/TYPE.">make-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/object-array" title="clojure.core/object-array
 ([size-or-seq])
-  Creates an array of objects">object</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/boolean-array" title="clojure.core/boolean-array
+  Creates an array of objects">object-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/boolean-array" title="clojure.core/boolean-array
 ([size-or-seq] [size init-val-or-seq])
-  Creates an array of booleans">boolean</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/byte-array" title="clojure.core/byte-array
+  Creates an array of booleans">boolean-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/byte-array" title="clojure.core/byte-array
 ([size-or-seq] [size init-val-or-seq])
-  Creates an array of bytes">byte</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/short-array" title="clojure.core/short-array
+  Creates an array of bytes">byte-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/short-array" title="clojure.core/short-array
 ([size-or-seq] [size init-val-or-seq])
-  Creates an array of shorts">short</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/char-array" title="clojure.core/char-array
+  Creates an array of shorts">short-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/char-array" title="clojure.core/char-array
 ([size-or-seq] [size init-val-or-seq])
-  Creates an array of chars">char</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/int-array" title="clojure.core/int-array
+  Creates an array of chars">char-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/int-array" title="clojure.core/int-array
 ([size-or-seq] [size init-val-or-seq])
-  Creates an array of ints">int</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/long-array" title="clojure.core/long-array
+  Creates an array of ints">int-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/long-array" title="clojure.core/long-array
 ([size-or-seq] [size init-val-or-seq])
-  Creates an array of longs">long</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/float-array" title="clojure.core/float-array
+  Creates an array of longs">long-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/float-array" title="clojure.core/float-array
 ([size-or-seq] [size init-val-or-seq])
-  Creates an array of floats">float</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/double-array" title="clojure.core/double-array
+  Creates an array of floats">float-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/double-array" title="clojure.core/double-array
 ([size-or-seq] [size init-val-or-seq])
-  Creates an array of doubles">double</a>}-array <a href="http://clojuredocs.org/clojure_core/clojure.core/aclone" title="clojure.core/aclone
+  Creates an array of doubles">double-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aclone" title="clojure.core/aclone
 ([array])
   Returns a clone of the Java array. Works on arrays of known
   types.">aclone</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/to-array" title="clojure.core/to-array
@@ -4283,23 +4277,23 @@ supplied, uses the root cause of the
   types.">aget</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset" title="clojure.core/aset
 ([array idx val] [array idx idx2 & idxv])
   Sets the value at the index/indices. Works on Java arrays of
-  reference types. Returns val.">aset</a> aset-{<a href="http://clojuredocs.org/clojure_core/clojure.core/aset-boolean" title="clojure.core/aset-boolean
+  reference types. Returns val.">aset</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-boolean" title="clojure.core/aset-boolean
 ([array idx val] [array idx idx2 & idxv])
-  Sets the value at the index/indices. Works on arrays of boolean. Returns val.">boolean</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-byte" title="clojure.core/aset-byte
+  Sets the value at the index/indices. Works on arrays of boolean. Returns val.">aset-boolean</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-byte" title="clojure.core/aset-byte
 ([array idx val] [array idx idx2 & idxv])
-  Sets the value at the index/indices. Works on arrays of byte. Returns val.">byte</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-short" title="clojure.core/aset-short
+  Sets the value at the index/indices. Works on arrays of byte. Returns val.">aset-byte</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-short" title="clojure.core/aset-short
 ([array idx val] [array idx idx2 & idxv])
-  Sets the value at the index/indices. Works on arrays of short. Returns val.">short</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-char" title="clojure.core/aset-char
+  Sets the value at the index/indices. Works on arrays of short. Returns val.">aset-short</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-char" title="clojure.core/aset-char
 ([array idx val] [array idx idx2 & idxv])
-  Sets the value at the index/indices. Works on arrays of char. Returns val.">char</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-int" title="clojure.core/aset-int
+  Sets the value at the index/indices. Works on arrays of char. Returns val.">aset-char</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-int" title="clojure.core/aset-int
 ([array idx val] [array idx idx2 & idxv])
-  Sets the value at the index/indices. Works on arrays of int. Returns val.">int</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-long" title="clojure.core/aset-long
+  Sets the value at the index/indices. Works on arrays of int. Returns val.">aset-int</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-long" title="clojure.core/aset-long
 ([array idx val] [array idx idx2 & idxv])
-  Sets the value at the index/indices. Works on arrays of long. Returns val.">long</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-float" title="clojure.core/aset-float
+  Sets the value at the index/indices. Works on arrays of long. Returns val.">aset-long</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-float" title="clojure.core/aset-float
 ([array idx val] [array idx idx2 & idxv])
-  Sets the value at the index/indices. Works on arrays of float. Returns val.">float</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-double" title="clojure.core/aset-double
+  Sets the value at the index/indices. Works on arrays of float. Returns val.">aset-float</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-double" title="clojure.core/aset-double
 ([array idx val] [array idx idx2 & idxv])
-  Sets the value at the index/indices. Works on arrays of double. Returns val.">double</a>} <a href="http://clojuredocs.org/clojure_core/clojure.core/alength" title="clojure.core/alength
+  Sets the value at the index/indices. Works on arrays of double. Returns val.">aset-double</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/alength" title="clojure.core/alength
 ([array])
   Returns the length of the Java array. Works on arrays of all
   types.">alength</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/amap" title="clojure.core/amap
@@ -4374,16 +4368,16 @@ Macro
   interfaces. If not supplied class defaults to Object.  Creates an
   returns an instance of a proxy class derived from the supplied
   classes. The resulting value is cached and used for any subsequent
-  requests for the same class set. Returns a Class object.">get-proxy-class</a> {<a href="http://clojuredocs.org/clojure_core/clojure.core/construct-proxy" title="clojure.core/construct-proxy
+  requests for the same class set. Returns a Class object.">get-proxy-class</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/construct-proxy" title="clojure.core/construct-proxy
 ([c & ctor-args])
   Takes a proxy class and any arguments for its superclass ctor and
-  creates and returns an instance of the proxy.">construct</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/init-proxy" title="clojure.core/init-proxy
+  creates and returns an instance of the proxy.">construct-proxy</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/init-proxy" title="clojure.core/init-proxy
 ([proxy mappings])
   Takes a proxy instance and a map of strings (which must
   correspond to methods of the proxy superclass/superinterfaces) to
   fns (which must take arguments matching the corresponding method,
   plus an additional (explicit) first arg corresponding to this, and
-  sets the proxy's fn map.  Returns the proxy.">init</a>}-proxy</code></td>
+  sets the proxy's fn map.  Returns the proxy.">init-proxy</a></code></td>
               </tr>
               <tr class="even">
                 <td>Misc</td>

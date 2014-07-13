@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v14)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v15)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -164,7 +164,7 @@ tr.even {
               </tr>
               <tr class="even">
                 <td>Bitwise</td>
-                <td><code>bit-{<a href="http://clojuredocs.org/clojure_core/clojure.core/bit-and">and</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-or">or</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-xor">xor</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-not">not</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-flip">flip</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-set">set</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-shift-right">shift-right</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-shift-left">shift-left</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-and-not">and-not</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-clear">clear</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-test">test</a>} (1.6) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/unsigned-bit-shift-right">unsigned-bit-shift-right</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/bit-and">bit-and</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-or">bit-or</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-xor">bit-xor</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-not">bit-not</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-flip">bit-flip</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-set">bit-set</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-shift-right">bit-shift-right</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-shift-left">bit-shift-left</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-and-not">bit-and-not</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-clear">bit-clear</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bit-test">bit-test</a> (1.6) <a href="http://clojure.github.com/clojure/clojure.core-api.html#clojure.core/unsigned-bit-shift-right">unsigned-bit-shift-right</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Cast</td>
@@ -184,7 +184,7 @@ tr.even {
               </tr>
               <tr class="odd">
                 <td>Unchecked</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/*unchecked-math*">*unchecked-math*</a> unchecked-{<a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-add-int">add</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-dec-int">dec</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-divide-int">divide</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-inc-int">inc</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-multiply-int">multiply</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-negate-int">negate</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-remainder-int">remainder</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-subtract-int">subtract</a>}-int</code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/*unchecked-math*">*unchecked-math*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-add">unchecked-add</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-dec">unchecked-dec</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-inc">unchecked-inc</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-multiply">unchecked-multiply</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-negate">unchecked-negate</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/unchecked-subtract">unchecked-subtract</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -701,7 +701,7 @@ tr.even {
               </tr>
               <tr class="even">
                 <td>Scope</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/binding">binding</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/locking">locking</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/time">time</a> with-{<a href="http://clojuredocs.org/clojure_core/clojure.core/with-in-str">in-str</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-local-vars">local-vars</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-open">open</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-out-str">out-str</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-precision">precision</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-redefs">redefs</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/with-redefs-fn">redefs-fn</a>}</code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/binding">binding</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/locking">locking</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/time">time</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-in-str">with-in-str</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-local-vars">with-local-vars</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-open">with-open</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-out-str">with-out-str</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-precision">with-precision</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-redefs">with-redefs</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/with-redefs-fn">with-redefs-fn</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Lazy</td>
@@ -858,7 +858,7 @@ tr.even {
               </tr>
               <tr class="odd">
                 <td>Examine</td>
-                <td><code>ns-{<a href="http://clojuredocs.org/clojure_core/clojure.core/ns-name">name</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-aliases">aliases</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-map">map</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-interns">interns</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-publics">publics</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-refers">refers</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-imports">imports</a>}</code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/ns-name">ns-name</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-aliases">ns-aliases</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-map">ns-map</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-interns">ns-interns</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-publics">ns-publics</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-refers">ns-refers</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ns-imports">ns-imports</a></code></td>
               </tr>
               <tr class="even">
                 <td>From symbol</td>
@@ -900,11 +900,11 @@ tr.even {
               </tr>
               <tr class="even">
                 <td>Futures</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/future">future</a> future-{<a href="http://clojuredocs.org/clojure_core/clojure.core/future-call">call</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/future-done_q">done?</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/future-cancel">cancel</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/future-cancelled_q">cancelled?</a>} <a href="http://clojuredocs.org/clojure_core/clojure.core/future_q">future?</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/future">future</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/future-call">future-call</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/future-done_q">future-done?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/future-cancel">future-cancel</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/future-cancelled_q">future-cancelled?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/future_q">future?</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Threads</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/bound-fn">bound-fn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bound-fn*">bound-fn*</a> {<a href="http://clojuredocs.org/clojure_core/clojure.core/get-thread-bindings">get</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/push-thread-bindings">push</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/pop-thread-bindings">pop</a>}-thread-bindings <a href="http://clojuredocs.org/clojure_core/clojure.core/thread-bound_q">thread-bound?</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/bound-fn">bound-fn</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/bound-fn*">bound-fn*</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/get-thread-bindings">get-thread-bindings</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/push-thread-bindings">push-thread-bindings</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/pop-thread-bindings">pop-thread-bindings</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/thread-bound_q">thread-bound?</a></code></td>
               </tr>
               <tr class="even">
                 <td>Misc</td>
@@ -937,7 +937,7 @@ tr.even {
               </tr>
               <tr class="even">
                 <td>History</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/ref-history-count">ref-history-count</a> ref-{<a href="http://clojuredocs.org/clojure_core/clojure.core/ref-min-history">min</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/ref-max-history">max</a>}-history</code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/ref-history-count">ref-history-count</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ref-min-history">ref-min-history</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/ref-max-history">ref-max-history</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -1006,11 +1006,11 @@ tr.even {
             <tbody>
               <tr class="odd">
                 <td>Create</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/make-array">make-array</a> {<a href="http://clojuredocs.org/clojure_core/clojure.core/object-array">object</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/boolean-array">boolean</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/byte-array">byte</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/short-array">short</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/char-array">char</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/int-array">int</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/long-array">long</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/float-array">float</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/double-array">double</a>}-array <a href="http://clojuredocs.org/clojure_core/clojure.core/aclone">aclone</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/to-array">to-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/to-array-2d">to-array-2d</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/into-array">into-array</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/make-array">make-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/object-array">object-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/boolean-array">boolean-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/byte-array">byte-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/short-array">short-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/char-array">char-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/int-array">int-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/long-array">long-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/float-array">float-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/double-array">double-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aclone">aclone</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/to-array">to-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/to-array-2d">to-array-2d</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/into-array">into-array</a></code></td>
               </tr>
               <tr class="even">
                 <td>Use</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/aget">aget</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset">aset</a> aset-{<a href="http://clojuredocs.org/clojure_core/clojure.core/aset-boolean">boolean</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-byte">byte</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-short">short</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-char">char</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-int">int</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-long">long</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-float">float</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-double">double</a>} <a href="http://clojuredocs.org/clojure_core/clojure.core/alength">alength</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/amap">amap</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/areduce">areduce</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/aget">aget</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset">aset</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-boolean">aset-boolean</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-byte">aset-byte</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-short">aset-short</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-char">aset-char</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-int">aset-int</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-long">aset-long</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-float">aset-float</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/aset-double">aset-double</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/alength">alength</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/amap">amap</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/areduce">areduce</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Cast</td>
@@ -1023,7 +1023,7 @@ tr.even {
             <tbody>
               <tr class="odd">
                 <td>Create</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/proxy">proxy</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/get-proxy-class">get-proxy-class</a> {<a href="http://clojuredocs.org/clojure_core/clojure.core/construct-proxy">construct</a>, <a href="http://clojuredocs.org/clojure_core/clojure.core/init-proxy">init</a>}-proxy</code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/proxy">proxy</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/get-proxy-class">get-proxy-class</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/construct-proxy">construct-proxy</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/init-proxy">init-proxy</a></code></td>
               </tr>
               <tr class="even">
                 <td>Misc</td>
