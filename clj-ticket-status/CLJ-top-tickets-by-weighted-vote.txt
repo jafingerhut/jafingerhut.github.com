@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: July 23, 2014
+Date: July 28, 2014
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -70,7 +70,7 @@ Defect
              David Welte (1)
              Satshabad Khalsa (1)
              Tim McCormack (1/4)
-             Reid McKenzie (1/14)
+             Reid McKenzie (1/15)
     2.18   7 Screenable   [CLJ-1330] Class name clash between top-level functions and defn'ed ones
              Jacek Lach (1)
              Paul Michael Bauer (1/2)
@@ -78,7 +78,7 @@ Defect
              David Nolen (1/5)
              Ambrose Bonnaire-Sergeant (1/12)
              Gary Trakhman (1/13)
-             Reid McKenzie (1/14)
+             Reid McKenzie (1/15)
     2.00   2 Incomplete   [CLJ-971] Jar within a jar throws a runtime error
              Anders Sveen (1)
              Gus Heck (1)
@@ -109,11 +109,13 @@ Defect
              Jouni K. Seppänen (1)
     1.00   1 Triaged      [CLJ-1466] clojure.core/bean should implement Iterable
              Daniel Woelfel (1)
+    1.00   1 Triaged      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
+             Daniel Solano Gómez (1)
     0.87   4 Incomplete   [CLJ-1093] Empty PersistentCollections get incorrectly evaluated as their generic clojure counterpart
              Alan Malloy (1/2)
              Mike Rodriguez (1/5)
              Max Penet (1/10)
-             Reid McKenzie (1/14)
+             Reid McKenzie (1/15)
     0.50   2 Open         [CLJ-259] clojure.lang.Reflector.invokeMatchingMethod is not complete (rejects pontentially valid method invocations)
              Christoffer Sawicki (1/4)
              Jason Wolfe (1/4)
@@ -133,7 +135,7 @@ Defect
              Nicola Mometto (1/17)
     0.38   3 Open         [CLJ-1445] pprint prints some metadata when *print-meta* bound to true, but not all
              Tim McCormack (1/4)
-             Reid McKenzie (1/14)
+             Reid McKenzie (1/15)
              Nicola Mometto (1/17)
     0.36   2 Open         [CLJ-1079] Don't squash explicit :line and :column metadata in the MetaReader
              Christoffer Sawicki (1/4)
@@ -153,7 +155,7 @@ Defect
              Steve Miner (1/3)
     0.32   2 Triaged      [CLJ-1453] Most Iterator implementations do not correctly implement next failing to throw the required NoSuchElementException
              Tim McCormack (1/4)
-             Reid McKenzie (1/14)
+             Reid McKenzie (1/15)
     0.31   2 Open         [CLJ-1237] reduce gives a SO for pathological seqs
              Ghadi Shayban (1/4)
              Nicola Mometto (1/17)
@@ -203,6 +205,7 @@ Defect
     0.00   0 Triaged      [CLJ-1460] Clojure transforms literals of custom IPersistentCollections not created via deftype/defrecord to their generic clojure counterpart
     0.00   0 Triaged      [CLJ-1461] print-dup is broken for some clojure collections
     0.00   0 Triaged      [CLJ-1464] Incorrectly named parameter to fold function in reducers.clj
+    0.00   0 Triaged      [CLJ-1475] :post condition causes compiler error with recur
 
 ========================================
 Enhancement
@@ -234,7 +237,7 @@ Enhancement
              Phil Hagelberg (1/3)
              Patrick Houk (1/6)
              Gary Trakhman (1/13)
-    5.75  11 Screened     [CLJ-1297] try to catch using - instead of _ in filenames so the compiler can give a better error message for people who don't know that you need to use _ in file names
+    5.69  11 Screened     [CLJ-1297] try to catch using - instead of _ in filenames so the compiler can give a better error message for people who don't know that you need to use _ in file names
              Alexander Redington (1)
              John Wiseman (1)
              Obadz (1)
@@ -242,9 +245,9 @@ Enhancement
              Joshua Ballanco (1/2)
              Marc Limotte (1/3)
              Phil Hagelberg (1/3)
-             Gary Fredericks (1/4)
              Alex Miller (1/5)
-             Reid McKenzie (1/14)
+             Gary Fredericks (1/5)
+             Reid McKenzie (1/15)
              Nicola Mometto (1/17)
     4.48   7 Open         [CLJ-1278] Provide a useful implementation of toString() for Clojure functions
              Dave Kincaid (1)
@@ -270,12 +273,19 @@ Enhancement
              Mike Anderson (1/7)
              Max Penet (1/10)
              Gary Trakhman (1/13)
+    3.16   6 Open         [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
+             Brian Kim (1)
+             john walker (1)
+             Francis Avila (1/2)
+             Paul Michael Bauer (1/2)
+             Brandon Bloom (1/10)
+             Nicola Mometto (1/17)
     3.00   4 Vetted       [CLJ-1148] adds docstring support to defonce
              Joshua Tilles (1)
              Nahuel Greco (1)
              Norman Richards (1/2)
              Trevor Hartman (1/2)
-    2.62   9 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
+    2.61   9 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
              Eric Normand (1)
              Vlad Bokov (1/2)
              Tim McCormack (1/4)
@@ -284,7 +294,7 @@ Enhancement
              Michael van Acken (1/5)
              Colin Jones (1/9)
              Ambrose Bonnaire-Sergeant (1/12)
-             Reid McKenzie (1/14)
+             Reid McKenzie (1/15)
     2.59   6 Triaged      [CLJ-308] protocol-ize with-open
              Eldar Gabdullin (1)
              Stephen C. Gilardi (1)
@@ -303,7 +313,7 @@ Enhancement
              Ghadi Shayban (1/4)
              Brandon Bloom (1/10)
              Max Penet (1/10)
-             Reid McKenzie (1/14)
+             Reid McKenzie (1/15)
     2.39   4 Triaged      [CLJ-1078] Add queue and queue? to clojure.core
              Anthony Grimes (1)
              Bruce Hauman (1)
@@ -323,12 +333,6 @@ Enhancement
              Fogus (1/2)
              Michael Klishin (1/2)
              David Nolen (1/5)
-    2.16   5 Open         [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
-             john walker (1)
-             Francis Avila (1/2)
-             Paul Michael Bauer (1/2)
-             Brandon Bloom (1/10)
-             Nicola Mometto (1/17)
     2.11   3 Triaged      [CLJ-735] Improve error message when a protocol method is not found
              Antonio Terreno (1)
              Scott Bale (1)
@@ -384,21 +388,25 @@ Enhancement
     1.33   2 Triaged      [CLJ-1454] Companion to swap! which returns the old value
              Timothy Baldridge (1)
              Stuart Sierra (1/3)
+    1.26   3 Open         [CLJ-401] Promote "seqable?" from contrib?
+             Jeremy Heiler (1)
+             Gary Fredericks (1/5)
+             Nicola Mometto (1/17)
     1.25   2 Screened     [CLJ-1429] Cache unknown multimethod value default dispatch
              Anton Logvinenko (1)
              Ghadi Shayban (1/4)
-    1.14   5 Vetted       [CLJ-1005] Use transient map in zipmap
-             Joshua Ballanco (1/2)
-             Gary Fredericks (1/4)
-             Yongqian Li (1/4)
-             Ambrose Bonnaire-Sergeant (1/12)
-             Nicola Mometto (1/17)
     1.10   2 Open         [CLJ-1120] Introduce ex-message and ex-cause to abstract away the platform in dealing with ExceptionInfo
              Colin Taylor (1)
              Brandon Bloom (1/10)
     1.10   2 Open         [CLJ-1298] Add more type predicate fns to core
              Gunnar Völkel (1)
              Brandon Bloom (1/10)
+    1.09   5 Vetted       [CLJ-1005] Use transient map in zipmap
+             Joshua Ballanco (1/2)
+             Yongqian Li (1/4)
+             Gary Fredericks (1/5)
+             Ambrose Bonnaire-Sergeant (1/12)
+             Nicola Mometto (1/17)
     1.00   1 Open         [CLJ-995] sorted-set doesn't support IEditableCollection
              François Rey (1)
     1.00   1 Open         [CLJ-1223] Improve App Engine Support by Providing an Option to Use the App Engine ThreadManger
@@ -414,7 +422,7 @@ Enhancement
     0.90   3 Open         [CLJ-1201] There should also be writing in clojure.edn
              Trevor Hartman (1/2)
              Marc Limotte (1/3)
-             Reid McKenzie (1/14)
+             Reid McKenzie (1/15)
     0.84   3 Backlog      [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
              Maris Orbidans (1/2)
              Chas Emerick (1/5)
@@ -426,16 +434,16 @@ Enhancement
     0.83   2 Triaged      [CLJ-1209] clojure.test does not print ex-info in error reports
              Ivan Kozik (1/2)
              Stuart Sierra (1/3)
-    0.82   4 Triaged      [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
+    0.77   4 Triaged      [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
              César Bolaños (1/4)
-             Gary Fredericks (1/4)
              Greg Chapman (1/4)
-             Reid McKenzie (1/14)
+             Gary Fredericks (1/5)
+             Reid McKenzie (1/15)
     0.75   4 Screened     [CLJ-1384] clojure.core/set should use transients
              Jean Niklas L'orange (1/2)
              Max Penet (1/10)
              Ambrose Bonnaire-Sergeant (1/12)
-             Reid McKenzie (1/14)
+             Reid McKenzie (1/15)
     0.67   2 Open         [CLJ-1367] Allow case statement to compare java constants
              Benjamin Peter (1/2)
              Patrick Houk (1/6)
@@ -464,9 +472,6 @@ Enhancement
     0.34   2 Triaged      [CLJ-888] defprotocol should throw error when signatures include variable number of parameters
              Michael van Acken (1/5)
              Tassilo Horn (1/7)
-    0.33   2 Open         [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
-             Gary Fredericks (1/4)
-             Ambrose Bonnaire-Sergeant (1/12)
     0.33   1 Open         [CLJ-200] Extend cond to support inline let, much like for
              Mark Engelberg (1/3)
     0.33   1 Open         [CLJ-1332] Exceptions are not cached in lazy seqs
@@ -475,6 +480,9 @@ Enhancement
              Jozef Wagner (1/3)
     0.33   1 Triaged      [CLJ-1414] sort's docstring should say whether it is stable
              Stuart Sierra (1/3)
+    0.28   2 Open         [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
+             Gary Fredericks (1/5)
+             Ambrose Bonnaire-Sergeant (1/12)
     0.28   2 Open         [CLJ-978] bean unable to handle non-public classes
              Mike Rodriguez (1/5)
              Gary Trakhman (1/13)
@@ -494,7 +502,7 @@ Enhancement
     0.23   3 Screened     [CLJ-1251] The update function: like update-in, for first level
              Ambrose Bonnaire-Sergeant (1/12)
              Gary Trakhman (1/13)
-             Reid McKenzie (1/14)
+             Reid McKenzie (1/15)
     0.22   2 Open         [CLJ-706] make use of deprecated namespaces/vars easier to spot
              Andy Fingerhut (1/7)
              Gary Trakhman (1/13)
@@ -527,12 +535,12 @@ Enhancement
     0.10   1 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
              Brandon Bloom (1/10)
     0.07   1 Open         [CLJ-1455] Postcondition in defrecord: Compiler unable to resolve symbol %
-             Reid McKenzie (1/14)
+             Reid McKenzie (1/15)
     0.07   1 Triaged      [CLJ-1410] Optimization: allow `set`/`vec` to pass through colls that satisfy `set?`/`vector?`
-             Reid McKenzie (1/14)
+             Reid McKenzie (1/15)
+    0.07   1 Triaged      [CLJ-1473] Bad pre/post conditions silently passed
+             Reid McKenzie (1/15)
     0.06   1 Open         [CLJ-15] Incremental hashcode calculation for collections
-             Nicola Mometto (1/17)
-    0.06   1 Open         [CLJ-401] Promote "seqable?" from contrib?
              Nicola Mometto (1/17)
     0.06   1 Open         [CLJ-1115] multi arity into
              Nicola Mometto (1/17)
