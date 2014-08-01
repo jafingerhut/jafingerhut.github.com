@@ -97,6 +97,17 @@ tr.even {
   };
   $(function(){
     var $links = $('a');
+    $(window).on('keyup', function(e) {
+      if (e.keyCode == 27) {
+        $('#search').focus();
+      }
+    });
+    $('#search').keydown(function(e) {
+      var val = $(this).val();
+      if (!val && e.key && (e.key == "'" || e.key == "/")) {
+        this.blur();
+      }
+    });
     $('#search').keyup(function() {
        var val = $(this).val(),
        strs = $.trim(val).split(/\s+/);
@@ -219,7 +230,23 @@ supplied, uses the root cause of the
 ([x] [x y] [x y & more])
   Returns the greatest of the nums.</pre>">max</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/min" class="tooltip" title="<pre>clojure.core/min
 ([x] [x y] [x y & more])
-  Returns the least of the nums.</pre>">min</a></code></td>
+  Returns the least of the nums.</pre>">min</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/+'" class="tooltip" title="<pre>clojure.core/+'
+([] [x] [x y] [x y & more])
+  Returns the sum of nums. (+) returns 0. Supports arbitrary precision.
+  See also: +</pre>">+'</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/-'" class="tooltip" title="<pre>clojure.core/-'
+([x] [x y] [x y & more])
+  If no ys are supplied, returns the negation of x, else subtracts
+  the ys from x and returns the result. Supports arbitrary precision.
+  See also: -</pre>">-'</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/*'" class="tooltip" title="<pre>clojure.core/*'
+([] [x] [x y] [x y & more])
+  Returns the product of nums. (*) returns 1. Supports arbitrary precision.
+  See also: *</pre>">*'</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/inc'" class="tooltip" title="<pre>clojure.core/inc'
+([x])
+  Returns a number one greater than num. Supports arbitrary precision.
+  See also: inc</pre>">inc'</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/dec'" class="tooltip" title="<pre>clojure.core/dec'
+([x])
+  Returns a number one less than num. Supports arbitrary precision.
+  See also: dec</pre>">dec'</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Compare</td>
