@@ -1,5 +1,5 @@
 Tickets needing work for CLJ project
-Date: July 1, 2014
+Date: August 1, 2014
 
 If you are a Clojure contributor, the tickets below could use some
 work.  Some are easy, some are not.  If you've never added a patch
@@ -42,20 +42,20 @@ ticket is marked Incomplete (I).
       Clojure language/library bug fixes:
 
 I  CLJ-971  Incomplete   clj-971-2.patch
-I  CLJ-1408 Incomplete   CLJ-1408.patch
+I  CLJ-1093 Incomplete   0001-CLJ-1093-fix-compilation-of-empty-PersistentCollecti.patch
 
 ----------------------------------------------------------------------
 Tickets marked for Clojure Release 1.7 that have no prescreened
 patches (see also Note 3 at the bottom):
 ----------------------------------------------------------------------
-V   5 [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
+V   6 [CLJ-1415] Keyword cache cleanup incurs linear scan of cache
 V   4 [CLJ-1208] Namespace is not loaded on defrecord class init
 S   2 [CLJ-1169] Report line,column, and source in defmacro errors
 I   1 [CLJ-787] transient blows up when passed a vector created by subvec
 V   1 [CLJ-823] Piping seque into seque can deadlock
-V   0 [CLJ-701] Compiler loses 'loop's return type in some cases
 I   0 [CLJ-1161] sources jar has bad versions.properties resource
 V   0 [CLJ-1192] vec function is substantially slower than into function
+I   0 [CLJ-1408] Add transient keyword to cached toString() value in _str
 
 ----------------------------------------------------------------------
 Tickets needing work that have no prescreened patches.  These are all
@@ -65,7 +65,7 @@ to fewest votes.
 ----------------------------------------------------------------------
 T   6 [CLJ-440] java method calls cannot omit varargs
 T   4 [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
-V   3 [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
+T   4 [CLJ-1449] Add starts-with? and ends-with? to clojure.string
 V   3 [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
 T   3 [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
 V   2 [CLJ-415] smarter assert (prints locals)
@@ -77,10 +77,12 @@ V   2 [CLJ-415] smarter assert (prints locals)
       test.generative could use that one.
 T   2 [CLJ-1026] Mixed end-of-line endings in the source code
 T   2 [CLJ-1232] Functions with non-qualified return type hints force import of hinted classes when called from other namespace
+T   2 [CLJ-1454] Companion to swap! which returns the old value
 V   1 [CLJ-274] cannot close over mutable fields (in deftype)
 T   1 [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
 T   1 [CLJ-1316] for doesn't support :let binding as its first seq-expr
-T   1 [CLJ-1454] Companion to swap! which returns the old value
+T   1 [CLJ-1414] sort's docstring should say whether it is stable
+T   1 [CLJ-1472] The locking macro fails bytecode verification on ART runtime
 V   0 [CLJ-5] Unintuitive error response in clojure 1.0
       One of two patches applied and built cleanly on May 4, 2012, but
       not on May 10, 2012.  The second, clj-5-destructure-error.diff,
@@ -101,10 +103,11 @@ V   0 [CLJ-771] Move unchecked-prim casts to clojure.unchecked
 V   0 [CLJ-992] `iterate` reducer
 T   0 [CLJ-1329] Unused local variable in PersistentVector.cons()
 V   0 [CLJ-1349] update to latest test.generative and prep for test.check
-T   0 [CLJ-1414] sort's docstring should say whether it is stable
 T   0 [CLJ-1417] clojure.java.io/input-stream has incorrect docstring
 T   0 [CLJ-1436] Deref throws an unhelpful error message when used on something not dereferencable
-T   0 [CLJ-1449] Add starts-with? and ends-with? to clojure.string
+T   0 [CLJ-1458] Use transients in merge and merge-with
+T   0 [CLJ-1460] Clojure transforms literals of custom IPersistentCollections not created via deftype/defrecord to their generic clojure counterpart
+T   0 [CLJ-1461] print-dup is broken for some clojure collections
 
 ----------------------------------------------------------------------
 Tickets not fitting in previous categories, but they have a git format

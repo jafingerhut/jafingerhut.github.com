@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: July 1, 2014
+Date: August 1, 2014
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -56,6 +56,12 @@ T  CLJ-1117 Triaged      clj-1117.patch
    CLJ-1337 Open         0001-Update-defprotocol-s-docstring-to-remove-an-out-of-d.patch
 T  CLJ-1357 Triaged      CLJ-1357-its-typo.patch
    CLJ-1385 Open         CLJ-1385-reword-docstrings-on-transient-update-funct.patch
+T  CLJ-1477 Triaged      0001-Fix-a-typo.patch
+T  CLJ-1478 Triaged      0001-Fix-a-typo.patch
+T  CLJ-1479 Triaged      0001-Fix-a-typo.patch
+T  CLJ-1480 Triaged      0001-Fix-param-name-reference-in-defmulti-s-docstring.patch
+T  CLJ-1481 Triaged      0001-Fix-a-typo.patch
+T  CLJ-1483 Triaged      0001-Clarify-the-usage-of-replace-first-with-pattern-func.patch
 
       Better error reporting:
 
@@ -67,13 +73,14 @@ T  CLJ-1107 Triaged      clj-1107-throw-on-unsupported-get-v4.patch
 V  CLJ-1130 Vetted       clj-1130-v5.diff
    CLJ-1162 Open         CLJ-1162-p1.patch
    CLJ-1189 Open         CLJ-1189-p1.patch
-   CLJ-1210 Open         extend-io-factory-to-nil.diff
+T  CLJ-1210 Triaged      extend-io-factory-to-nil.diff
    CLJ-1257 Open         clj-1257-2.diff
 T  CLJ-1282 Triaged      CLJ-1282-p2.patch
    CLJ-1319 Open         0001-CLJ-1319-Throw-on-odd-arguments-to-PersistentArrayMa.patch
    CLJ-1341 Open         keyword-1341-2014-02-12.2.patch
    CLJ-1406 Open         0001-modify-clojure.core-load-lib-so-that-it-removes-the-.patch
 T  CLJ-1456 Triaged      0001-CLJ-1456-counting-forms-to-catch-malformed-throw-for.patch
+T  CLJ-1473 Triaged      0001-Validate-that-pre-and-post-conditions-are-vectors.patch
 
       Debug/tooling enhancement:
 
@@ -119,7 +126,10 @@ T  CLJ-1372 Triaged      0007-CLJ-1372-consistent-hasheq-for-java.util.-List-Map
    CLJ-1399 Open         clj-1399.diff
    CLJ-1423 Open         apply-var.patch
    CLJ-1444 Open         0001-Fix-unquote-splicing-for-empty-seqs.patch
-T  CLJ-1453 Triaged      0001-Fix-iterator-implementations-to-throw-NSEE-when-exha.patch
+T  CLJ-1453 Triaged      0001-Throw-NSEE-in-gvec-iterator.patch
+T  CLJ-1466 Triaged      iterable-bean-v2.diff
+T  CLJ-1475 Triaged      clj-1475.diff
+T  CLJ-1485 Triaged      clj-1485.patch
 
       Language enhancement, reducers:
 
@@ -144,6 +154,7 @@ V  CLJ-1148 Vetted       clj-1148-defonce-3.patch
       Language/library enhancement:
 
    CLJ-107  Open         clj-107-v1.diff
+V  CLJ-124  Vetted       clj-124-v1.patch
    CLJ-200  Open         clj-200-cond-let-clauses-fixed-test-v2.diff
    CLJ-248  Open         clj-248-SortedMap-SortedSet-interfaces-patch2.txt
 T  CLJ-308  Triaged      0001-Added-ClosableResource-protocol-for-with-open.patch
@@ -177,7 +188,6 @@ T  CLJ-1219 Triaged      0001-CLJ-1219-make-identical-variadic.patch
    CLJ-1266 Open         floats-intrinsics.diff
 T  CLJ-1293 Triaged      CLJ-1293-v001.patch
 T  CLJ-1315 Triaged      0001-Don-t-initialize-classes-during-import.patch
-   CLJ-1324 Open         clj-1324-1.patch
    CLJ-1340 Open         primitive-cohercion.diff
    CLJ-1366 Open         0002-make-the-reader-return-the-same-empty-map-when-it-re.patch
    CLJ-1375 Open         clj-1375-v1.patch
@@ -194,7 +204,12 @@ T  CLJ-1386 Triaged      0002-Add-transient-predicate.patch
    CLJ-1424 Open         clojure-feature-expressions.diff
    CLJ-1425 Open         0001-Fix-map-unquote-splicing.patch
 T  CLJ-1451 Triaged      CLJ-1451-take-until.patch
-   CLJ-1452 Open         CLJ-1452.patch
+T  CLJ-1452 Triaged      CLJ-1452.patch
+T  CLJ-1464 Triaged      0001-Rename-a-function-parameter-to-reflect-the-fold-func.patch
+   CLJ-1470 Open         CLJ-1470-v1.patch
+   CLJ-1486 Open         0001-make-fnil-vararg.patch
+   CLJ-1487 Open         unroll-partial.patch
+      Ticket is probably a dup of CLJ-1430
 
       Performance enhancement:
 
@@ -210,9 +225,10 @@ T  CLJ-1289 Triaged      CLJ-1289-p1.patch
 T  CLJ-1295 Triaged      clj-1295-1.diff
 T  CLJ-1373 Triaged      clj-1373.diff
 T  CLJ-1410 Triaged      CLJ-1410.patch
-   CLJ-1416 Open         0001-CLJ-1416-transients-hash-caching-for-gvec-Object-met.patch
+T  CLJ-1416 Triaged      0002-CLJ-1416-transients-hash-caching-interop-improvement.patch
 V  CLJ-1420 Backlog      0001-rand-using-ThreadLocalRandom-and-tests-for-random.patch
       This patch requires JDK7 or later, breaking with JDK6.
+   CLJ-1469 Open         kwinvoke.patch
 
       Code cleanup:
 
@@ -221,6 +237,7 @@ V  CLJ-1420 Backlog      0001-rand-using-ThreadLocalRandom-and-tests-for-random.
 T  CLJ-1313 Triaged      clj-1313-v2.diff
    CLJ-1314 Open         clj-1314-v2.diff
 T  CLJ-1351 Triaged      0001-remove-unused-swapThunk-method-generation.patch
+   CLJ-1482 Open         0001-Replace-a-couple-of-filter-complement-usages-with-re.patch
 
 ----------------------------------------------------------------------
 Prescreened patches that are marked with Fix Version/s =
@@ -236,8 +253,9 @@ V  CLJ-1191 Screenable   clj-1191-patch-v1.txt
 
       Clojure language/library bug fixes:
 
+V  CLJ-701  Screenable   hoistedmethod-pass-5.diff
+V  CLJ-1152 Screenable   naive-lru-for-multimethods-and-protocols.diff
 V  CLJ-1157 Screenable   20140121_fix_classloader.diff
-V  CLJ-1187 Screenable   001-CLJ-1187.patch
 V  CLJ-1250 Screenable   CLJ-1250-AllInvokeSites-20140320.patch
 V  CLJ-1330 Screenable   0001-Fix-CLJ-1330-make-top-level-named-functions-classnam.patch
 
@@ -252,8 +270,6 @@ V  CLJ-1378 Screenable   clj-1378-v2.diff
       Performance enhancement:
 
 V  CLJ-1224 Screenable   0001-cache-hasheq-and-hashCode-for-records.patch
-V  CLJ-1415 Screenable   keyword-cache.diff
-V  CLJ-1439 Screenable   0001-Improve-Keyword.intern-performance.patch
 
 ----------------------------------------------------------------------
 Prescreened, and screened or accepted
@@ -328,8 +344,8 @@ was used with the latest Clojure master as of the date of this report.
   with all of the OS/JDK combos listed below:
     Mac OS X 10.8.5 + Oracle/Apple JDK 1.7.0_51 64-bit
     Ubuntu 12.04.4 64-bit + OpenJDK 1.6.0_31 64-bit
-    Ubuntu 14.04 64-bit + Oracle JDK 1.7.0_55 64-bit
-    Ubuntu 14.04 64-bit + Oracle JDK 1.8.0_05 64-bit
+    Ubuntu 14.04 64-bit + Oracle JDK 1.7.0_65 64-bit
+    Ubuntu 14.04 64-bit + Oracle JDK 1.8.0_11 64-bit
 * After applying the patch, the command "./antsetup.sh ; ant" compiles
   and passes all tests without warnings or errors (see Note 1 near the
   end for a short list of allowed warnings).
