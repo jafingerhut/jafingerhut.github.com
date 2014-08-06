@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: August 4, 2014
+Date: August 5, 2014
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -37,11 +37,12 @@ Project ASYNC tickets
 ========================================
 Defect
 
-    4.50   5 Open         [ASYNC-76] Exceptions cannot be captured by default uncaught exception handler
+    5.00   6 Open         [ASYNC-76] Exceptions cannot be captured by default uncaught exception handler
              Adam Tait (1)
              Alan Malloy (1)
              Anthony Marcar (1)
              Ragnar Dahlen (1)
+             Max Penet (1/2)
              Michael Nygard (1/2)
     1.50   2 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
              Hugo Duncan (1)
@@ -67,7 +68,7 @@ Defect
     0.00   0 Open         [ASYNC-73] try-catch-finally broken inside go-blocks
     0.00   0 Open         [ASYNC-77] StackOverflowError in go macro with cemerick.cljs.test (CLJS)
     0.00   0 Open         [ASYNC-78] deadlock in multi catch
-    0.00   0 Open         [ASYNC-81] Spurious Closure warnings when using new ClojureScript dependency
+    0.00   0 Open         [ASYNC-83] Taking from channels in anonymous functions inside go-loops does not work
     0.00   0 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
 
@@ -76,11 +77,12 @@ Enhancement
 
     1.00   1 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
              Reid McKenzie (1)
+    0.50   1 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
+             Max Penet (1/2)
     0.00   0 Open         [ASYNC-38] keep</> instead of map</>
     0.00   0 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
     0.00   0 Open         [ASYNC-46] Add optional default channel to 'pub'
     0.00   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
-    0.00   0 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
     0.00   0 Open         [ASYNC-71] exception behavior for thread macro is hard coded
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
     0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
@@ -98,12 +100,10 @@ Project CCACHE tickets
 ========================================
 Defect
 
+    1.00   1 Open         [CCACHE-31] SoftCaches update in-place, other cache types don't
+             Ambrose Bonnaire-Sergeant (1)
     0.00   0 Open         [CCACHE-15] It appears that TTL cache exhibits quadratic performance (+ its evict is buggy)
-    0.00   0 Open         [CCACHE-26] hit function in LRU cache can give funny results
     0.00   0 Open         [CCACHE-27] Missing LU and LRU is linear complexity - performance
-    0.00   0 Open         [CCACHE-28] SoftCache NullPointerException in has? with many threads
-    0.00   0 Open         [CCACHE-29] Is IPersistentCollection definition of cons correct?
-    0.00   0 Open         [CCACHE-31] SoftCaches update in-place, other cache types don't
     0.00   0 Open         [CCACHE-32] LIRSCache defect allows it's memory use to grow without bound
 
 ========================================
@@ -111,13 +111,10 @@ Enhancement
 
     0.00   0 Open         [CCACHE-14] Asynchronous Cache Support
     0.00   0 Open         [CCACHE-17] Create function backed cache
-    0.00   0 Open         [CCACHE-30] make-reference need not be dynamic
 
 ========================================
 Task
 
-    1.00   1 Open         [CCACHE-34] Update data.priority-map dependency
-             Andy Fingerhut (1)
     0.00   0 Open         [CCACHE-11] Add eviction implementation to LIRSCache
     0.00   0 Open         [CCACHE-16] Benchmark v0.5.x against Google Guava
     0.00   0 Open         [CCACHE-18] Explore JSR 107- Java Temporary Caching API
@@ -539,6 +536,7 @@ Defect
     0.00   0 Open         [NREPL-48] *1/*2/*3/*e nil in cloned session
     0.00   0 Open         [NREPL-53] Middleware linearization is nondeterministically wrong
     0.00   0 Open         [NREPL-54] No version of nrepl when connect to the lein-droid REPL
+    0.00   0 Open         [NREPL-60] Tests failing in build "Unable to resolve var: clojure.pprint/use-method in this context"
 
 ========================================
 Enhancement
@@ -600,6 +598,7 @@ Defect
     0.00   0 Open         [TCHECK-32] Default sizing on gen/any needs re-evaluation
     0.00   0 Open         [TCHECK-33] test.check is entangled with clojure.test
     0.00   0 Open         [TCHECK-34] clojure.test reporting is uninformative
+    0.00   0 Open         [TCHECK-36] doc typo: 'excepts' should be 'accepts'
 
 ========================================
 Enhancement
