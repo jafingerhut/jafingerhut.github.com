@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: August 17, 2014
+Date: August 27, 2014
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -77,6 +77,7 @@ Defect
     0.00   0 Open         [ASYNC-78] deadlock in multi catch
     0.00   0 Open         [ASYNC-83] Taking from channels in anonymous functions inside go-loops does not work
     0.00   0 Open         [ASYNC-84] Issue with (require [clojure.core.async :as async])
+    0.00   0 Open         [ASYNC-88] Add Sonatype repository info to README for unreleased library
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
@@ -94,6 +95,7 @@ Enhancement
     0.00   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
     0.00   0 Open         [ASYNC-71] exception behavior for thread macro is hard coded
     0.00   0 Open         [ASYNC-86] Update tools.analyzer.jvm dep
+    0.00   0 Open         [ASYNC-87] Add variant of pipe which accepts mapping fn
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
     0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
     0.00   0 Vetted       [ASYNC-67] Can we get a generic sink operation?
@@ -116,6 +118,7 @@ Enhancement
 
     0.00   0 Open         [CCACHE-14] Asynchronous Cache Support
     0.00   0 Open         [CCACHE-17] Create function backed cache
+    0.00   0 Open         [CCACHE-35] Add weak-cache
 
 ========================================
 Task
@@ -249,6 +252,9 @@ Defect
     0.00   0 Open         [CTYP-167] Several failure cases for comp for polyadic fns and type variables
     0.00   0 Open         [CTYP-168] :arglists metadata is missing from vars defined using core.typed's defn macro
     0.00   0 Open         [CTYP-169] Type checking fails using core.typed's defn but succeeds without
+    0.00   0 Open         [CTYP-170] `(apply concat ...)` gives "AssertionError Assert failed: (r/HeterogeneousMap? kws)".
+    0.00   0 Open         [CTYP-171] nil should not be treated as subtype of repeat list/vector
+    0.00   0 Open         [CTYP-172] annotating methods that descructure their arguments can confuse the type system
 
 ========================================
 Enhancement
@@ -286,7 +292,6 @@ Task
 
     0.00   0 Bad: Unkn Fi [CTYP-15] Eliminate the need to specify all ancestors in alter-class.
     0.00   0 Bad: Unkn Fi [CTYP-16] Parameterise IFn instead of special function type.
-    0.00   0 Open         [CTYP-152] base_env_cljs.clj lacks annotations for several cljs.core fns
 
 
 Project DAVL tickets
@@ -334,6 +339,11 @@ Enhancement
 
 
 Project DGEN tickets
+========================================
+Defect
+
+    0.00   0 Open         [DGEN-2] string generator function comment is inaccurate
+
 ========================================
 Enhancement
 
@@ -538,14 +548,10 @@ Project NREPL tickets
 ========================================
 Defect
 
+    1.00   1 Open         [NREPL-3] Adopt default port
+             Bozhidar Batsov (1)
     1.00   1 Open         [NREPL-46] nREPL crashes when required more than one time with :reload-all
              Laurent Petit (1)
-    0.50   1 Open         [NREPL-3] Adopt default port
-             Bozhidar Batsov (1/2)
-    0.50   1 Open         [NREPL-58] Inconsistency between session and eval responses
-             Bozhidar Batsov (1/2)
-    0.00   0 Bad: Unkn Fi [NREPL-40] Thread leak in clojure.tools.nrepl.transport$fn_transport?
-    0.00   0 Bad: Unkn Fi [NREPL-56] Test suite failing on JDK 1.8
     0.00   0 Open         [NREPL-24] :session key is overloaded
     0.00   0 Open         [NREPL-28] Clarify semantics for String encoding
     0.00   0 Open         [NREPL-33] Consider making session and eval functionality more accessible
@@ -553,7 +559,6 @@ Defect
     0.00   0 Open         [NREPL-48] *1/*2/*3/*e nil in cloned session
     0.00   0 Open         [NREPL-53] Middleware linearization is nondeterministically wrong
     0.00   0 Open         [NREPL-54] No version of nrepl when connect to the lein-droid REPL
-    0.00   0 Open         [NREPL-60] Tests failing in build "Unable to resolve var: clojure.pprint/use-method in this context"
 
 ========================================
 Enhancement
@@ -564,8 +569,8 @@ Enhancement
     0.00   0 Open         [NREPL-43] Document the availability/usage of *e, *1, *2, ... in nREPL
     0.00   0 Open         [NREPL-44] Expose JMX MBean to provide list of available nREPL endpoints
     0.00   0 Open         [NREPL-55] Support custom value rendering middleware
-    0.00   0 Open         [NREPL-57] Add Java version info to op "describe"'s response
     0.00   0 Open         [NREPL-59] Tracking source form positions in eval
+    0.00   0 Open         [NREPL-64] Add current ns to describe session's response
 
 
 Project TANAL tickets
@@ -612,6 +617,7 @@ Defect
     0.00   0 Open         [TCHECK-33] test.check is entangled with clojure.test
     0.00   0 Open         [TCHECK-34] clojure.test reporting is uninformative
     0.00   0 Open         [TCHECK-36] doc typo: 'excepts' should be 'accepts'
+    0.00   0 Open         [TCHECK-40] Typo: alpha-numeric should be alphanumeric
 
 ========================================
 Enhancement
@@ -675,6 +681,11 @@ Enhancement
 
 
 Project TLOG tickets
+========================================
+Enhancement
+
+    0.00   0 Open         [TLOG-13] tools.logging ns form :require and :use subforms unrecognized by tools.namespace
+
 
 Project TMACRO tickets
 ========================================
@@ -698,6 +709,9 @@ Defect
     1.00   1 Open         [TNS-7] Stack overflow on refresh after circular dependency detected
              Anthony Marcar (1)
     0.00   0 Open         [TNS-6] Attempt to reload deleted file
+    0.00   0 Open         [TNS-20] tracker's unload order sometimes incorrect
+    0.00   0 Open         [TNS-21] tools.namespace ignores ns form dependencies inside vectors
+    0.00   0 Open         [TNS-22] Function ns-file-name makes incorrect call to clojure.string/replace when File/separator is "\\" (e.g. Windows)
 
 ========================================
 Enhancement
