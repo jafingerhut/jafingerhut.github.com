@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v15)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v16)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -954,38 +954,18 @@ format
   does not contain key(s).">disj</a></code></td>
               </tr>
               <tr class="even">
-                <td>Rel algebra</td>
-                <td><code>(clojure.set/) <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/join/" title="clojure.set/join
-([xrel yrel] [xrel yrel km])
-  When passed 2 rels, returns the rel corresponding to the natural
-  join. When passed an additional keymap, joins on the corresponding
-  keys.">join</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/select/" title="clojure.set/select
-([pred xset])
-  Returns a set of the elements for which pred is true">select</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/project/" title="clojure.set/project
-([xrel ks])
-  Returns a rel of the elements of xrel with only the keys in ks">project</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/union/" title="clojure.set/union
+                <td>Set ops</td>
+                <td><code>(clojure.set/) <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/union/" title="clojure.set/union
 ([] [s1] [s1 s2] [s1 s2 & sets])
   Return a set that is the union of the input sets">union</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/difference/" title="clojure.set/difference
 ([s1] [s1 s2] [s1 s2 & sets])
   Return a set that is the first set without elements of the remaining sets">difference</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/intersection/" title="clojure.set/intersection
 ([s1] [s1 s2] [s1 s2 & sets])
-  Return a set that is the intersection of the input sets">intersection</a></code></td>
+  Return a set that is the intersection of the input sets">intersection</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/select/" title="clojure.set/select
+([pred xset])
+  Returns a set of the elements for which pred is true">select</a> See also Relations</code></td>
               </tr>
               <tr class="odd">
-                <td>Get map</td>
-                <td><code>(clojure.set/) <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/index/" title="clojure.set/index
-([xrel ks])
-  Returns a map of the distinct values of ks in the xrel mapped to a
-  set of the maps in xrel with the corresponding values of ks.">index</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/rename-keys/" title="clojure.set/rename-keys
-([map kmap])
-  Returns the map with the keys in kmap renamed to the vals in kmap">rename-keys</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/rename/" title="clojure.set/rename
-([xrel kmap])
-  Returns a rel of the maps in xrel with the keys in kmap renamed to the vals in
-kmap">rename</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/map-invert/" title="clojure.set/map-invert
-([m])
-  Returns the map with the vals mapped to the keys.">map-invert</a></code></td>
-              </tr>
-              <tr class="even">
                 <td>Test</td>
                 <td><code>(clojure.set/) <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/subset_QMARK/" title="clojure.set/subset?
 ([set1 set2])
@@ -1028,7 +1008,10 @@ kmap">rename</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/map-inver
 ([f coll])
   Returns a map of the elements of coll keyed by the result of
   f on each element. The value at each key will be a vector of the
-  corresponding elements, in the order they appeared in coll.">group-by</a></code></td>
+  corresponding elements, in the order they appeared in coll.">group-by</a> (clojure.set/) <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/index/" title="clojure.set/index
+([xrel ks])
+  Returns a map of the distinct values of ks in the xrel mapped to a
+  set of the maps in xrel with the corresponding values of ks.">index</a></code></td>
               </tr>
               <tr class="even">
                 <td>Examine</td>
@@ -1083,7 +1066,11 @@ kmap">rename</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/map-inver
   sequence of keys and f is a function that will take the old value
   and any supplied args and return the new value, and returns a new
   nested structure.  If any levels do not exist, hash-maps will be
-  created.">update-in</a></code></td>
+  created.">update-in</a> (clojure.set/) <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/rename-keys/" title="clojure.set/rename-keys
+([map kmap])
+  Returns the map with the keys in kmap renamed to the vals in kmap">rename-keys</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/map-invert/" title="clojure.set/map-invert
+([m])
+  Returns the map with the vals mapped to the keys.">map-invert</a> GitHub: <a href="http://github.com/weavejester/medley">Medley</a></code></td>
               </tr>
               <tr class="even">
                 <td>Entry</td>
@@ -1114,6 +1101,35 @@ kmap">rename</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/map-inver
       </div><!-- /column -->
       <div class="column">
         <div class="section yellow">
+          <h3>Relations (set of maps, each with same keys, aka rels)</h3>
+          <table>
+            <tbody>
+              <tr class="odd">
+                <td>Rel algebra</td>
+                <td><code>(clojure.set/) <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/join/" title="clojure.set/join
+([xrel yrel] [xrel yrel km])
+  When passed 2 rels, returns the rel corresponding to the natural
+  join. When passed an additional keymap, joins on the corresponding
+  keys.">join</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/select/" title="clojure.set/select
+([pred xset])
+  Returns a set of the elements for which pred is true">select</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/project/" title="clojure.set/project
+([xrel ks])
+  Returns a rel of the elements of xrel with only the keys in ks">project</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/union/" title="clojure.set/union
+([] [s1] [s1 s2] [s1 s2 & sets])
+  Return a set that is the union of the input sets">union</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/difference/" title="clojure.set/difference
+([s1] [s1 s2] [s1 s2 & sets])
+  Return a set that is the first set without elements of the remaining sets">difference</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/intersection/" title="clojure.set/intersection
+([s1] [s1 s2] [s1 s2 & sets])
+  Return a set that is the intersection of the input sets">intersection</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/index/" title="clojure.set/index
+([xrel ks])
+  Returns a map of the distinct values of ks in the xrel mapped to a
+  set of the maps in xrel with the corresponding values of ks.">index</a> <a href="http://grimoire.arrdem.com/1.6.0/clojure.set/rename/" title="clojure.set/rename
+([xrel kmap])
+  Returns a rel of the maps in xrel with the keys in kmap renamed to the vals in
+kmap">rename</a></code></td>
+              </tr>
+            </tbody>
+          </table>
           <h3>Transients (<a href="http://clojure.org/transients">clojure.org/transients</a>)</h3>
           <table>
             <tbody>
