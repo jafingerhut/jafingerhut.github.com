@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: August 29, 2014
+Date: September 2, 2014
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -54,8 +54,6 @@ Defect
     2.00   2 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
              Hugo Duncan (1)
              Michael Nygard (1)
-    1.00   1 Open         [ASYNC-31] put! does not throw on closed channel
-             Justin Balthrop (1)
     1.00   1 Open         [ASYNC-42] (try (catch :default)) inside a cljs go block raises an exception
              Kevin Neaton (1)
     1.00   1 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
@@ -65,19 +63,15 @@ Defect
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
     0.00   0 Open         [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
     0.00   0 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
-    0.00   0 Open         [ASYNC-50] Add bang(!) to the names of channel ops with side effects
     0.00   0 Open         [ASYNC-51] Core.async memory leak in Safari and Mobile Safari
     0.00   0 Open         [ASYNC-54] MAX-QUEUE-SIZE has a wrong type-hint
     0.00   0 Open         [ASYNC-57] reify in go macro compile error
-    0.00   0 Open         [ASYNC-59] Channel returned by cljs.core.async/map> is missing protocol method Channel.closed?
     0.00   0 Open         [ASYNC-63] Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
     0.00   0 Open         [ASYNC-72] CLJS: mult becomes blocked after putting to a closed channel
     0.00   0 Open         [ASYNC-73] try-catch-finally broken inside go-blocks
     0.00   0 Open         [ASYNC-77] StackOverflowError in go macro with cemerick.cljs.test (CLJS)
     0.00   0 Open         [ASYNC-78] deadlock in multi catch
     0.00   0 Open         [ASYNC-83] Taking from channels in anonymous functions inside go-loops does not work
-    0.00   0 Open         [ASYNC-84] Issue with (require [clojure.core.async :as async])
-    0.00   0 Open         [ASYNC-88] Add Sonatype repository info to README for unreleased library
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
@@ -89,13 +83,11 @@ Enhancement
              Max Penet (1)
     1.00   1 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
              Reid McKenzie (1)
-    0.00   0 Open         [ASYNC-38] keep</> instead of map</>
     0.00   0 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
     0.00   0 Open         [ASYNC-46] Add optional default channel to 'pub'
     0.00   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
     0.00   0 Open         [ASYNC-71] exception behavior for thread macro is hard coded
     0.00   0 Open         [ASYNC-86] Update tools.analyzer.jvm dep
-    0.00   0 Open         [ASYNC-87] Add variant of pipe which accepts mapping fn
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
     0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
     0.00   0 Vetted       [ASYNC-67] Can we get a generic sink operation?
@@ -238,7 +230,6 @@ Defect
     0.00   0 Open         [CTYP-71] Occurrence typing does not deal well with non-eagerly simplifying unions
     0.00   0 Open         [CTYP-72] merge doesn't seem to like records
     0.00   0 Open         [CTYP-80] Issue with filter subtyping/simplification
-    0.00   0 Open         [CTYP-83] check-ns takes exponentially longer on each invocation
     0.00   0 Open         [CTYP-87] Handle variace in datatype cgen
     0.00   0 Open         [CTYP-88] with-meta doesn't type check with vectors or hash-maps. 
     0.00   0 Open         [CTYP-100] RClass ancestors should work with reset-env
@@ -255,6 +246,7 @@ Defect
     0.00   0 Open         [CTYP-170] `(apply concat ...)` gives "AssertionError Assert failed: (r/HeterogeneousMap? kws)".
     0.00   0 Open         [CTYP-171] nil should not be treated as subtype of repeat list/vector
     0.00   0 Open         [CTYP-172] annotating methods that descructure their arguments can confuse the type system
+    0.00   0 Open         [CTYP-173] (first (filter ...)) type checks in Clojure, not ClojureScript
 
 ========================================
 Enhancement
@@ -427,6 +419,7 @@ Enhancement
     0.00   0 Open         [JDBC-37] Provide support for alternate transaction strategies
     0.00   0 Open         [JDBC-48] Support stored procedures with CallableStatement
     0.00   0 Open         [JDBC-64] Support multiple result sets?
+    0.00   0 Open         [JDBC-99] The age of reduce is upon us
 
 ========================================
 Task
@@ -649,6 +642,7 @@ Enhancement
     0.00   0 Open         [TCHECK-31] Doc improvements: how to separate "size" from "range"
     0.00   0 Open         [TCHECK-37] Make random-number generation in test.check thread-safe
     0.00   0 Open         [TCHECK-38] Generators for functions?
+    0.00   0 Open         [TCHECK-41] Add helpers for deprecating generators
 
 
 Project TCLI tickets
@@ -714,6 +708,7 @@ Defect
     0.00   0 Open         [TNS-20] tracker's unload order sometimes incorrect
     0.00   0 Open         [TNS-21] tools.namespace ignores ns form dependencies inside vectors
     0.00   0 Open         [TNS-22] Function ns-file-name makes incorrect call to clojure.string/replace when File/separator is "\\" (e.g. Windows)
+    0.00   0 Open         [TNS-23] Refresh breaks when changing priority of conflicting methods in `prefer-method`
 
 ========================================
 Enhancement
