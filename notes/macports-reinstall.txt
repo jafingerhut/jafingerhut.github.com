@@ -1,0 +1,58 @@
+Get rid of a couple of directories where most MacPorts things are
+installed:
+
+sudo rm -fr /opt /Applications/MacPorts
+
+Get rid of some files installed by dbus and rsync, installed as a side
+effect of installing emacs and git:
+
+sudo rm /Library/LaunchAgents/org.freedesktop.dbus-session.plist 
+sudo rm /Library/LaunchDaemons/org.freedesktop.dbus-system.plist 
+sudo rm /Library/LaunchDaemons/org.macports.rsyncd.plist
+
+----------------------------------------------------------------------
+
+Install MacPorts from installer on MacPorts web page, the one
+appropriate for the version of Mac OS X installed on the system.
+
+Install latest Xquartz from installer package
+
+----------------------------------------------------------------------
+
+Install software packages I use frequently:
+
+sudo port install emacs@+gtk+x11 git rlwrap graphviz
+
+Not as frequent, but small and sometimes useful:
+
+sudo port install aspell aspell-dict-en bsdiff p5-xml-libxml p5-net-ipv4addr p5-net-ipv6addr p7zip tcpdump tcpreplay
+
+Install less frequently used packages:
+
+sudo port install gnuplot ipe LyX scapy texlive-latex-recommended texlive-fonts-recommended wireshark
+
+The following are useful for parts of clojure-benchmarks:
+* p5-xml-libxml
+* gnuplot
+
+The following are useful for parts of clojure-cheatsheets:
+* texlive-latex-recommended (needed for scrreprt.cls)
+* texlive-fonts-recommended (needed for the lmodern font)
+
+
+Not sure if I ever used these:
+
+bittwist
+file
+nemesis
+netdude
+sbcl
+
+----------------------------------------------------------------------
+
+Double-check during installation of emacs and git, but last time I did
+these commands were recommended for parts of dbus to be auto-run on
+startup/login:
+
+sudo launchctl load -w /Library/LaunchDaemons/org.freedesktop.dbus-system.plist 
+launchctl load -w /Library/LaunchAgents/org.freedesktop.dbus-session.plist 
