@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: September 22, 2014
+Date: September 24, 2014
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -42,37 +42,39 @@ Defect
              Herwig Hochleitner (1/3)
              John Hume (1/3)
              Andy Fingerhut (1/8)
-    3.52   9 Screenable   [CLJ-1250] Reducer (and folder) instances hold onto the head of seqs
+    3.27   9 Screenable   [CLJ-1250] Reducer (and folder) instances hold onto the head of seqs
              Steffen Dienst (1)
              Fogus (1/2)
              Ghadi Shayban (1/2)
-             Kuldeep (1/2)
              Paul Butcher (1/2)
              Jozef Wagner (1/4)
+             Kuldeep (1/4)
              Tassilo Horn (1/7)
              Gary Trakhman (1/13)
              Nicola Mometto (1/21)
-    2.91   6 Screenable   [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
+    2.87   7 Screenable   [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
              Stephen Nelson (1)
              Volkert Oakley Jurgens (1)
              Kevin Downey (1/3)
-             Jason Wolfe (1/4)
              Alex Miller (1/5)
+             Jason Wolfe (1/6)
              Colin Jones (1/8)
-    2.49   8 Screenable   [CLJ-700] contains? broken for transient collections
+             Nicola Mometto (1/21)
+    2.41   8 Screenable   [CLJ-700] contains? broken for transient collections
              Dom Kiva-Meyer (1/2)
              Phill Wolf (1/2)
              Laszlo Török (1/3)
              Mark Engelberg (1/3)
              Peter Taoussanis (1/3)
-             Jason Wolfe (1/4)
+             Jason Wolfe (1/6)
              Patrick Houk (1/6)
              Gary Trakhman (1/13)
-    2.21   7 Screenable   [CLJ-1330] Class name clash between top-level functions and defn'ed ones
+    2.38   8 Screenable   [CLJ-1330] Class name clash between top-level functions and defn'ed ones
              Jacek Lach (1)
              Paul Michael Bauer (1/2)
              César Bolaños (1/4)
              David Nolen (1/5)
+             Colin Fleming (1/6)
              Ambrose Bonnaire-Sergeant (1/10)
              Reid McKenzie (1/12)
              Gary Trakhman (1/13)
@@ -105,9 +107,6 @@ Defect
     0.55   2 Open         [CLJ-1237] reduce gives a SO for pathological seqs
              Ghadi Shayban (1/2)
              Nicola Mometto (1/21)
-    0.50   2 Open         [CLJ-259] clojure.lang.Reflector.invokeMatchingMethod is not complete (rejects pontentially valid method invocations)
-             Christoffer Sawicki (1/4)
-             Jason Wolfe (1/4)
     0.50   1 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
              Stuart Halloway (1/2)
     0.50   1 Open         [CLJ-1390] pprint a GregorianCalendar results in Arity exception
@@ -124,6 +123,9 @@ Defect
              Tim McCormack (1/3)
              Reid McKenzie (1/12)
              Nicola Mometto (1/21)
+    0.42   2 Open         [CLJ-259] clojure.lang.Reflector.invokeMatchingMethod is not complete (rejects pontentially valid method invocations)
+             Christoffer Sawicki (1/4)
+             Jason Wolfe (1/6)
     0.42   2 Triaged      [CLJ-1453] Most Iterator implementations do not correctly implement next failing to throw the required NoSuchElementException
              Tim McCormack (1/3)
              Reid McKenzie (1/12)
@@ -140,10 +142,6 @@ Defect
     0.38   2 Open         [CLJ-1079] Don't squash explicit :line and :column metadata in the MetaReader
              Christoffer Sawicki (1/4)
              Colin Jones (1/8)
-    0.34   3 Triaged      [CLJ-1232] Functions with non-qualified return type hints force import of hinted classes when called from other namespace
-             Colin Fleming (1/5)
-             Max Penet (1/11)
-             Nicola Mometto (1/21)
     0.33   1 Backlog      [CLJ-274] cannot close over mutable fields (in deftype)
              John Hume (1/3)
     0.33   1 Open         [CLJ-1229] count silently overflows for sequences with more than Integer/MAX_VALUE elements
@@ -152,6 +150,10 @@ Defect
              Francis Avila (1/3)
     0.33   1 Screenable   [CLJ-701] Compiler loses 'loop's return type in some cases
              Kevin Downey (1/3)
+    0.31   3 Triaged      [CLJ-1232] Functions with non-qualified return type hints force import of hinted classes when called from other namespace
+             Colin Fleming (1/6)
+             Max Penet (1/11)
+             Nicola Mometto (1/21)
     0.25   1 Open         [CLJ-1279] Fix confusing macroexpand1 ArityException handling
              César Bolaños (1/4)
     0.25   1 Open         [CLJ-1360] clojure.string/split strips trailing delimiters
@@ -161,10 +163,10 @@ Defect
              Max Penet (1/11)
     0.20   1 Open         [CLJ-1403] ns-resolve might throw ClassNotFoundException but should return nil
              Mike Rodriguez (1/5)
-    0.14   1 Open         [CLJ-1231] fn and letfn don't support hinting the function's return type
-             Mike Anderson (1/7)
     0.13   1 Open         [CLJ-1059] PersistentQueue doesn't implement java.util.List, causing nontransitive equality
              Andy Fingerhut (1/8)
+    0.13   1 Open         [CLJ-1231] fn and letfn don't support hinting the function's return type
+             Mike Anderson (1/8)
     0.13   1 Triaged      [CLJ-1225] quot overflow issues around Long/MIN_VALUE for BigInt
              Colin Jones (1/8)
     0.13   1 Triaged      [CLJ-1253] Incorrect long division involving Long/MIN_VALUE
@@ -194,25 +196,26 @@ Defect
     0.00   0 Triaged      [CLJ-1492] PersistentQueue objects are improperly eval'd and compiled
     0.00   0 Triaged      [CLJ-1501] LazySeq switches to equiv when using equals
     0.00   0 Triaged      [CLJ-1509] Some clojure namespaces not AOT-compiled and included in the clojure jar
+    0.00   0 Triaged      [CLJ-1527] Harmonize accepted / documented symbol and keyword syntax over various readers
     0.00   0 Triaged      [CLJ-1528] clojure.test/inc-report-counter is not thread safe
 
 ========================================
 Enhancement
 
-    7.90  14 Vetted       [CLJ-865] Macroexpansion discards &form metadata
+    7.63  14 Vetted       [CLJ-865] Macroexpansion discards &form metadata
              Anthony Simpson (1)
              Chris Granger (1)
              Christophe Grand (1)
              Hugo Duncan (1)
              Jarppe Lansio (1)
              Marek Srank (1)
-             Kuldeep (1/2)
              Marshall T. Vandegrift (1/3)
              Peter Taoussanis (1/3)
+             Kuldeep (1/4)
              David Nolen (1/5)
              Vlad Bokov (1/5)
-             Mike Anderson (1/7)
              Tassilo Horn (1/7)
+             Mike Anderson (1/8)
              Nicola Mometto (1/21)
     7.16  12 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
              Gabriel Ki (1)
@@ -227,7 +230,7 @@ Enhancement
              Jozef Wagner (1/4)
              Patrick Houk (1/6)
              Gary Trakhman (1/13)
-    5.70  11 Incomplete   [CLJ-1297] try to catch using - instead of _ in filenames so the compiler can give a better error message for people who don't know that you need to use _ in file names
+    5.65  10 Incomplete   [CLJ-1297] try to catch using - instead of _ in filenames so the compiler can give a better error message for people who don't know that you need to use _ in file names
              Alexander Redington (1)
              John Wiseman (1)
              Obadz (1)
@@ -238,49 +241,55 @@ Enhancement
              Alex Miller (1/5)
              Gary Fredericks (1/5)
              Reid McKenzie (1/12)
+    5.53  16 Triaged      [CLJ-1529] Significantly improve compile time by reducing calls to Class.forName
+             Kevin Lynagh (1)
+             Michael Patrick O'Keefe (1/2)
+             Ragnar Dahlen (1/2)
+             Russell Dunphy (1/2)
+             Thomas Greve Kristensen (1/2)
+             davie moston (1/2)
+             Daniel R. Schlegel (1/3)
+             Francesco Bellomi (1/3)
+             Laszlo Török (1/3)
+             Kuldeep (1/4)
+             Alex Miller (1/5)
+             Colin Fleming (1/6)
+             Jason Wolfe (1/6)
+             Mike Anderson (1/8)
+             Gary Trakhman (1/13)
              Nicola Mometto (1/21)
-    4.98   7 Open         [CLJ-1278] Provide a useful implementation of toString() for Clojure functions
+    5.35  15 Triaged      [CLJ-703] Improve writeClassFile performance
+             David Powell (1)
+             Michael Patrick O'Keefe (1/2)
+             Ragnar Dahlen (1/2)
+             Russell Dunphy (1/2)
+             Thomas Greve Kristensen (1/2)
+             davie moston (1/2)
+             Daniel R. Schlegel (1/3)
+             Francesco Bellomi (1/3)
+             Laszlo Török (1/3)
+             Kuldeep (1/4)
+             Colin Fleming (1/6)
+             Jason Wolfe (1/6)
+             Andy Fingerhut (1/8)
+             Max Penet (1/11)
+             Nicola Mometto (1/21)
+    4.96   7 Open         [CLJ-1278] Provide a useful implementation of toString() for Clojure functions
              Dave Kincaid (1)
              Guillermo Winkler (1)
              Mark Addleman (1)
              Oleksandr Shyshko (1)
              Dom Kiva-Meyer (1/2)
              Marc Limotte (1/3)
-             Mike Anderson (1/7)
-    4.52  12 Triaged      [CLJ-1529] Significantly improve compile time by reducing calls to Class.forName
-             Kevin Lynagh (1)
-             Ragnar Dahlen (1/2)
-             Russell Dunphy (1/2)
-             Thomas Greve Kristensen (1/2)
-             davie moston (1/2)
-             Daniel R. Schlegel (1/3)
-             Francesco Bellomi (1/3)
-             Laszlo Török (1/3)
-             Alex Miller (1/5)
-             Colin Fleming (1/5)
-             Gary Trakhman (1/13)
-             Nicola Mometto (1/21)
-    4.46  12 Triaged      [CLJ-703] Improve writeClassFile performance
-             David Powell (1)
-             Ragnar Dahlen (1/2)
-             Russell Dunphy (1/2)
-             Thomas Greve Kristensen (1/2)
-             davie moston (1/2)
-             Daniel R. Schlegel (1/3)
-             Francesco Bellomi (1/3)
-             Laszlo Török (1/3)
-             Colin Fleming (1/5)
-             Andy Fingerhut (1/8)
-             Max Penet (1/11)
-             Nicola Mometto (1/21)
-    4.04   9 Triaged      [CLJ-1315] Don't initialize classes when importing them
+             Mike Anderson (1/8)
+    3.99   9 Triaged      [CLJ-1315] Don't initialize classes when importing them
              Mark A. Nicolosi (1)
              Michael Alyn Miller (1)
              Zach Oakes (1)
              Sean Corfield (1/3)
-             Colin Fleming (1/5)
              Greg Chapman (1/5)
-             Mike Anderson (1/7)
+             Colin Fleming (1/6)
+             Mike Anderson (1/8)
              Max Penet (1/11)
              Gary Trakhman (1/13)
     3.95   6 Triaged      [CLJ-440] java method calls cannot omit varargs
@@ -322,10 +331,10 @@ Enhancement
              Francis Avila (1/3)
              John Jacobsen (1/3)
              Nicola Mometto (1/21)
-    2.59   6 Triaged      [CLJ-308] protocol-ize with-open
+    2.51   6 Triaged      [CLJ-308] protocol-ize with-open
              Eldar Gabdullin (1)
              Stephen C. Gilardi (1)
-             Jason Wolfe (1/4)
+             Jason Wolfe (1/6)
              Tassilo Horn (1/7)
              Brandon Bloom (1/9)
              Max Penet (1/11)
@@ -374,11 +383,6 @@ Enhancement
     2.00   2 Triaged      [CLJ-1436] Deref throws an unhelpful error message when used on something not dereferencable
              Alex Baranosky (1)
              Tobias Kortkamp (1)
-    1.87   4 Needs Patch  [CLJ-1208] Namespace is not loaded on defrecord class init
-             Rohit Aggarwal (1)
-             Francesco Bellomi (1/3)
-             Herwig Hochleitner (1/3)
-             Colin Fleming (1/5)
     1.86   8 Screenable   [CLJ-1224] Records do not cache hash like normal maps
              Steve Miner (1/2)
              Daniel R. Schlegel (1/3)
@@ -388,6 +392,11 @@ Enhancement
              Mike Rodriguez (1/5)
              Ambrose Bonnaire-Sergeant (1/10)
              Gary Trakhman (1/13)
+    1.83   4 Needs Patch  [CLJ-1208] Namespace is not loaded on defrecord class init
+             Rohit Aggarwal (1)
+             Francesco Bellomi (1/3)
+             Herwig Hochleitner (1/3)
+             Colin Fleming (1/6)
     1.70   3 Open         [CLJ-272] load/ns/require/use overhaul
              Kevin Krouse (1)
              Paudi Moriarty (1/2)
@@ -419,6 +428,9 @@ Enhancement
     1.33   2 Open         [CLJ-1490] Exception on protocol implementation after protocol reloaded could be improved
              Alan Crowley (1)
              Jeremy Heiler (1/3)
+    1.33   2 Triaged      [CLJ-1414] sort's docstring should say whether it is stable
+             Antti Karanta (1)
+             Stuart Sierra (1/3)
     1.33   2 Triaged      [CLJ-1454] Companion to swap! which returns the old value
              Timothy Baldridge (1)
              Stuart Sierra (1/3)
@@ -456,20 +468,20 @@ Enhancement
              Trevor Hartman (1/2)
              Marc Limotte (1/3)
              Reid McKenzie (1/12)
-    0.84   3 Backlog      [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
-             Maris Orbidans (1/2)
-             Chas Emerick (1/5)
-             Mike Anderson (1/7)
-    0.84   3 Triaged      [CLJ-825] Protocol implementation inconsistencies when overloading arity
-             Michael Klishin (1/2)
-             Dmitri Naumov (1/5)
-             Mike Anderson (1/7)
     0.83   2 Open         [CLJ-891] make (symbol foo "bar") work with foo being a namespace
              Steve Miner (1/2)
              Kevin Downey (1/3)
     0.83   2 Triaged      [CLJ-1209] clojure.test does not print ex-info in error reports
              Ivan Kozik (1/2)
              Stuart Sierra (1/3)
+    0.83   3 Backlog      [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
+             Maris Orbidans (1/2)
+             Chas Emerick (1/5)
+             Mike Anderson (1/8)
+    0.83   3 Triaged      [CLJ-825] Protocol implementation inconsistencies when overloading arity
+             Michael Klishin (1/2)
+             Dmitri Naumov (1/5)
+             Mike Anderson (1/8)
     0.73   4 Triaged      [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
              César Bolaños (1/4)
              Gary Fredericks (1/5)
@@ -510,8 +522,6 @@ Enhancement
              Herwig Hochleitner (1/3)
     0.33   1 Triaged      [CLJ-1316] for doesn't support :let binding as its first seq-expr
              Howard Lewis Ship (1/3)
-    0.33   1 Triaged      [CLJ-1414] sort's docstring should say whether it is stable
-             Stuart Sierra (1/3)
     0.30   2 Open         [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
              Gary Fredericks (1/5)
              Ambrose Bonnaire-Sergeant (1/10)
@@ -547,12 +557,12 @@ Enhancement
              Vlad Bokov (1/5)
     0.17   1 Open         [CLJ-451] fn literals lack name/arglists/namespace metadata
              Patrick Houk (1/6)
-    0.14   1 Open         [CLJ-252] Support typed non-primitive fields in deftype
-             Mike Anderson (1/7)
     0.14   1 Open         [CLJ-993] `range` reducer
              Tassilo Horn (1/7)
     0.14   1 Open         [CLJ-1112] Var *loading-verbosely* should initialize from a JVM system property
              Tassilo Horn (1/7)
+    0.13   1 Open         [CLJ-252] Support typed non-primitive fields in deftype
+             Mike Anderson (1/8)
     0.13   1 Open         [CLJ-1280] Create reusable exception that can carry file/line/col info
              Andy Fingerhut (1/8)
     0.13   1 Open         [CLJ-1326] Inconsistent reflection warnings when target is a literal
