@@ -1,5 +1,5 @@
 Tickets needing work for CLJ project
-Date: August 29, 2014
+Date: October 1, 2014
 
 If you are a Clojure contributor, the tickets below could use some
 work.  Some are easy, some are not.  If you've never added a patch
@@ -28,30 +28,20 @@ for those.
 Tickets with prescreened patches, but they may need work, since the
 ticket is marked Incomplete (I).
 ----------------------------------------------------------------------
-      Better error reporting:
-
-I  CLJ-1297 Incomplete   better-error-messages-for-require.diff
-
       Clojure language/library bug fixes:
 
-I  CLJ-1093 Incomplete   0001-CLJ-1093-fix-compilation-of-empty-PersistentCollecti.patch
-I  CLJ-1100 Incomplete   clj-1100-v2.patch
 I  CLJ-1322 Incomplete   doseq.patch
+I  CLJ-1537 Incomplete   clj-1537-v2.diff
 
 ----------------------------------------------------------------------
 Tickets marked for Clojure Release 1.7 that have no prescreened
 patches (see also Note 3 at the bottom):
 ----------------------------------------------------------------------
-V   8 [CLJ-700] contains? broken for transient collections
-V   7 [CLJ-1224] Records do not cache hash like normal maps
-V   6 [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
 V   4 [CLJ-1208] Namespace is not loaded on defrecord class init
 I   1 [CLJ-787] transient blows up when passed a vector created by subvec
 I   0 [CLJ-1161] sources jar has bad versions.properties resource
 V   0 [CLJ-1192] vec function is substantially slower than into function
-V   0 [CLJ-1400] Error "Can't refer to qualified var that doesn't exist" should name the bad symbol
-V   0 [CLJ-1499] Replace seq-based iterators with direct iterators for all non-seq collections that use SeqIterator
-V   0 [CLJ-1515] Range should return something that implements IReduce
+V   0 [CLJ-1535] Make boxed math warning suppressible 
 
 ----------------------------------------------------------------------
 Tickets needing work that have no prescreened patches.  These are all
@@ -60,10 +50,10 @@ letter is the number of votes, and tickets have been sorted from most
 to fewest votes.
 ----------------------------------------------------------------------
 T   6 [CLJ-440] java method calls cannot omit varargs
-T   6 [CLJ-1449] Add starts-with? and ends-with? to clojure.string
 T   4 [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
 T   4 [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
 V   3 [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
+T   3 [CLJ-1026] Mixed end-of-line endings in the source code
 V   2 [CLJ-415] smarter assert (prints locals)
       The patch applies cleanly and passes tests, but gives a warning
       because macro local-bindings is same name (and perhaps the same
@@ -71,12 +61,11 @@ V   2 [CLJ-415] smarter assert (prints locals)
       local-bindings in clojure.test.generative.  If the one in
       clojure.test.generative were moved to clojure.core,
       test.generative could use that one.
-T   2 [CLJ-1026] Mixed end-of-line endings in the source code
 T   2 [CLJ-1454] Companion to swap! which returns the old value
 V   1 [CLJ-274] cannot close over mutable fields (in deftype)
 T   1 [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
 T   1 [CLJ-1316] for doesn't support :let binding as its first seq-expr
-T   1 [CLJ-1414] sort's docstring should say whether it is stable
+T   1 [CLJ-1451] Add take-until
 V   0 [CLJ-5] Unintuitive error response in clojure 1.0
       One of two patches applied and built cleanly on May 4, 2012, but
       not on May 10, 2012.  The second, clj-5-destructure-error.diff,
@@ -90,23 +79,19 @@ V   0 [CLJ-291] (take-nth 0 coll) redux...
 V   0 [CLJ-326] add :as-of option to refer
 V   0 [CLJ-346] (pprint-newline :fill) is not handled correctly
 V   0 [CLJ-348] reify allows use of qualified name as method parameter
-T   0 [CLJ-668] Improve slurp performance by using native Java StringWriter and jio/copy
 T   0 [CLJ-704] range function has missing documentation
 V   0 [CLJ-731] Create macro to variadically unroll a combinator function definition
 V   0 [CLJ-771] Move unchecked-prim casts to clojure.unchecked
 V   0 [CLJ-992] `iterate` reducer
+T   0 [CLJ-1290] clojure.xml parse docstring omits InputSource
 T   0 [CLJ-1329] Unused local variable in PersistentVector.cons()
 V   0 [CLJ-1349] update to latest test.generative and prep for test.check
-T   0 [CLJ-1386] Add transient? predicate
-T   0 [CLJ-1417] clojure.java.io/input-stream has incorrect docstring
 V   0 [CLJ-1420] ThreadLocalRandom instead of Math/random
-T   0 [CLJ-1436] Deref throws an unhelpful error message when used on something not dereferencable
-T   0 [CLJ-1451] Add take-until
-T   0 [CLJ-1456] The compiler ignores too few or too many arguments to throw
-T   0 [CLJ-1458] Use transients in merge and merge-with
 T   0 [CLJ-1460] Clojure transforms literals of custom IPersistentCollections not created via deftype/defrecord to their generic clojure counterpart
 T   0 [CLJ-1461] print-dup is broken for some clojure collections
 T   0 [CLJ-1509] Some clojure namespaces not AOT-compiled and included in the clojure jar
+T   0 [CLJ-1527] Harmonize accepted / documented symbol and keyword syntax over various readers
+T   0 [CLJ-1542] Docstring for deliver should describe its return value
 
 ----------------------------------------------------------------------
 Tickets not fitting in previous categories, but they have a git format
@@ -117,6 +102,14 @@ contributor, and it does not build and pass tests.
       Doc string fixes only:
 
    CLJ-1002 Open         document_chunk_fns_v2.patch
+
+      Clojure language/library bug fixes:
+
+   CLJ-1403 Open         0001-CLJ-1403-ns-resolve-returns-nil-if-class-is-not-foun.patch
+
+      Performance enhancement:
+
+   CLJ-15   Open         lazy-incremental-hashes.diff
 
 ----------------------------------------------------------------------
 The tickets below are simply ones that seem like they might be a
