@@ -3,6 +3,7 @@
 
 
 
+
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Reports on status of Clojure tickets</title></head><body>
 <h1>Reports on status of Clojure tickets<br>
 </h1>
@@ -10,8 +11,26 @@
 <ul>
 <li>[<a href="screener-tasks.txt">text</a>] Possibly-quick suggested changes to CLJ tickets requiring authorization of a screener<br>
 </li>
-  <li>[<a href="prescreened.txt">text</a>] Prescreened patches for CLJ tickets</li>
-<li>[<a href="needs-work.txt">text</a>] List of CLJ tickets needing work</li><li>Top open tickets by weighted vote, and tickets with no votes, for different Clojure projects</li>
+  <li>[<a href="prescreened.txt">text</a>] Prescreened patches
+for CLJ tickets.&nbsp; Now that Alex Miller is staying on top of
+Clojure tickets, this report itself is not so useful, and will not be
+updated very frequently.&nbsp; See the date at the top for when it was
+last generated.&nbsp; It is still useful to generate, because there is
+other double-checking done while generating it to let me (Andy
+Fingerhut) detect thing like:</li>
+  <ul>
+    <li>patches that no longer apply cleanly to the latest Clojure master (due to commits to Clojure)</li>
+    <li>patches that apply cleanly, but Clojure fails to build or pass tests after they are applied<br>
+    </li>
+    <li>tickets with attributes that don't correspond to any state in the JIRA workflow</li>
+    <li>tickets with patches but the Patch attribute hasn't been set properly, etc.<br>
+    </li>
+  </ul>
+
+<li>[<a href="needs-work.txt">text</a>] List of CLJ tickets needing work.&nbsp; For those who are interested in developing patches for Clojure, this
+report likely will not be updated as often as you need to stay informed
+of the latest updates.&nbsp; See the section "Dev patch" on the <a href="http://dev.clojure.org/display/community/JIRA+workflow">JIRA workflow wiki page</a> for links to tickets currently needing work.<br>
+</li><li>Top open tickets by weighted vote, and tickets with no votes, for different Clojure projects</li>
 </ul>
 
 <table style="text-align: left; width: 500px;" border="1" cellpadding="2" cellspacing="2">
