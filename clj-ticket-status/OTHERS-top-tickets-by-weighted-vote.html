@@ -8,7 +8,7 @@
 
 <h1>Top OTHERS tickets by weighted vote</h1>
 
-Date: October 3, 2014<br>
+Date: October 8, 2014<br>
 <br>
 
 Open OTHERS tickets with at least one vote, sorted in descending order of
@@ -39,6 +39,11 @@ many tickets if you care about them.
 <p>
 State is one of the states in the JIRA flow diagram <a
 href="http://dev.clojure.org/display/community/JIRA+workflow">here</a>.
+
+<p>
+Note that a state of "Backlog" is shown below if the next release is
+<span style="font-style: italic;">N</span>, and the ticket is marked for fix in release <span style="font-style: italic;">N+1</span> (e.g. the next
+release is 1.7, but the ticket is marked for fix in release 1.8).
 <table style="text-align: left; width: 500px;" border="1" cellpadding="2" cellspacing="2">
   <tbody>
     <tr>
@@ -74,7 +79,7 @@ href="http://dev.clojure.org/display/community/JIRA+workflow">here</a>.
     <tr>
         <td style="vertical-align: top;">ASYNC
         </td>
-        <td style="vertical-align: top;"><a href="#ASYNC_Defect">21</a>
+        <td style="vertical-align: top;"><a href="#ASYNC_Defect">23</a>
         </td>
         <td style="vertical-align: top;"><a href="#ASYNC_Enhancement">12</a>
         </td>
@@ -124,7 +129,7 @@ href="http://dev.clojure.org/display/community/JIRA+workflow">here</a>.
     <tr>
         <td style="vertical-align: top;">CLJCLR
         </td>
-        <td style="vertical-align: top;"><a href="#CLJCLR_Defect">6</a>
+        <td style="vertical-align: top;"><a href="#CLJCLR_Defect">5</a>
         </td>
         <td style="vertical-align: top;"><a href="#CLJCLR_Enhancement">2</a>
         </td>
@@ -386,7 +391,7 @@ href="http://dev.clojure.org/display/community/JIRA+workflow">here</a>.
         </td>
         <td style="vertical-align: top;"><a href="#TCHECK_Defect">9</a>
         </td>
-        <td style="vertical-align: top;"><a href="#TCHECK_Enhancement">23</a>
+        <td style="vertical-align: top;"><a href="#TCHECK_Enhancement">24</a>
         </td>
         <td style="vertical-align: top;">0
         </td>
@@ -646,6 +651,20 @@ Willy Blandin (1)
         </td>
         <td style="vertical-align: top;">Triaged
         </td>
+        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/ASYNC-32">ASYNC-32</a>
+        </td>
+        <td style="vertical-align: top;">onto-chan retains head of input sequence causing OutOfMemoryError
+        </td>
+        <td style="vertical-align: top;">Colin Taylor (1)
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align: top;">1.00
+        </td>
+        <td style="vertical-align: top;">1
+        </td>
+        <td style="vertical-align: top;">Triaged
+        </td>
         <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/ASYNC-58">ASYNC-58</a>
         </td>
         <td style="vertical-align: top;">mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
@@ -840,11 +859,25 @@ Willy Blandin (1)
         </td>
         <td style="vertical-align: top;">0
         </td>
-        <td style="vertical-align: top;">Triaged
+        <td style="vertical-align: top;">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/ASYNC-4">ASYNC-4</a>
+        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/ASYNC-92">ASYNC-92</a>
         </td>
-        <td style="vertical-align: top;">Record literals become ordinary maps
+        <td style="vertical-align: top;">go macro removes binding forms that are intialized with logical false value
+        </td>
+        <td style="vertical-align: top;">
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align: top;">0.00
+        </td>
+        <td style="vertical-align: top;">0
+        </td>
+        <td style="vertical-align: top;">Open
+        </td>
+        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/ASYNC-93">ASYNC-93</a>
+        </td>
+        <td style="vertical-align: top;">can't use fn inside go macro
         </td>
         <td style="vertical-align: top;">
         </td>
@@ -856,9 +889,9 @@ Willy Blandin (1)
         </td>
         <td style="vertical-align: top;">Triaged
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/ASYNC-32">ASYNC-32</a>
+        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/ASYNC-4">ASYNC-4</a>
         </td>
-        <td style="vertical-align: top;">onto-chan retains head of input sequence causing OutOfMemoryError
+        <td style="vertical-align: top;">Record literals become ordinary maps
         </td>
         <td style="vertical-align: top;">
         </td>
@@ -1000,6 +1033,20 @@ Willy Blandin (1)
         </td>
         <td style="vertical-align: top;">0
         </td>
+        <td style="vertical-align: top;">Triaged
+        </td>
+        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/ASYNC-67">ASYNC-67</a>
+        </td>
+        <td style="vertical-align: top;">Can we get a generic sink operation?
+        </td>
+        <td style="vertical-align: top;">
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align: top;">0.00
+        </td>
+        <td style="vertical-align: top;">0
+        </td>
         <td style="vertical-align: top;">Vetted
         </td>
         <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/ASYNC-65">ASYNC-65</a>
@@ -1019,20 +1066,6 @@ Willy Blandin (1)
         <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/ASYNC-66">ASYNC-66</a>
         </td>
         <td style="vertical-align: top;">Add drain! to consume and discard a channel
-        </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Vetted
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/ASYNC-67">ASYNC-67</a>
-        </td>
-        <td style="vertical-align: top;">Can we get a generic sink operation?
         </td>
         <td style="vertical-align: top;">
         </td>
@@ -1586,20 +1619,6 @@ Project CLJCLR tickets
         </td>
         <td style="vertical-align: top;">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJCLR-24">CLJCLR-24</a>
-        </td>
-        <td style="vertical-align: top;">build.proj ILMerge target broken
-        </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Open
-        </td>
         <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJCLR-32">CLJCLR-32</a>
         </td>
         <td style="vertical-align: top;">RT.load does not correctly map namespace to source file or dll name
@@ -1656,9 +1675,9 @@ Project CLJCLR tickets
         </td>
         <td style="vertical-align: top;">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJCLR-39">CLJCLR-39</a>
+        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJCLR-43">CLJCLR-43</a>
         </td>
-        <td style="vertical-align: top;">Use Type.AssemblyQualifiedName in RT.print when printing #= expression for types
+        <td style="vertical-align: top;">Problem with defrecord
         </td>
         <td style="vertical-align: top;">
         </td>
@@ -1690,25 +1709,25 @@ Project CLJCLR tickets
         </td>
         <td style="vertical-align: top;">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJCLR-11">CLJCLR-11</a>
-        </td>
-        <td style="vertical-align: top;">Simplify integration of Clojure code with existing .NET code
-        </td>
-        <td style="vertical-align: top;">Devin Garner (1)
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">1.00
-        </td>
-        <td style="vertical-align: top;">1
-        </td>
-        <td style="vertical-align: top;">Open
-        </td>
         <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJCLR-25">CLJCLR-25</a>
         </td>
         <td style="vertical-align: top;">Clojure.Compile.exe create single dll for all compiled .clj files
         </td>
         <td style="vertical-align: top;">Antti Karanta (1)
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align: top;">0.00
+        </td>
+        <td style="vertical-align: top;">0
+        </td>
+        <td style="vertical-align: top;">Open
+        </td>
+        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJCLR-44">CLJCLR-44</a>
+        </td>
+        <td style="vertical-align: top;">Expose RT.GetFindFilePaths
+        </td>
+        <td style="vertical-align: top;">
         </td>
     </tr>
   </tbody>
@@ -3380,9 +3399,9 @@ Roan OSullivan (1)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">2.00
+        <td style="vertical-align: top;">3.00
         </td>
-        <td style="vertical-align: top;">2
+        <td style="vertical-align: top;">3
         </td>
         <td style="vertical-align: top;">Open
         </td>
@@ -3391,6 +3410,7 @@ Roan OSullivan (1)
         <td style="vertical-align: top;">Support for preserving whitespace between tags
         </td>
         <td style="vertical-align: top;">Aron Nopanen (1)<br>
+Jan-Paul Bultmann (1)<br>
 Jason Gilman (1)
         </td>
     </tr>
@@ -5925,6 +5945,20 @@ Maciej Jaśkowski (1)
         <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/TCHECK-44">TCHECK-44</a>
         </td>
         <td style="vertical-align: top;">for-all should support nesting
+        </td>
+        <td style="vertical-align: top;">
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align: top;">0.00
+        </td>
+        <td style="vertical-align: top;">0
+        </td>
+        <td style="vertical-align: top;">Open
+        </td>
+        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/TCHECK-46">TCHECK-46</a>
+        </td>
+        <td style="vertical-align: top;">Better error message when accidentally using something else as a generator
         </td>
         <td style="vertical-align: top;">
         </td>

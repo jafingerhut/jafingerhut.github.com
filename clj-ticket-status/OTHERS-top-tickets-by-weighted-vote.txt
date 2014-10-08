@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: October 3, 2014
+Date: October 8, 2014
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -32,6 +32,10 @@ where State is one of the states in the JIRA flow diagram at
 
     http://dev.clojure.org/display/community/JIRA+workflow
 
+Note that a state of "Backlog" is shown below if the next release is
+N, and the ticket is marked for fix in release N+1 (e.g. the next
+release is 1.7, but the ticket is marked for fix in release 1.8).
+
 
 Project ALGOG tickets
 ========================================
@@ -61,6 +65,8 @@ Defect
              Ghadi Shayban (1)
     1.00   1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
              Francis Avila (1)
+    1.00   1 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
+             Colin Taylor (1)
     1.00   1 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
              Eduard Bondarenko (1)
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
@@ -76,8 +82,9 @@ Defect
     0.00   0 Open         [ASYNC-78] deadlock in multi catch
     0.00   0 Open         [ASYNC-83] Taking from channels in anonymous functions inside go-loops does not work
     0.00   0 Open         [ASYNC-90] Pub/sub leaks memory
+    0.00   0 Open         [ASYNC-92] go macro removes binding forms that are intialized with logical false value
+    0.00   0 Open         [ASYNC-93] can't use fn inside go macro
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
-    0.00   0 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
 
 ========================================
@@ -92,9 +99,9 @@ Enhancement
     0.00   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
     0.00   0 Open         [ASYNC-71] exception behavior for thread macro is hard coded
     0.00   0 Open         [ASYNC-86] Update tools.analyzer.jvm dep
+    0.00   0 Triaged      [ASYNC-67] Can we get a generic sink operation?
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
     0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
-    0.00   0 Vetted       [ASYNC-67] Can we get a generic sink operation?
     0.00   0 Vetted       [ASYNC-68] Improve error handling for map< and map>
     0.00   0 Vetted       [ASYNC-69] How to better communicate "mix" lifecycle wrt coordination
 
@@ -169,20 +176,18 @@ Project CLJCLR tickets
 ========================================
 Defect
 
-    0.00   0 Open         [CLJCLR-24] build.proj ILMerge target broken
     0.00   0 Open         [CLJCLR-32] RT.load does not correctly map namespace to source file or dll name
     0.00   0 Open         [CLJCLR-33] REPL input broken
     0.00   0 Open         [CLJCLR-37] spit does not truncate, leaves tail of original file if output is shorter length.
     0.00   0 Open         [CLJCLR-38] Use Type.AssemblyQualifiedName in ObjExpr.EmitValue when generating code for types
-    0.00   0 Open         [CLJCLR-39] Use Type.AssemblyQualifiedName in RT.print when printing #= expression for types
+    0.00   0 Open         [CLJCLR-43] Problem with defrecord
 
 ========================================
 Enhancement
 
-    1.00   1 Open         [CLJCLR-11] Simplify integration of Clojure code with existing .NET code
-             Devin Garner (1)
     1.00   1 Open         [CLJCLR-25] Clojure.Compile.exe create single dll for all compiled .clj files
              Antti Karanta (1)
+    0.00   0 Open         [CLJCLR-44] Expose RT.GetFindFilePaths
 
 
 Project CMEMOIZE tickets
@@ -383,8 +388,9 @@ Enhancement
              Greg Chapman (1)
              Martin Clausen (1)
              Roan OSullivan (1)
-    2.00   2 Open         [DXML-13] Support for preserving whitespace between tags
+    3.00   3 Open         [DXML-13] Support for preserving whitespace between tags
              Aron Nopanen (1)
+             Jan-Paul Bultmann (1)
              Jason Gilman (1)
     1.00   1 Open         [DXML-10] Support for DOCTYPE when emitting XML
              Stuart Sierra (1)
@@ -664,6 +670,7 @@ Enhancement
     0.00   0 Open         [TCHECK-42] Interruptibility
     0.00   0 Open         [TCHECK-43] Test.check lacks a generator for all floats and floats in a range
     0.00   0 Open         [TCHECK-44] for-all should support nesting
+    0.00   0 Open         [TCHECK-46] Better error message when accidentally using something else as a generator
 
 
 Project TCLI tickets
