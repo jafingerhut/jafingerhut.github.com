@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: October 11, 2014
+Date: October 14, 2014
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -89,22 +89,26 @@ Defect
     0.00   0 Open         [ASYNC-90] Pub/sub leaks memory
     0.00   0 Open         [ASYNC-92] go macro removes binding forms that are intialized with logical false value
     0.00   0 Open         [ASYNC-93] can't use fn inside go macro
+    0.00   0 Open         [ASYNC-96] FixedBuffer's full checking in cljs
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
 
 ========================================
 Enhancement
 
+    2.00   2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
+             Nahuel Greco (1)
+             Reid McKenzie (1)
     1.00   1 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
              Max Penet (1)
-    1.00   1 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
-             Reid McKenzie (1)
+    1.00   1 Open         [ASYNC-86] Update tools.analyzer.jvm dep
+             Ambrose Bonnaire-Sergeant (1)
     0.00   0 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
     0.00   0 Open         [ASYNC-46] Add optional default channel to 'pub'
     0.00   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
     0.00   0 Open         [ASYNC-71] exception behavior for thread macro is hard coded
-    0.00   0 Open         [ASYNC-86] Update tools.analyzer.jvm dep
     0.00   0 Open         [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go and thread macros 
+    0.00   0 Open         [ASYNC-95] Tranducers and unbuffered channels
     0.00   0 Triaged      [ASYNC-67] Can we get a generic sink operation?
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
     0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
@@ -188,7 +192,6 @@ Defect
     0.00   0 Open         [CLJCLR-37] spit does not truncate, leaves tail of original file if output is shorter length.
     0.00   0 Open         [CLJCLR-38] Use Type.AssemblyQualifiedName in ObjExpr.EmitValue when generating code for types
     0.00   0 Open         [CLJCLR-43] Problem with defrecord
-    0.00   0 Open         [CLJCLR-45] Reifying properties does not work when called from Clojure
 
 ========================================
 Enhancement
@@ -391,11 +394,12 @@ Defect
 ========================================
 Enhancement
 
-    5.00   5 Open         [DXML-4] Namespaces support
+    6.00   6 Open         [DXML-4] Namespaces support
              Dan Lipsitt (1)
              Gary Trakhman (1)
              Greg Chapman (1)
              Martin Clausen (1)
+             Philip Potter (1)
              Roan OSullivan (1)
     3.00   3 Open         [DXML-13] Support for preserving whitespace between tags
              Aron Nopanen (1)
@@ -501,6 +505,7 @@ Defect
     0.00   0 Open         [LOGIC-154] walk* of an empty set overflows the stack
     0.00   0 Open         [LOGIC-156] Two consecutive calls to run* return different results
     0.00   0 Open         [LOGIC-158] membero documentation does not describe arguments
+    0.00   0 Open         [LOGIC-161] Possible bad interaction with fd/* and fd/-
 
 ========================================
 Enhancement
@@ -679,6 +684,7 @@ Enhancement
     0.00   0 Open         [TCHECK-43] Test.check lacks a generator for all floats and floats in a range
     0.00   0 Open         [TCHECK-44] for-all should support nesting
     0.00   0 Open         [TCHECK-46] Better error message when accidentally using something else as a generator
+    0.00   0 Open         [TCHECK-47] tuple generator accepts bad arguments, then throws NullPointerException when sampled
 
 
 Project TCLI tickets
@@ -698,6 +704,11 @@ Project TEMJVM tickets
 Enhancement
 
     0.00   0 Open         [TEMJVM-5] Optimize constant metadata emission
+
+========================================
+Task
+
+    0.00   0 Open         [TEMJVM-9] Change fn name munging scheme to match the one introduced with CLJ-1330
 
 
 Project TGEN tickets
@@ -735,14 +746,16 @@ Defect
 
     1.00   1 Open         [TNS-7] Stack overflow on refresh after circular dependency detected
              Anthony Marcar (1)
-    0.00   0 Open         [TNS-6] Attempt to reload deleted file
+    0.50   1 Open         [TNS-6] Attempt to reload deleted file
+             deliminator (1/2)
     0.00   0 Open         [TNS-20] tracker's unload order sometimes incorrect
     0.00   0 Open         [TNS-24] Broken tracker after mis-named namespace
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [TNS-5] Allow any valid .clj* source file to be parsed/analysed
+    0.50   1 Open         [TNS-5] Allow any valid .clj* source file to be parsed/analysed
+             deliminator (1/2)
 
 
 Project TRDR tickets
