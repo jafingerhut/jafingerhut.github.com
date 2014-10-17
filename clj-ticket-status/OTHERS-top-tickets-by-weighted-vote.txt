@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: October 14, 2014
+Date: October 16, 2014
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -63,9 +63,6 @@ Defect
     2.00   2 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
              Hugo Duncan (1)
              Michael Nygard (1)
-    2.00   2 Open         [ASYNC-42] (try (catch :default)) inside a cljs go block raises an exception
-             Kevin Neaton (1)
-             Willy Blandin (1)
     1.00   1 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
              Ghadi Shayban (1)
     1.00   1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
@@ -81,15 +78,14 @@ Defect
     0.00   0 Open         [ASYNC-54] MAX-QUEUE-SIZE has a wrong type-hint
     0.00   0 Open         [ASYNC-57] reify in go macro compile error
     0.00   0 Open         [ASYNC-63] Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
-    0.00   0 Open         [ASYNC-72] CLJS: mult becomes blocked after putting to a closed channel
     0.00   0 Open         [ASYNC-73] try-catch-finally broken inside go-blocks
     0.00   0 Open         [ASYNC-77] StackOverflowError in go macro with cemerick.cljs.test (CLJS)
     0.00   0 Open         [ASYNC-78] deadlock in multi catch
     0.00   0 Open         [ASYNC-83] Taking from channels in anonymous functions inside go-loops does not work
     0.00   0 Open         [ASYNC-90] Pub/sub leaks memory
     0.00   0 Open         [ASYNC-92] go macro removes binding forms that are intialized with logical false value
-    0.00   0 Open         [ASYNC-93] can't use fn inside go macro
     0.00   0 Open         [ASYNC-96] FixedBuffer's full checking in cljs
+    0.00   0 Open         [ASYNC-97] CLJS: alts! sporadically failing to unblock despite channel activity (Safari 7)
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
 
@@ -108,7 +104,7 @@ Enhancement
     0.00   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
     0.00   0 Open         [ASYNC-71] exception behavior for thread macro is hard coded
     0.00   0 Open         [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go and thread macros 
-    0.00   0 Open         [ASYNC-95] Tranducers and unbuffered channels
+    0.00   0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
     0.00   0 Triaged      [ASYNC-67] Can we get a generic sink operation?
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
     0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
@@ -205,10 +201,11 @@ Project CMEMOIZE tickets
 ========================================
 Defect
 
+    2.00   2 Open         [CMEMOIZE-13] Reflection warning in clojure.core.memoize/snapshot
+             Andy Fingerhut (1)
+             Brandon Bloom (1)
     1.00   1 Open         [CMEMOIZE-12] NPE with memoize/ttl
              Aaron Iba (1)
-    1.00   1 Open         [CMEMOIZE-13] Reflection warning in clojure.core.memoize/snapshot
-             Andy Fingerhut (1)
     1.00   1 Open         [CMEMOIZE-14] dependency problem with clojure.core.cache
              Francesco Bellomi (1)
     0.00   0 Open         [CMEMOIZE-8] memoizing functions that throw exceptions
@@ -442,13 +439,15 @@ Defect
 ========================================
 Enhancement
 
-    1.00   1 Open         [JDBC-99] The age of reduce is upon us
+    2.00   2 Open         [JDBC-99] The age of reduce is upon us
              Ghadi Shayban (1)
+             Ragnar Dahlen (1)
     0.00   0 Open         [JDBC-1] Provide option to return SQL generated / execution stats
     0.00   0 Open         [JDBC-37] Provide support for alternate transaction strategies
     0.00   0 Open         [JDBC-48] Support stored procedures with CallableStatement
     0.00   0 Open         [JDBC-64] Support multiple result sets?
     0.00   0 Open         [JDBC-100] Allow setting the timeout on a prepared statement
+    0.00   0 Open         [JDBC-101] Don't make column names unique when `as-arrays?` is true
 
 ========================================
 Task
@@ -504,8 +503,6 @@ Defect
     0.00   0 Open         [LOGIC-153] deftest test-34-unify-with-metadata appears incorrect
     0.00   0 Open         [LOGIC-154] walk* of an empty set overflows the stack
     0.00   0 Open         [LOGIC-156] Two consecutive calls to run* return different results
-    0.00   0 Open         [LOGIC-158] membero documentation does not describe arguments
-    0.00   0 Open         [LOGIC-161] Possible bad interaction with fd/* and fd/-
 
 ========================================
 Enhancement
