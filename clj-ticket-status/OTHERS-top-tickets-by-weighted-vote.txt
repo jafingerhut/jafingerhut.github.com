@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: October 26, 2014
+Date: October 28, 2014
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -63,6 +63,8 @@ Defect
     2.00   2 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
              Hugo Duncan (1)
              Michael Nygard (1)
+    1.00   1 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
+             Marcus Lewis (1)
     1.00   1 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
              Ghadi Shayban (1)
     1.00   1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
@@ -75,7 +77,6 @@ Defect
              Eduard Bondarenko (1)
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
     0.00   0 Open         [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
-    0.00   0 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
     0.00   0 Open         [ASYNC-51] Core.async memory leak in Safari and Mobile Safari
     0.00   0 Open         [ASYNC-54] MAX-QUEUE-SIZE has a wrong type-hint
     0.00   0 Open         [ASYNC-57] reify in go macro compile error
@@ -88,6 +89,7 @@ Defect
     0.00   0 Open         [ASYNC-96] FixedBuffer's full checking in cljs
     0.00   0 Open         [ASYNC-97] CLJS: alts! sporadically failing to unblock despite channel activity (Safari 7)
     0.00   0 Open         [ASYNC-99] go block with <! inside protocol method invocation fails to compile (dispatch :protocol-invoke on '-item-to-ssa')
+    0.00   0 Open         [ASYNC-100] core.async with multiple catch blocks causing weird loop behaviour
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
 
@@ -99,10 +101,10 @@ Enhancement
              Reid McKenzie (1)
     1.00   1 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
              Max Penet (1)
-    1.00   1 Open         [ASYNC-86] Update tools.analyzer.jvm dep
-             Ambrose Bonnaire-Sergeant (1)
     1.00   1 Triaged      [ASYNC-67] Can we get a generic sink operation?
              Jan-Paul Bultmann (1)
+    1.00   1 Vetted       [ASYNC-86] Update tools.analyzer.jvm dep
+             Ambrose Bonnaire-Sergeant (1)
     0.00   0 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
     0.00   0 Open         [ASYNC-46] Add optional default channel to 'pub'
     0.00   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
@@ -365,6 +367,11 @@ Enhancement
 
 Project DIMAP tickets
 ========================================
+Defect
+
+    0.00   0 Open         [DIMAP-2] Proper seq on int-sets
+
+========================================
 Enhancement
 
     0.00   0 Open         [DIMAP-1] Support efficient rseq on int maps
@@ -376,7 +383,8 @@ Project DPRIMAP tickets
 ========================================
 Defect
 
-    0.00   0 Open         [DPRIMAP-7] Remove usage of clojure.test from the main namespace
+    1.00   1 Open         [DPRIMAP-7] Remove usage of clojure.test from the main namespace
+             Ryan Fowler (1)
 
 ========================================
 Enhancement
@@ -451,8 +459,6 @@ Enhancement
     0.00   0 Open         [JDBC-37] Provide support for alternate transaction strategies
     0.00   0 Open         [JDBC-48] Support stored procedures with CallableStatement
     0.00   0 Open         [JDBC-64] Support multiple result sets?
-    0.00   0 Open         [JDBC-100] Allow setting the timeout on a prepared statement
-    0.00   0 Open         [JDBC-101] Don't make column names unique when `as-arrays?` is true
 
 ========================================
 Task
@@ -570,6 +576,11 @@ Task
 
 
 Project MCOMB tickets
+========================================
+Defect
+
+    0.00   0 Open         [MCOMB-5] Exclude `update` in :refer-clojure for Clojure 1.7.0 compatibility
+
 ========================================
 Task
 
