@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: November 10, 2014
+Date: November 13, 2014
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -102,6 +102,9 @@ Enhancement
     2.00   2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
              Nahuel Greco (1)
              Reid McKenzie (1)
+    2.00   2 Open         [ASYNC-107] Improved docstring for alt!
+             Baishampayan Ghose (1)
+             Oleksandr Shyshko (1)
     2.00   2 Triaged      [ASYNC-67] Can we get a generic sink operation?
              Adam Clements (1)
              Jan-Paul Bultmann (1)
@@ -115,12 +118,12 @@ Enhancement
     0.00   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
     0.00   0 Open         [ASYNC-71] exception behavior for thread macro is hard coded
     0.00   0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
-    0.00   0 Open         [ASYNC-104] offer! and poll!
     0.00   0 Triaged      [ASYNC-106] A unit test in ioc_macros_test.clj tests nothing
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
     0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
     0.00   0 Vetted       [ASYNC-69] How to better communicate "mix" lifecycle wrt coordination
     0.00   0 Vetted       [ASYNC-103] promise-buf
+    0.00   0 Vetted       [ASYNC-104] offer! and poll!
 
 
 Project CCACHE tickets
@@ -140,6 +143,7 @@ Enhancement
     0.00   0 Open         [CCACHE-17] Create function backed cache
     0.00   0 Open         [CCACHE-35] Add weak-cache
     0.00   0 Open         [CCACHE-36] Allow ttl to be set for a key on cache miss
+    0.00   0 Open         [CCACHE-37] Doc string typo fix
 
 ========================================
 Task
@@ -212,29 +216,19 @@ Project CMEMOIZE tickets
 ========================================
 Defect
 
-    2.00   2 Open         [CMEMOIZE-13] Reflection warning in clojure.core.memoize/snapshot
-             Andy Fingerhut (1)
-             Brandon Bloom (1)
     1.00   1 Open         [CMEMOIZE-12] NPE with memoize/ttl
              Aaron Iba (1)
     1.00   1 Open         [CMEMOIZE-14] dependency problem with clojure.core.cache
              Francesco Bellomi (1)
     0.00   0 Open         [CMEMOIZE-8] memoizing functions that throw exceptions
-    0.00   0 Open         [CMEMOIZE-10] Odd deprecation warning in face of correct API usage?
     0.00   0 Open         [CMEMOIZE-11] Investigate why build errors occur for Clojure 1.2.0 on IBM JDK 1.6
     0.00   0 Open         [CMEMOIZE-15] ttl functions sometimes return nil
-    0.00   0 Open         [CMEMOIZE-16] Reflection warning, clojure/core/memoize.clj:72:23 - reference to field cache can't be resolved.
     0.00   0 Open         [CMEMOIZE-18] Confusing / erroneous documentation regarding seed values for clojure.core.memoize/memo
 
 ========================================
 Enhancement
 
     0.00   0 Open         [CMEMOIZE-9] memo-swap! is misnamed
-
-========================================
-Task
-
-    0.00   0 Open         [CMEMOIZE-17] bump core.cache dependency
 
 
 Project CRRBV tickets
@@ -285,6 +279,8 @@ Defect
 ========================================
 Enhancement
 
+    1.00   1 Open         [CTYP-93] Support refinement types
+             Christoffer Sawicki (1)
     1.00   1 Open         [CTYP-134] Allow namespace aliases in `ann`
              Reid McKenzie (1)
     0.00   0 Bad: Unkn Fi [CTYP-8] Support complex map manipulation functions
@@ -297,7 +293,6 @@ Enhancement
     0.00   0 Open         [CTYP-54] Merge compatible types to make more accurate ones
     0.00   0 Open         [CTYP-57] Support monitor-enter/monitor-exit
     0.00   0 Open         [CTYP-76] Support KwArgsSeq in apply
-    0.00   0 Open         [CTYP-93] Support refinement types
     0.00   0 Open         [CTYP-98] Implement a defrecord> macro
     0.00   0 Open         [CTYP-109] Better error message for TFn app
     0.00   0 Open         [CTYP-110] Add satisfies?
@@ -355,9 +350,16 @@ Defect
 
 Project DFRS tickets
 ========================================
+Defect
+
+    0.00   0 Open         [DFRS-7] Roundtrip encoding of values are unequal under Clojure 1.6
+
+========================================
 Enhancement
 
     0.00   0 Bad: Match n [DFRS-2] Make writing footer checksums less expensive or optional
+    0.00   0 Open         [DFRS-5] Add c.l.PersistentHashSet ReadHandler
+    0.00   0 Open         [DFRS-6] Use a testing framework which creates nested collections
 
 
 Project DGEN tickets
@@ -501,6 +503,8 @@ Project LOGIC tickets
 ========================================
 Defect
 
+    1.00   1 Open         [LOGIC-118] prep does not make lvar of ?x if ?x is in a vector
+             Daniel Compton (1)
     0.00   0 Open         [LOGIC-26] Generate a better error when adding facts for arities that do not exist
     0.00   0 Open         [LOGIC-28] defrel cannot be called inside function
     0.00   0 Open         [LOGIC-47] is macro needs to be improved
@@ -511,7 +515,6 @@ Defect
     0.00   0 Open         [LOGIC-99] StackOverflow for large `appendo`
     0.00   0 Open         [LOGIC-114] stack overflow with conda/u
     0.00   0 Open         [LOGIC-117] one-shot constraints with multiple rands may run more than once
-    0.00   0 Open         [LOGIC-118] prep does not make lvar of ?x if ?x is in a vector
     0.00   0 Open         [LOGIC-119] tie disequality
     0.00   0 Open         [LOGIC-129] matcha/matchu are not faithful to the semantics of conda/condu
     0.00   0 Open         [LOGIC-130] StackOverFlowError when walking over set
@@ -698,6 +701,8 @@ Enhancement
              Miikka Koskinen (1)
     1.00   1 Open         [TCHECK-15] gen/for macro for alternate combinator syntax
              Gunnar Völkel (1)
+    1.00   1 Open         [TCHECK-31] Doc improvements: how to separate "size" from "range"
+             Brian Craft (1)
     1.00   1 Open         [TCHECK-42] Interruptibility
              Tom Crayford (1)
     0.50   1 Open         [TCHECK-2] pos-int is confusingly named
@@ -715,7 +720,6 @@ Enhancement
     0.00   0 Open         [TCHECK-21] Rerunning a particular failure is difficult.
     0.00   0 Open         [TCHECK-25] shuffle generator
     0.00   0 Open         [TCHECK-30] Make Namespacing Consistent in generators.clj Docstrings
-    0.00   0 Open         [TCHECK-31] Doc improvements: how to separate "size" from "range"
     0.00   0 Open         [TCHECK-37] Make random-number generation in test.check thread-safe
     0.00   0 Open         [TCHECK-38] Generators for functions?
     0.00   0 Open         [TCHECK-41] Add helpers for deprecating generators
@@ -723,6 +727,7 @@ Enhancement
     0.00   0 Open         [TCHECK-44] for-all should support nesting
     0.00   0 Open         [TCHECK-48] Add sublist generator
     0.00   0 Open         [TCHECK-50] Sampling one in the obvious way could return a more random value
+    0.00   0 Open         [TCHECK-51] Add set generator
 
 
 Project TCLI tickets
@@ -772,6 +777,7 @@ Defect
     0.00   0 Open         [TMACRO-4] README.md still says 0.1.2 is latest stable release
     0.00   0 Open         [TMACRO-5] Misplaced doc string for function protected?
     0.00   0 Open         [TMACRO-6] with-symbol-macros fails to preserve set sortedness
+    0.00   0 Open         [TMACRO-7] Extra paren in expansion
 
 ========================================
 Enhancement
