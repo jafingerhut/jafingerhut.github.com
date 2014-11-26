@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v17)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v18)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -3040,12 +3040,17 @@ Macro
           </table>
         </div><!-- /section -->
         <div class="section yellow">
-          <h2>Reader Macros</h2>
+          <h2>Reader Macros (<a href="http://clojure.org/reader#The%20Reader--Macro%20characters">clojure.org/reader</a>)</h2>
           <table>
             <tbody>
               <tr class="odd">
                 <td><code>'</code></td>
-                <td>Quote: <code>'<var>form</var></code> &rarr; <code>(quote <var>form</var>)</code></td>
+                <td><code><a href="http://clojure.org/special_forms#quote">quote</a>: <code>'<var>form</var></code> &rarr; <code>(</code> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/quote/" title="quote
+  (quote form)
+Special Form
+  Yields the unevaluated form.
+
+  Please see http://clojure.org/special_forms#quote">quote</a> <code><var>form</var>)</code></code></td>
               </tr>
               <tr class="even">
                 <td><code>\</code></td>
@@ -3061,31 +3066,49 @@ Macro
               </tr>
               <tr class="odd">
                 <td><code>@</code></td>
-                <td>Deref: <code>@<var>form</var></code> &rarr; <code>(deref <var>form</var>)</code></td>
+                <td><code>Deref: <code>@<var>form</var></code> &rarr; <code>(</code> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/deref/" title="clojure.core/deref
+([ref] [ref timeout-ms timeout-val])
+  Also reader macro: @ref/@agent/@var/@atom/@delay/@future/@promise. Within a
+transaction,
+  returns the in-transaction-value of ref, else returns the
+  most-recently-committed value of ref. When applied to a var, agent
+  or atom, returns its current state. When applied to a delay, forces
+  it if not already forced. When applied to a future, will block if
+  computation not complete. When applied to a promise, will block
+  until a value is delivered.  The variant taking a timeout can be
+  used for blocking references (futures and promises), and will return
+  timeout-val if the timeout (in milliseconds) is reached before a
+  value is available. See also - realized?.">deref</a> <code><var>form</var>)</code></code></td>
               </tr>
               <tr class="even">
                 <td><code>`</code></td>
-                <td>Syntax-quote</td>
+                <td><code><a href="http://clojure.org/reader#syntax-quote">Syntax-quote</a></code></td>
               </tr>
               <tr class="odd">
                 <td><code>~</code></td>
-                <td>Unquote</td>
+                <td><code><a href="http://clojure.org/reader#syntax-quote">Unquote</a></code></td>
               </tr>
               <tr class="even">
                 <td><code>~@</code></td>
-                <td>Unquote-splicing</td>
+                <td><code><a href="http://clojure.org/reader#syntax-quote">Unquote-splicing</a></code></td>
               </tr>
               <tr class="odd">
                 <td><code>#"<var>p</var>"</code></td>
-                <td>Regex Pattern <var>p</var></td>
+                <td>Regex Pattern <var>p</var>  (see Strings/Regex section)</td>
               </tr>
               <tr class="even">
                 <td><code>#'</code></td>
-                <td>Var quote: <code>#'<var>x</var></code> &rarr; <code>(var <var>x</var>)</code></td>
+                <td><code>Var-quote: <code>#'<var>x</var></code> &rarr; <code>(</code> <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/var/" title="var
+  (var symbol)
+Special Form
+  The symbol must resolve to a var, and the Var object
+itself (not its value) is returned. The reader macro #'x expands to (var x).
+
+  Please see http://clojure.org/special_forms#var">var</a> <code><var>x</var>)</code></code></td>
               </tr>
               <tr class="odd">
                 <td><code>#()</code></td>
-                <td><code>#(...)</code> &rarr; <code>(fn [args] (...))</code></td>
+                <td><code><a href="http://clojure.org/reader#The%20Reader--Macro%20characters">Anonymous function literal</a>: <code>#(...)</code> &rarr; <code>(fn [args] (...))</code></code></td>
               </tr>
               <tr class="even">
                 <td><code>#_</code></td>
@@ -3095,7 +3118,7 @@ Macro
           </table>
         </div><!-- /section -->
         <div class="section red">
-          <h2>Metadata (<a href="http://clojure.org/special_forms">clojure.org/special_forms</a>)</h2>
+          <h2>Metadata (<a href="http://clojure.org/reader#The%20Reader--Macro%20characters">clojure.org/reader</a>, <a href="http://clojure.org/special_forms">special_forms</a>)</h2>
           <table>
             <tbody>
               <tr class="odd">

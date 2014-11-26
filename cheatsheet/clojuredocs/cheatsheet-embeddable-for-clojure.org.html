@@ -596,12 +596,12 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
           </table>
         </div><!-- /section -->
         <div class="section">
-          <h2>Reader Macros</h2>
+          <h2>Reader Macros (<a href="http://clojure.org/reader#The%20Reader--Macro%20characters">clojure.org/reader</a>)</h2>
           <table>
             <tbody>
               <tr class="odd">
                 <td><code>'</code></td>
-                <td>Quote: <code>'<var>form</var></code> &rarr; <code>(quote <var>form</var>)</code></td>
+                <td><code><a href="http://clojure.org/special_forms#quote">quote</a>: <code>'<var>form</var></code> &rarr; <code>(</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/quote">quote</a> <code><var>form</var>)</code></code></td>
               </tr>
               <tr class="even">
                 <td><code>\</code></td>
@@ -617,31 +617,31 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
               </tr>
               <tr class="odd">
                 <td><code>@</code></td>
-                <td>Deref: <code>@<var>form</var></code> &rarr; <code>(deref <var>form</var>)</code></td>
+                <td><code>Deref: <code>@<var>form</var></code> &rarr; <code>(</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/deref">deref</a> <code><var>form</var>)</code></code></td>
               </tr>
               <tr class="even">
                 <td><code>`</code></td>
-                <td>Syntax-quote</td>
+                <td><code><a href="http://clojure.org/reader#syntax-quote">Syntax-quote</a></code></td>
               </tr>
               <tr class="odd">
                 <td><code>~</code></td>
-                <td>Unquote</td>
+                <td><code><a href="http://clojure.org/reader#syntax-quote">Unquote</a></code></td>
               </tr>
               <tr class="even">
                 <td><code>~@</code></td>
-                <td>Unquote-splicing</td>
+                <td><code><a href="http://clojure.org/reader#syntax-quote">Unquote-splicing</a></code></td>
               </tr>
               <tr class="odd">
                 <td><code>#"<var>p</var>"</code></td>
-                <td>Regex Pattern <var>p</var></td>
+                <td>Regex Pattern <var>p</var>  (see Strings/Regex section)</td>
               </tr>
               <tr class="even">
                 <td><code>#'</code></td>
-                <td>Var quote: <code>#'<var>x</var></code> &rarr; <code>(var <var>x</var>)</code></td>
+                <td><code>Var-quote: <code>#'<var>x</var></code> &rarr; <code>(</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/var">var</a> <code><var>x</var>)</code></code></td>
               </tr>
               <tr class="odd">
                 <td><code>#()</code></td>
-                <td><code>#(...)</code> &rarr; <code>(fn [args] (...))</code></td>
+                <td><code><a href="http://clojure.org/reader#The%20Reader--Macro%20characters">Anonymous function literal</a>: <code>#(...)</code> &rarr; <code>(fn [args] (...))</code></code></td>
               </tr>
               <tr class="even">
                 <td><code>#_</code></td>
@@ -651,7 +651,7 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
           </table>
         </div><!-- /section -->
         <div class="section">
-          <h2>Metadata (<a href="http://clojure.org/special_forms">clojure.org/special_forms</a>)</h2>
+          <h2>Metadata (<a href="http://clojure.org/reader#The%20Reader--Macro%20characters">clojure.org/reader</a>, <a href="http://clojure.org/special_forms">special_forms</a>)</h2>
           <table>
             <tbody>
               <tr class="odd">
