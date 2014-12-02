@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: November 28, 2014
+Date: December 2, 2014
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -87,21 +87,6 @@ Defect
              Herwig Hochleitner (1/3)
              John Hume (1/3)
              Andy Fingerhut (1/11)
-    3.36  14 Backlog      [CLJ-700] contains? broken for transient collections
-             Dom Kiva-Meyer (1/2)
-             Laszlo Török (1/2)
-             Phill Wolf (1/2)
-             Huahai Yang (1/3)
-             Mark Engelberg (1/3)
-             Justin Glenn Smith (1/4)
-             Jason Wolfe (1/5)
-             Peter Taoussanis (1/5)
-             Patrick Houk (1/6)
-             John Walker (1/7)
-             Gary Trakhman (1/10)
-             David Greenberg (1/19)
-             Reid McKenzie (1/19)
-             Nicola Mometto (1/33)
     3.31   9 Backlog      [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
              Stephen Nelson (1)
              Volkert Oakley Jurgens (1)
@@ -112,12 +97,27 @@ Defect
              Colin Jones (1/8)
              Bozhidar Batsov (1/11)
              Nicola Mometto (1/33)
-    3.15   8 Triaged      [CLJ-1527] Harmonize accepted / documented symbol and keyword syntax over various readers
+    3.31  14 Backlog      [CLJ-700] contains? broken for transient collections
+             Dom Kiva-Meyer (1/2)
+             Laszlo Török (1/2)
+             Phill Wolf (1/2)
+             Huahai Yang (1/3)
+             Mark Engelberg (1/3)
+             Jason Wolfe (1/5)
+             Justin Glenn Smith (1/5)
+             Peter Taoussanis (1/5)
+             Patrick Houk (1/6)
+             John Walker (1/7)
+             Gary Trakhman (1/10)
+             David Greenberg (1/19)
+             Reid McKenzie (1/19)
+             Nicola Mometto (1/33)
+    3.10   8 Triaged      [CLJ-1527] Harmonize accepted / documented symbol and keyword syntax over various readers
              James Laver (1)
              James Reeves (1)
              Alan Bustos Kleiman (1/3)
              Michael Patrick O'Keefe (1/3)
-             Justin Glenn Smith (1/4)
+             Justin Glenn Smith (1/5)
              Andy Fingerhut (1/11)
              Bozhidar Batsov (1/11)
              Reid McKenzie (1/19)
@@ -188,9 +188,6 @@ Defect
              Max Penet (1/10)
              David Greenberg (1/19)
              Reid McKenzie (1/19)
-    0.58   2 Open         [CLJ-1279] Fix confusing macroexpand1 ArityException handling
-             César Bolaños (1/3)
-             Justin Glenn Smith (1/4)
     0.58   2 Open         [CLJ-1286] Fix reader spec and regex to match code for keywords starting with digits
              Michael Patrick O'Keefe (1/3)
              Francis Avila (1/4)
@@ -199,6 +196,9 @@ Defect
              Ambrose Bonnaire-Sergeant (1/8)
              David Greenberg (1/19)
              Nicola Mometto (1/33)
+    0.53   2 Open         [CLJ-1279] Fix confusing macroexpand1 ArityException handling
+             César Bolaños (1/3)
+             Justin Glenn Smith (1/5)
     0.53   4 Open         [CLJ-1029] ns defmacro allows arbitrary execution of clojure.core fns
              David Nolen (1/4)
              Ambrose Bonnaire-Sergeant (1/8)
@@ -208,10 +208,10 @@ Defect
              Jean Niklas L'orange (1/2)
     0.50   1 Open         [CLJ-1195] emit-hinted-impl expands to non-ns-qualified invocation of 'fn'
              Kei Tsuji (1/2)
-    0.50   1 Open         [CLJ-1390] pprint a GregorianCalendar results in Arity exception
-             Norman Richards (1/2)
     0.50   1 Open         [CLJ-1587] PersistentArrayMap's assoc doesn't respect HASHTABLE_THRESHOLD
              Jean Niklas L'orange (1/2)
+    0.50   1 Triaged      [CLJ-1390] pprint a GregorianCalendar results in Arity exception
+             Norman Richards (1/2)
     0.47   4 Triaged      [CLJ-1074] Read/print round-trip for +/-Infinity and NaN
              Marshall T. Vandegrift (1/3)
              David Greenberg (1/19)
@@ -294,9 +294,9 @@ Defect
     0.00   0 Backlog      [CLJ-1161] sources jar has bad versions.properties resource
     0.00   0 Incomplete   [CLJ-1580] Transient collections should guarantee thread visibility
     0.00   0 Screenable   [CLJ-1572] into does not work with IReduceInit
-    0.00   0 Screenable   [CLJ-1604] AOT bug prevents overriding of clojure.core functions
     0.00   0 Screened     [CLJ-1590] Some IReduce/IReduceInit implementors don't respect reduced
     0.00   0 Screened     [CLJ-1600] calling hashCode on clojure.lang.LazyTransformer causes a StackOverflowError
+    0.00   0 Screened     [CLJ-1604] AOT'ed code that defs a var with clojure.core symbol name causes IllegalStateException
     0.00   0 Screened     [CLJ-1606] Transducing an eduction finishes twice
     0.00   0 Triaged      [CLJ-1134] star-directive in clojure.pprint/cl-format with an at-prefix ("~n@*") do not obey its specifications
     0.00   0 Triaged      [CLJ-1313] Correct a few unit tests
@@ -564,16 +564,16 @@ Enhancement
              Jeroen van Dijk (1/2)
              Aspasia Beneti (1/3)
              Bart Kastermans (1/3)
-    1.56   5 Triaged      [CLJ-1576] clojure.pprint should print vars as pr does
-             Jeroen van Dijk (1/2)
-             Aspasia Beneti (1/3)
-             Bart Kastermans (1/3)
-             Justin Glenn Smith (1/4)
-             Tim McCormack (1/7)
     1.53   3 Triaged      [CLJ-1210] error message for (clojure.java.io/reader nil) — consistency for use with io/resource
              Dennis Schridde (1)
              Benjamin Peter (1/2)
              Nicola Mometto (1/33)
+    1.51   5 Triaged      [CLJ-1576] clojure.pprint should print vars as pr does
+             Jeroen van Dijk (1/2)
+             Aspasia Beneti (1/3)
+             Bart Kastermans (1/3)
+             Justin Glenn Smith (1/5)
+             Tim McCormack (1/7)
     1.50   3 Open         [CLJ-1218] mapcat is too eager
              Philip Potter (1)
              John Jacobsen (1/3)
@@ -600,6 +600,9 @@ Enhancement
     1.33   2 Triaged      [CLJ-1414] sort's docstring should say whether it is stable
              Antti Karanta (1)
              Stuart Sierra (1/3)
+    1.25   2 Open         [CLJ-1256] Support type-hinted overrides of function parameters
+             Xiaoyu Zhang (1)
+             Alex Fowler (1/4)
     1.25   2 Open         [CLJ-1523] Add 'doseq' like macro for transducers
              Niels van Klaveren (1)
              Jozef Wagner (1/4)
@@ -715,8 +718,6 @@ Enhancement
              Reid McKenzie (1/19)
     0.25   1 Open         [CLJ-148] Poor reporting of symbol conflicts when using (ns)
              Dmitri Naumov (1/4)
-    0.25   1 Open         [CLJ-1256] Support type-hinted overrides of function parameters
-             Alex Fowler (1/4)
     0.25   1 Open         [CLJ-1263] Allow static compilation of function invocations
              Alex Fowler (1/4)
     0.25   1 Open         [CLJ-1266] Better primitive support for floats
@@ -737,6 +738,8 @@ Enhancement
              Vlad Bokov (1/5)
     0.20   1 Triaged      [CLJ-1259] Speed up pprint
              Vlad Bokov (1/5)
+    0.20   1 Triaged      [CLJ-1607] docstring for clojure.core/counted? should be more specific
+             Justin Glenn Smith (1/5)
     0.19   2 Open         [CLJ-706] make use of deprecated namespaces/vars easier to spot
              Gary Trakhman (1/10)
              Andy Fingerhut (1/11)
@@ -799,8 +802,8 @@ Enhancement
     0.00   0 Backlog      [CLJ-1551] Consider transducer support for primitives
     0.00   0 Backlog      [CLJ-1552] Consider kv support for transducers (similar to reducers fold)
     0.00   0 Incomplete   [CLJ-1424] Feature Expressions
-    0.00   0 Needs Patch  [CLJ-1602] vals and keys return values should implement IReduceInit
-    0.00   0 Needs Patch  [CLJ-1603] cycle and iterate return vals should IReduceInit
+    0.00   0 Incomplete   [CLJ-1602] vals and keys return values should implement IReduceInit
+    0.00   0 Incomplete   [CLJ-1603] cycle and iterate return vals should IReduceInit
     0.00   0 Screenable   [CLJ-1546] Widen vec to take Iterable/IReduce
     0.00   0 Screenable   [CLJ-1589] Cleanup internal-reduce implementation
     0.00   0 Screenable   [CLJ-1601] transducer arities for map-indexed, distinct, and interpose
