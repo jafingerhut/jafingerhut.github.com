@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: December 8, 2014
+Date: December 11, 2014
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -88,6 +88,7 @@ Defect
     0.00   0 Open         [ASYNC-97] CLJS: alts! sporadically failing to unblock despite channel activity (Safari 7)
     0.00   0 Open         [ASYNC-99] go block with <! inside protocol method invocation fails to compile (dispatch :protocol-invoke on '-item-to-ssa')
     0.00   0 Open         [ASYNC-108] cljs to-chan hangs on infinite lazy sequences
+    0.00   0 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
@@ -248,6 +249,8 @@ Defect
              Gary Fredericks (1)
     1.00   1 Open         [CTYP-133] Typechecker fails when checking involves an object from reify
              Jochen Hinrichsen (1)
+    1.00   1 Open         [CTYP-167] Several failure cases for comp for polyadic fns and type variables
+             Oskar Wickstrom (1)
     0.00   0 Open         [CTYP-27] clojure.lang.RT/nth's type doesn't currently allow nil as the first argument
     0.00   0 Open         [CTYP-32] Cannot instantiate variables that have bounds 
     0.00   0 Open         [CTYP-35] Should use fresh names when checking plambdas
@@ -269,7 +272,6 @@ Defect
     0.00   0 Open         [CTYP-141] Implement Difference type
     0.00   0 Open         [CTYP-143] extend & extend-protocol with (Class/forName "[B") as Class dispatch value fails
     0.00   0 Open         [CTYP-159] "swap!" doesn't work anymore due to missing type translation
-    0.00   0 Open         [CTYP-167] Several failure cases for comp for polyadic fns and type variables
     0.00   0 Open         [CTYP-168] :arglists metadata is missing from vars defined using core.typed's defn macro
     0.00   0 Open         [CTYP-169] Type checking fails using core.typed's defn but succeeds without
     0.00   0 Open         [CTYP-170] `(apply concat ...)` gives "AssertionError Assert failed: (r/HeterogeneousMap? kws)".
@@ -280,6 +282,8 @@ Defect
     0.00   0 Open         [CTYP-176] No such var: ana/ns->relpath when loading the ClojureScript typechecker
     0.00   0 Open         [CTYP-177] Compile error with core.async
     0.00   0 Open         [CTYP-178] Dissimilar lengths of HVecs in a union doesn't type-check
+    0.00   0 Open         [CTYP-181] (float)'s type is mistakenly (Any -> Float)
+    0.00   0 Open         [CTYP-182] macros which define functions containing named anonymous functions crash
 
 ========================================
 Enhancement
@@ -548,6 +552,7 @@ Enhancement
     0.00   0 Open         [LOGIC-138] Allow tying multiple noms in one binder
     0.00   0 Open         [LOGIC-144] Extending cljs.core.logic with all of the functionality from clojure.core.logic 
     0.00   0 Open         [LOGIC-146] run macro should take * in addition to n
+    0.00   0 Open         [LOGIC-164] Guard against arity missmatches between rels, facts and retractions
 
 ========================================
 Task
@@ -564,12 +569,9 @@ Defect
     0.00   0 Open         [MATCH-49] Duplicate wildcard detection in pattern row doesn't account for locals
     0.00   0 Open         [MATCH-74] pass occurrence to emit-pattern
     0.00   0 Open         [MATCH-75] rest patterns don't work on arrays
-    0.00   0 Open         [MATCH-87] Bad interaction with core.async
     0.00   0 Open         [MATCH-90] ignore duplicate wildcard check if matching a local multiple times in same pattern row
     0.00   0 Open         [MATCH-93] Simple capturing of :or matches with :as doesn't work
     0.00   0 Open         [MATCH-95] recur detection logic is too naive
-    0.00   0 Open         [MATCH-97] satisfies? calls for IMatchLookup perf issues
-    0.00   0 Open         [MATCH-98] RegexPattern cannot be aot-compiled
     0.00   0 Open         [MATCH-99] Example in Overview Wiki Page Results in an Exception
 
 ========================================
@@ -578,13 +580,12 @@ Enhancement
     0.00   0 Open         [MATCH-2] Matching Diagnostics
     0.00   0 Open         [MATCH-4] Optimized pattern matching on deftype/record, POJOs
     0.00   0 Open         [MATCH-8] Implement (p|q)ba heuristics
-    0.00   0 Open         [MATCH-9] use case for dispatching on literals
     0.00   0 Open         [MATCH-40] Allow or'ing of guard functions
     0.00   0 Open         [MATCH-64] Improve match compile times
     0.00   0 Open         [MATCH-65] cata matching
     0.00   0 Open         [MATCH-72] complexity analysis
     0.00   0 Open         [MATCH-78] Switches on literals should happen via `case` not `cond`
-    0.00   0 Open         [MATCH-89] perf 3x slower for ragged rows
+    0.00   0 Open         [MATCH-100] Support function application in match syntax
 
 ========================================
 Task
@@ -733,7 +734,6 @@ Enhancement
     0.00   0 Open         [TCHECK-50] Sampling one in the obvious way could return a more random value
     0.00   0 Open         [TCHECK-51] Add set generator
     0.00   0 Open         [TCHECK-53] property creating function similar to map as alternative to for-all*
-    0.00   0 Open         [TCHECK-55] Minor refactor in generators/choose: call int-rose-tree
 
 
 Project TCLI tickets
@@ -809,7 +809,6 @@ Enhancement
     0.50   1 Open         [TNS-5] Allow any valid .clj* source file to be parsed/analysed
              deliminator (1/2)
     0.00   0 Open         [TNS-28] Add other Clojure suffixes to clojure.tools.namespace.file/clojure-file?
-    0.00   0 Open         [TNS-29] Parse cljs files
     0.00   0 Open         [TNS-31] Better error reporting for incorrect :after parameter of refresh
 
 
