@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: December 11, 2014
+Date: December 16, 2014
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -63,18 +63,21 @@ Defect
     2.00   2 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
              Hugo Duncan (1)
              Michael Nygard (1)
+    2.00   2 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
+             Ghadi Shayban (1)
+             Yehonathan Sharvit (1)
     1.00   1 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
              Marcus Lewis (1)
-    1.00   1 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
-             Ghadi Shayban (1)
     1.00   1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
              Francis Avila (1)
     1.00   1 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
              Colin Taylor (1)
-    1.00   1 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
-             Eduard Bondarenko (1)
     1.00   1 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
              Willy Blandin (1)
+    0.50   1 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
+             Howard Lewis Ship (1/2)
+    0.50   1 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
+             Eduard Bondarenko (1/2)
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
     0.00   0 Open         [ASYNC-51] Core.async memory leak in Safari and Mobile Safari
     0.00   0 Open         [ASYNC-54] MAX-QUEUE-SIZE has a wrong type-hint
@@ -88,7 +91,6 @@ Defect
     0.00   0 Open         [ASYNC-97] CLJS: alts! sporadically failing to unblock despite channel activity (Safari 7)
     0.00   0 Open         [ASYNC-99] go block with <! inside protocol method invocation fails to compile (dispatch :protocol-invoke on '-item-to-ssa')
     0.00   0 Open         [ASYNC-108] cljs to-chan hangs on infinite lazy sequences
-    0.00   0 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
@@ -98,11 +100,11 @@ Defect
 ========================================
 Enhancement
 
-    4.00   4 Open         [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go and thread macros 
+    3.50   4 Open         [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go and thread macros 
              Chad Harrington (1)
-             Howard Lewis Ship (1)
              Pierre-Yves Ritschard (1)
              Ryan Neufeld (1)
+             Howard Lewis Ship (1/2)
     2.00   2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
              Nahuel Greco (1)
              Reid McKenzie (1)
@@ -112,12 +114,14 @@ Enhancement
     2.00   2 Triaged      [ASYNC-67] Can we get a generic sink operation?
              Adam Clements (1)
              Jan-Paul Bultmann (1)
+    2.00   2 Vetted       [ASYNC-86] Update tools.analyzer.jvm dep
+             Adrian Medina (1)
+             Ambrose Bonnaire-Sergeant (1)
     1.00   1 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
              Max Penet (1)
-    1.00   1 Vetted       [ASYNC-86] Update tools.analyzer.jvm dep
-             Ambrose Bonnaire-Sergeant (1)
+    0.50   1 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
+             Eduard Bondarenko (1/2)
     0.00   0 Bad: Match n [ASYNC-102] implement IDeref, IBlockingDeref for channels
-    0.00   0 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
     0.00   0 Open         [ASYNC-46] Add optional default channel to 'pub'
     0.00   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
     0.00   0 Open         [ASYNC-71] exception behavior for thread macro is hard coded
@@ -284,6 +288,7 @@ Defect
     0.00   0 Open         [CTYP-178] Dissimilar lengths of HVecs in a union doesn't type-check
     0.00   0 Open         [CTYP-181] (float)'s type is mistakenly (Any -> Float)
     0.00   0 Open         [CTYP-182] macros which define functions containing named anonymous functions crash
+    0.00   0 Open         [CTYP-183] No such var: ana/ns->relpath exception on any attempt
 
 ========================================
 Enhancement
@@ -397,6 +402,11 @@ Enhancement
 
 
 Project DJSON tickets
+========================================
+Enhancement
+
+    0.00   0 Open         [DJSON-18] Fast way to print indented json
+
 
 Project DPRIMAP tickets
 ========================================
@@ -573,6 +583,7 @@ Defect
     0.00   0 Open         [MATCH-93] Simple capturing of :or matches with :as doesn't work
     0.00   0 Open         [MATCH-95] recur detection logic is too naive
     0.00   0 Open         [MATCH-99] Example in Overview Wiki Page Results in an Exception
+    0.00   0 Open         [MATCH-101] Apparent regression for test sharing literals
 
 ========================================
 Enhancement
@@ -585,7 +596,6 @@ Enhancement
     0.00   0 Open         [MATCH-65] cata matching
     0.00   0 Open         [MATCH-72] complexity analysis
     0.00   0 Open         [MATCH-78] Switches on literals should happen via `case` not `cond`
-    0.00   0 Open         [MATCH-100] Support function application in match syntax
 
 ========================================
 Task
@@ -699,9 +709,10 @@ Defect
 ========================================
 Enhancement
 
-    2.00   2 Open         [TCHECK-5] Include a float generator
+    2.50   3 Open         [TCHECK-5] Include a float generator
              Dirk Geurs (1)
              Miikka Koskinen (1)
+             Reid McKenzie (1/2)
     2.00   2 Open         [TCHECK-7] Add nested property support
              Ben Mabey (1)
              Maciej Jaśkowski (1)
@@ -713,10 +724,10 @@ Enhancement
              Chas Emerick (1/2)
     1.00   1 Open         [TCHECK-31] Doc improvements: how to separate "size" from "range"
              Brian Craft (1)
-    1.00   1 Open         [TCHECK-42] Interruptibility
-             Tom Crayford (1)
     0.50   1 Open         [TCHECK-8] Bound tests and shrinks in time
              Chas Emerick (1/2)
+    0.50   1 Open         [TCHECK-43] Test.check lacks a generator for all floats and floats in a range
+             Reid McKenzie (1/2)
     0.00   0 Open         [TCHECK-3] Add ability to customize test output when a test fails
     0.00   0 Open         [TCHECK-4] Handle sigint
     0.00   0 Open         [TCHECK-6] Rose-filter may assume too much
@@ -728,7 +739,6 @@ Enhancement
     0.00   0 Open         [TCHECK-37] Make random-number generation in test.check thread-safe
     0.00   0 Open         [TCHECK-38] Generators for functions?
     0.00   0 Open         [TCHECK-41] Add helpers for deprecating generators
-    0.00   0 Open         [TCHECK-43] Test.check lacks a generator for all floats and floats in a range
     0.00   0 Open         [TCHECK-44] for-all should support nesting
     0.00   0 Open         [TCHECK-48] Add sublist generator
     0.00   0 Open         [TCHECK-50] Sampling one in the obvious way could return a more random value
@@ -801,7 +811,6 @@ Defect
              deliminator (1/2)
     0.00   0 Open         [TNS-20] tracker's unload order sometimes incorrect
     0.00   0 Open         [TNS-24] Broken tracker after mis-named namespace
-    0.00   0 Open         [TNS-30] Required namespace outside of list is ignored
 
 ========================================
 Enhancement
