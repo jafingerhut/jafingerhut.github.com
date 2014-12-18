@@ -61,27 +61,20 @@ Project ASYNC tickets
 Defect
 
     2.00   2 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
-             Hugo Duncan (1)
-             Michael Nygard (1)
     2.00   2 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
-             Ghadi Shayban (1)
-             Yehonathan Sharvit (1)
-    1.00   1 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
-             Marcus Lewis (1)
-    1.00   1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
-             Francis Avila (1)
     1.00   1 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
-             Colin Taylor (1)
+    1.00   1 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
+    1.00   1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
     1.00   1 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
-             Willy Blandin (1)
-    0.50   1 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
-             Howard Lewis Ship (1/2)
     0.50   1 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
-             Eduard Bondarenko (1/2)
+    0.50   1 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
+    0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
+    0.00   0 Triaged      [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
     0.00   0 Open         [ASYNC-51] Core.async memory leak in Safari and Mobile Safari
     0.00   0 Open         [ASYNC-54] MAX-QUEUE-SIZE has a wrong type-hint
     0.00   0 Open         [ASYNC-63] Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
+    0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
     0.00   0 Open         [ASYNC-70] documentation of thread macro should include behavior of nil (closes the channel)
     0.00   0 Open         [ASYNC-73] try-catch-finally broken inside go-blocks
     0.00   0 Open         [ASYNC-77] StackOverflowError in go macro with cemerick.cljs.test (CLJS)
@@ -90,48 +83,31 @@ Defect
     0.00   0 Open         [ASYNC-96] FixedBuffer's full checking in cljs
     0.00   0 Open         [ASYNC-97] CLJS: alts! sporadically failing to unblock despite channel activity (Safari 7)
     0.00   0 Open         [ASYNC-99] go block with <! inside protocol method invocation fails to compile (dispatch :protocol-invoke on '-item-to-ssa')
-    0.00   0 Open         [ASYNC-108] cljs to-chan hangs on infinite lazy sequences
-    0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
-    0.00   0 Triaged      [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
-    0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
     0.00   0 Triaged      [ASYNC-100] core.async with multiple catch blocks causing weird loop behaviour
     0.00   0 Vetted       [ASYNC-101] clojure.core.async/reduce doesn't respect reduced
+    0.00   0 Open         [ASYNC-108] cljs to-chan hangs on infinite lazy sequences
 
 ========================================
 Enhancement
 
     3.50   4 Open         [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go and thread macros 
-             Chad Harrington (1)
-             Pierre-Yves Ritschard (1)
-             Ryan Neufeld (1)
-             Howard Lewis Ship (1/2)
-    2.00   2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
-             Nahuel Greco (1)
-             Reid McKenzie (1)
-    2.00   2 Open         [ASYNC-107] Improved docstring for alt!
-             Baishampayan Ghose (1)
-             Oleksandr Shyshko (1)
     2.00   2 Triaged      [ASYNC-67] Can we get a generic sink operation?
-             Adam Clements (1)
-             Jan-Paul Bultmann (1)
+    2.00   2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
     2.00   2 Vetted       [ASYNC-86] Update tools.analyzer.jvm dep
-             Adrian Medina (1)
-             Ambrose Bonnaire-Sergeant (1)
+    2.00   2 Open         [ASYNC-107] Improved docstring for alt!
     1.00   1 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
-             Max Penet (1)
     0.50   1 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
-             Eduard Bondarenko (1/2)
-    0.00   0 Bad: Match n [ASYNC-102] implement IDeref, IBlockingDeref for channels
     0.00   0 Open         [ASYNC-46] Add optional default channel to 'pub'
     0.00   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
-    0.00   0 Open         [ASYNC-71] exception behavior for thread macro is hard coded
-    0.00   0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
-    0.00   0 Triaged      [ASYNC-106] A unit test in ioc_macros_test.clj tests nothing
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
     0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
     0.00   0 Vetted       [ASYNC-69] How to better communicate "mix" lifecycle wrt coordination
+    0.00   0 Open         [ASYNC-71] exception behavior for thread macro is hard coded
+    0.00   0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
+    0.00   0 Bad: Match n [ASYNC-102] implement IDeref, IBlockingDeref for channels
     0.00   0 Vetted       [ASYNC-103] promise-buf
     0.00   0 Vetted       [ASYNC-104] offer! and poll!
+    0.00   0 Triaged      [ASYNC-106] A unit test in ioc_macros_test.clj tests nothing
 
 
 Project CCACHE tickets
@@ -139,7 +115,6 @@ Project CCACHE tickets
 Defect
 
     1.00   1 Open         [CCACHE-31] SoftCaches update in-place, other cache types don't
-             Ambrose Bonnaire-Sergeant (1)
     0.00   0 Open         [CCACHE-15] It appears that TTL cache exhibits quadratic performance (+ its evict is buggy)
     0.00   0 Open         [CCACHE-27] Missing LU and LRU is linear complexity - performance
     0.00   0 Open         [CCACHE-32] LIRSCache defect allows it's memory use to grow without bound
@@ -216,7 +191,6 @@ Defect
 Enhancement
 
     1.00   1 Open         [CLJCLR-25] Clojure.Compile.exe create single dll for all compiled .clj files
-             Antti Karanta (1)
     0.00   0 Open         [CLJCLR-44] Expose RT.GetFindFilePaths
 
 
@@ -225,9 +199,7 @@ Project CMEMOIZE tickets
 Defect
 
     1.00   1 Open         [CMEMOIZE-12] NPE with memoize/ttl
-             Aaron Iba (1)
     1.00   1 Open         [CMEMOIZE-14] dependency problem with clojure.core.cache
-             Francesco Bellomi (1)
     0.00   0 Open         [CMEMOIZE-8] memoizing functions that throw exceptions
     0.00   0 Open         [CMEMOIZE-15] ttl functions sometimes return nil
     0.00   0 Open         [CMEMOIZE-18] Confusing / erroneous documentation regarding seed values for clojure.core.memoize/memo
@@ -250,11 +222,8 @@ Project CTYP tickets
 Defect
 
     1.00   1 Open         [CTYP-108] core.typed runs forever
-             Gary Fredericks (1)
     1.00   1 Open         [CTYP-133] Typechecker fails when checking involves an object from reify
-             Jochen Hinrichsen (1)
     1.00   1 Open         [CTYP-167] Several failure cases for comp for polyadic fns and type variables
-             Oskar Wickstrom (1)
     0.00   0 Open         [CTYP-27] clojure.lang.RT/nth's type doesn't currently allow nil as the first argument
     0.00   0 Open         [CTYP-32] Cannot instantiate variables that have bounds 
     0.00   0 Open         [CTYP-35] Should use fresh names when checking plambdas
@@ -294,9 +263,7 @@ Defect
 Enhancement
 
     1.00   1 Open         [CTYP-93] Support refinement types
-             Christoffer Sawicki (1)
     1.00   1 Open         [CTYP-134] Allow namespace aliases in `ann`
-             Reid McKenzie (1)
     0.00   0 Bad: Unkn Fi [CTYP-8] Support complex map manipulation functions
     0.00   0 Open         [CTYP-9] Support metadata types
     0.00   0 Open         [CTYP-11] Infer good types for loop locals
@@ -413,7 +380,6 @@ Project DPRIMAP tickets
 Defect
 
     1.00   1 Open         [DPRIMAP-7] Remove usage of clojure.test from the main namespace
-             Ryan Fowler (1)
 
 ========================================
 Enhancement
@@ -433,19 +399,8 @@ Defect
 Enhancement
 
     7.00   7 Open         [DXML-4] Namespaces support
-             Dan Lipsitt (1)
-             Gary Trakhman (1)
-             Greg Chapman (1)
-             Martin Clausen (1)
-             Philip Potter (1)
-             Roan OSullivan (1)
-             Thomas Engelschmidt (1)
     3.00   3 Open         [DXML-13] Support for preserving whitespace between tags
-             Aron Nopanen (1)
-             Jan-Paul Bultmann (1)
-             Jason Gilman (1)
     1.00   1 Open         [DXML-10] Support for DOCTYPE when emitting XML
-             Stuart Sierra (1)
     0.00   0 Open         [DXML-22] Adding hiccup generation function for elements
     0.00   0 Open         [DXML-25] Emit Empty Elements using EmptyElementTag
 
@@ -483,8 +438,6 @@ Defect
 Enhancement
 
     2.00   2 Open         [JDBC-99] The age of reduce is upon us
-             Ghadi Shayban (1)
-             Ragnar Dahlen (1)
     0.00   0 Open         [JDBC-1] Provide option to return SQL generated / execution stats
     0.00   0 Open         [JDBC-37] Provide support for alternate transaction strategies
     0.00   0 Open         [JDBC-48] Support stored procedures with CallableStatement
@@ -507,7 +460,6 @@ Defect
 Enhancement
 
     1.00   1 Open         [JMX-8] Extend java.jmx to support exposing operations in created beans
-             Howard Lewis Ship (1)
     0.00   0 Open         [JMX-5] Timeout support
     0.00   0 Open         [JMX-9] Eliminate several uses of reflection in java.jmx
     0.00   0 Open         [JMX-12] Throw exception when overloaded operation is ambiguous
@@ -575,7 +527,6 @@ Project MATCH tickets
 Defect
 
     1.00   1 Open         [MATCH-31] vector patterns should work on seq
-             Russell Mull (1)
     0.00   0 Open         [MATCH-49] Duplicate wildcard detection in pattern row doesn't account for locals
     0.00   0 Open         [MATCH-74] pass occurrence to emit-pattern
     0.00   0 Open         [MATCH-75] rest patterns don't work on arrays
@@ -630,12 +581,8 @@ Project NREPL tickets
 Defect
 
     2.00   2 Open         [NREPL-3] Adopt default port
-             Andrew Rosa (1)
-             Bozhidar Batsov (1)
     1.00   1 Open         [NREPL-46] nREPL crashes when required more than one time with :reload-all
-             Laurent Petit (1)
     1.00   1 Open         [NREPL-69] Interrupt of load-file generates java.lang.ThreadDeath exception
-             Lars Andersen (1)
     0.00   0 Open         [NREPL-24] :session key is overloaded
     0.00   0 Open         [NREPL-28] Clarify semantics for String encoding
     0.00   0 Open         [NREPL-33] Consider making session and eval functionality more accessible
@@ -684,7 +631,6 @@ Project TBENCH tickets
 Defect
 
     1.00   1 Open         [TBENCH-12] Alioth k-nucleotide
-             Mike Anderson (1)
     0.00   0 Open         [TBENCH-11] Alioth reverse-complement
     0.00   0 Open         [TBENCH-14] Alioth fannkuch-redux
 
@@ -711,24 +657,12 @@ Defect
 Enhancement
 
     2.50   3 Open         [TCHECK-5] Include a float generator
-             Dirk Geurs (1)
-             Miikka Koskinen (1)
-             Reid McKenzie (1/2)
     2.00   2 Open         [TCHECK-7] Add nested property support
-             Ben Mabey (1)
-             Maciej Jaśkowski (1)
     2.00   2 Open         [TCHECK-15] gen/for macro for alternate combinator syntax
-             Gunnar Völkel (1)
-             Jason Felice (1)
     1.50   2 Open         [TCHECK-2] pos-int is confusingly named
-             Steve Miner (1)
-             Chas Emerick (1/2)
     1.00   1 Open         [TCHECK-31] Doc improvements: how to separate "size" from "range"
-             Brian Craft (1)
     0.50   1 Open         [TCHECK-8] Bound tests and shrinks in time
-             Chas Emerick (1/2)
     0.50   1 Open         [TCHECK-43] Test.check lacks a generator for all floats and floats in a range
-             Reid McKenzie (1/2)
     0.00   0 Open         [TCHECK-3] Add ability to customize test output when a test fails
     0.00   0 Open         [TCHECK-4] Handle sigint
     0.00   0 Open         [TCHECK-6] Rose-filter may assume too much
@@ -807,9 +741,7 @@ Project TNS tickets
 Defect
 
     1.00   1 Open         [TNS-7] Stack overflow on refresh after circular dependency detected
-             Anthony Marcar (1)
     0.50   1 Open         [TNS-6] Attempt to reload deleted file
-             deliminator (1/2)
     0.00   0 Open         [TNS-20] tracker's unload order sometimes incorrect
     0.00   0 Open         [TNS-24] Broken tracker after mis-named namespace
 
@@ -817,7 +749,6 @@ Defect
 Enhancement
 
     0.50   1 Open         [TNS-5] Allow any valid .clj* source file to be parsed/analysed
-             deliminator (1/2)
     0.00   0 Open         [TNS-28] Add other Clojure suffixes to clojure.tools.namespace.file/clojure-file?
     0.00   0 Open         [TNS-31] Better error reporting for incorrect :after parameter of refresh
 
