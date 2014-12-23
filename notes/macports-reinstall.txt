@@ -58,3 +58,17 @@ startup/login:
 
 sudo launchctl load -w /Library/LaunchDaemons/org.freedesktop.dbus-system.plist 
 launchctl load -w /Library/LaunchAgents/org.freedesktop.dbus-session.plist 
+
+
+This is a message appearing during installation of rsync:
+
+To use the rsyncd server you must copy /opt/local/etc/rsyncd.conf.example to
+rsyncd.conf and add your modules there. See 'man rsyncd.conf' for more
+information.
+
+
+For maven3, do this command, otherwise one must type 'mvn3' instead of
+'mvn' to invoke Maven:
+
+To make maven 3.2.3 the default, please run
+	sudo port select --set maven maven3
