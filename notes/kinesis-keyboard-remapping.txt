@@ -1,0 +1,202 @@
+----------------------------------------------------------------------
+Short versions
+----------------------------------------------------------------------
+
+On Thinkpad:  =+s inserts v3.1[SL K H x e ]
+
+Progrm+Shift+F10
+=+p
+Progrm+F12
+Esc `
+` CapsLock
+Progrm+F12
+
+On Mac:  =+s inserts v3.1[]
+
+Progrm+Shift+F10
+=+m
+Progrm+F12
+Esc CapsLock
+LeftOption Esc
+RightCtrl RightCommand
+RightCtrl LeftCommand
+RightCommand RightCtrl
+LeftCommand LeftOption
+Progrm+F12
+Progrm+F11
+RightCommand+CapsLock RightCommand+RightCtrl+Esc+`
+Progrm+F11
+Progrm+F11
+click-and-release-middle-foot-pedal RightCtrl+\
+Progrm+F11
+Progrm+F11
+click-and-release-left-foot-pedal RightCtrl+[
+Progrm+F11
+Progrm+F11
+click-and-release-right-foot-pedal RightCtrl+]
+Progrm+F11
+
+
+
+----------------------------------------------------------------------
+Long versions
+----------------------------------------------------------------------
+
+I have used this file to remap the following keys on my Cisco IBM Thinkpad:
+
+D:\Documents and Settings\jafinger\My Documents\sw\w2k-swap-keys-via-registry-editing\keyfix2.reg-commented.txt
+
+Caps Lock behaves as Left Ctrl
+Esc behaves as `
+` behaves as Esc
+
+
+When I connect my Kinesis keyboard to my Thinkpad, I want the following behavior:
+
+` behaves like `
+Caps Lock behaves like Esc
+Esc behaves like ` (actually, I don't care what it does so much, since I wouldn't really use that key for much of anything)
+
+From left to right, top two buttons under two thumb behave like Ctrl, Alt
+From left to right, top two buttons under right thumb behave like Alt, Ctrl
+
+All other keys behave like their labels.
+
+
+To achieve this from default factory settings on the Kinesis, do this:
+
+            /* Erase remappings using memory reset, option one */
+Progrm+Shift+F10
+            /* Select PC non-windows configuration so thumb keys work as I like */
+=+p         /* = is modifier key */
+            /* Remap these keys */
+Progrm+F12  /* start remapping */
+Esc `       /* Make ` behave like Esc on Kinesis, which Thinkpad then remaps back to ` */
+` CapsLock  /* Make CapsLock behave like ` on Kinesis, which Thinkpad then remaps to Esc */
+            /* I don't need to do anything to remap Esc key, since Thinkpad will remap it to ` */
+Progrm+F12  /* stop remapping */
+
+
+
+
+
+On my two Macs, I have set up both of them this way:
+
+Caps Lock behaves as Left Ctrl
+
+I did this using the free program uControl v1.4.4
+
+Under X11->Preferences->Input, I have set it this way
+
+  checked: Emulate three button mouse
+  checked: Follow system keyboard layout
+unchecked: Enable key equivalents under X11
+
+
+With these settings, the built-in-keyboard option key appears to have
+no effect in X11 apps.  Command behaves as Meta in Emacs, which is
+fine by me.
+
+When I connect my Kinesis keyboard to either of my Macs, I want the
+following behavior:
+
+` behaves like `
+Caps Lock behaves like Esc
+Esc behaves Option
+Control+CapsLock (remapped Command+CapsLock keys) behaves like Control+Option+Command+` - this is the funky key sequence needed to toggle full screen mode in Chicken of the VNC
+
+From left to right, top two buttons under two thumb behave like Ctrl, Command
+From left to right, top two buttons under right thumb behave like Commmand, Ctrl
+
+To achieve this from default factory settings on the Kinesis, do this:
+
+            /* Erase remappings using memory reset, option one */
+Progrm+Shift+F10
+            /* Select Macintosh configuration */
+=+m         /* = is modifier key */
+            /* Remap these keys */
+Progrm+F12  /* start remapping */
+Esc CapsLock  /* Make CapsLock behave like Esc */
+LeftOption Esc          /* Make Esc behave like Option */
+RightCtrl RightCommand  /* Make left ... */
+RightCtrl LeftCommand   /* ... and right command behave like Ctrl */
+RightCommand RightCtrl  /* Make right Ctrl ... */
+LeftCommand LeftOption  /* ... and left option behave like Command */
+Progrm+F12  /* stop remapping */
+
+Progrm+F11  /* start defining macros */
+RightCommand+CapsLock RightCommand+RightCtrl+Esc+`  /* Note that Esc behaves like option */
+Progrm+F11  /* stop defining macros */
+
+I am not sure whether I need to use Progrm+F11 to end the macro, but
+it does work.  If I don't do that, I suspect that later keystrokes
+will be appended to the macro being defined, not start a new macro
+definition.
+
+----------------------------------------------------------------------
+
+When I connect the footpad to my Advantage Pro Kineses keyboard, and I
+want to use it to control QuickTime Player pause/play, and go back 10
+seconds, I do this:
+
+Progrm+F11  /* start defining macros */
+click-and-release-middle-foot-pedal RightCtrl+\
+Progrm+F11  /* stop defining macros */
+Progrm+F11  /* start defining macros */
+click-and-release-left-foot-pedal RightCtrl+[
+Progrm+F11  /* stop defining macros */
+Progrm+F11  /* start defining macros */
+click-and-release-right-foot-pedal RightCtrl+]
+Progrm+F11  /* stop defining macros */
+
+Note that RightCtrl has already been remapped before that to behave
+like a command key, and it apparently behaves like the command key
+when the macro is performed.
+
+I also set up Triggers in Quicksilver so that Command-\ runs an
+AppleScript called QT pause-or-play, with this text, stored in
+~/Library/Scripts:
+
+----------------------------------------------------------------------
+tell application "QuickTime Player"
+	if front document is playing then
+		stop front document
+	else
+		play front document
+	end if
+end tell
+----------------------------------------------------------------------
+
+Quicksilver trigger Command-[ runs an AppleScript called QT jump bkwd
+10, with this text:
+
+----------------------------------------------------------------------
+property step : 10
+tell application "QuickTime Player"
+	set playerPosition to (current time of front document) - ¬
+		(step * (time scale of front document))
+	if (playerPosition < 0) then
+		set playerPosition to 0
+	end if
+	set current time of front document to playerPosition
+end tell
+----------------------------------------------------------------------
+
+Quicksilver trigger Command-] runs an AppleScript called QT jump fwd
+10, with this text:
+
+----------------------------------------------------------------------
+property step : 10
+tell application "QuickTime Player"
+	set playerPosition to (current time of front document) + ¬
+		(step * (time scale of front document))
+	set movieDuration to duration of front document
+	if (playerPosition > movieDuration) then
+		if front document is playing then
+			stop front document
+		end if
+		set playerPosition to movieDuration
+	end if
+	set current time of front document to playerPosition
+end tell
+----------------------------------------------------------------------
