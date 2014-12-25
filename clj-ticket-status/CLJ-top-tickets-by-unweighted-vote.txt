@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: December 22, 2014
+Date: December 25, 2014
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -50,7 +50,7 @@ Defect
     2.51   6 Triaged      [CLJ-1457] once the compiler pops the dynamic classloader from the stack, attempts to read record reader literals will fail
     1.47   6 Triaged      [CLJ-1232] Functions with non-qualified return type hints force import of hinted classes when called from other namespace
     0.87   5 Backlog      [CLJ-1093] Empty PersistentCollections get incorrectly evaluated as their generic clojure counterpart
-    1.33   4 Triaged      [CLJ-1565] pprint issues infinite output for a protocol
+    1.31   4 Triaged      [CLJ-1565] pprint issues infinite output for a protocol
     0.56   4 Screenable   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
     0.53   4 Open         [CLJ-1029] ns defmacro allows arbitrary execution of clojure.core fns
     0.41   4 Triaged      [CLJ-130] Namespace metadata lost in AOT compile
@@ -89,6 +89,7 @@ Defect
     0.17   1 Open         [CLJ-1231] fn and letfn don't support hinting the function's return type
     0.17   1 Open         [CLJ-1403] ns-resolve might throw ClassNotFoundException but should return nil
     0.14   1 Open         [CLJ-1189] Map-destructuring :or fumble needs compiler warning
+    0.14   1 Open         [CLJ-1622] No way to AOT class with interface or parent whose fully qualified name doesn't contain a period
     0.13   1 Triaged      [CLJ-1225] quot overflow issues around Long/MIN_VALUE for BigInt
     0.13   1 Triaged      [CLJ-1254] Incorrect long quot result involving Long/MIN_VALUE
     0.13   1 Open         [CLJ-1389] Re-loading a namespace ignores metadata specified for the namespace
@@ -130,11 +131,11 @@ Defect
 Enhancement
 
    13.99  24 Triaged      [CLJ-1449] Add starts-with? ends-with? contains? to clojure.string
-    9.59  19 Triaged      [CLJ-703] Improve writeClassFile performance
+    9.56  19 Triaged      [CLJ-703] Improve writeClassFile performance
     7.65  16 Vetted       [CLJ-865] Macroexpansion discards &form metadata
     7.57  15 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
     6.20  15 Triaged      [CLJ-1298] Add more type predicate fns to core
-    5.45  15 Backlog      [CLJ-1517] Unrolled small vectors
+    5.43  15 Backlog      [CLJ-1517] Unrolled small vectors
     2.90  12 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
     3.33  11 Vetted       [CLJ-1005] Use transient map in zipmap
     5.03  10 Triaged      [CLJ-1418] make as-> macro compatible with destructuring
@@ -145,10 +146,10 @@ Enhancement
     3.90   7 Triaged      [CLJ-440] java method calls cannot omit varargs
     2.89   7 Triaged      [CLJ-308] protocol-ize with-open
     3.64   6 Vetted       [CLJ-1148] adds docstring support to defonce
+    3.44   6 Open         [CLJ-304] clojure.repl/source does not work with deftype
     2.52   6 Open         [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
-    2.37   6 Triaged      [CLJ-1454] Companion to swap! which returns the old value
+    2.34   6 Triaged      [CLJ-1454] Companion to swap! which returns the old value
     1.29   6 Open         [CLJ-1239] faster, more flexible dispatch for clojure.walk
-    2.44   5 Open         [CLJ-304] clojure.repl/source does not work with deftype
     1.51   5 Triaged      [CLJ-1576] clojure.pprint should print vars as pr does
     1.23   5 Triaged      [CLJ-1458] Use transients in merge and merge-with
     1.20   5 Triaged      [CLJ-1117] partition docstring should be more explicit about dropped or partial trailing elements
@@ -223,10 +224,10 @@ Enhancement
     0.17   1 Open         [CLJ-252] Support typed non-primitive fields in deftype
     0.17   1 Open         [CLJ-451] fn literals lack name/arglists/namespace metadata
     0.17   1 Open         [CLJ-1342] Byte comparison boxes both bytes and converts to longs to compare (which is slow)
-    0.17   1 Triaged      [CLJ-1386] Add transient? predicate
     0.17   1 Triaged      [CLJ-1598] Make if forms compile directly to the appropriate branch expression if the test is a literal
-    0.17   1 Open         [CLJ-1599] Add get-and-set! to expose AtomicReference.getAndSet() in atoms
     0.14   1 Vetted       [CLJ-1099] better error message when passing non-seq to seq
+    0.14   1 Triaged      [CLJ-1386] Add transient? predicate
+    0.14   1 Open         [CLJ-1599] Add get-and-set! to expose AtomicReference.getAndSet() in atoms
     0.11   1 Open         [CLJ-993] `range` reducer
     0.11   1 Open         [CLJ-1112] Var *loading-verbosely* should initialize from a JVM system property
     0.10   1 Open         [CLJ-1376] Initialize internal maps to more efficient version
@@ -276,3 +277,4 @@ Enhancement
     0.00   0 Screenable   [CLJ-1603] cycle, iterate, repeat return vals should IReduceInit
     0.00   0 Screenable   [CLJ-1618] Widen set to take Iterable/IReduceInit
     0.00   0 Screenable   [CLJ-1621] Improve reporting in transducers generative test.
+    0.00   0 Triaged      [CLJ-1624] Support get from arbitrary java.util.List data types
