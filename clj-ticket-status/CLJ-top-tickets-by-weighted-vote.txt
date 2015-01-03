@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: December 30, 2014
+Date: January 2, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -81,14 +81,14 @@ Defect
              Bozhidar Batsov (1/11)
              Reid McKenzie (1/20)
              Nicola Mometto (1/36)
-    5.99  13 Screenable   [CLJ-979] Clojure resolves to wrong deftype classes when AOT compiling or reloading
+    5.74  13 Screenable   [CLJ-979] Clojure resolves to wrong deftype classes when AOT compiling or reloading
              Andrew Childs (1)
              Ralph Ritoch (1)
              Simon Doherty (1)
              ken restivo (1)
              Stephen Nelson (1/2)
-             Tom Crayford (1/2)
              Michael Fogleman (1/4)
+             Tom Crayford (1/4)
              Marshall T. Vandegrift (1/5)
              Alex Miller (1/6)
              Peter Taoussanis (1/6)
@@ -169,11 +169,11 @@ Defect
              Chris Tennant (1)
              Chas Emerick (1/5)
              David Leatherman (1/7)
-    1.29   4 Triaged      [CLJ-1565] pprint issues infinite output for a protocol
+    1.28   4 Triaged      [CLJ-1565] pprint issues infinite output for a protocol
              Chris Blom (1/2)
              Aspasia Beneti (1/3)
              Bart Kastermans (1/3)
-             Michael Blume (1/8)
+             Michael Blume (1/9)
     1.20   2 Open         [CLJ-1399] missing field munging when recreating deftypes serialized in to byte code
              Jason Gilman (1)
              Chas Emerick (1/5)
@@ -200,6 +200,12 @@ Defect
              Max Penet (1/10)
              David Greenberg (1/19)
              Reid McKenzie (1/20)
+    0.81   5 Screenable   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
+             Michael Fogleman (1/4)
+             Tom Crayford (1/4)
+             Alex Miller (1/6)
+             Tassilo Horn (1/9)
+             Nicola Mometto (1/36)
     0.67   3 Triaged      [CLJ-1620] Constants are leaked in case of a reentrant eval
              Laurent Petit (1/2)
              Colin Fleming (1/7)
@@ -210,11 +216,6 @@ Defect
     0.56   3 Open         [CLJ-1279] Fix confusing macroexpand1 ArityException handling
              César Bolaños (1/3)
              Justin Glenn Smith (1/5)
-             Nicola Mometto (1/36)
-    0.56   4 Screenable   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
-             Michael Fogleman (1/4)
-             Alex Miller (1/6)
-             Tassilo Horn (1/9)
              Nicola Mometto (1/36)
     0.53   2 Triaged      [CLJ-1195] emit-hinted-impl expands to non-ns-qualified invocation of 'fn'
              Kei Tsuji (1/2)
@@ -254,6 +255,8 @@ Defect
     0.30   2 Open         [CLJ-1242] get/= on sorted collections when types don't match result in a ClassCastException
              Marshall T. Vandegrift (1/5)
              Gary Trakhman (1/10)
+    0.25   1 Screened     [CLJ-1604] AOT'ed code that defs a var with clojure.core symbol name causes IllegalStateException
+             Tom Crayford (1/4)
     0.23   2 Triaged      [CLJ-1137] Metadata on a def gets evaluated twice
              Marshall T. Vandegrift (1/5)
              Nicola Mometto (1/36)
@@ -288,14 +291,14 @@ Defect
              David Leatherman (1/7)
     0.13   1 Open         [CLJ-1389] Re-loading a namespace ignores metadata specified for the namespace
              Ambrose Bonnaire-Sergeant (1/8)
-    0.13   1 Open         [CLJ-1613] :or defaults should refer to enclosing scope in map destructuring
-             Michael Blume (1/8)
-    0.13   1 Open         [CLJ-1622] No way to AOT class with interface or parent whose fully qualified name doesn't contain a period
-             Michael Blume (1/8)
     0.13   1 Triaged      [CLJ-1225] quot overflow issues around Long/MIN_VALUE for BigInt
              Colin Jones (1/8)
     0.13   1 Triaged      [CLJ-1254] Incorrect long quot result involving Long/MIN_VALUE
              Colin Jones (1/8)
+    0.11   1 Open         [CLJ-1613] :or defaults should refer to enclosing scope in map destructuring
+             Michael Blume (1/9)
+    0.11   1 Open         [CLJ-1622] No way to AOT class with interface or parent whose fully qualified name doesn't contain a period
+             Michael Blume (1/9)
     0.10   1 Triaged      [CLJ-1609] Fix an edge case in the Reflector's search for a public method declaration
              Christoffer Sawicki (1/10)
     0.09   1 Open         [CLJ-1059] PersistentQueue doesn't implement java.util.List, causing nontransitive equality
@@ -312,10 +315,9 @@ Defect
     0.00   0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
     0.00   0 Backlog      [CLJ-1161] sources jar has bad versions.properties resource
     0.00   0 Screenable   [CLJ-1572] into does not work with IReduceInit
-    0.00   0 Screenable   [CLJ-1580] Transient collections should guarantee thread visibility
+    0.00   0 Screened     [CLJ-1580] Transient collections should guarantee thread visibility
     0.00   0 Screened     [CLJ-1590] Some IReduce/IReduceInit implementors don't respect reduced
     0.00   0 Screened     [CLJ-1600] calling hashCode on clojure.lang.LazyTransformer causes a StackOverflowError
-    0.00   0 Screened     [CLJ-1604] AOT'ed code that defs a var with clojure.core symbol name causes IllegalStateException
     0.00   0 Screened     [CLJ-1606] Transducing an eduction finishes twice
     0.00   0 Screened     [CLJ-1619] PersistentVector implements IReduce but the no init arity throws
     0.00   0 Triaged      [CLJ-1134] star-directive in clojure.pprint/cl-format with an at-prefix ("~n@*") do not obey its specifications
@@ -363,7 +365,7 @@ Enhancement
              Brandon Bloom (1/10)
              Christoffer Sawicki (1/10)
              David Greenberg (1/19)
-    9.55  19 Triaged      [CLJ-703] Improve writeClassFile performance
+    9.28  19 Triaged      [CLJ-703] Improve writeClassFile performance
              Dan Neumann (1)
              David Powell (1)
              Ragnar Dahlen (1)
@@ -373,13 +375,13 @@ Enhancement
              Daniel R. Schlegel (1/2)
              Francesco Bellomi (1/2)
              Laszlo Török (1/2)
-             Tom Crayford (1/2)
              Kuldeep (1/3)
              Michael Patrick O'Keefe (1/3)
              Jason Wolfe (1/4)
+             Tom Crayford (1/4)
              Colin Fleming (1/7)
              Tim McCormack (1/7)
-             Michael Blume (1/8)
+             Michael Blume (1/9)
              Max Penet (1/10)
              Andy Fingerhut (1/11)
              Nicola Mometto (1/36)
@@ -432,7 +434,7 @@ Enhancement
              Bozhidar Batsov (1/11)
              Reid McKenzie (1/20)
              Nicola Mometto (1/36)
-    5.41  15 Backlog      [CLJ-1517] Unrolled small vectors
+    5.40  15 Backlog      [CLJ-1517] Unrolled small vectors
              Deepak Giridharagopal (1)
              Yuriy Melnyk (1)
              Chris McDevitt (1/2)
@@ -444,7 +446,7 @@ Enhancement
              Alex Miller (1/6)
              Colin Fleming (1/7)
              John Walker (1/7)
-             Michael Blume (1/8)
+             Michael Blume (1/9)
              Christoffer Sawicki (1/10)
              Max Penet (1/10)
              Reid McKenzie (1/20)
@@ -502,11 +504,6 @@ Enhancement
              Norman Richards (1/2)
              Trevor Hartman (1/2)
              David Leatherman (1/7)
-    3.50   4 Open         [CLJ-1573] Support (Java) transient fields in deftype, e.g. for hashcodes
-             Daniel J Jolicoeur (1)
-             Ian Eslick (1)
-             Roberto Robles (1)
-             Adrian Medina (1/2)
     3.44   6 Open         [CLJ-304] clojure.repl/source does not work with deftype
              Alex Walker (1)
              Andrew Rudenko (1)
@@ -514,6 +511,11 @@ Enhancement
              Dmitri Naumov (1/4)
              Gary Trakhman (1/10)
              Bozhidar Batsov (1/11)
+    3.33   4 Open         [CLJ-1573] Support (Java) transient fields in deftype, e.g. for hashcodes
+             Daniel J Jolicoeur (1)
+             Ian Eslick (1)
+             Roberto Robles (1)
+             Adrian Medina (1/3)
     3.33  11 Vetted       [CLJ-1005] Use transient map in zipmap
              Bobby Eickhoff (1)
              Joshua Ballanco (1)
@@ -570,13 +572,13 @@ Enhancement
              John Walker (1/7)
              Brandon Bloom (1/10)
              Nicola Mometto (1/36)
-    2.33   6 Triaged      [CLJ-1454] Companion to swap! which returns the old value
+    2.31   6 Triaged      [CLJ-1454] Companion to swap! which returns the old value
              Timothy Baldridge (1)
              Peter Monks (1/2)
              Stuart Sierra (1/3)
              Daniel James (1/5)
              Matthew O. Smith (1/6)
-             Michael Blume (1/8)
+             Michael Blume (1/9)
     2.27   4 Triaged      [CLJ-735] Improve error message when a protocol method is not found
              Antonio Terreno (1)
              Scott Bale (1)
@@ -729,10 +731,12 @@ Enhancement
     0.67   2 Open         [CLJ-1367] Allow case statement to compare java constants
              Benjamin Peter (1/2)
              Patrick Houk (1/6)
+    0.54   3 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
+             Adrian Medina (1/3)
+             Michael Blume (1/9)
+             Brandon Bloom (1/10)
     0.50   1 Backlog      [CLJ-1610] Unrolled small maps
              Michał Marczyk (1/2)
-    0.50   1 Incomplete   [CLJ-1424] Feature Expressions
-             Adrian Medina (1/2)
     0.50   1 Open         [CLJ-970] extend/implement parameterized types (generics)
              Stuart Halloway (1/2)
     0.50   1 Open         [CLJ-994] repeat reducer
@@ -753,6 +757,8 @@ Enhancement
     0.36   2 Triaged      [CLJ-1295] Speed up dissoc on array-maps
              Ghadi Shayban (1/3)
              Nicola Mometto (1/36)
+    0.33   1 Incomplete   [CLJ-1424] Feature Expressions
+             Adrian Medina (1/3)
     0.33   1 Open         [CLJ-1332] Exceptions are not cached in lazy seqs
              Herwig Hochleitner (1/3)
     0.31   2 Triaged      [CLJ-888] defprotocol should throw error when signatures include variable number of parameters
@@ -811,10 +817,6 @@ Enhancement
     0.13   2 Open         [CLJ-1442] Tag gensym sourced symbols with metadata
              Gary Trakhman (1/10)
              Nicola Mometto (1/36)
-    0.13   1 Open         [CLJ-1599] Add get-and-set! to expose AtomicReference.getAndSet() in atoms
-             Michael Blume (1/8)
-    0.13   1 Triaged      [CLJ-1386] Add transient? predicate
-             Michael Blume (1/8)
     0.12   2 Triaged      [CLJ-1305] Add optional not-found argument when invoking vectors or sets as functions
              Bozhidar Batsov (1/11)
              Nicola Mometto (1/36)
@@ -822,13 +824,15 @@ Enhancement
              Tassilo Horn (1/9)
     0.11   1 Open         [CLJ-1112] Var *loading-verbosely* should initialize from a JVM system property
              Tassilo Horn (1/9)
+    0.11   1 Open         [CLJ-1599] Add get-and-set! to expose AtomicReference.getAndSet() in atoms
+             Michael Blume (1/9)
+    0.11   1 Triaged      [CLJ-1386] Add transient? predicate
+             Michael Blume (1/9)
     0.10   1 Open         [CLJ-1376] Initialize internal maps to more efficient version
              Max Penet (1/10)
     0.10   1 Screenable   [CLJ-1515] Reify the result of range and add IReduceInit
              Brandon Bloom (1/10)
     0.10   1 Triaged      [CLJ-1416] Support transients in gvec
-             Brandon Bloom (1/10)
-    0.10   1 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
              Brandon Bloom (1/10)
     0.09   1 Open         [CLJ-1280] Create reusable exception that can carry file/line/col info
              Andy Fingerhut (1/11)
@@ -859,12 +863,12 @@ Enhancement
     0.00   0 Backlog      [CLJ-1552] Consider kv support for transducers (similar to reducers fold)
     0.00   0 Screenable   [CLJ-1499] Replace seq-based iterators with direct iterators for all non-seq collections that use SeqIterator
     0.00   0 Screenable   [CLJ-1546] Widen vec to take Iterable/IReduce
-    0.00   0 Screenable   [CLJ-1601] transducer arities for map-indexed, distinct, and interpose
     0.00   0 Screenable   [CLJ-1602] vals and keys return values should implement IReduceInit
     0.00   0 Screenable   [CLJ-1603] cycle, iterate, repeat return vals should IReduceInit
-    0.00   0 Screenable   [CLJ-1618] Widen set to take Iterable/IReduceInit
-    0.00   0 Screenable   [CLJ-1621] Improve reporting in transducers generative test.
     0.00   0 Screened     [CLJ-1589] Cleanup internal-reduce implementation
+    0.00   0 Screened     [CLJ-1601] transducer arities for map-indexed, distinct, and interpose
+    0.00   0 Screened     [CLJ-1618] Widen set to take Iterable/IReduceInit
+    0.00   0 Screened     [CLJ-1621] Improve reporting in transducers generative test.
     0.00   0 Triaged      [CLJ-668] Improve slurp performance by using native Java StringWriter and jio/copy
     0.00   0 Triaged      [CLJ-704] range function has missing documentation
     0.00   0 Triaged      [CLJ-1282] The quote special form should throw an exception if passed more than one form to quote
