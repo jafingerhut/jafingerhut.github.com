@@ -255,7 +255,7 @@
  {:display-name "Martin Rybczynski",
   :usernames #{"martyribs"},
   :emails #{"martin@yetidata.com"}}
- ("CLJ-1457"),
+ (),
  {:display-name "Travis Thieman",
   :usernames #{"tthieman"},
   :emails #{"travis.thieman@gmail.com"}}
@@ -429,6 +429,10 @@
  {:display-name "Robert Krahn",
   :usernames #{"robertkrahn"},
   :emails #{"robert.krahn@gmail.com"}}
+ (),
+ {:display-name "Hooze It",
+  :usernames #{"jhanekom"},
+  :emails #{"hoozeit@gmail.com"}}
  (),
  {:display-name "Justin Kramer",
   :usernames #{"jkkramer"},
@@ -2051,13 +2055,7 @@
  {:display-name "Tim McCormack",
   :usernames #{"timmc"},
   :emails #{"cortex@brainonfire.net"}}
- ("CLJ-1576"
-  "CLJ-1457"
-  "CLJ-1453"
-  "CLJ-1445"
-  "CLJ-1237"
-  "CLJ-1107"
-  "CLJ-703"),
+ ("CLJ-1576" "CLJ-1453" "CLJ-1445" "CLJ-1237" "CLJ-1107" "CLJ-703"),
  {:display-name "bpsm",
   :usernames #{"bpsm"},
   :emails #{"bpsm@clojure.org"}}
@@ -2078,7 +2076,6 @@
   :usernames #{"michaelblume"},
   :emails #{"blume.mike@gmail.com"}}
  ("TCHECK-15"
-  "CLJ-1633"
   "CLJ-1622"
   "CLJ-1613"
   "CLJ-1599"
@@ -2567,10 +2564,6 @@
   :usernames #{"mdzaebel"},
   :emails #{"mdzaebel@web.de"}}
  (),
- {:display-name "Justin Hanekom",
-  :usernames #{"jhanekom"},
-  :emails #{"justin.hanekom@rogers.com"}}
- (),
  {:display-name "Kevin Webster",
   :usernames #{"kevin-webster"},
   :emails #{"kevin@kevinwebster.me"}}
@@ -2841,7 +2834,7 @@
  {:display-name "Michael Fogleman",
   :usernames #{"mwfogleman"},
   :emails #{"michaelwfogleman@gmail.com"}}
- ("CLJ-1544" "CLJ-1457" "CLJ-1449" "CLJ-979"),
+ ("CLJ-1544" "CLJ-1449" "CLJ-979"),
  {:display-name "Richard Hull",
   :usernames #{"rhu"},
   :emails #{"rm_hull@yahoo.co.uk"}}
@@ -3233,7 +3226,7 @@
  {:display-name "Eric A Gebhart",
   :usernames #{"eagebhart"},
   :emails #{"e.a.gebhart@gmail.com"}}
- ("CLJ-1457"),
+ (),
  {:display-name "Patrick Gombert",
   :usernames #{"patrickgombert"},
   :emails #{"patrickgombert@gmail.com"}}
@@ -3486,7 +3479,6 @@
   "CLJ-1568"
   "CLJ-1561"
   "CLJ-1544"
-  "CLJ-1457"
   "CLJ-1445"
   "CLJ-1442"
   "CLJ-1305"
@@ -4528,7 +4520,13 @@
  {:display-name "Alex Miller",
   :usernames #{"alexmiller"},
   :emails #{"alex@puredanger.com"}}
- ("CLJ-1544" "CLJ-1517" "CLJ-1239" "CLJ-1107" "CLJ-1005" "CLJ-979"),
+ ("CLJ-1544"
+  "CLJ-1517"
+  "CLJ-1239"
+  "CLJ-1107"
+  "CLJ-1005"
+  "CLJ-979"
+  "CLJ-700"),
  {:display-name "Stefan Huber",
   :usernames #{"msnexploder"},
   :emails #{"msnexploder@gmail.com"}}
@@ -4888,7 +4886,6 @@
   :emails #{"andy_fingerhut@alum.wustl.edu"}}
  ("TNS-32"
   "CLJ-1527"
-  "CLJ-1457"
   "CLJ-1372"
   "CLJ-1326"
   "CLJ-1308"
