@@ -1316,7 +1316,7 @@
  {:display-name "Laurent Petit",
   :usernames #{"laurentpetit"},
   :emails #{"laurent.petit@gmail.com"}}
- ("NREPL-46" "CLJ-1620" "CLJ-322"),
+ ("CLJ-1620" "CLJ-322"),
  {:display-name "Alejandro Ciniglio",
   :usernames #{"ciniglio"},
   :emails #{"alejandro@alejandrociniglio.com"}}
@@ -1352,6 +1352,10 @@
  {:display-name "James Henderson",
   :usernames #{"jarohen"},
   :emails #{"james@jarohen.me.uk"}}
+ (),
+ {:display-name "Kevin Casey",
+  :usernames #{"kevincasey"},
+  :emails #{"kevin-casey@sbcglobal.net"}}
  (),
  {:display-name "rasefon wang",
   :usernames #{"rasefon@gmail.com"},
@@ -3492,6 +3496,7 @@
   "CLJ-1152"
   "CLJ-1137"
   "CLJ-1115"
+  "CLJ-1107"
   "CLJ-1103"
   "CLJ-1078"
   "CLJ-1074"
@@ -5758,6 +5763,10 @@
   :usernames #{"phillord"},
   :emails #{"phillip.lord@newcastle.ac.uk"}}
  (),
+ {:display-name "Joseph Siddall",
+  :usernames #{"jbsiddall"},
+  :emails #{"j.b.siddall@gmail.com"}}
+ (),
  {:display-name "Bobby W",
   :usernames #{"byw"},
   :emails #{"papersmith@gmail.com"}}
@@ -6240,6 +6249,10 @@
  {:display-name "Stuart Halloway",
   :usernames #{"hallowaytest"},
   :emails #{"stuarthalloway@datomic.com"}}
+ (),
+ {:display-name "Mihir Rege",
+  :usernames #{"mihirrege"},
+  :emails #{"mihirrege@gmail.com"}}
  (),
  {:display-name "Tom Marble",
   :usernames #{"tmarble"},
