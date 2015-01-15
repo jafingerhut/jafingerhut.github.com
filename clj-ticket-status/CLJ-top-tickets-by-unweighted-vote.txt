@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: January 12, 2015
+Date: January 15, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -39,8 +39,8 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
-    9.98  23 Screenable   [CLJ-1561] Incorrect line numbers are emitted
-   10.11  19 Incomplete   [CLJ-1568] Incorrect error locations reported in the stacktrace
+    9.98  23 Incomplete   [CLJ-1561] Incorrect line numbers are emitted
+   10.11  19 Screened     [CLJ-1568] Incorrect error locations reported in the stacktrace
     3.56  15 Backlog      [CLJ-700] contains? broken for transient collections
     3.24   9 Triaged      [CLJ-1527] Harmonize accepted / documented symbol and keyword syntax over various readers
     2.67   9 Backlog      [CLJ-1250] Reducer (and folder) instances hold onto the head of seqs
@@ -119,10 +119,11 @@ Defect
     0.00   0 Triaged      [CLJ-1586] Compiler doesn't preserve metadata for LazySeq literals
     0.00   0 Triaged      [CLJ-1588] StackOverflow in clojure.test macroexpand with `are` and anonymous `fn`
     0.00   0 Triaged      [CLJ-1596] Using keywords in place of symbols for defrecord fields causes a compiler exception with incorrect line number
-    0.00   0 Needs Patch  [CLJ-1636] NullPointerException in Compiler 
-    0.00   0 Incomplete   [CLJ-1637] vec fails on MapEntry
+    0.00   0 Screened     [CLJ-1636] SeqIterator can return incorrect results 
+    0.00   0 Screenable   [CLJ-1637] vec fails on MapEntry
     0.00   0 Screenable   [CLJ-1638] Regression - PersistentVector.create(List) was removed in 1.7.0-alpha5
-    0.00   0 Triaged      [CLJ-1639] Fix for CLJ-979 breaks some uses of core.cache / core.memoize
+    0.00   0 Incomplete   [CLJ-1639] Fix for CLJ-979 breaks some uses of core.cache / core.memoize
+    0.00   0 Incomplete   [CLJ-1641] AOT compilation fails for a kind of circular dependency after CLJ-1544 patch
 
 ========================================
 Enhancement
@@ -154,6 +155,7 @@ Enhancement
     0.76   5 Open         [CLJ-401] Promote "seqable?" from contrib?
     3.33   4 Open         [CLJ-1573] Support (Java) transient fields in deftype, e.g. for hashcodes
     2.83   4 Triaged      [CLJ-1490] Exception on protocol implementation after protocol reloaded could be improved
+    2.53   4 Triaged      [CLJ-1210] error message for (clojure.java.io/reader nil) — consistency for use with io/resource
     2.27   4 Triaged      [CLJ-735] Improve error message when a protocol method is not found
     2.25   4 Open         [CLJ-899] Accept and ignore colon between key and value in map literals
     2.03   4 Backlog      [CLJ-1553] Parallel transduce
@@ -163,7 +165,6 @@ Enhancement
     0.89   4 Open         [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
     2.05   3 Open         [CLJ-1519] Added extra arity to clojure.core/ns-* fns
     1.75   3 Open         [CLJ-272] load/ns/require/use overhaul
-    1.53   3 Triaged      [CLJ-1210] error message for (clojure.java.io/reader nil) — consistency for use with io/resource
     1.50   3 Open         [CLJ-1218] mapcat is too eager
     1.25   3 Triaged      [CLJ-1473] Bad pre/post conditions silently passed
     1.05   3 Open         [CLJ-1201] There should also be writing in clojure.edn
@@ -261,7 +262,7 @@ Enhancement
     0.00   0 Triaged      [CLJ-1483] Clarify the usage of replace(-first) with a function
     0.00   0 Triaged      [CLJ-1488] Implement Named over Vars
     0.00   0 Triaged      [CLJ-1493] Fast keyword intern
-    0.00   0 Incomplete   [CLJ-1499] Replace seq-based iterators with direct iterators for all non-seq collections that use SeqIterator
+    0.00   0 Screenable   [CLJ-1499] Replace seq-based iterators with direct iterators for all non-seq collections that use SeqIterator
     0.00   0 Triaged      [CLJ-1516] Throw an exception if def name contains a dot
     0.00   0 Triaged      [CLJ-1542] Docstring for deliver should describe its return value
     0.00   0 Triaged      [CLJ-1545] Add unchecked-divide, unchecked-remainder
@@ -269,9 +270,9 @@ Enhancement
     0.00   0 Backlog      [CLJ-1552] Consider kv support for transducers (similar to reducers fold)
     0.00   0 Triaged      [CLJ-1585] Report boxed math warning on function that boxes primitive return value
     0.00   0 Screened     [CLJ-1589] Cleanup internal-reduce implementation
-    0.00   0 Incomplete   [CLJ-1602] vals and keys return values should implement IReduceInit
+    0.00   0 Screenable   [CLJ-1602] vals and keys return values should implement IReduceInit or Iterable
     0.00   0 Incomplete   [CLJ-1603] cycle, iterate, repeat return vals should IReduceInit
     0.00   0 Triaged      [CLJ-1611] clojure.java.io/pushback-reader
     0.00   0 Triaged      [CLJ-1624] Support get from arbitrary java.util.List data types
     0.00   0 Triaged      [CLJ-1629] Improve error message when defn form omits parameter declaration
-    0.00   0 Screenable   [CLJ-1635] Make distinct/dedupe/interpose transducers play nicely with new reporting
+    0.00   0 Screened     [CLJ-1635] Make distinct/dedupe/interpose transducers play nicely with new reporting

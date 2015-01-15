@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: January 12, 2015
+Date: January 15, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -39,7 +39,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
-   10.11  19 Incomplete   [CLJ-1568] Incorrect error locations reported in the stacktrace
+   10.11  19 Screened     [CLJ-1568] Incorrect error locations reported in the stacktrace
              Chad Harrington (1)
              Kevin Ilchmann Jørgensen (1)
              Lars Andersen (1)
@@ -59,7 +59,7 @@ Defect
              Tobias Kortkamp (1/6)
              Reid McKenzie (1/19)
              Nicola Mometto (1/35)
-    9.98  23 Screenable   [CLJ-1561] Incorrect line numbers are emitted
+    9.98  23 Incomplete   [CLJ-1561] Incorrect line numbers are emitted
              Alexander Taggart (1)
              Christopher Freeman (1)
              Daniel Glauser (1)
@@ -294,9 +294,11 @@ Defect
     0.00   0 Backlog      [CLJ-346] (pprint-newline :fill) is not handled correctly
     0.00   0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
     0.00   0 Backlog      [CLJ-1161] sources jar has bad versions.properties resource
-    0.00   0 Incomplete   [CLJ-1637] vec fails on MapEntry
-    0.00   0 Needs Patch  [CLJ-1636] NullPointerException in Compiler 
+    0.00   0 Incomplete   [CLJ-1639] Fix for CLJ-979 breaks some uses of core.cache / core.memoize
+    0.00   0 Incomplete   [CLJ-1641] AOT compilation fails for a kind of circular dependency after CLJ-1544 patch
+    0.00   0 Screenable   [CLJ-1637] vec fails on MapEntry
     0.00   0 Screenable   [CLJ-1638] Regression - PersistentVector.create(List) was removed in 1.7.0-alpha5
+    0.00   0 Screened     [CLJ-1636] SeqIterator can return incorrect results 
     0.00   0 Triaged      [CLJ-1134] star-directive in clojure.pprint/cl-format with an at-prefix ("~n@*") do not obey its specifications
     0.00   0 Triaged      [CLJ-1313] Correct a few unit tests
     0.00   0 Triaged      [CLJ-1361] Pretty printing code using pprint with code-dispatch incorrectly prints a simple ns macro call.
@@ -313,7 +315,6 @@ Defect
     0.00   0 Triaged      [CLJ-1586] Compiler doesn't preserve metadata for LazySeq literals
     0.00   0 Triaged      [CLJ-1588] StackOverflow in clojure.test macroexpand with `are` and anonymous `fn`
     0.00   0 Triaged      [CLJ-1596] Using keywords in place of symbols for defrecord fields causes a compiler exception with incorrect line number
-    0.00   0 Triaged      [CLJ-1639] Fix for CLJ-979 breaks some uses of core.cache / core.memoize
 
 ========================================
 Enhancement
@@ -546,6 +547,11 @@ Enhancement
              Ted Coakley (1)
              Sanel Zukan (1/2)
              Jeremy Heiler (1/3)
+    2.53   4 Triaged      [CLJ-1210] error message for (clojure.java.io/reader nil) — consistency for use with io/resource
+             Christian H. (1)
+             Dennis Schridde (1)
+             Benjamin Peter (1/2)
+             Nicola Mometto (1/35)
     2.52   6 Open         [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
              Brian Kim (1)
              Paul Michael Bauer (1)
@@ -614,10 +620,6 @@ Enhancement
              Bart Kastermans (1/3)
              Justin Glenn Smith (1/5)
              Tim McCormack (1/6)
-    1.53   3 Triaged      [CLJ-1210] error message for (clojure.java.io/reader nil) — consistency for use with io/resource
-             Dennis Schridde (1)
-             Benjamin Peter (1/2)
-             Nicola Mometto (1/35)
     1.50   3 Open         [CLJ-1218] mapcat is too eager
              Philip Potter (1)
              John Jacobsen (1/3)
@@ -847,11 +849,11 @@ Enhancement
     0.00   0 Backlog      [CLJ-1420] ThreadLocalRandom instead of Math/random
     0.00   0 Backlog      [CLJ-1551] Consider transducer support for primitives
     0.00   0 Backlog      [CLJ-1552] Consider kv support for transducers (similar to reducers fold)
-    0.00   0 Incomplete   [CLJ-1499] Replace seq-based iterators with direct iterators for all non-seq collections that use SeqIterator
-    0.00   0 Incomplete   [CLJ-1602] vals and keys return values should implement IReduceInit
     0.00   0 Incomplete   [CLJ-1603] cycle, iterate, repeat return vals should IReduceInit
-    0.00   0 Screenable   [CLJ-1635] Make distinct/dedupe/interpose transducers play nicely with new reporting
+    0.00   0 Screenable   [CLJ-1499] Replace seq-based iterators with direct iterators for all non-seq collections that use SeqIterator
+    0.00   0 Screenable   [CLJ-1602] vals and keys return values should implement IReduceInit or Iterable
     0.00   0 Screened     [CLJ-1589] Cleanup internal-reduce implementation
+    0.00   0 Screened     [CLJ-1635] Make distinct/dedupe/interpose transducers play nicely with new reporting
     0.00   0 Triaged      [CLJ-668] Improve slurp performance by using native Java StringWriter and jio/copy
     0.00   0 Triaged      [CLJ-704] range function has missing documentation
     0.00   0 Triaged      [CLJ-1282] The quote special form should throw an exception if passed more than one form to quote

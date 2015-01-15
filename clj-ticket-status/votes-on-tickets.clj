@@ -1261,6 +1261,10 @@
   :usernames #{"martinklepsch"},
   :emails #{"martinklepsch@googlemail.com"}}
  (),
+ {:display-name "Caleb Spare",
+  :usernames #{"cespare"},
+  :emails #{"cespare@gmail.com"}}
+ (),
  {:display-name "Anthony Marcar",
   :usernames #{"moocar"},
   :emails #{"Anthony.Marcar@gmail.com"}}
@@ -1353,6 +1357,10 @@
   :usernames #{"jarohen"},
   :emails #{"james@jarohen.me.uk"}}
  (),
+ {:display-name "Christian H.",
+  :usernames #{"chrish1"},
+  :emails #{"c.hoedl@gmx.net"}}
+ ("CLJ-1210"),
  {:display-name "Kevin Casey",
   :usernames #{"kevincasey"},
   :emails #{"kevin-casey@sbcglobal.net"}}
@@ -1470,6 +1478,10 @@
  {:display-name "Brian Taylor",
   :usernames #{"netguy204"},
   :emails #{"el.wubo@gmail.com"}}
+ (),
+ {:display-name "Bryan Hoyle",
+  :usernames #{"triclops200"},
+  :emails #{"starfoxprime@gmail.com"}}
  (),
  {:display-name "Greg Chapman",
   :usernames #{"glchapman"},
@@ -1638,6 +1650,10 @@
  {:display-name "Micah Martin",
   :usernames #{"slagyr"},
   :emails #{"micahmartin@gmail.com"}}
+ (),
+ {:display-name "Denis Johnson",
+  :usernames #{"hipitihop"},
+  :emails #{"denis.johnson@gmail.com"}}
  (),
  {:display-name "Matthew O. Smith",
   :usernames #{"m0smith"},
@@ -3150,6 +3166,10 @@
  {:display-name "Arthur Ulfeldt",
   :usernames #{"arthurulfeldt"},
   :emails #{"arthur@ulfeldt.com"}}
+ (),
+ {:display-name "Jose Luis Rodriguez Orjuela",
+  :usernames #{"jlroo"},
+  :emails #{"jlrodriguezorjuela@gmail.com"}}
  (),
  {:display-name "Michael Porter",
   :usernames #{"maport"},
@@ -5413,6 +5433,10 @@
   :usernames #{"rnewman"},
   :emails #{"rnewman@clojure.org"}}
  (),
+ {:display-name "Julian Sy",
+  :usernames #{"jsy"},
+  :emails #{"jns0019@uah.edu"}}
+ (),
  {:display-name "Omer Iqbal",
   :usernames #{"olenhad"},
   :emails #{"momeriqbal2@gmail.com"}}
@@ -5698,6 +5722,10 @@
  {:display-name "Hiram Madelaine",
   :usernames #{"hmadelaine"},
   :emails #{"Hiram.madelaine@gmail.com"}}
+ (),
+ {:display-name "secwang",
+  :usernames #{"secwang"},
+  :emails #{"secwang@fastmail.com"}}
  (),
  {:display-name "Brian Forester",
   :usernames #{"bdf"},
