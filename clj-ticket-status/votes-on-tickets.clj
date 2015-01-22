@@ -108,10 +108,6 @@
   :usernames #{"dpx-infinity"},
   :emails #{"dpx.infinity@gmail.com"}}
  (),
- {:display-name "Maria Neise",
-  :usernames #{"mneise"},
-  :emails #{"maria.neise1@gmail.com"}}
- (),
  {:display-name "Jonas Avelin",
   :usernames #{"joav"},
   :emails #{"jonas.avelin@gmail.com"}}
@@ -786,10 +782,6 @@
   :usernames #{"fbrubacher"},
   :emails #{"fbrubacher@gmail.com"}}
  (),
- {:display-name "pengke",
-  :usernames #{"pkvov"},
-  :emails #{"pkvov@163.com"}}
- ("CLJS-848"),
  {:display-name "Vitaly Shukela",
   :usernames #{"vi"},
   :emails #{"vi0oss@gmail.com"}}
@@ -1432,10 +1424,6 @@
  {:display-name "Tim Sung",
   :usernames #{"timur"},
   :emails #{"timurhans@yahoo.com"}}
- (),
- {:display-name "Lingchao Xin",
-  :usernames #{"douglarek"},
-  :emails #{"douglarek@gmail.com"}}
  (),
  {:display-name "Alex Fowler",
   :usernames #{"noncom"},
@@ -2844,10 +2832,6 @@
   :usernames #{"mwmitchell"},
   :emails #{"goodieboy@gmail.com"}}
  (),
- {:display-name "Colin Kahn",
-  :usernames #{"colinkahn"},
-  :emails #{"info@colinkahn.com"}}
- ("CLJS-848"),
  {:display-name "Oleh Palianytsia",
   :usernames #{"olegthecat"},
   :emails #{"farenheit466@gmail.com"}}
@@ -5443,10 +5427,6 @@
   :usernames #{"jkj"},
   :emails #{"juho.juopperi@remod.fi"}}
  (),
- {:display-name "Kevin Woram",
-  :usernames #{"kworam"},
-  :emails #{"kworam@quasarlogic.com"}}
- (),
  {:display-name "Michael O. Church",
   :usernames #{"michaelochurch"},
   :emails #{"michael.o.church@gmail.com"}}
@@ -5454,10 +5434,6 @@
  {:display-name "rnewman",
   :usernames #{"rnewman"},
   :emails #{"rnewman@clojure.org"}}
- (),
- {:display-name "Ben Sima",
-  :usernames #{"bsima"},
-  :emails #{"bensima@gmail.com"}}
  (),
  {:display-name "Julian Sy",
   :usernames #{"jsy"},
@@ -6644,10 +6620,6 @@
  {:display-name "Derrick Baier",
   :usernames #{"derrickb52"},
   :emails #{"derrickb52@gmail.com"}}
- (),
- {:display-name "Andy Fingerhut",
-  :usernames #{"andytemp"},
-  :emails #{"andy_fingerhut@alum.wustl.edu"}}
  (),
  {:display-name "Sean Devlin",
   :usernames #{"devlinsf"},
