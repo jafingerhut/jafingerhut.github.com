@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: January 12, 2015
+Date: January 21, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -41,12 +41,12 @@ Project ALGOG tickets
 ========================================
 Defect
 
-    0.00   0 Open         [ALGOG-4] No method in multimethod 'fmap' for dispatch value: class clojure.lang.PersistentVector$ChunkedSeq
+   0 Open         [ALGOG-4] No method in multimethod 'fmap' for dispatch value: class clojure.lang.PersistentVector$ChunkedSeq
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [ALGOG-5] Addition of generic modulus
+   0 Open         [ALGOG-5] Addition of generic modulus
 
 
 Project ALGOM tickets
@@ -55,668 +55,673 @@ Project ASYNC tickets
 ========================================
 Defect
 
-    2.00   2 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
-    2.00   2 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
-    1.00   1 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
-    1.00   1 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
-    1.00   1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
-    1.00   1 Open         [ASYNC-110] 0.1.346, using >! crashes with no method 'setTimeout', when targeting node
-    0.50   1 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
-    0.50   1 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
-    0.50   1 Triaged      [ASYNC-100] core.async with multiple catch blocks causing weird loop behaviour
-    0.50   1 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
-    0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
-    0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
-    0.00   0 Triaged      [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
-    0.00   0 Open         [ASYNC-51] Core.async memory leak in Safari and Mobile Safari
-    0.00   0 Open         [ASYNC-54] MAX-QUEUE-SIZE has a wrong type-hint
-    0.00   0 Open         [ASYNC-63] Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
-    0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
-    0.00   0 Open         [ASYNC-70] documentation of thread macro should include behavior of nil (closes the channel)
-    0.00   0 Open         [ASYNC-73] try-catch-finally broken inside go-blocks
-    0.00   0 Open         [ASYNC-77] StackOverflowError in go macro with cemerick.cljs.test (CLJS)
-    0.00   0 Open         [ASYNC-78] deadlock in multi catch
-    0.00   0 Open         [ASYNC-90] Pub/sub leaks memory
-    0.00   0 Open         [ASYNC-96] FixedBuffer's full checking in cljs
-    0.00   0 Open         [ASYNC-97] CLJS: alts! sporadically failing to unblock despite channel activity (Safari 7)
-    0.00   0 Open         [ASYNC-99] go block with <! inside protocol method invocation fails to compile (dispatch :protocol-invoke on '-item-to-ssa')
-    0.00   0 Bad: Match n [ASYNC-101] clojure.core.async/reduce doesn't respect reduced
-    0.00   0 Open         [ASYNC-108] cljs to-chan hangs on infinite lazy sequences
-    0.00   0 Open         [ASYNC-111] maps are represented different inside and outside of go blocks
+   2 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
+   2 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
+   1 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
+   1 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
+   1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
+   1 Open         [ASYNC-110] 0.1.346, using >! crashes with no method 'setTimeout', when targeting node
+   1 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
+   1 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
+   1 Triaged      [ASYNC-100] core.async with multiple catch blocks causing weird loop behaviour
+   1 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
+   0 Triaged      [ASYNC-4] Record literals become ordinary maps
+   0 Open         [ASYNC-39] Processes spawned by mix never terminate
+   0 Triaged      [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
+   0 Open         [ASYNC-51] Core.async memory leak in Safari and Mobile Safari
+   0 Open         [ASYNC-54] MAX-QUEUE-SIZE has a wrong type-hint
+   0 Open         [ASYNC-63] Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
+   0 Triaged      [ASYNC-64] Race condition when closing mults
+   0 Open         [ASYNC-70] documentation of thread macro should include behavior of nil (closes the channel)
+   0 Open         [ASYNC-73] try-catch-finally broken inside go-blocks
+   0 Open         [ASYNC-77] StackOverflowError in go macro with cemerick.cljs.test (CLJS)
+   0 Open         [ASYNC-78] deadlock in multi catch
+   0 Open         [ASYNC-90] Pub/sub leaks memory
+   0 Open         [ASYNC-96] FixedBuffer's full checking in cljs
+   0 Open         [ASYNC-97] CLJS: alts! sporadically failing to unblock despite channel activity (Safari 7)
+   0 Open         [ASYNC-99] go block with <! inside protocol method invocation fails to compile (dispatch :protocol-invoke on '-item-to-ssa')
+   0 Bad: Match n [ASYNC-101] clojure.core.async/reduce doesn't respect reduced
+   0 Open         [ASYNC-108] cljs to-chan hangs on infinite lazy sequences
+   0 Open         [ASYNC-111] maps are represented different inside and outside of go blocks
+   0 Triaged      [ASYNC-113] alt!! should not evaluate the :default expr if a non-default clause is selected
 
 ========================================
 Enhancement
 
-    3.50   4 Open         [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go and thread macros 
-    2.00   2 Triaged      [ASYNC-67] Can we get a generic sink operation?
-    2.00   2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
-    2.00   2 Vetted       [ASYNC-86] Update tools.analyzer.jvm dep
-    2.00   2 Open         [ASYNC-107] Improved docstring for alt!
-    1.00   1 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
-    0.50   1 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
-    0.00   0 Open         [ASYNC-46] Add optional default channel to 'pub'
-    0.00   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
-    0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
-    0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
-    0.00   0 Vetted       [ASYNC-69] How to better communicate "mix" lifecycle wrt coordination
-    0.00   0 Open         [ASYNC-71] exception behavior for thread macro is hard coded
-    0.00   0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
-    0.00   0 Vetted       [ASYNC-102] implement IDeref, IBlockingDeref for channels
-    0.00   0 Bad: Match n [ASYNC-103] promise-buf
-    0.00   0 Bad: Match n [ASYNC-104] offer! and poll!
-    0.00   0 Triaged      [ASYNC-106] A unit test in ioc_macros_test.clj tests nothing
+   4 Open         [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go and thread macros 
+   2 Triaged      [ASYNC-67] Can we get a generic sink operation?
+   2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
+   2 Vetted       [ASYNC-86] Update tools.analyzer.jvm dep
+   2 Open         [ASYNC-107] Improved docstring for alt!
+   1 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
+   1 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
+   0 Open         [ASYNC-46] Add optional default channel to 'pub'
+   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
+   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
+   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
+   0 Vetted       [ASYNC-69] How to better communicate "mix" lifecycle wrt coordination
+   0 Open         [ASYNC-71] exception behavior for thread macro is hard coded
+   0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
+   0 Vetted       [ASYNC-102] implement IDeref, IBlockingDeref for channels
+   0 Bad: Match n [ASYNC-103] promise-buf
+   0 Bad: Match n [ASYNC-104] offer! and poll!
+   0 Triaged      [ASYNC-106] A unit test in ioc_macros_test.clj tests nothing
 
 
 Project CCACHE tickets
 ========================================
 Defect
 
-    1.00   1 Open         [CCACHE-31] SoftCaches update in-place, other cache types don't
-    0.00   0 Open         [CCACHE-15] It appears that TTL cache exhibits quadratic performance (+ its evict is buggy)
-    0.00   0 Open         [CCACHE-27] Missing LU and LRU is linear complexity - performance
-    0.00   0 Open         [CCACHE-32] LIRSCache defect allows it's memory use to grow without bound
+   1 Open         [CCACHE-31] SoftCaches update in-place, other cache types don't
+   0 Open         [CCACHE-15] It appears that TTL cache exhibits quadratic performance (+ its evict is buggy)
+   0 Open         [CCACHE-27] Missing LU and LRU is linear complexity - performance
+   0 Open         [CCACHE-32] LIRSCache defect allows it's memory use to grow without bound
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [CCACHE-14] Asynchronous Cache Support
-    0.00   0 Open         [CCACHE-17] Create function backed cache
-    0.00   0 Open         [CCACHE-35] Add weak-cache
-    0.00   0 Open         [CCACHE-36] Allow ttl to be set for a key on cache miss
-    0.00   0 Open         [CCACHE-37] Doc string typo fix
-    0.00   0 Open         [CCACHE-38] Add ARC or CAR algorithm
+   0 Open         [CCACHE-14] Asynchronous Cache Support
+   0 Open         [CCACHE-17] Create function backed cache
+   0 Open         [CCACHE-35] Add weak-cache
+   0 Open         [CCACHE-36] Allow ttl to be set for a key on cache miss
+   0 Open         [CCACHE-37] Doc string typo fix
+   0 Open         [CCACHE-38] Add ARC or CAR algorithm
 
 ========================================
 Task
 
-    0.00   0 Open         [CCACHE-11] Add eviction implementation to LIRSCache
-    0.00   0 Open         [CCACHE-16] Benchmark v0.5.x against Google Guava
-    0.00   0 Open         [CCACHE-18] Explore JSR 107- Java Temporary Caching API
-    0.00   0 Open         [CCACHE-20] Add some examples to github page
+   0 Open         [CCACHE-11] Add eviction implementation to LIRSCache
+   0 Open         [CCACHE-16] Benchmark v0.5.x against Google Guava
+   0 Open         [CCACHE-18] Explore JSR 107- Java Temporary Caching API
+   0 Open         [CCACHE-20] Add some examples to github page
 
 
 Project CCONTRACTS tickets
 ========================================
 Defect
 
-    0.00   0 Open         [CCONTRACTS-3] & for additional arguments does not seem to work when declaring a contract
-    0.00   0 Open         [CCONTRACTS-4] provide macro fails for multiple constraints
+   0 Open         [CCONTRACTS-3] & for additional arguments does not seem to work when declaring a contract
+   0 Open         [CCONTRACTS-4] provide macro fails for multiple constraints
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [CCONTRACTS-2] Does clojurescript support work for core.contracts?
+   0 Open         [CCONTRACTS-2] Does clojurescript support work for core.contracts?
 
 ========================================
 Task
 
-    0.00   0 Open         [CCONTRACTS-5] Fix links in and display of documentation
-    0.00   0 Open         [CCONTRACTS-6] Add/improve docs of contract, clojure.core.contracts, etc.
+   0 Open         [CCONTRACTS-5] Fix links in and display of documentation
+   0 Open         [CCONTRACTS-6] Add/improve docs of contract, clojure.core.contracts, etc.
 
 
 Project CINCU tickets
 ========================================
 Enhancement
 
-    0.00   0 Open         [CINCU-3] apply-kw
+   0 Open         [CINCU-3] apply-kw
 
 
 Project CLASSPATH tickets
 ========================================
 Defect
 
-    0.00   0 Open         [CLASSPATH-6] classpath "empty" when classpath 0.2.2 used with clojure maven plugin 1.3.20+
+   0 Open         [CLASSPATH-6] classpath "empty" when classpath 0.2.2 used with clojure maven plugin 1.3.20+
 
 
 Project CLJCLR tickets
 ========================================
 Defect
 
-    0.00   0 Open         [CLJCLR-32] RT.load does not correctly map namespace to source file or dll name
-    0.00   0 Open         [CLJCLR-33] REPL input broken
-    0.00   0 Open         [CLJCLR-38] Use Type.AssemblyQualifiedName in ObjExpr.EmitValue when generating code for types
-    0.00   0 Open         [CLJCLR-48] Error when starting Clojure.Main.exe
+   0 Open         [CLJCLR-32] RT.load does not correctly map namespace to source file or dll name
+   0 Open         [CLJCLR-33] REPL input broken
+   0 Open         [CLJCLR-38] Use Type.AssemblyQualifiedName in ObjExpr.EmitValue when generating code for types
+   0 Open         [CLJCLR-48] Error when starting Clojure.Main.exe
 
 ========================================
 Enhancement
 
-    1.00   1 Open         [CLJCLR-25] Clojure.Compile.exe create single dll for all compiled .clj files
-    0.00   0 Open         [CLJCLR-44] Expose RT.GetFindFilePaths
+   1 Open         [CLJCLR-25] Clojure.Compile.exe create single dll for all compiled .clj files
+   0 Open         [CLJCLR-44] Expose RT.GetFindFilePaths
 
 
 Project CMEMOIZE tickets
 ========================================
 Defect
 
-    1.00   1 Open         [CMEMOIZE-12] NPE with memoize/ttl
-    1.00   1 Open         [CMEMOIZE-14] dependency problem with clojure.core.cache
-    0.00   0 Open         [CMEMOIZE-8] memoizing functions that throw exceptions
-    0.00   0 Open         [CMEMOIZE-15] ttl functions sometimes return nil
-    0.00   0 Open         [CMEMOIZE-18] Confusing / erroneous documentation regarding seed values for clojure.core.memoize/memo
+   1 Open         [CMEMOIZE-12] NPE with memoize/ttl
+   1 Open         [CMEMOIZE-14] dependency problem with clojure.core.cache
+   0 Open         [CMEMOIZE-8] memoizing functions that throw exceptions
+   0 Open         [CMEMOIZE-15] ttl functions sometimes return nil
+   0 Open         [CMEMOIZE-18] Confusing / erroneous documentation regarding seed values for clojure.core.memoize/memo
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [CMEMOIZE-9] memo-swap! is misnamed
+   0 Open         [CMEMOIZE-9] memo-swap! is misnamed
 
 
 Project CRRBV tickets
 ========================================
 Defect
 
-    0.00   0 Open         [CRRBV-7] test name test-reduce redef's in tests, reducing test coverage
+   0 Open         [CRRBV-7] test name test-reduce redef's in tests, reducing test coverage
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [CRRBV-2] Efficient reverse resulting in reversed rrb-vector
+   0 Open         [CRRBV-2] Efficient reverse resulting in reversed rrb-vector
 
 
 Project CTYP tickets
 ========================================
 Defect
 
-    1.00   1 Open         [CTYP-133] Typechecker fails when checking involves an object from reify
-    1.00   1 Open         [CTYP-167] Several failure cases for comp for polyadic fns and type variables
-    1.00   1 Open         [CTYP-168] :arglists metadata is missing from vars defined using core.typed's defn macro
-    0.00   0 Open         [CTYP-27] clojure.lang.RT/nth's type doesn't currently allow nil as the first argument
-    0.00   0 Open         [CTYP-32] Cannot instantiate variables that have bounds 
-    0.00   0 Open         [CTYP-35] Should use fresh names when checking plambdas
-    0.00   0 Open         [CTYP-39] def-alias not working in ClojureScript
-    0.00   0 Open         [CTYP-47] Expected: IFn, Actual (Fn [Any -> Any])
-    0.00   0 Open         [CTYP-48] Internal error: keyword invoke gave bottom type
-    0.00   0 Open         [CTYP-49] Applying flow filter resulted in local being bottom
-    0.00   0 Open         [CTYP-51] assoc unsupported in CLJS
-    0.00   0 Open         [CTYP-52] Heterogeneous Vector is not ISeqable in CLJS
-    0.00   0 Open         [CTYP-71] Occurrence typing does not deal well with non-eagerly simplifying unions
-    0.00   0 Open         [CTYP-72] merge doesn't seem to like records
-    0.00   0 Open         [CTYP-80] Issue with filter subtyping/simplification
-    0.00   0 Open         [CTYP-87] Handle variace in datatype cgen
-    0.00   0 Open         [CTYP-88] with-meta doesn't type check with vectors or hash-maps. 
-    0.00   0 Open         [CTYP-100] RClass ancestors should work with reset-env
-    0.00   0 Open         [CTYP-102] large hashmaps: failure to discover subtype and error-output to complex to understand
-    0.00   0 Open         [CTYP-129] select-keys on HMap returns Map with union key and value types
-    0.00   0 Open         [CTYP-140] HSequential things should correctly erase dotted arguments
-    0.00   0 Open         [CTYP-141] Implement Difference type
-    0.00   0 Open         [CTYP-143] extend & extend-protocol with (Class/forName "[B") as Class dispatch value fails
-    0.00   0 Open         [CTYP-159] "swap!" doesn't work anymore due to missing type translation
-    0.00   0 Open         [CTYP-170] `(apply concat ...)` gives "AssertionError Assert failed: (r/HeterogeneousMap? kws)".
-    0.00   0 Open         [CTYP-171] nil should not be treated as subtype of repeat list/vector
-    0.00   0 Open         [CTYP-172] annotating methods that descructure their arguments can confuse the type system
-    0.00   0 Open         [CTYP-173] (first (filter ...)) type checks in Clojure, not ClojureScript
-    0.00   0 Open         [CTYP-174] More fixes for closed source projects (datomic)
-    0.00   0 Open         [CTYP-176] No such var: ana/ns->relpath when loading the ClojureScript typechecker
-    0.00   0 Open         [CTYP-177] Compile error with core.async
-    0.00   0 Open         [CTYP-178] Dissimilar lengths of HVecs in a union doesn't type-check
-    0.00   0 Open         [CTYP-181] (float)'s type is mistakenly (Any -> Float)
-    0.00   0 Open         [CTYP-182] macros which define functions containing named anonymous functions crash
-    0.00   0 Open         [CTYP-188] ann-record fails for argument-less records
-    0.00   0 Open         [CTYP-189] code that used to type check in 0.2.72 stopped type checking 0.2.77
-    0.00   0 Open         [CTYP-190] pred doesn't handle much
-    0.00   0 Open         [CTYP-191] Bad type syntax when parsing types of macro-generated anonymous functions from required namespaces (when the types are composed, for instance (Option AnyInteger))
+   1 Open         [CTYP-133] Typechecker fails when checking involves an object from reify
+   1 Open         [CTYP-167] Several failure cases for comp for polyadic fns and type variables
+   1 Open         [CTYP-168] :arglists metadata is missing from vars defined using core.typed's defn macro
+   0 Open         [CTYP-27] clojure.lang.RT/nth's type doesn't currently allow nil as the first argument
+   0 Open         [CTYP-32] Cannot instantiate variables that have bounds 
+   0 Open         [CTYP-35] Should use fresh names when checking plambdas
+   0 Open         [CTYP-39] def-alias not working in ClojureScript
+   0 Open         [CTYP-47] Expected: IFn, Actual (Fn [Any -> Any])
+   0 Open         [CTYP-48] Internal error: keyword invoke gave bottom type
+   0 Open         [CTYP-49] Applying flow filter resulted in local being bottom
+   0 Open         [CTYP-51] assoc unsupported in CLJS
+   0 Open         [CTYP-52] Heterogeneous Vector is not ISeqable in CLJS
+   0 Open         [CTYP-71] Occurrence typing does not deal well with non-eagerly simplifying unions
+   0 Open         [CTYP-72] merge doesn't seem to like records
+   0 Open         [CTYP-80] Issue with filter subtyping/simplification
+   0 Open         [CTYP-87] Handle variace in datatype cgen
+   0 Open         [CTYP-88] with-meta doesn't type check with vectors or hash-maps. 
+   0 Open         [CTYP-100] RClass ancestors should work with reset-env
+   0 Open         [CTYP-102] large hashmaps: failure to discover subtype and error-output to complex to understand
+   0 Open         [CTYP-129] select-keys on HMap returns Map with union key and value types
+   0 Open         [CTYP-140] HSequential things should correctly erase dotted arguments
+   0 Open         [CTYP-141] Implement Difference type
+   0 Open         [CTYP-143] extend & extend-protocol with (Class/forName "[B") as Class dispatch value fails
+   0 Open         [CTYP-159] "swap!" doesn't work anymore due to missing type translation
+   0 Open         [CTYP-170] `(apply concat ...)` gives "AssertionError Assert failed: (r/HeterogeneousMap? kws)".
+   0 Open         [CTYP-171] nil should not be treated as subtype of repeat list/vector
+   0 Open         [CTYP-172] annotating methods that descructure their arguments can confuse the type system
+   0 Open         [CTYP-173] (first (filter ...)) type checks in Clojure, not ClojureScript
+   0 Open         [CTYP-174] More fixes for closed source projects (datomic)
+   0 Open         [CTYP-176] No such var: ana/ns->relpath when loading the ClojureScript typechecker
+   0 Open         [CTYP-177] Compile error with core.async
+   0 Open         [CTYP-178] Dissimilar lengths of HVecs in a union doesn't type-check
+   0 Open         [CTYP-181] (float)'s type is mistakenly (Any -> Float)
+   0 Open         [CTYP-182] macros which define functions containing named anonymous functions crash
+   0 Open         [CTYP-188] ann-record fails for argument-less records
+   0 Open         [CTYP-189] code that used to type check in 0.2.72 stopped type checking 0.2.77
+   0 Open         [CTYP-190] pred doesn't handle much
+   0 Open         [CTYP-191] Bad type syntax when parsing types of macro-generated anonymous functions from required namespaces (when the types are composed, for instance (Option AnyInteger))
+   0 Open         [CTYP-193] core.typed breaks some applications on Clojure 1.7.0-alpha5 due to JAR including AOT-compiled core.cache and core.memoize
+   0 Open         [CTYP-195] Support for clojure.core/extend is broken when used with typed.core/defprotocol
+   0 Open         [CTYP-196] `frees` for `NthPE` is missing
 
 ========================================
 Enhancement
 
-    1.00   1 Open         [CTYP-93] Support refinement types
-    1.00   1 Open         [CTYP-134] Allow namespace aliases in `ann`
-    0.00   0 Bad: Unkn Fi [CTYP-8] Support complex map manipulation functions
-    0.00   0 Open         [CTYP-9] Support metadata types
-    0.00   0 Open         [CTYP-11] Infer good types for loop locals
-    0.00   0 Open         [CTYP-12] Handle primitives properly
-    0.00   0 Open         [CTYP-13] Understand common contract functions
-    0.00   0 Open         [CTYP-18] Implement equality filters
-    0.00   0 Open         [CTYP-50] Support overriding fields
-    0.00   0 Open         [CTYP-54] Merge compatible types to make more accurate ones
-    0.00   0 Open         [CTYP-57] Support monitor-enter/monitor-exit
-    0.00   0 Open         [CTYP-76] Support KwArgsSeq in apply
-    0.00   0 Open         [CTYP-98] Implement a defrecord> macro
-    0.00   0 Open         [CTYP-109] Better error message for TFn app
-    0.00   0 Open         [CTYP-110] Add satisfies?
-    0.00   0 Open         [CTYP-111] Clearer error message for misusing special type
-    0.00   0 Open         [CTYP-113] Better documentation for override-method
-    0.00   0 Open         [CTYP-119] Record/datatypes should update like HMaps via occurrence typing
-    0.00   0 Open         [CTYP-124] case should utilize negative information
-    0.00   0 Open         [CTYP-131] Support (apply f (apply concat hmap))
-    0.00   0 Open         [CTYP-138] Support mutually recursive types
-    0.00   0 Open         [CTYP-139] Extend what can used as HMap key
-    0.00   0 Open         [CTYP-156] Add special arities to `nth` if we know exactly the index argument and CountRange
-    0.00   0 Open         [CTYP-160] Correctly check IFn ancestor with type/record
-    0.00   0 Open         [CTYP-165] GSOC 2014 Heterogeneous operations & Dotted Polymorphism
-    0.00   0 Open         [CTYP-187] Add a defn- macro for private functions
-    0.00   0 Open         [CTYP-192] Use memoization in file-mapping to improve performance.
+   1 Open         [CTYP-93] Support refinement types
+   1 Open         [CTYP-134] Allow namespace aliases in `ann`
+   0 Bad: Unkn Fi [CTYP-8] Support complex map manipulation functions
+   0 Open         [CTYP-9] Support metadata types
+   0 Open         [CTYP-11] Infer good types for loop locals
+   0 Open         [CTYP-12] Handle primitives properly
+   0 Open         [CTYP-13] Understand common contract functions
+   0 Open         [CTYP-18] Implement equality filters
+   0 Open         [CTYP-50] Support overriding fields
+   0 Open         [CTYP-54] Merge compatible types to make more accurate ones
+   0 Open         [CTYP-57] Support monitor-enter/monitor-exit
+   0 Open         [CTYP-76] Support KwArgsSeq in apply
+   0 Open         [CTYP-98] Implement a defrecord> macro
+   0 Open         [CTYP-109] Better error message for TFn app
+   0 Open         [CTYP-110] Add satisfies?
+   0 Open         [CTYP-111] Clearer error message for misusing special type
+   0 Open         [CTYP-113] Better documentation for override-method
+   0 Open         [CTYP-119] Record/datatypes should update like HMaps via occurrence typing
+   0 Open         [CTYP-124] case should utilize negative information
+   0 Open         [CTYP-131] Support (apply f (apply concat hmap))
+   0 Open         [CTYP-138] Support mutually recursive types
+   0 Open         [CTYP-139] Extend what can used as HMap key
+   0 Open         [CTYP-156] Add special arities to `nth` if we know exactly the index argument and CountRange
+   0 Open         [CTYP-160] Correctly check IFn ancestor with type/record
+   0 Open         [CTYP-165] GSOC 2014 Heterogeneous operations & Dotted Polymorphism
+   0 Open         [CTYP-187] Add a defn- macro for private functions
+   0 Open         [CTYP-192] Use memoization in file-mapping to improve performance.
+   0 Open         [CTYP-194] HMap merged type
 
 ========================================
 Task
 
-    0.00   0 Bad: Unkn Fi [CTYP-15] Eliminate the need to specify all ancestors in alter-class.
-    0.00   0 Bad: Unkn Fi [CTYP-16] Parameterise IFn instead of special function type.
+   0 Bad: Unkn Fi [CTYP-15] Eliminate the need to specify all ancestors in alter-class.
+   0 Bad: Unkn Fi [CTYP-16] Parameterise IFn instead of special function type.
 
 
 Project DAVL tickets
 ========================================
 Enhancement
 
-    0.00   0 Open         [DAVL-4] Throw IllegalArgumentException if last key of sorted-map has no val
+   0 Open         [DAVL-4] Throw IllegalArgumentException if last key of sorted-map has no val
 
 
 Project DCODEC tickets
 ========================================
 Enhancement
 
-    0.00   0 Open         [DCODEC-1] Add simple utility functions for base64 conversions?
-    0.00   0 Open         [DCODEC-3] Hex (Base 16) codec
+   0 Open         [DCODEC-1] Add simple utility functions for base64 conversions?
+   0 Open         [DCODEC-3] Hex (Base 16) codec
 
 
 Project DCSV tickets
 ========================================
 Defect
 
-    0.00   0 Open         [DCSV-4] \return as record separator with unquoted fields is read as part of the field
-    0.00   0 Open         [DCSV-6] read-csv can not handle white-space at end of line
-    0.00   0 Open         [DCSV-7] data.csv does not handle BOMs
-    0.00   0 Open         [DCSV-8] Allow read-csv to read files without quoting.
+   0 Open         [DCSV-4] \return as record separator with unquoted fields is read as part of the field
+   0 Open         [DCSV-6] read-csv can not handle white-space at end of line
+   0 Open         [DCSV-7] data.csv does not handle BOMs
+   0 Open         [DCSV-8] Allow read-csv to read files without quoting.
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [DCSV-1] pom.xml directives
-    0.00   0 Open         [DCSV-5] No option for parsing into maps
-    0.00   0 Open         [DCSV-9] write-csv and quote? predicate
+   0 Open         [DCSV-1] pom.xml directives
+   0 Open         [DCSV-5] No option for parsing into maps
+   0 Open         [DCSV-9] write-csv and quote? predicate
 
 
 Project DFINGER tickets
 ========================================
 Defect
 
-    0.00   0 Open         [DFINGER-3] Check whether Iterator implementation correctly implements next by throwing required NoSuchElementException
+   0 Open         [DFINGER-3] Check whether Iterator implementation correctly implements next by throwing required NoSuchElementException
 
 
 Project DFRS tickets
 ========================================
 Defect
 
-    0.00   0 Open         [DFRS-7] Roundtrip encoding of values are unequal under Clojure 1.6
+   0 Open         [DFRS-7] Roundtrip encoding of values are unequal under Clojure 1.6
 
 ========================================
 Enhancement
 
-    0.00   0 Bad: Match n [DFRS-2] Make writing footer checksums less expensive or optional
-    0.00   0 Open         [DFRS-5] Add c.l.PersistentHashSet ReadHandler
-    0.00   0 Open         [DFRS-6] Use a testing framework which creates nested collections
+   0 Bad: Match n [DFRS-2] Make writing footer checksums less expensive or optional
+   0 Open         [DFRS-5] Add c.l.PersistentHashSet ReadHandler
+   0 Open         [DFRS-6] Use a testing framework which creates nested collections
 
 
 Project DGEN tickets
 ========================================
 Defect
 
-    0.00   0 Open         [DGEN-2] string generator function comment is inaccurate
+   0 Open         [DGEN-2] string generator function comment is inaccurate
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [DGEN-1] Doc string fixes
+   0 Open         [DGEN-1] Doc string fixes
 
 
 Project DIMAP tickets
 ========================================
 Defect
 
-    0.00   0 Open         [DIMAP-2] Proper seq on int-sets
+   0 Open         [DIMAP-2] Proper seq on int-sets
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [DIMAP-1] Support efficient rseq on int maps
+   0 Open         [DIMAP-1] Support efficient rseq on int maps
 
 
 Project DJSON tickets
 ========================================
 Enhancement
 
-    0.00   0 Open         [DJSON-18] Fast way to print indented json
+   0 Open         [DJSON-18] Fast way to print indented json
 
 
 Project DPRIMAP tickets
 ========================================
 Defect
 
-    1.00   1 Open         [DPRIMAP-7] Remove usage of clojure.test from the main namespace
+   1 Open         [DPRIMAP-7] Remove usage of clojure.test from the main namespace
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [DPRIMAP-3] Add more developer info and Markdown markup to README
-    0.00   0 Open         [DPRIMAP-5] Add support for subseq, rsubseq
+   0 Open         [DPRIMAP-3] Add more developer info and Markdown markup to README
+   0 Open         [DPRIMAP-5] Add support for subseq, rsubseq
 
 
 Project DXML tickets
 ========================================
 Defect
 
-    0.00   0 Open         [DXML-15] data.xml can't parse own output if there's a colon in an attribute name
-    0.00   0 Open         [DXML-23] Prefix is null in Inkscape SVG
+   0 Open         [DXML-15] data.xml can't parse own output if there's a colon in an attribute name
+   0 Open         [DXML-23] Prefix is null in Inkscape SVG
 
 ========================================
 Enhancement
 
-    7.00   7 Open         [DXML-4] Namespaces support
-    3.00   3 Open         [DXML-13] Support for preserving whitespace between tags
-    1.00   1 Open         [DXML-10] Support for DOCTYPE when emitting XML
-    0.00   0 Open         [DXML-22] Adding hiccup generation function for elements
-    0.00   0 Open         [DXML-25] Emit Empty Elements using EmptyElementTag
+   7 Open         [DXML-4] Namespaces support
+   3 Open         [DXML-13] Support for preserving whitespace between tags
+   1 Open         [DXML-10] Support for DOCTYPE when emitting XML
+   0 Open         [DXML-22] Adding hiccup generation function for elements
+   0 Open         [DXML-25] Emit Empty Elements using EmptyElementTag
 
 
 Project DZIP tickets
 ========================================
 Defect
 
-    0.00   0 Open         [DZIP-2] Empty file src/test/clojure/clojure/data/zip.clj should be removed
-    0.00   0 Open         [DZIP-3] Not returning expected result for 'tag='
+   0 Open         [DZIP-2] Empty file src/test/clojure/clojure/data/zip.clj should be removed
+   0 Open         [DZIP-3] Not returning expected result for 'tag='
 
 
 Project JDATA tickets
 ========================================
 Defect
 
-    0.00   0 Open         [JDATA-4] to-java not working on some setters
+   0 Open         [JDATA-4] to-java not working on some setters
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [JDATA-1] Handle primitive types and arrays
-    0.00   0 Open         [JDATA-2] Eliminate many occurrences of Clojure reflection in java.data
-    0.00   0 Open         [JDATA-3] Simplify use cases / split up to-java
-    0.00   0 Open         [JDATA-5] Translate - into camel casing in to-java
+   0 Open         [JDATA-1] Handle primitive types and arrays
+   0 Open         [JDATA-2] Eliminate many occurrences of Clojure reflection in java.data
+   0 Open         [JDATA-3] Simplify use cases / split up to-java
+   0 Open         [JDATA-5] Translate - into camel casing in to-java
 
 
 Project JDBC tickets
 ========================================
 Defect
 
-    0.00   0 Open         [JDBC-91] Issue with H2 "script" command
+   0 Open         [JDBC-91] Issue with H2 "script" command
 
 ========================================
 Enhancement
 
-    2.00   2 Open         [JDBC-99] The age of reduce is upon us
-    0.00   0 Open         [JDBC-1] Provide option to return SQL generated / execution stats
-    0.00   0 Open         [JDBC-37] Provide support for alternate transaction strategies
-    0.00   0 Open         [JDBC-48] Support stored procedures with CallableStatement
-    0.00   0 Open         [JDBC-64] Support multiple result sets?
-    0.00   0 Open         [JDBC-104] Prepare-statement should support passing an array of column names to return auto-generated keys
+   2 Open         [JDBC-99] The age of reduce is upon us
+   0 Open         [JDBC-1] Provide option to return SQL generated / execution stats
+   0 Open         [JDBC-37] Provide support for alternate transaction strategies
+   0 Open         [JDBC-48] Support stored procedures with CallableStatement
+   0 Open         [JDBC-64] Support multiple result sets?
+   0 Open         [JDBC-104] Prepare-statement should support passing an array of column names to return auto-generated keys
 
 ========================================
 Task
 
-    0.00   0 Open         [JDBC-88] Update :arglists metadata so it no longer confuses Eastwood
+   0 Open         [JDBC-88] Update :arglists metadata so it no longer confuses Eastwood
 
 
 Project JMX tickets
 ========================================
 Defect
 
-    0.00   0 Open         [JMX-13] Can't connect with username and password
+   0 Open         [JMX-13] Can't connect with username and password
 
 ========================================
 Enhancement
 
-    1.00   1 Open         [JMX-8] Extend java.jmx to support exposing operations in created beans
-    0.00   0 Open         [JMX-5] Timeout support
-    0.00   0 Open         [JMX-9] Eliminate several uses of reflection in java.jmx
-    0.00   0 Open         [JMX-12] Throw exception when overloaded operation is ambiguous
+   1 Open         [JMX-8] Extend java.jmx to support exposing operations in created beans
+   0 Open         [JMX-5] Timeout support
+   0 Open         [JMX-9] Eliminate several uses of reflection in java.jmx
+   0 Open         [JMX-12] Throw exception when overloaded operation is ambiguous
 
 
 Project JVMTA tickets
 ========================================
 Defect
 
-    0.00   0 Open         [JVMTA-2] :required-params and :rest-param not included in children
+   0 Open         [JVMTA-2] :required-params and :rest-param not included in children
 
 
 Project LOGIC tickets
 ========================================
 Defect
 
-    0.00   0 Open         [LOGIC-26] Generate a better error when adding facts for arities that do not exist
-    0.00   0 Open         [LOGIC-28] defrel cannot be called inside function
-    0.00   0 Open         [LOGIC-47] is macro needs to be improved
-    0.00   0 Open         [LOGIC-48] fd/in should provide a default domain if none specified
-    0.00   0 Open         [LOGIC-68] add Prolog meta-logical predicates bagof, setof, findall
-    0.00   0 Open         [LOGIC-86] make `defc` more useful
-    0.00   0 Open         [LOGIC-96] relevant-var? logic incorrectly discards a vars constraint set
-    0.00   0 Open         [LOGIC-99] StackOverflow for large `appendo`
-    0.00   0 Open         [LOGIC-114] stack overflow with conda/u
-    0.00   0 Open         [LOGIC-117] one-shot constraints with multiple rands may run more than once
-    0.00   0 Open         [LOGIC-119] tie disequality
-    0.00   0 Open         [LOGIC-129] matcha/matchu are not faithful to the semantics of conda/condu
-    0.00   0 Open         [LOGIC-130] StackOverFlowError when walking over set
-    0.00   0 Open         [LOGIC-133] Add label goal
-    0.00   0 Open         [LOGIC-140] compile time occurs check for pattern matching
-    0.00   0 Open         [LOGIC-141] dcg: def--> ClassCastException
-    0.00   0 Open         [LOGIC-142] Unified map values are returned as LVar rather than the unified value in ClojureScript
-    0.00   0 Open         [LOGIC-153] deftest test-34-unify-with-metadata appears incorrect
-    0.00   0 Open         [LOGIC-154] walk* of an empty set overflows the stack
-    0.00   0 Open         [LOGIC-156] Two consecutive calls to run* return different results
-    0.00   0 Open         [LOGIC-162] FD logic doesn't always return all solutions
+   0 Open         [LOGIC-26] Generate a better error when adding facts for arities that do not exist
+   0 Open         [LOGIC-28] defrel cannot be called inside function
+   0 Open         [LOGIC-47] is macro needs to be improved
+   0 Open         [LOGIC-48] fd/in should provide a default domain if none specified
+   0 Open         [LOGIC-68] add Prolog meta-logical predicates bagof, setof, findall
+   0 Open         [LOGIC-86] make `defc` more useful
+   0 Open         [LOGIC-96] relevant-var? logic incorrectly discards a vars constraint set
+   0 Open         [LOGIC-99] StackOverflow for large `appendo`
+   0 Open         [LOGIC-114] stack overflow with conda/u
+   0 Open         [LOGIC-117] one-shot constraints with multiple rands may run more than once
+   0 Open         [LOGIC-119] tie disequality
+   0 Open         [LOGIC-129] matcha/matchu are not faithful to the semantics of conda/condu
+   0 Open         [LOGIC-130] StackOverFlowError when walking over set
+   0 Open         [LOGIC-133] Add label goal
+   0 Open         [LOGIC-140] compile time occurs check for pattern matching
+   0 Open         [LOGIC-141] dcg: def--> ClassCastException
+   0 Open         [LOGIC-142] Unified map values are returned as LVar rather than the unified value in ClojureScript
+   0 Open         [LOGIC-153] deftest test-34-unify-with-metadata appears incorrect
+   0 Open         [LOGIC-154] walk* of an empty set overflows the stack
+   0 Open         [LOGIC-156] Two consecutive calls to run* return different results
+   0 Open         [LOGIC-162] FD logic doesn't always return all solutions
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [LOGIC-35] Core.logic equivalent of multimethods
-    0.00   0 Open         [LOGIC-38] Logic Threading Macro
-    0.00   0 Open         [LOGIC-43] LVar should print readably
-    0.00   0 Open         [LOGIC-44] ex* could expand macros in patterns
-    0.00   0 Open         [LOGIC-70] support for defaults in the simple unifier
-    0.00   0 Open         [LOGIC-87] Decomplect the narrowing of the constraint space from the search order
-    0.00   0 Open         [LOGIC-89] Allow application again in pattern matches
-    0.00   0 Open         [LOGIC-123] Allow unification with sequential in both directions
-    0.00   0 Open         [LOGIC-128] add mod/rem/abs/min/max
-    0.00   0 Open         [LOGIC-136] Make benchmark suite as easy to run as `lein test`
-    0.00   0 Open         [LOGIC-138] Allow tying multiple noms in one binder
-    0.00   0 Open         [LOGIC-144] Extending cljs.core.logic with all of the functionality from clojure.core.logic 
-    0.00   0 Open         [LOGIC-146] run macro should take * in addition to n
-    0.00   0 Open         [LOGIC-164] Guard against arity missmatches between rels, facts and retractions
-    0.00   0 Open         [LOGIC-165] Add non-interleaving version of conde
+   0 Open         [LOGIC-35] Core.logic equivalent of multimethods
+   0 Open         [LOGIC-38] Logic Threading Macro
+   0 Open         [LOGIC-43] LVar should print readably
+   0 Open         [LOGIC-44] ex* could expand macros in patterns
+   0 Open         [LOGIC-70] support for defaults in the simple unifier
+   0 Open         [LOGIC-87] Decomplect the narrowing of the constraint space from the search order
+   0 Open         [LOGIC-89] Allow application again in pattern matches
+   0 Open         [LOGIC-123] Allow unification with sequential in both directions
+   0 Open         [LOGIC-128] add mod/rem/abs/min/max
+   0 Open         [LOGIC-136] Make benchmark suite as easy to run as `lein test`
+   0 Open         [LOGIC-138] Allow tying multiple noms in one binder
+   0 Open         [LOGIC-144] Extending cljs.core.logic with all of the functionality from clojure.core.logic 
+   0 Open         [LOGIC-146] run macro should take * in addition to n
+   0 Open         [LOGIC-164] Guard against arity missmatches between rels, facts and retractions
+   0 Open         [LOGIC-165] Add non-interleaving version of conde
 
 ========================================
 Task
 
-    0.00   0 Open         [LOGIC-157] A warning is thrown regarding the redefinition of record? in clojure 1.6.0
+   0 Open         [LOGIC-157] A warning is thrown regarding the redefinition of record? in clojure 1.6.0
 
 
 Project MATCH tickets
 ========================================
 Defect
 
-    1.00   1 Open         [MATCH-31] vector patterns should work on seq
-    0.00   0 Open         [MATCH-49] Duplicate wildcard detection in pattern row doesn't account for locals
-    0.00   0 Open         [MATCH-74] pass occurrence to emit-pattern
-    0.00   0 Open         [MATCH-75] rest patterns don't work on arrays
-    0.00   0 Open         [MATCH-90] ignore duplicate wildcard check if matching a local multiple times in same pattern row
-    0.00   0 Open         [MATCH-93] Simple capturing of :or matches with :as doesn't work
-    0.00   0 Open         [MATCH-95] recur detection logic is too naive
-    0.00   0 Open         [MATCH-99] Example in Overview Wiki Page Results in an Exception
-    0.00   0 Open         [MATCH-101] Apparent regression for test sharing literals
-    0.00   0 Open         [MATCH-102] Do :guard predicates really need to handle :clojure.core.match/not-found?
+   1 Open         [MATCH-31] vector patterns should work on seq
+   0 Open         [MATCH-49] Duplicate wildcard detection in pattern row doesn't account for locals
+   0 Open         [MATCH-74] pass occurrence to emit-pattern
+   0 Open         [MATCH-75] rest patterns don't work on arrays
+   0 Open         [MATCH-90] ignore duplicate wildcard check if matching a local multiple times in same pattern row
+   0 Open         [MATCH-93] Simple capturing of :or matches with :as doesn't work
+   0 Open         [MATCH-95] recur detection logic is too naive
+   0 Open         [MATCH-99] Example in Overview Wiki Page Results in an Exception
+   0 Open         [MATCH-101] Apparent regression for test sharing literals
+   0 Open         [MATCH-102] Do :guard predicates really need to handle :clojure.core.match/not-found?
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [MATCH-2] Matching Diagnostics
-    0.00   0 Open         [MATCH-4] Optimized pattern matching on deftype/record, POJOs
-    0.00   0 Open         [MATCH-8] Implement (p|q)ba heuristics
-    0.00   0 Open         [MATCH-40] Allow or'ing of guard functions
-    0.00   0 Open         [MATCH-64] Improve match compile times
-    0.00   0 Open         [MATCH-65] cata matching
-    0.00   0 Open         [MATCH-72] complexity analysis
-    0.00   0 Open         [MATCH-78] Switches on literals should happen via `case` not `cond`
-    0.00   0 Open         [MATCH-103] Support for lists in patterns.
+   0 Open         [MATCH-2] Matching Diagnostics
+   0 Open         [MATCH-4] Optimized pattern matching on deftype/record, POJOs
+   0 Open         [MATCH-8] Implement (p|q)ba heuristics
+   0 Open         [MATCH-40] Allow or'ing of guard functions
+   0 Open         [MATCH-64] Improve match compile times
+   0 Open         [MATCH-65] cata matching
+   0 Open         [MATCH-72] complexity analysis
+   0 Open         [MATCH-78] Switches on literals should happen via `case` not `cond`
+   0 Open         [MATCH-103] Support for lists in patterns.
 
 ========================================
 Task
 
-    0.00   0 Open         [MATCH-7] Eliminate distinction between leaf-bind-expr and bind-expr
-    0.00   0 Open         [MATCH-79] Tidy up for 0.2.0, add comprehensive doc strings
+   0 Open         [MATCH-7] Eliminate distinction between leaf-bind-expr and bind-expr
+   0 Open         [MATCH-79] Tidy up for 0.2.0, add comprehensive doc strings
 
 
 Project MCOMB tickets
 ========================================
 Defect
 
-    0.00   0 Open         [MCOMB-5] Exclude `update` in :refer-clojure for Clojure 1.7.0 compatibility
+   0 Open         [MCOMB-5] Exclude `update` in :refer-clojure for Clojure 1.7.0 compatibility
 
 ========================================
 Task
 
-    0.00   0 Open         [MCOMB-3] Please add project.clj
+   0 Open         [MCOMB-3] Please add project.clj
 
 
 Project MTOWER tickets
 ========================================
 Defect
 
-    0.00   0 Open         [MTOWER-5] Large number of boxed math warnings
+   0 Open         [MTOWER-5] Large number of boxed math warnings
 
 
 Project NREPL tickets
 ========================================
 Defect
 
-    2.00   2 Open         [NREPL-3] Adopt default port
-    1.00   1 Open         [NREPL-69] Interrupt of load-file generates java.lang.ThreadDeath exception
-    0.00   0 Open         [NREPL-24] :session key is overloaded
-    0.00   0 Open         [NREPL-28] Clarify semantics for String encoding
-    0.00   0 Open         [NREPL-33] Consider making session and eval functionality more accessible
-    0.00   0 Open         [NREPL-36] Too many DynamicClassLoaders created
-    0.00   0 Open         [NREPL-48] *1/*2/*3/*e nil in cloned session
-    0.00   0 Open         [NREPL-54] No version of nrepl when connect to the lein-droid REPL
-    0.00   0 Open         [NREPL-68] load-file op responses always have "user" or ":main" as the value of their ns slot
+   2 Open         [NREPL-3] Adopt default port
+   1 Open         [NREPL-69] Interrupt of load-file generates java.lang.ThreadDeath exception
+   0 Open         [NREPL-24] :session key is overloaded
+   0 Open         [NREPL-28] Clarify semantics for String encoding
+   0 Open         [NREPL-33] Consider making session and eval functionality more accessible
+   0 Open         [NREPL-36] Too many DynamicClassLoaders created
+   0 Open         [NREPL-48] *1/*2/*3/*e nil in cloned session
+   0 Open         [NREPL-54] No version of nrepl when connect to the lein-droid REPL
+   0 Open         [NREPL-68] load-file op responses always have "user" or ":main" as the value of their ns slot
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [NREPL-4] Provide sane multiplexing of output in the face of multithreaded, asynchronous operation
-    0.00   0 Open         [NREPL-15] Allow clients to specify an ID for newly-retained sessions
-    0.00   0 Open         [NREPL-29] Provide a mechanism for overriding an operation
-    0.00   0 Open         [NREPL-43] Document the availability/usage of *e, *1, *2, ... in nREPL
-    0.00   0 Open         [NREPL-44] Expose JMX MBean to provide list of available nREPL endpoints
-    0.00   0 Open         [NREPL-55] Support custom value rendering middleware
-    0.00   0 Open         [NREPL-59] Tracking source form positions in eval
-    0.00   0 Open         [NREPL-64] Add current ns to describe session's response
-    0.00   0 Open         [NREPL-67] nrepl-server reuseAddr
+   0 Open         [NREPL-4] Provide sane multiplexing of output in the face of multithreaded, asynchronous operation
+   0 Open         [NREPL-15] Allow clients to specify an ID for newly-retained sessions
+   0 Open         [NREPL-29] Provide a mechanism for overriding an operation
+   0 Open         [NREPL-43] Document the availability/usage of *e, *1, *2, ... in nREPL
+   0 Open         [NREPL-44] Expose JMX MBean to provide list of available nREPL endpoints
+   0 Open         [NREPL-55] Support custom value rendering middleware
+   0 Open         [NREPL-59] Tracking source form positions in eval
+   0 Open         [NREPL-64] Add current ns to describe session's response
+   0 Open         [NREPL-67] nrepl-server reuseAddr
 
 
 Project TANAL tickets
 ========================================
 Defect
 
-    0.00   0 Open         [TANAL-100] Fix method matcher
+   0 Open         [TANAL-100] Fix method matcher
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [TANAL-84] Simplify tag handling for castings/nil insertion/value popping
+   0 Open         [TANAL-84] Simplify tag handling for castings/nil insertion/value popping
 
 ========================================
 Task
 
-    0.00   0 Open         [TANAL-42] Document the AST nodes && the passes
-    0.00   0 Open         [TANAL-85] enhance validations in t.a.js
+   0 Open         [TANAL-42] Document the AST nodes && the passes
+   0 Open         [TANAL-85] enhance validations in t.a.js
 
 
 Project TBENCH tickets
 ========================================
 Defect
 
-    1.00   1 Open         [TBENCH-12] Alioth k-nucleotide
-    0.00   0 Open         [TBENCH-11] Alioth reverse-complement
-    0.00   0 Open         [TBENCH-14] Alioth fannkuch-redux
+   1 Open         [TBENCH-12] Alioth k-nucleotide
+   0 Open         [TBENCH-11] Alioth reverse-complement
+   0 Open         [TBENCH-14] Alioth fannkuch-redux
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [TBENCH-2] Alioth chameneos-redux
-    0.00   0 Open         [TBENCH-3] Alioth meteor-contest
-    0.00   0 Open         [TBENCH-4] Alioth pidigits
-    0.00   0 Open         [TBENCH-16] Add performance testing for STM
+   0 Open         [TBENCH-2] Alioth chameneos-redux
+   0 Open         [TBENCH-3] Alioth meteor-contest
+   0 Open         [TBENCH-4] Alioth pidigits
+   0 Open         [TBENCH-16] Add performance testing for STM
 
 
 Project TCHECK tickets
 ========================================
 Defect
 
-    0.00   0 Open         [TCHECK-26] defspec does not respect (is (thrown? ...))
-    0.00   0 Open         [TCHECK-27] stateful PRNG + bind => nondeterministic shrink tree
-    0.00   0 Open         [TCHECK-32] Default sizing on gen/any needs re-evaluation
-    0.00   0 Open         [TCHECK-33] test.check is entangled with clojure.test
-    0.00   0 Open         [TCHECK-34] clojure.test reporting is uninformative
-    0.00   0 Open         [TCHECK-57] Performance regression in map generator between 0.5.8 and 0.5.9
+   0 Open         [TCHECK-26] defspec does not respect (is (thrown? ...))
+   0 Open         [TCHECK-27] stateful PRNG + bind => nondeterministic shrink tree
+   0 Open         [TCHECK-32] Default sizing on gen/any needs re-evaluation
+   0 Open         [TCHECK-33] test.check is entangled with clojure.test
+   0 Open         [TCHECK-34] clojure.test reporting is uninformative
+   0 Open         [TCHECK-57] Performance regression in map generator between 0.5.8 and 0.5.9
 
 ========================================
 Enhancement
 
-    3.00   3 Open         [TCHECK-15] gen/for macro for alternate combinator syntax
-    2.50   3 Open         [TCHECK-5] Include a float generator
-    2.00   2 Open         [TCHECK-7] Add nested property support
-    1.50   2 Open         [TCHECK-2] pos-int is confusingly named
-    1.00   1 Open         [TCHECK-31] Doc improvements: how to separate "size" from "range"
-    0.50   1 Open         [TCHECK-8] Bound tests and shrinks in time
-    0.50   1 Open         [TCHECK-43] Test.check lacks a generator for all floats and floats in a range
-    0.00   0 Open         [TCHECK-3] Add ability to customize test output when a test fails
-    0.00   0 Open         [TCHECK-4] Handle sigint
-    0.00   0 Open         [TCHECK-6] Rose-filter may assume too much
-    0.00   0 Open         [TCHECK-9] Properly document how :max-size works 
-    0.00   0 Open         [TCHECK-14] re-organize README and doc/
-    0.00   0 Open         [TCHECK-19] Permit a data-structure containing generators to be used as a generator
-    0.00   0 Open         [TCHECK-21] Rerunning a particular failure is difficult.
-    0.00   0 Open         [TCHECK-25] shuffle generator
-    0.00   0 Open         [TCHECK-37] Make random-number generation in test.check thread-safe
-    0.00   0 Open         [TCHECK-38] Generators for functions?
-    0.00   0 Open         [TCHECK-41] Add helpers for deprecating generators
-    0.00   0 Open         [TCHECK-44] for-all should support nesting
-    0.00   0 Open         [TCHECK-48] Add sublist generator
-    0.00   0 Open         [TCHECK-50] Sampling one in the obvious way could return a more random value
-    0.00   0 Open         [TCHECK-51] Add set generator
-    0.00   0 Open         [TCHECK-53] property creating function similar to map as alternative to for-all*
-    0.00   0 Open         [TCHECK-58] Alternate clojure.test integration
+   3 Open         [TCHECK-15] gen/for macro for alternate combinator syntax
+   3 Open         [TCHECK-5] Include a float generator
+   2 Open         [TCHECK-7] Add nested property support
+   2 Open         [TCHECK-2] pos-int is confusingly named
+   1 Open         [TCHECK-31] Doc improvements: how to separate "size" from "range"
+   1 Open         [TCHECK-8] Bound tests and shrinks in time
+   1 Open         [TCHECK-43] Test.check lacks a generator for all floats and floats in a range
+   0 Open         [TCHECK-3] Add ability to customize test output when a test fails
+   0 Open         [TCHECK-4] Handle sigint
+   0 Open         [TCHECK-6] Rose-filter may assume too much
+   0 Open         [TCHECK-9] Properly document how :max-size works 
+   0 Open         [TCHECK-14] re-organize README and doc/
+   0 Open         [TCHECK-19] Permit a data-structure containing generators to be used as a generator
+   0 Open         [TCHECK-21] Rerunning a particular failure is difficult.
+   0 Open         [TCHECK-25] shuffle generator
+   0 Open         [TCHECK-37] Make random-number generation in test.check thread-safe
+   0 Open         [TCHECK-38] Generators for functions?
+   0 Open         [TCHECK-41] Add helpers for deprecating generators
+   0 Open         [TCHECK-44] for-all should support nesting
+   0 Open         [TCHECK-48] Add sublist generator
+   0 Open         [TCHECK-50] Sampling one in the obvious way could return a more random value
+   0 Open         [TCHECK-51] Add set generator
+   0 Open         [TCHECK-53] property creating function similar to map as alternative to for-all*
+   0 Open         [TCHECK-58] Alternate clojure.test integration
 
 
 Project TCLI tickets
 ========================================
 Defect
 
-    0.00   0 Open         [TCLI-10] potential incorrect parsing
+   0 Open         [TCLI-10] potential incorrect parsing
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [TCLI-9] Support multiple validations
+   0 Open         [TCLI-9] Support multiple validations
 
 
 Project TEMJVM tickets
 ========================================
 Enhancement
 
-    0.00   0 Open         [TEMJVM-5] Optimize constant metadata emission
-    0.00   0 Open         [TEMJVM-10] Fix line number info
+   0 Open         [TEMJVM-5] Optimize constant metadata emission
+   0 Open         [TEMJVM-10] Fix line number info
 
 ========================================
 Task
 
-    0.00   0 Open         [TEMJVM-9] Change fn name munging scheme to match the one introduced with CLJ-1330
+   0 Open         [TEMJVM-9] Change fn name munging scheme to match the one introduced with CLJ-1330
 
 
 Project TGEN tickets
 ========================================
 Defect
 
-    0.00   0 Open         [TGEN-5] Defspec leaks :tag from args into generated code
+   0 Open         [TGEN-5] Defspec leaks :tag from args into generated code
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [TGEN-4] Typo in defspec docstring
+   0 Open         [TGEN-4] Typo in defspec docstring
 
 
 Project TLOG tickets
@@ -725,63 +730,63 @@ Project TMACRO tickets
 ========================================
 Defect
 
-    0.00   0 Open         [TMACRO-3] Handling of namespaced symbols
-    0.00   0 Open         [TMACRO-4] README.md still says 0.1.2 is latest stable release
-    0.00   0 Open         [TMACRO-5] Misplaced doc string for function protected?
-    0.00   0 Open         [TMACRO-6] with-symbol-macros fails to preserve set sortedness
-    0.00   0 Open         [TMACRO-7] Extra paren in expansion
+   0 Open         [TMACRO-3] Handling of namespaced symbols
+   0 Open         [TMACRO-4] README.md still says 0.1.2 is latest stable release
+   0 Open         [TMACRO-5] Misplaced doc string for function protected?
+   0 Open         [TMACRO-6] with-symbol-macros fails to preserve set sortedness
+   0 Open         [TMACRO-7] Extra paren in expansion
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [TMACRO-1] Preserve metadata for (at least) unexpanded forms
+   0 Open         [TMACRO-1] Preserve metadata for (at least) unexpanded forms
 
 
 Project TNS tickets
 ========================================
 Defect
 
-    1.00   1 Open         [TNS-7] Stack overflow on refresh after circular dependency detected
-    0.50   1 Open         [TNS-6] Attempt to reload deleted file
-    0.00   0 Open         [TNS-20] tracker's unload order sometimes incorrect
-    0.00   0 Open         [TNS-21] tools.namespace ignores ns form dependencies inside vectors
-    0.00   0 Open         [TNS-24] Broken tracker after mis-named namespace
+   1 Open         [TNS-7] Stack overflow on refresh after circular dependency detected
+   1 Open         [TNS-6] Attempt to reload deleted file
+   0 Open         [TNS-20] tracker's unload order sometimes incorrect
+   0 Open         [TNS-21] tools.namespace ignores ns form dependencies inside vectors
+   0 Open         [TNS-24] Broken tracker after mis-named namespace
 
 ========================================
 Enhancement
 
-    1.00   1 Open         [TNS-32] Accept symbols for 'require' and 'use' inside 'ns'
-    0.50   1 Open         [TNS-5] Allow any valid .clj* source file to be parsed/analysed
+   1 Open         [TNS-32] Accept symbols for 'require' and 'use' inside 'ns'
+   1 Open         [TNS-5] Allow any valid .clj* source file to be parsed/analysed
 
 
 Project TRDR tickets
 ========================================
 Enhancement
 
-    0.00   0 Open         [TRDR-14] Feature Expressions
+   0 Open         [TRDR-14] Feature Expressions
 
 ========================================
 Task
 
-    0.00   0 Open         [TRDR-13] Better documentation wrt interaction between reader-types and java readers
+   0 Open         [TRDR-13] Better documentation wrt interaction between reader-types and java readers
 
 
 Project TTRACE tickets
 ========================================
 Enhancement
 
-    0.00   0 Open         [TTRACE-9] Use aprint when displaying value
+   0 Open         [TTRACE-9] Use aprint when displaying value
 
 
 Project UNIFY tickets
 ========================================
 Defect
 
-    0.00   0 Open         [UNIFY-7] Dead code in occurs? function
-    0.00   0 Open         [UNIFY-8] Handle sets correctly
+   0 Open         [UNIFY-7] Dead code in occurs? function
+   0 Open         [UNIFY-8] Handle sets correctly
 
 ========================================
 Task
 
-    0.00   0 Open         [UNIFY-3] Enhance documentation
-    0.00   0 Open         [UNIFY-6] Create tests for k&v map unification
+   0 Open         [UNIFY-3] Enhance documentation
+   0 Open         [UNIFY-6] Create tests for k&v map unification

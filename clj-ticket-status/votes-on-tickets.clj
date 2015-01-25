@@ -533,7 +533,7 @@
  {:display-name "Julien Eluard",
   :usernames #{"jeluard"},
   :emails #{"julien.eluard@gmail.com"}}
- ("CLJS-948" "CLJ-1449"),
+ ("CLJS-965" "CLJS-948" "CLJ-1449"),
  {:display-name "Dan Chamberlain",
   :usernames #{"dchamberlain"},
   :emails #{"huskie009@hotmail.com"}}
@@ -1261,6 +1261,10 @@
   :usernames #{"martinklepsch"},
   :emails #{"martinklepsch@googlemail.com"}}
  (),
+ {:display-name "Caleb Spare",
+  :usernames #{"cespare"},
+  :emails #{"cespare@gmail.com"}}
+ (),
  {:display-name "Anthony Marcar",
   :usernames #{"moocar"},
   :emails #{"Anthony.Marcar@gmail.com"}}
@@ -1353,6 +1357,10 @@
   :usernames #{"jarohen"},
   :emails #{"james@jarohen.me.uk"}}
  (),
+ {:display-name "Christian H.",
+  :usernames #{"chrish1"},
+  :emails #{"c.hoedl@gmx.net"}}
+ ("CLJ-1210"),
  {:display-name "Kevin Casey",
   :usernames #{"kevincasey"},
   :emails #{"kevin-casey@sbcglobal.net"}}
@@ -1470,6 +1478,10 @@
  {:display-name "Brian Taylor",
   :usernames #{"netguy204"},
   :emails #{"el.wubo@gmail.com"}}
+ (),
+ {:display-name "Bryan Hoyle",
+  :usernames #{"triclops200"},
+  :emails #{"starfoxprime@gmail.com"}}
  (),
  {:display-name "Greg Chapman",
   :usernames #{"glchapman"},
@@ -1638,6 +1650,10 @@
  {:display-name "Micah Martin",
   :usernames #{"slagyr"},
   :emails #{"micahmartin@gmail.com"}}
+ (),
+ {:display-name "Denis Johnson",
+  :usernames #{"hipitihop"},
+  :emails #{"denis.johnson@gmail.com"}}
  (),
  {:display-name "Matthew O. Smith",
   :usernames #{"m0smith"},
@@ -2835,7 +2851,7 @@
  {:display-name "Michael Fogleman",
   :usernames #{"mwfogleman"},
   :emails #{"michaelwfogleman@gmail.com"}}
- ("CLJ-1449"),
+ ("CLJ-1544" "CLJ-1449"),
  {:display-name "Richard Hull",
   :usernames #{"rhu"},
   :emails #{"rm_hull@yahoo.co.uk"}}
@@ -3150,6 +3166,10 @@
  {:display-name "Arthur Ulfeldt",
   :usernames #{"arthurulfeldt"},
   :emails #{"arthur@ulfeldt.com"}}
+ (),
+ {:display-name "Jose Luis Rodriguez Orjuela",
+  :usernames #{"jlroo"},
+  :emails #{"jlrodriguezorjuela@gmail.com"}}
  (),
  {:display-name "Michael Porter",
   :usernames #{"maport"},
@@ -3479,6 +3499,7 @@
   "CLJ-1577"
   "CLJ-1568"
   "CLJ-1561"
+  "CLJ-1544"
   "CLJ-1445"
   "CLJ-1442"
   "CLJ-1305"
@@ -3492,6 +3513,7 @@
   "CLJ-1237"
   "CLJ-1232"
   "CLJ-1210"
+  "CLJ-1208"
   "CLJ-1195"
   "CLJ-1152"
   "CLJ-1137"
@@ -3695,7 +3717,7 @@
  {:display-name "Andreas Steffan",
   :usernames #{"deas"},
   :emails #{"a.steffan@deas-online.de"}}
- (),
+ ("CLJ-1255"),
  {:display-name "Alex Bahouth",
   :usernames #{"roxxi"},
   :emails #{"roxxibear@gmail.com"}}
@@ -4520,7 +4542,7 @@
  {:display-name "Alex Miller",
   :usernames #{"alexmiller"},
   :emails #{"alex@puredanger.com"}}
- ("CLJ-1517" "CLJ-1239" "CLJ-1107" "CLJ-1005" "CLJ-700"),
+ ("CLJ-1544" "CLJ-1517" "CLJ-1239" "CLJ-1107" "CLJ-1005" "CLJ-700"),
  {:display-name "Stefan Huber",
   :usernames #{"msnexploder"},
   :emails #{"msnexploder@gmail.com"}}
@@ -5133,7 +5155,7 @@
  {:display-name "Tom Crayford",
   :usernames #{"tcrayford"},
   :emails #{"tom@tcrayford.com"}}
- ("CLJ-1604" "CLJ-703"),
+ ("CLJ-1604" "CLJ-1544" "CLJ-703"),
  {:display-name "Cosmin Stejerean",
   :usernames #{"cosmin"},
   :emails #{"cstejerean@gmail.com"}}
@@ -5412,6 +5434,10 @@
  {:display-name "rnewman",
   :usernames #{"rnewman"},
   :emails #{"rnewman@clojure.org"}}
+ (),
+ {:display-name "Julian Sy",
+  :usernames #{"jsy"},
+  :emails #{"jns0019@uah.edu"}}
  (),
  {:display-name "Omer Iqbal",
   :usernames #{"olenhad"},
@@ -5699,6 +5725,10 @@
   :usernames #{"hmadelaine"},
   :emails #{"Hiram.madelaine@gmail.com"}}
  (),
+ {:display-name "secwang",
+  :usernames #{"secwang"},
+  :emails #{"secwang@fastmail.com"}}
+ (),
  {:display-name "Brian Forester",
   :usernames #{"bdf"},
   :emails #{"brian.forester+Jira@gmail.com"}}
@@ -5942,7 +5972,8 @@
  {:display-name "Tassilo Horn",
   :usernames #{"tsdh"},
   :emails #{"tsdh@gnu.org"}}
- ("CLJ-1418"
+ ("CLJ-1544"
+  "CLJ-1418"
   "CLJ-1250"
   "CLJ-1219"
   "CLJ-1112"
