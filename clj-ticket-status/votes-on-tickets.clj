@@ -76,6 +76,10 @@
   :usernames #{"sheganinans"},
   :emails #{"sheganinans@gmail.com"}}
  (),
+ {:display-name "joshanderson",
+  :usernames #{"joshanderson"},
+  :emails #{"joshanderson589@gmail.com"}}
+ (),
  {:display-name "Chris Redinger",
   :usernames #{"credinger"},
   :emails #{"redinger@gmail.com"}}
@@ -381,7 +385,7 @@
  {:display-name "Yehonathan Sharvit",
   :usernames #{"viebel"},
   :emails #{"viebel@gmail.com"}}
- ("CLJS-965" "CLJS-927" "CLJS-324" "CLJ-1449" "ASYNC-79"),
+ ("CLJS-324" "CLJ-1449" "ASYNC-79"),
  {:display-name "Dennis Heihoff",
   :usernames #{"kalavox@gmail.com"},
   :emails #{"kalavox@gmail.com"}}
@@ -541,7 +545,7 @@
  {:display-name "Julien Eluard",
   :usernames #{"jeluard"},
   :emails #{"julien.eluard@gmail.com"}}
- ("CLJS-965" "CLJS-948" "CLJ-1449"),
+ ("CLJ-1449"),
  {:display-name "Dan Chamberlain",
   :usernames #{"dchamberlain"},
   :emails #{"huskie009@hotmail.com"}}
@@ -2151,6 +2155,10 @@
   :usernames #{"sbazerque"},
   :emails #{"sbazerque@gmail.com"}}
  (),
+ {:display-name "David Sargeant",
+  :usernames #{"dubiousdavid"},
+  :emails #{"david@dsargeant.com"}}
+ ("CLJ-1528"),
  {:display-name "Alf Kristian Støyle",
   :usernames #{"stoyle"},
   :emails #{"alf.kristian@gmail.com"}}
@@ -2187,6 +2195,10 @@
   :usernames #{"djjolicoeur"},
   :emails #{"djjolicoeur@gmail.com"}}
  ("CLJ-1573"),
+ {:display-name "Aaron France",
+  :usernames #{"aeronotix"},
+  :emails #{"aaron.l.france@gmail.com"}}
+ (),
  {:display-name "Stephen Nelson",
   :usernames #{"sfnelson"},
   :emails #{"stephen@montoux.com"}}
@@ -2578,7 +2590,7 @@
  {:display-name "Elyahou Ittah",
   :usernames #{"elyahou"},
   :emails #{"ittah.elyahou@gmail.com"}}
- ("CLJS-927"),
+ (),
  {:display-name "Thomas Steffes",
   :usernames #{"smnirven"},
   :emails #{"smnirven@gmail.com"}}
@@ -3544,19 +3556,29 @@
  {:display-name "Nicola Mometto",
   :usernames #{"bronsa"},
   :emails #{"brobronsa@gmail.com"}}
- ("CLJ-1620"
+ ("CLJ-1649"
+  "CLJ-1646"
+  "CLJ-1626"
+  "CLJ-1620"
   "CLJ-1577"
   "CLJ-1568"
   "CLJ-1561"
   "CLJ-1544"
+  "CLJ-1469"
   "CLJ-1445"
   "CLJ-1442"
+  "CLJ-1423"
+  "CLJ-1376"
+  "CLJ-1373"
+  "CLJ-1340"
   "CLJ-1305"
   "CLJ-1298"
   "CLJ-1295"
   "CLJ-1293"
+  "CLJ-1284"
   "CLJ-1279"
   "CLJ-1278"
+  "CLJ-1263"
   "CLJ-1253"
   "CLJ-1250"
   "CLJ-1237"
@@ -3565,6 +3587,7 @@
   "CLJ-1208"
   "CLJ-1195"
   "CLJ-1152"
+  "CLJ-1138"
   "CLJ-1137"
   "CLJ-1115"
   "CLJ-1107"
@@ -3574,11 +3597,14 @@
   "CLJ-1017"
   "CLJ-1005"
   "CLJ-865"
+  "CLJ-864"
+  "CLJ-792"
   "CLJ-731"
   "CLJ-703"
   "CLJ-700"
   "CLJ-401"
   "CLJ-322"
+  "CLJ-274"
   "CLJ-130"
   "CLJ-15"),
  {:display-name "Julian Birch",
@@ -3658,6 +3684,10 @@
  {:display-name "Robert Pergl",
   :usernames #{"perglr"},
   :emails #{"robert@pergl.org"}}
+ (),
+ {:display-name "Crispin Wellington",
+  :usernames #{"retrogradeorbit"},
+  :emails #{"retrogradeorbit@gmail.com"}}
  (),
  {:display-name "Oskar Thorén",
   :usernames #{"oskarth"},
@@ -4949,8 +4979,7 @@
  {:display-name "Andy Fingerhut",
   :usernames #{"jafingerhut"},
   :emails #{"andy_fingerhut@alum.wustl.edu"}}
- ("TNS-32"
-  "CLJ-1527"
+ ("CLJ-1527"
   "CLJ-1372"
   "CLJ-1326"
   "CLJ-1308"
@@ -5447,7 +5476,7 @@
  {:display-name "Asher",
   :usernames #{"ashercoren"},
   :emails #{"ashercoren@gmail.com"}}
- ("CLJS-927"),
+ (),
  {:display-name "Evgeniy Philippov",
   :usernames #{"egp"},
   :emails #{"egphilippov@gmail.com"}}
@@ -5805,7 +5834,7 @@
  {:display-name "Jenan Wise",
   :usernames #{"jenanwise"},
   :emails #{"jenanwise@gmail.com"}}
- ("CLJS-927"),
+ (),
  {:display-name "Gordon Syme",
   :usernames #{"gordonsyme"},
   :emails #{"gordonsyme@gmail.com"}}
@@ -5921,7 +5950,7 @@
  {:display-name "Stephan Behnke",
   :usernames #{"stephanos"},
   :emails #{"dev-clojure@stephanbehnke.de"}}
- (),
+ ("CLJS-988"),
  {:display-name "Ivan Koblik",
   :usernames #{"ikoblik"},
   :emails #{"ikoblik@hotmail.com"}}
@@ -6165,7 +6194,7 @@
  {:display-name "Raphael Boukara",
   :usernames #{"raphael.boukara@gmail.com"},
   :emails #{"raphael.boukara@gmail.com"}}
- ("CLJS-927"),
+ (),
  {:display-name "Akhil Wali",
   :usernames #{"darth10"},
   :emails #{"akhil.wali.10@gmail.com"}}
