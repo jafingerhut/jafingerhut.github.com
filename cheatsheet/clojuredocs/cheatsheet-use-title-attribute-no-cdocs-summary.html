@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v20)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v21)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -843,7 +843,16 @@ format
   resulting vector complies with the interface of vectors in general,
   but stores the values unboxed internally.
 
-  Optionally takes one or more elements to populate the vector.">vector-of</a></code></td>
+  Optionally takes one or more elements to populate the vector.">vector-of</a> (1.4) <a href="http://clojuredocs.org/clojure_core/clojure.core/mapv" title="clojure.core/mapv
+([f coll] [f c1 c2] [f c1 c2 c3] [f c1 c2 c3 & colls])
+  Returns a vector consisting of the result of applying f to the
+  set of first items of each coll, followed by applying f to the set
+  of second items in each coll, until any one of the colls is
+  exhausted.  Any remaining items in other colls are ignored. Function
+  f should accept number-of-colls arguments.">mapv</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/filterv" title="clojure.core/filterv
+([pred coll])
+  Returns a vector of the items in coll for which
+  (pred item) returns true. pred must be free of side-effects.">filterv</a></code></td>
               </tr>
               <tr class="even">
                 <td>Examine</td>
@@ -892,16 +901,7 @@ format
               </tr>
               <tr class="even">
                 <td>Ops</td>
-                <td><code>(1.4) <a href="http://clojuredocs.org/clojure_core/clojure.core/mapv" title="clojure.core/mapv
-([f coll] [f c1 c2] [f c1 c2 c3] [f c1 c2 c3 & colls])
-  Returns a vector consisting of the result of applying f to the
-  set of first items of each coll, followed by applying f to the set
-  of second items in each coll, until any one of the colls is
-  exhausted.  Any remaining items in other colls are ignored. Function
-  f should accept number-of-colls arguments.">mapv</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/filterv" title="clojure.core/filterv
-([pred coll])
-  Returns a vector of the items in coll for which
-  (pred item) returns true. pred must be free of side-effects.">filterv</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/reduce-kv" title="clojure.core/reduce-kv
+                <td><code>(1.4) <a href="http://clojuredocs.org/clojure_core/clojure.core/reduce-kv" title="clojure.core/reduce-kv
 ([f init coll])
   Reduces an associative collection. f should be a function of 3
   arguments. Returns the result of applying f to init, the first key
@@ -974,6 +974,21 @@ format
 ([set1 set2])
   Is set1 a superset of set2?">superset?</a></code></td>
               </tr>
+              <tr class="even">
+                <td>Sorted sets</td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/rseq" title="clojure.core/rseq
+([rev])
+  Returns, in constant time, a seq of the items in rev (which
+  can be a vector or sorted-map), in reverse order. If rev is empty returns nil">rseq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/subseq" title="clojure.core/subseq
+([sc test key] [sc start-test start-key end-test end-key])
+  sc must be a sorted collection, test(s) one of <, <=, > or
+  >=. Returns a seq of those entries with keys ek for
+  which (test (.. sc comparator (compare ek key)) 0) is true">subseq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/rsubseq" title="clojure.core/rsubseq
+([sc test key] [sc start-test start-key end-test end-key])
+  sc must be a sorted collection, test(s) one of <, <=, > or
+  >=. Returns a reverse seq of those entries with keys ek for
+  which (test (.. sc comparator (compare ek key)) 0) is true">rsubseq</a></code></td>
+              </tr>
             </tbody>
           </table>
           <h3>Maps</h3>
@@ -1016,7 +1031,9 @@ format
               </tr>
               <tr class="even">
                 <td>Examine</td>
-                <td><code><code>(:key my-map)</code> &rarr; <code>( <a href="http://clojuredocs.org/clojure_core/clojure.core/get" title="clojure.core/get
+                <td><code><code>(my-map k)</code> &rarr; <code>( <a href="http://clojuredocs.org/clojure_core/clojure.core/get" title="clojure.core/get
+([map key] [map key not-found])
+  Returns the value mapped to key, not-found or nil if key not present.">get</a>  my-map k)</code> also <code>(:key my-map)</code> &rarr; <code>( <a href="http://clojuredocs.org/clojure_core/clojure.core/get" title="clojure.core/get
 ([map key] [map key not-found])
   Returns the value mapped to key, not-found or nil if key not present.">get</a>  my-map :key)</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/get-in" title="clojure.core/get-in
 ([m ks] [m ks not-found])
@@ -1074,6 +1091,17 @@ format
   Returns the map with the vals mapped to the keys.">map-invert</a> GitHub: <a href="http://github.com/weavejester/medley">Medley</a></code></td>
               </tr>
               <tr class="even">
+                <td>Ops</td>
+                <td><code>(1.4) <a href="http://clojuredocs.org/clojure_core/clojure.core/reduce-kv" title="clojure.core/reduce-kv
+([f init coll])
+  Reduces an associative collection. f should be a function of 3
+  arguments. Returns the result of applying f to init, the first key
+  and the first value in coll, then applying f to that result and the
+  2nd key and value, etc. If coll contains no entries, returns init
+  and f is not called. Note that reduce-kv is supported on vectors,
+  where the keys will be the ordinals.">reduce-kv</a></code></td>
+              </tr>
+              <tr class="odd">
                 <td>Entry</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/key" title="clojure.core/key
 ([e])
@@ -1081,7 +1109,7 @@ format
 ([e])
   Returns the value in the map entry.">val</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>Sorted maps</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/rseq" title="clojure.core/rseq
 ([rev])
@@ -1647,7 +1675,16 @@ evaluated only once">when-first</a> <a href="http://clojuredocs.org/clojure_core
 ([coll])
   Returns a (potentially-ragged) 2-dimensional array of Objects
   containing the contents of coll, which can be any Collection of any
-  Collection.">to-array-2d</a></code></td>
+  Collection.">to-array-2d</a> (1.4) <a href="http://clojuredocs.org/clojure_core/clojure.core/mapv" title="clojure.core/mapv
+([f coll] [f c1 c2] [f c1 c2 c3] [f c1 c2 c3 & colls])
+  Returns a vector consisting of the result of applying f to the
+  set of first items of each coll, followed by applying f to the set
+  of second items in each coll, until any one of the colls is
+  exhausted.  Any remaining items in other colls are ignored. Function
+  f should accept number-of-colls arguments.">mapv</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/filterv" title="clojure.core/filterv
+([pred coll])
+  Returns a vector of the items in coll for which
+  (pred item) returns true. pred must be free of side-effects.">filterv</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Pass to fn</td>

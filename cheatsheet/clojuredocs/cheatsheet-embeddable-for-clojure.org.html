@@ -152,7 +152,7 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
             <tbody>
               <tr class="odd">
                 <td>Create</td>
-                <td><code>[] <a href="http://clojuredocs.org/clojure_core/clojure.core/vector">vector</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vec">vec</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vector-of">vector-of</a></code></td>
+                <td><code>[] <a href="http://clojuredocs.org/clojure_core/clojure.core/vector">vector</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vec">vec</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vector-of">vector-of</a> (1.4) <a href="http://clojuredocs.org/clojure_core/clojure.core/mapv">mapv</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/filterv">filterv</a></code></td>
               </tr>
               <tr class="even">
                 <td>Examine</td>
@@ -164,7 +164,7 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
               </tr>
               <tr class="even">
                 <td>Ops</td>
-                <td><code>(1.4) <a href="http://clojuredocs.org/clojure_core/clojure.core/mapv">mapv</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/filterv">filterv</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/reduce-kv">reduce-kv</a></code></td>
+                <td><code>(1.4) <a href="http://clojuredocs.org/clojure_core/clojure.core/reduce-kv">reduce-kv</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -191,6 +191,10 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
                 <td>Test</td>
                 <td><code>(clojure.set/) <a href="http://clojuredocs.org/clojure_core/clojure.set/subset_q">subset?</a> <a href="http://clojuredocs.org/clojure_core/clojure.set/superset_q">superset?</a></code></td>
               </tr>
+              <tr class="even">
+                <td>Sorted sets</td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/rseq">rseq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/subseq">subseq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/rsubseq">rsubseq</a></code></td>
+              </tr>
             </tbody>
           </table>
           <h3>Maps</h3>
@@ -202,17 +206,21 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
               </tr>
               <tr class="even">
                 <td>Examine</td>
-                <td><code><code>(:key my-map)</code> &rarr; <code>( <a href="http://clojuredocs.org/clojure_core/clojure.core/get">get</a>  my-map :key)</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/get-in">get-in</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/contains_q">contains?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/find">find</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/keys">keys</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vals">vals</a></code></td>
+                <td><code><code>(my-map k)</code> &rarr; <code>( <a href="http://clojuredocs.org/clojure_core/clojure.core/get">get</a>  my-map k)</code> also <code>(:key my-map)</code> &rarr; <code>( <a href="http://clojuredocs.org/clojure_core/clojure.core/get">get</a>  my-map :key)</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/get-in">get-in</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/contains_q">contains?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/find">find</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/keys">keys</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vals">vals</a></code></td>
               </tr>
               <tr class="odd">
                 <td>'Change'</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/assoc">assoc</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/assoc-in">assoc-in</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/dissoc">dissoc</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/merge">merge</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/merge-with">merge-with</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/select-keys">select-keys</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/update-in">update-in</a> (clojure.set/) <a href="http://clojuredocs.org/clojure_core/clojure.set/rename-keys">rename-keys</a> <a href="http://clojuredocs.org/clojure_core/clojure.set/map-invert">map-invert</a> GitHub: <a href="http://github.com/weavejester/medley">Medley</a></code></td>
               </tr>
               <tr class="even">
+                <td>Ops</td>
+                <td><code>(1.4) <a href="http://clojuredocs.org/clojure_core/clojure.core/reduce-kv">reduce-kv</a></code></td>
+              </tr>
+              <tr class="odd">
                 <td>Entry</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/key">key</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/val">val</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>Sorted maps</td>
                 <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/rseq">rseq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/subseq">subseq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/rsubseq">rsubseq</a></code></td>
               </tr>
@@ -327,7 +335,7 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
               </tr>
               <tr class="even">
                 <td>Construct coll</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/zipmap">zipmap</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/into">into</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/reduce">reduce</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/reductions">reductions</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/set">set</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vec">vec</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/into-array">into-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/to-array-2d">to-array-2d</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/zipmap">zipmap</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/into">into</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/reduce">reduce</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/reductions">reductions</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/set">set</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vec">vec</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/into-array">into-array</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/to-array-2d">to-array-2d</a> (1.4) <a href="http://clojuredocs.org/clojure_core/clojure.core/mapv">mapv</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/filterv">filterv</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Pass to fn</td>
