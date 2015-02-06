@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: February 2, 2015
+Date: February 5, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -137,30 +137,33 @@ Defect
              Tassilo Horn (1/9)
              Gary Trakhman (1/10)
              Nicola Mometto (1/51)
+    1.81   8 Triaged      [CLJ-1232] Functions with non-qualified return type hints force import of hinted classes when called from other namespace
+             Sean Corfield (1/2)
+             Shantanu Kumar (1/2)
+             Andrew Rosa (1/5)
+             Tom Crayford (1/5)
+             Colin Fleming (1/7)
+             Tim McCormack (1/7)
+             Max Penet (1/10)
+             Nicola Mometto (1/51)
+    1.66   7 Incomplete   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
+             Michael Fogleman (1/2)
+             Johan Gall (1/3)
+             davie moston (1/3)
+             Tom Crayford (1/5)
+             Alex Miller (1/6)
+             Tassilo Horn (1/9)
+             Nicola Mometto (1/51)
     1.47   4 Triaged      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
              Daniel Solano Gómez (1)
              Alexander Yakushev (1/3)
              Michael Blume (1/12)
              Reid McKenzie (1/19)
-    1.46   6 Triaged      [CLJ-1232] Functions with non-qualified return type hints force import of hinted classes when called from other namespace
-             Sean Corfield (1/2)
-             Shantanu Kumar (1/2)
-             Andrew Rosa (1/5)
-             Colin Fleming (1/7)
-             Max Penet (1/10)
-             Nicola Mometto (1/51)
     1.42   5 Triaged      [CLJ-130] Namespace metadata lost in AOT compile
              Benjamin Van Ryseghem (1)
              Howard Lewis Ship (1/5)
              Ambrose Bonnaire-Sergeant (1/7)
              David Greenberg (1/19)
-             Nicola Mometto (1/51)
-    1.38   6 Incomplete   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
-             Michael Fogleman (1/2)
-             davie moston (1/3)
-             Tom Crayford (1/4)
-             Alex Miller (1/6)
-             Tassilo Horn (1/9)
              Nicola Mometto (1/51)
     1.34   3 Open         [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
              Chris Tennant (1)
@@ -202,6 +205,10 @@ Defect
              Max Penet (1/10)
              David Greenberg (1/19)
              Reid McKenzie (1/19)
+    0.87   3 Screened     [CLJ-1604] AOT'ed code that defs a var with clojure.core symbol name causes IllegalStateException
+             Johan Gall (1/3)
+             davie moston (1/3)
+             Tom Crayford (1/5)
     0.66   3 Triaged      [CLJ-1620] Constants are leaked in case of a reentrant eval
              Laurent Petit (1/2)
              Colin Fleming (1/7)
@@ -209,9 +216,6 @@ Defect
     0.58   2 Open         [CLJ-1286] Fix reader spec and regex to match code for keywords starting with digits
              Michael Patrick O'Keefe (1/3)
              Francis Avila (1/4)
-    0.58   2 Screened     [CLJ-1604] AOT'ed code that defs a var with clojure.core symbol name causes IllegalStateException
-             davie moston (1/3)
-             Tom Crayford (1/4)
     0.55   3 Open         [CLJ-1279] Fix confusing macroexpand1 ArityException handling
              César Bolaños (1/3)
              Justin Glenn Smith (1/5)
@@ -254,26 +258,23 @@ Defect
     0.27   2 Triaged      [CLJ-1137] Metadata on a def gets evaluated twice
              Marshall T. Vandegrift (1/4)
              Nicola Mometto (1/51)
-    0.25   1 Open         [CLJ-1207] Importing a class that does not exist fails to report the name of the class that did not exist
-             Tom Crayford (1/4)
-    0.24   3 Open         [CLJ-1445] pprint prints some metadata when *print-meta* bound to true, but not all
-             Tim McCormack (1/6)
-             Reid McKenzie (1/19)
-             Nicola Mometto (1/51)
     0.23   2 Open         [CLJ-1079] Don't squash explicit :line and :column metadata in the MetaReader
              Colin Jones (1/8)
              Christoffer Sawicki (1/10)
     0.23   2 Open         [CLJ-1381] Improve support for extending protocols to primitive arrays
              Colin Jones (1/8)
              Max Penet (1/10)
-    0.22   2 Triaged      [CLJ-1453] Most Iterator implementations do not correctly implement next failing to throw the required NoSuchElementException
-             Tim McCormack (1/6)
+    0.22   3 Open         [CLJ-1445] pprint prints some metadata when *print-meta* bound to true, but not all
+             Tim McCormack (1/7)
              Reid McKenzie (1/19)
+             Nicola Mometto (1/51)
+    0.20   1 Open         [CLJ-1207] Importing a class that does not exist fails to report the name of the class that did not exist
+             Tom Crayford (1/5)
     0.20   1 Screenable   [CLJ-1650] compile forces namespace reloading from AOT classfile
              Jozef Wagner (1/5)
-    0.19   2 Open         [CLJ-1237] reduce gives a SO for pathological seqs
-             Tim McCormack (1/6)
-             Nicola Mometto (1/51)
+    0.20   2 Triaged      [CLJ-1453] Most Iterator implementations do not correctly implement next failing to throw the required NoSuchElementException
+             Tim McCormack (1/7)
+             Reid McKenzie (1/19)
     0.17   1 Backlog      [CLJ-1157] Classes generated by gen-class aren't loadable from remote codebase for mis-implementation of static-initializer
              Matthew O. Smith (1/6)
     0.17   1 Open         [CLJ-750] clojure.lang.MapEntry violates .equals and .hashCode contracts of HashMap.Entry; leads to non-reflexive .equals, etc.
@@ -282,6 +283,9 @@ Defect
              Mike Anderson (1/6)
     0.17   1 Open         [CLJ-1403] ns-resolve might throw ClassNotFoundException but should return nil
              Mike Rodriguez (1/6)
+    0.16   2 Open         [CLJ-1237] reduce gives a SO for pathological seqs
+             Tim McCormack (1/7)
+             Nicola Mometto (1/51)
     0.14   2 Triaged      [CLJ-1253] Incorrect long division involving Long/MIN_VALUE
              Colin Jones (1/8)
              Nicola Mometto (1/51)
@@ -365,7 +369,7 @@ Enhancement
              Brandon Bloom (1/10)
              Christoffer Sawicki (1/10)
              David Greenberg (1/19)
-    8.60  19 Triaged      [CLJ-703] Improve writeClassFile performance
+    8.53  19 Triaged      [CLJ-703] Improve writeClassFile performance
              Dan Neumann (1)
              David Powell (1)
              Ragnar Dahlen (1)
@@ -378,12 +382,31 @@ Enhancement
              Michael Patrick O'Keefe (1/3)
              davie moston (1/3)
              Jason Wolfe (1/4)
-             Tom Crayford (1/4)
-             Tim McCormack (1/6)
+             Tom Crayford (1/5)
              Colin Fleming (1/7)
+             Tim McCormack (1/7)
              Max Penet (1/10)
              Andy Fingerhut (1/11)
              Michael Blume (1/12)
+             Nicola Mometto (1/51)
+    7.96  18 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
+             Gabriel Ki (1)
+             Lei Wang (1)
+             Paul Gearon (1)
+             Ryan Senior (1)
+             Jeff Weiss (1/2)
+             Laurent Petit (1/2)
+             Paudi Moriarty (1/2)
+             Phil Hagelberg (1/2)
+             Sean Corfield (1/2)
+             Devin Walters (1/3)
+             Johan Gall (1/3)
+             Jozef Wagner (1/5)
+             Colin Taylor (1/6)
+             Patrick Houk (1/6)
+             Gary Trakhman (1/10)
+             Michael Blume (1/12)
+             David Greenberg (1/19)
              Nicola Mometto (1/51)
     7.73  16 Vetted       [CLJ-865] Macroexpansion discards &form metadata
              Anthony Simpson (1)
@@ -400,24 +423,6 @@ Enhancement
              Mike Anderson (1/6)
              Colin Fleming (1/7)
              Tassilo Horn (1/9)
-             David Greenberg (1/19)
-             Nicola Mometto (1/51)
-    7.62  17 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
-             Gabriel Ki (1)
-             Lei Wang (1)
-             Paul Gearon (1)
-             Ryan Senior (1)
-             Jeff Weiss (1/2)
-             Laurent Petit (1/2)
-             Paudi Moriarty (1/2)
-             Phil Hagelberg (1/2)
-             Sean Corfield (1/2)
-             Devin Walters (1/3)
-             Jozef Wagner (1/5)
-             Colin Taylor (1/6)
-             Patrick Houk (1/6)
-             Gary Trakhman (1/10)
-             Michael Blume (1/12)
              David Greenberg (1/19)
              Nicola Mometto (1/51)
     6.20  15 Triaged      [CLJ-1298] Add more type predicate fns to core
@@ -481,10 +486,11 @@ Enhancement
              Michael van Acken (1/5)
              Patrick Houk (1/6)
              Andy Fingerhut (1/11)
-    3.91   9 Open         [CLJ-1078] Add queue and queue? to clojure.core
+    4.41  10 Open         [CLJ-1078] Add queue and queue? to clojure.core
              Allen Rohner (1)
              Anthony Grimes (1)
              Bruce Hauman (1)
+             Jenan Wise (1/2)
              John Jacobsen (1/3)
              Francis Avila (1/4)
              Colin Taylor (1/6)
@@ -530,26 +536,26 @@ Enhancement
              Ian Eslick (1)
              Roberto Robles (1)
              Adrian Medina (1/3)
-    2.96  13 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
-             Brian Pratt (1)
-             Eric Normand (1/2)
-             Chas Emerick (1/5)
-             Michael van Acken (1/5)
-             Vlad Bokov (1/5)
-             Alex Miller (1/6)
-             Tim McCormack (1/6)
-             Ambrose Bonnaire-Sergeant (1/7)
-             Colin Jones (1/8)
-             Christoffer Sawicki (1/10)
-             Bozhidar Batsov (1/11)
-             Reid McKenzie (1/19)
-             Nicola Mometto (1/51)
     2.95   5 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
              Andreas Steffan (1)
              Tomoharu Fujita (1)
              Sanel Zukan (1/2)
              Alex Fowler (1/4)
              Greg Chapman (1/5)
+    2.94  13 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
+             Brian Pratt (1)
+             Eric Normand (1/2)
+             Chas Emerick (1/5)
+             Michael van Acken (1/5)
+             Vlad Bokov (1/5)
+             Alex Miller (1/6)
+             Ambrose Bonnaire-Sergeant (1/7)
+             Tim McCormack (1/7)
+             Colin Jones (1/8)
+             Christoffer Sawicki (1/10)
+             Bozhidar Batsov (1/11)
+             Reid McKenzie (1/19)
+             Nicola Mometto (1/51)
     2.91  10 Backlog      [CLJ-1224] Records do not cache hash like normal maps
              Richard Davies (1)
              Daniel R. Schlegel (1/2)
@@ -637,12 +643,12 @@ Enhancement
              Jeroen van Dijk (1/2)
              Aspasia Beneti (1/3)
              Bart Kastermans (1/3)
-    1.53   5 Triaged      [CLJ-1576] clojure.pprint should print vars as pr does
+    1.51   5 Triaged      [CLJ-1576] clojure.pprint should print vars as pr does
              Jeroen van Dijk (1/2)
              Aspasia Beneti (1/3)
              Bart Kastermans (1/3)
              Justin Glenn Smith (1/5)
-             Tim McCormack (1/6)
+             Tim McCormack (1/7)
     1.50   3 Open         [CLJ-1218] mapcat is too eager
              Philip Potter (1)
              John Jacobsen (1/3)
@@ -650,6 +656,12 @@ Enhancement
     1.50   2 Backlog      [CLJ-415] smarter assert (prints locals)
              Kevin Sookocheff (1)
              Jeff Weiss (1/2)
+    1.34   5 Open         [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
+             Jenan Wise (1/2)
+             César Bolaños (1/3)
+             Gary Fredericks (1/4)
+             Greg Chapman (1/5)
+             Reid McKenzie (1/19)
     1.33   2 Open         [CLJ-200] Extend cond to support inline let, much like for
              Alex Engelberg (1)
              Mark Engelberg (1/3)
@@ -714,11 +726,6 @@ Enhancement
              Maris Orbidans (1/2)
              Chas Emerick (1/5)
              Mike Anderson (1/6)
-    0.84   4 Open         [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
-             César Bolaños (1/3)
-             Gary Fredericks (1/4)
-             Greg Chapman (1/5)
-             Reid McKenzie (1/19)
     0.83   2 Triaged      [CLJ-1209] clojure.test does not print ex-info in error reports
              Ivan Kozik (1/2)
              Stuart Sierra (1/3)
@@ -916,4 +923,6 @@ Enhancement
     0.00   0 Triaged      [CLJ-1624] Support get from arbitrary java.util.List data types
     0.00   0 Triaged      [CLJ-1629] Improve error message when defn form omits parameter declaration
     0.00   0 Triaged      [CLJ-1643] Generative test for sequence implementations
+    0.00   0 Triaged      [CLJ-1653] str of an empty list is not "()"
+    0.00   0 Triaged      [CLJ-1654] Reuse seq in some
     0.00   0 Vetted       [CLJ-992] `iterate` reducer

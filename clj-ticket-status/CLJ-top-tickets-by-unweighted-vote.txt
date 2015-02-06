@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: February 2, 2015
+Date: February 5, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -45,9 +45,9 @@ Defect
    9 Triaged      [CLJ-1527] Harmonize accepted / documented symbol and keyword syntax over various readers
    9 Backlog      [CLJ-1250] Reducer (and folder) instances hold onto the head of seqs
    8 Backlog      [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
+   8 Triaged      [CLJ-1232] Functions with non-qualified return type hints force import of hinted classes when called from other namespace
    7 Triaged      [CLJ-1372] Inconsistent hash with java collections
-   6 Triaged      [CLJ-1232] Functions with non-qualified return type hints force import of hinted classes when called from other namespace
-   6 Incomplete   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
+   7 Incomplete   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
    5 Triaged      [CLJ-130] Namespace metadata lost in AOT compile
    5 Backlog      [CLJ-1093] Empty PersistentCollections get incorrectly evaluated as their generic clojure counterpart
    4 Triaged      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
@@ -57,6 +57,7 @@ Defect
    3 Open         [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
    3 Backlog      [CLJ-787] transient blows up when passed a vector created by subvec
    3 Backlog      [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
+   3 Screened     [CLJ-1604] AOT'ed code that defs a var with clojure.core symbol name causes IllegalStateException
    3 Triaged      [CLJ-1620] Constants are leaked in case of a reentrant eval
    3 Open         [CLJ-1279] Fix confusing macroexpand1 ArityException handling
    3 Open         [CLJ-1423] Applying a var to an infinite arglist consumes all available memory
@@ -65,7 +66,6 @@ Defect
    2 Open         [CLJ-1649] Hash/equality inconsistency for floats & doubles
    2 Triaged      [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
    2 Open         [CLJ-1286] Fix reader spec and regex to match code for keywords starting with digits
-   2 Screened     [CLJ-1604] AOT'ed code that defs a var with clojure.core symbol name causes IllegalStateException
    2 Triaged      [CLJ-1195] emit-hinted-impl expands to non-ns-qualified invocation of 'fn'
    2 Backlog      [CLJ-274] cannot close over mutable fields (in deftype)
    2 Open         [CLJ-1242] get/= on sorted collections when types don't match result in a ClassCastException
@@ -135,16 +135,16 @@ Enhancement
 
   24 Triaged      [CLJ-1449] Add starts-with? ends-with? contains? to clojure.string
   19 Triaged      [CLJ-703] Improve writeClassFile performance
-  17 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
+  18 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
   16 Vetted       [CLJ-865] Macroexpansion discards &form metadata
   15 Triaged      [CLJ-1298] Add more type predicate fns to core
   15 Backlog      [CLJ-1517] Unrolled small vectors
   13 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
   11 Vetted       [CLJ-1005] Use transient map in zipmap
   10 Triaged      [CLJ-1418] make as-> macro compatible with destructuring
+  10 Open         [CLJ-1078] Add queue and queue? to clojure.core
   10 Backlog      [CLJ-1224] Records do not cache hash like normal maps
    9 Open         [CLJ-1278] Identify Clojure namespace and function name in a compiled function's toString()
-   9 Open         [CLJ-1078] Add queue and queue? to clojure.core
    7 Vetted       [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
    7 Triaged      [CLJ-440] java method calls cannot omit varargs
    7 Triaged      [CLJ-308] protocol-ize with-open
@@ -157,6 +157,7 @@ Enhancement
    5 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
    5 Backlog      [CLJ-1208] Namespace is not loaded on defrecord class init
    5 Triaged      [CLJ-1576] clojure.pprint should print vars as pr does
+   5 Open         [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
    5 Triaged      [CLJ-1458] Use transients in merge and merge-with
    5 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
    5 Open         [CLJ-401] Promote "seqable?" from contrib?
@@ -167,7 +168,6 @@ Enhancement
    4 Open         [CLJ-899] Accept and ignore colon between key and value in map literals
    4 Backlog      [CLJ-1553] Parallel transduce
    4 Open         [CLJ-1467] Implement Comparable in PersistentList
-   4 Open         [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
    3 Open         [CLJ-1519] Added extra arity to clojure.core/ns-* fns
    3 Open         [CLJ-272] load/ns/require/use overhaul
    3 Open         [CLJ-1218] mapcat is too eager
@@ -290,3 +290,5 @@ Enhancement
    0 Screened     [CLJ-1635] Make distinct/dedupe/interpose transducer tests play nicely with new reporting
    0 Screened     [CLJ-1642] Add mention of new :warn-on-boxed option to doc string of unchecked-math Var
    0 Triaged      [CLJ-1643] Generative test for sequence implementations
+   0 Triaged      [CLJ-1653] str of an empty list is not "()"
+   0 Triaged      [CLJ-1654] Reuse seq in some
