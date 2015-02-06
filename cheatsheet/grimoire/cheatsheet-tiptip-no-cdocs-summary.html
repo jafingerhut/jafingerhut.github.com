@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v21)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v22)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -251,19 +251,10 @@ supplied, uses the root cause of the
               </tr>
               <tr class="odd">
                 <td>Compare</td>
-                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/=/" class="tooltip" title="<pre>clojure.core/=
-([x] [x y] [x y & more])
-  Equality. Returns true if x equals y, false if not. Same as
-  Java x.equals(y) except it also works for nil, and compares
-  numbers and collections in a type-independent manner.  Clojure's immutable
-data
-  structures define equals() (and thus =) as a value, not an identity,
-  comparison.</pre>">=</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/==/" class="tooltip" title="<pre>clojure.core/==
+                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/==/" class="tooltip" title="<pre>clojure.core/==
 ([x] [x y] [x y & more])
   Returns non-nil if nums all have the equivalent
-  value (type-independent), otherwise false</pre>">==</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/not=/" class="tooltip" title="<pre>clojure.core/not=
-([x] [x y] [x y & more])
-  Same as (not (= obj1 obj2))</pre>">not=</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/</" class="tooltip" title="<pre>clojure.core/<
+  value (type-independent), otherwise false</pre>">==</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/</" class="tooltip" title="<pre>clojure.core/<
 ([x] [x y] [x y & more])
   Returns non-nil if nums are in monotonically increasing order,
   otherwise false.</pre>">&lt;</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/>/" class="tooltip" title="<pre>clojure.core/>
@@ -424,7 +415,7 @@ Macro
 ([fmt & args])
   Formats a string using java.lang.String.format, see java.util.Formatter for
 format
-  string syntax</pre>">format</a> See also IO/to string</code></td>
+  string syntax</pre>">format</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">"a string"</a> "escapes \b\f\n\t\r\" octal \377 hex \ucafe" See also IO/to string</code></td>
               </tr>
               <tr class="even">
                 <td>Use</td>
@@ -642,7 +633,7 @@ format
 ([x])
   Coerce to char</pre>">char</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/char-name-string/" class="tooltip" title="<pre>clojure.core/char-name-string
   Returns name string for char or nil if none</pre>">char-name-string</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/char-escape-string/" class="tooltip" title="<pre>clojure.core/char-escape-string
-  Returns escape string for char or nil if none</pre>">char-escape-string</a></code></td>
+  Returns escape string for char or nil if none</pre>">char-escape-string</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">literals</a>: \a \newline (more at link)</code></td>
               </tr>
               <tr class="even">
                 <td>Keywords</td>
@@ -656,7 +647,7 @@ format
   Returns a Keyword with the given namespace and name if one already
   exists.  This function will not intern a new keyword. If the keyword
   has not already been interned, it will return nil.  Do not use :
-  in the keyword strings, it will be added automatically.</pre>">find-keyword</a></code></td>
+  in the keyword strings, it will be added automatically.</pre>">find-keyword</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">literals</a>: :kw :my.ns/kw ::in-cur-ns</code></td>
               </tr>
               <tr class="odd">
                 <td>Symbols</td>
@@ -668,7 +659,11 @@ format
 ([] [prefix-string])
   Returns a new symbol with a unique name. If a prefix string is
   supplied, the name is prefix# where # is some unique number. If
-  prefix is not supplied, the prefix is 'G__'.</pre>">gensym</a></code></td>
+  prefix is not supplied, the prefix is 'G__'.</pre>">gensym</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">literals</a>: my-sym my.ns/foo</code></td>
+              </tr>
+              <tr class="even">
+                <td>Misc</td>
+                <td><code><a href="http://clojure.org/reader#The%20Reader--Reader%20forms">literals</a>: true false nil</code></td>
               </tr>
             </tbody>
           </table>
@@ -1205,10 +1200,7 @@ kmap</pre>">rename</a></code></td>
   numbers and collections in a type-independent manner.  Clojure's immutable
 data
   structures define equals() (and thus =) as a value, not an identity,
-  comparison.</pre>">=</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/==/" class="tooltip" title="<pre>clojure.core/==
-([x] [x y] [x y & more])
-  Returns non-nil if nums all have the equivalent
-  value (type-independent), otherwise false</pre>">==</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/identical_QMARK/" class="tooltip" title="<pre>clojure.core/identical?
+  comparison.</pre>">=</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/identical_QMARK/" class="tooltip" title="<pre>clojure.core/identical?
 ([x y])
   Tests if 2 arguments are the same object</pre>">identical?</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/not=/" class="tooltip" title="<pre>clojure.core/not=
 ([x] [x y] [x y & more])

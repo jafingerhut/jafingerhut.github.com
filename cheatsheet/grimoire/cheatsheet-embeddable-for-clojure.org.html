@@ -32,7 +32,7 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
               </tr>
               <tr class="odd">
                 <td>Compare</td>
-                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/=/">=</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/==/">==</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/not=/">not=</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/</">&lt;</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/>/">&gt;</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/<=/">&lt;=</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/>=/">&gt;=</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/compare/">compare</a></code></td>
+                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/==/">==</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/</">&lt;</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/>/">&gt;</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/<=/">&lt;=</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/>=/">&gt;=</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/compare/">compare</a></code></td>
               </tr>
               <tr class="even">
                 <td>Bitwise</td>
@@ -65,7 +65,7 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
             <tbody>
               <tr class="odd">
                 <td>Create</td>
-                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/str/">str</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/format/">format</a> See also IO/to string</code></td>
+                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/str/">str</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/format/">format</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">"a string"</a> "escapes \b\f\n\t\r\" octal \377 hex \ucafe" See also IO/to string</code></td>
               </tr>
               <tr class="even">
                 <td>Use</td>
@@ -94,15 +94,19 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
             <tbody>
               <tr class="odd">
                 <td>Characters</td>
-                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/char/">char</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/char-name-string/">char-name-string</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/char-escape-string/">char-escape-string</a></code></td>
+                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/char/">char</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/char-name-string/">char-name-string</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/char-escape-string/">char-escape-string</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">literals</a>: \a \newline (more at link)</code></td>
               </tr>
               <tr class="even">
                 <td>Keywords</td>
-                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/keyword/">keyword</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/keyword_QMARK/">keyword?</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/find-keyword/">find-keyword</a></code></td>
+                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/keyword/">keyword</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/keyword_QMARK/">keyword?</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/find-keyword/">find-keyword</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">literals</a>: :kw :my.ns/kw ::in-cur-ns</code></td>
               </tr>
               <tr class="odd">
                 <td>Symbols</td>
-                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/symbol/">symbol</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/symbol_QMARK/">symbol?</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/gensym/">gensym</a></code></td>
+                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/symbol/">symbol</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/symbol_QMARK/">symbol?</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/gensym/">gensym</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">literals</a>: my-sym my.ns/foo</code></td>
+              </tr>
+              <tr class="even">
+                <td>Misc</td>
+                <td><code><a href="http://clojure.org/reader#The%20Reader--Reader%20forms">literals</a>: true false nil</code></td>
               </tr>
             </tbody>
           </table>
@@ -257,7 +261,7 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
             <tbody>
               <tr class="odd">
                 <td>Compare</td>
-                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/=/">=</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/==/">==</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/identical_QMARK/">identical?</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/not=/">not=</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/not/">not</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/compare/">compare</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.data/diff/">clojure.data/diff</a></code></td>
+                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/=/">=</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/identical_QMARK/">identical?</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/not=/">not=</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/not/">not</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/compare/">compare</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.data/diff/">clojure.data/diff</a></code></td>
               </tr>
               <tr class="even">
                 <td>Test</td>

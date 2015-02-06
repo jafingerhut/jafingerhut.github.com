@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v21)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v22)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -309,27 +309,13 @@ See also: max, min-key">min</a> <a href="http://clojuredocs.org/clojure_core/clo
               </tr>
               <tr class="odd">
                 <td>Compare</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/=" title="clojure.core/=
-([x] [x y] [x y & more])
-  Equality. Returns true if x equals y, false if not. Same as
-  Java x.equals(y) except it also works for nil, and compares
-  numbers and collections in a type-independent manner.  Clojure's immutable
-data
-  structures define equals() (and thus =) as a value, not an identity,
-  comparison.
-
-1 example with 18 lines, 1 comment on Fri Aug 29 2014
-See also: ==, not=, identical?">=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/==" title="clojure.core/==
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/==" title="clojure.core/==
 ([x] [x y] [x y & more])
   Returns non-nil if nums all have the equivalent
   value (type-independent), otherwise false
 
 1 example with 12 lines, 3 comments on Fri Aug 29 2014
-See also: =, identical?">==</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/not=" title="clojure.core/not=
-([x] [x y] [x y & more])
-  Same as (not (= obj1 obj2))
-
-1 example with 17 lines on Fri Aug 29 2014">not=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/<" title="clojure.core/<
+See also: =, identical?">==</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/<" title="clojure.core/<
 ([x] [x y] [x y & more])
   Returns non-nil if nums are in monotonically increasing order,
   otherwise false.
@@ -628,7 +614,7 @@ format
   string syntax
 
 3 examples totaling 72 lines on Fri Aug 29 2014
-See also: printf, cl-format, print-table">format</a> See also IO/to string</code></td>
+See also: printf, cl-format, print-table">format</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">"a string"</a> "escapes \b\f\n\t\r\" octal \377 hex \ucafe" See also IO/to string</code></td>
               </tr>
               <tr class="even">
                 <td>Use</td>
@@ -941,7 +927,7 @@ See also: char-escape-string">char-name-string</a> <a href="http://clojuredocs.o
   Returns escape string for char or nil if none
 
 1 example with 11 lines on Fri Aug 29 2014
-See also: char-name-string">char-escape-string</a></code></td>
+See also: char-name-string">char-escape-string</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">literals</a>: \a \newline (more at link)</code></td>
               </tr>
               <tr class="even">
                 <td>Keywords</td>
@@ -962,7 +948,7 @@ See also: name, keyword?, namespace, find-keyword, symbol">keyword</a> <a href="
   has not already been interned, it will return nil.  Do not use :
   in the keyword strings, it will be added automatically.
 
-0 examples on Fri Aug 29 2014">find-keyword</a></code></td>
+0 examples on Fri Aug 29 2014">find-keyword</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">literals</a>: :kw :my.ns/kw ::in-cur-ns</code></td>
               </tr>
               <tr class="odd">
                 <td>Symbols</td>
@@ -981,7 +967,11 @@ See also: var, var?, symbol?, name, namespace, keyword">symbol</a> <a href="http
   supplied, the name is prefix# where # is some unique number. If
   prefix is not supplied, the prefix is 'G__'.
 
-3 examples totaling 28 lines, 1 comment on Fri Aug 29 2014">gensym</a></code></td>
+3 examples totaling 28 lines, 1 comment on Fri Aug 29 2014">gensym</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">literals</a>: my-sym my.ns/foo</code></td>
+              </tr>
+              <tr class="even">
+                <td>Misc</td>
+                <td><code><a href="http://clojure.org/reader#The%20Reader--Reader%20forms">literals</a>: true false nil</code></td>
               </tr>
             </tbody>
           </table>
@@ -1845,13 +1835,7 @@ data
   comparison.
 
 1 example with 18 lines, 1 comment on Fri Aug 29 2014
-See also: ==, not=, identical?">=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/==" title="clojure.core/==
-([x] [x y] [x y & more])
-  Returns non-nil if nums all have the equivalent
-  value (type-independent), otherwise false
-
-1 example with 12 lines, 3 comments on Fri Aug 29 2014
-See also: =, identical?">==</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/identical_q" title="clojure.core/identical?
+See also: ==, not=, identical?">=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/identical_q" title="clojure.core/identical?
 ([x y])
   Tests if 2 arguments are the same object
 

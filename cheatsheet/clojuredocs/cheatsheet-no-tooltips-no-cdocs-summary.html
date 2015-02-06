@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v21)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v22)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -182,7 +182,7 @@ tr.even {
               </tr>
               <tr class="odd">
                 <td>Compare</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/=">=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/==">==</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/not=">not=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/<">&lt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/>">&gt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/<=">&lt;=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/>=">&gt;=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/compare">compare</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/==">==</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/<">&lt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/>">&gt;</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/<=">&lt;=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/>=">&gt;=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/compare">compare</a></code></td>
               </tr>
               <tr class="even">
                 <td>Bitwise</td>
@@ -215,7 +215,7 @@ tr.even {
             <tbody>
               <tr class="odd">
                 <td>Create</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/str">str</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/format">format</a> See also IO/to string</code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/str">str</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/format">format</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">"a string"</a> "escapes \b\f\n\t\r\" octal \377 hex \ucafe" See also IO/to string</code></td>
               </tr>
               <tr class="even">
                 <td>Use</td>
@@ -244,15 +244,19 @@ tr.even {
             <tbody>
               <tr class="odd">
                 <td>Characters</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/char">char</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/char-name-string">char-name-string</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/char-escape-string">char-escape-string</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/char">char</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/char-name-string">char-name-string</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/char-escape-string">char-escape-string</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">literals</a>: \a \newline (more at link)</code></td>
               </tr>
               <tr class="even">
                 <td>Keywords</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/keyword">keyword</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/keyword_q">keyword?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/find-keyword">find-keyword</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/keyword">keyword</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/keyword_q">keyword?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/find-keyword">find-keyword</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">literals</a>: :kw :my.ns/kw ::in-cur-ns</code></td>
               </tr>
               <tr class="odd">
                 <td>Symbols</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/symbol">symbol</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/symbol_q">symbol?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/gensym">gensym</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/symbol">symbol</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/symbol_q">symbol?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/gensym">gensym</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">literals</a>: my-sym my.ns/foo</code></td>
+              </tr>
+              <tr class="even">
+                <td>Misc</td>
+                <td><code><a href="http://clojure.org/reader#The%20Reader--Reader%20forms">literals</a>: true false nil</code></td>
               </tr>
             </tbody>
           </table>
@@ -407,7 +411,7 @@ tr.even {
             <tbody>
               <tr class="odd">
                 <td>Compare</td>
-                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/=">=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/==">==</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/identical_q">identical?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/not=">not=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/not">not</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/compare">compare</a> <a href="http://clojuredocs.org/clojure_core/clojure.data/diff">clojure.data/diff</a></code></td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/=">=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/identical_q">identical?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/not=">not=</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/not">not</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/compare">compare</a> <a href="http://clojuredocs.org/clojure_core/clojure.data/diff">clojure.data/diff</a></code></td>
               </tr>
               <tr class="even">
                 <td>Test</td>
