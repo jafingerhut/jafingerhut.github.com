@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: February 5, 2015
+Date: February 9, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -39,7 +39,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
-   10.11  19 Screened     [CLJ-1568] Incorrect error locations reported in the stacktrace
+   10.06  19 Screened     [CLJ-1568] Incorrect error locations reported in the stacktrace
              Chad Harrington (1)
              Kevin Ilchmann Jørgensen (1)
              Lars Andersen (1)
@@ -54,12 +54,12 @@ Defect
              Alan Bustos Kleiman (1/3)
              Alexander Yakushev (1/3)
              Dave Kincaid (1/4)
-             Matt Earnshaw (1/4)
+             Matt Earnshaw (1/5)
              Peter Taoussanis (1/5)
              Tobias Kortkamp (1/6)
              Reid McKenzie (1/19)
              Nicola Mometto (1/51)
-    9.97  23 Screened     [CLJ-1561] Incorrect line numbers are emitted
+    9.92  23 Screened     [CLJ-1561] Incorrect line numbers are emitted
              Alexander Taggart (1)
              Christopher Freeman (1)
              Daniel Glauser (1)
@@ -74,8 +74,8 @@ Defect
              Alexander Yakushev (1/3)
              Stephen C. Gilardi (1/3)
              Dave Kincaid (1/4)
-             Matt Earnshaw (1/4)
              Andrew Rosa (1/5)
+             Matt Earnshaw (1/5)
              Peter Taoussanis (1/5)
              Tobias Kortkamp (1/6)
              David Leatherman (1/7)
@@ -91,7 +91,7 @@ Defect
              Herwig Hochleitner (1/3)
              John Hume (1/3)
              Andy Fingerhut (1/11)
-    3.72  16 Backlog      [CLJ-700] contains? broken for transient collections
+    3.68  16 Backlog      [CLJ-700] contains? broken for transient collections
              Dom Kiva-Meyer (1/2)
              Laszlo Török (1/2)
              Phill Wolf (1/2)
@@ -99,21 +99,21 @@ Defect
              Mark Engelberg (1/3)
              Jason Wolfe (1/4)
              Greg Chapman (1/5)
-             Justin Glenn Smith (1/5)
              Peter Taoussanis (1/5)
              Alex Miller (1/6)
+             Justin Glenn Smith (1/6)
              Patrick Houk (1/6)
              John Walker (1/7)
              Gary Trakhman (1/10)
              David Greenberg (1/19)
              Reid McKenzie (1/19)
              Nicola Mometto (1/51)
-    3.24   9 Triaged      [CLJ-1527] Harmonize accepted / documented symbol and keyword syntax over various readers
+    3.21   9 Triaged      [CLJ-1527] Harmonize accepted / documented symbol and keyword syntax over various readers
              James Laver (1)
              James Reeves (1)
              Alan Bustos Kleiman (1/3)
              Michael Patrick O'Keefe (1/3)
-             Justin Glenn Smith (1/5)
+             Justin Glenn Smith (1/6)
              Colin Fleming (1/7)
              Andy Fingerhut (1/11)
              Bozhidar Batsov (1/11)
@@ -216,15 +216,15 @@ Defect
     0.58   2 Open         [CLJ-1286] Fix reader spec and regex to match code for keywords starting with digits
              Michael Patrick O'Keefe (1/3)
              Francis Avila (1/4)
-    0.55   3 Open         [CLJ-1279] Fix confusing macroexpand1 ArityException handling
-             César Bolaños (1/3)
-             Justin Glenn Smith (1/5)
-             Nicola Mometto (1/51)
     0.55   4 Open         [CLJ-1029] ns defmacro allows arbitrary execution of clojure.core fns
              David Nolen (1/4)
              Ambrose Bonnaire-Sergeant (1/7)
              Gary Trakhman (1/10)
              David Greenberg (1/19)
+    0.52   3 Open         [CLJ-1279] Fix confusing macroexpand1 ArityException handling
+             César Bolaños (1/3)
+             Justin Glenn Smith (1/6)
+             Nicola Mometto (1/51)
     0.52   2 Triaged      [CLJ-1195] emit-hinted-impl expands to non-ns-qualified invocation of 'fn'
              Kei Tsuji (1/2)
              Nicola Mometto (1/51)
@@ -320,7 +320,7 @@ Defect
     0.00   0 Backlog      [CLJ-346] (pprint-newline :fill) is not handled correctly
     0.00   0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
     0.00   0 Backlog      [CLJ-1161] sources jar has bad versions.properties resource
-    0.00   0 Screened     [CLJ-1637] vec fails on MapEntry
+    0.00   0 Ok           [CLJ-1637] vec fails on MapEntry
     0.00   0 Screened     [CLJ-1638] Regression - PersistentVector.create(List) was removed in 1.7.0-alpha5
     0.00   0 Triaged      [CLJ-1134] star-directive in clojure.pprint/cl-format with an at-prefix ("~n@*") do not obey its specifications
     0.00   0 Triaged      [CLJ-1313] Correct a few unit tests
@@ -338,6 +338,7 @@ Defect
     0.00   0 Triaged      [CLJ-1588] StackOverflow in clojure.test macroexpand with `are` and anonymous `fn`
     0.00   0 Triaged      [CLJ-1596] Using keywords in place of symbols for defrecord fields causes a compiler exception with incorrect line number
     0.00   0 Triaged      [CLJ-1644] into-array fails for sequences starting with nil
+    0.00   0 Triaged      [CLJ-1645] 'javap -v' on protocol class reveals no source file
     0.00   0 Triaged      [CLJ-1647] infinite loop in 'partition' and 'partition-all' when 'step' or 'n' is not positive
     0.00   0 Triaged      [CLJ-1648] Use equals() instead of == when resolving Symbol
 
@@ -643,12 +644,6 @@ Enhancement
              Jeroen van Dijk (1/2)
              Aspasia Beneti (1/3)
              Bart Kastermans (1/3)
-    1.51   5 Triaged      [CLJ-1576] clojure.pprint should print vars as pr does
-             Jeroen van Dijk (1/2)
-             Aspasia Beneti (1/3)
-             Bart Kastermans (1/3)
-             Justin Glenn Smith (1/5)
-             Tim McCormack (1/7)
     1.50   3 Open         [CLJ-1218] mapcat is too eager
              Philip Potter (1)
              John Jacobsen (1/3)
@@ -656,6 +651,12 @@ Enhancement
     1.50   2 Backlog      [CLJ-415] smarter assert (prints locals)
              Kevin Sookocheff (1)
              Jeff Weiss (1/2)
+    1.48   5 Triaged      [CLJ-1576] clojure.pprint should print vars as pr does
+             Jeroen van Dijk (1/2)
+             Aspasia Beneti (1/3)
+             Bart Kastermans (1/3)
+             Justin Glenn Smith (1/6)
+             Tim McCormack (1/7)
     1.34   5 Open         [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
              Jenan Wise (1/2)
              César Bolaños (1/3)
@@ -682,9 +683,6 @@ Enhancement
     1.25   2 Open         [CLJ-1256] Support type-hinted overrides of function parameters
              Xiaoyu Zhang (1)
              Alex Fowler (1/4)
-    1.25   2 Triaged      [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
-             Jonathan Halterman (1)
-             Matt Earnshaw (1/4)
     1.23   5 Triaged      [CLJ-1458] Use transients in merge and merge-with
              Alejandro Ciniglio (1/2)
              Huahai Yang (1/3)
@@ -694,16 +692,13 @@ Enhancement
     1.20   2 Open         [CLJ-1523] Add 'doseq' like macro for transducers
              Niels van Klaveren (1)
              Jozef Wagner (1/5)
+    1.20   2 Triaged      [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
+             Jonathan Halterman (1)
+             Matt Earnshaw (1/5)
     1.05   3 Open         [CLJ-1201] There should also be writing in clojure.edn
              Marc Limotte (1/2)
              Trevor Hartman (1/2)
              Reid McKenzie (1/19)
-    1.02   5 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
-             Adrian Medina (1/3)
-             Matt Earnshaw (1/4)
-             Steve Miner (1/4)
-             Brandon Bloom (1/10)
-             Michael Blume (1/12)
     1.00   1 Open         [CLJ-995] sorted-set doesn't support IEditableCollection
              François Rey (1)
     1.00   1 Open         [CLJ-1162] Error Message when calling deref on a non-IDeref is unhelpful
@@ -718,6 +713,12 @@ Enhancement
              kalina todorova (1)
     1.00   1 Triaged      [CLJ-1277] Speed up printing of time instants by adding type hints
              Alexander Kiel (1)
+    0.97   5 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
+             Adrian Medina (1/3)
+             Steve Miner (1/4)
+             Matt Earnshaw (1/5)
+             Brandon Bloom (1/10)
+             Michael Blume (1/12)
     0.92   3 Triaged      [CLJ-825] Protocol implementation inconsistencies when overloading arity
              Michael Klishin (1/2)
              Dmitri Naumov (1/4)
@@ -726,6 +727,10 @@ Enhancement
              Maris Orbidans (1/2)
              Chas Emerick (1/5)
              Mike Anderson (1/6)
+    0.87   3 Triaged      [CLJ-1656] Unroll assoc and assoc! for small numbers of arguments
+             Andrew S (1/2)
+             Matt Earnshaw (1/5)
+             Justin Glenn Smith (1/6)
     0.83   2 Triaged      [CLJ-1209] clojure.test does not print ex-info in error reports
              Ivan Kozik (1/2)
              Stuart Sierra (1/3)
@@ -753,6 +758,9 @@ Enhancement
     0.67   2 Open         [CLJ-1367] Allow case statement to compare java constants
              Benjamin Peter (1/2)
              Patrick Houk (1/6)
+    0.52   2 Backlog      [CLJ-731] Create macro to variadically unroll a combinator function definition
+             Andrew S (1/2)
+             Nicola Mometto (1/51)
     0.50   1 Backlog      [CLJ-1610] Unrolled small maps
              Michał Marczyk (1/2)
     0.50   1 Open         [CLJ-970] extend/implement parameterized types (generics)
@@ -818,8 +826,6 @@ Enhancement
              Greg Chapman (1/5)
     0.20   1 Triaged      [CLJ-1259] Speed up pprint
              Vlad Bokov (1/5)
-    0.20   1 Triaged      [CLJ-1607] docstring for clojure.core/counted? should be more specific
-             Justin Glenn Smith (1/5)
     0.19   2 Open         [CLJ-706] make use of deprecated namespaces/vars easier to spot
              Gary Trakhman (1/10)
              Andy Fingerhut (1/11)
@@ -834,6 +840,8 @@ Enhancement
              Matthew O. Smith (1/6)
     0.17   1 Triaged      [CLJ-1598] Make if forms compile directly to the appropriate branch expression if the test is a literal
              Colin Taylor (1/6)
+    0.17   1 Triaged      [CLJ-1607] docstring for clojure.core/counted? should be more specific
+             Justin Glenn Smith (1/6)
     0.14   1 Vetted       [CLJ-1099] better error message when passing non-seq to seq
              John Walker (1/7)
     0.12   2 Open         [CLJ-1376] Initialize internal maps to more efficient version
@@ -866,8 +874,6 @@ Enhancement
              Reid McKenzie (1/19)
     0.05   1 Vetted       [CLJ-1130] when unable to match a method, report arity caller was looking for
              David Greenberg (1/19)
-    0.02   1 Backlog      [CLJ-731] Create macro to variadically unroll a combinator function definition
-             Nicola Mometto (1/51)
     0.02   1 Open         [CLJ-792] Refactor method resolution code out of Compiler and into Reflector
              Nicola Mometto (1/51)
     0.02   1 Open         [CLJ-864] defrecord positional arity factory fn should have an inline version that calls the record constructor
