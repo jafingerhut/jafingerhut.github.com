@@ -275,7 +275,7 @@
  {:display-name "Matt Earnshaw",
   :usernames #{"mearnsh"},
   :emails #{"matt@earnshaw.org.uk"}}
- ("CLJ-1568" "CLJ-1561" "CLJ-1452" "CLJ-1149"),
+ ("CLJ-1656" "CLJ-1568" "CLJ-1561" "CLJ-1452" "CLJ-1149"),
  {:display-name "Dmitry", :usernames #{"df2"}, :emails #{"df2@wm.ru"}}
  (),
  {:display-name "Robert (Bobby) Evans",
@@ -1699,6 +1699,10 @@
   :usernames #{"maggie"},
   :emails #{"maggie@thinkrelevance.com"}}
  (),
+ {:display-name "Phillip Carter",
+  :usernames #{"cartermp"},
+  :emails #{"phillip.phillipcarter.carter@gmail.com"}}
+ (),
  {:display-name "Tom Hickey",
   :usernames #{"thickey"},
   :emails #{"thickey@gmail.com"}}
@@ -2204,6 +2208,10 @@
  {:display-name "Aaron France",
   :usernames #{"aeronotix"},
   :emails #{"aaron.l.france@gmail.com"}}
+ (),
+ {:display-name "Kaijah Hougham",
+  :usernames #{"seberius"},
+  :emails #{"admin@infiniteskycorp.com"}}
  (),
  {:display-name "Stephen Nelson",
   :usernames #{"sfnelson"},
@@ -3973,7 +3981,7 @@
  {:display-name "Leon Grapenthin",
   :usernames #{"lgs32a"},
   :emails #{"grapenthin.leon@gmail.com"}}
- ("CLJS-988"),
+ (),
  {:display-name "Pascal Germroth",
   :usernames #{"neapel"},
   :emails #{"pascal@ensieve.org"}}
@@ -4275,7 +4283,7 @@
  {:display-name "Justin Glenn Smith",
   :usernames #{"noisesmith"},
   :emails #{"noisesmith@gmail.com"}}
- ("CLJ-1607" "CLJ-1576" "CLJ-1527" "CLJ-1279" "CLJ-700"),
+ ("CLJ-1656" "CLJ-1607" "CLJ-1576" "CLJ-1527" "CLJ-1279" "CLJ-700"),
  {:display-name "Jiří Maršík",
   :usernames #{"jirkamarsik"},
   :emails #{"jiri.marsik89@gmail.com"}}
@@ -5917,6 +5925,10 @@
   :usernames #{"speige"},
   :emails #{"devingarner@gmail.com"}}
  (),
+ {:display-name "Michael Nussbaum",
+  :usernames #{"mnussbaum"},
+  :emails #{"michaelnussbaum08@gmail.com"}}
+ (),
  {:display-name "Phillip Lord",
   :usernames #{"phillord"},
   :emails #{"phillip.lord@newcastle.ac.uk"}}
@@ -5992,7 +6004,7 @@
  {:display-name "Stephan Behnke",
   :usernames #{"stephanos"},
   :emails #{"dev-clojure@stephanbehnke.de"}}
- ("CLJS-988"),
+ (),
  {:display-name "Ivan Koblik",
   :usernames #{"ikoblik"},
   :emails #{"ikoblik@hotmail.com"}}
@@ -6604,7 +6616,7 @@
  {:display-name "Andrew S",
   :usernames #{"hellofunk"},
   :emails #{"hellofunk@floatingmachine.com"}}
- ("CLJS-1001"),
+ ("CLJS-1001" "CLJ-1656" "CLJ-731"),
  {:display-name "Antti Karanta",
   :usernames #{"akaranta"},
   :emails #{"Antti.Karanta@gmail.com"}}
