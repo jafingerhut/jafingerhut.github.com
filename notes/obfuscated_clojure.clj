@@ -82,3 +82,11 @@ a
 ;; TBD: something involving lots of nested ``` and ~ or ~@ and ',
 ;; perhaps even something in Clojure itself, could be considered
 ;; obfuscated, but it could be taken to worse extremes easily.
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; From dnolen on #clojure IRC, Feb 9 2015:
+
+;; (let [x :foo {a x} {:foo 1}] a)
+;; => 1
+;; dnolen: learn something new everyday
