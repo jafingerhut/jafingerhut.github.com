@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: February 12, 2015
+Date: February 16, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -49,15 +49,15 @@ Defect
    7 Triaged      [CLJ-1372] Inconsistent hash with java collections
    7 Incomplete   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
    5 Triaged      [CLJ-130] Namespace metadata lost in AOT compile
+   5 Triaged      [CLJ-1074] Read/print round-trip for +/-Infinity and NaN
    5 Backlog      [CLJ-1093] Empty PersistentCollections get incorrectly evaluated as their generic clojure counterpart
    4 Triaged      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
    4 Triaged      [CLJ-1565] pprint issues infinite output for a protocol
+   4 Backlog      [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
    4 Triaged      [CLJ-1282] The quote special form should throw an exception if passed more than one form to quote
    4 Open         [CLJ-1029] ns defmacro allows arbitrary execution of clojure.core fns
-   4 Triaged      [CLJ-1074] Read/print round-trip for +/-Infinity and NaN
    3 Open         [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
    3 Backlog      [CLJ-787] transient blows up when passed a vector created by subvec
-   3 Backlog      [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
    3 Screened     [CLJ-1604] AOT'ed code that defs a var with clojure.core symbol name causes IllegalStateException
    3 Triaged      [CLJ-1620] Constants are leaked in case of a reentrant eval
    3 Open         [CLJ-1279] Fix confusing macroexpand1 ArityException handling
@@ -131,6 +131,7 @@ Defect
    0 Triaged      [CLJ-1645] 'javap -v' on protocol class reveals no source file
    0 Triaged      [CLJ-1647] infinite loop in 'partition' and 'partition-all' when 'step' or 'n' is not positive
    0 Triaged      [CLJ-1648] Use equals() instead of == when resolving Symbol
+   0 Triaged      [CLJ-1659] compile leaks files
 
 ========================================
 Enhancement
@@ -160,6 +161,7 @@ Enhancement
    5 Backlog      [CLJ-1208] Namespace is not loaded on defrecord class init
    5 Triaged      [CLJ-1576] clojure.pprint should print vars as pr does
    5 Open         [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
+   5 Triaged      [CLJ-1656] Unroll assoc and assoc! for small numbers of arguments
    5 Triaged      [CLJ-1458] Use transients in merge and merge-with
    5 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
    5 Open         [CLJ-401] Promote "seqable?" from contrib?
@@ -170,7 +172,6 @@ Enhancement
    4 Open         [CLJ-899] Accept and ignore colon between key and value in map literals
    4 Backlog      [CLJ-1553] Parallel transduce
    4 Open         [CLJ-1467] Implement Comparable in PersistentList
-   4 Triaged      [CLJ-1656] Unroll assoc and assoc! for small numbers of arguments
    3 Open         [CLJ-1519] Added extra arity to clojure.core/ns-* fns
    3 Open         [CLJ-272] load/ns/require/use overhaul
    3 Open         [CLJ-99] GC Issue 95: max-key and min-key evaluate k multiple times for arguments

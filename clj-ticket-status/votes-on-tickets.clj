@@ -545,7 +545,7 @@
  {:display-name "Julien Eluard",
   :usernames #{"jeluard"},
   :emails #{"julien.eluard@gmail.com"}}
- ("CLJS-948" "CLJ-1449" "CLJ-1282"),
+ ("CLJ-1449" "CLJ-1282"),
  {:display-name "Dan Chamberlain",
   :usernames #{"dchamberlain"},
   :emails #{"huskie009@hotmail.com"}}
@@ -797,7 +797,7 @@
  {:display-name "pengke",
   :usernames #{"pkvov"},
   :emails #{"pkvov@163.com"}}
- ("CLJS-848"),
+ (),
  {:display-name "Vitaly Shukela",
   :usernames #{"vi"},
   :emails #{"vi0oss@gmail.com"}}
@@ -977,7 +977,7 @@
  {:display-name "Robin Heggelund Hansen",
   :usernames #{"skinney"},
   :emails #{"skinneyz89@gmail.com"}}
- ("CLJS-769"),
+ (),
  {:display-name "Jayaraj Poroor",
   :usernames #{"jayaraj.poroor"},
   :emails #{"jayaraj.poroor@gmail.com"}}
@@ -1642,7 +1642,7 @@
  {:display-name "Timothy Pratley",
   :usernames #{"timothypratley"},
   :emails #{"timothypratley@gmail.com"}}
- ("CLJS-871" "CLJS-769" "CLJ-1561" "CLJ-1063"),
+ ("CLJS-871" "CLJ-1561" "CLJ-1063"),
  {:display-name "Lars Andersen",
   :usernames #{"expez"},
   :emails #{"expez@expez.com"}}
@@ -1943,6 +1943,10 @@
   :usernames #{"tcrawley"},
   :emails #{"toby@tcrawley.org"}}
  ("CLJ-124"),
+ {:display-name "Ralf Schmitt",
+  :usernames #{"schmir"},
+  :emails #{"ralf@systemexit.de"}}
+ (),
  {:display-name "Scott Henry",
   :usernames #{"scotthenry48@gmail.com"},
   :emails #{"scotthenry48@gmail.com"}}
@@ -1966,6 +1970,10 @@
  {:display-name "Luca Gugole",
   :usernames #{"luca.gugole"},
   :emails #{"ziluca.gugole@gmail.com"}}
+ (),
+ {:display-name "Nathan Sorenson",
+  :usernames #{"takeoutweight"},
+  :emails #{"nathan.d.sorenson@gmail.com"}}
  (),
  {:display-name "Benjamin Van Ryseghem",
   :usernames #{"benjaminvanryseghem"},
@@ -2149,6 +2157,7 @@
   :usernames #{"michaelblume"},
   :emails #{"blume.mike@gmail.com"}}
  ("TCHECK-15"
+  "CLJ-1656"
   "CLJ-1622"
   "CLJ-1613"
   "CLJ-1599"
@@ -2159,6 +2168,7 @@
   "CLJ-1454"
   "CLJ-1452"
   "CLJ-1386"
+  "CLJ-1322"
   "CLJ-1282"
   "CLJ-703"
   "CLJ-322"),
@@ -2842,6 +2852,10 @@
   :usernames #{"rinuboney"},
   :emails #{"rinuboney@gmail.com"}}
  (),
+ {:display-name "Andrew Tarzwell",
+  :usernames #{"atarzwell"},
+  :emails #{"atarzwell@gmail.com"}}
+ ("CLJ-1074"),
  {:display-name "Daniel Skarda",
   :usernames #{"skardan"},
   :emails #{"dan.skarda+jira@gmail.com"}}
@@ -2912,7 +2926,7 @@
  {:display-name "Colin Kahn",
   :usernames #{"colinkahn"},
   :emails #{"info@colinkahn.com"}}
- ("CLJS-848"),
+ (),
  {:display-name "Oleh Palianytsia",
   :usernames #{"olegthecat"},
   :emails #{"farenheit466@gmail.com"}}
@@ -2928,6 +2942,10 @@
  {:display-name "Neal Groothuis",
   :usernames #{"ngroot"},
   :emails #{"clojure@nealgroothuis.name"}}
+ (),
+ {:display-name "Rasmus Erik Voel Jensen",
+  :usernames #{"rasmuserik"},
+  :emails #{"rasmuserik@solsort.com"}}
  (),
  {:display-name "Michael Fogleman",
   :usernames #{"mwfogleman"},
@@ -3860,14 +3878,7 @@
  {:display-name "Francis Avila",
   :usernames #{"favila"},
   :emails #{"francisga@gmail.com"}}
- ("CLJS-769"
-  "CLJS-733"
-  "CLJS-677"
-  "CLJ-1418"
-  "CLJ-1286"
-  "CLJ-1103"
-  "CLJ-1078"
-  "ASYNC-91"),
+ ("CLJS-677" "CLJ-1418" "CLJ-1286" "CLJ-1103" "CLJ-1078" "ASYNC-91"),
  {:display-name "Gary Poster",
   :usernames #{"garyposter"},
   :emails #{"gary@modernsongs.com"}}
@@ -4859,7 +4870,7 @@
  {:display-name "Stuart Sierra",
   :usernames #{"stuart.sierra"},
   :emails #{"stuart.sierra@thinkrelevance.com"}}
- ("DXML-10" "CLJS-769" "CLJ-1454" "CLJ-1414" "CLJ-1209"),
+ ("DXML-10" "CLJ-1454" "CLJ-1414" "CLJ-1209"),
  {:display-name "James Aley",
   :usernames #{"jaley"},
   :emails #{"james.aley@gmail.com"}}
@@ -4979,7 +4990,7 @@
  {:display-name "Erik Ouchterlony",
   :usernames #{"ejlo"},
   :emails #{"erik.ouchterlony@bredband.net"}}
- ("CLJS-769"),
+ (),
  {:display-name "Mike Breen",
   :usernames #{"hardbap"},
   :emails #{"hardbap@gmail.com"}}
@@ -5550,7 +5561,7 @@
  {:display-name "Kyle VanderBeek",
   :usernames #{"kylev"},
   :emails #{"kylev@kylev.com"}}
- ("CLJS-769"),
+ (),
  {:display-name "Asher",
   :usernames #{"ashercoren"},
   :emails #{"ashercoren@gmail.com"}}
@@ -5989,6 +6000,10 @@
   :usernames #{"stfu_donnie"},
   :emails #{"brian@pratt.io"}}
  ("CLJ-1107"),
+ {:display-name "Griffin Smith",
+  :usernames #{"glittershark"},
+  :emails #{"wildgriffin45@gmail.com"}}
+ ("CLJS-989"),
  {:display-name "Yegor Bugayenko",
   :usernames #{"yegor256"},
   :emails #{"yegor@tpc2.com"}}
@@ -6292,7 +6307,7 @@
  {:display-name "Bruce Hauman",
   :usernames #{"bhauman"},
   :emails #{"bhauman@gmail.com"}}
- ("CLJ-1078"),
+ ("CLJS-1036" "CLJ-1078"),
  {:display-name "Zachary Kim",
   :usernames #{"zkim"},
   :emails #{"zachary.kim@gmail.com"}}
@@ -6472,6 +6487,10 @@
  {:display-name "Quiz Dr",
   :usernames #{"quizdr"},
   :emails #{"thequizdr@gmail.com"}}
+ (),
+ {:display-name "Miki Nobuhiro",
+  :usernames #{"bobuhiro11"},
+  :emails #{"nob@bobuhiro11.net"}}
  (),
  {:display-name "Angus Lee",
   :usernames #{"angus.lee8329@gmail.com"},
