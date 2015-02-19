@@ -244,6 +244,10 @@
   :usernames #{"rsanheim@gmail.com"},
   :emails #{"rsanheim@gmail.com"}}
  (),
+ {:display-name "Steven E Collins",
+  :usernames #{"steven-collins-omega"},
+  :emails #{"stevencollins@acm.org"}}
+ ("CLJ-1195"),
  {:display-name "Ruslan Udovichenko",
   :usernames #{"rudovichenko"},
   :emails #{"rudovichenko@productengine.com"}}
@@ -1674,7 +1678,7 @@
  {:display-name "Phill Wolf",
   :usernames #{"pbwolf"},
   :emails #{"phill.wolf@gmail.com"}}
- ("CLJ-1117" "CLJ-700"),
+ ("CLJ-1322" "CLJ-1117" "CLJ-700"),
  {:display-name "Micah Martin",
   :usernames #{"slagyr"},
   :emails #{"micahmartin@gmail.com"}}
@@ -2058,7 +2062,7 @@
  {:display-name "Ivan Mikushin",
   :usernames #{"imikushin"},
   :emails #{"i.mikushin@gmail.com"}}
- (),
+ ("CLJS-1046"),
  {:display-name "Bryan Weber",
   :usernames #{"brweber2"},
   :emails #{"brweber2@yahoo.com"}}
@@ -2279,7 +2283,7 @@
  {:display-name "Michael Griffiths",
   :usernames #{"cichli"},
   :emails #{"mikey@cich.li"}}
- (),
+ ("CLJ-304"),
  {:display-name "Brian Rowe",
   :usernames #{"briprowe"},
   :emails #{"briprowe@gmail.com"}}
@@ -3596,7 +3600,8 @@
  {:display-name "Colin Fleming",
   :usernames #{"colinfleming"},
   :emails #{"colin@colinfleming.net"}}
- ("CLJ-1620"
+ ("CLJ-1663"
+  "CLJ-1620"
   "CLJ-1527"
   "CLJ-1517"
   "CLJ-1232"
@@ -3919,6 +3924,10 @@
   :usernames #{"renese"},
   :emails #{"rs@match.at"}}
  (),
+ {:display-name "Nivedita Priyadarshini",
+  :usernames #{"nid90"},
+  :emails #{"nid.mishra7@gmail.com"}}
+ ("ASYNC-114"),
  {:display-name "Emanuel Rylke",
   :usernames #{"ema"},
   :emails #{"ema-fox@web.de"}}
@@ -5160,7 +5169,7 @@
  {:display-name "Mike Fikes",
   :usernames #{"mfikes"},
   :emails #{"mike@fikesfarm.com"}}
- (),
+ ("CLJS-1045"),
  {:display-name "Gunnar Völkel",
   :usernames #{"gv"},
   :emails #{"Gunnar.Voelkel@googlemail.com"}}
@@ -5313,6 +5322,7 @@
   "CLJ-1402"
   "CLJ-1232"
   "CLJ-1207"
+  "CLJ-1195"
   "CLJ-703"
   "CLJ-99"),
  {:display-name "Cosmin Stejerean",
@@ -5501,7 +5511,7 @@
  {:display-name "Dave Della Costa",
   :usernames #{"ddellacosta"},
   :emails #{"ddellacosta@gmail.com"}}
- (),
+ ("CLJ-1195"),
  {:display-name "Justin Grimes",
   :usernames #{"jgrimes"},
   :emails #{"justinlgrimes@gmail.com"}}
@@ -6235,6 +6245,10 @@
  {:display-name "Xavi Caballé",
   :usernames #{"xavicab"},
   :emails #{"xavi.caballe@gmail.com"}}
+ (),
+ {:display-name "mcpatella",
+  :usernames #{"m.c.patella@gmail.com"},
+  :emails #{"m.c.patella@gmail.com"}}
  (),
  {:display-name "OHTA Shogo",
   :usernames #{"sohta"},
