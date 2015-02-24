@@ -1021,6 +1021,10 @@
   :usernames #{"indhare"},
   :emails #{"nharsha@gmail.com"}}
  (),
+ {:display-name "Martin Raison",
+  :usernames #{"martinraison"},
+  :emails #{"martinraison@gmail.com"}}
+ (),
  {:display-name "Maik Schünemann",
   :usernames #{"mschuene"},
   :emails #{"maikschuenemann@gmail.com"}}
@@ -2481,6 +2485,10 @@
   :usernames #{"sgrove"},
   :emails #{"sean@cloudfuji.com"}}
  (),
+ {:display-name "Gareth Jones",
+  :usernames #{"gar3thjon3s"},
+  :emails #{""}}
+ (),
  {:display-name "Mark Sikora",
   :usernames #{"marknsikora"},
   :emails #{"marknsikora@gmail.com"}}
@@ -2844,6 +2852,10 @@
  {:display-name "Helenezlu",
   :usernames #{"helenezlu"},
   :emails #{"workyxmk1@gmail.com"}}
+ (),
+ {:display-name "Patrick Ryan",
+  :usernames #{"phiat"},
+  :emails #{"phiat99@gmail.com"}}
  (),
  {:display-name "Tal Liron",
   :usernames #{"tal.liron"},
@@ -3221,7 +3233,7 @@
  {:display-name "Jonas Enlund",
   :usernames #{"jonase"},
   :emails #{"jonas.enlund@gmail.com"}}
- ("CLJ-1298"),
+ ("CLJ-1298" "CLJ-1148"),
  {:display-name "Ben Mabey",
   :usernames #{"bmabey"},
   :emails #{"ben@benmabey.com"}}
@@ -3766,10 +3778,6 @@
   :usernames #{"stand"},
   :emails #{"stan.dyck@gmail.com"}}
  (),
- {:display-name "Gareth Jones",
-  :usernames #{"gar3thjon3s"},
-  :emails #{"gareth.e.jones@gmail.com"}}
- (),
  {:display-name "Timothy Gardner",
   :usernames #{"timsgardner"},
   :emails #{"timsgardner@gmail.com"}}
@@ -3889,7 +3897,7 @@
  {:display-name "Mike Longworth",
   :usernames #{"longworthml"},
   :emails #{"mail@mikelongworth.co.uk"}}
- (),
+ ("CLJS-677"),
  {:display-name "Viksit Gaur",
   :usernames #{"vikst"},
   :emails #{"viksit@gmail.com"}}
@@ -3953,7 +3961,7 @@
  {:display-name "Alexander Solovyov",
   :usernames #{"piranha"},
   :emails #{"alexander@solovyov.net"}}
- ("CLJS-785"),
+ (),
  {:display-name "Joel Boehland",
   :usernames #{"jolby"},
   :emails #{"r3@evocomputing.com"}}
@@ -4403,6 +4411,10 @@
  {:display-name "Karsten Schmidt",
   :usernames #{"toxi"},
   :emails #{"k@postspectacular.com"}}
+ (),
+ {:display-name "Derek Dagit",
+  :usernames #{"dagit"},
+  :emails #{"clj.sgd2@xoxy.net"}}
  (),
  {:display-name "Christopher F Carroll",
   :usernames #{"xcarroll"},
@@ -5167,7 +5179,7 @@
  {:display-name "Mike Fikes",
   :usernames #{"mfikes"},
   :emails #{"mike@fikesfarm.com"}}
- (),
+ ("CLJS-1049"),
  {:display-name "Gunnar Völkel",
   :usernames #{"gv"},
   :emails #{"Gunnar.Voelkel@googlemail.com"}}
@@ -5223,7 +5235,7 @@
  {:display-name "Ryan Berdeen",
   :usernames #{"rberdeen"},
   :emails #{"ryan@ryanberdeen.com"}}
- ("CLJS-785"),
+ (),
  {:display-name "kalina todorova",
   :usernames #{"ki6i"},
   :emails #{"kalinalyudmilova@gmail.com"}}
@@ -5346,6 +5358,10 @@
   :usernames #{"amalloy"},
   :emails #{"alan@malloys.org"}}
  ("CLJ-1093" "CLJ-994"),
+ {:display-name "Adam Hill",
+  :usernames #{"adam.hill@gmail.com"},
+  :emails #{"adam.hill@gmail.com"}}
+ (),
  {:display-name "Roan OSullivan",
   :usernames #{"lewen7er9"},
   :emails #{"roanosullivan@yahoo.com"}}
