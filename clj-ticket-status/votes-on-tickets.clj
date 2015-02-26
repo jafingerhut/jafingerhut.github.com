@@ -1080,7 +1080,7 @@
  {:display-name "Joseph Smith",
   :usernames #{"solussd"},
   :emails #{"joe@uwcreations.com"}}
- ("CLJ-1141"),
+ ("CLJS-911" "CLJ-1141"),
  {:display-name "Niklas Närhinen",
   :usernames #{"nnarhinen"},
   :emails #{"niklas@narhinen.net"}}
@@ -2461,6 +2461,10 @@
   :usernames #{"msgodf"},
   :emails #{"msgodf@gmail.com"}}
  (),
+ {:display-name "peter pana",
+  :usernames #{"nilead2014"},
+  :emails #{"nilead.com@gmail.com"}}
+ (),
  {:display-name "Daniel Richman",
   :usernames #{"ddrichman"},
   :emails #{"ddr@danielrichman.com"}}
@@ -2877,6 +2881,10 @@
   :usernames #{"skardan"},
   :emails #{"dan.skarda+jira@gmail.com"}}
  (),
+ {:display-name "grosjean",
+  :usernames #{"ewen"},
+  :emails #{"ewen.grosjean@free.fr"}}
+ (),
  {:display-name "Aku Kotkavuo",
   :usernames #{"arkx"},
   :emails #{"aku.kotkavuo@gmail.com"}}
@@ -3245,6 +3253,10 @@
  {:display-name "Syeerzy Zheng",
   :usernames #{"syeerzy"},
   :emails #{"syeerzy@me.com"}}
+ (),
+ {:display-name "Ewen Grosjean",
+  :usernames #{"eweng"},
+  :emails #{"ewen.grosjean@free.fr"}}
  (),
  {:display-name "Erhan Bagdemir",
   :usernames #{"ebagdemir"},
@@ -6555,6 +6567,10 @@
   :usernames #{"redwoolf"},
   :emails #{"benjamin@redwoolf.net"}}
  (),
+ {:display-name "Andrea Richiardi",
+  :usernames #{"arichiardi"},
+  :emails #{"a.richiardi.work@gmail.com"}}
+ (),
  {:display-name "Richard Davies",
   :usernames #{"optevo"},
   :emails #{"optevo@gmail.com"}}
@@ -6699,6 +6715,10 @@
   :usernames #{"akaranta"},
   :emails #{"Antti.Karanta@gmail.com"}}
  ("CLJCLR-25" "CLJ-1414"),
+ {:display-name "Nikita Dudnik",
+  :usernames #{"nek"},
+  :emails #{"nikdudnik@gmail.com"}}
+ (),
  {:display-name "Sebastian Hennebrueder",
   :usernames #{"laliluna"},
   :emails #{"usenet@laliluna.de"}}
