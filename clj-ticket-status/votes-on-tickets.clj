@@ -13,7 +13,13 @@
  {:display-name "Mike Rodriguez",
   :usernames #{"mikerod"},
   :emails #{"mjr4184@gmail.com"}}
- ("CLJ-1403" "CLJ-1239" "CLJ-1224" "CLJ-1093" "CLJ-1005" "CLJ-978"),
+ ("CLJ-1423"
+  "CLJ-1403"
+  "CLJ-1239"
+  "CLJ-1224"
+  "CLJ-1093"
+  "CLJ-1005"
+  "CLJ-978"),
  {:display-name "John Hume",
   :usernames #{"duelin_markers"},
   :emails #{"duelin.markers@gmail.com"}}
@@ -414,6 +420,10 @@
   :usernames #{"bruceadams"},
   :emails #{"bruce.adams@acm.org"}}
  ("CLJ-1372"),
+ {:display-name "Jason Lewis",
+  :usernames #{"canweriotnow"},
+  :emails #{"jason@decomplecting.org"}}
+ (),
  {:display-name "Ed O'Loughlin",
   :usernames #{"edoloughlin"},
   :emails #{"clojure.org-eolg@sneakemail.com"}}
@@ -2019,6 +2029,10 @@
   :usernames #{"foot"},
   :emails #{"footless@gmail.omc"}}
  (),
+ {:display-name "gshomo",
+  :usernames #{"gshomo"},
+  :emails #{"gshomo@gmail.com"}}
+ ("DXML-4"),
  {:display-name "Kuldeep",
   :usernames #{"kul"},
   :emails #{"kuldeep.bora@gmail.com"}}
@@ -2160,7 +2174,7 @@
  {:display-name "Jens Bendisposto",
   :usernames #{"bendisposto"},
   :emails #{"jens_jira@bendisposto.de"}}
- (),
+ ("CLJ-1149"),
  {:display-name "Michael Blume",
   :usernames #{"michaelblume"},
   :emails #{"blume.mike@gmail.com"}}
@@ -3318,6 +3332,10 @@
   :usernames #{"dalethatcher"},
   :emails #{"clojure@dalethatcher.com"}}
  (),
+ {:display-name "Matthew Davidson",
+  :usernames #{"kingmob"},
+  :emails #{"matthew@modulolotus.net"}}
+ (),
  {:display-name "Ivan Pierre",
   :usernames #{"ivanpierre"},
   :emails #{"me@ivanpierre.ch"}}
@@ -3711,7 +3729,7 @@
  {:display-name "Herwig Hochleitner",
   :usernames #{"bendlas"},
   :emails #{"hhochleitner@gmail.com"}}
- ("CLJ-1372" "CLJ-1332" "CLJ-1208"),
+ ("CTYP-193" "CLJ-1372" "CLJ-1332" "CLJ-1208"),
  {:display-name "Ji ZHANG",
   :usernames #{"zjerryj"},
   :emails #{"zhangji87@gmail.com"}}
@@ -4846,6 +4864,10 @@
   :usernames #{"peterschuller"},
   :emails #{"peter.schuller@infidyne.com"}}
  (),
+ {:display-name "Jason Murphy",
+  :usernames #{"jsonmurphy"},
+  :emails #{"json.murphy@gmail.com"}}
+ (),
  {:display-name "Daniel Brotsky",
   :usernames #{"ancienthacker"},
   :emails #{"dev@brotsky.com"}}
@@ -5648,6 +5670,10 @@
  {:display-name "Julian Sy",
   :usernames #{"jsy"},
   :emails #{"jns0019@uah.edu"}}
+ (),
+ {:display-name "Elliot Block",
+  :usernames #{"elliot42"},
+  :emails #{"elliot@framed.io"}}
  (),
  {:display-name "Max Barnash",
   :usernames #{"arre"},
@@ -6874,6 +6900,10 @@
  {:display-name "Sean Devlin",
   :usernames #{"devlinsf"},
   :emails #{"mailto:francoisdevlin@gmail.com"}}
+ (),
+ {:display-name "Nancyxaw",
+  :usernames #{"nancyxaw"},
+  :emails #{"workyxmkc@gmail.com"}}
  (),
  {:display-name "Constantine Vetoshev",
   :usernames #{"vetoshev"},

@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: February 26, 2015
+Date: March 2, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -103,6 +103,9 @@ Enhancement
              Pierre-Yves Ritschard (1)
              Ryan Neufeld (1)
              Howard Lewis Ship (1/2)
+    2.00   2 Bad: Match n [ASYNC-86] Update tools.analyzer.jvm dep
+             Adrian Medina (1)
+             Ambrose Bonnaire-Sergeant (1)
     2.00   2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
              Nahuel Greco (1)
              Reid McKenzie (1)
@@ -112,9 +115,6 @@ Enhancement
     2.00   2 Triaged      [ASYNC-67] Can we get a generic sink operation?
              Adam Clements (1)
              Jan-Paul Bultmann (1)
-    2.00   2 Vetted       [ASYNC-86] Update tools.analyzer.jvm dep
-             Adrian Medina (1)
-             Ambrose Bonnaire-Sergeant (1)
     1.00   1 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
              Max Penet (1)
     1.00   1 Open         [ASYNC-114] Allow a second arity on channel ex-handler which takes val as well as throwable
@@ -260,6 +260,8 @@ Defect
              Oskar Wickstrom (1)
     1.00   1 Open         [CTYP-168] :arglists metadata is missing from vars defined using core.typed's defn macro
              James Reeves (1)
+    1.00   1 Open         [CTYP-193] core.typed breaks some applications on Clojure 1.7.0-alpha5 due to JAR including AOT-compiled core.cache and core.memoize
+             Herwig Hochleitner (1)
     0.00   0 Open         [CTYP-27] clojure.lang.RT/nth's type doesn't currently allow nil as the first argument
     0.00   0 Open         [CTYP-32] Cannot instantiate variables that have bounds 
     0.00   0 Open         [CTYP-35] Should use fresh names when checking plambdas
@@ -295,12 +297,12 @@ Defect
     0.00   0 Open         [CTYP-189] code that used to type check in 0.2.72 stopped type checking 0.2.77
     0.00   0 Open         [CTYP-190] pred doesn't handle much
     0.00   0 Open         [CTYP-191] Bad type syntax when parsing types of macro-generated anonymous functions from required namespaces (when the types are composed, for instance (Option AnyInteger))
-    0.00   0 Open         [CTYP-193] core.typed breaks some applications on Clojure 1.7.0-alpha5 due to JAR including AOT-compiled core.cache and core.memoize
     0.00   0 Open         [CTYP-195] Support for clojure.core/extend is broken when used with typed.core/defprotocol
     0.00   0 Open         [CTYP-197] No matching arities when defining multiple arity protocol method
     0.00   0 Open         [CTYP-198] incorrect optional keyword lookup in complete HMaps
     0.00   0 Open         [CTYP-199] incorrect typing for group-by
     0.00   0 Open         [CTYP-200] min and max function are inferred to return java.long.Number if all parameters are Integer
+    0.00   0 Open         [CTYP-201] Calling a multimethod from a protocol function breaks the type checker
 
 ========================================
 Enhancement
@@ -335,6 +337,7 @@ Enhancement
     0.00   0 Open         [CTYP-187] Add a defn- macro for private functions
     0.00   0 Open         [CTYP-192] Use memoization in file-mapping to improve performance.
     0.00   0 Open         [CTYP-194] HMap merged type
+    0.00   0 Open         [CTYP-202] Provide a way to annotate a throw-on-nil function
 
 ========================================
 Task
@@ -420,7 +423,6 @@ Project DJSON tickets
 Enhancement
 
     0.00   0 Open         [DJSON-18] Fast way to print indented json
-    0.00   0 Open         [DJSON-19] Add support for Dates, UUIDs, and URIs
 
 
 Project DPRIMAP tickets
@@ -447,7 +449,7 @@ Defect
 ========================================
 Enhancement
 
-    8.00   8 Open         [DXML-4] Namespaces support
+    9.00   9 Open         [DXML-4] Namespaces support
              Dan Lipsitt (1)
              Gary Trakhman (1)
              Greg Chapman (1)
@@ -456,6 +458,7 @@ Enhancement
              Philip Potter (1)
              Roan OSullivan (1)
              Thomas Engelschmidt (1)
+             gshomo (1)
     3.00   3 Open         [DXML-13] Support for preserving whitespace between tags
              Aron Nopanen (1)
              Jan-Paul Bultmann (1)
@@ -494,6 +497,7 @@ Project JDBC tickets
 Defect
 
     0.00   0 Open         [JDBC-91] Issue with H2 "script" command
+    0.00   0 Open         [JDBC-105] the :as-array? option to query changes the chunkiness of the result
 
 ========================================
 Enhancement
