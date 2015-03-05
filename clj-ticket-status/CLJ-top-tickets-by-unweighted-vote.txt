@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: March 2, 2015
+Date: March 5, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -100,6 +100,7 @@ Defect
    1 Open         [CLJ-1308] extend-type doesn't type-hint correctly as promised by the doc when the class is determined at run-time
    1 Open         [CLJ-1613] :or defaults should refer to enclosing scope in map destructuring
    1 Open         [CLJ-1622] No way to AOT class with interface or parent whose fully qualified name doesn't contain a period
+   1 Open         [CLJ-1668] ns macro throws NPE if empty reference is specified
    1 Open         [CLJ-1582] Overriding in-ns and ns is problematic 
    1 Open         [CLJ-1017] Metadata expressions are evaluated after the expression they affect
    1 Open         [CLJ-1138] data-reader returning nil causes exception
@@ -153,7 +154,7 @@ Enhancement
    7 Triaged      [CLJ-440] java method calls cannot omit varargs
    7 Triaged      [CLJ-308] protocol-ize with-open
    6 Open         [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
-   6 Triaged      [CLJ-1454] Companion to swap! which returns the old value
+   6 Triaged      [CLJ-1454] Add a swap! that returns old value
    6 Triaged      [CLJ-1117] partition docstring should be more explicit about dropped or partial trailing elements
    6 Open         [CLJ-1239] faster, more flexible dispatch for clojure.walk
    5 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
@@ -246,7 +247,7 @@ Enhancement
    1 Open         [CLJ-1326] Inconsistent reflection warnings when target is a literal
    1 Open         [CLJ-1008] Make sorted maps and sets implement j.u.NavigableMap and NavigableSet interfaces 
    1 Triaged      [CLJ-1386] Add transient? predicate
-   1 Open         [CLJ-1599] Add get-and-set! to expose AtomicReference.getAndSet() in atoms
+   1 Triaged      [CLJ-1599] Add a reset! that returns old value
    1 Vetted       [CLJ-1130] when unable to match a method, report arity caller was looking for
    1 Open         [CLJ-1455] Postcondition in defrecord: Compiler unable to resolve symbol %
    1 Open         [CLJ-792] Refactor method resolution code out of Compiler and into Reflector
@@ -287,7 +288,7 @@ Enhancement
    0 Backlog      [CLJ-1552] Consider kv support for transducers (similar to reducers fold)
    0 Triaged      [CLJ-1585] Report boxed math warning on function that boxes primitive return value
    0 Screenable   [CLJ-1602] vals and keys return values should implement IReduceInit or Iterable
-   0 Incomplete   [CLJ-1603] cycle, iterate, repeat return vals should IReduceInit
+   0 Screenable   [CLJ-1603] cycle, iterate, repeat return vals should IReduceInit
    0 Triaged      [CLJ-1611] clojure.java.io/pushback-reader
    0 Triaged      [CLJ-1624] Support get from arbitrary java.util.List data types
    0 Triaged      [CLJ-1629] Improve error message when defn form omits parameter declaration
@@ -295,3 +296,4 @@ Enhancement
    0 Triaged      [CLJ-1653] str of an empty list is not "()"
    0 Triaged      [CLJ-1654] Reuse seq in some
    0 Triaged      [CLJ-1665] take-nth transducer could be faster without rem
+   0 Screenable   [CLJ-1669] Move LazyTransformer to an iterator strategy, extend eduction capabilities
