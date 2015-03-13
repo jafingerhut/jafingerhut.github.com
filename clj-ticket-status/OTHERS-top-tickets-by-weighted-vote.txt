@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: March 9, 2015
+Date: March 13, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -98,8 +98,10 @@ Defect
 ========================================
 Enhancement
 
-    3.50   4 Open         [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go and thread macros 
+    5.50   6 Open         [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go and thread macros 
              Chad Harrington (1)
+             Michael Drogalis (1)
+             Paul Michael Bauer (1)
              Pierre-Yves Ritschard (1)
              Ryan Neufeld (1)
              Howard Lewis Ship (1/2)
@@ -244,6 +246,8 @@ Project CRRBV tickets
 ========================================
 Defect
 
+    1.00   1 Open         [CRRBV-8] Invalid rrb-vector returned from catvec due to high subtree branch count
+             Paul Butcher (1)
     0.00   0 Open         [CRRBV-7] test name test-reduce redef's in tests, reducing test coverage
 
 ========================================
@@ -297,7 +301,6 @@ Defect
     0.00   0 Open         [CTYP-181] (float)'s type is mistakenly (Any -> Float)
     0.00   0 Open         [CTYP-182] macros which define functions containing named anonymous functions crash
     0.00   0 Open         [CTYP-188] ann-record fails for argument-less records
-    0.00   0 Open         [CTYP-189] code that used to type check in 0.2.72 stopped type checking 0.2.77
     0.00   0 Open         [CTYP-190] pred doesn't handle much
     0.00   0 Open         [CTYP-191] Bad type syntax when parsing types of macro-generated anonymous functions from required namespaces (when the types are composed, for instance (Option AnyInteger))
     0.00   0 Open         [CTYP-195] Support for clojure.core/extend is broken when used with typed.core/defprotocol
@@ -305,6 +308,8 @@ Defect
     0.00   0 Open         [CTYP-198] incorrect optional keyword lookup in complete HMaps
     0.00   0 Open         [CTYP-200] min and max function are inferred to return java.long.Number if all parameters are Integer
     0.00   0 Open         [CTYP-201] Calling a multimethod from a protocol function breaks the type checker
+    0.00   0 Open         [CTYP-203] Internal error
+    0.00   0 Open         [CTYP-204] Assoc doesn't work with multiple entries
 
 ========================================
 Enhancement
@@ -499,7 +504,7 @@ Project JDBC tickets
 Defect
 
     0.00   0 Open         [JDBC-91] Issue with H2 "script" command
-    0.00   0 Open         [JDBC-105] the :as-array? option to query changes the chunkiness of the result
+    0.00   0 Open         [JDBC-107] metadata-result leaks ResultSets
 
 ========================================
 Enhancement
@@ -516,6 +521,8 @@ Enhancement
 ========================================
 Task
 
+    1.00   1 Open         [JDBC-106] README should not specify 3rd party driver versions
+             Dmitr Sotnikov (1)
     0.00   0 Open         [JDBC-88] Update :arglists metadata so it no longer confuses Eastwood
 
 
@@ -562,7 +569,7 @@ Defect
     0.00   0 Open         [LOGIC-142] Unified map values are returned as LVar rather than the unified value in ClojureScript
     0.00   0 Open         [LOGIC-153] deftest test-34-unify-with-metadata appears incorrect
     0.00   0 Open         [LOGIC-154] walk* of an empty set overflows the stack
-    0.00   0 Open         [LOGIC-156] Two consecutive calls to run* return different results
+    0.00   0 Open         [LOGIC-156] Finite Domains - Two consecutive calls to run* return different results
     0.00   0 Open         [LOGIC-162] FD logic doesn't always return all solutions
     0.00   0 Open         [LOGIC-166] walk* exponential in depth of tree terms?
 
@@ -584,7 +591,6 @@ Enhancement
     0.00   0 Open         [LOGIC-146] run macro should take * in addition to n
     0.00   0 Open         [LOGIC-164] Guard against arity missmatches between rels, facts and retractions
     0.00   0 Open         [LOGIC-165] Add non-interleaving version of conde
-    0.00   0 Open         [LOGIC-167] Non-macro conjunction/disjunction functions
 
 ========================================
 Task
@@ -663,21 +669,23 @@ Defect
     0.00   0 Open         [NREPL-36] Too many DynamicClassLoaders created
     0.00   0 Open         [NREPL-48] *1/*2/*3/*e nil in cloned session
     0.00   0 Open         [NREPL-54] No version of nrepl when connect to the lein-droid REPL
-    0.00   0 Open         [NREPL-68] load-file op responses always have "user" or ":main" as the value of their ns slot
-    0.00   0 Open         [NREPL-73] Remove reflection from NREPL-53 patch
 
 ========================================
 Enhancement
 
+    0.00   0 Bad: Unkn Fi [NREPL-59] Tracking source form positions in eval
     0.00   0 Open         [NREPL-4] Provide sane multiplexing of output in the face of multithreaded, asynchronous operation
     0.00   0 Open         [NREPL-15] Allow clients to specify an ID for newly-retained sessions
     0.00   0 Open         [NREPL-29] Provide a mechanism for overriding an operation
     0.00   0 Open         [NREPL-43] Document the availability/usage of *e, *1, *2, ... in nREPL
     0.00   0 Open         [NREPL-44] Expose JMX MBean to provide list of available nREPL endpoints
     0.00   0 Open         [NREPL-55] Support custom value rendering middleware
-    0.00   0 Open         [NREPL-59] Tracking source form positions in eval
-    0.00   0 Open         [NREPL-64] Add current ns to describe session's response
-    0.00   0 Open         [NREPL-67] nrepl-server reuseAddr
+
+========================================
+Task
+
+    0.00   0 Bad: Unkn Fi [NREPL-74] Drop support for Clojure older than 1.5
+    0.00   0 Open         [NREPL-75] Devise a way to isolate middleware deps from regular deps
 
 
 Project TANAL tickets
