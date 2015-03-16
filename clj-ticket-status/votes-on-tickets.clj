@@ -583,7 +583,7 @@
  {:display-name "Tyler Tallman",
   :usernames #{"dspiteself@gmail.com"},
   :emails #{"dspiteself@gmail.com"}}
- ("CLJS-463"),
+ (),
  {:display-name "A. Redington",
   :usernames #{"redina"},
   :emails #{"redina@alum.rpi.edu"}}
@@ -1007,6 +1007,7 @@
   "CLJ-1517"
   "CLJ-1381"
   "CLJ-1376"
+  "CLJ-1372"
   "CLJ-1298"
   "CLJ-1232"
   "CLJ-1096"
@@ -1504,6 +1505,7 @@
   "CLJ-1120"
   "CLJ-1078"
   "CLJ-322"
+  "ASYNC-94"
   "ASYNC-32"),
  {:display-name "Logan Linn",
   :usernames #{"loganlinn"},
@@ -3061,7 +3063,7 @@
  {:display-name "Thomas Engelschmidt",
   :usernames #{"zamaterian"},
   :emails #{"thenge@tdc.dk"}}
- ("DXML-4"),
+ ("DXML-4" "ASYNC-94"),
  {:display-name "Antti Virtanen",
   :usernames #{"lokori"},
   :emails #{"antti.virtanen@solita.fi"}}
@@ -3233,7 +3235,7 @@
  {:display-name "John Chijioke",
   :usernames #{"johnbendi"},
   :emails #{"johnbendie@gmail.com"}}
- ("CLJS-463"),
+ (),
  {:display-name "Michael Parenteau",
   :usernames #{"michaelparenteau"},
   :emails #{"michael@thinkrelevance.com"}}
@@ -5258,7 +5260,7 @@
  {:display-name "Mike Fikes",
   :usernames #{"mfikes"},
   :emails #{"mike@fikesfarm.com"}}
- ("CLJS-1092" "CLJS-1044"),
+ ("CLJS-1092" "CLJS-1044" "CLJS-957" "CLJS-555"),
  {:display-name "Gunnar Völkel",
   :usernames #{"gv"},
   :emails #{"Gunnar.Voelkel@googlemail.com"}}
@@ -5811,7 +5813,7 @@
  {:display-name "Paul Butcher",
   :usernames #{"paulbutcher"},
   :emails #{"paul@paulbutcher.com"}}
- ("CRRBV-8" "CLJ-1449" "CLJ-1250"),
+ ("CLJ-1449" "CLJ-1250"),
  {:display-name "Charles Duffy",
   :usernames #{"charles-dyfis-net"},
   :emails #{"charles@dyfis.net"}}
@@ -6177,7 +6179,7 @@
  {:display-name "Adam Krieg",
   :usernames #{"deaddowney"},
   :emails #{"adammkrieg@gmail.com"}}
- (),
+ ("ASYNC-86"),
  {:display-name "Peter Taoussanis",
   :usernames #{"ptaoussanis"},
   :emails #{"ptaoussanis@gmail.com"}}
@@ -6249,7 +6251,7 @@
  {:display-name "Bodil Stokke",
   :usernames #{"bodil"},
   :emails #{"clojure-bugs@bodil.org"}}
- ("CLJS-463"),
+ (),
  {:display-name "Takashi AOKI",
   :usernames #{"federkasten"},
   :emails #{"federkasten@me.com"}}
@@ -6633,7 +6635,7 @@
  {:display-name "Jozef Wagner",
   :usernames #{"wagjo"},
   :emails #{"jozef.wagner@gmail.com"}}
- ("CLJS-109" "CLJ-1650" "CLJ-1523" "CLJ-1517" "CLJ-1250" "CLJ-322"),
+ ("CLJ-1650" "CLJ-1523" "CLJ-1517" "CLJ-1250" "CLJ-322"),
  {:display-name "Gregg Reynolds",
   :usernames #{"mobileink"},
   :emails #{"dev@mobileink.com"}}
