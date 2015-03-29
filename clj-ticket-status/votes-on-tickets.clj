@@ -564,6 +564,10 @@
   :usernames #{"jeluard"},
   :emails #{"julien.eluard@gmail.com"}}
  ("CLJ-1449" "CLJ-1282"),
+ {:display-name "Alex Kyllo",
+  :usernames #{"alexkyllo"},
+  :emails #{"alex.kyllo@gmail.com"}}
+ (),
  {:display-name "Dan Chamberlain",
   :usernames #{"dchamberlain"},
   :emails #{"huskie009@hotmail.com"}}
@@ -1019,6 +1023,7 @@
   "CLJ-1093"
   "CLJ-703"
   "CLJ-308"
+  "ASYNC-114"
   "ASYNC-61"),
  {:display-name "kovas boguta",
   :usernames #{"kovasb"},
@@ -2227,6 +2232,7 @@
   "CLJ-1386"
   "CLJ-1322"
   "CLJ-1282"
+  "CLJ-1162"
   "CLJ-1008"
   "CLJ-703"
   "CLJ-322"),
@@ -3740,8 +3746,7 @@
  {:display-name "Nicola Mometto",
   :usernames #{"bronsa"},
   :emails #{"brobronsa@gmail.com"}}
- ("CLJ-1683"
-  "CLJ-1649"
+ ("CLJ-1649"
   "CLJ-1646"
   "CLJ-1626"
   "CLJ-1620"
