@@ -543,7 +543,7 @@
  {:display-name "Andrew Rudenko",
   :usernames #{"prepor"},
   :emails #{"ceo@prepor.ru"}}
- ("CLJ-304" "ASYNC-86"),
+ ("CLJ-304"),
  {:display-name "Immanuel Sterzik",
   :usernames #{"immist"},
   :emails #{"immist@gmail.com"}}
@@ -635,8 +635,7 @@
   "CLJ-1029"
   "CLJ-1005"
   "CLJ-130"
-  "CCACHE-31"
-  "ASYNC-86"),
+  "CCACHE-31"),
  {:display-name "Stuart Halloway",
   :usernames #{"stuthulhu"},
   :emails #{"stuart.halloway@gmail.com"}}
@@ -769,10 +768,6 @@
  {:display-name "Robin Kauffman",
   :usernames #{"haifen"},
   :emails #{"robink@creosotehill.org"}}
- (),
- {:display-name "Michael Bradley, Jr.",
-  :usernames #{"michaelsbradleyjr"},
-  :emails #{"michaelsbradleyjr@gmail.com"}}
  (),
  {:display-name "Phongphan Phuttha",
   :usernames #{"phongphan"},
@@ -1912,6 +1907,10 @@
   :usernames #{"ethanis"},
   :emails #{"sherbondye@gmail.com"}}
  (),
+ {:display-name "Raghuveer Kumarakrishnan",
+  :usernames #{"raghu.ftw"},
+  :emails #{"raghu.ftw@gmail.com"}}
+ (),
  {:display-name "Daniel Kim",
   :usernames #{"danielrk"},
   :emails #{"danielrheekim@gmail.com"}}
@@ -2872,6 +2871,10 @@
   :usernames #{"buhosabio"},
   :emails #{"buhosabio@hotmail.com"}}
  (),
+ {:display-name "keith m corbett",
+  :usernames #{"kmcorbett@gmail.com"},
+  :emails #{"kmcorbett@gmail.com"}}
+ (),
  {:display-name "Vitalie Spinu",
   :usernames #{"vitoshka"},
   :emails #{"spinuvit@gmail.com"}}
@@ -3320,7 +3323,7 @@
  {:display-name "Adrian Medina",
   :usernames #{"adrianm"},
   :emails #{"adrian.medina@mail.yu.edu"}}
- ("CLJ-1573" "CLJ-1452" "CLJ-1424" "ASYNC-86"),
+ ("CLJ-1573" "CLJ-1452"),
  {:display-name "Sanel Zukan",
   :usernames #{"sanel"},
   :emails #{"sanelz@gmail.com"}}
@@ -5212,7 +5215,8 @@
  {:display-name "Andy Fingerhut",
   :usernames #{"jafingerhut"},
   :emails #{"andy_fingerhut@alum.wustl.edu"}}
- ("CLJ-1527"
+ ("CLJ-1598"
+  "CLJ-1527"
   "CLJ-1372"
   "CLJ-1326"
   "CLJ-1308"
@@ -5558,6 +5562,10 @@
  {:display-name "scott tudd",
   :usernames #{"tuddman"},
   :emails #{"scott.tudd@gmail.com"}}
+ (),
+ {:display-name "Michael Bradley",
+  :usernames #{"michaelsbradleyjr"},
+  :emails #{"michaelsbradleyjr@gmail.com"}}
  (),
  {:display-name "Tavis Rudd",
   :usernames #{"tavisrudd"},
@@ -6255,7 +6263,7 @@
  {:display-name "Adam Krieg",
   :usernames #{"deaddowney"},
   :emails #{"adammkrieg@gmail.com"}}
- ("ASYNC-86"),
+ (),
  {:display-name "Peter Taoussanis",
   :usernames #{"ptaoussanis"},
   :emails #{"ptaoussanis@gmail.com"}}
@@ -6323,6 +6331,10 @@
  {:display-name "Alan Dipert",
   :usernames #{"alan.dipert"},
   :emails #{"alan@thinkrelevance.com"}}
+ (),
+ {:display-name "Yusup Ashrap",
+  :usernames #{"devll"},
+  :emails #{"aphawk@gmail.com"}}
  (),
  {:display-name "Kyle Kingsbury",
   :usernames #{"aphyr"},

@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: March 29, 2015
+Date: April 2, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -133,6 +133,8 @@ Defect
    0 Triaged      [CLJ-1678] Update failing tests for IBM JDK 1.7 and 1.8
    0 Triaged      [CLJ-1680] quot and rem handle doubles badly
    0 Triaged      [CLJ-1682] clojure.set/intersection occasionally allows non-set arguments.
+   0 Screenable   [CLJ-1685] :eof option in clojure.core/read not handled properly 
+   0 Screenable   [CLJ-1692] Iterate is too eager
 
 ========================================
 Enhancement
@@ -164,9 +166,9 @@ Enhancement
    5 Backlog      [CLJ-1208] Namespace is not loaded on defrecord class init
    5 Triaged      [CLJ-1576] clojure.pprint should print vars as pr does
    5 Triaged      [CLJ-1656] Unroll assoc and assoc! for small numbers of arguments
+   5 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
    5 Triaged      [CLJ-1458] Use transients in merge and merge-with
    5 Open         [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
-   5 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
    5 Open         [CLJ-401] Promote "seqable?" from contrib?
    4 Open         [CLJ-1573] Support (Java) transient fields in deftype, e.g. for hashcodes
    4 Triaged      [CLJ-1490] Exception on protocol implementation after protocol reloaded could be improved
@@ -199,18 +201,19 @@ Enhancement
    2 Open         [CLJ-2] Scopes
    2 Open         [CLJ-1402] sort-by calls keyfn more times than is necessary
    2 Backlog      [CLJ-731] Create macro to variadically unroll a combinator function definition
-   2 Open         [CLJ-428] subseq, rsubseq enhancements to support priority maps?
    2 Triaged      [CLJ-1096] Make destructuring emit direct keyword lookups
+   2 Open         [CLJ-428] subseq, rsubseq enhancements to support priority maps?
    2 Open         [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
    2 Triaged      [CLJ-1295] Speed up dissoc on array-maps
    2 Triaged      [CLJ-888] defprotocol should throw error when signatures include variable number of parameters
    2 Open         [CLJ-1263] Allow static compilation of function invocations
    2 Open         [CLJ-1120] Introduce ex-message and ex-cause to abstract away the platform in dealing with ExceptionInfo
+   2 Triaged      [CLJ-1598] Make if forms compile directly to the appropriate branch expression if the test is a literal
    2 Open         [CLJ-978] bean unable to handle non-public classes
    2 Triaged      [CLJ-1219] Make identical? variadic
-   2 Open         [CLJ-706] make use of deprecated namespaces/vars easier to spot
    2 Triaged      [CLJ-1094] Add zero-arity versions of every-pred and some-fn
-   2 Screened     [CLJ-1515] range should return something that implements IReduce
+   2 Open         [CLJ-706] make use of deprecated namespaces/vars easier to spot
+   2 Screenable   [CLJ-1515] range should return something that implements IReduce
    2 Triaged      [CLJ-1305] Add optional not-found argument when invoking vectors or sets as functions
    2 Open         [CLJ-1442] Tag gensym sourced symbols with metadata
    2 Open         [CLJ-1376] Initialize internal maps to more efficient version
@@ -226,7 +229,6 @@ Enhancement
    1 Backlog      [CLJ-1610] Unrolled small maps
    1 Open         [CLJ-1321] Documentation improvement for clojure.walk, to note use of recursion that can easily blow the JVM stack
    1 Open         [CLJ-1332] Exceptions are not cached in lazy seqs
-   1 Ok           [CLJ-1424] Reader conditionals
    1 Open         [CLJ-148] Poor reporting of symbol conflicts when using (ns)
    1 Triaged      [CLJ-1073] Make print-sequential interruptible
    1 Open         [CLJ-1266] Better primitive support for floats
@@ -236,7 +238,6 @@ Enhancement
    1 Open         [CLJ-1398] Update URLs in javadoc.clj
    1 Open         [CLJ-252] Support typed non-primitive fields in deftype
    1 Open         [CLJ-1342] Byte comparison boxes both bytes and converts to longs to compare (which is slow)
-   1 Triaged      [CLJ-1598] Make if forms compile directly to the appropriate branch expression if the test is a literal
    1 Triaged      [CLJ-1607] docstring for clojure.core/counted? should be more specific
    1 Vetted       [CLJ-1099] better error message when passing non-seq to seq
    1 Open         [CLJ-993] `range` reducer
