@@ -21,11 +21,11 @@ Install latest Xquartz from installer package
 
 Install software packages I use frequently:
 
-sudo port install emacs@+gtk+x11 git rlwrap graphviz maven3
+sudo port install rlwrap maven3 apache-ant git emacs@+gtk+x11 graphviz
 
 Not as frequent, but small and sometimes useful:
 
-sudo port install aspell aspell-dict-en bsdiff enscript p5-xml-libxml p5-net-ipv4addr p5-net-ipv6addr p7zip tcpdump tcpreplay gnupg
+sudo port install aspell aspell-dict-en bsdiff enscript p5-xml-libxml p5-net-ipv4addr p5-net-ipv6addr p7zip tcpdump tcpreplay gnupg pstree cscope swig-perl p5-parse-yapp
 
 Install less frequently used packages:
 
@@ -38,6 +38,11 @@ The following are useful for parts of clojure-benchmarks:
 The following are useful for parts of clojure-cheatsheets:
 * texlive-latex-recommended (needed for scrreprt.cls)
 * texlive-fonts-recommended (needed for the lmodern font)
+
+The following are useful for my ace-pkts program in acl-tools:
+
+* swig-perl
+* p5-parse-yapp
 
 
 Not sure if I ever used these, or for sbcl whether I will use it
@@ -72,3 +77,27 @@ For maven3, do this command, otherwise one must type 'mvn3' instead of
 
 To make maven 3.2.3 the default, please run
 	sudo port select --set maven maven3
+
+----------------------------------------------------------------------
+--->  Installing python27 @2.7.9_0
+--->  Activating python27 @2.7.9_0
+
+To make python 2.7 the default (i.e. the version you get when you run 'python'),
+please run:
+
+sudo port select --set python python27
+
+--->  Installing dbus @1.8.16_0
+--->  Activating dbus @1.8.16_0
+
+############################################################################
+# Startup items have been generated that will aid in
+# starting dbus with launchd. They are disabled
+# by default. Execute the following commands to start them,
+# and to cause them to launch at startup:
+#
+# sudo launchctl load -w
+/Library/LaunchDaemons/org.freedesktop.dbus-system.plist
+# launchctl load -w /Library/LaunchAgents/org.freedesktop.dbus-session.plist
+############################################################################
+
