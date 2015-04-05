@@ -1598,7 +1598,7 @@
  {:display-name "Immo Heikkinen",
   :usernames #{"immo"},
   :emails #{"immo.heikkinen@gmail.com"}}
- ("CLJ-1649"),
+ ("CLJS-1158" "CLJ-1649"),
  {:display-name "Jose Antonio Ortega Ruiz",
   :usernames #{"jaor"},
   :emails #{"jao@gnu.org"}}
@@ -2230,6 +2230,7 @@
   "CLJ-1452"
   "CLJ-1386"
   "CLJ-1322"
+  "CLJ-1313"
   "CLJ-1282"
   "CLJ-1162"
   "CLJ-1008"
@@ -2886,6 +2887,10 @@
  {:display-name "Colin Taylor",
   :usernames #{"colint"},
   :emails #{"colin.taylor@gmail.com"}}
+ (),
+ {:display-name "Shannon Severance",
+  :usernames #{"srseverance"},
+  :emails #{"srs@s53.me"}}
  (),
  {:display-name "Anton Frolov",
   :usernames #{"antonf"},
@@ -4322,6 +4327,10 @@
   :usernames #{"rightfold"},
   :emails #{"rightfold@gmail.com"}}
  ("CLJ-1435"),
+ {:display-name "Paul Roush",
+  :usernames #{"paulr"},
+  :emails #{"proush@gmail.com"}}
+ (),
  {:display-name "anthony lamantia",
   :usernames #{"anthonyl"},
   :emails #{"anthonyl@well.com"}}
@@ -4741,6 +4750,10 @@
  {:display-name "jay",
   :usernames #{"jcoder2012"},
   :emails #{"jcoder2012@gmail.com"}}
+ (),
+ {:display-name "Rafał Cieślak",
+  :usernames #{"ravicious"},
+  :emails #{"ravicious@gmail.com"}}
  (),
  {:display-name "Halit Olali",
   :usernames #{"halit olali"},
@@ -5278,13 +5291,7 @@
  {:display-name "David Nolen",
   :usernames #{"dnolen"},
   :emails #{"dnolen.lists@gmail.com"}}
- ("CLJS-968"
-  "CLJS-27"
-  "CLJ-1224"
-  "CLJ-1029"
-  "CLJ-899"
-  "CLJ-865"
-  "ASYNC-120"),
+ ("CLJS-968" "CLJS-27" "CLJ-1224" "CLJ-1029" "CLJ-899" "CLJ-865"),
  {:display-name "Nicolás Berger",
   :usernames #{"nicoberger@gmail.com"},
   :emails #{"nicoberger@gmail.com"}}
