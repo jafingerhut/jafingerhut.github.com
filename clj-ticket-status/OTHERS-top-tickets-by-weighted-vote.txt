@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: April 5, 2015
+Date: April 9, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -61,12 +61,13 @@ Defect
     2.00   2 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
              Ghadi Shayban (1)
              Yehonathan Sharvit (1)
+    1.50   2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
+             Ryan Sundberg (1)
+             Howard Lewis Ship (1/2)
     1.00   1 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
              Marcus Lewis (1)
     1.00   1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
              Francis Avila (1)
-    0.50   1 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
-             Howard Lewis Ship (1/2)
     0.50   1 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
              Colin Taylor (1/2)
     0.50   1 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
@@ -269,6 +270,8 @@ Defect
              Oskar Wickstrom (1)
     1.00   1 Open         [CTYP-168] :arglists metadata is missing from vars defined using core.typed's defn macro
              James Reeves (1)
+    1.00   1 Open         [CTYP-176] No such var: ana/ns->relpath when loading the ClojureScript typechecker
+             Vic Goldfeld (1)
     1.00   1 Open         [CTYP-193] core.typed breaks some applications on Clojure 1.7.0-alpha5 due to JAR including AOT-compiled core.cache and core.memoize
              Herwig Hochleitner (1)
     0.00   0 Open         [CTYP-27] clojure.lang.RT/nth's type doesn't currently allow nil as the first argument
@@ -296,7 +299,6 @@ Defect
     0.00   0 Open         [CTYP-172] annotating methods that descructure their arguments can confuse the type system
     0.00   0 Open         [CTYP-173] (first (filter ...)) type checks in Clojure, not ClojureScript
     0.00   0 Open         [CTYP-174] More fixes for closed source projects (datomic)
-    0.00   0 Open         [CTYP-176] No such var: ana/ns->relpath when loading the ClojureScript typechecker
     0.00   0 Open         [CTYP-177] Compile error with core.async
     0.00   0 Open         [CTYP-178] Dissimilar lengths of HVecs in a union doesn't type-check
     0.00   0 Open         [CTYP-181] (float)'s type is mistakenly (Any -> Float)
@@ -311,6 +313,8 @@ Defect
     0.00   0 Open         [CTYP-201] Calling a multimethod from a protocol function breaks the type checker
     0.00   0 Open         [CTYP-203] Internal error
     0.00   0 Open         [CTYP-204] Assoc doesn't work with multiple entries
+    0.00   0 Open         [CTYP-209] method-type is broken
+    0.00   0 Open         [CTYP-210] (long AnyInteger) doesn't typecheck
 
 ========================================
 Enhancement
@@ -539,7 +543,6 @@ Enhancement
     0.00   0 Open         [JMX-5] Timeout support
     0.00   0 Open         [JMX-9] Eliminate several uses of reflection in java.jmx
     0.00   0 Open         [JMX-12] Throw exception when overloaded operation is ambiguous
-    0.00   0 Open         [JMX-16] Allow jmx values created by library to be updated
 
 
 Project JVMTA tickets
@@ -617,12 +620,14 @@ Defect
     0.00   0 Open         [MATCH-101] Apparent regression for test sharing literals
     0.00   0 Open         [MATCH-102] Do :guard predicates really need to handle :clojure.core.match/not-found?
     0.00   0 Open         [MATCH-105] Regex: only attempt to match string values.
+    0.00   0 Open         [MATCH-106] variable binding fails with :or guard
 
 ========================================
 Enhancement
 
+    1.00   1 Open         [MATCH-4] Optimized pattern matching on deftype/record, POJOs
+             Leonardo Borges (1)
     0.00   0 Open         [MATCH-2] Matching Diagnostics
-    0.00   0 Open         [MATCH-4] Optimized pattern matching on deftype/record, POJOs
     0.00   0 Open         [MATCH-8] Implement (p|q)ba heuristics
     0.00   0 Open         [MATCH-40] Allow or'ing of guard functions
     0.00   0 Open         [MATCH-64] Improve match compile times
@@ -773,6 +778,9 @@ Enhancement
     0.00   0 Open         [TCHECK-53] property creating function similar to map as alternative to for-all*
     0.00   0 Open         [TCHECK-58] Alternate clojure.test integration
     0.00   0 Open         [TCHECK-60] string from regular expression generator
+    0.00   0 Open         [TCHECK-63] add sizing arguments to map generator
+    0.00   0 Open         [TCHECK-64] better ratio generator
+    0.00   0 Open         [TCHECK-65] add a float generator
 
 
 Project TCLI tickets
@@ -861,7 +869,8 @@ Project TRDR tickets
 ========================================
 Enhancement
 
-    0.00   0 Open         [TRDR-14] Feature Expressions
+    0.00   0 Open         [TRDR-25] Source information when reading EDN
+    0.00   0 Vetted       [TRDR-14] Reader conditionals
 
 ========================================
 Task
