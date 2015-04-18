@@ -134,12 +134,12 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
               </tr>
             </tbody>
           </table>
-          <h3>Lists</h3>
+          <h3>Lists (conj, pop, &amp; peek at beginning)</h3>
           <table>
             <tbody>
               <tr class="odd">
                 <td>Create</td>
-                <td><code>'() <a href="http://clojuredocs.org/clojure_core/clojure.core/list">list</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/list*">list*</a></code></td>
+                <td><code>() <a href="http://clojuredocs.org/clojure_core/clojure.core/list">list</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/list*">list*</a></code></td>
               </tr>
               <tr class="even">
                 <td>Examine</td>
@@ -151,7 +151,7 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
               </tr>
             </tbody>
           </table>
-          <h3>Vectors</h3>
+          <h3>Vectors (conj, pop, &amp; peek at end)</h3>
           <table>
             <tbody>
               <tr class="odd">
@@ -234,6 +234,23 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
       </div><!-- /column -->
       <div class="column">
         <div class="section">
+          <h3>Queues (conj at end, peek &amp; pop from beginning)</h3>
+          <table>
+            <tbody>
+              <tr class="odd">
+                <td>Create</td>
+                <td><code>clojure.lang.PersistentQueue/EMPTY (no literal syntax or constructor fn)</code></td>
+              </tr>
+              <tr class="even">
+                <td>Examine</td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/peek">peek</a></code></td>
+              </tr>
+              <tr class="odd">
+                <td>'Change'</td>
+                <td><code><a href="http://clojuredocs.org/clojure_core/clojure.core/conj">conj</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/pop">pop</a></code></td>
+              </tr>
+            </tbody>
+          </table>
           <h3>Relations (set of maps, each with same keys, aka rels)</h3>
           <table>
             <tbody>
