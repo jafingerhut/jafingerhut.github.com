@@ -35,7 +35,13 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; From someone on #clojure IRC channel, demonstrating weirdness of
-;; behavior with multiple consecutive uses of #_:
+;; behavior with multiple consecutive uses of #_
+
+;; Comments beginning with ';' are simple.  They do not interact in
+;; hard-to-understand ways with other things that come after them.
+
+;; #_ is complex.  It does interact with things that come after it, in
+;; ways that require detailed knowledge of how it works.
 
 (def a #_#_#_4 3 2 1)
 ;; #'user/a
@@ -44,6 +50,10 @@ a
 
 ;; Not sure, but I believe the first #_ discards the 4, the second #_
 ;; discards the 3, etc.  Or maybe it is the reverse order.
+
+(println #_#_#_#_[3 2 #_1 0] -1 -2 #_-3 -4 -5 -6)
+;; -5 -6
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
