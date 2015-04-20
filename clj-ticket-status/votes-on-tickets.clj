@@ -1038,6 +1038,10 @@
   :usernames #{"mmoehring"},
   :emails #{"marcel.moehring@mail.com"}}
  (),
+ {:display-name "Aleksander",
+  :usernames #{"sumek"},
+  :emails #{"sumek@o2.pl"}}
+ (),
  {:display-name "Harsha",
   :usernames #{"indhare"},
   :emails #{"nharsha@gmail.com"}}
@@ -2256,7 +2260,7 @@
  {:display-name "Chris Blom",
   :usernames #{"chrisblom"},
   :emails #{"chrisblom@gmail.com"}}
- ("CLJ-1565" "CLJ-1467"),
+ ("CLJ-1565" "CLJ-1467" "CLJ-1449" "CLJ-700" "CLJ-308"),
  {:display-name "Devin Walters",
   :usernames #{"devn"},
   :emails #{"devinw@gmail.com"}}
@@ -2812,7 +2816,7 @@
  {:display-name "Joshua Choi",
   :usernames #{"misatana"},
   :emails #{"joshua.s.choi@icloud.com"}}
- (),
+ ("CLJS-1017" "CLJS-719"),
  {:display-name "Jan Drake",
   :usernames #{"jandrake"},
   :emails #{"jan_drake@hotmail.com"}}
@@ -3839,7 +3843,7 @@
  {:display-name "Herwig Hochleitner",
   :usernames #{"bendlas"},
   :emails #{"hhochleitner@gmail.com"}}
- ("CTYP-193" "CLJ-1372" "CLJ-1332" "CLJ-1208"),
+ ("CLJ-1372" "CLJ-1332" "CLJ-1208"),
  {:display-name "Ji ZHANG",
   :usernames #{"zjerryj"},
   :emails #{"zhangji87@gmail.com"}}
@@ -4173,7 +4177,7 @@
  {:display-name "Leon Grapenthin",
   :usernames #{"lgs32a"},
   :emails #{"grapenthin.leon@gmail.com"}}
- (),
+ ("CLJS-1198"),
  {:display-name "Pascal Germroth",
   :usernames #{"neapel"},
   :emails #{"pascal@ensieve.org"}}
@@ -5243,7 +5247,8 @@
  {:display-name "Andy Fingerhut",
   :usernames #{"jafingerhut"},
   :emails #{"andy_fingerhut@alum.wustl.edu"}}
- ("CLJ-1598"
+ ("CLJ-1706"
+  "CLJ-1598"
   "CLJ-1527"
   "CLJ-1372"
   "CLJ-1326"
@@ -5960,6 +5965,10 @@
  {:display-name "Greg Seaton",
   :usernames #{"seatongs"},
   :emails #{"greg.seaton@aptpath.com"}}
+ (),
+ {:display-name "Rudiger Peng",
+  :usernames #{"flaing"},
+  :emails #{"flaing12@gmail.com"}}
  (),
  {:display-name "Nikita",
   :usernames #{"nikitad"},
@@ -6707,6 +6716,10 @@
   :usernames #{"rsslldnphy"},
   :emails #{"russell@russelldunphy.com"}}
  ("CLJ-703"),
+ {:display-name "ben fleis",
+  :usernames #{"benfleis"},
+  :emails #{"ben.fleis@gmail.com"}}
+ ("CLJ-1698"),
  {:display-name "Kevin Neaton",
   :usernames #{"neatonk"},
   :emails #{"neatonk@gmail.com"}}
@@ -7061,6 +7074,10 @@
  {:display-name "Brandon Skinner",
   :usernames #{"brandon-m-skinner"},
   :emails #{"brandon.m.skinner@gmail.com"}}
+ (),
+ {:display-name "Mathias De Wachter",
+  :usernames #{"mat_dw"},
+  :emails #{"mathias.dewachter@gmail.com"}}
  (),
  {:display-name "Daniel Zacarias",
   :usernames #{"dzacarias"},

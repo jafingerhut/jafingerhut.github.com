@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: April 16, 2015
+Date: April 20, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -39,7 +39,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
-  16 Backlog      [CLJ-700] contains? broken for transient collections
+  17 Backlog      [CLJ-700] contains? broken for transient collections
    9 Triaged      [CLJ-1527] Harmonize accepted / documented symbol and keyword syntax over various readers
    9 Triaged      [CLJ-1372] Inconsistent hash with java collections
    9 Backlog      [CLJ-1250] Reducer (and folder) instances hold onto the head of seqs
@@ -56,6 +56,7 @@ Defect
    4 Triaged      [CLJ-1282] The quote special form should throw an exception if passed more than one form to quote
    4 Open         [CLJ-1029] ns defmacro allows arbitrary execution of clojure.core fns
    4 Open         [CLJ-1423] Applying a var to an infinite arglist consumes all available memory
+   3 Incomplete   [CLJ-1698] conditional reading bugs
    3 Open         [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
    3 Backlog      [CLJ-787] transient blows up when passed a vector created by subvec
    3 Triaged      [CLJ-1620] Constants are leaked in case of a reentrant eval
@@ -63,7 +64,6 @@ Defect
    3 Open         [CLJ-1381] Improve support for extending protocols to primitive arrays
    3 Open         [CLJ-1445] pprint prints some metadata when *print-meta* bound to true, but not all
    3 Triaged      [CLJ-1453] Most Iterator implementations do not correctly implement next failing to throw the required NoSuchElementException
-   2 Needs Patch  [CLJ-1698] conditional reading bugs
    2 Triaged      [CLJ-1399] missing field munging when recreating deftypes serialized in to byte code
    2 Open         [CLJ-1649] Hash/equality inconsistency for floats & doubles
    2 Triaged      [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
@@ -80,7 +80,7 @@ Defect
    1 Open         [CLJ-1317] clojure.zip/seq-zip returns spurious nils during traversal
    1 Open         [CLJ-1435] 'numerator and 'denominator fail to handle integral values (i.e. N/1)
    1 Triaged      [CLJ-1528] clojure.test/inc-report-counter is not thread safe
-   1 Screenable   [CLJ-1700] REPL evaluation of conditional reader forms fails
+   1 Screened     [CLJ-1700] REPL evaluation of conditional reader forms fails
    1 Open         [CLJ-1181] clojure.pprint/code-dispatch breaks on certain types of anonymous functions
    1 Triaged      [CLJ-1390] pprint a GregorianCalendar results in Arity exception
    1 Open         [CLJ-1587] PersistentArrayMap's assoc doesn't respect HASHTABLE_THRESHOLD
@@ -101,6 +101,7 @@ Defect
    1 Triaged      [CLJ-1609] Fix an edge case in the Reflector's search for a public method declaration
    1 Open         [CLJ-1059] PersistentQueue doesn't implement java.util.List, causing nontransitive equality
    1 Open         [CLJ-1308] extend-type doesn't type-hint correctly as promised by the doc when the class is determined at run-time
+   1 Incomplete   [CLJ-1706] top level conditional splicing ignores all but first element
    1 Triaged      [CLJ-1313] Correct a few unit tests
    1 Open         [CLJ-1582] Overriding in-ns and ns is problematic 
    1 Triaged      [CLJ-1613] :or defaults should refer to enclosing scope in map destructuring
@@ -137,12 +138,13 @@ Defect
    0 Triaged      [CLJ-1680] quot and rem handle doubles badly
    0 Triaged      [CLJ-1682] clojure.set/intersection occasionally allows non-set arguments.
    0 Triaged      [CLJ-1705] vector-of throws NullPointerException if given unrecognized type
-   0 Needs Patch  [CLJ-1706] top level conditional splicing ignores all but first element
+   0 Triaged      [CLJ-1708] Volatile mutable in deftype is not settable when using try..finally and returning this
+   0 Screenable   [CLJ-1709] Incorrect range contents and count with step != 1
 
 ========================================
 Enhancement
 
-  24 Triaged      [CLJ-1449] Add starts-with? ends-with? contains? to clojure.string
+  25 Triaged      [CLJ-1449] Add starts-with? ends-with? contains? to clojure.string
   24 Triaged      [CLJ-703] Improve writeClassFile performance
   18 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
   16 Vetted       [CLJ-865] Macroexpansion discards &form metadata
@@ -154,11 +156,11 @@ Enhancement
   10 Open         [CLJ-1078] Add queue and queue? to clojure.core
   10 Backlog      [CLJ-1224] Records do not cache hash like normal maps
    9 Open         [CLJ-1278] Identify Clojure namespace and function name in a compiled function's toString()
+   8 Triaged      [CLJ-308] protocol-ize with-open
    7 Vetted       [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
    7 Open         [CLJ-304] clojure.repl/source does not work with deftype
    7 Vetted       [CLJ-1148] adds docstring support to defonce
    7 Triaged      [CLJ-440] java method calls cannot omit varargs
-   7 Triaged      [CLJ-308] protocol-ize with-open
    6 Open         [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
    6 Triaged      [CLJ-1454] Add a swap! that returns old value
    6 Triaged      [CLJ-1576] clojure.pprint should print vars as pr does
@@ -300,5 +302,5 @@ Enhancement
    0 Backlog      [CLJ-1671] Clojure stream socket repl
    0 Triaged      [CLJ-1673] Improve clojure.repl/dir-fn to work on namespace aliases in addition to canonical namespaces.
    0 Triaged      [CLJ-1693] into: merge metadata
-   0 Screenable   [CLJ-1699] data_readers hard coded to .clj extension, should be extended to .cljc
-   0 Screenable   [CLJ-1703] Pretty print #error data
+   0 Screened     [CLJ-1699] data_readers hard coded to .clj extension, should be extended to .cljc
+   0 Screened     [CLJ-1703] Pretty print #error data
