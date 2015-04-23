@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: April 20, 2015
+Date: April 23, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -46,17 +46,18 @@ Defect
    8 Backlog      [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
    8 Backlog      [CLJ-1232] Functions with non-qualified return type hints force import of hinted classes when called from other namespace
    7 Backlog      [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
+   6 Backlog      [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
+   5 Triaged      [CLJ-1195] emit-hinted-impl expands to non-ns-qualified invocation of 'fn'
    5 Triaged      [CLJ-130] Namespace metadata lost in AOT compile
    5 Triaged      [CLJ-1074] Read/print round-trip for +/-Infinity and NaN
-   5 Backlog      [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
    5 Backlog      [CLJ-1093] Empty PersistentCollections get incorrectly evaluated as their generic clojure counterpart
-   4 Triaged      [CLJ-1195] emit-hinted-impl expands to non-ns-qualified invocation of 'fn'
    4 Triaged      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
    4 Triaged      [CLJ-1565] pprint issues infinite output for a protocol
    4 Triaged      [CLJ-1282] The quote special form should throw an exception if passed more than one form to quote
    4 Open         [CLJ-1029] ns defmacro allows arbitrary execution of clojure.core fns
    4 Open         [CLJ-1423] Applying a var to an infinite arglist consumes all available memory
-   3 Incomplete   [CLJ-1698] conditional reading bugs
+   3 Screenable   [CLJ-1698] conditional reading bugs
+   3 Screened     [CLJ-1700] REPL evaluation of conditional reader forms fails
    3 Open         [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
    3 Backlog      [CLJ-787] transient blows up when passed a vector created by subvec
    3 Triaged      [CLJ-1620] Constants are leaked in case of a reentrant eval
@@ -80,10 +81,12 @@ Defect
    1 Open         [CLJ-1317] clojure.zip/seq-zip returns spurious nils during traversal
    1 Open         [CLJ-1435] 'numerator and 'denominator fail to handle integral values (i.e. N/1)
    1 Triaged      [CLJ-1528] clojure.test/inc-report-counter is not thread safe
-   1 Screened     [CLJ-1700] REPL evaluation of conditional reader forms fails
+   1 Open         [CLJ-1625] Cannot implement protocol methods of the same name inline
+   1 Open         [CLJ-1657] proxy creates bytecode that calls super methods of abstract classes
    1 Open         [CLJ-1181] clojure.pprint/code-dispatch breaks on certain types of anonymous functions
    1 Triaged      [CLJ-1390] pprint a GregorianCalendar results in Arity exception
    1 Open         [CLJ-1587] PersistentArrayMap's assoc doesn't respect HASHTABLE_THRESHOLD
+   1 Open         [CLJ-1714] Some static initialisers still run at compile time if used in type hints
    1 Backlog      [CLJ-701] Compiler loses 'loop's return type in some cases
    1 Open         [CLJ-1229] count silently overflows for sequences with more than Integer/MAX_VALUE elements
    1 Open         [CLJ-1243] Cannot resolve public generic method from package-private base class
@@ -94,10 +97,10 @@ Defect
    1 Open         [CLJ-1231] fn and letfn don't support hinting the function's return type
    1 Open         [CLJ-1389] Re-loading a namespace ignores metadata specified for the namespace
    1 Open         [CLJ-1403] ns-resolve might throw ClassNotFoundException but should return nil
-   1 Triaged      [CLJ-1225] quot overflow issues around Long/MIN_VALUE for BigInt
-   1 Triaged      [CLJ-1254] Incorrect long quot result involving Long/MIN_VALUE
    1 Open         [CLJ-1198] Apply metadata to primitive fns causes them to lose their primitive-ness
    1 Open         [CLJ-1207] Importing a class that does not exist fails to report the name of the class that did not exist
+   1 Triaged      [CLJ-1225] quot overflow issues around Long/MIN_VALUE for BigInt
+   1 Triaged      [CLJ-1254] Incorrect long quot result involving Long/MIN_VALUE
    1 Triaged      [CLJ-1609] Fix an edge case in the Reflector's search for a public method declaration
    1 Open         [CLJ-1059] PersistentQueue doesn't implement java.util.List, causing nontransitive equality
    1 Open         [CLJ-1308] extend-type doesn't type-hint correctly as promised by the doc when the class is determined at run-time
@@ -139,7 +142,9 @@ Defect
    0 Triaged      [CLJ-1682] clojure.set/intersection occasionally allows non-set arguments.
    0 Triaged      [CLJ-1705] vector-of throws NullPointerException if given unrecognized type
    0 Triaged      [CLJ-1708] Volatile mutable in deftype is not settable when using try..finally and returning this
-   0 Screenable   [CLJ-1709] Incorrect range contents and count with step != 1
+   0 Screened     [CLJ-1709] Incorrect range contents and count with step != 1
+   0 Screened     [CLJ-1711] Hash map and StructMap cannot be conjoined using "into"
+   0 Screenable   [CLJ-1713] Range is not serializable
 
 ========================================
 Enhancement
@@ -176,12 +181,12 @@ Enhancement
    5 Open         [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
    5 Open         [CLJ-401] Promote "seqable?" from contrib?
    4 Open         [CLJ-1573] Support (Java) transient fields in deftype, e.g. for hashcodes
+   4 Triaged      [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
    4 Triaged      [CLJ-1490] Exception on protocol implementation after protocol reloaded could be improved
    4 Triaged      [CLJ-1210] error message for (clojure.java.io/reader nil) — consistency for use with io/resource
    4 Triaged      [CLJ-735] Improve error message when a protocol method is not found
    4 Open         [CLJ-899] Accept and ignore colon between key and value in map literals
    4 Triaged      [CLJ-1293] Portable "catch-all" mechanism
-   3 Triaged      [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
    3 Open         [CLJ-1519] Added extra arity to clojure.core/ns-* fns
    3 Open         [CLJ-272] load/ns/require/use overhaul
    3 Open         [CLJ-99] GC Issue 95: max-key and min-key evaluate k multiple times for arguments
