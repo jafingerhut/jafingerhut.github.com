@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: April 24, 2015
+Date: April 30, 2015
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -39,26 +39,31 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
+    4.00   4 Bad: Unkn Fi [CLJS-1196] Assert failed on 3190+ while :require-ing .js file in :libs directory
+             Leonardo Borges (1)
+             Sam Howie (1)
+             Vito Cassisi (1)
+             deliminator (1)
     2.00   2 Open         [CLJS-677] cljs.reader doesn't support keywords starting with a digit
              Francis Avila (1)
              Mike Longworth (1)
-    1.25   2 Open         [CLJS-957] Parallel compilation
+    1.20   2 Open         [CLJS-957] Parallel compilation
              Dusan Maliarik (1)
-             Mike Fikes (1/4)
+             Mike Fikes (1/5)
     1.00   1 Bad: Unkn Fi [CLJS-871] .-default property access returns nil
              Timothy Pratley (1)
     1.00   1 Bad: Unkn Fi [CLJS-968] Metadata on function literal inside of a let produces invalid Javascript
              David Nolen (1)
+    1.00   1 Bad: Unkn Fi [CLJS-1198] cljs.test may report summary before all async tests complete
+             Leon Grapenthin (1)
     1.00   1 Open         [CLJS-890] Incorrect behaviour of (str obj) when obj has valueOf method
              Kevin Neaton (1)
     1.00   1 Open         [CLJS-911] Cljs's clojure.string.replace replacement fn takes different args to Clj's clojure.string.replace
              Joseph Smith (1)
-    1.00   1 Open         [CLJS-1198] cljs.test may report summary before all async tests complete
-             Leon Grapenthin (1)
     0.50   1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
              Joshua Choi (1/2)
-    0.25   1 Open         [CLJS-1092] Basic CommonJS processing
-             Mike Fikes (1/4)
+    0.20   1 Bad: Unkn Fi [CLJS-1092] Basic CommonJS processing
+             Mike Fikes (1/5)
     0.00   0 Bad: Unkn Fi [CLJS-349] cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
     0.00   0 Bad: Unkn Fi [CLJS-375] loop doesn't seem to preserve tag information as evidenced by extra cljs.core.truth_ calls
     0.00   0 Bad: Unkn Fi [CLJS-428] Using */ inside of a docstring causes compiler to produce invalid JavaScript
@@ -66,7 +71,6 @@ Defect
     0.00   0 Bad: Unkn Fi [CLJS-485] clojure.string/replace ignores regex flags
     0.00   0 Bad: Unkn Fi [CLJS-620] Warnings are generated when using a macro in argument position
     0.00   0 Bad: Unkn Fi [CLJS-712] resolve-var for symbol with dot still wrong
-    0.00   0 Bad: Unkn Fi [CLJS-742] Compilation with :output-file option set fails
     0.00   0 Bad: Unkn Fi [CLJS-744] ISequential types should implement JS indexOf, lastIndexOf
     0.00   0 Bad: Unkn Fi [CLJS-794] RegExp flags are being dropped by `string/replace`
     0.00   0 Bad: Unkn Fi [CLJS-818] Externs don't get loaded when running under immutant as cljs.js-deps/find-js-classpath fails
@@ -76,23 +80,19 @@ Defect
     0.00   0 Bad: Unkn Fi [CLJS-1136] Initial require fails to fully load added symbols
     0.00   0 Bad: Unkn Fi [CLJS-1139] Repeated applications of `ns` form at the REPL are not additive
     0.00   0 Bad: Unkn Fi [CLJS-1142] ClojureScript stream socket REPL
-    0.00   0 Bad: Unkn Fi [CLJS-1145] numeric type inference should accept JVM primitive numeric type hints
     0.00   0 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
     0.00   0 Bad: Unkn Fi [CLJS-1168] REPL fails to find .js files in :libs 
-    0.00   0 Bad: Unkn Fi [CLJS-1173] standard way to identify types originating from ClojureScript
-    0.00   0 Bad: Unkn Fi [CLJS-1196] Assert failed on 3190+ while :require-ing .js file in :libs directory
     0.00   0 Bad: Unkn Fi [CLJS-1200] compare behaves differently from Clojure
-    0.00   0 Bad: Unkn Fi [CLJS-1213] cljs.analyzer incorrectly marks all defs as tests when eliding test metadata
     0.00   0 Bad: Unkn Fi [CLJS-1214] :arglists meta has needless quoting
-    0.00   0 Bad: Unkn Fi [CLJS-1218] Syntax quoting an alias created with :require-macros throws ClassCastException
-    0.00   0 Bad: Unkn Fi [CLJS-1221] deftype/defrecord getBasis static method
+    0.00   0 Bad: Unkn Fi [CLJS-1225] Variadic function with same name as parent function gives runtime error in advanced compile mode.
+    0.00   0 Bad: Unkn Fi [CLJS-1228] cljs.util/topo-sort is polynomial on larger dependency graphs
 
 ========================================
 Enhancement
 
-    1.25   2 Open         [CLJS-555] CLONE - Implement ratios
+    1.20   2 Open         [CLJS-555] CLONE - Implement ratios
              Marcus H (1)
-             Mike Fikes (1/4)
+             Mike Fikes (1/5)
     1.00   1 Open         [CLJS-145] Cannot create more than one browser evaluation environment
              Hubert Iwaniuk (1)
     1.00   1 Open         [CLJS-324] cljs.core/format
@@ -105,29 +105,33 @@ Enhancement
              Joshua Choi (1/2)
     0.00   0 Bad: Unkn Fi [CLJS-773] Use unchecked-*-int functions for real 32-bit math
     0.00   0 Bad: Unkn Fi [CLJS-836] Replace seq-based iterators with direct iterators for all non-seq collections that use SeqIterator
-    0.00   0 Bad: Unkn Fi [CLJS-895] Hello-js sample is broken when following README instructions
     0.00   0 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
-    0.00   0 Bad: Unkn Fi [CLJS-1061] Enhanced control over printing configuration
+    0.00   0 Bad: Unkn Fi [CLJS-1047] externs checking for js/foo
+    0.00   0 Bad: Unkn Fi [CLJS-1059] Simple interface wanted to convert cljs forms to js
+    0.00   0 Bad: Unkn Fi [CLJS-1074] Externs inference
     0.00   0 Bad: Unkn Fi [CLJS-1124] Have cljs.repl.browser/repl-env serve more static file types
     0.00   0 Bad: Unkn Fi [CLJS-1125] Simple corrupted compiled file detection
     0.00   0 Bad: Unkn Fi [CLJS-1127] validate compiled file written to disk
     0.00   0 Bad: Unkn Fi [CLJS-1141] memoization of js-dependency-index and get-upstream-deps needs knobs
     0.00   0 Bad: Unkn Fi [CLJS-1147] reconnect logic for browser REPLs
     0.00   0 Bad: Unkn Fi [CLJS-1174] Simple warning if a namespace with dashes not found but a file path with dashes exists
+    0.00   0 Bad: Unkn Fi [CLJS-1177] A compiler pass for JS dialects
     0.00   0 Bad: Unkn Fi [CLJS-1194] data_readers.cljc
     0.00   0 Bad: Unkn Fi [CLJS-1195] generic reusable command line argument parsing for REPLs
     0.00   0 Bad: Unkn Fi [CLJS-1207] Emit a warning if multiple resources found for a ClojureScript namespace
     0.00   0 Bad: Unkn Fi [CLJS-1217] cljs.test/run-tests with default env has no way to access summary
+    0.00   0 Bad: Unkn Fi [CLJS-1226] Add on-testing-complete hook
 
 ========================================
 Task
 
     1.00   1 Bad: Unkn Fi [CLJS-710] port clojure.pprint
              Matthew Molloy (1)
-    0.25   1 Open         [CLJS-1044] Investigate Closure CommonJS Support
-             Mike Fikes (1/4)
+    0.20   1 Bad: Unkn Fi [CLJS-1044] Investigate Closure CommonJS Support
+             Mike Fikes (1/5)
+    0.20   1 Open         [CLJS-901] Protocolize compiler access to the file system
+             Mike Fikes (1/5)
     0.00   0 Bad: Unkn Fi [CLJS-1128] Describe internationalization strategies via Google Closure on the wiki
     0.00   0 Bad: Unkn Fi [CLJS-1129] :modules tutorial for wiki
     0.00   0 Bad: Unkn Fi [CLJS-1134] Lift protocols from cljs.closure into cljs.protocols ns
     0.00   0 Bad: Unkn Fi [CLJS-1135] Present more cljs.foo.api interfaces for stable parts of cljs.analyzer, cljs.compiler, and cljs.closure
-    0.00   0 Bad: Unkn Fi [CLJS-1138] Add page to Wiki "Slow dev builds"
