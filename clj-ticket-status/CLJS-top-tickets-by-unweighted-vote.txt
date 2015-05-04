@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: April 30, 2015
+Date: May 4, 2015
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -48,7 +48,7 @@ Defect
    1 Bad: Unkn Fi [CLJS-968] Metadata on function literal inside of a let produces invalid Javascript
    1 Bad: Unkn Fi [CLJS-1198] cljs.test may report summary before all async tests complete
    1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
-   1 Bad: Unkn Fi [CLJS-1092] Basic CommonJS processing
+   1 Bad: Unkn Fi [CLJS-1092] CommonJS Module processing
    0 Bad: Unkn Fi [CLJS-349] cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
    0 Bad: Unkn Fi [CLJS-375] loop doesn't seem to preserve tag information as evidenced by extra cljs.core.truth_ calls
    0 Bad: Unkn Fi [CLJS-428] Using */ inside of a docstring causes compiler to produce invalid JavaScript
@@ -68,9 +68,13 @@ Defect
    0 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
    0 Bad: Unkn Fi [CLJS-1168] REPL fails to find .js files in :libs 
    0 Bad: Unkn Fi [CLJS-1200] compare behaves differently from Clojure
-   0 Bad: Unkn Fi [CLJS-1214] :arglists meta has needless quoting
    0 Bad: Unkn Fi [CLJS-1225] Variadic function with same name as parent function gives runtime error in advanced compile mode.
    0 Bad: Unkn Fi [CLJS-1228] cljs.util/topo-sort is polynomial on larger dependency graphs
+   0 Bad: Unkn Fi [CLJS-1233] excluding + * etc. does not work for libraries in JARs
+   0 Bad: Unkn Fi [CLJS-1234] local :foreign-libs support for REPLs
+   0 Bad: Unkn Fi [CLJS-1235] non-upstream :foreign-libs not copied to :output-dir
+   0 Bad: Unkn Fi [CLJS-1236] `constructor` needs to munged if used as namespace segment
+   0 Bad: Unkn Fi [CLJS-1247] Add *out* and *err*
 
 ========================================
 Enhancement
@@ -80,7 +84,10 @@ Enhancement
    1 Open         [CLJS-324] cljs.core/format
    1 Open         [CLJS-335] user defined tagged literals in CLJS
    1 Open         [CLJS-1009] Allow deps.cljs to declare a foreign lib as remote
+   1 Bad: Unkn Fi [CLJS-1238] Setting *main-cli-fn* when using :target :nodejs shouldn't be manditory
    1 Open         [CLJS-1017] Support :main for :advanced builds
+   1 Bad: Unkn Fi [CLJS-1177] A compiler support for non-Closure transforms (JSX, etc)
+   1 Open         [CLJS-1241] Add cljs.core/boolean? predicate
    0 Bad: Unkn Fi [CLJS-773] Use unchecked-*-int functions for real 32-bit math
    0 Bad: Unkn Fi [CLJS-836] Replace seq-based iterators with direct iterators for all non-seq collections that use SeqIterator
    0 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
@@ -93,20 +100,20 @@ Enhancement
    0 Bad: Unkn Fi [CLJS-1141] memoization of js-dependency-index and get-upstream-deps needs knobs
    0 Bad: Unkn Fi [CLJS-1147] reconnect logic for browser REPLs
    0 Bad: Unkn Fi [CLJS-1174] Simple warning if a namespace with dashes not found but a file path with dashes exists
-   0 Bad: Unkn Fi [CLJS-1177] A compiler pass for JS dialects
    0 Bad: Unkn Fi [CLJS-1194] data_readers.cljc
    0 Bad: Unkn Fi [CLJS-1195] generic reusable command line argument parsing for REPLs
    0 Bad: Unkn Fi [CLJS-1207] Emit a warning if multiple resources found for a ClojureScript namespace
    0 Bad: Unkn Fi [CLJS-1217] cljs.test/run-tests with default env has no way to access summary
    0 Bad: Unkn Fi [CLJS-1226] Add on-testing-complete hook
+   0 Bad: Unkn Fi [CLJS-1230] ES 2015 Module Processing
+   0 Bad: Unkn Fi [CLJS-1231] AMD Module Processing
 
 ========================================
 Task
 
    1 Bad: Unkn Fi [CLJS-710] port clojure.pprint
    1 Open         [CLJS-901] Protocolize compiler access to the file system
-   1 Bad: Unkn Fi [CLJS-1044] Investigate Closure CommonJS Support
+   1 Bad: Unkn Fi [CLJS-1229] Simplify Closure CommonJS & ES 2015 Module support
    0 Bad: Unkn Fi [CLJS-1128] Describe internationalization strategies via Google Closure on the wiki
    0 Bad: Unkn Fi [CLJS-1129] :modules tutorial for wiki
    0 Bad: Unkn Fi [CLJS-1134] Lift protocols from cljs.closure into cljs.protocols ns
-   0 Bad: Unkn Fi [CLJS-1135] Present more cljs.foo.api interfaces for stable parts of cljs.analyzer, cljs.compiler, and cljs.closure
