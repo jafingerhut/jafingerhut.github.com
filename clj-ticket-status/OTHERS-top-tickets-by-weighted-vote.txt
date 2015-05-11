@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: May 7, 2015
+Date: May 11, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -162,11 +162,13 @@ Defect
     0.00   0 Open         [CCACHE-32] LIRSCache defect allows it's memory use to grow without bound
     0.00   0 Open         [CCACHE-39] FIFOCache member exempted from expulsion after evict
     0.00   0 Open         [CCACHE-40] FIFOCache StackOverflowError with high :threshold due to concat
+    0.00   0 Open         [CCACHE-41] defcache needs to impl. iterator() to avoid Clojure 1.7 breakage
 
 ========================================
 Enhancement
 
-    0.00   0 Open         [CCACHE-14] Asynchronous Cache Support
+    1.00   1 Open         [CCACHE-14] Asynchronous Cache Support
+             Eduard Bondarenko (1)
     0.00   0 Open         [CCACHE-17] Create function backed cache
     0.00   0 Open         [CCACHE-35] Add weak-cache
     0.00   0 Open         [CCACHE-36] Allow ttl to be set for a key on cache miss
@@ -223,17 +225,13 @@ Defect
     0.00   0 Open         [CLJCLR-33] REPL input broken
     0.00   0 Open         [CLJCLR-38] Use Type.AssemblyQualifiedName in ObjExpr.EmitValue when generating code for types
     0.00   0 Open         [CLJCLR-48] Error when starting Clojure.Main.exe
-    0.00   0 Open         [CLJCLR-61] Compile and ilmerge clojure.core.reducers.
-    0.00   0 Open         [CLJCLR-62] Make Task35 accessible for reducers
-    0.00   0 Open         [CLJCLR-63] Mistake in Java translation in clojure.core.reducers/fold
-    0.00   0 Open         [CLJCLR-64] Slurp (via clojure.clr.io) does not open URLs.
+    0.00   0 Open         [CLJCLR-65] fix reflection warnings in gvec
 
 ========================================
 Enhancement
 
     1.00   1 Open         [CLJCLR-25] Clojure.Compile.exe create single dll for all compiled .clj files
              Antti Karanta (1)
-    0.00   0 Open         [CLJCLR-44] Expose RT.GetFindFilePaths
 
 
 Project CMEMOIZE tickets
@@ -282,6 +280,8 @@ Defect
              Jochen Hinrichsen (1)
     1.00   1 Open         [CTYP-168] :arglists metadata is missing from vars defined using core.typed's defn macro
              James Reeves (1)
+    1.00   1 Open         [CTYP-197] No matching arities when defining multiple arity protocol method
+             Johan Gall (1)
     1.00   1 Open         [CTYP-213] core.typed 0.2.87 fails in combination with org.clojure/tools.analyzer.jvm 0.6.5 on Clojure 1.6
              Slava Andreyev (1)
     0.00   0 Open         [CTYP-27] clojure.lang.RT/nth's type doesn't currently allow nil as the first argument
@@ -316,7 +316,6 @@ Defect
     0.00   0 Open         [CTYP-190] pred doesn't handle much
     0.00   0 Open         [CTYP-191] Bad type syntax when parsing types of macro-generated anonymous functions from required namespaces (when the types are composed, for instance (Option AnyInteger))
     0.00   0 Open         [CTYP-195] Support for clojure.core/extend is broken when used with typed.core/defprotocol
-    0.00   0 Open         [CTYP-197] No matching arities when defining multiple arity protocol method
     0.00   0 Open         [CTYP-198] incorrect optional keyword lookup in complete HMaps
     0.00   0 Open         [CTYP-200] min and max function are inferred to return java.long.Number if all parameters are Integer
     0.00   0 Open         [CTYP-201] Calling a multimethod from a protocol function breaks the type checker

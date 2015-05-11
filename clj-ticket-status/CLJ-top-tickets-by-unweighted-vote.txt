@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: May 7, 2015
+Date: May 11, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -40,7 +40,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 Defect
 
   17 Backlog      [CLJ-700] contains? broken for transient collections
-  11 Screened     [CLJ-1195] emit-hinted-impl expands to non-ns-qualified invocation of 'fn'
+  11 Ok           [CLJ-1195] emit-hinted-impl expands to non-ns-qualified invocation of 'fn'
    9 Triaged      [CLJ-1372] Inconsistent hash with java collections
    9 Triaged      [CLJ-1527] Harmonize accepted / documented symbol and keyword syntax over various readers
    9 Backlog      [CLJ-1250] Reducer (and folder) instances hold onto the head of seqs
@@ -133,7 +133,7 @@ Defect
    0 Triaged      [CLJ-1588] StackOverflow in clojure.test macroexpand with `are` and anonymous `fn`
    0 Triaged      [CLJ-1644] into-array fails for sequences starting with nil
    0 Triaged      [CLJ-1645] 'javap -v' on protocol class reveals no source file
-   0 Screened     [CLJ-1648] Use equals() instead of == when resolving Symbol
+   0 Ok           [CLJ-1648] Use equals() instead of == when resolving Symbol
    0 Triaged      [CLJ-1659] compile leaks files
    0 Triaged      [CLJ-1676] map destructuring: prevent evaluation of values in :or when they are not used/needed
    0 Triaged      [CLJ-1678] Update failing tests for IBM JDK 1.7 and 1.8
@@ -143,15 +143,16 @@ Defect
    0 Triaged      [CLJ-1708] Volatile mutable in deftype is not settable when using try..finally and returning this
    0 Triaged      [CLJ-1717] Compiler casts System properties to String without prior type check
    0 Bad: Match n [CLJ-1722] Typo in the doc string of `with-bindings`
-   0 Screenable   [CLJ-1723] NPE with eduction + cat on a collection containing nil
-   0 Screenable   [CLJ-1726] New iterate, repeat, cycle, range should support IPending as they did before
-   0 Needs Patch  [CLJ-1727] range confused by large bounds
+   0 Screened     [CLJ-1723] NPE with eduction + cat on a collection containing nil
+   0 Screened     [CLJ-1726] New iterate and cycle impls have delayed computations but don't implement IPending
+   0 Screenable   [CLJ-1727] range confused by large bounds
+   0 Screenable   [CLJ-1728] source fn fails for fns with conditional code
 
 ========================================
 Enhancement
 
   25 Triaged      [CLJ-1449] Add starts-with? ends-with? contains? to clojure.string
-  24 Triaged      [CLJ-703] Improve writeClassFile performance
+  25 Triaged      [CLJ-703] Improve writeClassFile performance
   18 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
   16 Vetted       [CLJ-865] Macroexpansion discards &form metadata
   16 Backlog      [CLJ-1517] Unrolled small vectors
@@ -306,5 +307,5 @@ Enhancement
    0 Backlog      [CLJ-1671] Clojure stream socket repl
    0 Triaged      [CLJ-1673] Improve clojure.repl/dir-fn to work on namespace aliases in addition to canonical namespaces.
    0 Triaged      [CLJ-1693] into: merge metadata
-   0 Screened     [CLJ-1716] IExceptionInfo should print with its ex-data
+   0 Ok           [CLJ-1716] IExceptionInfo should print with its ex-data
    0 Triaged      [CLJ-1724] Reuse call to seq() in LazySeq/hashcode for else case

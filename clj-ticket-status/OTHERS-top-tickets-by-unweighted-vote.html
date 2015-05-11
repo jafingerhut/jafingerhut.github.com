@@ -8,7 +8,7 @@
 
 <h1>Top OTHERS tickets by weighted vote</h1>
 
-Date: May 7, 2015<br>
+Date: May 11, 2015<br>
 <br>
 
 Open OTHERS tickets with at least one vote, sorted in descending order of
@@ -89,7 +89,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td style="vertical-align: top;">CCACHE
         </td>
-        <td style="vertical-align: top;"><a href="#CCACHE_Defect">6</a>
+        <td style="vertical-align: top;"><a href="#CCACHE_Defect">7</a>
         </td>
         <td style="vertical-align: top;"><a href="#CCACHE_Enhancement">6</a>
         </td>
@@ -129,9 +129,9 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td style="vertical-align: top;">CLJCLR
         </td>
-        <td style="vertical-align: top;"><a href="#CLJCLR_Defect">8</a>
+        <td style="vertical-align: top;"><a href="#CLJCLR_Defect">5</a>
         </td>
-        <td style="vertical-align: top;"><a href="#CLJCLR_Enhancement">2</a>
+        <td style="vertical-align: top;"><a href="#CLJCLR_Enhancement">1</a>
         </td>
         <td style="vertical-align: top;">0
         </td>
@@ -1178,6 +1178,16 @@ Project CCACHE tickets
         <td style="vertical-align: top;">FIFOCache StackOverflowError with high :threshold due to concat
         </td>
     </tr>
+    <tr>
+        <td style="vertical-align: top;">0
+        </td>
+        <td style="vertical-align: top;">Open
+        </td>
+        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CCACHE-41">CCACHE-41</a>
+        </td>
+        <td style="vertical-align: top;">defcache needs to impl. iterator() to avoid Clojure 1.7 breakage
+        </td>
+    </tr>
   </tbody>
 </table>
 <h2><a name="CCACHE_Enhancement"></a>Enhancement</h2>
@@ -1195,7 +1205,7 @@ Project CCACHE tickets
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0
+        <td style="vertical-align: top;">1
         </td>
         <td style="vertical-align: top;">Open
         </td>
@@ -1537,39 +1547,9 @@ Project CLJCLR tickets
         </td>
         <td style="vertical-align: top;">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJCLR-61">CLJCLR-61</a>
+        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJCLR-65">CLJCLR-65</a>
         </td>
-        <td style="vertical-align: top;">Compile and ilmerge clojure.core.reducers.
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Open
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJCLR-62">CLJCLR-62</a>
-        </td>
-        <td style="vertical-align: top;">Make Task35 accessible for reducers
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Open
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJCLR-63">CLJCLR-63</a>
-        </td>
-        <td style="vertical-align: top;">Mistake in Java translation in clojure.core.reducers/fold
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Open
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJCLR-64">CLJCLR-64</a>
-        </td>
-        <td style="vertical-align: top;">Slurp (via clojure.clr.io) does not open URLs.
+        <td style="vertical-align: top;">fix reflection warnings in gvec
         </td>
     </tr>
   </tbody>
@@ -1596,16 +1576,6 @@ Project CLJCLR tickets
         <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJCLR-25">CLJCLR-25</a>
         </td>
         <td style="vertical-align: top;">Clojure.Compile.exe create single dll for all compiled .clj files
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Open
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJCLR-44">CLJCLR-44</a>
-        </td>
-        <td style="vertical-align: top;">Expose RT.GetFindFilePaths
         </td>
     </tr>
   </tbody>
@@ -1828,6 +1798,16 @@ Project CTYP tickets
         <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CTYP-168">CTYP-168</a>
         </td>
         <td style="vertical-align: top;">:arglists metadata is missing from vars defined using core.typed's defn macro
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align: top;">1
+        </td>
+        <td style="vertical-align: top;">Open
+        </td>
+        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CTYP-197">CTYP-197</a>
+        </td>
+        <td style="vertical-align: top;">No matching arities when defining multiple arity protocol method
         </td>
     </tr>
     <tr>
@@ -2158,16 +2138,6 @@ Project CTYP tickets
         <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CTYP-195">CTYP-195</a>
         </td>
         <td style="vertical-align: top;">Support for clojure.core/extend is broken when used with typed.core/defprotocol
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Open
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CTYP-197">CTYP-197</a>
-        </td>
-        <td style="vertical-align: top;">No matching arities when defining multiple arity protocol method
         </td>
     </tr>
     <tr>
