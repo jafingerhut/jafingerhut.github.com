@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: May 14, 2015
+Date: May 18, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -253,21 +253,17 @@ Defect
    0 Open         [CTYP-140] HSequential things should correctly erase dotted arguments
    0 Open         [CTYP-141] Implement Difference type
    0 Open         [CTYP-143] extend & extend-protocol with (Class/forName "[B") as Class dispatch value fails
-   0 Open         [CTYP-170] `(apply concat ...)` gives "AssertionError Assert failed: (r/HeterogeneousMap? kws)".
    0 Open         [CTYP-171] nil should not be treated as subtype of repeat list/vector
    0 Open         [CTYP-172] annotating methods that descructure their arguments can confuse the type system
    0 Open         [CTYP-173] (first (filter ...)) type checks in Clojure, not ClojureScript
-   0 Open         [CTYP-174] More fixes for closed source projects (datomic)
    0 Open         [CTYP-177] Compile error with core.async
    0 Open         [CTYP-178] Dissimilar lengths of HVecs in a union doesn't type-check
-   0 Open         [CTYP-181] (float)'s type is mistakenly (Any -> Float)
    0 Open         [CTYP-182] macros which define functions containing named anonymous functions crash
    0 Open         [CTYP-188] ann-record fails for argument-less records
    0 Open         [CTYP-190] pred doesn't handle much
    0 Open         [CTYP-191] Bad type syntax when parsing types of macro-generated anonymous functions from required namespaces (when the types are composed, for instance (Option AnyInteger))
    0 Open         [CTYP-195] Support for clojure.core/extend is broken when used with typed.core/defprotocol
    0 Open         [CTYP-198] incorrect optional keyword lookup in complete HMaps
-   0 Open         [CTYP-200] min and max function are inferred to return java.long.Number if all parameters are Integer
    0 Open         [CTYP-201] Calling a multimethod from a protocol function breaks the type checker
    0 Open         [CTYP-203] Internal error
    0 Open         [CTYP-204] Assoc doesn't work with multiple entries
@@ -275,7 +271,7 @@ Defect
    0 Open         [CTYP-210] (long AnyInteger) doesn't typecheck
    0 Open         [CTYP-212] Can't create a promise of the same type as a record field
    0 Open         [CTYP-214] core.typed 0.2.84 raises an exception when trying to infer the type of (atom #{})
-   0 Open         [CTYP-215] Domain of clojure.core/zero? is Number, not Any
+   0 Open         [CTYP-216] PermGen memory leak when type checking with faulty types
 
 ========================================
 Enhancement
@@ -290,12 +286,10 @@ Enhancement
    0 Open         [CTYP-18] Implement equality filters
    0 Open         [CTYP-50] Support overriding fields
    0 Open         [CTYP-54] Merge compatible types to make more accurate ones
-   0 Open         [CTYP-57] Support monitor-enter/monitor-exit
    0 Open         [CTYP-76] Support KwArgsSeq in apply
    0 Open         [CTYP-98] Implement a defrecord> macro
    0 Open         [CTYP-109] Better error message for TFn app
    0 Open         [CTYP-110] Add satisfies?
-   0 Open         [CTYP-111] Clearer error message for misusing special type
    0 Open         [CTYP-113] Better documentation for override-method
    0 Open         [CTYP-119] Record/datatypes should update like HMaps via occurrence typing
    0 Open         [CTYP-124] case should utilize negative information
@@ -311,7 +305,7 @@ Enhancement
    0 Open         [CTYP-202] Provide a way to annotate a throw-on-nil function
    0 Open         [CTYP-205] Better filter checking
    0 Open         [CTYP-206] Fixed as rest args
-   0 Open         [CTYP-207] Equality Propositions
+   0 Triaged      [CTYP-217] Basic support for transients
 
 ========================================
 Task
@@ -464,7 +458,6 @@ Project JDBC tickets
 Defect
 
    0 Open         [JDBC-91] Issue with H2 "script" command
-   0 Open         [JDBC-107] metadata-result leaks ResultSets
 
 ========================================
 Enhancement
@@ -479,7 +472,6 @@ Enhancement
 ========================================
 Task
 
-   1 Open         [JDBC-106] README should not specify 3rd party driver versions
    0 Open         [JDBC-88] Update :arglists metadata so it no longer confuses Eastwood
 
 
@@ -714,6 +706,7 @@ Enhancement
    0 Open         [TCHECK-64] better ratio generator
    0 Open         [TCHECK-65] add a float generator
    0 Open         [TCHECK-66] Make rose trees a deftype
+   0 Open         [TCHECK-68] Support scaling of generators
 
 
 Project TCLI tickets
@@ -774,6 +767,7 @@ Defect
    0 Open         [TMACRO-5] Misplaced doc string for function protected?
    0 Open         [TMACRO-6] with-symbol-macros fails to preserve set sortedness
    0 Open         [TMACRO-7] Extra paren in expansion
+   0 Open         [TMACRO-8] System Performance
 
 ========================================
 Enhancement

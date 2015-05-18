@@ -33,6 +33,7 @@
   :emails #{"chas@cemerick.com"}}
  ("TCHECK-8"
   "TCHECK-2"
+  "CLJ-1706"
   "CLJ-1399"
   "CLJ-1239"
   "CLJ-1107"
@@ -253,7 +254,7 @@
  {:display-name "Mark Engelberg",
   :usernames #{"markengelberg"},
   :emails #{"mark.engelberg@gmail.com"}}
- ("CLJ-700" "CLJ-428" "CLJ-200"),
+ ("CLJ-1224" "CLJ-700" "CLJ-428" "CLJ-200"),
  {:display-name "Rob Sanheim",
   :usernames #{"rsanheim@gmail.com"},
   :emails #{"rsanheim@gmail.com"}}
@@ -795,6 +796,10 @@
  {:display-name "Colin Williams",
   :usernames #{"lackita"},
   :emails #{"lackita@gmail.com"}}
+ (),
+ {:display-name "Syed Ibrahimshah",
+  :usernames #{"syedibr"},
+  :emails #{"syedibs.er@gmail.com"}}
  (),
  {:display-name "William",
   :usernames #{"william"},
@@ -3220,6 +3225,10 @@
   :usernames #{"zamaterian"},
   :emails #{"thenge@tdc.dk"}}
  ("DXML-4" "ASYNC-94"),
+ {:display-name "Ivan Sviatenko",
+  :usernames #{"pobivan"},
+  :emails #{"ivan@sviatenko.com"}}
+ (),
  {:display-name "Antti Virtanen",
   :usernames #{"lokori"},
   :emails #{"antti.virtanen@solita.fi"}}
@@ -4690,6 +4699,10 @@
  {:display-name "Yaron Peleg",
   :usernames #{"ypeleg"},
   :emails #{"ypeleg@gmx.com"}}
+ (),
+ {:display-name "Akhilesh Srikanth",
+  :usernames #{"akhileshs"},
+  :emails #{"akhilesh.srikanth@gmail.com"}}
  (),
  {:display-name "Craig Brozefsky",
   :usernames #{"craigbrozefsky"},
@@ -6201,7 +6214,7 @@
  {:display-name "Dmitr Sotnikov",
   :usernames #{"yogthos"},
   :emails #{"dmitri.sotnikov@gmail.com"}}
- ("JDBC-106" "CLJ-1449"),
+ ("CLJ-1449"),
  {:display-name "Ryan Mulligan",
   :usernames #{"ryantm"},
   :emails #{"ryan@ryantm.com"}}
@@ -6695,6 +6708,10 @@
   :usernames #{"kdevalck"},
   :emails #{"kevin_de_valck@hotmail.com"}}
  (),
+ {:display-name "Olli",
+  :usernames #{"luxbock"},
+  :emails #{"luxbock@gmail.com"}}
+ (),
  {:display-name "Jason Whitlark",
   :usernames #{"jwhitlark"},
   :emails #{"jason@whitlark.org"}}
@@ -6854,6 +6871,10 @@
  {:display-name "Ustun Ozgur",
   :usernames #{"ustunozgur"},
   :emails #{"ustun@ustunozgur.com"}}
+ (),
+ {:display-name "david tolpin",
+  :usernames #{"dtolpin"},
+  :emails #{"david.tolpin@gmail.com"}}
  (),
  {:display-name "Kaspars Dancis",
   :usernames #{"k7d"},
