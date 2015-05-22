@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v25)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v26)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -2743,7 +2743,11 @@ dispatch-value.</pre>">defmethod</a> <code>my-mm :dispatch-value [args] ...)</co
   tag. Parent must be a namespace-qualified symbol or keyword and
   child can be either a namespace-qualified symbol or keyword or a
   class. h must be a hierarchy obtained from make-hierarchy, if not
-  supplied defaults to, and modifies, the global hierarchy.</pre>">derive</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/isa_QMARK/" class="tooltip" title="<pre>clojure.core/isa?
+  supplied defaults to, and modifies, the global hierarchy.</pre>">derive</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/underive/" class="tooltip" title="<pre>clojure.core/underive
+([tag parent] [h tag parent])
+  Removes a parent/child relationship between parent and
+  tag. h must be a hierarchy obtained from make-hierarchy, if not
+  supplied defaults to, and modifies, the global hierarchy.</pre>">underive</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/isa_QMARK/" class="tooltip" title="<pre>clojure.core/isa?
 ([child parent] [h child parent])
   Returns true if (= child parent), or child is directly or indirectly derived
 from
