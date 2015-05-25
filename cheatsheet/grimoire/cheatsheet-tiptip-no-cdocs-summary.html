@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v24)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v26)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -172,7 +172,10 @@ Macro
 ([str-or-pattern])
   Given a regular expression or stringable thing, return a seq of
 all definitions in all currently-loaded namespaces that match the
-str-or-pattern.</pre>">apropos</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.repl/source/" class="tooltip" title="<pre>clojure.repl/source
+str-or-pattern.</pre>">apropos</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.repl/dir/" class="tooltip" title="<pre>clojure.repl/dir
+([nsname])
+Macro
+  Prints a sorted directory of public vars in a namespace</pre>">dir</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.repl/source/" class="tooltip" title="<pre>clojure.repl/source
 ([n])
 Macro
   Prints the source code for the given symbol, if it can find it.
@@ -1311,7 +1314,10 @@ data
 ([sc test key] [sc start-test start-key end-test end-key])
   sc must be a sorted collection, test(s) one of <, <=, > or
   >=. Returns a reverse seq of those entries with keys ek for
-  which (test (.. sc comparator (compare ek key)) 0) is true</pre>">rsubseq</a></code></td>
+  which (test (.. sc comparator (compare ek key)) 0) is true</pre>">rsubseq</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sequence/" class="tooltip" title="<pre>clojure.core/sequence
+([coll])
+  Coerces coll to a (possibly empty) sequence, if it is not already
+  one. Will not force a lazy seq. (sequence nil) yields ()</pre>">sequence</a></code></td>
               </tr>
               <tr class="even">
                 <td>From producer fn</td>
@@ -2737,7 +2743,11 @@ dispatch-value.</pre>">defmethod</a> <code>my-mm :dispatch-value [args] ...)</co
   tag. Parent must be a namespace-qualified symbol or keyword and
   child can be either a namespace-qualified symbol or keyword or a
   class. h must be a hierarchy obtained from make-hierarchy, if not
-  supplied defaults to, and modifies, the global hierarchy.</pre>">derive</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/isa_QMARK/" class="tooltip" title="<pre>clojure.core/isa?
+  supplied defaults to, and modifies, the global hierarchy.</pre>">derive</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/underive/" class="tooltip" title="<pre>clojure.core/underive
+([tag parent] [h tag parent])
+  Removes a parent/child relationship between parent and
+  tag. h must be a hierarchy obtained from make-hierarchy, if not
+  supplied defaults to, and modifies, the global hierarchy.</pre>">underive</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/isa_QMARK/" class="tooltip" title="<pre>clojure.core/isa?
 ([child parent] [h child parent])
   Returns true if (= child parent), or child is directly or indirectly derived
 from
@@ -4366,7 +4376,68 @@ fields, and Java class static fields.
 ([class])
   Returns the immediate and indirect superclasses and interfaces of c, if any</pre>">supers</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/type/" class="tooltip" title="<pre>clojure.core/type
 ([x])
-  Returns the :type metadata of x, or its Class if none</pre>">type</a></code></td>
+  Returns the :type metadata of x, or its Class if none</pre>">type</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/gen-class/" class="tooltip" title="<pre>clojure.core/gen-class
+([& options])
+Macro
+  When compiling, generates compiled bytecode for a class with the
+  given package-qualified :name (which, as all names in these
+  parameters, can be a string or symbol), and writes the .class file
+  to the *compile-path* directory.  When not compiling, does
+  nothing. The gen-class construct contains no implementation, as the
+  implementation will be dynamically sought by the generated class in
+  functions in an implementing Clojure namespace. Given a generated
+  class org.mydomain.MyClass with a method named mymethod, gen-class
+  will generate an implementation that looks for a function named by
+  (str prefix mymethod) (default prefix: &quot;-&quot;) in a
+  Clojure namespace specified by :impl-ns
+  (defaults to the current namespace). All inherited methods,
+  generated methods, and init and main functions (see :methods, :init,
+  and :main below) will be found similarly prefixed. By default, the
+  static initializer for the generated class will attempt to load the
+  Clojure support code for the class as a resource from the classpath,
+  e.g. in the example case, ``org/mydomain/MyClass__init.class``. This
+  behavior can be controlled by :load-impl-ns
+
+  Note that methods with a maximum of 18 parameters are supported.
+
+  In all subsequent sections taking types, the primitive types can be
+
+[ documentation truncated.  Click link for the rest. ]</pre>">gen-class</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/gen-interface/" class="tooltip" title="<pre>clojure.core/gen-interface
+([& options])
+Macro
+  When compiling, generates compiled bytecode for an interface with
+  the given package-qualified :name (which, as all names in these
+  parameters, can be a string or symbol), and writes the .class file
+  to the *compile-path* directory.  When not compiling, does nothing.
+
+  In all subsequent sections taking types, the primitive types can be
+  referred to by their Java names (int, float etc), and classes in the
+  java.lang package can be used without a package qualifier. All other
+  classes must be fully qualified.
+
+  Options should be a set of key/value pairs, all except for :name are
+  optional:
+
+  :name aname
+
+  The package-qualified name of the class to be generated
+
+  :extends [interface ...]
+
+  One or more interfaces, which will be extended by this interface.
+
+  :methods [ [name [param-types] return-type], ...]
+
+[ documentation truncated.  Click link for the rest. ]</pre>">gen-interface</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/definterface/" class="tooltip" title="<pre>clojure.core/definterface
+([name & sigs])
+Macro
+  Creates a new Java interface with the given name and method sigs.
+  The method return types and parameter types may be specified with type hints,
+  defaulting to Object if omitted.
+
+  (definterface MyInterface
+    (^int method1 [x])
+    (^Bar method2 [^Baz b ^Quux q]))</pre>">definterface</a></code></td>
               </tr>
               <tr class="even">
                 <td>Cast</td>
@@ -4697,59 +4768,7 @@ Macro
   classfiles. The source for the lib must be in a proper
   classpath-relative directory. The output files will go into the
   directory specified by *compile-path*, and that directory too must
-  be in the classpath.</pre>">compile</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/gen-class/" class="tooltip" title="<pre>clojure.core/gen-class
-([& options])
-Macro
-  When compiling, generates compiled bytecode for a class with the
-  given package-qualified :name (which, as all names in these
-  parameters, can be a string or symbol), and writes the .class file
-  to the *compile-path* directory.  When not compiling, does
-  nothing. The gen-class construct contains no implementation, as the
-  implementation will be dynamically sought by the generated class in
-  functions in an implementing Clojure namespace. Given a generated
-  class org.mydomain.MyClass with a method named mymethod, gen-class
-  will generate an implementation that looks for a function named by
-  (str prefix mymethod) (default prefix: &quot;-&quot;) in a
-  Clojure namespace specified by :impl-ns
-  (defaults to the current namespace). All inherited methods,
-  generated methods, and init and main functions (see :methods, :init,
-  and :main below) will be found similarly prefixed. By default, the
-  static initializer for the generated class will attempt to load the
-  Clojure support code for the class as a resource from the classpath,
-  e.g. in the example case, ``org/mydomain/MyClass__init.class``. This
-  behavior can be controlled by :load-impl-ns
-
-  Note that methods with a maximum of 18 parameters are supported.
-
-  In all subsequent sections taking types, the primitive types can be
-
-[ documentation truncated.  Click link for the rest. ]</pre>">gen-class</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/gen-interface/" class="tooltip" title="<pre>clojure.core/gen-interface
-([& options])
-Macro
-  When compiling, generates compiled bytecode for an interface with
-  the given package-qualified :name (which, as all names in these
-  parameters, can be a string or symbol), and writes the .class file
-  to the *compile-path* directory.  When not compiling, does nothing.
-
-  In all subsequent sections taking types, the primitive types can be
-  referred to by their Java names (int, float etc), and classes in the
-  java.lang package can be used without a package qualifier. All other
-  classes must be fully qualified.
-
-  Options should be a set of key/value pairs, all except for :name are
-  optional:
-
-  :name aname
-
-  The package-qualified name of the class to be generated
-
-  :extends [interface ...]
-
-  One or more interfaces, which will be extended by this interface.
-
-  :methods [ [name [param-types] return-type], ...]
-
-[ documentation truncated.  Click link for the rest. ]</pre>">gen-interface</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/loaded-libs/" class="tooltip" title="<pre>clojure.core/loaded-libs
+  be in the classpath.</pre>">compile</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/loaded-libs/" class="tooltip" title="<pre>clojure.core/loaded-libs
 ([])
   Returns a sorted set of symbols naming the currently loaded libs</pre>">loaded-libs</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/test/" class="tooltip" title="<pre>clojure.core/test
 ([v])
