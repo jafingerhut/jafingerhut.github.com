@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: May 21, 2015
+Date: May 25, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -39,17 +39,17 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
-    3.95  17 Backlog      [CLJ-700] contains? broken for transient collections
+    3.90  17 Backlog      [CLJ-700] contains? broken for transient collections
              Dom Kiva-Meyer (1/2)
              Laszlo Török (1/2)
              Peter Taoussanis (1/2)
              Phill Wolf (1/3)
              Huahai Yang (1/4)
-             Jason Wolfe (1/4)
              Mark Engelberg (1/4)
              Alex Miller (1/5)
              Chris Blom (1/5)
              Greg Chapman (1/5)
+             Jason Wolfe (1/5)
              Justin Glenn Smith (1/5)
              Patrick Houk (1/5)
              John Walker (1/7)
@@ -77,12 +77,12 @@ Defect
              Bozhidar Batsov (1/10)
              Andy Fingerhut (1/13)
              Reid McKenzie (1/18)
-    3.16   8 Backlog      [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
+    3.11   8 Backlog      [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
              Stephen Nelson (1)
              Volkert Oakley Jurgens (1)
              Devin Walters (1/3)
              Kevin Downey (1/3)
-             Jason Wolfe (1/4)
+             Jason Wolfe (1/5)
              Colin Jones (1/8)
              Bozhidar Batsov (1/10)
              Nicola Mometto (1/53)
@@ -108,15 +108,6 @@ Defect
              Tassilo Horn (1/8)
              Gary Trakhman (1/10)
              Nicola Mometto (1/53)
-    2.28   8 Backlog      [CLJ-1232] Functions with non-qualified return type hints force import of hinted classes when called from other namespace
-             Shantanu Kumar (1)
-             Sean Corfield (1/2)
-             Andrew Rosa (1/4)
-             Tim McCormack (1/6)
-             Colin Fleming (1/7)
-             Tom Crayford (1/9)
-             Max Penet (1/11)
-             Nicola Mometto (1/53)
     2.27   6 Backlog      [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
              Achint Sandhu (1)
              Stuart Halloway (1/2)
@@ -124,6 +115,15 @@ Defect
              Phill Wolf (1/3)
              Michael Blume (1/18)
              David Greenberg (1/19)
+    2.24   8 Backlog      [CLJ-1232] Functions with non-qualified return type hints force import of hinted classes when called from other namespace
+             Shantanu Kumar (1)
+             Sean Corfield (1/2)
+             Andrew Rosa (1/4)
+             Colin Fleming (1/7)
+             Tim McCormack (1/8)
+             Tom Crayford (1/9)
+             Max Penet (1/11)
+             Nicola Mometto (1/53)
     1.61   4 Triaged      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
              Daniel Solano Gómez (1)
              Alexander Yakushev (1/2)
@@ -156,6 +156,17 @@ Defect
              James Reeves (1/2)
              Marshall T. Vandegrift (1/4)
              Gary Trakhman (1/10)
+    1.34   4 Screenable   [CLJ-1237] reduce gives a SO for pathological seqs
+             Chad Harrington (1)
+             Jason Wolfe (1/5)
+             Tim McCormack (1/8)
+             Nicola Mometto (1/53)
+    1.33   2 Open         [CLJ-1243] Cannot resolve public generic method from package-private base class
+             Sébastien Wagener (1)
+             Noam Ben Ari (1/3)
+    1.33   2 Open         [CLJ-1360] clojure.string/split strips trailing delimiters
+             Crispin Wellington (1)
+             César Bolaños (1/3)
     1.20   2 Triaged      [CLJ-1399] missing field munging when recreating deftypes serialized into byte code
              Jason Gilman (1)
              Chas Emerick (1/5)
@@ -228,10 +239,6 @@ Defect
              Kevin Downey (1/3)
     0.33   1 Open         [CLJ-1229] count silently overflows for sequences with more than Integer/MAX_VALUE elements
              John Jacobsen (1/3)
-    0.33   1 Open         [CLJ-1243] Cannot resolve public generic method from package-private base class
-             Noam Ben Ari (1/3)
-    0.33   1 Open         [CLJ-1360] clojure.string/split strips trailing delimiters
-             César Bolaños (1/3)
     0.33   1 Triaged      [CLJ-1647] infinite loop in 'partition' and 'partition-all' when 'step' or 'n' is not positive
              Daniel Compton (1/3)
     0.28   2 Open         [CLJ-750] clojure.lang.MapEntry violates .equals and .hashCode contracts of HashMap.Entry; leads to non-reflexive .equals, etc.
@@ -239,14 +246,6 @@ Defect
              Tom Crayford (1/9)
     0.27   2 Triaged      [CLJ-1137] Metadata on a def gets evaluated twice
              Marshall T. Vandegrift (1/4)
-             Nicola Mometto (1/53)
-    0.24   3 Open         [CLJ-1445] pprint prints some metadata when *print-meta* bound to true, but not all
-             Tim McCormack (1/6)
-             Reid McKenzie (1/18)
-             Nicola Mometto (1/53)
-    0.24   3 Triaged      [CLJ-1453] Most Iterator implementations do not correctly implement next failing to throw the required NoSuchElementException
-             Tim McCormack (1/6)
-             Reid McKenzie (1/18)
              Nicola Mometto (1/53)
     0.24   2 Open         [CLJ-1079] Don't squash explicit :line and :column metadata in the MetaReader
              Colin Jones (1/8)
@@ -257,8 +256,13 @@ Defect
              Nicola Mometto (1/53)
     0.20   1 Backlog      [CLJ-1650] compile forces namespace reloading from AOT classfile
              Jozef Wagner (1/5)
-    0.19   2 Open         [CLJ-1237] reduce gives a SO for pathological seqs
-             Tim McCormack (1/6)
+    0.20   3 Open         [CLJ-1445] pprint prints some metadata when *print-meta* bound to true, but not all
+             Tim McCormack (1/8)
+             Reid McKenzie (1/18)
+             Nicola Mometto (1/53)
+    0.20   3 Triaged      [CLJ-1453] Most Iterator implementations do not correctly implement next failing to throw the required NoSuchElementException
+             Tim McCormack (1/8)
+             Reid McKenzie (1/18)
              Nicola Mometto (1/53)
     0.17   1 Backlog      [CLJ-1157] Classes generated by gen-class aren't loadable from remote codebase for mis-implementation of static-initializer
              Matthew O. Smith (1/6)
@@ -311,6 +315,7 @@ Defect
     0.00   0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
     0.00   0 Backlog      [CLJ-1161] sources jar has bad versions.properties resource
     0.00   0 Bad: Match n [CLJ-1722] Typo in the doc string of `with-bindings`
+    0.00   0 Screenable   [CLJ-1735] Throwable->map is missing docstring and since
     0.00   0 Triaged      [CLJ-1134] star-directive in clojure.pprint/cl-format with an at-prefix ("~n@*") do not obey its specifications
     0.00   0 Triaged      [CLJ-1319] array-map fails lazily if passed an odd number of arguments
     0.00   0 Triaged      [CLJ-1361] Pretty printing code using pprint with code-dispatch incorrectly prints a simple ns macro call.
@@ -339,7 +344,7 @@ Defect
 ========================================
 Enhancement
 
-   14.58  25 Triaged      [CLJ-703] Improve writeClassFile performance
+   14.49  25 Triaged      [CLJ-703] Improve writeClassFile performance
              Anthony Kesich (1)
              Dan Neumann (1)
              David Powell (1)
@@ -357,9 +362,9 @@ Enhancement
              davie moston (1/2)
              Kuldeep (1/3)
              Michael Patrick O'Keefe (1/3)
-             Jason Wolfe (1/4)
-             Tim McCormack (1/6)
+             Jason Wolfe (1/5)
              Colin Fleming (1/7)
+             Tim McCormack (1/8)
              Tom Crayford (1/9)
              Max Penet (1/11)
              Andy Fingerhut (1/13)
@@ -408,7 +413,7 @@ Enhancement
              Tassilo Horn (1/8)
              David Greenberg (1/19)
              Nicola Mometto (1/53)
-    7.63  18 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
+    7.75  19 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
              Gabriel Ki (1)
              Lei Wang (1)
              Ryan Senior (1)
@@ -423,6 +428,7 @@ Enhancement
              Jozef Wagner (1/5)
              Patrick Houk (1/5)
              Colin Taylor (1/6)
+             Tim McCormack (1/8)
              Gary Trakhman (1/10)
              Michael Blume (1/18)
              David Greenberg (1/19)
@@ -470,13 +476,14 @@ Enhancement
              Marc Limotte (1/2)
              Mike Anderson (1/6)
              Nicola Mometto (1/53)
-    4.48   7 Vetted       [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
+    4.60   8 Vetted       [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
              Mark Feeney (1)
              Steven E. Harris (1)
              Toby Crawley (1)
              serzh Nechyporchuk (1)
              Michael van Acken (1/5)
              Patrick Houk (1/5)
+             Tim McCormack (1/8)
              Andy Fingerhut (1/13)
     4.45   7 Open         [CLJ-304] clojure.repl/source does not work with deftype
              Alex Walker (1)
@@ -542,12 +549,12 @@ Enhancement
              Jens Bendisposto (1)
              Jonathan Halterman (1)
              Matt Earnshaw (1/3)
-    3.28   8 Triaged      [CLJ-308] protocol-ize with-open
+    3.23   8 Triaged      [CLJ-308] protocol-ize with-open
              Eldar Gabdullin (1)
              Glenn Vanderburg (1)
              Stephen C. Gilardi (1/2)
-             Jason Wolfe (1/4)
              Chris Blom (1/5)
+             Jason Wolfe (1/5)
              Tassilo Horn (1/8)
              Brandon Bloom (1/9)
              Max Penet (1/11)
@@ -563,16 +570,16 @@ Enhancement
              Alejandro Ciniglio (1/2)
              Devin Walters (1/3)
              Daniel James (1/5)
-    3.02  13 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
+    2.98  13 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
              Brian Pratt (1)
              Eric Normand (1/2)
              Alex Miller (1/5)
              Chas Emerick (1/5)
              Michael van Acken (1/5)
              Vlad Bokov (1/5)
-             Tim McCormack (1/6)
              Ambrose Bonnaire-Sergeant (1/7)
              Colin Jones (1/8)
+             Tim McCormack (1/8)
              Christoffer Sawicki (1/9)
              Bozhidar Batsov (1/10)
              Reid McKenzie (1/18)
@@ -915,6 +922,7 @@ Enhancement
     0.00   0 Backlog      [CLJ-1551] Consider transducer support for primitives
     0.00   0 Backlog      [CLJ-1552] Consider kv support for transducers (similar to reducers fold)
     0.00   0 Backlog      [CLJ-1671] Clojure stream socket repl
+    0.00   0 Screenable   [CLJ-1736] Tweaks to changelog for 1.7 RC2
     0.00   0 Triaged      [CLJ-668] Improve slurp performance by using native Java StringWriter and jio/copy
     0.00   0 Triaged      [CLJ-704] range function has missing documentation
     0.00   0 Triaged      [CLJ-1289] aset-* and aget perform poorly on multi-dimensional arrays even with type hints. 
