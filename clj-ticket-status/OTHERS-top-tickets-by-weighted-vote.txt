@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: May 21, 2015
+Date: May 25, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -96,6 +96,7 @@ Defect
     0.00   0 Open         [ASYNC-118] (ClojureScript) A let-binding named 'arguments' not bound in go block on nodejs 
     0.00   0 Open         [ASYNC-121] compilation warning when calling 'satisfies?' inside a go block
     0.00   0 Open         [ASYNC-122] Parking in finally block replaces result
+    0.00   0 Open         [ASYNC-123] Channel operations fail in for comprehension.
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
@@ -225,7 +226,7 @@ Defect
     0.00   0 Open         [CLJCLR-33] REPL input broken
     0.00   0 Open         [CLJCLR-38] Use Type.AssemblyQualifiedName in ObjExpr.EmitValue when generating code for types
     0.00   0 Open         [CLJCLR-48] Error when starting Clojure.Main.exe
-    0.00   0 Open         [CLJCLR-65] fix reflection warnings in gvec
+    0.00   0 Open         [CLJCLR-67] Cannot call new/hidden interface method
 
 ========================================
 Enhancement
@@ -358,6 +359,8 @@ Enhancement
     0.00   0 Open         [CTYP-202] Provide a way to annotate a throw-on-nil function
     0.00   0 Open         [CTYP-205] Better filter checking
     0.00   0 Open         [CTYP-206] Fixed as rest args
+    0.00   0 Open         [CTYP-219] RPS example does not type check
+    0.00   0 Open         [CTYP-220] Data generator for a type
     0.00   0 Triaged      [CTYP-217] Basic support for transients
 
 ========================================
@@ -647,6 +650,7 @@ Enhancement
     0.00   0 Open         [MATCH-72] complexity analysis
     0.00   0 Open         [MATCH-78] Switches on literals should happen via `case` not `cond`
     0.00   0 Open         [MATCH-103] Support for lists in patterns.
+    0.00   0 Open         [MATCH-109] Call `emit-pattern` and `to-source` to let'ed things. {code:clojure} (let [x "hello" y :foo x-regex #"Hello"] (match [x y] [x-regex y] :match :else :no-match)) {code}
 
 ========================================
 Task
@@ -743,7 +747,6 @@ Project TCHECK tickets
 Defect
 
     0.00   0 Open         [TCHECK-26] defspec does not respect (is (thrown? ...))
-    0.00   0 Open         [TCHECK-27] stateful PRNG + bind => nondeterministic shrink tree
     0.00   0 Open         [TCHECK-32] Default sizing on gen/any needs re-evaluation
     0.00   0 Open         [TCHECK-33] test.check is entangled with clojure.test
     0.00   0 Open         [TCHECK-34] clojure.test reporting is uninformative
@@ -782,7 +785,6 @@ Enhancement
     0.00   0 Open         [TCHECK-14] re-organize README and doc/
     0.00   0 Open         [TCHECK-19] Permit a data-structure containing generators to be used as a generator
     0.00   0 Open         [TCHECK-21] Rerunning a particular failure is difficult.
-    0.00   0 Open         [TCHECK-37] Make random-number generation in test.check thread-safe
     0.00   0 Open         [TCHECK-38] Generators for functions?
     0.00   0 Open         [TCHECK-41] Add helpers for deprecating generators
     0.00   0 Open         [TCHECK-44] for-all should support nesting
@@ -868,7 +870,8 @@ Project TNS tickets
 ========================================
 Defect
 
-    4.00   4 Open         [TNS-34] File changes not picked up if reader conditionals used on ns requires
+    5.00   5 Open         [TNS-34] File changes not picked up if reader conditionals used on ns requires
+             James Reeves (1)
              Leon Grapenthin (1)
              Magnar Sveen (1)
              Robert Krahn (1)
