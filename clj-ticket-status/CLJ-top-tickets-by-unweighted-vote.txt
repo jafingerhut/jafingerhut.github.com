@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: May 25, 2015
+Date: May 30, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -53,7 +53,7 @@ Defect
    5 Backlog      [CLJ-1093] Empty PersistentCollections get incorrectly evaluated as their generic clojure counterpart
    4 Triaged      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
    4 Triaged      [CLJ-1242] get/= on sorted collections when types don't match result in a ClassCastException
-   4 Screenable   [CLJ-1237] reduce gives a SO for pathological seqs
+   4 Incomplete   [CLJ-1237] reduce gives a SO for pathological seqs
    4 Triaged      [CLJ-1282] The quote special form should throw an exception if passed more than one form to quote
    4 Open         [CLJ-1029] ns defmacro allows arbitrary execution of clojure.core fns
    4 Open         [CLJ-1423] Applying a var to an infinite arglist consumes all available memory
@@ -139,9 +139,10 @@ Defect
    0 Triaged      [CLJ-1682] clojure.set/intersection occasionally allows non-set arguments.
    0 Triaged      [CLJ-1705] vector-of throws NullPointerException if given unrecognized type
    0 Triaged      [CLJ-1708] Volatile mutable in deftype is not settable when using try..finally and returning this
-   0 Bad: Match n [CLJ-1722] Typo in the doc string of `with-bindings`
+   0 Triaged      [CLJ-1722] Typo in the doc string of `with-bindings`
    0 Triaged      [CLJ-1733] Tagged literals throw on records containing sorted-set
    0 Screenable   [CLJ-1735] Throwable->map is missing docstring and since
+   0 Screenable   [CLJ-1738] Chunked iterator-seq incompatible with Java iterators that return the same mutable object every time
 
 ========================================
 Enhancement
@@ -166,12 +167,12 @@ Enhancement
    6 Triaged      [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
    6 Triaged      [CLJ-1454] Add a swap! that returns old value
    6 Triaged      [CLJ-1117] partition docstring should be more explicit about dropped or partial trailing elements
+   6 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
    6 Triaged      [CLJ-1239] faster, more flexible dispatch for clojure.walk
    5 Open         [CLJ-1467] Implement Comparable in PersistentList
    5 Backlog      [CLJ-1553] Parallel transduce
    5 Backlog      [CLJ-1208] Namespace is not loaded on defrecord class init
    5 Triaged      [CLJ-1656] Unroll assoc and assoc! for small numbers of arguments
-   5 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
    5 Open         [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
    5 Triaged      [CLJ-1458] Use transients in merge and merge-with
    5 Open         [CLJ-401] Promote "seqable?" from contrib?
@@ -226,6 +227,7 @@ Enhancement
    1 Triaged      [CLJ-1277] Speed up printing of time instants by adding type hints
    1 Open         [CLJ-1526] clojure.core/> inconsistent behavior wrt to documentation.
    1 Triaged      [CLJ-1567] Unused local in clojure.core/condp definition
+   1 Open         [CLJ-1734] Display more descriptive error message when trying to use reader conditionals in a non-cljc file
    1 Triaged      [CLJ-970] extend/implement parameterized types (generics)
    1 Open         [CLJ-994] repeat reducer
    1 Open         [CLJ-995] sorted-set doesn't support IEditableCollection

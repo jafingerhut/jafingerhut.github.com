@@ -690,7 +690,7 @@
  {:display-name "Mike Thompson",
   :usernames #{"mikethompson"},
   :emails #{"mike.thompson@day8.com.au"}}
- (),
+ ("CLJ-1734"),
  {:display-name "Aleš Roubíček",
   :usernames #{"rarous"},
   :emails #{"rarous@gmail.com"}}
@@ -2273,6 +2273,7 @@
   :usernames #{"timmc"},
   :emails #{"cortex@brainonfire.net"}}
  ("CLJ-1453"
+  "CLJ-1452"
   "CLJ-1445"
   "CLJ-1237"
   "CLJ-1232"
@@ -3890,6 +3891,10 @@
   :usernames #{"bcraft"},
   :emails #{"craft.brian@gmail.com"}}
  ("TCHECK-31"),
+ {:display-name "Keith Irwin",
+  :usernames #{"zentrope"},
+  :emails #{"keith@zentrope.com"}}
+ (),
  {:display-name "Justin Woo",
   :usernames #{"kimagure"},
   :emails #{"moomoowoo@gmail.com"}}
@@ -5065,7 +5070,7 @@
  {:display-name "Alex Miller",
   :usernames #{"alexmiller"},
   :emails #{"alex@puredanger.com"}}
- ("CLJ-1517" "CLJ-1239" "CLJ-1107" "CLJ-1005" "CLJ-700"),
+ ("CLJ-1517" "CLJ-1239" "CLJ-1107" "CLJ-1005" "CLJ-700" "CCACHE-41"),
  {:display-name "Stefan Huber",
   :usernames #{"msnexploder"},
   :emails #{"msnexploder@gmail.com"}}
@@ -7283,6 +7288,10 @@
   :usernames #{"bjeanes"},
   :emails #{"me@bjeanes.com"}}
  (),
+ {:display-name "Thomas Down",
+  :usernames #{"dasmoth"},
+  :emails #{"thomas.a.down@gmail.com"}}
+ ("ASYNC-117"),
  {:display-name "Johann Makram Salib Bestowrous",
   :usernames #{"johann"},
   :emails #{"johann.bestowrous@gmail.com"}}

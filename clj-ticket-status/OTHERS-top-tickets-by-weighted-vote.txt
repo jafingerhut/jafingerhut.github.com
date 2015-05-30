@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: May 25, 2015
+Date: May 30, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -72,6 +72,8 @@ Defect
              Marcus Lewis (1)
     1.00   1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
              Francis Avila (1)
+    1.00   1 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
+             Thomas Down (1)
     0.50   1 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
              Colin Taylor (1/2)
     0.50   1 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
@@ -92,11 +94,11 @@ Defect
     0.00   0 Open         [ASYNC-99] go block with <! inside protocol method invocation fails to compile (dispatch :protocol-invoke on '-item-to-ssa')
     0.00   0 Open         [ASYNC-108] cljs to-chan hangs on infinite lazy sequences
     0.00   0 Open         [ASYNC-111] maps are represented different inside and outside of go blocks
-    0.00   0 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
     0.00   0 Open         [ASYNC-118] (ClojureScript) A let-binding named 'arguments' not bound in go block on nodejs 
     0.00   0 Open         [ASYNC-121] compilation warning when calling 'satisfies?' inside a go block
     0.00   0 Open         [ASYNC-122] Parking in finally block replaces result
     0.00   0 Open         [ASYNC-123] Channel operations fail in for comprehension.
+    0.00   0 Open         [ASYNC-124] put! into channel that has mapcat transducer fails to dispatch more than one waiting takes
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
@@ -158,12 +160,13 @@ Defect
 
     1.00   1 Open         [CCACHE-31] SoftCaches update in-place, other cache types don't
              Ambrose Bonnaire-Sergeant (1)
+    1.00   1 Open         [CCACHE-41] defcache needs to impl. iterator() to avoid Clojure 1.7 breakage
+             Alex Miller (1)
     0.00   0 Open         [CCACHE-15] It appears that TTL cache exhibits quadratic performance (+ its evict is buggy)
     0.00   0 Open         [CCACHE-27] Missing LU and LRU is linear complexity - performance
     0.00   0 Open         [CCACHE-32] LIRSCache defect allows it's memory use to grow without bound
     0.00   0 Open         [CCACHE-39] FIFOCache member exempted from expulsion after evict
     0.00   0 Open         [CCACHE-40] FIFOCache StackOverflowError with high :threshold due to concat
-    0.00   0 Open         [CCACHE-41] defcache needs to impl. iterator() to avoid Clojure 1.7 breakage
 
 ========================================
 Enhancement
@@ -324,6 +327,8 @@ Defect
     0.00   0 Open         [CTYP-214] core.typed 0.2.84 raises an exception when trying to infer the type of (atom #{})
     0.00   0 Open         [CTYP-216] PermGen memory leak when type checking with faulty types
     0.00   0 Open         [CTYP-218] wrap-clj-repl causes error
+    0.00   0 Open         [CTYP-221] group-by produces "Cannot resolve type: Seqable"
+    0.00   0 Open         [CTYP-222] if-let on an hmap with an optional entry always expected to succeed
 
 ========================================
 Enhancement
@@ -755,6 +760,7 @@ Defect
     0.00   0 Open         [TCHECK-61] defspec throwing errors in cljs
     0.00   0 Open         [TCHECK-62] ClojureScript example in README doesn't work
     0.00   0 Open         [TCHECK-67] The new rand-range has a nasty edge case
+    0.00   0 Open         [TCHECK-69] Create a UUID Generator
 
 ========================================
 Enhancement
