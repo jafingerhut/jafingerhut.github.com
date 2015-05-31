@@ -176,26 +176,30 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
           <table>
             <tbody>
               <tr class="odd">
-                <td>Create</td>
-                <td><code>#{} <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/set/">set</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/hash-set/">hash-set</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sorted-set/">sorted-set</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sorted-set-by/">sorted-set-by</a> (clojure.data.avl/) <a href="http://github.com/clojure/data.avl">sorted-set</a> <a href="http://github.com/clojure/data.avl">sorted-set-by</a> (flatland.ordered.set/) <a href="https://github.com/amalloy/ordered">ordered-set</a></code></td>
+                <td>Create unsorted</td>
+                <td><code>#{} <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/set/">set</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/hash-set/">hash-set</a> (clojure.data.int-map/) <a href="http://github.com/clojure/data.int-map">int-set</a> <a href="http://github.com/clojure/data.int-map">dense-int-set</a></code></td>
               </tr>
               <tr class="even">
+                <td>Create sorted</td>
+                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sorted-set/">sorted-set</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sorted-set-by/">sorted-set-by</a> (clojure.data.avl/) <a href="http://github.com/clojure/data.avl">sorted-set</a> <a href="http://github.com/clojure/data.avl">sorted-set-by</a> (flatland.ordered.set/) <a href="https://github.com/amalloy/ordered">ordered-set</a></code></td>
+              </tr>
+              <tr class="odd">
                 <td>Examine</td>
                 <td><code><code>(my-set item)</code> &rarr; <code>( <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/get/">get</a>  my-set item)</code> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/contains_QMARK/">contains?</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>'Change'</td>
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/conj/">conj</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/disj/">disj</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td>Set ops</td>
                 <td><code>(clojure.set/) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/union/">union</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/difference/">difference</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/intersection/">intersection</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/select/">select</a> See also Relations</code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>Test</td>
                 <td><code>(clojure.set/) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/subset_QMARK/">subset?</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/superset_QMARK/">superset?</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td>Sorted sets</td>
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/rseq/">rseq</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/subseq/">subseq</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/rsubseq/">rsubseq</a></code></td>
               </tr>
@@ -205,26 +209,30 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
           <table>
             <tbody>
               <tr class="odd">
-                <td>Create</td>
-                <td><code>{} <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/hash-map/">hash-map</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/array-map/">array-map</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/zipmap/">zipmap</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sorted-map/">sorted-map</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sorted-map-by/">sorted-map-by</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/bean/">bean</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/frequencies/">frequencies</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/group-by/">group-by</a> (clojure.set/) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/index/">index</a> (clojure.data.avl/) <a href="http://github.com/clojure/data.avl">sorted-map</a> <a href="http://github.com/clojure/data.avl">sorted-map-by</a> (flatland.ordered.map/) <a href="https://github.com/amalloy/ordered">ordered-map</a> (clojure.data.priority-map/) <a href="https://github.com/clojure/data.priority-map">priority-map</a> (flatland.useful.map/) <a href="https://github.com/amalloy/useful/blob/master/src/flatland/useful/map.clj#L243-L245">ordering-map</a></code></td>
+                <td>Create unsorted</td>
+                <td><code>{} <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/hash-map/">hash-map</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/array-map/">array-map</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/zipmap/">zipmap</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/bean/">bean</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/frequencies/">frequencies</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/group-by/">group-by</a> (clojure.set/) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/index/">index</a> (clojure.data.int-map/) <a href="http://github.com/clojure/data.int-map">int-map</a></code></td>
               </tr>
               <tr class="even">
+                <td>Create sorted</td>
+                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sorted-map/">sorted-map</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sorted-map-by/">sorted-map-by</a> (clojure.data.avl/) <a href="http://github.com/clojure/data.avl">sorted-map</a> <a href="http://github.com/clojure/data.avl">sorted-map-by</a> (flatland.ordered.map/) <a href="https://github.com/amalloy/ordered">ordered-map</a> (clojure.data.priority-map/) <a href="https://github.com/clojure/data.priority-map">priority-map</a> (flatland.useful.map/) <a href="https://github.com/amalloy/useful/blob/master/src/flatland/useful/map.clj#L243-L245">ordering-map</a></code></td>
+              </tr>
+              <tr class="odd">
                 <td>Examine</td>
                 <td><code><code>(my-map k)</code> &rarr; <code>( <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/get/">get</a>  my-map k)</code> also <code>(:key my-map)</code> &rarr; <code>( <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/get/">get</a>  my-map :key)</code> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/get-in/">get-in</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/contains_QMARK/">contains?</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/find/">find</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/keys/">keys</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/vals/">vals</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>'Change'</td>
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/assoc/">assoc</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/assoc-in/">assoc-in</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/dissoc/">dissoc</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/merge/">merge</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/merge-with/">merge-with</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/select-keys/">select-keys</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/update-in/">update-in</a> (clojure.set/) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/rename-keys/">rename-keys</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/map-invert/">map-invert</a> GitHub: <a href="http://github.com/weavejester/medley">Medley</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td>Ops</td>
                 <td><code>(1.4) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/reduce-kv/">reduce-kv</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>Entry</td>
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/key/">key</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/val/">val</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td>Sorted maps</td>
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/rseq/">rseq</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/subseq/">subseq</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/rsubseq/">rsubseq</a></code></td>
               </tr>

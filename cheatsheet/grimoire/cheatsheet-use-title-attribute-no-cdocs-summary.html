@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v26)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v27)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -914,13 +914,25 @@ format
           <table>
             <tbody>
               <tr class="odd">
-                <td>Create</td>
+                <td>Create unsorted</td>
                 <td><code>#{} <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/set/" title="clojure.core/set
 ([coll])
   Returns a set of the distinct elements of coll.">set</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/hash-set/" title="clojure.core/hash-set
 ([] [& keys])
   Returns a new hash set with supplied keys.  Any equal keys are
-  handled as if by repeated uses of conj.">hash-set</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sorted-set/" title="clojure.core/sorted-set
+  handled as if by repeated uses of conj.">hash-set</a> (clojure.data.int-map/) <a href="http://github.com/clojure/data.int-map" title="clojure.data.int-map/int-set
+([] [s])
+  Creates an immutable set which can only store integral values.  This should be
+used unless elements are densely
+   clustered (each element has multiple elements within +/- 1000).">int-set</a> <a href="http://github.com/clojure/data.int-map" title="clojure.data.int-map/dense-int-set
+([] [s])
+  Creates an immutable set which can only store integral values.  This should be
+used only if elements are densely
+   clustered (each element has multiple elements within +/- 1000).">dense-int-set</a></code></td>
+              </tr>
+              <tr class="even">
+                <td>Create sorted</td>
+                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sorted-set/" title="clojure.core/sorted-set
 ([& keys])
   Returns a new sorted set with supplied keys.  Any equal keys are
   handled as if by repeated uses of conj.">sorted-set</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sorted-set-by/" title="clojure.core/sorted-set-by
@@ -931,9 +943,11 @@ format
 ([& keys])
   Returns a new sorted set with supplied keys.">sorted-set</a> <a href="http://github.com/clojure/data.avl" title="clojure.data.avl/sorted-set-by
 ([comparator & keys])
-  Returns a new sorted set with supplied keys, using the supplied comparator.">sorted-set-by</a> (flatland.ordered.set/) <a href="https://github.com/amalloy/ordered">ordered-set</a></code></td>
+  Returns a new sorted set with supplied keys, using the supplied comparator.">sorted-set-by</a> (flatland.ordered.set/) <a href="https://github.com/amalloy/ordered" title="flatland.ordered.set/ordered-set
+([] [& xs])
+  nil">ordered-set</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td>Examine</td>
                 <td><code><code>(my-set item)</code> &rarr; <code>( <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/get/" title="clojure.core/get
 ([map key] [map key not-found])
@@ -945,7 +959,7 @@ format
   range of indexes. 'contains?' operates constant or logarithmic time;
   it will not perform a linear search for a value.  See also 'some'.">contains?</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>'Change'</td>
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/conj/" title="clojure.core/conj
 ([coll x] [coll x & xs])
@@ -956,7 +970,7 @@ format
   disj[oin]. Returns a new set of the same (hashed/sorted) type, that
   does not contain key(s).">disj</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td>Set ops</td>
                 <td><code>(clojure.set/) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/union/" title="clojure.set/union
 ([] [s1] [s1 s2] [s1 s2 & sets])
@@ -968,7 +982,7 @@ format
 ([pred xset])
   Returns a set of the elements for which pred is true">select</a> See also Relations</code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>Test</td>
                 <td><code>(clojure.set/) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/subset_QMARK/" title="clojure.set/subset?
 ([set1 set2])
@@ -976,7 +990,7 @@ format
 ([set1 set2])
   Is set1 a superset of set2?">superset?</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td>Sorted sets</td>
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/rseq/" title="clojure.core/rseq
 ([rev])
@@ -997,7 +1011,7 @@ format
           <table>
             <tbody>
               <tr class="odd">
-                <td>Create</td>
+                <td>Create unsorted</td>
                 <td><code>{} <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/hash-map/" title="clojure.core/hash-map
 ([] [& keyvals])
   keyval => key val
@@ -1007,16 +1021,7 @@ format
   Constructs an array-map. If any keys are equal, they are handled as
   if by repeated uses of assoc.">array-map</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/zipmap/" title="clojure.core/zipmap
 ([keys vals])
-  Returns a map with the keys mapped to the corresponding vals.">zipmap</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sorted-map/" title="clojure.core/sorted-map
-([& keyvals])
-  keyval => key val
-  Returns a new sorted map with supplied mappings.  If any keys are
-  equal, they are handled as if by repeated uses of assoc.">sorted-map</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sorted-map-by/" title="clojure.core/sorted-map-by
-([comparator & keyvals])
-  keyval => key val
-  Returns a new sorted map with supplied mappings, using the supplied
-  comparator.  If any keys are equal, they are handled as if by
-  repeated uses of assoc.">sorted-map-by</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/bean/" title="clojure.core/bean
+  Returns a map with the keys mapped to the corresponding vals.">zipmap</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/bean/" title="clojure.core/bean
 ([x])
   Takes a Java object and returns a read-only implementation of the
   map abstraction based upon its JavaBean properties.">bean</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/frequencies/" title="clojure.core/frequencies
@@ -1029,16 +1034,42 @@ format
   corresponding elements, in the order they appeared in coll.">group-by</a> (clojure.set/) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/index/" title="clojure.set/index
 ([xrel ks])
   Returns a map of the distinct values of ks in the xrel mapped to a
-  set of the maps in xrel with the corresponding values of ks.">index</a> (clojure.data.avl/) <a href="http://github.com/clojure/data.avl" title="clojure.data.avl/sorted-map
+  set of the maps in xrel with the corresponding values of ks.">index</a> (clojure.data.int-map/) <a href="http://github.com/clojure/data.int-map" title="clojure.data.int-map/int-map
+([] [a b] [a b & rest])
+  Creates an integer map that can only have non-negative integers as keys.">int-map</a></code></td>
+              </tr>
+              <tr class="even">
+                <td>Create sorted</td>
+                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sorted-map/" title="clojure.core/sorted-map
+([& keyvals])
+  keyval => key val
+  Returns a new sorted map with supplied mappings.  If any keys are
+  equal, they are handled as if by repeated uses of assoc.">sorted-map</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sorted-map-by/" title="clojure.core/sorted-map-by
+([comparator & keyvals])
+  keyval => key val
+  Returns a new sorted map with supplied mappings, using the supplied
+  comparator.  If any keys are equal, they are handled as if by
+  repeated uses of assoc.">sorted-map-by</a> (clojure.data.avl/) <a href="http://github.com/clojure/data.avl" title="clojure.data.avl/sorted-map
 ([& keyvals])
   keyval => key val
   Returns a new AVL map with supplied mappings.">sorted-map</a> <a href="http://github.com/clojure/data.avl" title="clojure.data.avl/sorted-map-by
 ([comparator & keyvals])
   keyval => key val
   Returns a new sorted map with supplied mappings, using the supplied
-  comparator.">sorted-map-by</a> (flatland.ordered.map/) <a href="https://github.com/amalloy/ordered">ordered-map</a> (clojure.data.priority-map/) <a href="https://github.com/clojure/data.priority-map">priority-map</a> (flatland.useful.map/) <a href="https://github.com/amalloy/useful/blob/master/src/flatland/useful/map.clj#L243-L245">ordering-map</a></code></td>
+  comparator.">sorted-map-by</a> (flatland.ordered.map/) <a href="https://github.com/amalloy/ordered" title="flatland.ordered.map/ordered-map
+([] [coll] [k v & more])
+  nil">ordered-map</a> (clojure.data.priority-map/) <a href="https://github.com/clojure/data.priority-map" title="clojure.data.priority-map/priority-map
+([& keyvals])
+  Usage: (priority-map key val key val ...)
+Returns a new priority map with optional supplied mappings.
+(priority-map) returns an empty priority map.">priority-map</a> (flatland.useful.map/) <a href="https://github.com/amalloy/useful/blob/master/src/flatland/useful/map.clj#L243-L245" title="flatland.useful.map/ordering-map
+([key-order] [key-order default-comparator])
+  Create an empty map with a custom comparator that puts the given keys first,
+in the order
+  specified. Other keys will be placed after the special keys, sorted by the
+default-comparator.">ordering-map</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td>Examine</td>
                 <td><code><code>(my-map k)</code> &rarr; <code>( <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/get/" title="clojure.core/get
 ([map key] [map key not-found])
@@ -1062,7 +1093,7 @@ format
 ([map])
   Returns a sequence of the map's values, in the same order as (seq map).">vals</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>'Change'</td>
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/assoc/" title="clojure.core/assoc
 ([map key val] [map key val & kvs])
@@ -1099,7 +1130,7 @@ format
 ([m])
   Returns the map with the vals mapped to the keys.">map-invert</a> GitHub: <a href="http://github.com/weavejester/medley">Medley</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td>Ops</td>
                 <td><code>(1.4) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/reduce-kv/" title="clojure.core/reduce-kv
 ([f init coll])
@@ -1110,7 +1141,7 @@ format
   and f is not called. Note that reduce-kv is supported on vectors,
   where the keys will be the ordinals.">reduce-kv</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>Entry</td>
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/key/" title="clojure.core/key
 ([e])
@@ -1118,7 +1149,7 @@ format
 ([e])
   Returns the value in the map entry.">val</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td>Sorted maps</td>
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/rseq/" title="clojure.core/rseq
 ([rev])
