@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: May 30, 2015
+Date: June 4, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -134,13 +134,15 @@ Enhancement
     1.00   2 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
              Max Penet (1/2)
              Vlad Bokov (1/2)
+    0.50   1 Bad: Match n [ASYNC-103] promise-chan
+             Wilker Lúcio da Silva (1/2)
     0.50   1 Open         [ASYNC-71] exception behavior for thread macro is hard coded
              Vlad Bokov (1/2)
-    0.00   0 Bad: Match n [ASYNC-103] promise-chan
+    0.50   1 Open         [ASYNC-119] ClojureScript: combine cljs.core.async.macros and cljs.core.async
+             Wilker Lúcio da Silva (1/2)
     0.00   0 Open         [ASYNC-46] Add optional default channel to 'pub'
     0.00   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
     0.00   0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
-    0.00   0 Open         [ASYNC-119] ClojureScript: combine cljs.core.async.macros and cljs.core.async
     0.00   0 Triaged      [ASYNC-106] A unit test in ioc_macros_test.clj tests nothing
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
     0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
@@ -275,9 +277,9 @@ Defect
     2.00   2 Open         [CTYP-167] Several failure cases for comp for polyadic fns and type variables
              Marc O'Morain (1)
              Oskar Wickstrom (1)
-    2.00   2 Open         [CTYP-176] No such var: ana/ns->relpath when loading the ClojureScript typechecker
+    1.50   2 Open         [CTYP-176] No such var: ana/ns->relpath when loading the ClojureScript typechecker
              Vic Goldfeld (1)
-             Vince Broz (1)
+             Vince Broz (1/2)
     1.00   1 Open         [CTYP-129] select-keys on HMap returns Map with union key and value types
              Juho Teperi (1)
     1.00   1 Open         [CTYP-133] Typechecker fails when checking involves an object from reify
@@ -329,6 +331,9 @@ Defect
     0.00   0 Open         [CTYP-218] wrap-clj-repl causes error
     0.00   0 Open         [CTYP-221] group-by produces "Cannot resolve type: Seqable"
     0.00   0 Open         [CTYP-222] if-let on an hmap with an optional entry always expected to succeed
+    0.00   0 Open         [CTYP-223] checking clojure.core/keep produces Internal Error--Cannot resolve type: Option
+    0.00   0 Open         [CTYP-224] Lein REPL Autocomplete in typed namespaces throws a type error
+    0.00   0 Open         [CTYP-225] Intersections of value types broken
 
 ========================================
 Enhancement
@@ -337,6 +342,8 @@ Enhancement
              Christoffer Sawicki (1)
     1.00   1 Open         [CTYP-134] Allow namespace aliases in `ann`
              Reid McKenzie (1)
+    0.50   1 Open         [CTYP-113] Better documentation for override-method
+             Vince Broz (1/2)
     0.00   0 Bad: Unkn Fi [CTYP-8] Support complex map manipulation functions
     0.00   0 Open         [CTYP-9] Support metadata types
     0.00   0 Open         [CTYP-11] Infer good types for loop locals
@@ -349,7 +356,6 @@ Enhancement
     0.00   0 Open         [CTYP-98] Implement a defrecord> macro
     0.00   0 Open         [CTYP-109] Better error message for TFn app
     0.00   0 Open         [CTYP-110] Add satisfies?
-    0.00   0 Open         [CTYP-113] Better documentation for override-method
     0.00   0 Open         [CTYP-119] Record/datatypes should update like HMaps via occurrence typing
     0.00   0 Open         [CTYP-124] case should utilize negative information
     0.00   0 Open         [CTYP-131] Support (apply f (apply concat hmap))
@@ -445,12 +451,12 @@ Project DIMAP tickets
 Defect
 
     0.00   0 Open         [DIMAP-2] Proper seq on int-sets
-    0.00   0 Open         [DIMAP-3] Update functions not tail recursive
 
 ========================================
 Enhancement
 
     0.00   0 Open         [DIMAP-1] Support efficient rseq on int maps
+    0.00   0 Open         [DIMAP-4] Worth the effort to make int-map and int-set sorted?
 
 
 Project DJSON tickets
@@ -751,13 +757,14 @@ Project TCHECK tickets
 ========================================
 Defect
 
+    1.00   1 Open         [TCHECK-61] defspec throwing errors in cljs
+             Alex Engelberg (1)
     0.00   0 Open         [TCHECK-26] defspec does not respect (is (thrown? ...))
     0.00   0 Open         [TCHECK-32] Default sizing on gen/any needs re-evaluation
     0.00   0 Open         [TCHECK-33] test.check is entangled with clojure.test
     0.00   0 Open         [TCHECK-34] clojure.test reporting is uninformative
     0.00   0 Open         [TCHECK-57] Performance regression in map generator between 0.5.8 and 0.5.9
     0.00   0 Open         [TCHECK-59] s-pos-int and s-pos-int generators have an off-by-1 issue 
-    0.00   0 Open         [TCHECK-61] defspec throwing errors in cljs
     0.00   0 Open         [TCHECK-62] ClojureScript example in README doesn't work
     0.00   0 Open         [TCHECK-67] The new rand-range has a nasty edge case
     0.00   0 Open         [TCHECK-69] Create a UUID Generator
@@ -876,8 +883,9 @@ Project TNS tickets
 ========================================
 Defect
 
-    5.00   5 Open         [TNS-34] File changes not picked up if reader conditionals used on ns requires
+    6.00   6 Open         [TNS-34] File changes not picked up if reader conditionals used on ns requires
              James Reeves (1)
+             Julien Eluard (1)
              Leon Grapenthin (1)
              Magnar Sveen (1)
              Robert Krahn (1)

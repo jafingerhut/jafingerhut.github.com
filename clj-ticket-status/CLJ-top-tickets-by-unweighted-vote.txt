@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: May 30, 2015
+Date: June 4, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -51,9 +51,9 @@ Defect
    5 Triaged      [CLJ-130] Namespace metadata lost in AOT compile
    5 Triaged      [CLJ-1074] Read/print round-trip for +/-Infinity and NaN
    5 Backlog      [CLJ-1093] Empty PersistentCollections get incorrectly evaluated as their generic clojure counterpart
-   4 Triaged      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
    4 Triaged      [CLJ-1242] get/= on sorted collections when types don't match result in a ClassCastException
    4 Incomplete   [CLJ-1237] reduce gives a SO for pathological seqs
+   4 Triaged      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
    4 Triaged      [CLJ-1282] The quote special form should throw an exception if passed more than one form to quote
    4 Open         [CLJ-1029] ns defmacro allows arbitrary execution of clojure.core fns
    4 Open         [CLJ-1423] Applying a var to an infinite arglist consumes all available memory
@@ -94,7 +94,7 @@ Defect
    1 Open         [CLJ-1189] Map-destructuring :or fumble needs compiler warning
    1 Open         [CLJ-1231] fn and letfn don't support hinting the function's return type
    1 Open         [CLJ-1389] Re-loading a namespace ignores metadata specified for the namespace
-   1 Open         [CLJ-1403] ns-resolve might throw ClassNotFoundException but should return nil
+   1 Triaged      [CLJ-1403] ns-resolve might throw ClassNotFoundException but should return nil
    1 Triaged      [CLJ-1225] quot overflow issues around Long/MIN_VALUE for BigInt
    1 Triaged      [CLJ-1254] Incorrect long quot result involving Long/MIN_VALUE
    1 Open         [CLJ-1198] Apply metadata to primitive fns causes them to lose their primitive-ness
@@ -103,8 +103,8 @@ Defect
    1 Open         [CLJ-1059] PersistentQueue doesn't implement java.util.List, causing nontransitive equality
    1 Open         [CLJ-1308] extend-type doesn't type-hint correctly as promised by the doc when the class is determined at run-time
    1 Open         [CLJ-1364] Primitive VecSeq does not implement equals or hashing methods
-   1 Triaged      [CLJ-1313] Correct a few unit tests
    1 Open         [CLJ-1582] Overriding in-ns and ns is problematic 
+   1 Triaged      [CLJ-1313] Correct a few unit tests
    1 Triaged      [CLJ-1613] :or defaults should refer to enclosing scope in map destructuring
    1 Open         [CLJ-1622] No way to AOT class with interface or parent whose fully qualified name doesn't contain a period
    1 Open         [CLJ-1668] ns macro throws NPE if empty reference is specified
@@ -141,8 +141,9 @@ Defect
    0 Triaged      [CLJ-1708] Volatile mutable in deftype is not settable when using try..finally and returning this
    0 Triaged      [CLJ-1722] Typo in the doc string of `with-bindings`
    0 Triaged      [CLJ-1733] Tagged literals throw on records containing sorted-set
-   0 Screenable   [CLJ-1735] Throwable->map is missing docstring and since
+   0 Screened     [CLJ-1735] Throwable->map is missing docstring and since
    0 Screenable   [CLJ-1738] Chunked iterator-seq incompatible with Java iterators that return the same mutable object every time
+   0 Incomplete   [CLJ-1741] Type-dispatching multimethods are defined using the wrong type instance
 
 ========================================
 Enhancement
@@ -186,6 +187,7 @@ Enhancement
    4 Triaged      [CLJ-1209] clojure.test does not print ex-info in error reports
    4 Triaged      [CLJ-1293] Portable "catch-all" mechanism
    3 Open         [CLJ-1519] Added extra arity to clojure.core/ns-* fns
+   3 Triaged      [CLJ-1743] Avoid compile-time static initialization of classes when using inheritance
    3 Open         [CLJ-272] load/ns/require/use overhaul
    3 Triaged      [CLJ-99] GC Issue 95: max-key and min-key evaluate k multiple times for arguments
    3 Open         [CLJ-1218] mapcat is too eager
@@ -208,6 +210,7 @@ Enhancement
    2 Open         [CLJ-1367] Allow case statement to compare java constants
    2 Open         [CLJ-2] Scopes
    2 Open         [CLJ-1402] sort-by calls keyfn more times than is necessary
+   2 Open         [CLJ-1744] Clear unused locals
    2 Backlog      [CLJ-731] Create macro to variadically unroll a combinator function definition
    2 Triaged      [CLJ-1096] Make destructuring emit direct keyword lookups
    2 Triaged      [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
@@ -252,11 +255,11 @@ Enhancement
    1 Triaged      [CLJ-1416] Support transients in gvec
    1 Open         [CLJ-1280] Create reusable exception that can carry file/line/col info
    1 Open         [CLJ-1326] Inconsistent reflection warnings when target is a literal
-   1 Open         [CLJ-1008] Make sorted maps and sets implement j.u.NavigableMap and NavigableSet interfaces 
-   1 Triaged      [CLJ-1386] Add transient? predicate
    1 Open         [CLJ-1455] Postcondition in defrecord: Compiler unable to resolve symbol %
-   1 Triaged      [CLJ-1599] Add a reset! that returns old value
+   1 Open         [CLJ-1008] Make sorted maps and sets implement j.u.NavigableMap and NavigableSet interfaces 
    1 Vetted       [CLJ-1130] When unable to match a static method, report arity caller was looking for, avoid misleading field error
+   1 Triaged      [CLJ-1386] Add transient? predicate
+   1 Triaged      [CLJ-1599] Add a reset! that returns old value
    1 Open         [CLJ-140] Single :tag for type hints conflates value's type with type of return value from an invoke
    1 Open         [CLJ-666] Add support for Big* numeric types to Reflector
    1 Open         [CLJ-792] Refactor method resolution code out of Compiler and into Reflector
@@ -307,4 +310,4 @@ Enhancement
    0 Triaged      [CLJ-1724] Reuse call to seq() in LazySeq/hashcode for else case
    0 Triaged      [CLJ-1730] Improve `refer` performance
    0 Triaged      [CLJ-1732] Add docstring explanation of (isa? [x1 x2...] [parent1 parent2...])
-   0 Screenable   [CLJ-1736] Tweaks to changelog for 1.7 RC2
+   0 Screened     [CLJ-1736] Tweaks to changelog for 1.7 RC2
