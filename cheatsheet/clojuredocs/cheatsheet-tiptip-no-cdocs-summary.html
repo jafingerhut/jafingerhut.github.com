@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v27)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v28)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -3151,7 +3151,7 @@ Macro
           </table>
         </div><!-- /section -->
         <div class="section yellow">
-          <h2>Reader Macros (<a href="http://clojure.org/reader#The%20Reader--Macro%20characters">clojure.org/reader</a>)</h2>
+          <h2>Special Characters (<a href="http://clojure.org/reader#The%20Reader--Macro%20characters">clojure.org/reader</a>, <a href="https://yobriefca.se/blog/2014/05/19/the-weird-and-wonderful-characters-of-clojure/">tutorial</a>)</h2>
           <table>
             <tbody>
               <tr class="odd">
@@ -3164,8 +3164,16 @@ Special Form
   Please see http://clojure.org/special_forms#quote</pre>">quote</a> <code><var>form</var>)</code></code></td>
               </tr>
               <tr class="even">
+                <td><code>/</code></td>
+                <td>Namespace separator (see Primitives/Other section)</td>
+              </tr>
+              <tr class="odd">
                 <td><code>\</code></td>
-                <td>Character literal</td>
+                <td>Character literal (see Primitives/Other section)</td>
+              </tr>
+              <tr class="even">
+                <td><code>:</code></td>
+                <td>Keyword (see Primitives/Other section)</td>
               </tr>
               <tr class="odd">
                 <td><code>;</code></td>
@@ -3176,6 +3184,10 @@ Special Form
                 <td>Metadata (see Metadata section)</td>
               </tr>
               <tr class="odd">
+                <td><code>*foo*</code></td>
+                <td><code>'earmuffs' - convention to indicate <a href="http://clojure.org/vars">dynamic vars</a>, compiler warns if not dynamic</code></td>
+              </tr>
+              <tr class="even">
                 <td><code>@</code></td>
                 <td><code>Deref: <code>@<var>form</var></code> &rarr; <code>(</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/deref" class="tooltip" title="<pre>clojure.core/deref
 ([ref] [ref timeout-ms timeout-val])
@@ -3191,21 +3203,45 @@ transaction,
   timeout-val if the timeout (in milliseconds) is reached before a
   value is available. See also - realized?.</pre>">deref</a> <code><var>form</var>)</code></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td><code>`</code></td>
                 <td><code><a href="http://clojure.org/reader#syntax-quote">Syntax-quote</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td><code>~</code></td>
                 <td><code><a href="http://clojure.org/reader#syntax-quote">Unquote</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td><code>~@</code></td>
                 <td><code><a href="http://clojure.org/reader#syntax-quote">Unquote-splicing</a></code></td>
               </tr>
+              <tr class="even">
+                <td><code>-></code></td>
+                <td><code>'thread first' macro <a href="http://clojuredocs.org/clojure_core/clojure.core/->" class="tooltip" title="<pre>clojure.core/->
+([x & forms])
+Macro
+  Threads the expr through the forms. Inserts x as the
+  second item in the first form, making a list of it if it is not a
+  list already. If there are more forms, inserts the first form as the
+  second item in second form, etc.</pre>">-&gt;</a></code></td>
+              </tr>
               <tr class="odd">
+                <td><code>->></code></td>
+                <td><code>'thread last' macro <a href="http://clojuredocs.org/clojure_core/clojure.core/->>" class="tooltip" title="<pre>clojure.core/->>
+([x & forms])
+Macro
+  Threads the expr through the forms. Inserts x as the
+  last item in the first form, making a list of it if it is not a
+  list already. If there are more forms, inserts the first form as the
+  last item in second form, etc.</pre>">-&gt;&gt;</a></code></td>
+              </tr>
+              <tr class="even">
                 <td><code>#"<var>p</var>"</code></td>
                 <td>Regex Pattern <var>p</var>  (see Strings/Regex section)</td>
+              </tr>
+              <tr class="odd">
+                <td><code>#{</code></td>
+                <td>Set literal (see Collections/Sets section)</td>
               </tr>
               <tr class="even">
                 <td><code>#'</code></td>
@@ -3222,6 +3258,52 @@ itself (not its value) is returned. The reader macro #'x expands to (var x).
                 <td><code><a href="http://clojure.org/reader#The%20Reader--Macro%20characters">Anonymous function literal</a>: <code>#(...)</code> &rarr; <code>(fn [args] (...))</code></code></td>
               </tr>
               <tr class="even">
+                <td><code>%</code></td>
+                <td><code><a href="http://clojure.org/reader#The%20Reader--Macro%20characters">Anonymous function argument</a>: <code>%N</code> is value of anonymous function arg <code>N</code>.  <code>%</code> short for <code>%1</code>.  <code>%&</code> for rest args.</code></td>
+              </tr>
+              <tr class="odd">
+                <td><code>$</code></td>
+                <td><code><code>JavaContainerClass$InnerClass</code></code></td>
+              </tr>
+              <tr class="even">
+                <td><code>foo?</code></td>
+                <td><code>conventional ending for a predicate, e.g.: <a href="http://clojuredocs.org/clojure_core/clojure.core/zero_q" class="tooltip" title="<pre>clojure.core/zero?
+([x])
+  Returns true if num is zero, else false</pre>">zero?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vector_q" class="tooltip" title="<pre>clojure.core/vector?
+([x])
+  Return true if x implements IPersistentVector</pre>">vector?</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/instance_q" class="tooltip" title="<pre>clojure.core/instance?
+([c x])
+  Evaluates x and tests if it is an instance of the class
+    c. Returns true or false</pre>">instance?</a> (unenforced)</code></td>
+              </tr>
+              <tr class="odd">
+                <td><code>foo!</code></td>
+                <td><code>conventional ending for an unsafe operation, e.g.: <a href="http://clojuredocs.org/clojure_core/clojure.core/set!" class="tooltip" title="<pre>set!
+  (set! var-symbol expr)
+  (set! (. instance-expr instanceFieldName-symbol) expr)
+  (set! (. Classname-symbol staticFieldName-symbol) expr)
+Special Form
+  Used to set thread-local-bound vars, Java object instance
+fields, and Java class static fields.
+
+  Please see http://clojure.org/vars#set</pre>">set!</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/swap!" class="tooltip" title="<pre>clojure.core/swap!
+([atom f] [atom f x] [atom f x y] [atom f x y & args])
+  Atomically swaps the value of atom to be:
+  (apply f current-value-of-atom args). Note that f may be called
+  multiple times, and thus should be free of side effects.  Returns
+  the value that was swapped in.</pre>">swap!</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/alter-meta!" class="tooltip" title="<pre>clojure.core/alter-meta!
+([iref f & args])
+  Atomically sets the metadata for a namespace/var/ref/agent/atom to be:
+
+  (apply f its-current-meta args)
+
+  f must be free of side-effects</pre>">alter-meta!</a> (unenforced)</code></td>
+              </tr>
+              <tr class="even">
+                <td><code>_</code></td>
+                <td><code>conventional name for an unused value (unenforced)</code></td>
+              </tr>
+              <tr class="odd">
                 <td><code>#_</code></td>
                 <td>Ignore next form</td>
               </tr>
