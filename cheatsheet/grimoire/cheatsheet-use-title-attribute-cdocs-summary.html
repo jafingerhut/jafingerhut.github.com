@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v29)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v30)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -1275,7 +1275,20 @@ See also: vec, vector, vector?">vector-of</a> (1.4) <a href="http://conj.io/stor
   f should accept number-of-colls arguments.">mapv</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/filterv/" title="clojure.core/filterv
 ([pred coll])
   Returns a vector of the items in coll for which
-  (pred item) returns true. pred must be free of side-effects.">filterv</a></code></td>
+  (pred item) returns true. pred must be free of side-effects.">filterv</a> (clojure.core.rrb-vector/) <a href="http://github.com/clojure/core.rrb-vector" title="clojure.core.rrb-vector/vector
+([] [x1] [x1 x2] [x1 x2 x3] [x1 x2 x3 x4] [x1 x2 x3 x4 & xn])
+  Creates a new vector containing the args.">vector</a> <a href="http://github.com/clojure/core.rrb-vector" title="clojure.core.rrb-vector/vec
+([coll])
+  Returns a vector containing the contents of coll.
+
+  If coll is a vector, returns an RRB vector using the internal tree
+  of coll.">vec</a> <a href="http://github.com/clojure/core.rrb-vector" title="clojure.core.rrb-vector/vector-of
+([t] [t x1] [t x1 x2] [t x1 x2 x3] [t x1 x2 x3 x4] [t x1 x2 x3 x4 & xn])
+  Creates a new vector capable of storing homogenous items of type t,
+  which should be one of :object, :int, :long, :float, :double, :byte,
+  :short, :char, :boolean. Primitives are stored unboxed.
+
+  Optionally takes one or more elements to populate the vector.">vector-of</a></code></td>
               </tr>
               <tr class="even">
                 <td>Examine</td>
