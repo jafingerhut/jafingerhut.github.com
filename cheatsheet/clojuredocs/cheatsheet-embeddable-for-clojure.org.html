@@ -73,7 +73,7 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
               </tr>
               <tr class="odd">
                 <td><a href="http://www.regular-expressions.info">Regex</a></td>
-                <td><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html">#"<var>pattern</var>"</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-find">re-find</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-seq">re-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-matches">re-matches</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-pattern">re-pattern</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-matcher">re-matcher</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-groups">re-groups</a> (clojure.string/) <a href="http://clojuredocs.org/clojure_core/clojure.string/replace">replace</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/replace-first">replace-first</a> (1.5) <a href="http://clojuredocs.org/clojure_core/clojure.string/re-quote-replacement">re-quote-replacement</a></code></td>
+                <td><code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html">#"<var>pattern</var>"</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-find">re-find</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-seq">re-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-matches">re-matches</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-pattern">re-pattern</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-matcher">re-matcher</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/re-groups">re-groups</a> (clojure.string/) <a href="http://clojuredocs.org/clojure_core/clojure.string/replace">replace</a> <a href="http://clojuredocs.org/clojure_core/clojure.string/replace-first">replace-first</a> (1.5) <a href="http://clojuredocs.org/clojure_core/clojure.string/re-quote-replacement">re-quote-replacement</a> Note: \ in <code>#""</code> is not escape char. <code>(re-pattern "\\s*\\d+")</code> can be written <code>#"\s*\d+"</code></code></td>
               </tr>
               <tr class="even">
                 <td>Letters</td>
@@ -637,71 +637,87 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
           <table>
             <tbody>
               <tr class="odd">
+                <td><code>,</code></td>
+                <td>Comma reads as white space.  Often used between map key/value pairs for readability.</td>
+              </tr>
+              <tr class="even">
                 <td><code>'</code></td>
                 <td><code><a href="http://clojure.org/special_forms#quote">quote</a>: <code>'<var>form</var></code> &rarr; <code>(</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/quote">quote</a> <code><var>form</var>)</code></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td><code>/</code></td>
                 <td>Namespace separator (see Primitives/Other section)</td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td><code>\</code></td>
                 <td>Character literal (see Primitives/Other section)</td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td><code>:</code></td>
                 <td>Keyword (see Primitives/Other section)</td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td><code>;</code></td>
                 <td>Single line comment</td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td><code>^</code></td>
                 <td>Metadata (see Metadata section)</td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td><code>*foo*</code></td>
                 <td><code>'earmuffs' - convention to indicate <a href="http://clojure.org/vars">dynamic vars</a>, compiler warns if not dynamic</code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td><code>@</code></td>
                 <td><code>Deref: <code>@<var>form</var></code> &rarr; <code>(</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/deref">deref</a> <code><var>form</var>)</code></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td><code>`</code></td>
                 <td><code><a href="http://clojure.org/reader#syntax-quote">Syntax-quote</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td><code>~</code></td>
                 <td><code><a href="http://clojure.org/reader#syntax-quote">Unquote</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td><code>~@</code></td>
                 <td><code><a href="http://clojure.org/reader#syntax-quote">Unquote-splicing</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td><code>-></code></td>
                 <td><code>'thread first' macro <a href="http://clojuredocs.org/clojure_core/clojure.core/->">-&gt;</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td><code>->></code></td>
                 <td><code>'thread last' macro <a href="http://clojuredocs.org/clojure_core/clojure.core/->>">-&gt;&gt;</a></code></td>
               </tr>
+              <tr class="odd">
+                <td><code>(</code></td>
+                <td>List literal (see Collections/Lists section)</td>
+              </tr>
               <tr class="even">
-                <td><code>#"<var>p</var>"</code></td>
-                <td>Regex Pattern <var>p</var>  (see Strings/Regex section)</td>
+                <td><code>[</code></td>
+                <td>Vector literal (see Collections/Vectors section)</td>
               </tr>
               <tr class="odd">
-                <td><code>#{</code></td>
-                <td>Set literal (see Collections/Sets section)</td>
+                <td><code>{</code></td>
+                <td>Map literal (see Collections/Maps section)</td>
               </tr>
               <tr class="even">
                 <td><code>#'</code></td>
                 <td><code>Var-quote: <code>#'<var>x</var></code> &rarr; <code>(</code> <a href="http://clojuredocs.org/clojure_core/clojure.core/var">var</a> <code><var>x</var>)</code></code></td>
               </tr>
               <tr class="odd">
-                <td><code>#()</code></td>
+                <td><code>#"</td>
+                <td><code>#"<var>p</var>"</code> reads as regex pattern <var>p</var> (see Strings/Regex section)</td>
+              </tr>
+              <tr class="even">
+                <td><code>#{</code></td>
+                <td>Set literal (see Collections/Sets section)</td>
+              </tr>
+              <tr class="odd">
+                <td><code>#(</code></td>
                 <td><code><a href="http://clojure.org/reader#The%20Reader--Macro%20characters">Anonymous function literal</a>: <code>#(...)</code> &rarr; <code>(fn [args] (...))</code></code></td>
               </tr>
               <tr class="even">
