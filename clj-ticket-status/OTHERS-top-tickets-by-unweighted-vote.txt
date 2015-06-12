@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: June 4, 2015
+Date: June 11, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -88,6 +88,10 @@ Defect
    0 Open         [ASYNC-122] Parking in finally block replaces result
    0 Open         [ASYNC-123] Channel operations fail in for comprehension.
    0 Open         [ASYNC-124] put! into channel that has mapcat transducer fails to dispatch more than one waiting takes
+   0 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
+   0 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
+   0 Open         [ASYNC-128] or evaluation not stopped when exp nests take
+   0 Open         [ASYNC-129] Channels with transducer using reduced don't work as intended
 
 ========================================
 Enhancement
@@ -110,6 +114,7 @@ Enhancement
    0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
    0 Vetted       [ASYNC-102] implement IDeref, IBlockingDeref for channels
    0 Triaged      [ASYNC-106] A unit test in ioc_macros_test.clj tests nothing
+   0 Triaged      [ASYNC-126] Add public channel "closed?" predicate
 
 ========================================
 Task
@@ -325,6 +330,11 @@ Task
 
 
 Project DAVL tickets
+========================================
+Defect
+
+   0 Open         [DAVL-6] ClojureScript version IMeta & IFn protocols implementation broken
+
 
 Project DCODEC tickets
 ========================================
@@ -629,6 +639,7 @@ Enhancement
    0 Open         [NREPL-44] Expose JMX MBean to provide list of available nREPL endpoints
    0 Open         [NREPL-55] Support custom value rendering middleware
    0 Bad: Unkn Fi [NREPL-59] Tracking source form positions in eval
+   0 Open         [NREPL-78] Add support for REPL evaluations that include reader conditionals
 
 ========================================
 Task
@@ -684,7 +695,6 @@ Defect
    0 Open         [TCHECK-57] Performance regression in map generator between 0.5.8 and 0.5.9
    0 Open         [TCHECK-59] s-pos-int and s-pos-int generators have an off-by-1 issue 
    0 Open         [TCHECK-62] ClojureScript example in README doesn't work
-   0 Open         [TCHECK-67] The new rand-range has a nasty edge case
    0 Open         [TCHECK-69] Create a UUID Generator
 
 ========================================
@@ -707,15 +717,15 @@ Enhancement
    0 Open         [TCHECK-41] Add helpers for deprecating generators
    0 Open         [TCHECK-44] for-all should support nesting
    0 Open         [TCHECK-48] Add sublist generator
-   0 Open         [TCHECK-50] Sampling one in the obvious way could return a more random value
    0 Open         [TCHECK-51] Add set generator
    0 Open         [TCHECK-53] property creating function similar to map as alternative to for-all*
    0 Open         [TCHECK-58] Alternate clojure.test integration
    0 Open         [TCHECK-60] string from regular expression generator
    0 Open         [TCHECK-63] add sizing arguments to map generator
-   0 Open         [TCHECK-64] better ratio generator
    0 Open         [TCHECK-65] add a float generator
-   0 Open         [TCHECK-66] Make rose trees a deftype
+   0 Open         [TCHECK-70] Redesign gen/choose
+   0 Open         [TCHECK-71] Exponential generator
+   0 Open         [TCHECK-72] Poisson generator
 
 
 Project TCLI tickets

@@ -242,6 +242,10 @@
   :usernames #{"catalan42"},
   :emails #{"thompson2526@gmail.com"}}
  (),
+ {:display-name "Baby",
+  :usernames #{"baby"},
+  :emails #{"palanisamy.baby@gmail.com"}}
+ (),
  {:display-name "Coen De Roover",
   :usernames #{"cderoove"},
   :emails #{"cderoove@vub.ac.be"}}
@@ -1649,6 +1653,10 @@
   :usernames #{"peterwang"},
   :emails #{"ptr.wang@gmail.com"}}
  (),
+ {:display-name "Antony Woods",
+  :usernames #{"acron"},
+  :emails #{"antony@teamwoods.org"}}
+ (),
  {:display-name "Ziyang Hu",
   :usernames #{"amadeoh"},
   :emails #{"hu.ziyang@cantab.net"}}
@@ -1780,7 +1788,7 @@
  {:display-name "Phill Wolf",
   :usernames #{"pbwolf"},
   :emails #{"phill.wolf@gmail.com"}}
- ("CLJ-1322" "CLJ-1117" "CLJ-700"),
+ ("CLJ-1659" "CLJ-1322" "CLJ-1282" "CLJ-1117" "CLJ-700"),
  {:display-name "Mikkel Kamstrup Erlandsen",
   :usernames #{"kamstrup"},
   :emails #{"mikkel.kamstrup@gmail.com"}}
@@ -3337,6 +3345,10 @@
   :usernames #{"javame"},
   :emails #{"antonio.terreno@gmail.com"}}
  ("CLJ-735"),
+ {:display-name "CA",
+  :usernames #{"0x7864"},
+  :emails #{"spam_666_spam@yahoo.it"}}
+ ("CLJ-1063"),
  {:display-name "Igor Wiedler",
   :usernames #{"igorw"},
   :emails #{"igor@wiedler.ch"}}
@@ -3949,7 +3961,9 @@
  {:display-name "Nicola Mometto",
   :usernames #{"bronsa"},
   :emails #{"brobronsa@gmail.com"}}
- ("CLJ-1743"
+ ("CLJ-1746"
+  "CLJ-1743"
+  "CLJ-1659"
   "CLJ-1649"
   "CLJ-1626"
   "CLJ-1620"
@@ -4869,6 +4883,10 @@
   :usernames #{"nkassis"},
   :emails #{"nic.kassis@gmail.com"}}
  (),
+ {:display-name "Klaus Wuestefeld",
+  :usernames #{"klauswuestefeld"},
+  :emails #{"klauswuestefeld@gmail.com"}}
+ (),
  {:display-name "Tsutomu Yano",
   :usernames #{"tyano"},
   :emails #{"t_yano@me.com"}}
@@ -5068,7 +5086,7 @@
  {:display-name "Sven Richter",
   :usernames #{"sveri"},
   :emails #{"sveri80@gmail.com"}}
- (),
+ ("CLJ-1659"),
  {:display-name "tiredpixel",
   :usernames #{"tiredpixel"},
   :emails #{"tp@tiredpixel.com"}}
@@ -6511,6 +6529,10 @@
  {:display-name "Devin Garner",
   :usernames #{"speige"},
   :emails #{"devingarner@gmail.com"}}
+ (),
+ {:display-name "Mahmood Ali",
+  :usernames #{"notnoop"},
+  :emails #{"mahmood+clojure@circleci.com"}}
  (),
  {:display-name "Michael Nussbaum",
   :usernames #{"mnussbaum"},
