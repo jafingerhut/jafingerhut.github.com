@@ -6,7 +6,15 @@ versions of Linux are not able to shrink an ext4 disk partition.
 To do it another way, first fill up the empty parts of the virtual
 disk with zeros:
 
+# This step is optional, but can eliminate some apt package files and
+# save some disk space.
 % sudo apt-get clean
+
+# This step is also optional, but can help identify apt packages
+# taking up the most disk space.  Source:
+# http://www.commandlinefu.com/commands/view/3842/list-your-largest-installed-packages-on-debianubuntu
+% sed -ne '/^Package: \(.*\)/{s//\1/;h;};/^Installed-Size: \(.*\)/{s//\1/;G;s/\n/ /;p;}' /var/lib/dpkg/status | sort -n
+
 # bs=20megabytes is simply the block size that will be written at a
 # time.  The command below will copy 2 megabytes of 0 bytes from
 # /dev/zero at a time to the file /0bits, until the virtual disk is
