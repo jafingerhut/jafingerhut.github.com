@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: June 11, 2015
+Date: June 15, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -39,6 +39,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
+  17 Backlog      [CLJ-1224] Records do not cache hash like normal maps
   17 Backlog      [CLJ-700] contains? broken for transient collections
    9 Triaged      [CLJ-1372] Inconsistent hash with java collections
    9 Triaged      [CLJ-1527] Harmonize accepted / documented symbol and keyword syntax over various readers
@@ -70,8 +71,8 @@ Defect
    2 Open         [CLJ-1360] clojure.string/split strips trailing delimiters
    2 Triaged      [CLJ-1399] missing field munging when recreating deftypes serialized into byte code
    2 Open         [CLJ-1649] Hash/equality inconsistency for floats & doubles
-   2 Open         [CLJ-1286] Fix reader spec and regex to match code for keywords starting with digits
    2 Open         [CLJ-1206] 'eval' of closures or fns with runtime metadata within a call expr yields "No matching ctor found" exceptions
+   2 Open         [CLJ-1286] Fix reader spec and regex to match code for keywords starting with digits
    2 Backlog      [CLJ-274] cannot close over mutable fields (in deftype)
    2 Open         [CLJ-750] clojure.lang.MapEntry violates .equals and .hashCode contracts of HashMap.Entry; leads to non-reflexive .equals, etc.
    2 Triaged      [CLJ-1137] Metadata on a def gets evaluated twice
@@ -159,12 +160,11 @@ Enhancement
   15 Triaged      [CLJ-1298] Add more type predicate fns to core
   13 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
   11 Vetted       [CLJ-1005] Use transient map in zipmap
-  11 Backlog      [CLJ-1224] Records do not cache hash like normal maps
   10 Open         [CLJ-1078] Add queue and queue? to clojure.core
    9 Triaged      [CLJ-1278] State function's unmunged full name in compiled function's toString()
+   8 Open         [CLJ-304] clojure.repl/source does not work with deftype
    8 Vetted       [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
    8 Triaged      [CLJ-308] protocol-ize with-open
-   7 Open         [CLJ-304] clojure.repl/source does not work with deftype
    7 Vetted       [CLJ-1148] adds docstring support to defonce
    7 Triaged      [CLJ-440] java method calls cannot omit varargs
    6 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
@@ -221,9 +221,9 @@ Enhancement
    2 Open         [CLJ-428] subseq, rsubseq enhancements to support priority maps?
    2 Triaged      [CLJ-888] defprotocol should throw error when signatures include variable number of parameters
    2 Open         [CLJ-1120] Introduce ex-message and ex-cause to abstract away the platform in dealing with ExceptionInfo
-   2 Triaged      [CLJ-1598] Make if forms compile directly to the appropriate branch expression if the test is a literal
    2 Open         [CLJ-978] bean unable to handle non-public classes
    2 Triaged      [CLJ-1219] Make identical? variadic
+   2 Triaged      [CLJ-1598] Make if forms compile directly to the appropriate branch expression if the test is a literal
    2 Triaged      [CLJ-1094] Add zero-arity versions of every-pred and some-fn
    2 Open         [CLJ-706] make use of deprecated namespaces/vars easier to spot
    2 Open         [CLJ-1442] Tag gensym sourced symbols with metadata

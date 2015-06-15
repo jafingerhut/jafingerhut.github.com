@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: June 11, 2015
+Date: June 15, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -39,6 +39,24 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
+    6.53  17 Backlog      [CLJ-1224] Records do not cache hash like normal maps
+             Luca Barozzi (1)
+             Steven Yi (1)
+             deliminator (1)
+             Bobby Eickhoff (1/2)
+             Daniel R. Schlegel (1/2)
+             Richard Davies (1/2)
+             David Nolen (1/4)
+             Mark Engelberg (1/4)
+             Michael Patrick O'Keefe (1/4)
+             Steve Miner (1/4)
+             Yongqian Li (1/4)
+             Michael van Acken (1/5)
+             Ambrose Bonnaire-Sergeant (1/7)
+             Colin Taylor (1/7)
+             Mike Rodriguez (1/7)
+             Gary Trakhman (1/10)
+             David Greenberg (1/19)
     3.77  17 Backlog      [CLJ-700] contains? broken for transient collections
              Dom Kiva-Meyer (1/2)
              Laszlo Török (1/2)
@@ -67,11 +85,11 @@ Defect
              Max Penet (1/11)
              Andy Fingerhut (1/13)
              Nicola Mometto (1/56)
-    3.41   9 Triaged      [CLJ-1527] Harmonize accepted / documented symbol and keyword syntax over various readers
+    3.33   9 Triaged      [CLJ-1527] Harmonize accepted / documented symbol and keyword syntax over various readers
              Alan Bustos Kleiman (1)
              James Laver (1)
              James Reeves (1/2)
-             Michael Patrick O'Keefe (1/3)
+             Michael Patrick O'Keefe (1/4)
              Justin Glenn Smith (1/5)
              Colin Fleming (1/7)
              Bozhidar Batsov (1/10)
@@ -205,9 +223,6 @@ Defect
              Max Penet (1/11)
              Reid McKenzie (1/18)
              David Greenberg (1/19)
-    0.67   2 Open         [CLJ-1286] Fix reader spec and regex to match code for keywords starting with digits
-             Francis Avila (1/3)
-             Michael Patrick O'Keefe (1/3)
     0.66   3 Backlog      [CLJ-1620] Constants are leaked in case of a reentrant eval
              Laurent Petit (1/2)
              Colin Fleming (1/7)
@@ -215,6 +230,9 @@ Defect
     0.61   2 Open         [CLJ-1206] 'eval' of closures or fns with runtime metadata within a call expr yields "No matching ctor found" exceptions
              Richard Davies (1/2)
              Tom Crayford (1/9)
+    0.58   2 Open         [CLJ-1286] Fix reader spec and regex to match code for keywords starting with digits
+             Francis Avila (1/3)
+             Michael Patrick O'Keefe (1/4)
     0.55   3 Open         [CLJ-1279] Fix confusing macroexpand1 ArityException handling
              César Bolaños (1/3)
              Justin Glenn Smith (1/5)
@@ -353,7 +371,7 @@ Defect
 ========================================
 Enhancement
 
-   14.47  25 Triaged      [CLJ-703] Improve writeClassFile performance
+   14.39  25 Triaged      [CLJ-703] Improve writeClassFile performance
              Anthony Kesich (1)
              Dan Neumann (1)
              David Powell (1)
@@ -370,7 +388,7 @@ Enhancement
              Laszlo Török (1/2)
              davie moston (1/2)
              Kuldeep (1/3)
-             Michael Patrick O'Keefe (1/3)
+             Michael Patrick O'Keefe (1/4)
              Jason Wolfe (1/5)
              Colin Fleming (1/7)
              Tim McCormack (1/9)
@@ -422,7 +440,7 @@ Enhancement
              Tassilo Horn (1/8)
              David Greenberg (1/19)
              Nicola Mometto (1/56)
-    7.73  19 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
+    7.71  19 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
              Gabriel Ki (1)
              Lei Wang (1)
              Ryan Senior (1)
@@ -436,13 +454,13 @@ Enhancement
              Devin Walters (1/3)
              Jozef Wagner (1/5)
              Patrick Houk (1/5)
-             Colin Taylor (1/6)
+             Colin Taylor (1/7)
              Tim McCormack (1/9)
              Gary Trakhman (1/10)
              David Greenberg (1/19)
              Michael Blume (1/19)
              Nicola Mometto (1/56)
-    6.10  15 Triaged      [CLJ-1298] Add more type predicate fns to core
+    6.08  15 Triaged      [CLJ-1298] Add more type predicate fns to core
              Alexander Redington (1)
              Gunnar Völkel (1)
              Julian Gamble (1)
@@ -451,13 +469,22 @@ Enhancement
              Tobias Kortkamp (1/2)
              Andrew Rosa (1/4)
              Howard Lewis Ship (1/5)
-             Colin Taylor (1/6)
+             Colin Taylor (1/7)
              Brandon Bloom (1/9)
              Christoffer Sawicki (1/9)
              Bozhidar Batsov (1/10)
              Max Penet (1/11)
              Reid McKenzie (1/18)
              Nicola Mometto (1/56)
+    5.45   8 Open         [CLJ-304] clojure.repl/source does not work with deftype
+             Alex Walker (1)
+             Andrew Rudenko (1)
+             Frank Siebenlist (1)
+             Lars Andersen (1)
+             Michael Griffiths (1)
+             Dmitri Naumov (1/4)
+             Bozhidar Batsov (1/10)
+             Gary Trakhman (1/10)
     5.33  16 Backlog      [CLJ-1517] Unrolled small vectors
              Deepak Giridharagopal (1)
              Yuriy Melnyk (1)
@@ -494,22 +521,14 @@ Enhancement
              Patrick Houk (1/5)
              Tim McCormack (1/9)
              Andy Fingerhut (1/13)
-    4.45   7 Open         [CLJ-304] clojure.repl/source does not work with deftype
-             Alex Walker (1)
-             Andrew Rudenko (1)
-             Frank Siebenlist (1)
-             Michael Griffiths (1)
-             Dmitri Naumov (1/4)
-             Bozhidar Batsov (1/10)
-             Gary Trakhman (1/10)
-    4.34  10 Open         [CLJ-1078] Add queue and queue? to clojure.core
+    4.31  10 Open         [CLJ-1078] Add queue and queue? to clojure.core
              Allen Rohner (1)
              Anthony Grimes (1)
              Bruce Hauman (1)
              Francis Avila (1/3)
              Jenan Wise (1/3)
              John Jacobsen (1/3)
-             Colin Taylor (1/6)
+             Colin Taylor (1/7)
              Bozhidar Batsov (1/10)
              David Greenberg (1/19)
              Nicola Mometto (1/56)
@@ -541,18 +560,6 @@ Enhancement
              Ian Eslick (1)
              Roberto Robles (1)
              Adrian Medina (1/2)
-    3.36  11 Vetted       [CLJ-1005] Use transient map in zipmap
-             Bobby Eickhoff (1)
-             Joshua Ballanco (1)
-             Gary Fredericks (1/4)
-             Yongqian Li (1/4)
-             Alex Miller (1/5)
-             Daniel James (1/5)
-             Ambrose Bonnaire-Sergeant (1/7)
-             Mike Rodriguez (1/7)
-             Bozhidar Batsov (1/10)
-             David Greenberg (1/19)
-             Nicola Mometto (1/56)
     3.33   4 Triaged      [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
              Jakub Arnold (1)
              Jens Bendisposto (1)
@@ -593,23 +600,23 @@ Enhancement
              Bozhidar Batsov (1/10)
              Reid McKenzie (1/18)
              Nicola Mometto (1/56)
+    2.86  11 Vetted       [CLJ-1005] Use transient map in zipmap
+             Joshua Ballanco (1)
+             Bobby Eickhoff (1/2)
+             Gary Fredericks (1/4)
+             Yongqian Li (1/4)
+             Alex Miller (1/5)
+             Daniel James (1/5)
+             Ambrose Bonnaire-Sergeant (1/7)
+             Mike Rodriguez (1/7)
+             Bozhidar Batsov (1/10)
+             David Greenberg (1/19)
+             Nicola Mometto (1/56)
     2.83   4 Triaged      [CLJ-1490] Exception on protocol implementation after protocol reloaded could be improved
              Alan Crowley (1)
              Ted Coakley (1)
              Sanel Zukan (1/2)
              Jeremy Heiler (1/3)
-    2.64  11 Backlog      [CLJ-1224] Records do not cache hash like normal maps
-             Daniel R. Schlegel (1/2)
-             Richard Davies (1/2)
-             David Nolen (1/4)
-             Mark Engelberg (1/4)
-             Steve Miner (1/4)
-             Yongqian Li (1/4)
-             Michael van Acken (1/5)
-             Ambrose Bonnaire-Sergeant (1/7)
-             Mike Rodriguez (1/7)
-             Gary Trakhman (1/10)
-             David Greenberg (1/19)
     2.61   6 Triaged      [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
              Brian Kim (1)
              Paul Michael Bauer (1)
@@ -701,11 +708,11 @@ Enhancement
     1.33   2 Triaged      [CLJ-1414] sort's docstring should say whether it is stable
              Antti Karanta (1)
              Stuart Sierra (1/3)
-    1.31   6 Triaged      [CLJ-1239] faster, more flexible dispatch for clojure.walk
+    1.29   6 Triaged      [CLJ-1239] faster, more flexible dispatch for clojure.walk
              Ryan Neufeld (1/2)
              Alex Miller (1/5)
              Chas Emerick (1/5)
-             Colin Taylor (1/6)
+             Colin Taylor (1/7)
              Mike Rodriguez (1/7)
              Bozhidar Batsov (1/10)
     1.25   2 Open         [CLJ-200] Extend cond to support inline let, much like for
@@ -838,8 +845,8 @@ Enhancement
     0.33   2 Triaged      [CLJ-888] defprotocol should throw error when signatures include variable number of parameters
              Michael van Acken (1/5)
              Tassilo Horn (1/8)
-    0.28   2 Open         [CLJ-1120] Introduce ex-message and ex-cause to abstract away the platform in dealing with ExceptionInfo
-             Colin Taylor (1/6)
+    0.25   2 Open         [CLJ-1120] Introduce ex-message and ex-cause to abstract away the platform in dealing with ExceptionInfo
+             Colin Taylor (1/7)
              Brandon Bloom (1/9)
     0.25   1 Open         [CLJ-148] Poor reporting of symbol conflicts when using (ns)
              Dmitri Naumov (1/4)
@@ -847,15 +854,15 @@ Enhancement
              Alex Fowler (1/4)
     0.25   1 Triaged      [CLJ-1073] Make print-sequential interruptible
              Yongqian Li (1/4)
-    0.24   2 Triaged      [CLJ-1598] Make if forms compile directly to the appropriate branch expression if the test is a literal
-             Colin Taylor (1/6)
-             Andy Fingerhut (1/13)
     0.24   2 Open         [CLJ-978] bean unable to handle non-public classes
              Mike Rodriguez (1/7)
              Gary Trakhman (1/10)
     0.24   2 Triaged      [CLJ-1219] Make identical? variadic
              Tassilo Horn (1/8)
              Brandon Bloom (1/9)
+    0.22   2 Triaged      [CLJ-1598] Make if forms compile directly to the appropriate branch expression if the test is a literal
+             Colin Taylor (1/7)
+             Andy Fingerhut (1/13)
     0.20   2 Triaged      [CLJ-1094] Add zero-arity versions of every-pred and some-fn
              Brandon Bloom (1/9)
              Max Penet (1/11)

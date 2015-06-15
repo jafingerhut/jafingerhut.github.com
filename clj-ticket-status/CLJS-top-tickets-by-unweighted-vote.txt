@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: June 11, 2015
+Date: June 15, 2015
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -46,7 +46,7 @@ Defect
    1 Open         [CLJS-911] Cljs's clojure.string.replace replacement fn takes different args to Clj's clojure.string.replace
    1 Bad: Unkn Fi [CLJS-968] Metadata on function literal inside of a let produces invalid Javascript
    1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
-   1 Bad: Unkn Fi [CLJS-1092] CommonJS Module processing
+   1 Bad: Unkn Fi [CLJS-1308] :analyze-path should be extended to take a vector of paths
    0 Bad: Unkn Fi [CLJS-349] cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
    0 Bad: Unkn Fi [CLJS-375] loop doesn't seem to preserve tag information as evidenced by extra cljs.core.truth_ calls
    0 Bad: Unkn Fi [CLJS-428] Using */ inside of a docstring causes compiler to produce invalid JavaScript
@@ -70,11 +70,9 @@ Defect
    0 Bad: Unkn Fi [CLJS-1247] Add *out* and *err*
    0 Bad: Unkn Fi [CLJS-1271] Missing warning when assigning namespaces via def
    0 Bad: Unkn Fi [CLJS-1276] var equality differs from Clojure
-   0 Bad: Unkn Fi [CLJS-1277] relax requirement that files must declare a namespace, default to cljs.user
    0 Bad: Unkn Fi [CLJS-1280] double analysis warnings when using cljs.repl/load-file special fn
    0 Bad: Unkn Fi [CLJS-1286] REPL environment should be able to provide advice if source mapping fails
    0 Bad: Unkn Fi [CLJS-1287] CLJS exceptions should use same format as Clojure 1.7 (#exception {...})
-   0 Bad: Unkn Fi [CLJS-1290] :refer does not work with Closure JS namespaces
    0 Bad: Unkn Fi [CLJS-1296] browser REPL should queue prints before connection then flush after connection
    0 Bad: Unkn Fi [CLJS-1297] defrecord does not emit IKVReduce protocol
    0 Bad: Unkn Fi [CLJS-1298] source-on-disk conditional should include :source-url
@@ -82,8 +80,6 @@ Defect
    0 Bad: Unkn Fi [CLJS-1302] (js/goog.base (js* "this")) no longer works
    0 Bad: Unkn Fi [CLJS-1303] runtime namespaces support for cljs.tools.reader
    0 Bad: Unkn Fi [CLJS-1305] Node.js REPL load-file regression 
-   0 Bad: Unkn Fi [CLJS-1306] Browser REPL :asset-path with leading slash breaks source map support
-   0 Bad: Unkn Fi [CLJS-1308] :analyze-path should be extended to take a vector of paths
 
 ========================================
 Enhancement
@@ -98,6 +94,7 @@ Enhancement
    1 Bad: Unkn Fi [CLJS-1238] Setting *main-cli-fn* when using :target :nodejs shouldn't be manditory
    1 Open         [CLJS-1017] Support :main for :advanced builds
    1 Bad: Unkn Fi [CLJS-1177] A compiler support for non-Closure transforms (JSX, etc)
+   1 Bad: Unkn Fi [CLJS-1311] Improve error reporting when converting CommonJS modules
    0 Bad: Unkn Fi [CLJS-773] Use unchecked-*-int functions for real 32-bit math
    0 Bad: Unkn Fi [CLJS-836] Replace seq-based iterators with direct iterators for all non-seq collections that use SeqIterator
    0 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
@@ -111,10 +108,11 @@ Enhancement
    0 Bad: Unkn Fi [CLJS-1194] data_readers.cljc
    0 Bad: Unkn Fi [CLJS-1195] generic reusable command line argument parsing for REPLs
    0 Bad: Unkn Fi [CLJS-1207] Emit a warning if multiple resources found for a ClojureScript namespace
-   0 Bad: Unkn Fi [CLJS-1217] cljs.test/run-tests with default env has no way to access summary
    0 Bad: Unkn Fi [CLJS-1230] ES 2015 Module Processing
    0 Bad: Unkn Fi [CLJS-1231] AMD Module Processing
+   0 Bad: Unkn Fi [CLJS-1277] relax requirement that files must declare a namespace, default to cljs.user
    0 Bad: Unkn Fi [CLJS-1281] preserve test order
+   0 Bad: Unkn Fi [CLJS-1312] CommonJS support: Properly convert JS lib idiom for adding module support for multiple specifications
 
 ========================================
 Task
