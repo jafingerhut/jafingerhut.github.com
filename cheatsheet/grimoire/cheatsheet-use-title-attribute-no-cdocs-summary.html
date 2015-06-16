@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v30)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v31)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -3225,14 +3225,18 @@ transaction,
                 <td><code><a href="http://clojure.org/reader#syntax-quote">Syntax-quote</a></code></td>
               </tr>
               <tr class="odd">
+                <td><code>foo#</code></td>
+                <td><code><a href="http://clojure.org/reader#syntax-quote">'auto-gensym'</a>, consistently replaced with same auto-generated symbol everywhere inside same <code>`( ... )</code></code></td>
+              </tr>
+              <tr class="even">
                 <td><code>~</code></td>
                 <td><code><a href="http://clojure.org/reader#syntax-quote">Unquote</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td><code>~@</code></td>
                 <td><code><a href="http://clojure.org/reader#syntax-quote">Unquote-splicing</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td><code>-></code></td>
                 <td><code>'thread first' macro <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/->/" title="clojure.core/->
 ([x & forms])
@@ -3242,7 +3246,7 @@ Macro
   list already. If there are more forms, inserts the first form as the
   second item in second form, etc.">-&gt;</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td><code>->></code></td>
                 <td><code>'thread last' macro <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/->>/" title="clojure.core/->>
 ([x & forms])
@@ -3252,19 +3256,19 @@ Macro
   list already. If there are more forms, inserts the first form as the
   last item in second form, etc.">-&gt;&gt;</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td><code>(</code></td>
                 <td>List literal (see Collections/Lists section)</td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td><code>[</code></td>
                 <td>Vector literal (see Collections/Vectors section)</td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td><code>{</code></td>
                 <td>Map literal (see Collections/Maps section)</td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td><code>#'</code></td>
                 <td><code>Var-quote: <code>#'<var>x</var></code> &rarr; <code>(</code> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/var/" title="var
   (var symbol)
@@ -3274,21 +3278,25 @@ itself (not its value) is returned. The reader macro #'x expands to (var x).
 
   Please see http://clojure.org/special_forms#var">var</a> <code><var>x</var>)</code></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td><code>#"</td>
                 <td><code>#"<var>p</var>"</code> reads as regex pattern <var>p</var> (see Strings/Regex section)</td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td><code>#{</code></td>
                 <td>Set literal (see Collections/Sets section)</td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td><code>#(</code></td>
                 <td><code><a href="http://clojure.org/reader#The%20Reader--Macro%20characters">Anonymous function literal</a>: <code>#(...)</code> &rarr; <code>(fn [args] (...))</code></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td><code>%</code></td>
                 <td><code><a href="http://clojure.org/reader#The%20Reader--Macro%20characters">Anonymous function argument</a>: <code>%N</code> is value of anonymous function arg <code>N</code>.  <code>%</code> short for <code>%1</code>.  <code>%&</code> for rest args.</code></td>
+              </tr>
+              <tr class="even">
+                <td><code>#foo</code></td>
+                <td><code><a href="http://clojure.org/reader#The%20Reader--Tagged%20Literals">tagged literal</a> e.g. <code>#inst</code> <code>#uuid</code></code></td>
               </tr>
               <tr class="odd">
                 <td><code>$</code></td>
