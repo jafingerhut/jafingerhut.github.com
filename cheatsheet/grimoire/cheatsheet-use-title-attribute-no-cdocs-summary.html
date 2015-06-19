@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.3 - 1.6, sheet v31)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.4 - 1.7, sheet v32)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -170,8 +170,8 @@ Macro
   Prints documentation for any var whose documentation or name
  contains a match for re-string-or-pattern">find-doc</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.repl/apropos/" title="clojure.repl/apropos
 ([str-or-pattern])
-  Given a regular expression or stringable thing, return a seq of
-all definitions in all currently-loaded namespaces that match the
+  Given a regular expression or stringable thing, return a seq of all
+public definitions in all currently-loaded namespaces that match the
 str-or-pattern.">apropos</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.repl/dir/" title="clojure.repl/dir
 ([nsname])
 Macro
@@ -383,7 +383,9 @@ Macro
                 <td>Unchecked</td>
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/*unchecked-math*/" title="clojure.core/*unchecked-math*
   While bound to true, compilations of +, -, *, inc, dec and the
-  coercions will be done without overflow checks. Default: false.">*unchecked-math*</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/unchecked-add/" title="clojure.core/unchecked-add
+  coercions will be done without overflow checks. While bound
+  to :warn-on-boxed, same behavior as true, and a warning is emitted
+  when compilation uses boxed math. Default: false.">*unchecked-math*</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/unchecked-add/" title="clojure.core/unchecked-add
 ([x y])
   Returns the sum of x and y, both long.
   Note - uses a primitive operator subject to overflow.">unchecked-add</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/unchecked-dec/" title="clojure.core/unchecked-dec
@@ -418,7 +420,7 @@ Macro
 ([fmt & args])
   Formats a string using java.lang.String.format, see java.util.Formatter for
 format
-  string syntax">format</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">"a string"</a> "escapes \b\f\n\t\r\" octal \377 hex \ucafe" See also IO/to string</code></td>
+  string syntax">format</a> <a href="http://clojure.org/reader#The%20Reader--Reader%20forms">"a string"</a> "escapes \b\f\n\t\r\" octal \377 hex \ucafe" See also section IO/to string</code></td>
               </tr>
               <tr class="even">
                 <td>Use</td>
@@ -686,9 +688,9 @@ format
   Returns an empty collection of the same category as coll, or nil">empty</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/not-empty/" title="clojure.core/not-empty
 ([coll])
   If coll is empty, returns nil, else coll">not-empty</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/into/" title="clojure.core/into
-([to from])
+([to from] [to xform from])
   Returns a new coll consisting of to-coll with all of the items of
-  from-coll conjoined.">into</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/conj/" title="clojure.core/conj
+  from-coll conjoined. A transducer may be supplied.">into</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/conj/" title="clojure.core/conj
 ([coll x] [coll x & xs])
   conj[oin]. Returns a new collection with the xs
     'added'. (conj nil item) returns (item).  The 'addition' may
@@ -841,7 +843,7 @@ format
   resulting vector complies with the interface of vectors in general,
   but stores the values unboxed internally.
 
-  Optionally takes one or more elements to populate the vector.">vector-of</a> (1.4) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/mapv/" title="clojure.core/mapv
+  Optionally takes one or more elements to populate the vector.">vector-of</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/mapv/" title="clojure.core/mapv
 ([f coll] [f c1 c2] [f c1 c2 c3] [f c1 c2 c3 & colls])
   Returns a vector consisting of the result of applying f to the
   set of first items of each coll, followed by applying f to the set
@@ -898,21 +900,33 @@ format
   defaults to (count vector). This operation is O(1) and very fast, as
   the resulting vector shares structure with the original and no
   trimming is done.">subvec</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/replace/" title="clojure.core/replace
-([smap coll])
+([smap] [smap coll])
   Given a map of replacement pairs and a vector/collection, returns a
   vector/seq with any elements = a key in smap replaced with the
-  corresponding val in smap">replace</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/conj/" title="clojure.core/conj
+  corresponding val in smap.  Returns a transducer when no collection
+  is provided.">replace</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/conj/" title="clojure.core/conj
 ([coll x] [coll x & xs])
   conj[oin]. Returns a new collection with the xs
     'added'. (conj nil item) returns (item).  The 'addition' may
     happen at different 'places' depending on the concrete type.">conj</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/rseq/" title="clojure.core/rseq
 ([rev])
   Returns, in constant time, a seq of the items in rev (which
-  can be a vector or sorted-map), in reverse order. If rev is empty returns nil">rseq</a></code></td>
+  can be a vector or sorted-map), in reverse order. If rev is empty returns nil">rseq</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/update-in/" title="clojure.core/update-in
+([m [k & ks] f & args])
+  'Updates' a value in a nested associative structure, where ks is a
+  sequence of keys and f is a function that will take the old value
+  and any supplied args and return the new value, and returns a new
+  nested structure.  If any levels do not exist, hash-maps will be
+  created.">update-in</a> (1.7) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/update/" title="clojure.core/update
+([m k f] [m k f x] [m k f x y] [m k f x y z] [m k f x y z & more])
+  'Updates' a value in an associative structure, where k is a
+  key and f is a function that will take the old value
+  and any supplied args and return the new value, and returns a new
+  structure.  If the key does not exist, nil is passed as the old value.">update</a></code></td>
               </tr>
               <tr class="even">
                 <td>Ops</td>
-                <td><code>(1.4) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/reduce-kv/" title="clojure.core/reduce-kv
+                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/reduce-kv/" title="clojure.core/reduce-kv
 ([f init coll])
   Reduces an associative collection. f should be a function of 3
   arguments. Returns the result of applying f to init, the first key
@@ -993,7 +1007,7 @@ used only if elements are densely
 ([s1] [s1 s2] [s1 s2 & sets])
   Return a set that is the intersection of the input sets">intersection</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/select/" title="clojure.set/select
 ([pred xset])
-  Returns a set of the elements for which pred is true">select</a> See also Relations</code></td>
+  Returns a set of the elements for which pred is true">select</a> See also section Relations</code></td>
               </tr>
               <tr class="even">
                 <td>Test</td>
@@ -1137,7 +1151,12 @@ default-comparator.">ordering-map</a></code></td>
   sequence of keys and f is a function that will take the old value
   and any supplied args and return the new value, and returns a new
   nested structure.  If any levels do not exist, hash-maps will be
-  created.">update-in</a> (clojure.set/) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/rename-keys/" title="clojure.set/rename-keys
+  created.">update-in</a> (1.7) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/update/" title="clojure.core/update
+([m k f] [m k f x] [m k f x y] [m k f x y z] [m k f x y z & more])
+  'Updates' a value in an associative structure, where k is a
+  key and f is a function that will take the old value
+  and any supplied args and return the new value, and returns a new
+  structure.  If the key does not exist, nil is passed as the old value.">update</a> (clojure.set/) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/rename-keys/" title="clojure.set/rename-keys
 ([map kmap])
   Returns the map with the keys in kmap renamed to the vals in kmap">rename-keys</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/map-invert/" title="clojure.set/map-invert
 ([m])
@@ -1145,7 +1164,7 @@ default-comparator.">ordering-map</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Ops</td>
-                <td><code>(1.4) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/reduce-kv/" title="clojure.core/reduce-kv
+                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/reduce-kv/" title="clojure.core/reduce-kv
 ([f init coll])
   Reduces an associative collection. f should be a function of 3
   arguments. Returns the result of applying f to init, the first key
@@ -1257,7 +1276,7 @@ kmap">rename</a></code></td>
               <tr class="even">
                 <td>Change</td>
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/conj!/" title="clojure.core/conj!
-([coll x])
+([] [coll] [coll x])
   Adds x to the transient collection, and return coll. The 'addition'
   may happen at different 'places' depending on the concrete type.">conj!</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/pop!/" title="clojure.core/pop!
 ([coll])
@@ -1359,9 +1378,15 @@ data
   sc must be a sorted collection, test(s) one of <, <=, > or
   >=. Returns a reverse seq of those entries with keys ek for
   which (test (.. sc comparator (compare ek key)) 0) is true">rsubseq</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sequence/" title="clojure.core/sequence
-([coll])
+([coll] [xform coll] [xform coll & colls])
   Coerces coll to a (possibly empty) sequence, if it is not already
-  one. Will not force a lazy seq. (sequence nil) yields ()">sequence</a></code></td>
+  one. Will not force a lazy seq. (sequence nil) yields (), When a
+  transducer is supplied, returns a lazy sequence of applications of
+  the transform to the items in coll(s), i.e. to the set of first
+  items of each coll, followed by the set of second
+  items in each coll, until any one of the colls is exhausted.  Any
+  remaining items in other colls are ignored. The transform should accept
+  number-of-colls arguments">sequence</a></code></td>
               </tr>
               <tr class="even">
                 <td>From producer fn</td>
@@ -1424,14 +1449,15 @@ side-effects">iterate</a></code></td>
               <tr class="odd">
                 <td>From seq</td>
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/keep/" title="clojure.core/keep
-([f coll])
+([f] [f coll])
   Returns a lazy sequence of the non-nil results of (f item). Note,
   this means false return values will be included.  f must be free of
-  side-effects.">keep</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/keep-indexed/" title="clojure.core/keep-indexed
-([f coll])
+  side-effects.  Returns a transducer when no collection is provided.">keep</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/keep-indexed/" title="clojure.core/keep-indexed
+([f] [f coll])
   Returns a lazy sequence of the non-nil results of (f index item). Note,
   this means false return values will be included.  f must be free of
-  side-effects.">keep-indexed</a></code></td>
+  side-effects.  Returns a stateful transducer when no collection is
+  provided.">keep-indexed</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -1441,16 +1467,20 @@ side-effects">iterate</a></code></td>
               <tr class="odd">
                 <td>Get shorter</td>
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/distinct/" title="clojure.core/distinct
-([coll])
-  Returns a lazy sequence of the elements of coll with duplicates removed">distinct</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/filter/" title="clojure.core/filter
-([pred coll])
+([] [coll])
+  Returns a lazy sequence of the elements of coll with duplicates removed.
+  Returns a stateful transducer when no collection is provided.">distinct</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/filter/" title="clojure.core/filter
+([pred] [pred coll])
   Returns a lazy sequence of the items in coll for which
-  (pred item) returns true. pred must be free of side-effects.">filter</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/remove/" title="clojure.core/remove
-([pred coll])
+  (pred item) returns true. pred must be free of side-effects.
+  Returns a transducer when no collection is provided.">filter</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/remove/" title="clojure.core/remove
+([pred] [pred coll])
   Returns a lazy sequence of the items in coll for which
-  (pred item) returns false. pred must be free of side-effects.">remove</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/take-nth/" title="clojure.core/take-nth
-([n coll])
-  Returns a lazy seq of every nth item in coll.">take-nth</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/for/" title="clojure.core/for
+  (pred item) returns false. pred must be free of side-effects.
+  Returns a transducer when no collection is provided.">remove</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/take-nth/" title="clojure.core/take-nth
+([n] [n coll])
+  Returns a lazy seq of every nth item in coll.  Returns a stateful
+  transducer when no collection is provided.">take-nth</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/for/" title="clojure.core/for
 ([seq-exprs body-expr])
 Macro
   List comprehension. Takes a vector of one or more
@@ -1483,15 +1513,17 @@ Macro
   needed.
 
   (lazy-cat xs ys zs) === (concat (lazy-seq xs) (lazy-seq ys) (lazy-seq zs))">lazy-cat</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/mapcat/" title="clojure.core/mapcat
-([f & colls])
+([f] [f & colls])
   Returns the result of applying concat to the result of applying map
-  to f and colls.  Thus function f should return a collection.">mapcat</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/cycle/" title="clojure.core/cycle
+  to f and colls.  Thus function f should return a collection. Returns
+  a transducer when no collections are provided">mapcat</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/cycle/" title="clojure.core/cycle
 ([coll])
   Returns a lazy (infinite!) sequence of repetitions of the items in coll.">cycle</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/interleave/" title="clojure.core/interleave
 ([] [c1] [c1 c2] [c1 c2 & colls])
   Returns a lazy seq of the first item in each coll, then the second etc.">interleave</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/interpose/" title="clojure.core/interpose
-([sep coll])
-  Returns a lazy seq of the elements of coll separated by sep">interpose</a></code></td>
+([sep] [sep coll])
+  Returns a lazy seq of the elements of coll separated by sep.
+  Returns a stateful transducer when no collection is provided.">interpose</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Tail-items</td>
@@ -1508,11 +1540,13 @@ Macro
   Same as (first (next x))">fnext</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/nnext/" title="clojure.core/nnext
 ([x])
   Same as (next (next x))">nnext</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/drop/" title="clojure.core/drop
-([n coll])
-  Returns a lazy sequence of all but the first n items in coll.">drop</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/drop-while/" title="clojure.core/drop-while
-([pred coll])
-  Returns a lazy sequence of the items in coll starting from the first
-  item for which (pred item) returns logical false.">drop-while</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/take-last/" title="clojure.core/take-last
+([n] [n coll])
+  Returns a lazy sequence of all but the first n items in coll.
+  Returns a stateful transducer when no collection is provided.">drop</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/drop-while/" title="clojure.core/drop-while
+([pred] [pred coll])
+  Returns a lazy sequence of the items in coll starting from the
+  first item for which (pred item) returns logical false.  Returns a
+  stateful transducer when no collection is provided.">drop-while</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/take-last/" title="clojure.core/take-last
 ([n coll])
   Returns a seq of the last n items in coll.  Depending on the type
   of coll may be no better than linear time.  For vectors, see also subvec.">take-last</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/for/" title="clojure.core/for
@@ -1531,12 +1565,14 @@ Macro
               <tr class="even">
                 <td>Head-items</td>
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/take/" title="clojure.core/take
-([n coll])
+([n] [n coll])
   Returns a lazy sequence of the first n items in coll, or all items if
-  there are fewer than n.">take</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/take-while/" title="clojure.core/take-while
-([pred coll])
+  there are fewer than n.  Returns a stateful transducer when
+  no collection is provided.">take</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/take-while/" title="clojure.core/take-while
+([pred] [pred coll])
   Returns a lazy sequence of successive items from coll while
-  (pred item) returns true. pred must be free of side-effects.">take-while</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/butlast/" title="clojure.core/butlast
+  (pred item) returns true. pred must be free of side-effects.
+  Returns a transducer when no collection is provided.">take-while</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/butlast/" title="clojure.core/butlast
 ([coll])
   Return a seq of all but the last item in coll, in linear time">butlast</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/drop-last/" title="clojure.core/drop-last
 ([s] [n s])
@@ -1563,8 +1599,9 @@ Macro
 ([] [x] [x y] [x y & zs])
   Returns a lazy seq representing the concatenation of the elements in the
 supplied colls.">concat</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/distinct/" title="clojure.core/distinct
-([coll])
-  Returns a lazy sequence of the elements of coll with duplicates removed">distinct</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/flatten/" title="clojure.core/flatten
+([] [coll])
+  Returns a lazy sequence of the elements of coll with duplicates removed.
+  Returns a stateful transducer when no collection is provided.">distinct</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/flatten/" title="clojure.core/flatten
 ([x])
   Takes any nested combination of sequential things (lists, vectors,
   etc.) and returns their contents as a single, flat sequence.
@@ -1579,26 +1616,31 @@ supplied colls.">concat</a> <a href="http://conj.io/store/v0/org.clojure/clojure
   do not overlap. If a pad collection is supplied, use its elements as
   necessary to complete last partition upto n items. In case there are
   not enough padding elements, return a partition with less than n items.">partition</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/partition-all/" title="clojure.core/partition-all
-([n coll] [n step coll])
+([n] [n coll] [n step coll])
   Returns a lazy sequence of lists like partition, but may include
-  partitions with fewer than n items at the end.">partition-all</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/partition-by/" title="clojure.core/partition-by
-([f coll])
-  Applies f to each value in coll, splitting it each time f returns
-   a new value.  Returns a lazy seq of partitions.">partition-by</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/split-at/" title="clojure.core/split-at
+  partitions with fewer than n items at the end.  Returns a stateful
+  transducer when no collection is provided.">partition-all</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/partition-by/" title="clojure.core/partition-by
+([f] [f coll])
+  Applies f to each value in coll, splitting it each time f returns a
+   new value.  Returns a lazy seq of partitions.  Returns a stateful
+   transducer when no collection is provided.">partition-by</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/split-at/" title="clojure.core/split-at
 ([n coll])
   Returns a vector of [(take n coll) (drop n coll)]">split-at</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/split-with/" title="clojure.core/split-with
 ([pred coll])
   Returns a vector of [(take-while pred coll) (drop-while pred coll)]">split-with</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/filter/" title="clojure.core/filter
-([pred coll])
+([pred] [pred coll])
   Returns a lazy sequence of the items in coll for which
-  (pred item) returns true. pred must be free of side-effects.">filter</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/remove/" title="clojure.core/remove
-([pred coll])
+  (pred item) returns true. pred must be free of side-effects.
+  Returns a transducer when no collection is provided.">filter</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/remove/" title="clojure.core/remove
+([pred] [pred coll])
   Returns a lazy sequence of the items in coll for which
-  (pred item) returns false. pred must be free of side-effects.">remove</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/replace/" title="clojure.core/replace
-([smap coll])
+  (pred item) returns false. pred must be free of side-effects.
+  Returns a transducer when no collection is provided.">remove</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/replace/" title="clojure.core/replace
+([smap] [smap coll])
   Given a map of replacement pairs and a vector/collection, returns a
   vector/seq with any elements = a key in smap replaced with the
-  corresponding val in smap">replace</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/shuffle/" title="clojure.core/shuffle
+  corresponding val in smap.  Returns a transducer when no collection
+  is provided.">replace</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/shuffle/" title="clojure.core/shuffle
 ([coll])
   Return a random permutation of coll">shuffle</a></code></td>
               </tr>
@@ -1628,26 +1670,29 @@ supplied colls.">concat</a> <a href="http://conj.io/store/v0/org.clojure/clojure
               <tr class="odd">
                 <td>Process items</td>
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/map/" title="clojure.core/map
-([f coll] [f c1 c2] [f c1 c2 c3] [f c1 c2 c3 & colls])
-  Returns a lazy sequence consisting of the result of applying f to the
-  set of first items of each coll, followed by applying f to the set
-  of second items in each coll, until any one of the colls is
+([f] [f coll] [f c1 c2] [f c1 c2 c3] [f c1 c2 c3 & colls])
+  Returns a lazy sequence consisting of the result of applying f to
+  the set of first items of each coll, followed by applying f to the
+  set of second items in each coll, until any one of the colls is
   exhausted.  Any remaining items in other colls are ignored. Function
-  f should accept number-of-colls arguments.">map</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/pmap/" title="clojure.core/pmap
+  f should accept number-of-colls arguments. Returns a transducer when
+  no collection is provided.">map</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/pmap/" title="clojure.core/pmap
 ([f coll] [f coll & colls])
   Like map, except f is applied in parallel. Semi-lazy in that the
   parallel computation stays ahead of the consumption, but doesn't
   realize the entire result unless required. Only useful for
   computationally intensive functions where the time of f dominates
   the coordination overhead.">pmap</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/map-indexed/" title="clojure.core/map-indexed
-([f coll])
+([f] [f coll])
   Returns a lazy sequence consisting of the result of applying f to 0
   and the first item of coll, followed by applying f to 1 and the second
   item in coll, etc, until coll is exhausted. Thus function f should
-  accept 2 arguments, index and item.">map-indexed</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/mapcat/" title="clojure.core/mapcat
-([f & colls])
+  accept 2 arguments, index and item. Returns a stateful transducer when
+  no collection is provided.">map-indexed</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/mapcat/" title="clojure.core/mapcat
+([f] [f & colls])
   Returns the result of applying concat to the result of applying map
-  to f and colls.  Thus function f should return a collection.">mapcat</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/for/" title="clojure.core/for
+  to f and colls.  Thus function f should return a collection. Returns
+  a transducer when no collections are provided">mapcat</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/for/" title="clojure.core/for
 ([seq-exprs body-expr])
 Macro
   List comprehension. Takes a vector of one or more
@@ -1659,10 +1704,11 @@ Macro
    :while test, :when test.
 
   (take 100 (for [x (range 100000000) y (range 1000000) :while (< y x)] [x y]))">for</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/replace/" title="clojure.core/replace
-([smap coll])
+([smap] [smap coll])
   Given a map of replacement pairs and a vector/collection, returns a
   vector/seq with any elements = a key in smap replaced with the
-  corresponding val in smap">replace</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/seque/" title="clojure.core/seque
+  corresponding val in smap.  Returns a transducer when no collection
+  is provided.">replace</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/seque/" title="clojure.core/seque
 ([s] [n-or-q s])
   Creates a queued seq on another (presumably lazy) seq s. The queued
   seq will produce a concrete seq in the background, and can get up to
@@ -1727,9 +1773,9 @@ evaluated only once">when-first</a> <a href="http://conj.io/store/v0/org.clojure
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/zipmap/" title="clojure.core/zipmap
 ([keys vals])
   Returns a map with the keys mapped to the corresponding vals.">zipmap</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/into/" title="clojure.core/into
-([to from])
+([to from] [to xform from])
   Returns a new coll consisting of to-coll with all of the items of
-  from-coll conjoined.">into</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/reduce/" title="clojure.core/reduce
+  from-coll conjoined. A transducer may be supplied.">into</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/reduce/" title="clojure.core/reduce
 ([f coll] [f val coll])
   f should be a function of 2 arguments. If val is not supplied,
   returns the result of applying f to the first 2 items in coll, then
@@ -1757,7 +1803,7 @@ evaluated only once">when-first</a> <a href="http://conj.io/store/v0/org.clojure
 ([coll])
   Returns a (potentially-ragged) 2-dimensional array of Objects
   containing the contents of coll, which can be any Collection of any
-  Collection.">to-array-2d</a> (1.4) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/mapv/" title="clojure.core/mapv
+  Collection.">to-array-2d</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/mapv/" title="clojure.core/mapv
 ([f coll] [f c1 c2] [f c1 c2 c3] [f c1 c2 c3 & colls])
   Returns a vector consisting of the result of applying f to the
   set of first items of each coll, followed by applying f to the set
@@ -1783,9 +1829,10 @@ to args.">apply</a></code></td>
   else nil.  One common idiom is to use a set as pred, for example
   this will return :fred if :fred is in the sequence, otherwise nil:
   (some #{:fred} coll)">some</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/filter/" title="clojure.core/filter
-([pred coll])
+([pred] [pred coll])
   Returns a lazy sequence of the items in coll for which
-  (pred item) returns true. pred must be free of side-effects.">filter</a></code></td>
+  (pred item) returns true. pred must be free of side-effects.
+  Returns a transducer when no collection is provided.">filter</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Force evaluation</td>
@@ -1807,7 +1854,10 @@ Macro
   element in the seq do not occur until the seq is consumed. doall can
   be used to force any effects. Walks through the successive nexts of
   the seq, retains the head and returns it, thus causing the entire
-  seq to reside in memory at one time.">doall</a></code></td>
+  seq to reside in memory at one time.">doall</a> (1.7) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/run!/" title="clojure.core/run!
+([proc coll])
+  Runs the supplied procedure (via reduce), for purposes of side
+  effects, on successive items in the collection. Returns nil">run!</a></code></td>
               </tr>
               <tr class="even">
                 <td>Check for forced</td>
@@ -1815,6 +1865,159 @@ Macro
 ([x])
   Returns true if a value has been produced for a promise, delay, future or lazy
 sequence.">realized?</a></code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div><!-- /section -->
+        <div class="section blue">
+          <h2>Transducers (<a href="http://clojure.org/transducers">clojure.org/transducers</a>)</h2>
+          <table>
+            <tbody>
+              <tr class="odd">
+                <td>Off the shelf</td>
+                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/map/" title="clojure.core/map
+([f] [f coll] [f c1 c2] [f c1 c2 c3] [f c1 c2 c3 & colls])
+  Returns a lazy sequence consisting of the result of applying f to
+  the set of first items of each coll, followed by applying f to the
+  set of second items in each coll, until any one of the colls is
+  exhausted.  Any remaining items in other colls are ignored. Function
+  f should accept number-of-colls arguments. Returns a transducer when
+  no collection is provided.">map</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/mapcat/" title="clojure.core/mapcat
+([f] [f & colls])
+  Returns the result of applying concat to the result of applying map
+  to f and colls.  Thus function f should return a collection. Returns
+  a transducer when no collections are provided">mapcat</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/filter/" title="clojure.core/filter
+([pred] [pred coll])
+  Returns a lazy sequence of the items in coll for which
+  (pred item) returns true. pred must be free of side-effects.
+  Returns a transducer when no collection is provided.">filter</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/remove/" title="clojure.core/remove
+([pred] [pred coll])
+  Returns a lazy sequence of the items in coll for which
+  (pred item) returns false. pred must be free of side-effects.
+  Returns a transducer when no collection is provided.">remove</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/take/" title="clojure.core/take
+([n] [n coll])
+  Returns a lazy sequence of the first n items in coll, or all items if
+  there are fewer than n.  Returns a stateful transducer when
+  no collection is provided.">take</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/take-while/" title="clojure.core/take-while
+([pred] [pred coll])
+  Returns a lazy sequence of successive items from coll while
+  (pred item) returns true. pred must be free of side-effects.
+  Returns a transducer when no collection is provided.">take-while</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/take-nth/" title="clojure.core/take-nth
+([n] [n coll])
+  Returns a lazy seq of every nth item in coll.  Returns a stateful
+  transducer when no collection is provided.">take-nth</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/drop/" title="clojure.core/drop
+([n] [n coll])
+  Returns a lazy sequence of all but the first n items in coll.
+  Returns a stateful transducer when no collection is provided.">drop</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/drop-while/" title="clojure.core/drop-while
+([pred] [pred coll])
+  Returns a lazy sequence of the items in coll starting from the
+  first item for which (pred item) returns logical false.  Returns a
+  stateful transducer when no collection is provided.">drop-while</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/replace/" title="clojure.core/replace
+([smap] [smap coll])
+  Given a map of replacement pairs and a vector/collection, returns a
+  vector/seq with any elements = a key in smap replaced with the
+  corresponding val in smap.  Returns a transducer when no collection
+  is provided.">replace</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/partition-by/" title="clojure.core/partition-by
+([f] [f coll])
+  Applies f to each value in coll, splitting it each time f returns a
+   new value.  Returns a lazy seq of partitions.  Returns a stateful
+   transducer when no collection is provided.">partition-by</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/partition-all/" title="clojure.core/partition-all
+([n] [n coll] [n step coll])
+  Returns a lazy sequence of lists like partition, but may include
+  partitions with fewer than n items at the end.  Returns a stateful
+  transducer when no collection is provided.">partition-all</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/keep/" title="clojure.core/keep
+([f] [f coll])
+  Returns a lazy sequence of the non-nil results of (f item). Note,
+  this means false return values will be included.  f must be free of
+  side-effects.  Returns a transducer when no collection is provided.">keep</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/keep-indexed/" title="clojure.core/keep-indexed
+([f] [f coll])
+  Returns a lazy sequence of the non-nil results of (f index item). Note,
+  this means false return values will be included.  f must be free of
+  side-effects.  Returns a stateful transducer when no collection is
+  provided.">keep-indexed</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/map-indexed/" title="clojure.core/map-indexed
+([f] [f coll])
+  Returns a lazy sequence consisting of the result of applying f to 0
+  and the first item of coll, followed by applying f to 1 and the second
+  item in coll, etc, until coll is exhausted. Thus function f should
+  accept 2 arguments, index and item. Returns a stateful transducer when
+  no collection is provided.">map-indexed</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/distinct/" title="clojure.core/distinct
+([] [coll])
+  Returns a lazy sequence of the elements of coll with duplicates removed.
+  Returns a stateful transducer when no collection is provided.">distinct</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/interpose/" title="clojure.core/interpose
+([sep] [sep coll])
+  Returns a lazy seq of the elements of coll separated by sep.
+  Returns a stateful transducer when no collection is provided.">interpose</a> (1.7) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/cat/" title="clojure.core/cat
+([rf])
+  A transducer which concatenates the contents of each input, which must be a
+  collection, into the reduction.">cat</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/dedupe/" title="clojure.core/dedupe
+([] [coll])
+  Returns a lazy sequence removing consecutive duplicates in coll.
+  Returns a transducer when no collection is provided.">dedupe</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/random-sample/" title="clojure.core/random-sample
+([prob] [prob coll])
+  Returns items from coll with random probability of prob (0.0 -
+  1.0).  Returns a transducer when no collection is provided.">random-sample</a></code></td>
+              </tr>
+              <tr class="even">
+                <td>Create your own</td>
+                <td><code>(1.7) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/completing/" title="clojure.core/completing
+([f] [f cf])
+  Takes a reducing function f of 2 args and returns a fn suitable for
+  transduce by adding an arity-1 signature that calls cf (default -
+  identity) on the result argument.">completing</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/ensure-reduced/" title="clojure.core/ensure-reduced
+([x])
+  If x is already reduced?, returns it, else returns (reduced x)">ensure-reduced</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/unreduced/" title="clojure.core/unreduced
+([x])
+  If x is reduced?, returns (deref x), else returns x">unreduced</a> See also section Concurrency/Volatiles</code></td>
+              </tr>
+              <tr class="odd">
+                <td>Use</td>
+                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/into/" title="clojure.core/into
+([to from] [to xform from])
+  Returns a new coll consisting of to-coll with all of the items of
+  from-coll conjoined. A transducer may be supplied.">into</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sequence/" title="clojure.core/sequence
+([coll] [xform coll] [xform coll & colls])
+  Coerces coll to a (possibly empty) sequence, if it is not already
+  one. Will not force a lazy seq. (sequence nil) yields (), When a
+  transducer is supplied, returns a lazy sequence of applications of
+  the transform to the items in coll(s), i.e. to the set of first
+  items of each coll, followed by the set of second
+  items in each coll, until any one of the colls is exhausted.  Any
+  remaining items in other colls are ignored. The transform should accept
+  number-of-colls arguments">sequence</a> (1.7) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/transduce/" title="clojure.core/transduce
+([xform f coll] [xform f init coll])
+  reduce with a transformation of f (xf). If init is not
+  supplied, (f) will be called to produce it. f should be a reducing
+  step function that accepts both 1 and 2 arguments, if it accepts
+  only 2 you can add the arity-1 with 'completing'. Returns the result
+  of applying (the transformed) xf to init and the first item in coll,
+  then applying xf to that result and the 2nd item, etc. If coll
+  contains no items, returns init and f is not called. Note that
+  certain transforms may inject or skip items.">transduce</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/eduction/" title="clojure.core/eduction
+([xform* coll])
+  Returns a reducible/iterable application of the transducers
+  to the items in coll. Transducers are applied in order as if
+  combined with comp. Note that these applications will be
+  performed every time reduce/iterator is called.">eduction</a></code></td>
+              </tr>
+              <tr class="even">
+                <td>Early termination</td>
+                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/reduced/" title="clojure.core/reduced
+([x])
+  Wraps x in a way such that a reduce will terminate with the value x">reduced</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/reduced_QMARK/" title="clojure.core/reduced?
+([x])
+  Returns true if x is the result of a call to reduced">reduced?</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/deref/" title="clojure.core/deref
+([ref] [ref timeout-ms timeout-val])
+  Also reader macro: @ref/@agent/@var/@atom/@delay/@future/@promise. Within a
+transaction,
+  returns the in-transaction-value of ref, else returns the
+  most-recently-committed value of ref. When applied to a var, agent
+  or atom, returns its current state. When applied to a delay, forces
+  it if not already forced. When applied to a future, will block if
+  computation not complete. When applied to a promise, will block
+  until a value is delivered.  The variant taking a timeout can be
+  used for blocking references (futures and promises), and will return
+  timeout-val if the timeout (in milliseconds) is reached before a
+  value is available. See also - realized?.">deref</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -2136,7 +2339,7 @@ Macro
   Attempts to coerce its argument into an open java.io.InputStream.
    Default implementations always return a java.io.BufferedInputStream.
 
-   Default implementations are defined for OutputStream, File, URI, URL,
+   Default implementations are defined for InputStream, File, URI, URL,
    Socket, byte array, and String arguments.
 
    If the argument is a String, it tries to resolve it first as a URI, then
@@ -2212,7 +2415,7 @@ Macro
               </tr>
               <tr class="odd">
                 <td>Data readers</td>
-                <td><code>(1.4) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/*data-readers*/" title="clojure.core/*data-readers*
+                <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/*data-readers*/" title="clojure.core/*data-readers*
   Map from reader tag symbols to data reader Vars.
 
   When Clojure starts, it searches for files named 'data_readers.clj'
@@ -2297,7 +2500,7 @@ Macro
   object passing the args. Use when you want to treat a Java method as
   a first-class fn. name may be type-hinted with the method receiver's
   type in order to avoid reflective calls.">memfn</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/comp/" title="clojure.core/comp
-([] [f] [f g] [f g h] [f1 f2 f3 & fs])
+([] [f] [f g] [f g & fs])
   Takes a set of functions and returns a fn that is the composition
   of those fns.  The returned fn takes a variable number of args,
   applies the rightmost of fns to the args, the next
@@ -2669,7 +2872,7 @@ Macro
   are optional. The only methods that can be supplied are those
   declared in the protocols/interfaces.  Note that method bodies are
   not closures, the local environment includes only the named fields,
-  and those fields can be accessed directy. Fields can be qualified
+  and those fields can be accessed directly. Fields can be qualified
   with the metadata :volatile-mutable true or :unsynchronized-mutable
 
 [ documentation truncated.  Click link for the rest. ]">deftype</a> <code>Pair [h t])</code></code></td>
@@ -2707,7 +2910,7 @@ Macro
   are optional. The only methods that can be supplied are those
   declared in the protocols/interfaces.  Note that method bodies are
   not closures, the local environment includes only the named fields,
-  and those fields can be accessed directy. Fields can be qualified
+  and those fields can be accessed directly. Fields can be qualified
   with the metadata :volatile-mutable true or :unsynchronized-mutable
 
 [ documentation truncated.  Click link for the rest. ]">deftype</a> <code>Pair [h t]<br>&nbsp;&nbsp;Object<br>&nbsp;&nbsp;(toString [this] (str "<" h "," t ">")))</code></code></td>
@@ -2723,7 +2926,7 @@ Macro
 ([name docstring? attr-map? dispatch-fn & options])
 Macro
   Creates a new multimethod with the associated dispatch function.
-  The docstring and attribute-map are optional.
+  The docstring and attr-map are optional.
 
   Options are key-value pairs and may be one of:
 
@@ -3295,6 +3498,14 @@ itself (not its value) is returned. The reader macro #'x expands to (var x).
                 <td><code><a href="http://clojure.org/reader#The%20Reader--Macro%20characters">Anonymous function argument</a>: <code>%N</code> is value of anonymous function arg <code>N</code>.  <code>%</code> short for <code>%1</code>.  <code>%&</code> for rest args.</code></td>
               </tr>
               <tr class="even">
+                <td><code>#?</code></td>
+                <td><code>(1.7) <a href="http://clojure.org/reader#The%20Reader--Reader%20Conditionals">Reader conditional</a>: <code>#?(:clj x :cljs y)</code> reads as <code>x</code> on JVM, <code>y</code> in ClojureScript, nothing elsewhere.  Other keys: <code>:cljr :default</code></code></td>
+              </tr>
+              <tr class="odd">
+                <td><code>#?@</code></td>
+                <td><code>(1.7) <a href="http://clojure.org/reader#The%20Reader--Reader%20Conditionals">Splicing reader conditional</a>: <code>[1 #?(:clj [x y] :cljs [w z]) 3]</code> reads as <code>[1 x y 3]</code> on JVM, <code>[1 w z 3]</code> in ClojureScript, <code>[1 3]</code> elsewhere.</code></td>
+              </tr>
+              <tr class="even">
                 <td><code>#foo</code></td>
                 <td><code><a href="http://clojure.org/reader#The%20Reader--Tagged%20Literals">tagged literal</a> e.g. <code>#inst</code> <code>#uuid</code></code></td>
               </tr>
@@ -3647,7 +3858,7 @@ dispatch-value.">defmethod</a> <a href="http://conj.io/store/v0/org.clojure/cloj
 ([name docstring? attr-map? dispatch-fn & options])
 Macro
   Creates a new multimethod with the associated dispatch function.
-  The docstring and attribute-map are optional.
+  The docstring and attr-map are optional.
 
   Options are key-value pairs and may be one of:
 
@@ -4109,6 +4320,22 @@ bindings.
 vars are provided.">thread-bound?</a></code></td>
               </tr>
               <tr class="even">
+                <td>Volatiles</td>
+                <td><code>(1.7) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/volatile!/" title="clojure.core/volatile!
+([val])
+  Creates and returns a Volatile with an initial value of val.">volatile!</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/vreset!/" title="clojure.core/vreset!
+([vol newval])
+  Sets the value of volatile to newval without regard for the
+   current value. Returns newval.">vreset!</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/vswap!/" title="clojure.core/vswap!
+([vol f & args])
+Macro
+  Non-atomically swaps the value of the volatile as if:
+   (apply f current-value-of-vol args). Returns the value that
+   was swapped in.">vswap!</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/volatile_QMARK/" title="clojure.core/volatile?
+([x])
+  Returns true if x is a volatile.">volatile?</a></code></td>
+              </tr>
+              <tr class="odd">
                 <td>Misc</td>
                 <td><code><a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/locking/" title="clojure.core/locking
 ([x & body])
@@ -4655,7 +4882,7 @@ Special Form
 ([] [e-or-depth] [e depth])
   Prints a stack trace of the exception, to the depth requested. If none
 supplied, uses the root cause of the
-  most recent repl exception (*e), and a depth of 12.">pst</a> (1.4) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/ex-info/" title="clojure.core/ex-info
+  most recent repl exception (*e), and a depth of 12.">pst</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/ex-info/" title="clojure.core/ex-info
 ([msg map] [msg map cause])
   Create an instance of ExceptionInfo, a RuntimeException subclass
    that carries a map of additional data.">ex-info</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/ex-data/" title="clojure.core/ex-data
