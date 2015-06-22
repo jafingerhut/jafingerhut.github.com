@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: June 19, 2015
+Date: June 22, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -149,6 +149,7 @@ Enhancement
     0.00   0 Open         [ASYNC-46] Add optional default channel to 'pub'
     0.00   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
     0.00   0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
+    0.00   0 Open         [ASYNC-130] Improve put! docstring to mention no more than 1024 pending puts are allowed
     0.00   0 Triaged      [ASYNC-106] A unit test in ioc_macros_test.clj tests nothing
     0.00   0 Triaged      [ASYNC-126] Add public channel "closed?" predicate
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
@@ -383,6 +384,7 @@ Enhancement
     0.00   0 Open         [CTYP-220] Data generator for a type
     0.00   0 Open         [CTYP-226] Update clojure.core/get-in annotations to use polymorphic function types (similar to clojure.core/get)
     0.00   0 Open         [CTYP-227] Show file and line number of duplicate definitions
+    0.00   0 Open         [CTYP-229] Checker slows development in rechecking dependent namespaces
     0.00   0 Triaged      [CTYP-217] Basic support for transients
 
 ========================================
@@ -476,11 +478,6 @@ Enhancement
 
 
 Project DJSON tickets
-========================================
-Defect
-
-    0.00   0 Open         [DJSON-20] data.json reads and writes invalid JSON
-
 ========================================
 Enhancement
 
@@ -705,8 +702,8 @@ Defect
     2.00   2 Open         [NREPL-3] Adopt default port
              Andrew Rosa (1)
              Bozhidar Batsov (1)
-    1.00   1 Open         [NREPL-69] Interrupt of load-file generates java.lang.ThreadDeath exception
-             Lars Andersen (1)
+    0.50   1 Open         [NREPL-69] Interrupt of load-file generates java.lang.ThreadDeath exception
+             Lars Andersen (1/2)
     0.00   0 Open         [NREPL-24] :session key is overloaded
     0.00   0 Open         [NREPL-28] Clarify semantics for String encoding
     0.00   0 Open         [NREPL-33] Consider making session and eval functionality more accessible
@@ -718,8 +715,9 @@ Defect
 ========================================
 Enhancement
 
-    1.00   1 Bad: Unkn Fi [NREPL-59] Tracking source form positions in eval
+    1.50   2 Bad: Unkn Fi [NREPL-59] Tracking source form positions in eval
              James Elliott (1)
+             Lars Andersen (1/2)
     1.00   1 Open         [NREPL-77] Expose installed middlewares via some mechanism
              Dirk Geurs (1)
     0.00   0 Open         [NREPL-4] Provide sane multiplexing of output in the face of multithreaded, asynchronous operation
@@ -912,13 +910,6 @@ Defect
 ========================================
 Enhancement
 
-    6.00   6 Open         [TNS-34] Support reader conditionals
-             James Reeves (1)
-             Julien Eluard (1)
-             Leon Grapenthin (1)
-             Magnar Sveen (1)
-             Robert Krahn (1)
-             Sean Doig (1)
     0.50   1 Open         [TNS-5] Allow any valid .clj* source file to be parsed/analysed
              deliminator (1/2)
 

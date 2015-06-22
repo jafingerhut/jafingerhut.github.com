@@ -479,7 +479,7 @@
  {:display-name "Robert Krahn",
   :usernames #{"robertkrahn"},
   :emails #{"robert.krahn@gmail.com"}}
- ("TNS-34"),
+ (),
  {:display-name "Hooze It",
   :usernames #{"jhanekom"},
   :emails #{"hoozeit@gmail.com"}}
@@ -591,7 +591,7 @@
  {:display-name "Julien Eluard",
   :usernames #{"jeluard"},
   :emails #{"julien.eluard@gmail.com"}}
- ("TNS-34" "CLJ-1449" "CLJ-1293" "CLJ-1282"),
+ ("CLJ-1449" "CLJ-1293" "CLJ-1282"),
  {:display-name "Alex Kyllo",
   :usernames #{"alexkyllo"},
   :emails #{"alex.kyllo@gmail.com"}}
@@ -1781,7 +1781,7 @@
  {:display-name "Lars Andersen",
   :usernames #{"expez"},
   :emails #{"expez@expez.com"}}
- ("NREPL-69" "CLJ-304"),
+ ("NREPL-69" "NREPL-59" "CLJ-304"),
  {:display-name "Zack Piper",
   :usernames #{"zackp30"},
   :emails #{"zack.piper123@gmail.com"}}
@@ -2025,6 +2025,10 @@
  {:display-name "Daniel Kim",
   :usernames #{"danielrk"},
   :emails #{"danielrheekim@gmail.com"}}
+ (),
+ {:display-name "Paul Schorfheide",
+  :usernames #{"pschorf"},
+  :emails #{"pschorf2@gmail.com"}}
  (),
  {:display-name "Viktor Eriksson",
   :usernames #{"vikeri"},
@@ -2435,7 +2439,7 @@
  {:display-name "James Reeves",
   :usernames #{"jreeves"},
   :emails #{"jreeves@weavejester.com"}}
- ("TNS-34" "CTYP-168" "CLJ-1527" "CLJ-1242"),
+ ("CTYP-168" "CLJ-1527" "CLJ-1242"),
  {:display-name "Matthew Willson",
   :usernames #{"matthjw"},
   :emails #{"matthew.willson@gmail.com"}}
@@ -3212,7 +3216,7 @@
  {:display-name "Sean Doig",
   :usernames #{"lorddoig"},
   :emails #{"sean.doig@gmail.com"}}
- ("TNS-34"),
+ (),
  {:display-name "Spencer Tipping",
   :usernames #{"stfactual"},
   :emails #{"spencer@factual.com"}}
@@ -4422,7 +4426,7 @@
  {:display-name "Leon Grapenthin",
   :usernames #{"lgs32a"},
   :emails #{"grapenthin.leon@gmail.com"}}
- ("TNS-34" "ASYNC-103"),
+ ("ASYNC-103"),
  {:display-name "Pascal Germroth",
   :usernames #{"neapel"},
   :emails #{"pascal@ensieve.org"}}
@@ -7065,7 +7069,7 @@
  {:display-name "Magnar Sveen",
   :usernames #{"magnars"},
   :emails #{"magnars@gmail.com"}}
- ("TNS-34"),
+ (),
  {:display-name "Marcin Kozey",
   :usernames #{"lolownia"},
   :emails #{"marcin@lolownia.org"}}
@@ -7484,6 +7488,10 @@
  {:display-name "Rajesh Krishnan",
   :usernames #{"kixus"},
   :emails #{"raj.clojure@dev.kix.us"}}
+ (),
+ {:display-name "Chris Vermilion",
+  :usernames #{"cvermilion"},
+  :emails #{"christopher.vermilion@gmail.com"}}
  (),
  {:display-name "Brandon Skinner",
   :usernames #{"brandon-m-skinner"},
