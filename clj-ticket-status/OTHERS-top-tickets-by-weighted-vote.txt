@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: June 22, 2015
+Date: June 25, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -335,7 +335,6 @@ Defect
     0.00   0 Open         [CTYP-209] method-type is broken
     0.00   0 Open         [CTYP-210] (long AnyInteger) doesn't typecheck
     0.00   0 Open         [CTYP-212] Can't create a promise of the same type as a record field
-    0.00   0 Open         [CTYP-214] core.typed 0.2.84 raises an exception when trying to infer the type of (atom #{})
     0.00   0 Open         [CTYP-216] PermGen memory leak when type checking with faulty types
     0.00   0 Open         [CTYP-218] wrap-clj-repl causes error
     0.00   0 Open         [CTYP-221] group-by produces "Cannot resolve type: Seqable"
@@ -344,6 +343,9 @@ Defect
     0.00   0 Open         [CTYP-224] Lein REPL Autocomplete in typed namespaces throws a type error
     0.00   0 Open         [CTYP-225] Intersections of value types broken
     0.00   0 Open         [CTYP-228] Type signature for sort is incorrect - never returns nil
+    0.00   0 Open         [CTYP-231] (Array X) is broken and undocumented
+    0.00   0 Open         [CTYP-232] Can't convince core.typed that HVec is non-nil
+    0.00   0 Open         [CTYP-234] Setting :collect-only attribute for a namespace does not collect type aliases
 
 ========================================
 Enhancement
@@ -385,6 +387,9 @@ Enhancement
     0.00   0 Open         [CTYP-226] Update clojure.core/get-in annotations to use polymorphic function types (similar to clojure.core/get)
     0.00   0 Open         [CTYP-227] Show file and line number of duplicate definitions
     0.00   0 Open         [CTYP-229] Checker slows development in rechecking dependent namespaces
+    0.00   0 Open         [CTYP-230] Improve error messages by highlighting unmatched argument
+    0.00   0 Open         [CTYP-233] Java interop should consider automatic numeric promotions
+    0.00   0 Open         [CTYP-235] Warn on duplicate defalias'
     0.00   0 Triaged      [CTYP-217] Basic support for transients
 
 ========================================
@@ -392,6 +397,9 @@ Task
 
     0.00   0 Bad: Unkn Fi [CTYP-15] Eliminate the need to specify all ancestors in alter-class.
     0.00   0 Bad: Unkn Fi [CTYP-16] Parameterise IFn instead of special function type.
+    0.00   0 Open         [CTYP-236] Refactor core.async annnotations into its own jar
+    0.00   0 Open         [CTYP-237] Convert .clj files to .cljc
+    0.00   0 Open         [CTYP-238] Move CLJS checker to its own jar
 
 
 Project DAVL tickets
@@ -715,8 +723,11 @@ Defect
 ========================================
 Enhancement
 
-    1.50   2 Bad: Unkn Fi [NREPL-59] Tracking source form positions in eval
+    4.50   5 Bad: Unkn Fi [NREPL-59] Tracking source form positions in eval
+             Akiva Schoen (1)
+             Chris Sims (1)
              James Elliott (1)
+             Sven Richter (1)
              Lars Andersen (1/2)
     1.00   1 Open         [NREPL-77] Expose installed middlewares via some mechanism
              Dirk Geurs (1)

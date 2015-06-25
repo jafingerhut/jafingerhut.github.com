@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: June 22, 2015
+Date: June 25, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -41,9 +41,9 @@ Defect
 
   17 Backlog      [CLJ-1224] Records do not cache hash like normal maps
   17 Backlog      [CLJ-700] contains? broken for transient collections
+  10 Backlog      [CLJ-1250] Reducer (and folder) instances hold onto the head of seqs
    9 Triaged      [CLJ-1372] Inconsistent hash with java collections
    9 Triaged      [CLJ-1527] Harmonize accepted / documented symbol and keyword syntax over various readers
-   9 Backlog      [CLJ-1250] Reducer (and folder) instances hold onto the head of seqs
    8 Backlog      [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
    8 Backlog      [CLJ-1232] Functions with non-qualified return type hints force import of hinted classes when called from other namespace
    7 Backlog      [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
@@ -150,18 +150,19 @@ Defect
    0 Triaged      [CLJ-1763] clojure.core/sort is not thread-safe on Java collections with backing arrays
    0 Triaged      [CLJ-1764] partition-by runs infinite loop when one element of infinite partition is accessed
    0 Triaged      [CLJ-1766] Serializing+deserializing lists breaks their hash
+   0 Triaged      [CLJ-1768] quote of an empty lazyseq produces an error when evaled
 
 ========================================
 Enhancement
 
-  25 Triaged      [CLJ-703] Improve writeClassFile performance
+  26 Triaged      [CLJ-703] Improve writeClassFile performance
   25 Triaged      [CLJ-1449] Add clojure.string functions for portability to ClojureScript
-  19 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
+  20 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
   16 Vetted       [CLJ-865] Macroexpansion discards &form metadata
   16 Backlog      [CLJ-1517] Unrolled small vectors
   15 Triaged      [CLJ-1298] Add more type predicate fns to core
   13 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
-  11 Vetted       [CLJ-1005] Use transient map in zipmap
+  12 Vetted       [CLJ-1005] Use transient map in zipmap
   10 Open         [CLJ-1078] Add queue and queue? to clojure.core
    9 Triaged      [CLJ-1278] State function's unmunged full name in compiled function's toString()
    8 Open         [CLJ-304] clojure.repl/source does not work with deftype
@@ -170,12 +171,12 @@ Enhancement
    7 Vetted       [CLJ-1148] adds docstring support to defonce
    7 Triaged      [CLJ-440] java method calls cannot omit varargs
    6 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
+   6 Open         [CLJ-1063] Missing dissoc-in
    6 Triaged      [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
    6 Triaged      [CLJ-1454] Add a swap! that returns old value
    6 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
    6 Triaged      [CLJ-1239] faster, more flexible dispatch for clojure.walk
    6 Triaged      [CLJ-1117] partition docstring should be more explicit about dropped or partial trailing elements
-   5 Open         [CLJ-1063] Missing dissoc-in
    5 Open         [CLJ-1467] Implement Comparable in PersistentList
    5 Backlog      [CLJ-1553] Parallel transduce
    5 Backlog      [CLJ-1208] Namespace is not loaded on defrecord class init
