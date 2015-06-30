@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: June 25, 2015
+Date: June 30, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -61,6 +61,7 @@ Defect
    2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
    1 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
    1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
+   1 Open         [ASYNC-99] go block with <! inside protocol method invocation fails to compile (dispatch :protocol-invoke on '-item-to-ssa')
    1 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
    1 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
    1 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
@@ -79,7 +80,6 @@ Defect
    0 Open         [ASYNC-90] Pub/sub leaks memory
    0 Open         [ASYNC-96] FixedBuffer's full checking in cljs
    0 Open         [ASYNC-97] CLJS: alts! sporadically failing to unblock despite channel activity (Safari 7)
-   0 Open         [ASYNC-99] go block with <! inside protocol method invocation fails to compile (dispatch :protocol-invoke on '-item-to-ssa')
    0 Open         [ASYNC-108] cljs to-chan hangs on infinite lazy sequences
    0 Open         [ASYNC-111] maps are represented different inside and outside of go blocks
    0 Triaged      [ASYNC-113] alt!! should not evaluate the :default expr if a non-default clause is selected
@@ -116,6 +116,7 @@ Enhancement
    0 Triaged      [ASYNC-106] A unit test in ioc_macros_test.clj tests nothing
    0 Triaged      [ASYNC-126] Add public channel "closed?" predicate
    0 Open         [ASYNC-130] Improve put! docstring to mention no more than 1024 pending puts are allowed
+   0 Open         [ASYNC-131] go! or "go-now" for CLJS
 
 ========================================
 Task
@@ -290,6 +291,9 @@ Defect
    0 Open         [CTYP-231] (Array X) is broken and undocumented
    0 Open         [CTYP-232] Can't convince core.typed that HVec is non-nil
    0 Open         [CTYP-234] Setting :collect-only attribute for a namespace does not collect type aliases
+   0 Open         [CTYP-239] Search for .cljc files when checking a namespace 
+   0 Open         [CTYP-241] Regression related to enabling aliasing support
+   0 Open         [CTYP-242] adding stop-gap annotation for 'hash-map' results in runtime exception
 
 ========================================
 Enhancement
@@ -332,6 +336,7 @@ Enhancement
    0 Open         [CTYP-230] Improve error messages by highlighting unmatched argument
    0 Open         [CTYP-233] Java interop should consider automatic numeric promotions
    0 Open         [CTYP-235] Warn on duplicate defalias'
+   0 Open         [CTYP-240] Annotations for clojure.instant, clojure.template, clojure.set clojure.data and clojure.repl namespaces
 
 ========================================
 Task
@@ -550,6 +555,7 @@ Defect
    0 Open         [LOGIC-162] FD logic doesn't always return all solutions
    0 Open         [LOGIC-166] walk* exponential in depth of tree terms?
    0 Open         [LOGIC-168] Allow partial matching of keys not existing in a map
+   0 Open         [LOGIC-169] equality of non-unique lvars broken for clojure 1.7
 
 ========================================
 Enhancement
@@ -705,7 +711,6 @@ Defect
    0 Open         [TCHECK-34] clojure.test reporting is uninformative
    0 Open         [TCHECK-57] Performance regression in map generator between 0.5.8 and 0.5.9
    0 Open         [TCHECK-59] s-pos-int and s-pos-int generators have an off-by-1 issue 
-   0 Open         [TCHECK-62] ClojureScript example in README doesn't work
    0 Open         [TCHECK-69] Create a UUID Generator
    0 Open         [TCHECK-73] gen/int can generate doubles
 
