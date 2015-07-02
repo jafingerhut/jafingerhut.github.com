@@ -1449,7 +1449,7 @@
  {:display-name "Alexander Kiel",
   :usernames #{"akiel"},
   :emails #{"alexanderkiel@gmx.net"}}
- ("CLJ-1277"),
+ ("CLJS-1191" "CLJ-1277"),
  {:display-name "Mark Swanson",
   :usernames #{"markswanson"},
   :emails #{"mark.swanson.sw@gmail.com"}}
@@ -1925,6 +1925,10 @@
  {:display-name "Chhi'mèd Künzang",
   :usernames #{"clwk"},
   :emails #{"clkunzang@gmail.com"}}
+ (),
+ {:display-name "Mitchell Steed",
+  :usernames #{"msteed3"},
+  :emails #{"mitchell.steed@gmail.com"}}
  (),
  {:display-name "Andrew Cheng",
   :usernames #{"achengs"},
@@ -4550,6 +4554,10 @@
   :usernames #{"roman"},
   :emails #{"romanandreg@gmail.com"}}
  (),
+ {:display-name "Łukasz Klich",
+  :usernames #{"kleewho"},
+  :emails #{"klich.lukasz+clojure@gmail.com"}}
+ (),
  {:display-name "Anthony Kesich",
   :usernames #{"kinas"},
   :emails #{"akesich@gmail.com"}}
@@ -5169,6 +5177,10 @@
  {:display-name "Johan Tuit",
   :usernames #{"compucol@live.com"},
   :emails #{"compucol@live.com"}}
+ (),
+ {:display-name "Andreas Wurzer",
+  :usernames #{"andeee"},
+  :emails #{"andeee@andeee.at"}}
  (),
  {:display-name "Sven Richter",
   :usernames #{"sveri"},
@@ -7579,6 +7591,10 @@
  {:display-name "David Lao",
   :usernames #{"davidlao"},
   :emails #{"davidlao2k@gmail.com"}}
+ (),
+ {:display-name "Aleksey Kladov",
+  :usernames #{"matklad"},
+  :emails #{"aleksey.kladov@gmail.com"}}
  (),
  {:display-name "davie moston",
   :usernames #{"davie"},
