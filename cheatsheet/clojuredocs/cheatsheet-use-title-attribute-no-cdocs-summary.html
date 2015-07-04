@@ -1362,7 +1362,9 @@ data
   Returns a seq on the collection. If the collection is
     empty, returns nil.  (seq nil) returns nil. seq also works on
     Strings, native Java arrays (of reference types) and any objects
-    that implement Iterable.">seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vals" title="clojure.core/vals
+    that implement Iterable. Note that seqs cache values, thus seq
+    should not be used on any Iterable whose iterator repeatedly
+    returns the same mutable object.">seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vals" title="clojure.core/vals
 ([map])
   Returns a sequence of the map's values, in the same order as (seq map).">vals</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/keys" title="clojure.core/keys
 ([map])
@@ -1442,7 +1444,9 @@ side-effects">iterate</a></code></td>
   A tree seq on the xml elements as per xml/parse">xml-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/iterator-seq" title="clojure.core/iterator-seq
 ([iter])
   Returns a seq on a java.util.Iterator. Note that most collections
-  providing iterators implement Iterable and thus support seq directly.">iterator-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/enumeration-seq" title="clojure.core/enumeration-seq
+  providing iterators implement Iterable and thus support seq directly.
+  Seqs cache values, thus iterator-seq should not be used on any
+  iterator that repeatedly returns the same mutable object.">iterator-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/enumeration-seq" title="clojure.core/enumeration-seq
 ([e])
   Returns a seq on a java.util.Enumeration">enumeration-seq</a></code></td>
               </tr>
@@ -4728,7 +4732,9 @@ Macro
   macro in preference to calling this directly.">import</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/iterator-seq" title="clojure.core/iterator-seq
 ([iter])
   Returns a seq on a java.util.Iterator. Note that most collections
-  providing iterators implement Iterable and thus support seq directly.">iterator-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/memfn" title="clojure.core/memfn
+  providing iterators implement Iterable and thus support seq directly.
+  Seqs cache values, thus iterator-seq should not be used on any
+  iterator that repeatedly returns the same mutable object.">iterator-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/memfn" title="clojure.core/memfn
 ([name & args])
 Macro
   Expands into code that creates a fn that expects to be passed an

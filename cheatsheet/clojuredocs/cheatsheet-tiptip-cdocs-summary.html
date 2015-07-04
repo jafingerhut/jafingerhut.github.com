@@ -2037,7 +2037,9 @@ See also: identity</pre>">nil?</a> (1.6) <a href="http://clojuredocs.org/clojure
   Returns a seq on the collection. If the collection is
     empty, returns nil.  (seq nil) returns nil. seq also works on
     Strings, native Java arrays (of reference types) and any objects
-    that implement Iterable.
+    that implement Iterable. Note that seqs cache values, thus seq
+    should not be used on any Iterable whose iterator repeatedly
+    returns the same mutable object.
 
 3 examples totaling 19 lines on Fri Aug 29 2014
 See also: seq?, empty?, iterator-seq</pre>">seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/vals" class="tooltip" title="<pre>clojure.core/vals
@@ -2169,6 +2171,8 @@ split, subs</pre>">re-seq</a> <a href="http://clojuredocs.org/clojure_core/cloju
 ([iter])
   Returns a seq on a java.util.Iterator. Note that most collections
   providing iterators implement Iterable and thus support seq directly.
+  Seqs cache values, thus iterator-seq should not be used on any
+  iterator that repeatedly returns the same mutable object.
 
 1 example with 6 lines, 1 comment on Fri Aug 29 2014
 See also: seq</pre>">iterator-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/enumeration-seq" class="tooltip" title="<pre>clojure.core/enumeration-seq
@@ -6657,6 +6661,8 @@ See also: require, use, ns</pre>">import</a> <a href="http://clojuredocs.org/clo
 ([iter])
   Returns a seq on a java.util.Iterator. Note that most collections
   providing iterators implement Iterable and thus support seq directly.
+  Seqs cache values, thus iterator-seq should not be used on any
+  iterator that repeatedly returns the same mutable object.
 
 1 example with 6 lines, 1 comment on Fri Aug 29 2014
 See also: seq</pre>">iterator-seq</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/memfn" class="tooltip" title="<pre>clojure.core/memfn
