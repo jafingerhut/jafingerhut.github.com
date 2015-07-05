@@ -1,5 +1,5 @@
 List of prescreened patches for CLJ project
-Date: May 25, 2015
+Date: July 2, 2015
 
 The first letter on each patch summary line indicates the Approval of
 the ticket: "T" for Triaged, "V" for Vetted, etc.  After the ticket id
@@ -19,7 +19,7 @@ screeners, adding your comments to the tickets in JIRA with what you
 learned.  You can also vote on tickets you want to see fixed.
 
 ----------------------------------------------------------------------
-Prescreened patches *not* marked with Fix Version/s = "Release 1.7"
+Prescreened patches *not* marked with Fix Version/s = "Release 1.8"
 ----------------------------------------------------------------------
       Doc string fixes only:
 
@@ -33,6 +33,9 @@ T  CLJ-1385 Triaged      CLJ-1385-reword-docstrings-on-transient-update-funct-2.
 T  CLJ-1414 Triaged      clj-1414-v1.patch
 T  CLJ-1483 Triaged      0001-Clarify-the-usage-of-replace-first-with-pattern-func.patch
 T  CLJ-1607 Triaged      CLJ-1607-p1.patch
+T  CLJ-1722 Triaged      fixwithbindingsdocs.patch
+T  CLJ-1769 Triaged      docstringfix.patch
+T  CLJ-1772 Triaged      clj-1772.patch
 
       Better error reporting:
 
@@ -45,11 +48,11 @@ V  CLJ-1130 Vetted       clj-1130-v5.diff
    CLJ-1162 Open         CLJ-1162-p1.patch
    CLJ-1189 Open         CLJ-1189-p1.patch
 T  CLJ-1210 Triaged      extend-io-factory-to-nil.diff
-V  CLJ-1232 Backlog      0001-auto-qualify-arglists-class-names-v3.patch
 T  CLJ-1282 Triaged      CLJ-1282-p2.patch
 T  CLJ-1319 Triaged      0002-CLJ-1319-Throw-on-odd-arguments-to-PersistentArrayMa.patch
    CLJ-1341 Open         keyword-1341-2014-02-12.2.patch
    CLJ-1406 Open         0001-modify-clojure.core-load-lib-so-that-it-removes-the-.patch
+T  CLJ-1456 Triaged      clj-1456-4.patch
 T  CLJ-1473 Triaged      CLJ-1473_v03.patch
 T  CLJ-1490 Triaged      CLJ-1490.1.patch
    CLJ-1514 Open         0001-Use-fully-qualified-class-names-for-return-type-hint.patch
@@ -77,20 +80,17 @@ T  CLJ-1073 Triaged      clj-1073-add-print-interruptibly-patch-v2.txt
 T  CLJ-1209 Triaged      0002-CLJ-1209-show-ex-data-in-clojure-test.patch
    CLJ-1442 Open         0003-Annotate-generated-symbols-with-metadata.patch
    CLJ-1502 Open         clj-1502-v1.patch
-T  CLJ-1645 Triaged      CLJ-1645-protocol-class-has-no-source-file-information.patch
+T  CLJ-1645 Triaged      CLJ-1645-protocol-class-has-no-source-file-information-w-repl.patch
 T  CLJ-1673 Triaged      clj-1673-2.patch
 
       Clojure language/library bug fixes:
 
 T  CLJ-130  Triaged      0001-CLJ-130-preserve-metadata-for-AOT-compiled-namespace.patch
    CLJ-457  Open         clj-457-3.diff
-V  CLJ-701  Backlog      hoistedmethod-pass-5.diff
    CLJ-1029 Open         ns-patch.diff
    CLJ-1077 Open         thread-bound.diff
-V  CLJ-1093 Backlog      0001-CLJ-1093-v2.patch
 T  CLJ-1134 Triaged      clj-1134-star-directive-in-cl-format.txt
 T  CLJ-1137 Triaged      CLJ-1137-eval-metadata-once.diff
-V  CLJ-1157 Backlog      clj-1157-v2.diff
    CLJ-1216 Open         0001-Create-a-DoExpr.Parser-class-that-delegates-to-BodyE.patch
    CLJ-1217 Open         0001-Don-t-realize-seq-exprs-in-for-unless-necessary.patch
 T  CLJ-1225 Triaged      clj-1225-2.txt
@@ -122,13 +122,16 @@ T  CLJ-1609 Triaged      reflector_method_bug.patch
 T  CLJ-1613 Triaged      0001-CLJ-1613-evaluate-or-defaults-in-enclosing-scope-in-.patch
    CLJ-1615 Open         CLJ-1615-entryAt.patch
 T  CLJ-1644 Triaged      CLJ-1644-array-first-nil-v2.patch
-V  CLJ-1650 Backlog      0001-CLJ-1650-compile-forces-namespace-reloading-from-AOT.patch
    CLJ-1657 Open         CLJ-1657-patch.diff
-T  CLJ-1659 Triaged      clj-1659.patch
-T  CLJ-1680 Triaged      clj-1680_no_div0.patch
+T  CLJ-1659 Triaged      clj-1659-v3.patch
 T  CLJ-1705 Triaged      clj-1705-3.patch
 T  CLJ-1714 Triaged      CLJ-1714.patch
 T  CLJ-1733 Triaged      clj-1733-tagged-literals-throw-on-sorted-set.patch
+   CLJ-1747 Open         CLJ-1747-eduction-print.patch
+T  CLJ-1755 Triaged      transient-vector-nth.patch
+T  CLJ-1759 Triaged      clj-1759.patch
+T  CLJ-1763 Triaged      0001-CLJ-1763-make-sort-thread-safe.patch
+T  CLJ-1770 Triaged      atom-reset-atomic-watch-2015-06-30.patch
 
       Language enhancement, reducers:
 
@@ -138,10 +141,9 @@ T  CLJ-1733 Triaged      clj-1733-tagged-literals-throw-on-sorted-set.patch
       Allow more correct-looking Clojure code to work:
 
    CLJ-666  Open         0001-Add-Big-support-to-Reflector-Updated.patch
-V  CLJ-700  Backlog      clj-700-rt.patch
    CLJ-1020 Open         clj-1020-inspect-table-skip-nil-rows-patch2.txt
    CLJ-1044 Open         001-enable-factory-ctor-inside-deftype.diff
-   CLJ-1060 Open         list-star-fix.diff
+T  CLJ-1060 Triaged      list-star-fix.diff
 V  CLJ-1148 Vetted       clj-1148-defonce-5.patch
 T  CLJ-1242 Triaged      0001-fix-for-CLJ-1242-tests.patch
 
@@ -160,11 +162,12 @@ V  CLJ-322  Vetted       compile-interop-1.patch
    CLJ-958  Open         0001-Make-APersistentVector.iterator-slightly-more-effici.patch
 T  CLJ-970  Triaged      clj-970-extend-implement-parameterized-types-patch2.txt
    CLJ-1010 Open         0001-CLJ-1010-Add-a-left-to-right-version-of-comp-comp.patch
-   CLJ-1063 Open         clj-1063-add-dissoc-in-patch-v2.txt
+T  CLJ-1063 Triaged      clj-1063-add-dissoc-in-patch-v2.txt
       TBD: Open ticket for clojure.incubator for this.
    CLJ-1078 Open         clj-1048-add-queue-functions.diff
 T  CLJ-1094 Triaged      0001-Add-zero-arity-variants-for-every-pred-and-some-fn.patch
    CLJ-1097 Open         node-seq.diff
+T  CLJ-1103 Triaged      clj-1103-7.diff
    CLJ-1108 Open         clj-1108-enhance-future-call-patch-v2.txt
    CLJ-1120 Open         0001-CLJ-1120-ex-message-ex-cause.patch
 T  CLJ-1219 Triaged      0001-CLJ-1219-make-identical-variadic.patch
@@ -210,6 +213,10 @@ T  CLJ-1653 Triaged      clj-1653-2.patch
    CLJ-1719 Open         CLJ-1719_v01.patch
    CLJ-1720 Open         CLJ-1720_v02.patch
    CLJ-1721 Open         CLJ-1721_v01.patch
+T  CLJ-1743 Triaged      clj-1743-2.patch
+   CLJ-1744 Open         0001-CLJ-1744-clear-unused-locals-v2.patch
+T  CLJ-1762 Triaged      reduce-kv-java-map.patch
+T  CLJ-1765 Triaged      clj-1765.patch
 
       Performance enhancement:
 
@@ -220,18 +227,15 @@ V  CLJ-1005 Vetted       CLJ-1005-zipmap-iterators.patch
    CLJ-1087 Open         clj-1087-diff-perf-enhance-patch-v1.txt
 T  CLJ-1096 Triaged      inline-get-keyword.diff
    CLJ-1128 Open         0002-Improve-merge-with.patch
-V  CLJ-1224 Backlog      0001-cache-hasheq-and-hashCode-for-records.patch
 T  CLJ-1259 Triaged      clj-1259-1.txt
 T  CLJ-1277 Triaged      clj-1277-1.txt
 T  CLJ-1289 Triaged      CLJ-1289-p1.patch
 T  CLJ-1295 Triaged      clj-1295-1.diff
+T  CLJ-1373 Triaged      clj-1373.diff
    CLJ-1402 Open         CLJ-1402-v2.patch
+T  CLJ-1458 Triaged      clj-1458-4.patch
    CLJ-1469 Open         kwinvoke.patch
 T  CLJ-1493 Triaged      fast_keyword_intern.diff
-V  CLJ-1517 Backlog      unrolled-collections-2.diff
-      There are 2 separate patches, and it appears the author is
-      suggesting both should be applied.  The other is:
-        unrolled-vector-2.patch
 T  CLJ-1598 Triaged      0001-if-test-expr-of-an-if-statement-is-a-literal-don-t-e.patch
 T  CLJ-1654 Triaged      0000-reuse-seq-in-some.patch
 T  CLJ-1656 Triaged      CLJ-1656-v5.patch
@@ -254,16 +258,45 @@ T  CLJ-1567 Triaged      0001-Remove-unused-local-in-clojure.core-condp.patch
 
 ----------------------------------------------------------------------
 Prescreened patches that are marked with Fix Version/s =
-"Release 1.7", but not screened
+"Release 1.8", but not screened
 ----------------------------------------------------------------------
-<none>
+      Better error reporting:
+
+V  CLJ-1232 Screenable   0001-auto-qualify-arglists-class-names-v3.patch
+
+      Clojure language/library bug fixes:
+
+V  CLJ-701  Screenable   hoistedmethod-pass-5.diff
+V  CLJ-1093 Screenable   0001-CLJ-1093-v2.patch
+V  CLJ-1157 Screenable   clj-1157-v2.diff
+
+      Allow more correct-looking Clojure code to work:
+
+V  CLJ-700  Screenable   clj-700-rt.patch
+
+      Language/library enhancement:
+
+V  CLJ-1208 Screenable   0001-CLJ-1208-load-own-namespace-in-deftype-defrecord-cla-v5.patch
+
+      Performance enhancement:
+
+V  CLJ-1517 Screenable   unrolled-collections-2.diff
+      There are 2 separate patches, and it appears the author is
+      suggesting both should be applied.  The other is:
+        unrolled-vector-2.patch
 
 ----------------------------------------------------------------------
 Prescreened, and screened or accepted
 ----------------------------------------------------------------------
-      Doc string fixes only:
+      Clojure language/library bug fixes:
 
-S  CLJ-1722 Bad: Match no state fixwithbindingsdocs.patch
+S  CLJ-1250 Screened     clj-1250-2.patch
+S  CLJ-1761 Screened     clj-1761-with-tests.patch
+
+      Performance enhancement:
+
+S  CLJ-1224 Screened     0001-cache-hasheq-and-hashCode-for-records-v2.patch
+
 
 ----------------------------------------------------------------------
 (Note 1) Warnings/errors explicitly allowed in output of 'ant' command
@@ -272,6 +305,8 @@ The following warning lines are explicitly allowed in the output of
 Oracle JDK 1.7.0:
 
  [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+
+Similar warnings are allowed in the output from JDK 1.8.0 and 1.9.0.
 
 ----------------------------------------------------------------------
 (Note 2) Rich Hickey requested that enhancements have a wiki page
@@ -298,12 +333,11 @@ was used with the latest Clojure master as of the date of this report.
 * All authors listed in the patch have signed a CA.
 * Patch applies cleanly to latest master as of the date of the report
   with all of the OS/JDK combos listed below:
-    Done: Mac OS X 10.6.8 + Oracle/Apple JDK 1.6.0_64 64-bit (same results as for next line, except for this line there are 2 patches that fail tests that next line succeeds for)
-    Done: Mac OS X 10.10.3 + Oracle/Apple JDK 1.8.0_11 64-bit (results shown for this run)
-    TBD: Ubuntu 12.04.5 64-bit + OpenJDK 1.6.0_32 64-bit
-    Running: Ubuntu 14.04.2 64-bit + OpenJDK 1.7.0_79 64-bit
-    TBD: Ubuntu 14.04.2 64-bit + Oracle JDK 1.8.0_25 64-bit
-    Done: Ubuntu 14.04.2 64-bit + Oracle JDK 1.9.0-ea-b63 64-bit
+    Mac OS X 10.6.8 + Oracle/Apple JDK 1.6.0_65 64-bit
+    Mac OS X 10.9.5 + Oracle/Apple JDK 1.7.0_45 64-bit
+    Mac OS X 10.10.4 + Oracle/Apple JDK 1.8.0_11 64-bit
+    Ubuntu 14.04.2 64-bit + OpenJDK 1.7.0_79 64-bit
+    Ubuntu 14.04.2 64-bit + Oracle JDK 1.9.0-ea-b70 64-bit
 * After applying the patch, the command "./antsetup.sh ; ant" compiles
   and passes all tests without warnings or errors (see Note 1 near the
   end for a short list of allowed warnings).
@@ -314,3 +348,10 @@ e.g. it doesn't really fix the problem, there wasn't a problem that
 needed fixing to begin with, it isn't backwards compatible with
 existing Clojure code, it contains bad spelling/grammar in doc
 strings, etc., etc.
+
+There are differences between the results for 2 tickets between the
+JDK versions above, due to some patches using new JDK APIs that do not
+exist in older JDK versions.  The results shown here are for JDK 1.6:
+    Mac OS X 10.6.8 + Oracle/Apple JDK 1.6.0_65 64-bit
+The only tickets with patches whose results differ between JDK
+versions are CLJ-1671 and CLJ-1680.
