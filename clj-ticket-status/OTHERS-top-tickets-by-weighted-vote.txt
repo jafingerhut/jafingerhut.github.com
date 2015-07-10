@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: July 2, 2015
+Date: July 9, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -66,6 +66,9 @@ Defect
     2.00   2 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
              Ghadi Shayban (1)
              Yehonathan Sharvit (1)
+    2.00   2 Open         [ASYNC-99] go block with <! inside protocol method invocation fails to compile (dispatch :protocol-invoke on '-item-to-ssa')
+             Daniel Glauser (1)
+             Sathyavijayan Vittal (1)
     1.50   2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
              Ryan Sundberg (1)
              Howard Lewis Ship (1/2)
@@ -73,10 +76,10 @@ Defect
              Marcus Lewis (1)
     1.00   1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
              Francis Avila (1)
-    1.00   1 Open         [ASYNC-99] go block with <! inside protocol method invocation fails to compile (dispatch :protocol-invoke on '-item-to-ssa')
-             Daniel Glauser (1)
     1.00   1 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
              Thomas Down (1)
+    1.00   1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
+             Patrick Killean (1)
     0.50   1 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
              Colin Taylor (1/2)
     0.50   1 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
@@ -100,15 +103,15 @@ Defect
     0.00   0 Open         [ASYNC-121] compilation warning when calling 'satisfies?' inside a go block
     0.00   0 Open         [ASYNC-122] Parking in finally block replaces result
     0.00   0 Open         [ASYNC-123] Channel operations fail in for comprehension.
-    0.00   0 Open         [ASYNC-124] put! into channel that has mapcat transducer fails to dispatch more than one waiting takes
     0.00   0 Open         [ASYNC-128] or evaluation not stopped when exp nests take
     0.00   0 Open         [ASYNC-129] Channels with transducer using reduced don't work as intended
+    0.00   0 Open         [ASYNC-132] Can't close over locals in #js in go
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
     0.00   0 Triaged      [ASYNC-113] alt!! should not evaluate the :default expr if a non-default clause is selected
+    0.00   0 Triaged      [ASYNC-124] put! into channel that has mapcat transducer fails to dispatch more than one waiting takes
     0.00   0 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
-    0.00   0 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
 
 ========================================
 Enhancement
@@ -152,7 +155,6 @@ Enhancement
     0.00   0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
     0.00   0 Open         [ASYNC-130] Improve put! docstring to mention no more than 1024 pending puts are allowed
     0.00   0 Open         [ASYNC-131] go! or "go-now" for CLJS
-    0.00   0 Triaged      [ASYNC-106] A unit test in ioc_macros_test.clj tests nothing
     0.00   0 Triaged      [ASYNC-126] Add public channel "closed?" predicate
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
     0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
@@ -249,7 +251,6 @@ Enhancement
 
     1.00   1 Open         [CLJCLR-25] Clojure.Compile.exe create single dll for all compiled .clj files
              Antti Karanta (1)
-    0.00   0 Open         [CLJCLR-68] Allow rethrows
 
 
 Project CMEMOIZE tickets
@@ -398,6 +399,7 @@ Enhancement
     0.00   0 Open         [CTYP-233] Java interop should consider automatic numeric promotions
     0.00   0 Open         [CTYP-235] Warn on duplicate defalias'
     0.00   0 Open         [CTYP-240] Annotations for clojure.instant, clojure.template, clojure.set clojure.data and clojure.repl namespaces
+    0.00   0 Open         [CTYP-243] Dispatch on set of keys
     0.00   0 Triaged      [CTYP-217] Basic support for transients
 
 ========================================
@@ -494,6 +496,11 @@ Enhancement
 
 
 Project DJSON tickets
+========================================
+Defect
+
+    0.00   0 Open         [DJSON-21] Improper parsing of literals
+
 ========================================
 Enhancement
 
@@ -732,10 +739,15 @@ Defect
 ========================================
 Enhancement
 
-    4.50   5 Bad: Unkn Fi [NREPL-59] Tracking source form positions in eval
+    9.50  10 Bad: Unkn Fi [NREPL-59] Tracking source form positions in eval
              Akiva Schoen (1)
              Chris Sims (1)
              James Elliott (1)
+             John Wiseman (1)
+             Leon Grapenthin (1)
+             Michael Blume (1)
+             Reid McKenzie (1)
+             Sean Corfield (1)
              Sven Richter (1)
              Lars Andersen (1/2)
     1.00   1 Open         [NREPL-77] Expose installed middlewares via some mechanism
@@ -753,6 +765,7 @@ Task
 
     0.00   0 Bad: Unkn Fi [NREPL-74] Drop support for Clojure older than 1.5
     0.00   0 Open         [NREPL-75] Devise a way to isolate middleware deps from regular deps
+    0.00   0 Open         [NREPL-79] Update to readme.md
 
 
 Project TANAL tickets
@@ -806,6 +819,8 @@ Defect
     0.00   0 Open         [TCHECK-69] Create a UUID Generator
     0.00   0 Open         [TCHECK-73] gen/int can generate doubles
     0.00   0 Open         [TCHECK-74] gen-int generates very small ints
+    0.00   0 Open         [TCHECK-75] gen-seq->seq-gen is named out of sync with its description/comment (and presumably impl).
+    0.00   0 Open         [TCHECK-76] `sample` should pass num-samples to `sample-seq` as max-size to avoid unnecessary generation of cases.
 
 ========================================
 Enhancement
