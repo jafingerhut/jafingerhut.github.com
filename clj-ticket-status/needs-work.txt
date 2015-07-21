@@ -1,5 +1,5 @@
 Tickets needing work for CLJ project
-Date: July 2, 2015
+Date: July 19, 2015
 
 If you are a Clojure contributor, the tickets below could use some
 work.  Some are easy, some are not.  If you've never added a patch
@@ -30,24 +30,27 @@ ticket is marked Incomplete (I).
 ----------------------------------------------------------------------
       Clojure language/library bug fixes:
 
+I  CLJ-1093 Incomplete   0001-CLJ-1093-v2.patch
 I  CLJ-1152 Incomplete   protocol_multifn_weak_ref_cache.diff
 I  CLJ-1322 Incomplete   doseq.patch
 I  CLJ-1544 Incomplete   0001-CLJ-1544-force-reloading-of-namespaces-during-AOT-co-v3.patch
 I  CLJ-1620 Incomplete   clj-1620-v5.patch
 I  CLJ-1741 Incomplete   0001-CLJ-1714-Don-t-load-AOT-class-when-compiling-already.patch
 
+      Language/library enhancement:
+
+I  CLJ-1449 Incomplete   add_functions_to_strings-4.patch
+
 ----------------------------------------------------------------------
 Tickets marked for Clojure Release 1.8 that have no prescreened
 patches (see also Note 3 at the bottom):
 ----------------------------------------------------------------------
-V   5 [CLJ-1553] Parallel transduce
+V   5 [CLJ-1610] Unrolled small maps
 I   3 [CLJ-787] transient blows up when passed a vector created by subvec
-V   1 [CLJ-1610] Unrolled small maps
 I   0 [CLJ-1161] sources jar has bad versions.properties resource
 I   0 [CLJ-1400] Error "Can't refer to qualified var that doesn't exist" should name the bad symbol
-V   0 [CLJ-1551] Consider transducer support for primitives
-V   0 [CLJ-1552] Consider kv support for transducers (similar to reducers fold)
 I   0 [CLJ-1773] Support for REPL commands for tooling
+V   0 [CLJ-1781] Tuples don't extend IKVReduce
 
 ----------------------------------------------------------------------
 Tickets needing work that have no prescreened patches.  These are all
@@ -55,19 +58,26 @@ Triaged (T), Vetted (V), or Incomplete (I).  The number after the
 letter is the number of votes, and tickets have been sorted from most
 to fewest votes.
 ----------------------------------------------------------------------
+V  20 [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
 T  15 [CLJ-1298] Add more type predicate fns to core
+T  13 [CLJ-1107] 'get' should throw exception on non-Associative argument
+T  11 [CLJ-1527] Clarify and align valid symbol and keyword rules for Clojure (and edn)
 T   9 [CLJ-1278] State function's unmunged full name in compiled function's toString()
-T   9 [CLJ-1527] Harmonize accepted / documented symbol and keyword syntax over various readers
 T   7 [CLJ-440] java method calls cannot omit varargs
+T   6 [CLJ-1239] faster, more flexible dispatch for clojure.walk
 T   6 [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
 T   6 [CLJ-1454] Add a swap! that returns old value
 T   5 [CLJ-1074] Read/print round-trip for +/-Infinity and NaN
+V   5 [CLJ-1553] Parallel transduce
 T   4 [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
+T   4 [CLJ-1293] Portable "catch-all" mechanism
 V   3 [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
 T   3 [CLJ-825] Protocol implementation inconsistencies when overloading arity
 T   3 [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
+T   3 [CLJ-1743] Avoid compile-time static initialization of classes when using inheritance
 V   2 [CLJ-274] cannot close over mutable fields (in deftype)
 V   2 [CLJ-731] Create macro to variadically unroll a combinator function definition
+T   2 [CLJ-888] defprotocol should throw error when signatures include variable number of parameters
 T   1 [CLJ-1403] ns-resolve might throw ClassNotFoundException but should return nil
 T   1 [CLJ-1416] Support transients in gvec
 V   0 [CLJ-5] Unintuitive error response in clojure 1.0
@@ -85,12 +95,15 @@ V   0 [CLJ-771] Move unchecked-prim casts to clojure.unchecked
 V   0 [CLJ-992] `iterate` reducer
 T   0 [CLJ-1401] CompilerException / IllegalStateException when overriding vars
 V   0 [CLJ-1420] ThreadLocalRandom instead of Math/random
+T   0 [CLJ-1456] The compiler ignores too few or too many arguments to throw
 T   0 [CLJ-1460] Clojure transforms literals of custom IPersistentCollections not created via deftype/defrecord to their generic clojure counterpart
 T   0 [CLJ-1461] print-dup is broken for some clojure collections
 T   0 [CLJ-1492] PersistentQueue objects are improperly eval'd and compiled
 T   0 [CLJ-1509] Some clojure namespaces not AOT-compiled and included in the clojure jar
 T   0 [CLJ-1516] Throw an exception if def name contains a dot
 T   0 [CLJ-1542] Docstring for deliver should describe its return value
+V   0 [CLJ-1551] Consider transducer support for primitives
+V   0 [CLJ-1552] Consider kv support for transducers (similar to reducers fold)
 T   0 [CLJ-1579] source-fn can fail due to reading namespace-aliased keywords while in another namespace context
 T   0 [CLJ-1585] Report boxed math warning on function that boxes primitive return value
 T   0 [CLJ-1629] Improve error message when defn form omits parameter declaration
@@ -122,15 +135,6 @@ contributor, and it does not build and pass tests.
       Clojure language/library bug fixes:
 
    CLJ-1575 Open         0001-Test-for-analyzer-bug-CLJ-1575.patch
-
-      Language/library enhancement:
-
-   CLJ-1394 Open         pr-str-dispatch-value-safe.diff
-   CLJ-1556 Open         0001-CLJ-1556-Generate-type-functions-with-instance-check.patch
-
-      Code cleanup:
-
-   CLJ-792  Open         clj-793-v5.patch
 ----------------------------------------------------------------------
 
 
