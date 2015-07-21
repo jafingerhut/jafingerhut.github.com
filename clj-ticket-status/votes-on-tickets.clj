@@ -3761,7 +3761,8 @@
  {:display-name "Brandon Bloom",
   :usernames #{"bbloom"},
   :emails #{"brandon@brandonbloom.name"}}
- ("CLJ-1452"
+ ("CLJS-1350"
+  "CLJ-1452"
   "CLJ-1449"
   "CLJ-1416"
   "CLJ-1298"
@@ -4114,6 +4115,7 @@
   "CLJ-864"
   "CLJ-792"
   "CLJ-731"
+  "CLJ-701"
   "CLJ-700"
   "CLJ-666"
   "CLJ-401"
@@ -5795,7 +5797,8 @@
  {:display-name "Mike Fikes",
   :usernames #{"mfikes"},
   :emails #{"mike@fikesfarm.com"}}
- ("CLJS-1312"
+ ("CLJS-1349"
+  "CLJS-1312"
   "CLJS-1311"
   "CLJS-1241"
   "CLJS-1177"
