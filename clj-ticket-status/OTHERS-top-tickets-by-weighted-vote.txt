@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: July 19, 2015
+Date: July 23, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -86,6 +86,8 @@ Defect
              Eduard Bondarenko (1/2)
     0.50   1 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
              Willy Blandin (1/2)
+    0.50   1 Triaged      [ASYNC-124] put! into channel that has mapcat transducer fails to dispatch more than one waiting takes
+             Daniel Compton (1/2)
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
     0.00   0 Open         [ASYNC-51] Core.async memory leak in Safari and Mobile Safari
     0.00   0 Open         [ASYNC-54] MAX-QUEUE-SIZE has a wrong type-hint
@@ -110,7 +112,6 @@ Defect
     0.00   0 Triaged      [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
     0.00   0 Triaged      [ASYNC-113] alt!! should not evaluate the :default expr if a non-default clause is selected
-    0.00   0 Triaged      [ASYNC-124] put! into channel that has mapcat transducer fails to dispatch more than one waiting takes
     0.00   0 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
 
 ========================================
@@ -126,6 +127,10 @@ Enhancement
              Thomas Engelschmidt (1)
              Colin Taylor (1/2)
              Howard Lewis Ship (1/2)
+    2.00   3 Bad: Match n [ASYNC-103] promise-chan
+             Leon Grapenthin (1)
+             Daniel Compton (1/2)
+             Wilker Lúcio da Silva (1/2)
     2.00   2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
              Nahuel Greco (1)
              Reid McKenzie (1)
@@ -135,9 +140,6 @@ Enhancement
     2.00   2 Triaged      [ASYNC-67] Can we get a generic sink operation?
              Adam Clements (1)
              Jan-Paul Bultmann (1)
-    1.50   2 Bad: Match n [ASYNC-103] promise-chan
-             Leon Grapenthin (1)
-             Wilker Lúcio da Silva (1/2)
     1.50   2 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
              Dennis Schridde (1)
              Eduard Bondarenko (1/2)
@@ -290,63 +292,40 @@ Project CTYP tickets
 ========================================
 Defect
 
-    2.00   2 Open         [CTYP-167] Several failure cases for comp for polyadic fns and type variables
-             Marc O'Morain (1)
-             Oskar Wickstrom (1)
-    1.50   2 Open         [CTYP-176] No such var: ana/ns->relpath when loading the ClojureScript typechecker
+    2.00   2 Bad: Match > [CTYP-176] No such var: ana/ns->relpath when loading the ClojureScript typechecker
              Vic Goldfeld (1)
-             Vince Broz (1/2)
+             Vince Broz (1)
     1.00   1 Open         [CTYP-129] select-keys on HMap returns Map with union key and value types
              Juho Teperi (1)
-    1.00   1 Open         [CTYP-133] Typechecker fails when checking involves an object from reify
-             Jochen Hinrichsen (1)
-    1.00   1 Open         [CTYP-168] :arglists metadata is missing from vars defined using core.typed's defn macro
-             James Reeves (1)
     1.00   1 Open         [CTYP-197] No matching arities when defining multiple arity protocol method
              Johan Gall (1)
-    1.00   1 Open         [CTYP-213] core.typed 0.2.87 fails in combination with org.clojure/tools.analyzer.jvm 0.6.5 on Clojure 1.6
-             Slava Andreyev (1)
-    0.00   0 Bad: Unkn Fi [CTYP-232] Can't convince core.typed that HVec is non-nil
-    0.00   0 Bad: Unkn Fi [CTYP-234] Setting :collect-only attribute for a namespace does not collect type aliases
-    0.00   0 Bad: Unkn Fi [CTYP-239] Search for .cljc files when checking a namespace 
-    0.00   0 Bad: Unkn Fi [CTYP-241] Let-aliased variables of plain Map lookups do not update original map
+    0.00   0 Bad: Match > [CTYP-32] Cannot instantiate variables that have bounds 
+    0.00   0 Bad: Match > [CTYP-49] Applying flow filter resulted in local being bottom
+    0.00   0 Bad: Match > [CTYP-52] Heterogeneous Vector is not ISeqable in CLJS
+    0.00   0 Bad: Match > [CTYP-72] merge doesn't seem to like records
+    0.00   0 Bad: Match > [CTYP-87] Constraint generation does not handle variance well
+    0.00   0 Bad: Match > [CTYP-88] with-meta doesn't type check with vectors or hash-maps. 
+    0.00   0 Bad: Match > [CTYP-102] large hashmaps: failure to discover subtype and error-output to complex to understand
+    0.00   0 Bad: Match > [CTYP-140] HSequential things should correctly erase dotted arguments
+    0.00   0 Bad: Match > [CTYP-143] extend & extend-protocol with (Class/forName "[B") as Class dispatch value fails
+    0.00   0 Bad: Match > [CTYP-173] (first (filter ...)) type checks in Clojure, not ClojureScript
+    0.00   0 Bad: Match > [CTYP-177] Compile error with core.async
+    0.00   0 Bad: Match > [CTYP-231] (Array X) is broken and undocumented
+    0.00   0 Bad: Unkn Fi [CTYP-232] Let-aliased variabled of HVec lookups should update original HVec
+    0.00   0 Bad: Unkn Fi [CTYP-241] Let-aliased variables of plain Map lookups should update original map
     0.00   0 Bad: Unkn Fi [CTYP-247] Java interop resolved by core.typed is still reflective
-    0.00   0 Open         [CTYP-27] clojure.lang.RT/nth's type doesn't currently allow nil as the first argument
-    0.00   0 Open         [CTYP-32] Cannot instantiate variables that have bounds 
     0.00   0 Open         [CTYP-35] Should use fresh names when checking plambdas
-    0.00   0 Open         [CTYP-39] def-alias not working in ClojureScript
     0.00   0 Open         [CTYP-47] Expected: IFn, Actual (Fn [Any -> Any])
-    0.00   0 Open         [CTYP-48] Internal error: keyword invoke gave bottom type
-    0.00   0 Open         [CTYP-49] Applying flow filter resulted in local being bottom
-    0.00   0 Open         [CTYP-51] assoc unsupported in CLJS
-    0.00   0 Open         [CTYP-52] Heterogeneous Vector is not ISeqable in CLJS
-    0.00   0 Open         [CTYP-71] Occurrence typing does not deal well with non-eagerly simplifying unions
-    0.00   0 Open         [CTYP-72] merge doesn't seem to like records
-    0.00   0 Open         [CTYP-80] Issue with filter subtyping/simplification
-    0.00   0 Open         [CTYP-87] Handle variace in datatype cgen
-    0.00   0 Open         [CTYP-88] with-meta doesn't type check with vectors or hash-maps. 
-    0.00   0 Open         [CTYP-100] RClass ancestors should work with reset-env
-    0.00   0 Open         [CTYP-102] large hashmaps: failure to discover subtype and error-output to complex to understand
-    0.00   0 Open         [CTYP-140] HSequential things should correctly erase dotted arguments
-    0.00   0 Open         [CTYP-141] Implement Difference type
-    0.00   0 Open         [CTYP-143] extend & extend-protocol with (Class/forName "[B") as Class dispatch value fails
     0.00   0 Open         [CTYP-171] nil should not be treated as subtype of repeat list/vector
-    0.00   0 Open         [CTYP-172] annotating methods that descructure their arguments can confuse the type system
-    0.00   0 Open         [CTYP-173] (first (filter ...)) type checks in Clojure, not ClojureScript
-    0.00   0 Open         [CTYP-177] Compile error with core.async
     0.00   0 Open         [CTYP-178] Dissimilar lengths of HVecs in a union doesn't type-check
     0.00   0 Open         [CTYP-182] macros which define functions containing named anonymous functions crash
     0.00   0 Open         [CTYP-188] ann-record fails for argument-less records
     0.00   0 Open         [CTYP-190] pred doesn't handle much
     0.00   0 Open         [CTYP-191] Bad type syntax when parsing types of macro-generated anonymous functions from required namespaces (when the types are composed, for instance (Option AnyInteger))
     0.00   0 Open         [CTYP-195] Support for clojure.core/extend is broken when used with typed.core/defprotocol
-    0.00   0 Open         [CTYP-198] incorrect optional keyword lookup in complete HMaps
     0.00   0 Open         [CTYP-201] Calling a multimethod from a protocol function breaks the type checker
-    0.00   0 Open         [CTYP-203] Internal error
     0.00   0 Open         [CTYP-204] Assoc doesn't work with multiple entries
     0.00   0 Open         [CTYP-209] method-type is broken
-    0.00   0 Open         [CTYP-210] (long AnyInteger) doesn't typecheck
-    0.00   0 Open         [CTYP-212] Can't create a promise of the same type as a record field
     0.00   0 Open         [CTYP-216] PermGen memory leak when type checking with faulty types
     0.00   0 Open         [CTYP-218] wrap-clj-repl causes error
     0.00   0 Open         [CTYP-221] group-by produces "Cannot resolve type: Seqable"
@@ -355,31 +334,34 @@ Defect
     0.00   0 Open         [CTYP-224] Lein REPL Autocomplete in typed namespaces throws a type error
     0.00   0 Open         [CTYP-225] Intersections of value types broken
     0.00   0 Open         [CTYP-228] Type signature for sort is incorrect - never returns nil
-    0.00   0 Open         [CTYP-231] (Array X) is broken and undocumented
     0.00   0 Open         [CTYP-242] adding stop-gap annotation for 'hash-map' results in runtime exception
 
 ========================================
 Enhancement
 
-    1.50   2 Open         [CTYP-113] Better documentation for override-method
-             Mark Feeney (1)
-             Vince Broz (1/2)
-    1.00   1 Open         [CTYP-93] Support refinement types
-             Christoffer Sawicki (1)
-    1.00   1 Open         [CTYP-134] Allow namespace aliases in `ann`
+    2.00   2 Bad: Match > [CTYP-167] Several failure cases for comp for polyadic fns and type variables
+             Marc O'Morain (1)
+             Oskar Wickstrom (1)
+    1.00   1 Bad: Match > [CTYP-133] Typechecker fails when checking involves an object from reify
+             Jochen Hinrichsen (1)
+    1.00   1 Bad: Match > [CTYP-134] Allow namespace aliases in `ann`
              Reid McKenzie (1)
     0.00   0 Bad: Match > [CTYP-8] Support complex map manipulation functions
+    0.00   0 Bad: Match > [CTYP-50] Support overriding fields
+    0.00   0 Bad: Match > [CTYP-98] Implement a defrecord macro for Clojure
     0.00   0 Bad: Match > [CTYP-235] Warn on duplicate defalias'
+    0.00   0 Bad: Match > [CTYP-249] Propositional subtyping should consider the lexical type environment
+    0.00   0 Bad: Unkn Fi [CTYP-192] Use memoization in file-mapping to improve performance.
+    0.00   0 Bad: Unkn Fi [CTYP-239] Search for .cljc files when checking a namespace 
     0.00   0 Bad: Unkn Fi [CTYP-246] Gradually typed namespaces should import untyped vars with a contract
+    0.00   0 Bad: Unkn Fi [CTYP-250] Resolve Java interoperability based on static type information
+    0.00   0 Bad: Unkn Fi [CTYP-259] Rewrite function bodies if they are only checked once
     0.00   0 Open         [CTYP-9] Support metadata types
     0.00   0 Open         [CTYP-11] Infer good types for loop locals
     0.00   0 Open         [CTYP-12] Handle primitives properly
     0.00   0 Open         [CTYP-13] Understand common contract functions
     0.00   0 Open         [CTYP-18] Implement equality filters
-    0.00   0 Open         [CTYP-50] Support overriding fields
-    0.00   0 Open         [CTYP-54] Merge compatible types to make more accurate ones
     0.00   0 Open         [CTYP-76] Support KwArgsSeq in apply
-    0.00   0 Open         [CTYP-98] Implement a defrecord> macro
     0.00   0 Open         [CTYP-109] Better error message for TFn app
     0.00   0 Open         [CTYP-110] Add satisfies?
     0.00   0 Open         [CTYP-119] Record/datatypes should update like HMaps via occurrence typing
@@ -391,7 +373,6 @@ Enhancement
     0.00   0 Open         [CTYP-160] Correctly check IFn ancestor with type/record
     0.00   0 Open         [CTYP-165] GSOC 2014 Heterogeneous operations & Dotted Polymorphism
     0.00   0 Open         [CTYP-187] Add a defn- macro for private functions
-    0.00   0 Open         [CTYP-192] Use memoization in file-mapping to improve performance.
     0.00   0 Open         [CTYP-194] HMap merged type
     0.00   0 Open         [CTYP-202] Provide a way to annotate a throw-on-nil function
     0.00   0 Open         [CTYP-205] Better filter checking
@@ -582,6 +563,7 @@ Project JDBC tickets
 Defect
 
     0.00   0 Open         [JDBC-91] Issue with H2 "script" command
+    0.00   0 Open         [JDBC-110] Requesting a nested transaction with a more restrictive isolation level appears to succeed, but does not have the requested effect
 
 ========================================
 Enhancement
@@ -880,10 +862,17 @@ Enhancement
 
 Project TEMJVM tickets
 ========================================
+Defect
+
+    0.00   0 Open         [TEMJVM-11] Stack error in recur
+
+========================================
 Enhancement
 
     0.00   0 Open         [TEMJVM-5] Optimize constant metadata emission
     0.00   0 Open         [TEMJVM-10] Fix line number info
+    0.00   0 Open         [TEMJVM-12] Improve test coverage
+    0.00   0 Open         [TEMJVM-13] Modularize -emit method
 
 ========================================
 Task
