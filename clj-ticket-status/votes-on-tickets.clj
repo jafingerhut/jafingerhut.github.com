@@ -17,13 +17,7 @@
  {:display-name "Mike Rodriguez",
   :usernames #{"mikerod"},
   :emails #{"mjr4184@gmail.com"}}
- ("CLJ-1423"
-  "CLJ-1403"
-  "CLJ-1239"
-  "CLJ-1224"
-  "CLJ-1093"
-  "CLJ-1005"
-  "CLJ-978"),
+ ("CLJ-1423" "CLJ-1403" "CLJ-1239" "CLJ-1224" "CLJ-1005" "CLJ-978"),
  {:display-name "John Hume",
   :usernames #{"duelin_markers"},
   :emails #{"duelin.markers@gmail.com"}}
@@ -1108,7 +1102,6 @@
   "CLJ-1232"
   "CLJ-1096"
   "CLJ-1094"
-  "CLJ-1093"
   "CLJ-308"
   "ASYNC-114"
   "ASYNC-61"),
@@ -1864,7 +1857,7 @@
  {:display-name "Phill Wolf",
   :usernames #{"pbwolf"},
   :emails #{"phill.wolf@gmail.com"}}
- ("CLJ-1322" "CLJ-1282" "CLJ-1117" "CLJ-700"),
+ ("CLJ-1322" "CLJ-1282" "CLJ-1243" "CLJ-1117" "CLJ-700"),
  {:display-name "Mikkel Kamstrup Erlandsen",
   :usernames #{"kamstrup"},
   :emails #{"mikkel.kamstrup@gmail.com"}}
@@ -3296,7 +3289,6 @@
   "CLJ-1282"
   "CLJ-1201"
   "CLJ-1107"
-  "CLJ-1093"
   "CLJ-1074"
   "CLJ-976"
   "CLJ-700"
@@ -4654,7 +4646,7 @@
  {:display-name "Simon Katz",
   :usernames #{"nomiskatz"},
   :emails #{"jira@nomistech.com"}}
- (),
+ ("CLJ-1522"),
  {:display-name "Maciej Mazur",
   :usernames #{"maciek"},
   :emails #{"mamciek@gmail.com"}}
@@ -6123,7 +6115,7 @@
  {:display-name "Alan Malloy",
   :usernames #{"amalloy"},
   :emails #{"alan@malloys.org"}}
- ("CLJ-1093" "CLJ-994"),
+ ("CLJ-994"),
  {:display-name "Adam Hill",
   :usernames #{"adam.hill@gmail.com"},
   :emails #{"adam.hill@gmail.com"}}
@@ -6595,6 +6587,10 @@
   :usernames #{"aconbere"},
   :emails #{"anders@conbere.org"}}
  (),
+ {:display-name "Mayank Jain",
+  :usernames #{"firesofmay"},
+  :emails #{"firesofmay@gmail.com"}}
+ (),
  {:display-name "Dmitr Sotnikov",
   :usernames #{"yogthos"},
   :emails #{"dmitri.sotnikov@gmail.com"}}
@@ -6665,7 +6661,6 @@
   "CLJ-1224"
   "CLJ-1130"
   "CLJ-1117"
-  "CLJ-1093"
   "CLJ-1078"
   "CLJ-1074"
   "CLJ-1029"
@@ -7431,6 +7426,10 @@
   :usernames #{"candera"},
   :emails #{"candera@wangdera.com"}}
  (),
+ {:display-name "Joshua Stupplebeen",
+  :usernames #{"bauhaus"},
+  :emails #{"jpstup@gmail.com"}}
+ (),
  {:display-name "Radford Smith",
   :usernames #{"rads"},
   :emails #{"radsmith@gmail.com"}}
@@ -7476,7 +7475,9 @@
   "CLJ-1372"
   "CLJ-1298"
   "CLJ-1117"
+  "CLJ-1063"
   "CLJ-865"
+  "ASYNC-126"
   "ASYNC-124"
   "ASYNC-103"),
  {:display-name "Stephen Wan",

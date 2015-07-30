@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: July 27, 2015
+Date: July 30, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -93,6 +93,7 @@ Defect
    0 Open         [ASYNC-128] or evaluation not stopped when exp nests take
    0 Open         [ASYNC-129] Channels with transducer using reduced don't work as intended
    0 Open         [ASYNC-132] Can't close over locals in #js in go
+   0 Open         [ASYNC-134] async/alts!! with an empty vector throws ArrayIndexOutOfBoundsException
 
 ========================================
 Enhancement
@@ -107,6 +108,7 @@ Enhancement
    2 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
    1 Open         [ASYNC-71] exception behavior for thread macro is hard coded
    1 Open         [ASYNC-119] ClojureScript: combine cljs.core.async.macros and cljs.core.async
+   1 Triaged      [ASYNC-126] Add public channel "closed?" predicate
    0 Open         [ASYNC-46] Add optional default channel to 'pub'
    0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
    0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
@@ -114,7 +116,6 @@ Enhancement
    0 Vetted       [ASYNC-69] How to better communicate "mix" lifecycle wrt coordination
    0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
    0 Vetted       [ASYNC-102] implement IDeref, IBlockingDeref for channels
-   0 Triaged      [ASYNC-126] Add public channel "closed?" predicate
    0 Open         [ASYNC-130] Improve put! docstring to mention no more than 1024 pending puts are allowed
    0 Open         [ASYNC-131] go! or "go-now" for CLJS
 
@@ -228,6 +229,7 @@ Defect
 
    0 Open         [CRRBV-9] Repeated subvec and catvec fails
    0 Open         [CRRBV-10] Calling empty in CLJS results in a PersistentVector
+   0 Open         [CRRBV-11] Issue with Clojure 1.8.0-alpha2 Tuples
 
 ========================================
 Enhancement
@@ -279,7 +281,7 @@ Defect
    0 Open         [CTYP-242] adding stop-gap annotation for 'hash-map' results in runtime exception
    0 Bad: Unkn Fi [CTYP-247] Java interop resolved by core.typed is still reflective
    0 Bad: Match > [CTYP-262] Accessing keys from a Heterogeneous Map w/ Polymorphic type signature throws type error
-   0 Open         [CTYP-263] Unnecessary type hint required in catch expression
+   0 Bad: Unkn Fi [CTYP-263] Unnecessary type hint required in catch expression
 
 ========================================
 Enhancement
@@ -330,7 +332,7 @@ Enhancement
    0 Bad: Unkn Fi [CTYP-250] Resolve Java interoperability based on static type information
    0 Bad: Unkn Fi [CTYP-259] Rewrite function bodies if they are only checked once
    0 Open         [CTYP-260] Add Queue and BlockingQueue to altered classes
-   0 Bad: Unkn Fi [CTYP-261] Typed Transients patch
+   0 Bad: Match > [CTYP-261] Typed Transients patch
 
 ========================================
 Task
@@ -430,6 +432,7 @@ Project DJSON tickets
 Defect
 
    0 Open         [DJSON-21] Improper parsing of literals
+   0 Open         [DJSON-22] Improper parsing of numbers - leading zeroes should be disallowed
 
 ========================================
 Enhancement
@@ -492,6 +495,7 @@ Project JDBC tickets
 Defect
 
    0 Open         [JDBC-91] Issue with H2 "script" command
+   0 Open         [JDBC-107] metadata-result leaks ResultSets
 
 ========================================
 Enhancement
@@ -569,6 +573,7 @@ Enhancement
    0 Open         [LOGIC-164] Guard against arity missmatches between rels, facts and retractions
    0 Open         [LOGIC-165] Add non-interleaving version of conde
    0 Open         [LOGIC-170] Replacing Marker Interfaces
+   0 Open         [LOGIC-171] The docstring of condu is incorrect or at least confusing
 
 ========================================
 Task
@@ -748,11 +753,6 @@ Defect
 
    0 Open         [TCLI-10] potential incorrect parsing
 
-========================================
-Enhancement
-
-   0 Open         [TCLI-9] Support multiple validations
-
 
 Project TEMJVM tickets
 ========================================
@@ -767,6 +767,7 @@ Enhancement
    0 Open         [TEMJVM-10] Fix line number info
    0 Open         [TEMJVM-12] Improve test coverage
    0 Open         [TEMJVM-13] Modularize -emit method
+   0 Open         [TEMJVM-14] Emit unchecked locals
 
 ========================================
 Task

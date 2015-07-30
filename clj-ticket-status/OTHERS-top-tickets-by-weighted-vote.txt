@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: July 27, 2015
+Date: July 30, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -86,8 +86,8 @@ Defect
              Eduard Bondarenko (1/2)
     0.50   1 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
              Willy Blandin (1/2)
-    0.50   1 Triaged      [ASYNC-124] put! into channel that has mapcat transducer fails to dispatch more than one waiting takes
-             Daniel Compton (1/2)
+    0.33   1 Triaged      [ASYNC-124] put! into channel that has mapcat transducer fails to dispatch more than one waiting takes
+             Daniel Compton (1/3)
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
     0.00   0 Open         [ASYNC-51] Core.async memory leak in Safari and Mobile Safari
     0.00   0 Open         [ASYNC-54] MAX-QUEUE-SIZE has a wrong type-hint
@@ -108,6 +108,7 @@ Defect
     0.00   0 Open         [ASYNC-128] or evaluation not stopped when exp nests take
     0.00   0 Open         [ASYNC-129] Channels with transducer using reduced don't work as intended
     0.00   0 Open         [ASYNC-132] Can't close over locals in #js in go
+    0.00   0 Open         [ASYNC-134] async/alts!! with an empty vector throws ArrayIndexOutOfBoundsException
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
@@ -127,10 +128,6 @@ Enhancement
              Thomas Engelschmidt (1)
              Colin Taylor (1/2)
              Howard Lewis Ship (1/2)
-    2.00   3 Bad: Match n [ASYNC-103] promise-chan
-             Leon Grapenthin (1)
-             Daniel Compton (1/2)
-             Wilker Lúcio da Silva (1/2)
     2.00   2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
              Nahuel Greco (1)
              Reid McKenzie (1)
@@ -140,6 +137,10 @@ Enhancement
     2.00   2 Triaged      [ASYNC-67] Can we get a generic sink operation?
              Adam Clements (1)
              Jan-Paul Bultmann (1)
+    1.83   3 Bad: Match n [ASYNC-103] promise-chan
+             Leon Grapenthin (1)
+             Wilker Lúcio da Silva (1/2)
+             Daniel Compton (1/3)
     1.50   2 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
              Dennis Schridde (1)
              Eduard Bondarenko (1/2)
@@ -153,12 +154,13 @@ Enhancement
              Vlad Bokov (1/2)
     0.50   1 Open         [ASYNC-119] ClojureScript: combine cljs.core.async.macros and cljs.core.async
              Wilker Lúcio da Silva (1/2)
+    0.33   1 Triaged      [ASYNC-126] Add public channel "closed?" predicate
+             Daniel Compton (1/3)
     0.00   0 Open         [ASYNC-46] Add optional default channel to 'pub'
     0.00   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
     0.00   0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
     0.00   0 Open         [ASYNC-130] Improve put! docstring to mention no more than 1024 pending puts are allowed
     0.00   0 Open         [ASYNC-131] go! or "go-now" for CLJS
-    0.00   0 Triaged      [ASYNC-126] Add public channel "closed?" predicate
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
     0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
     0.00   0 Vetted       [ASYNC-69] How to better communicate "mix" lifecycle wrt coordination
@@ -281,6 +283,7 @@ Defect
 
     0.00   0 Open         [CRRBV-9] Repeated subvec and catvec fails
     0.00   0 Open         [CRRBV-10] Calling empty in CLJS results in a PersistentVector
+    0.00   0 Open         [CRRBV-11] Issue with Clojure 1.8.0-alpha2 Tuples
 
 ========================================
 Enhancement
@@ -315,6 +318,7 @@ Defect
     0.00   0 Bad: Unkn Fi [CTYP-232] Let-aliased variabled of HVec lookups should update original HVec
     0.00   0 Bad: Unkn Fi [CTYP-241] Let-aliased variables of plain Map lookups should update original map
     0.00   0 Bad: Unkn Fi [CTYP-247] Java interop resolved by core.typed is still reflective
+    0.00   0 Bad: Unkn Fi [CTYP-263] Unnecessary type hint required in catch expression
     0.00   0 Open         [CTYP-35] Should use fresh names when checking plambdas
     0.00   0 Open         [CTYP-47] Expected: IFn, Actual (Fn [Any -> Any])
     0.00   0 Open         [CTYP-171] nil should not be treated as subtype of repeat list/vector
@@ -336,7 +340,6 @@ Defect
     0.00   0 Open         [CTYP-225] Intersections of value types broken
     0.00   0 Open         [CTYP-228] Type signature for sort is incorrect - never returns nil
     0.00   0 Open         [CTYP-242] adding stop-gap annotation for 'hash-map' results in runtime exception
-    0.00   0 Open         [CTYP-263] Unnecessary type hint required in catch expression
 
 ========================================
 Enhancement
@@ -353,12 +356,12 @@ Enhancement
     0.00   0 Bad: Match > [CTYP-98] Implement a defrecord macro for Clojure
     0.00   0 Bad: Match > [CTYP-235] Warn on duplicate defalias'
     0.00   0 Bad: Match > [CTYP-249] Propositional subtyping should consider the lexical type environment
+    0.00   0 Bad: Match > [CTYP-261] Typed Transients patch
     0.00   0 Bad: Unkn Fi [CTYP-192] Use memoization in file-mapping to improve performance.
     0.00   0 Bad: Unkn Fi [CTYP-239] Search for .cljc files when checking a namespace 
     0.00   0 Bad: Unkn Fi [CTYP-246] Gradually typed namespaces should import untyped vars with a contract
     0.00   0 Bad: Unkn Fi [CTYP-250] Resolve Java interoperability based on static type information
     0.00   0 Bad: Unkn Fi [CTYP-259] Rewrite function bodies if they are only checked once
-    0.00   0 Bad: Unkn Fi [CTYP-261] Typed Transients patch
     0.00   0 Open         [CTYP-9] Support metadata types
     0.00   0 Open         [CTYP-11] Infer good types for loop locals
     0.00   0 Open         [CTYP-12] Handle primitives properly
@@ -491,6 +494,7 @@ Project DJSON tickets
 Defect
 
     0.00   0 Open         [DJSON-21] Improper parsing of literals
+    0.00   0 Open         [DJSON-22] Improper parsing of numbers - leading zeroes should be disallowed
 
 ========================================
 Enhancement
@@ -567,6 +571,7 @@ Project JDBC tickets
 Defect
 
     0.00   0 Open         [JDBC-91] Issue with H2 "script" command
+    0.00   0 Open         [JDBC-107] metadata-result leaks ResultSets
 
 ========================================
 Enhancement
@@ -647,6 +652,7 @@ Enhancement
     0.00   0 Open         [LOGIC-164] Guard against arity missmatches between rels, facts and retractions
     0.00   0 Open         [LOGIC-165] Add non-interleaving version of conde
     0.00   0 Open         [LOGIC-170] Replacing Marker Interfaces
+    0.00   0 Open         [LOGIC-171] The docstring of condu is incorrect or at least confusing
 
 ========================================
 Task
@@ -857,11 +863,6 @@ Defect
 
     0.00   0 Open         [TCLI-10] potential incorrect parsing
 
-========================================
-Enhancement
-
-    0.00   0 Open         [TCLI-9] Support multiple validations
-
 
 Project TEMJVM tickets
 ========================================
@@ -876,6 +877,7 @@ Enhancement
     0.00   0 Open         [TEMJVM-10] Fix line number info
     0.00   0 Open         [TEMJVM-12] Improve test coverage
     0.00   0 Open         [TEMJVM-13] Modularize -emit method
+    0.00   0 Open         [TEMJVM-14] Emit unchecked locals
 
 ========================================
 Task
