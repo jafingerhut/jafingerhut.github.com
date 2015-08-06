@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.4 - 1.7, sheet v32)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.4 - 1.7, sheet v33)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -888,7 +888,11 @@ format
   assoc[iate]. When applied to a map, returns a new map of the
     same (hashed/sorted) type, that contains the mapping of key(s) to
     val(s). When applied to a vector, returns a new vector that
-    contains val at index. Note - index must be <= (count vector).">assoc</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/pop/" title="clojure.core/pop
+    contains val at index. Note - index must be <= (count vector).">assoc</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/assoc-in/" title="clojure.core/assoc-in
+([m [k & ks] v])
+  Associates a value in a nested associative structure, where ks is a
+  sequence of keys and v is the new value and returns a new nested structure.
+  If any levels do not exist, hash-maps will be created.">assoc-in</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/pop/" title="clojure.core/pop
 ([coll])
   For a list or queue, returns a new list/queue without the first
   item, for a vector, returns a new vector without the last item. If
