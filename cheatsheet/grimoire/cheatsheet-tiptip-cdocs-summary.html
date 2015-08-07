@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.4 - 1.7, sheet v33)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.4 - 1.7, sheet v34)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -1416,15 +1416,7 @@ disj, distinct</pre>">set</a> <a href="http://conj.io/store/v0/org.clojure/cloju
   Returns a new hash set with supplied keys.  Any equal keys are
   handled as if by repeated uses of conj.
 
-1 example with 18 lines on Fri Aug 29 2014</pre>">hash-set</a> (clojure.data.int-map/) <a href="http://github.com/clojure/data.int-map" class="tooltip" title="<pre>clojure.data.int-map/int-set
-([] [s])
-  Creates an immutable set which can only store integral values.  This should be
-used unless elements are densely
-   clustered (each element has multiple elements within +/- 1000).</pre>">int-set</a> <a href="http://github.com/clojure/data.int-map" class="tooltip" title="<pre>clojure.data.int-map/dense-int-set
-([] [s])
-  Creates an immutable set which can only store integral values.  This should be
-used only if elements are densely
-   clustered (each element has multiple elements within +/- 1000).</pre>">dense-int-set</a></code></td>
+1 example with 18 lines on Fri Aug 29 2014</pre>">hash-set</a></code></td>
               </tr>
               <tr class="even">
                 <td>Create sorted</td>
@@ -1447,7 +1439,15 @@ See also: sorted-set, sorted-map-by, compare</pre>">sorted-set-by</a> (clojure.d
 ([comparator & keys])
   Returns a new sorted set with supplied keys, using the supplied comparator.</pre>">sorted-set-by</a> (flatland.ordered.set/) <a href="https://github.com/amalloy/ordered" class="tooltip" title="<pre>flatland.ordered.set/ordered-set
 ([] [& xs])
-  nil</pre>">ordered-set</a></code></td>
+  nil</pre>">ordered-set</a> (clojure.data.int-map/) <a href="http://github.com/clojure/data.int-map" class="tooltip" title="<pre>clojure.data.int-map/int-set
+([] [s])
+  Creates an immutable set which can only store integral values.  This should be
+used unless elements are densely
+   clustered (each element has multiple elements within +/- 1000).</pre>">int-set</a> <a href="http://github.com/clojure/data.int-map" class="tooltip" title="<pre>clojure.data.int-map/dense-int-set
+([] [s])
+  Creates an immutable set which can only store integral values.  This should be
+used only if elements are densely
+   clustered (each element has multiple elements within +/- 1000).</pre>">dense-int-set</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Examine</td>
@@ -1595,9 +1595,7 @@ See also: partition-by, frequencies</pre>">group-by</a> (clojure.set/) <a href="
   set of the maps in xrel with the corresponding values of ks.
 
 1 example with 48 lines on Fri Aug 29 2014
-See also: hash-map, get</pre>">index</a> (clojure.data.int-map/) <a href="http://github.com/clojure/data.int-map" class="tooltip" title="<pre>clojure.data.int-map/int-map
-([] [a b] [a b & rest])
-  Creates an integer map that can only have non-negative integers as keys.</pre>">int-map</a></code></td>
+See also: hash-map, get</pre>">index</a></code></td>
               </tr>
               <tr class="even">
                 <td>Create sorted</td>
@@ -1635,7 +1633,9 @@ Returns a new priority map with optional supplied mappings.
   Create an empty map with a custom comparator that puts the given keys first,
 in the order
   specified. Other keys will be placed after the special keys, sorted by the
-default-comparator.</pre>">ordering-map</a></code></td>
+default-comparator.</pre>">ordering-map</a> (clojure.data.int-map/) <a href="http://github.com/clojure/data.int-map" class="tooltip" title="<pre>clojure.data.int-map/int-map
+([] [a b] [a b & rest])
+  Creates an integer map that can only have non-negative integers as keys.</pre>">int-map</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Examine</td>

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
-  <title>Clojure Cheat Sheet (Clojure 1.4 - 1.7, sheet v33)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.4 - 1.7, sheet v34)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -951,15 +951,7 @@ format
   Returns a set of the distinct elements of coll.">set</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/hash-set/" title="clojure.core/hash-set
 ([] [& keys])
   Returns a new hash set with supplied keys.  Any equal keys are
-  handled as if by repeated uses of conj.">hash-set</a> (clojure.data.int-map/) <a href="http://github.com/clojure/data.int-map" title="clojure.data.int-map/int-set
-([] [s])
-  Creates an immutable set which can only store integral values.  This should be
-used unless elements are densely
-   clustered (each element has multiple elements within +/- 1000).">int-set</a> <a href="http://github.com/clojure/data.int-map" title="clojure.data.int-map/dense-int-set
-([] [s])
-  Creates an immutable set which can only store integral values.  This should be
-used only if elements are densely
-   clustered (each element has multiple elements within +/- 1000).">dense-int-set</a></code></td>
+  handled as if by repeated uses of conj.">hash-set</a></code></td>
               </tr>
               <tr class="even">
                 <td>Create sorted</td>
@@ -976,7 +968,15 @@ used only if elements are densely
 ([comparator & keys])
   Returns a new sorted set with supplied keys, using the supplied comparator.">sorted-set-by</a> (flatland.ordered.set/) <a href="https://github.com/amalloy/ordered" title="flatland.ordered.set/ordered-set
 ([] [& xs])
-  nil">ordered-set</a></code></td>
+  nil">ordered-set</a> (clojure.data.int-map/) <a href="http://github.com/clojure/data.int-map" title="clojure.data.int-map/int-set
+([] [s])
+  Creates an immutable set which can only store integral values.  This should be
+used unless elements are densely
+   clustered (each element has multiple elements within +/- 1000).">int-set</a> <a href="http://github.com/clojure/data.int-map" title="clojure.data.int-map/dense-int-set
+([] [s])
+  Creates an immutable set which can only store integral values.  This should be
+used only if elements are densely
+   clustered (each element has multiple elements within +/- 1000).">dense-int-set</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Examine</td>
@@ -1065,9 +1065,7 @@ used only if elements are densely
   corresponding elements, in the order they appeared in coll.">group-by</a> (clojure.set/) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/index/" title="clojure.set/index
 ([xrel ks])
   Returns a map of the distinct values of ks in the xrel mapped to a
-  set of the maps in xrel with the corresponding values of ks.">index</a> (clojure.data.int-map/) <a href="http://github.com/clojure/data.int-map" title="clojure.data.int-map/int-map
-([] [a b] [a b & rest])
-  Creates an integer map that can only have non-negative integers as keys.">int-map</a></code></td>
+  set of the maps in xrel with the corresponding values of ks.">index</a></code></td>
               </tr>
               <tr class="even">
                 <td>Create sorted</td>
@@ -1098,7 +1096,9 @@ Returns a new priority map with optional supplied mappings.
   Create an empty map with a custom comparator that puts the given keys first,
 in the order
   specified. Other keys will be placed after the special keys, sorted by the
-default-comparator.">ordering-map</a></code></td>
+default-comparator.">ordering-map</a> (clojure.data.int-map/) <a href="http://github.com/clojure/data.int-map" title="clojure.data.int-map/int-map
+([] [a b] [a b & rest])
+  Creates an integer map that can only have non-negative integers as keys.">int-map</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Examine</td>
