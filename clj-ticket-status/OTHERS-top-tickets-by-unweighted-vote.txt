@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: July 31, 2015
+Date: August 6, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -99,6 +99,7 @@ Defect
 Enhancement
 
    9 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
+   4 Open         [ASYNC-137] Make (<! (timeout 0)) be closer to 0
    3 Bad: Match n [ASYNC-103] promise-chan
    2 Triaged      [ASYNC-67] Can we get a generic sink operation?
    2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
@@ -199,6 +200,7 @@ Defect
    0 Open         [CLJCLR-38] Use Type.AssemblyQualifiedName in ObjExpr.EmitValue when generating code for types
    0 Open         [CLJCLR-48] Error when starting Clojure.Main.exe
    0 Open         [CLJCLR-67] Cannot call new/hidden interface method
+   0 Open         [CLJCLR-70] Build failed on Linux and OSX
 
 ========================================
 Enhancement
@@ -279,9 +281,8 @@ Defect
    0 Bad: Unkn Fi [CTYP-232] Let-aliased variabled of HVec lookups should update original HVec
    0 Bad: Unkn Fi [CTYP-241] Let-aliased variables of plain Map lookups should update original map
    0 Open         [CTYP-242] adding stop-gap annotation for 'hash-map' results in runtime exception
-   0 Bad: Unkn Fi [CTYP-247] Java interop resolved by core.typed is still reflective
    0 Bad: Match > [CTYP-262] Accessing keys from a Heterogeneous Map w/ Polymorphic type signature throws type error
-   0 Bad: Unkn Fi [CTYP-263] Unnecessary type hint required in catch expression
+   0 Open         [CTYP-267] bigdec, bigint and biginteger eats (U Number String)
 
 ========================================
 Enhancement
@@ -329,8 +330,6 @@ Enhancement
    0 Open         [CTYP-244] Filtering with an instantiated identity function doesn't guarantee removal of nil
    0 Bad: Unkn Fi [CTYP-246] Gradually typed namespaces should import untyped vars with a contract
    0 Bad: Match > [CTYP-249] Propositional subtyping should consider the lexical type environment
-   0 Bad: Unkn Fi [CTYP-250] Resolve Java interoperability based on static type information
-   0 Bad: Unkn Fi [CTYP-259] Rewrite function bodies if they are only checked once
    0 Open         [CTYP-260] Add Queue and BlockingQueue to altered classes
    0 Bad: Match > [CTYP-261] Typed Transients patch
 
@@ -554,6 +553,7 @@ Defect
    0 Open         [LOGIC-168] Allow partial matching of keys not existing in a map
    0 Open         [LOGIC-169] equality of non-unique lvars broken for clojure 1.7
    0 Open         [LOGIC-172] nafc doesn't work with more complex goals
+   0 Open         [LOGIC-173] StackOverflowError when logic variable is unified with a set
 
 ========================================
 Enhancement
@@ -613,6 +613,7 @@ Enhancement
    0 Open         [MATCH-78] Switches on literals should happen via `case` not `cond`
    0 Open         [MATCH-103] Support for lists in patterns.
    0 Open         [MATCH-109] Call `emit-pattern` and `to-source` to let'ed things. {code:clojure} (let [x "hello" y :foo x-regex #"Hello"] (match [x y] [x-regex y] :match :else :no-match)) {code}
+   0 Open         [MATCH-110] convert to .cljc
 
 ========================================
 Task
@@ -675,6 +676,7 @@ Defect
 Enhancement
 
    0 Open         [TANAL-84] Simplify tag handling for castings/nil insertion/value popping
+   0 Open         [TANAL-113] Convert clojure.lang.Compiler/analyze to a map conforming to tools.analyzer.jvm
 
 ========================================
 Task
@@ -828,8 +830,8 @@ Defect
 ========================================
 Enhancement
 
+   1 Open         [TNS-35] Read/analyze ClojureScript and conditional read sources
    1 Open         [TNS-5] Allow any valid .clj* source file to be parsed/analysed
-   0 Open         [TNS-35] Read/analyze ClojureScript and conditional read sources
    0 Open         [TNS-36] Use java.classpath
 
 
