@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: August 6, 2015
+Date: August 13, 2015
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -41,11 +41,11 @@ Defect
 
    3 Open         [CLJS-677] cljs.reader doesn't support keywords starting with a digit
    3 Open         [CLJS-957] Parallel compilation
+   1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
    1 Bad: Unkn Fi [CLJS-871] .-default property access returns nil
    1 Open         [CLJS-890] Incorrect behaviour of (str obj) when obj has valueOf method
    1 Open         [CLJS-911] Cljs's clojure.string.replace replacement fn takes different args to Clj's clojure.string.replace
    1 Bad: Unkn Fi [CLJS-968] Metadata on function literal inside of a let produces invalid Javascript
-   1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
    0 Bad: Unkn Fi [CLJS-349] cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
    0 Bad: Unkn Fi [CLJS-375] loop doesn't seem to preserve tag information as evidenced by extra cljs.core.truth_ calls
    0 Bad: Unkn Fi [CLJS-434] ClojureScript compiler prepends "self__" to defmulti forms when metadata in form of ^:field.
@@ -68,17 +68,13 @@ Defect
    0 Bad: Unkn Fi [CLJS-1271] Missing warning when assigning namespaces via def
    0 Bad: Unkn Fi [CLJS-1280] double analysis warnings when using cljs.repl/load-file special fn
    0 Bad: Unkn Fi [CLJS-1286] REPL environment should be able to provide advice if source mapping fails
-   0 Bad: Unkn Fi [CLJS-1287] CLJS exceptions should use same format as Clojure 1.7 (#exception {...})
    0 Bad: Unkn Fi [CLJS-1297] defrecord does not emit IKVReduce protocol
    0 Bad: Unkn Fi [CLJS-1298] source-on-disk conditional should include :source-url
-   0 Bad: Unkn Fi [CLJS-1299] reader/read-string does not handle \space literal
    0 Bad: Unkn Fi [CLJS-1300] REPLs do no write out updated deps.js when compiling files
    0 Bad: Unkn Fi [CLJS-1302] (js/goog.base (js* "this")) no longer works
-   0 Bad: Unkn Fi [CLJS-1305] Node.js REPL load-file regression 
    0 Bad: Unkn Fi [CLJS-1315] Warning on Google Closure enum property access with /
    0 Bad: Unkn Fi [CLJS-1332] investigate inlining version of cljs.core/get
-   0 Bad: Unkn Fi [CLJS-1393] *target* is not overridden by :target :nodejs when :optimizations :none
-   0 Vetted       [CLJS-1397] Honor :def-emits-var for def w/o init and declare
+   0 Vetted       [CLJS-1400] self-host: doseq stuck on first item
 
 ========================================
 Enhancement
@@ -92,7 +88,6 @@ Enhancement
    1 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
    1 Bad: Unkn Fi [CLJS-1238] Setting *main-cli-fn* when using :target :nodejs shouldn't be manditory
    1 Bad: Unkn Fi [CLJS-1350] Compiler support for browser REPL
-   1 Open         [CLJS-1017] Support :main for :advanced builds
    1 Bad: Unkn Fi [CLJS-1312] JS module support: Properly convert UMD pattern
    0 Bad: Unkn Fi [CLJS-773] Use unchecked-*-int functions for real 32-bit math
    0 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
@@ -109,6 +104,10 @@ Enhancement
    0 Bad: Unkn Fi [CLJS-1277] relax requirement that files must declare a namespace, default to cljs.user
    0 Bad: Unkn Fi [CLJS-1328] Support defrecord reader tags
    0 Bad: Unkn Fi [CLJS-1373] Generalize CLJS-1324, check invokes of all IFn implementors
+   0 Bad: Unkn Fi [CLJS-1402] Source Mapping Closure Error Logger
+   0 Bad: Unkn Fi [CLJS-1412] Add JSDoc type information to individual IFn methods
+   0 Bad: Unkn Fi [CLJS-1415] Handling JSDoc param name [x] optional syntax
+   0 Bad: Unkn Fi [CLJS-1419] enhance numeric inference, if + number? test on local var should tag local var in the successful branch
 
 ========================================
 Task

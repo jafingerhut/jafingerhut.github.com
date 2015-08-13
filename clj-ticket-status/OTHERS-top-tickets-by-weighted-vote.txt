@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: August 6, 2015
+Date: August 13, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -86,7 +86,7 @@ Defect
              Eduard Bondarenko (1/2)
     0.50   1 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
              Willy Blandin (1/2)
-    0.25   1 Triaged      [ASYNC-124] put! into channel that has mapcat transducer fails to dispatch more than one waiting takes
+    0.25   1 Bad: Match n [ASYNC-124] put! into channel that has mapcat transducer fails to dispatch more than one waiting takes
              Daniel Compton (1/4)
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
     0.00   0 Open         [ASYNC-51] Core.async memory leak in Safari and Mobile Safari
@@ -110,10 +110,10 @@ Defect
     0.00   0 Open         [ASYNC-132] Can't close over locals in #js in go
     0.00   0 Open         [ASYNC-134] async/alts!! with an empty vector throws ArrayIndexOutOfBoundsException
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
-    0.00   0 Triaged      [ASYNC-43] queue-dispatcher should fall back to process.nextTick if setImmediate is not available
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
     0.00   0 Triaged      [ASYNC-113] alt!! should not evaluate the :default expr if a non-default clause is selected
     0.00   0 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
+    0.00   0 Triaged      [ASYNC-138] Go blocks leak memory
 
 ========================================
 Enhancement
@@ -142,7 +142,7 @@ Enhancement
     2.00   2 Triaged      [ASYNC-67] Can we get a generic sink operation?
              Adam Clements (1)
              Jan-Paul Bultmann (1)
-    1.75   3 Bad: Match n [ASYNC-103] promise-chan
+    1.75   3 Vetted       [ASYNC-103] promise-chan
              Leon Grapenthin (1)
              Wilker Lúcio da Silva (1/2)
              Daniel Compton (1/4)
@@ -182,10 +182,11 @@ Project CCACHE tickets
 ========================================
 Defect
 
+    2.00   2 Open         [CCACHE-41] defcache needs to impl. iterator() to avoid Clojure 1.7 breakage
+             Alex Miller (1)
+             Ragnar Dahlen (1)
     1.00   1 Open         [CCACHE-31] SoftCaches update in-place, other cache types don't
              Ambrose Bonnaire-Sergeant (1)
-    1.00   1 Open         [CCACHE-41] defcache needs to impl. iterator() to avoid Clojure 1.7 breakage
-             Alex Miller (1)
     0.00   0 Open         [CCACHE-15] It appears that TTL cache exhibits quadratic performance (+ its evict is buggy)
     0.00   0 Open         [CCACHE-27] Missing LU and LRU is linear complexity - performance
     0.00   0 Open         [CCACHE-32] LIRSCache defect allows it's memory use to grow without bound
@@ -255,7 +256,6 @@ Defect
     0.00   0 Open         [CLJCLR-38] Use Type.AssemblyQualifiedName in ObjExpr.EmitValue when generating code for types
     0.00   0 Open         [CLJCLR-48] Error when starting Clojure.Main.exe
     0.00   0 Open         [CLJCLR-67] Cannot call new/hidden interface method
-    0.00   0 Open         [CLJCLR-70] Build failed on Linux and OSX
 
 ========================================
 Enhancement
@@ -304,6 +304,8 @@ Defect
     2.00   2 Bad: Match > [CTYP-176] No such var: ana/ns->relpath when loading the ClojureScript typechecker
              Vic Goldfeld (1)
              Vince Broz (1)
+    1.00   1 Bad: Match > [CTYP-262] Accessing keys from a Heterogeneous Map w/ Polymorphic type signature throws type error
+             Joshua Tilles (1)
     1.00   1 Open         [CTYP-129] select-keys on HMap returns Map with union key and value types
              Juho Teperi (1)
     1.00   1 Open         [CTYP-197] No matching arities when defining multiple arity protocol method
@@ -320,7 +322,6 @@ Defect
     0.00   0 Bad: Match > [CTYP-173] (first (filter ...)) type checks in Clojure, not ClojureScript
     0.00   0 Bad: Match > [CTYP-177] Compile error with core.async
     0.00   0 Bad: Match > [CTYP-231] (Array X) is broken and undocumented
-    0.00   0 Bad: Match > [CTYP-262] Accessing keys from a Heterogeneous Map w/ Polymorphic type signature throws type error
     0.00   0 Bad: Unkn Fi [CTYP-232] Let-aliased variabled of HVec lookups should update original HVec
     0.00   0 Bad: Unkn Fi [CTYP-241] Let-aliased variables of plain Map lookups should update original map
     0.00   0 Open         [CTYP-35] Should use fresh names when checking plambdas
@@ -365,6 +366,7 @@ Enhancement
     0.00   0 Bad: Unkn Fi [CTYP-192] Use memoization in file-mapping to improve performance.
     0.00   0 Bad: Unkn Fi [CTYP-239] Search for .cljc files when checking a namespace 
     0.00   0 Bad: Unkn Fi [CTYP-246] Gradually typed namespaces should import untyped vars with a contract
+    0.00   0 Bad: Unkn Fi [CTYP-268] Use clojure.lang.Compiler's analyzer
     0.00   0 Open         [CTYP-9] Support metadata types
     0.00   0 Open         [CTYP-11] Infer good types for loop locals
     0.00   0 Open         [CTYP-12] Handle primitives properly
@@ -428,7 +430,6 @@ Project DCSV tickets
 ========================================
 Defect
 
-    0.00   0 Open         [DCSV-4] \return as record separator with unquoted fields is read as part of the field
     0.00   0 Open         [DCSV-6] read-csv can not handle white-space at end of line
     0.00   0 Open         [DCSV-7] data.csv does not handle BOMs
     0.00   0 Open         [DCSV-8] Allow read-csv to read files without quoting.
@@ -582,9 +583,10 @@ Enhancement
     2.00   2 Open         [JDBC-99] The age of reduce is upon us
              Ghadi Shayban (1)
              Ragnar Dahlen (1)
+    1.00   1 Open         [JDBC-48] Support stored procedures with CallableStatement
+             Dale Peakall (1)
     0.00   0 Open         [JDBC-1] Provide option to return SQL generated / execution stats
     0.00   0 Open         [JDBC-37] Provide support for alternate transaction strategies
-    0.00   0 Open         [JDBC-48] Support stored procedures with CallableStatement
     0.00   0 Open         [JDBC-64] Support multiple result sets?
     0.00   0 Open         [JDBC-104] Prepare-statement should support passing an array of column names to return auto-generated keys
 
@@ -637,6 +639,7 @@ Defect
     0.00   0 Open         [LOGIC-169] equality of non-unique lvars broken for clojure 1.7
     0.00   0 Open         [LOGIC-172] nafc doesn't work with more complex goals
     0.00   0 Open         [LOGIC-173] StackOverflowError when logic variable is unified with a set
+    0.00   0 Open         [LOGIC-174] LCons fails for inequality
 
 ========================================
 Enhancement
@@ -683,6 +686,7 @@ Defect
     0.00   0 Open         [MATCH-105] Regex: only attempt to match string values.
     0.00   0 Open         [MATCH-106] variable binding fails with :or guard
     0.00   0 Open         [MATCH-107] Map pattern with vector key raises "clojure.lang.PersistentVector cannot be cast to clojure.lang.Named" exception
+    0.00   0 Open         [MATCH-111] [CLJS]: Usage of core.match within core.async/go block causes compilation to fail when match cases exceed a certain count
 
 ========================================
 Enhancement
