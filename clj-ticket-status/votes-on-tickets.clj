@@ -428,6 +428,10 @@
   :usernames #{"viebel"},
   :emails #{"viebel@gmail.com"}}
  ("TNS-35" "CLJS-324" "CLJ-1449" "ASYNC-79"),
+ {:display-name "Jeremy German",
+  :usernames #{"jgerman"},
+  :emails #{"jeremy.german@Gmail.com"}}
+ (),
  {:display-name "Dennis Heihoff",
   :usernames #{"kalavox@gmail.com"},
   :emails #{"kalavox@gmail.com"}}
@@ -1065,6 +1069,10 @@
   :usernames #{"ctran"},
   :emails #{"ctran@yahoo.com"}}
  (),
+ {:display-name "Ryohei Kumakiri",
+  :usernames #{"ark6"},
+  :emails #{"rkcut018@gmail.com"}}
+ (),
  {:display-name "Ben Poweski",
   :usernames #{"bpoweski"},
   :emails #{"bpoweski@gmail.com"}}
@@ -1543,7 +1551,7 @@
  {:display-name "James Henderson",
   :usernames #{"jarohen"},
   :emails #{"james@jarohen.me.uk"}}
- (),
+ ("ASYNC-99"),
  {:display-name "Christian H.",
   :usernames #{"chrish1"},
   :emails #{"c.hoedl@gmx.net"}}
@@ -3741,6 +3749,10 @@
   :usernames #{"jolisper"},
   :emails #{"jolisper@gmail.com"}}
  (),
+ {:display-name "Oliver Mooney",
+  :usernames #{"oliverm"},
+  :emails #{"oliver.mooney@gmail.com"}}
+ (),
  {:display-name "Jürgen Hötzel",
   :usernames #{"juergenhoetzel"},
   :emails #{"juergen@archlinux.org"}}
@@ -4882,7 +4894,7 @@
  {:display-name "Zach Oakes",
   :usernames #{"oakes"},
   :emails #{"zsoakes@gmail.com"}}
- (),
+ ("CLJS-1423"),
  {:display-name "Aaron Iba",
   :usernames #{"aiba"},
   :emails #{"ai@aaroniba.net"}}
@@ -5091,6 +5103,10 @@
   :usernames #{"jctheriot"},
   :emails #{"jim.theriot@gmail.com"}}
  (),
+ {:display-name "Matthew Nespor",
+  :usernames #{"mnespor"},
+  :emails #{"mnespor@gmail.com"}}
+ ("CLJS-1428"),
  {:display-name "JIRA Admin",
   :usernames #{"admin"},
   :emails #{"alex.miller@cognitect.com"}}
@@ -5789,6 +5805,10 @@
   :usernames #{"sjtai000"},
   :emails #{"sjtai000@gmail.com"}}
  (),
+ {:display-name "Miro Kubicek",
+  :usernames #{"mikub"},
+  :emails #{"miroslav.kubicek@gmail.com"}}
+ (),
  {:display-name "Daniel Glauser",
   :usernames #{"danielglauser"},
   :emails #{"danglauser@gmail.com"}}
@@ -5935,7 +5955,7 @@
  {:display-name "Mike Fikes",
   :usernames #{"mfikes"},
   :emails #{"mike@fikesfarm.com"}}
- ("CLJS-1312" "CLJS-1241" "CLJS-957" "CLJS-901" "CLJS-555"),
+ ("CLJS-1241" "CLJS-957" "CLJS-901" "CLJS-555"),
  {:display-name "Jon Eisen",
   :usernames #{"yanatan16"},
   :emails #{"jon@joneisen.me"}}
@@ -7614,6 +7634,10 @@
  {:display-name "Nguyễn Tuấn Anh",
   :usernames #{"ubolonton"},
   :emails #{"ubolonton@gmail.com"}}
+ (),
+ {:display-name "Ben Cook",
+  :usernames #{"blx"},
+  :emails #{"b@bencook.ca"}}
  (),
  {:display-name "Shahar",
   :usernames #{"szx"},
