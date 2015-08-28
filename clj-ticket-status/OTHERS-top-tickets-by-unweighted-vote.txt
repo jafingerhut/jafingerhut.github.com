@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: August 20, 2015
+Date: August 27, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -47,6 +47,7 @@ Defect
 Enhancement
 
    0 Open         [ALGOG-5] Addition of generic modulus
+   0 Open         [ALGOG-12] Implement abs, round for additional number types (patch attached)
 
 
 Project ALGOM tickets
@@ -94,6 +95,7 @@ Defect
    0 Open         [ASYNC-132] Can't close over locals in #js in go
    0 Open         [ASYNC-134] async/alts!! with an empty vector throws ArrayIndexOutOfBoundsException
    0 Triaged      [ASYNC-138] Go blocks leak memory
+   0 Open         [ASYNC-144] pipeline-async docstring correction
 
 ========================================
 Enhancement
@@ -204,12 +206,14 @@ Defect
    0 Open         [CLJCLR-48] Error when starting Clojure.Main.exe
    0 Open         [CLJCLR-67] Cannot call new/hidden interface method
    0 Open         [CLJCLR-73] Regularize handling of clojure.compile.x environment variables
+   0 Open         [CLJCLR-74] pprint throws exception on very specific input
 
 ========================================
 Enhancement
 
    1 Open         [CLJCLR-25] Clojure.Compile.exe create single dll for all compiled .clj files
    0 Open         [CLJCLR-69] Make more fields public in AST nodes
+   0 Open         [CLJCLR-75] AST nodes need to record the context in which it was parsed (RHC).
 
 
 Project CMEMOIZE tickets
@@ -226,6 +230,7 @@ Defect
 Enhancement
 
    0 Open         [CMEMOIZE-9] memo-swap! is misnamed
+   0 Open         [CMEMOIZE-20] Option for snapshot to return a lazy sequence
 
 
 Project CRRBV tickets
@@ -287,6 +292,7 @@ Defect
    0 Open         [CTYP-242] adding stop-gap annotation for 'hash-map' results in runtime exception
    0 Open         [CTYP-267] bigdec, bigint and biginteger eats (U Number String)
    0 Open         [CTYP-270] "Method core too large!" with protocols (more than 38 functions in the protocol)
+   0 Bad: Unkn Fi [CTYP-272] check-ns: Assert failed: (r/Type? t)
 
 ========================================
 Enhancement
@@ -337,6 +343,7 @@ Enhancement
    0 Open         [CTYP-260] Add Queue and BlockingQueue to altered classes
    0 Bad: Match > [CTYP-261] Typed Transients patch
    0 Bad: Unkn Fi [CTYP-268] Use clojure.lang.Compiler's analyzer
+   0 Open         [CTYP-271] reduce form with (U nil Num) accumulator needs inst to type check
 
 ========================================
 Task
@@ -495,25 +502,12 @@ Enhancement
 
 Project JDBC tickets
 ========================================
-Defect
-
-   0 Open         [JDBC-91] Issue with H2 "script" command
-   0 Open         [JDBC-107] metadata-result leaks ResultSets
-
-========================================
 Enhancement
 
    2 Open         [JDBC-99] The age of reduce is upon us
    1 Open         [JDBC-48] Support stored procedures with CallableStatement
-   0 Open         [JDBC-1] Provide option to return SQL generated / execution stats
    0 Open         [JDBC-37] Provide support for alternate transaction strategies
    0 Open         [JDBC-64] Support multiple result sets?
-   0 Open         [JDBC-104] Prepare-statement should support passing an array of column names to return auto-generated keys
-
-========================================
-Task
-
-   0 Open         [JDBC-88] Update :arglists metadata so it no longer confuses Eastwood
 
 
 Project JMX tickets
@@ -713,6 +707,7 @@ Project TCHECK tickets
 Defect
 
    1 Open         [TCHECK-61] defspec throwing errors in cljs
+   1 Open         [TCHECK-73] gen/int can generate doubles
    0 Open         [TCHECK-26] defspec does not respect (is (thrown? ...))
    0 Open         [TCHECK-32] Default sizing on gen/any needs re-evaluation
    0 Open         [TCHECK-33] test.check is entangled with clojure.test
@@ -723,6 +718,7 @@ Defect
    0 Open         [TCHECK-74] gen-int generates very small ints
    0 Open         [TCHECK-75] gen-seq->seq-gen is named out of sync with its description/comment (and presumably impl).
    0 Open         [TCHECK-76] `sample` should pass num-samples to `sample-seq` as max-size to avoid unnecessary generation of cases.
+   0 Open         [TCHECK-77] randomness lost
 
 ========================================
 Enhancement
@@ -753,19 +749,10 @@ Enhancement
    0 Open         [TCHECK-70] Redesign gen/choose
    0 Open         [TCHECK-71] Exponential generator
    0 Open         [TCHECK-72] Poisson generator
+   0 Open         [TCHECK-78] Minor refactoring: Replace (let [_ _] (if empty? a b) with (if-let [_ (seq _)] b a)
 
 
 Project TCLI tickets
-========================================
-Defect
-
-   0 Open         [TCLI-10] potential incorrect parsing
-
-========================================
-Enhancement
-
-   0 Open         [TCLI-11] Generated options text excludes previous banner & so the help text is confusing
-
 
 Project TEMJVM tickets
 ========================================
