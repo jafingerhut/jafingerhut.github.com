@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: August 27, 2015
+Date: September 3, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -61,13 +61,14 @@ Defect
    3 Triaged      [ASYNC-100] core.async with multiple catch blocks causing weird loop behaviour
    2 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
    2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
+   2 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
    1 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
    1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
    1 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
    1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
-   1 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
    1 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
    1 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
+   1 Triaged      [ASYNC-138] Go blocks leak memory
    1 Bad: Match n [ASYNC-124] put! into channel that has mapcat transducer fails to dispatch more than one waiting takes
    0 Triaged      [ASYNC-4] Record literals become ordinary maps
    0 Open         [ASYNC-39] Processes spawned by mix never terminate
@@ -94,7 +95,6 @@ Defect
    0 Open         [ASYNC-129] Channels with transducer using reduced don't work as intended
    0 Open         [ASYNC-132] Can't close over locals in #js in go
    0 Open         [ASYNC-134] async/alts!! with an empty vector throws ArrayIndexOutOfBoundsException
-   0 Triaged      [ASYNC-138] Go blocks leak memory
    0 Open         [ASYNC-144] pipeline-async docstring correction
 
 ========================================
@@ -102,7 +102,7 @@ Enhancement
 
    9 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
    4 Open         [ASYNC-137] Make (<! (timeout 0)) be closer to 0
-   3 Vetted       [ASYNC-103] promise-chan
+   3 Bad: Match n [ASYNC-103] promise-chan
    2 Triaged      [ASYNC-67] Can we get a generic sink operation?
    2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
    2 Open         [ASYNC-107] Improved docstring for alt!
@@ -240,6 +240,7 @@ Defect
    0 Open         [CRRBV-9] Repeated subvec and catvec fails
    0 Open         [CRRBV-10] Calling empty in CLJS results in a PersistentVector
    0 Open         [CRRBV-11] Issue with Clojure 1.8.0-alpha2 Tuples
+   0 Open         [CRRBV-12] ClassCastException: clojure.lang.PersistentVector$Node cannot be cast to [I
 
 ========================================
 Enhancement
@@ -518,6 +519,7 @@ Enhancement
    0 Open         [JMX-5] Timeout support
    0 Open         [JMX-9] Eliminate several uses of reflection in java.jmx
    0 Open         [JMX-12] Throw exception when overloaded operation is ambiguous
+   0 Open         [JMX-17] Unregister MBean
 
 
 Project JVMTA tickets
@@ -749,7 +751,6 @@ Enhancement
    0 Open         [TCHECK-70] Redesign gen/choose
    0 Open         [TCHECK-71] Exponential generator
    0 Open         [TCHECK-72] Poisson generator
-   0 Open         [TCHECK-78] Minor refactoring: Replace (let [_ _] (if empty? a b) with (if-let [_ (seq _)] b a)
 
 
 Project TCLI tickets

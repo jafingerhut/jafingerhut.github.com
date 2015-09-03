@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: August 27, 2015
+Date: September 3, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -74,6 +74,9 @@ Defect
     1.50   2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
              Ryan Sundberg (1)
              Howard Lewis Ship (1/2)
+    1.00   2 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
+             Colin Taylor (1/2)
+             Gary Trakhman (1/2)
     1.00   1 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
              Marcus Lewis (1)
     1.00   1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
@@ -82,12 +85,12 @@ Defect
              Thomas Down (1)
     1.00   1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
              Patrick Killean (1)
-    0.50   1 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
-             Colin Taylor (1/2)
     0.50   1 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
              Eduard Bondarenko (1/2)
     0.50   1 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
              Willy Blandin (1/2)
+    0.50   1 Triaged      [ASYNC-138] Go blocks leak memory
+             Gary Trakhman (1/2)
     0.25   1 Bad: Match n [ASYNC-124] put! into channel that has mapcat transducer fails to dispatch more than one waiting takes
              Daniel Compton (1/4)
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
@@ -116,7 +119,6 @@ Defect
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
     0.00   0 Triaged      [ASYNC-113] alt!! should not evaluate the :default expr if a non-default clause is selected
     0.00   0 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
-    0.00   0 Triaged      [ASYNC-138] Go blocks leak memory
 
 ========================================
 Enhancement
@@ -145,7 +147,7 @@ Enhancement
     2.00   2 Triaged      [ASYNC-67] Can we get a generic sink operation?
              Adam Clements (1)
              Jan-Paul Bultmann (1)
-    1.75   3 Vetted       [ASYNC-103] promise-chan
+    1.75   3 Bad: Match n [ASYNC-103] promise-chan
              Leon Grapenthin (1)
              Wilker Lúcio da Silva (1/2)
              Daniel Compton (1/4)
@@ -300,6 +302,7 @@ Defect
     0.00   0 Open         [CRRBV-9] Repeated subvec and catvec fails
     0.00   0 Open         [CRRBV-10] Calling empty in CLJS results in a PersistentVector
     0.00   0 Open         [CRRBV-11] Issue with Clojure 1.8.0-alpha2 Tuples
+    0.00   0 Open         [CRRBV-12] ClassCastException: clojure.lang.PersistentVector$Node cannot be cast to [I
 
 ========================================
 Enhancement
@@ -605,6 +608,7 @@ Enhancement
     0.00   0 Open         [JMX-5] Timeout support
     0.00   0 Open         [JMX-9] Eliminate several uses of reflection in java.jmx
     0.00   0 Open         [JMX-12] Throw exception when overloaded operation is ambiguous
+    0.00   0 Open         [JMX-17] Unregister MBean
 
 
 Project JVMTA tickets
@@ -868,7 +872,6 @@ Enhancement
     0.00   0 Open         [TCHECK-70] Redesign gen/choose
     0.00   0 Open         [TCHECK-71] Exponential generator
     0.00   0 Open         [TCHECK-72] Poisson generator
-    0.00   0 Open         [TCHECK-78] Minor refactoring: Replace (let [_ _] (if empty? a b) with (if-let [_ (seq _)] b a)
 
 
 Project TCLI tickets
