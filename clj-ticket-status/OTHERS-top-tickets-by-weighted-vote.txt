@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: September 3, 2015
+Date: September 11, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -56,14 +56,15 @@ Project ASYNC tickets
 ========================================
 Defect
 
+    4.00   4 Open         [ASYNC-99] go block with <! inside protocol method invocation fails to compile (dispatch :protocol-invoke on '-item-to-ssa')
+             Daniel Glauser (1)
+             James Henderson (1)
+             Ryan N Smith (1)
+             Sathyavijayan Vittal (1)
     3.00   3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
              Hugo Duncan (1)
              Martin Raison (1)
              Michael Nygard (1)
-    3.00   3 Open         [ASYNC-99] go block with <! inside protocol method invocation fails to compile (dispatch :protocol-invoke on '-item-to-ssa')
-             Daniel Glauser (1)
-             James Henderson (1)
-             Sathyavijayan Vittal (1)
     2.50   3 Triaged      [ASYNC-100] core.async with multiple catch blocks causing weird loop behaviour
              Ken Allen (1)
              Paul Ostazeski (1)
@@ -115,6 +116,7 @@ Defect
     0.00   0 Open         [ASYNC-132] Can't close over locals in #js in go
     0.00   0 Open         [ASYNC-134] async/alts!! with an empty vector throws ArrayIndexOutOfBoundsException
     0.00   0 Open         [ASYNC-144] pipeline-async docstring correction
+    0.00   0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
     0.00   0 Triaged      [ASYNC-113] alt!! should not evaluate the :default expr if a non-default clause is selected
@@ -160,6 +162,8 @@ Enhancement
     1.00   2 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
              Max Penet (1/2)
              Vlad Bokov (1/2)
+    1.00   1 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
+             Miro Kubicek (1)
     0.50   1 Open         [ASYNC-71] exception behavior for thread macro is hard coded
              Vlad Bokov (1/2)
     0.50   1 Open         [ASYNC-119] ClojureScript: combine cljs.core.async.macros and cljs.core.async
@@ -167,7 +171,6 @@ Enhancement
     0.25   1 Triaged      [ASYNC-126] Add public channel "closed?" predicate
              Daniel Compton (1/4)
     0.00   0 Open         [ASYNC-46] Add optional default channel to 'pub'
-    0.00   0 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
     0.00   0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
     0.00   0 Open         [ASYNC-130] Improve put! docstring to mention no more than 1024 pending puts are allowed
     0.00   0 Open         [ASYNC-131] go! or "go-now" for CLJS
@@ -200,6 +203,7 @@ Defect
     0.00   0 Open         [CCACHE-32] LIRSCache defect allows it's memory use to grow without bound
     0.00   0 Open         [CCACHE-39] FIFOCache member exempted from expulsion after evict
     0.00   0 Open         [CCACHE-40] FIFOCache StackOverflowError with high :threshold due to concat
+    0.00   0 Open         [CCACHE-43] through method should always have cache as first argument to make it more friendly for swap!
 
 ========================================
 Enhancement
@@ -266,6 +270,7 @@ Defect
     0.00   0 Open         [CLJCLR-67] Cannot call new/hidden interface method
     0.00   0 Open         [CLJCLR-73] Regularize handling of clojure.compile.x environment variables
     0.00   0 Open         [CLJCLR-74] pprint throws exception on very specific input
+    0.00   0 Open         [CLJCLR-76] Reader Conditionals do not behave as expected on the CLR
 
 ========================================
 Enhancement
@@ -361,6 +366,8 @@ Defect
     0.00   0 Open         [CTYP-242] adding stop-gap annotation for 'hash-map' results in runtime exception
     0.00   0 Open         [CTYP-267] bigdec, bigint and biginteger eats (U Number String)
     0.00   0 Open         [CTYP-270] "Method core too large!" with protocols (more than 38 functions in the protocol)
+    0.00   0 Open         [CTYP-273] `recur` treated differently from a recursive call
+    0.00   0 Open         [CTYP-274] Inferred type for {{defn}} and {{typed/fn}} with the same body are different
 
 ========================================
 Enhancement
@@ -431,7 +438,8 @@ Project DAVL tickets
 ========================================
 Defect
 
-    0.00   0 Open         [DAVL-6] ClojureScript version IMeta & IFn protocols implementation broken
+    1.00   1 Open         [DAVL-6] ClojureScript version IMeta & IFn protocols implementation broken
+             Christopher M Balz (1)
 
 
 Project DCODEC tickets
@@ -557,7 +565,8 @@ Enhancement
              Aron Nopanen (1)
              Jan-Paul Bultmann (1)
              Jason Gilman (1)
-    1.00   1 Open         [DXML-10] Support for DOCTYPE when emitting XML
+    2.00   2 Open         [DXML-10] Support for DOCTYPE when emitting XML
+             Aaron Iba (1)
              Stuart Sierra (1)
     0.00   0 Open         [DXML-22] Adding hiccup generation function for elements
     0.00   0 Open         [DXML-25] Emit Empty Elements using EmptyElementTag
@@ -758,13 +767,14 @@ Enhancement
              Lars Andersen (1/2)
     1.00   1 Open         [NREPL-77] Expose installed middlewares via some mechanism
              Dirk Geurs (1)
+    1.00   1 Open         [NREPL-78] Add support for REPL evaluations that include reader conditionals
+             Peter Taoussanis (1)
     0.00   0 Open         [NREPL-4] Provide sane multiplexing of output in the face of multithreaded, asynchronous operation
     0.00   0 Open         [NREPL-15] Allow clients to specify an ID for newly-retained sessions
     0.00   0 Open         [NREPL-29] Provide a mechanism for overriding an operation
     0.00   0 Open         [NREPL-43] Document the availability/usage of *e, *1, *2, ... in nREPL
     0.00   0 Open         [NREPL-44] Expose JMX MBean to provide list of available nREPL endpoints
     0.00   0 Open         [NREPL-55] Support custom value rendering middleware
-    0.00   0 Open         [NREPL-78] Add support for REPL evaluations that include reader conditionals
 
 ========================================
 Task
@@ -828,7 +838,6 @@ Defect
     0.00   0 Open         [TCHECK-74] gen-int generates very small ints
     0.00   0 Open         [TCHECK-75] gen-seq->seq-gen is named out of sync with its description/comment (and presumably impl).
     0.00   0 Open         [TCHECK-76] `sample` should pass num-samples to `sample-seq` as max-size to avoid unnecessary generation of cases.
-    0.00   0 Open         [TCHECK-77] randomness lost
 
 ========================================
 Enhancement
@@ -872,6 +881,7 @@ Enhancement
     0.00   0 Open         [TCHECK-70] Redesign gen/choose
     0.00   0 Open         [TCHECK-71] Exponential generator
     0.00   0 Open         [TCHECK-72] Poisson generator
+    0.00   0 Open         [TCHECK-79] Convert to .cljc
 
 
 Project TCLI tickets
@@ -956,6 +966,7 @@ Enhancement
     0.50   1 Open         [TNS-5] Allow any valid .clj* source file to be parsed/analysed
              deliminator (1/2)
     0.00   0 Open         [TNS-36] Use java.classpath
+    0.00   0 Open         [TNS-37] c.t.n.move: does not support to move .cljc files
 
 
 Project TRDR tickets
