@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: September 11, 2015
+Date: September 17, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -294,11 +294,13 @@ Defect
    0 Bad: Unkn Fi [CTYP-232] Let-aliased variabled of HVec lookups should update original HVec
    0 Bad: Unkn Fi [CTYP-241] Let-aliased variables of plain Map lookups should update original map
    0 Open         [CTYP-242] adding stop-gap annotation for 'hash-map' results in runtime exception
-   0 Open         [CTYP-267] bigdec, bigint and biginteger eats (U Number String)
-   0 Open         [CTYP-270] "Method core too large!" with protocols (more than 38 functions in the protocol)
+   0 Bad: Match > [CTYP-270] "Method code too large!" with protocols (more than 38 functions in the protocol)
    0 Bad: Unkn Fi [CTYP-272] check-ns: Assert failed: (r/Type? t)
-   0 Open         [CTYP-273] `recur` treated differently from a recursive call
-   0 Open         [CTYP-274] Inferred type for {{defn}} and {{typed/fn}} with the same body are different
+   0 Bad: Unkn Fi [CTYP-273] `recur` treated differently from a recursive call
+   0 Bad: Unkn Fi [CTYP-274] Inferred type for {{defn}} and {{typed/fn}} with the same body are different
+   0 Bad: Unkn Fi [CTYP-275] Bad call to path-type: nil
+   0 Bad: Unkn Fi [CTYP-277] Typechecking fails with internal assert error
+   0 Open         [CTYP-278] Impossible to annotate protocol in other namespace
 
 ========================================
 Enhancement
@@ -348,8 +350,10 @@ Enhancement
    0 Bad: Match > [CTYP-249] Propositional subtyping should consider the lexical type environment
    0 Open         [CTYP-260] Add Queue and BlockingQueue to altered classes
    0 Bad: Match > [CTYP-261] Typed Transients patch
+   0 Bad: Unkn Fi [CTYP-267] bigdec, bigint and biginteger eats (U Number String)
    0 Bad: Unkn Fi [CTYP-268] Use clojure.lang.Compiler's analyzer
-   0 Open         [CTYP-271] reduce form with (U nil Num) accumulator needs inst to type check
+   0 Bad: Match > [CTYP-271] reduce form with (U nil Num) accumulator needs inst to type check
+   0 Bad: Match > [CTYP-276] first on HVec strange/wrong result
 
 ========================================
 Task
@@ -476,7 +480,7 @@ Defect
 ========================================
 Enhancement
 
-  10 Open         [DXML-4] Namespaces support
+  12 Open         [DXML-4] Namespaces support
    3 Open         [DXML-13] Support for preserving whitespace between tags
    2 Open         [DXML-10] Support for DOCTYPE when emitting XML
    0 Open         [DXML-22] Adding hiccup generation function for elements
@@ -656,9 +660,7 @@ Defect
 ========================================
 Enhancement
 
-  10 Bad: Unkn Fi [NREPL-59] Tracking source form positions in eval
    1 Open         [NREPL-77] Expose installed middlewares via some mechanism
-   1 Open         [NREPL-78] Add support for REPL evaluations that include reader conditionals
    0 Open         [NREPL-4] Provide sane multiplexing of output in the face of multithreaded, asynchronous operation
    0 Open         [NREPL-15] Allow clients to specify an ID for newly-retained sessions
    0 Open         [NREPL-29] Provide a mechanism for overriding an operation

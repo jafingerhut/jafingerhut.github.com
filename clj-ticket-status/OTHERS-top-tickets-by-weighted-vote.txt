@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: September 11, 2015
+Date: September 17, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -340,9 +340,14 @@ Defect
     0.00   0 Bad: Match > [CTYP-173] (first (filter ...)) type checks in Clojure, not ClojureScript
     0.00   0 Bad: Match > [CTYP-177] Compile error with core.async
     0.00   0 Bad: Match > [CTYP-231] (Array X) is broken and undocumented
+    0.00   0 Bad: Match > [CTYP-270] "Method code too large!" with protocols (more than 38 functions in the protocol)
     0.00   0 Bad: Unkn Fi [CTYP-232] Let-aliased variabled of HVec lookups should update original HVec
     0.00   0 Bad: Unkn Fi [CTYP-241] Let-aliased variables of plain Map lookups should update original map
     0.00   0 Bad: Unkn Fi [CTYP-272] check-ns: Assert failed: (r/Type? t)
+    0.00   0 Bad: Unkn Fi [CTYP-273] `recur` treated differently from a recursive call
+    0.00   0 Bad: Unkn Fi [CTYP-274] Inferred type for {{defn}} and {{typed/fn}} with the same body are different
+    0.00   0 Bad: Unkn Fi [CTYP-275] Bad call to path-type: nil
+    0.00   0 Bad: Unkn Fi [CTYP-277] Typechecking fails with internal assert error
     0.00   0 Open         [CTYP-35] Should use fresh names when checking plambdas
     0.00   0 Open         [CTYP-47] Expected: IFn, Actual (Fn [Any -> Any])
     0.00   0 Open         [CTYP-171] nil should not be treated as subtype of repeat list/vector
@@ -364,10 +369,7 @@ Defect
     0.00   0 Open         [CTYP-225] Intersections of value types broken
     0.00   0 Open         [CTYP-228] Type signature for sort is incorrect - never returns nil
     0.00   0 Open         [CTYP-242] adding stop-gap annotation for 'hash-map' results in runtime exception
-    0.00   0 Open         [CTYP-267] bigdec, bigint and biginteger eats (U Number String)
-    0.00   0 Open         [CTYP-270] "Method core too large!" with protocols (more than 38 functions in the protocol)
-    0.00   0 Open         [CTYP-273] `recur` treated differently from a recursive call
-    0.00   0 Open         [CTYP-274] Inferred type for {{defn}} and {{typed/fn}} with the same body are different
+    0.00   0 Open         [CTYP-278] Impossible to annotate protocol in other namespace
 
 ========================================
 Enhancement
@@ -385,9 +387,12 @@ Enhancement
     0.00   0 Bad: Match > [CTYP-235] Warn on duplicate defalias'
     0.00   0 Bad: Match > [CTYP-249] Propositional subtyping should consider the lexical type environment
     0.00   0 Bad: Match > [CTYP-261] Typed Transients patch
+    0.00   0 Bad: Match > [CTYP-271] reduce form with (U nil Num) accumulator needs inst to type check
+    0.00   0 Bad: Match > [CTYP-276] first on HVec strange/wrong result
     0.00   0 Bad: Unkn Fi [CTYP-192] Use memoization in file-mapping to improve performance.
     0.00   0 Bad: Unkn Fi [CTYP-239] Search for .cljc files when checking a namespace 
     0.00   0 Bad: Unkn Fi [CTYP-246] Gradually typed namespaces should import untyped vars with a contract
+    0.00   0 Bad: Unkn Fi [CTYP-267] bigdec, bigint and biginteger eats (U Number String)
     0.00   0 Bad: Unkn Fi [CTYP-268] Use clojure.lang.Compiler's analyzer
     0.00   0 Open         [CTYP-9] Support metadata types
     0.00   0 Open         [CTYP-11] Infer good types for loop locals
@@ -421,7 +426,6 @@ Enhancement
     0.00   0 Open         [CTYP-243] Dispatch on set of keys
     0.00   0 Open         [CTYP-244] Filtering with an instantiated identity function doesn't guarantee removal of nil
     0.00   0 Open         [CTYP-260] Add Queue and BlockingQueue to altered classes
-    0.00   0 Open         [CTYP-271] reduce form with (U nil Num) accumulator needs inst to type check
     0.00   0 Triaged      [CTYP-217] Basic support for transients
 
 ========================================
@@ -550,15 +554,17 @@ Defect
 ========================================
 Enhancement
 
-   10.00  10 Open         [DXML-4] Namespaces support
+   12.00  12 Open         [DXML-4] Namespaces support
              Dan Lipsitt (1)
              Dirk Geurs (1)
              Gary Trakhman (1)
              Greg Chapman (1)
+             Joshua Griffith (1)
              Mark Feeney (1)
              Martin Clausen (1)
              Philip Potter (1)
              Roan OSullivan (1)
+             Taylor Fausak (1)
              Thomas Engelschmidt (1)
              gshomo (1)
     3.00   3 Open         [DXML-13] Support for preserving whitespace between tags
@@ -741,8 +747,8 @@ Defect
     2.00   2 Open         [NREPL-3] Adopt default port
              Andrew Rosa (1)
              Bozhidar Batsov (1)
-    0.50   1 Open         [NREPL-69] Interrupt of load-file generates java.lang.ThreadDeath exception
-             Lars Andersen (1/2)
+    1.00   1 Open         [NREPL-69] Interrupt of load-file generates java.lang.ThreadDeath exception
+             Lars Andersen (1)
     0.00   0 Open         [NREPL-24] :session key is overloaded
     0.00   0 Open         [NREPL-28] Clarify semantics for String encoding
     0.00   0 Open         [NREPL-33] Consider making session and eval functionality more accessible
@@ -754,21 +760,8 @@ Defect
 ========================================
 Enhancement
 
-    9.50  10 Bad: Unkn Fi [NREPL-59] Tracking source form positions in eval
-             Akiva Schoen (1)
-             Chris Sims (1)
-             James Elliott (1)
-             John Wiseman (1)
-             Leon Grapenthin (1)
-             Michael Blume (1)
-             Reid McKenzie (1)
-             Sean Corfield (1)
-             Sven Richter (1)
-             Lars Andersen (1/2)
     1.00   1 Open         [NREPL-77] Expose installed middlewares via some mechanism
              Dirk Geurs (1)
-    1.00   1 Open         [NREPL-78] Add support for REPL evaluations that include reader conditionals
-             Peter Taoussanis (1)
     0.00   0 Open         [NREPL-4] Provide sane multiplexing of output in the face of multithreaded, asynchronous operation
     0.00   0 Open         [NREPL-15] Allow clients to specify an ID for newly-retained sessions
     0.00   0 Open         [NREPL-29] Provide a mechanism for overriding an operation
