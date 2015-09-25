@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: September 17, 2015
+Date: September 24, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -117,6 +117,7 @@ Defect
     0.00   0 Open         [ASYNC-134] async/alts!! with an empty vector throws ArrayIndexOutOfBoundsException
     0.00   0 Open         [ASYNC-144] pipeline-async docstring correction
     0.00   0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
+    0.00   0 Open         [ASYNC-147] subscriber blocks other subscriber of a topic
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
     0.00   0 Triaged      [ASYNC-113] alt!! should not evaluate the :default expr if a non-default clause is selected
@@ -271,6 +272,7 @@ Defect
     0.00   0 Open         [CLJCLR-73] Regularize handling of clojure.compile.x environment variables
     0.00   0 Open         [CLJCLR-74] pprint throws exception on very specific input
     0.00   0 Open         [CLJCLR-76] Reader Conditionals do not behave as expected on the CLR
+    0.00   0 Open         [CLJCLR-77] resolve fails in compiled code, but works in source-code
 
 ========================================
 Enhancement
@@ -374,7 +376,8 @@ Defect
 ========================================
 Enhancement
 
-    2.00   2 Bad: Match > [CTYP-167] Several failure cases for comp for polyadic fns and type variables
+    3.00   3 Bad: Match > [CTYP-167] Several failure cases for comp for polyadic fns and type variables
+             Chris McDevitt (1)
              Marc O'Morain (1)
              Oskar Wickstrom (1)
     1.00   1 Bad: Match > [CTYP-133] Typechecker fails when checking involves an object from reify
@@ -550,6 +553,7 @@ Defect
     0.00   0 Open         [DXML-15] data.xml can't parse own output if there's a colon in an attribute name
     0.00   0 Open         [DXML-23] Prefix is null in Inkscape SVG
     0.00   0 Open         [DXML-27] Element java.util.Date throws IllegalArgumentException
+    0.00   0 Open         [DXML-28] pull-seq :characters events are not compatible with emit-event
 
 ========================================
 Enhancement
@@ -605,8 +609,9 @@ Project JDBC tickets
 ========================================
 Enhancement
 
-    2.00   2 Open         [JDBC-99] The age of reduce is upon us
+    3.00   3 Open         [JDBC-99] The age of reduce is upon us
              Ghadi Shayban (1)
+             J.S.&nbsp;Choi (1)
              Ragnar Dahlen (1)
     1.00   1 Open         [JDBC-48] Support stored procedures with CallableStatement
              Dale Peakall (1)
@@ -705,7 +710,7 @@ Defect
     0.00   0 Open         [MATCH-105] Regex: only attempt to match string values.
     0.00   0 Open         [MATCH-106] variable binding fails with :or guard
     0.00   0 Open         [MATCH-107] Map pattern with vector key raises "clojure.lang.PersistentVector cannot be cast to clojure.lang.Named" exception
-    0.00   0 Open         [MATCH-111] [CLJS]: Usage of core.match within core.async/go block causes compilation to fail when match cases exceed a certain count
+    0.00   0 Open         [MATCH-112] :as and & interaction issue
 
 ========================================
 Enhancement
@@ -720,7 +725,6 @@ Enhancement
     0.00   0 Open         [MATCH-72] complexity analysis
     0.00   0 Open         [MATCH-78] Switches on literals should happen via `case` not `cond`
     0.00   0 Open         [MATCH-103] Support for lists in patterns.
-    0.00   0 Open         [MATCH-109] Call `emit-pattern` and `to-source` to let'ed things. {code:clojure} (let [x "hello" y :foo x-regex #"Hello"] (match [x y] [x-regex y] :match :else :no-match)) {code}
     0.00   0 Open         [MATCH-110] convert to .cljc
 
 ========================================
@@ -831,6 +835,7 @@ Defect
     0.00   0 Open         [TCHECK-74] gen-int generates very small ints
     0.00   0 Open         [TCHECK-75] gen-seq->seq-gen is named out of sync with its description/comment (and presumably impl).
     0.00   0 Open         [TCHECK-76] `sample` should pass num-samples to `sample-seq` as max-size to avoid unnecessary generation of cases.
+    0.00   0 Open         [TCHECK-80] last-trial-report (used by trial-report-periodic) is not being reset at :begin-test-var in cljs
 
 ========================================
 Enhancement
