@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: September 24, 2015
+Date: October 1, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -75,6 +75,9 @@ Defect
     1.50   2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
              Ryan Sundberg (1)
              Howard Lewis Ship (1/2)
+    1.20   2 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
+             Thomas Down (1)
+             Daniel Compton (1/5)
     1.00   2 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
              Colin Taylor (1/2)
              Gary Trakhman (1/2)
@@ -82,8 +85,6 @@ Defect
              Marcus Lewis (1)
     1.00   1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
              Francis Avila (1)
-    1.00   1 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
-             Thomas Down (1)
     1.00   1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
              Patrick Killean (1)
     0.50   1 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
@@ -92,8 +93,8 @@ Defect
              Willy Blandin (1/2)
     0.50   1 Triaged      [ASYNC-138] Go blocks leak memory
              Gary Trakhman (1/2)
-    0.25   1 Bad: Match n [ASYNC-124] put! into channel that has mapcat transducer fails to dispatch more than one waiting takes
-             Daniel Compton (1/4)
+    0.20   1 Bad: Match n [ASYNC-124] put! into channel that has mapcat transducer fails to dispatch more than one waiting takes
+             Daniel Compton (1/5)
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
     0.00   0 Open         [ASYNC-51] Core.async memory leak in Safari and Mobile Safari
     0.00   0 Open         [ASYNC-54] MAX-QUEUE-SIZE has a wrong type-hint
@@ -117,7 +118,6 @@ Defect
     0.00   0 Open         [ASYNC-134] async/alts!! with an empty vector throws ArrayIndexOutOfBoundsException
     0.00   0 Open         [ASYNC-144] pipeline-async docstring correction
     0.00   0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
-    0.00   0 Open         [ASYNC-147] subscriber blocks other subscriber of a topic
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
     0.00   0 Triaged      [ASYNC-113] alt!! should not evaluate the :default expr if a non-default clause is selected
@@ -136,11 +136,11 @@ Enhancement
              Thomas Engelschmidt (1)
              Colin Taylor (1/2)
              Howard Lewis Ship (1/2)
-    3.25   4 Open         [ASYNC-137] Make (<! (timeout 0)) be closer to 0
+    3.20   4 Open         [ASYNC-137] Make (<! (timeout 0)) be closer to 0
              Denis Johnson (1)
              Patrick O'Brien (1)
              Stuart Mitchell (1)
-             Daniel Compton (1/4)
+             Daniel Compton (1/5)
     2.00   2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
              Nahuel Greco (1)
              Reid McKenzie (1)
@@ -150,10 +150,10 @@ Enhancement
     2.00   2 Triaged      [ASYNC-67] Can we get a generic sink operation?
              Adam Clements (1)
              Jan-Paul Bultmann (1)
-    1.75   3 Bad: Match n [ASYNC-103] promise-chan
+    1.70   3 Bad: Match n [ASYNC-103] promise-chan
              Leon Grapenthin (1)
              Wilker Lúcio da Silva (1/2)
-             Daniel Compton (1/4)
+             Daniel Compton (1/5)
     1.50   2 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
              Dennis Schridde (1)
              Eduard Bondarenko (1/2)
@@ -169,14 +169,15 @@ Enhancement
              Vlad Bokov (1/2)
     0.50   1 Open         [ASYNC-119] ClojureScript: combine cljs.core.async.macros and cljs.core.async
              Wilker Lúcio da Silva (1/2)
-    0.25   1 Triaged      [ASYNC-126] Add public channel "closed?" predicate
-             Daniel Compton (1/4)
+    0.20   1 Triaged      [ASYNC-126] Add public channel "closed?" predicate
+             Daniel Compton (1/5)
     0.00   0 Open         [ASYNC-46] Add optional default channel to 'pub'
     0.00   0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
     0.00   0 Open         [ASYNC-130] Improve put! docstring to mention no more than 1024 pending puts are allowed
     0.00   0 Open         [ASYNC-131] go! or "go-now" for CLJS
     0.00   0 Open         [ASYNC-141] Convert project to use Reader Conditionals
     0.00   0 Open         [ASYNC-142] Rename ClojureScript namespace from cljs.core.async to clojure.core.async
+    0.00   0 Open         [ASYNC-148] Shorten core.async go block variable names
     0.00   0 Triaged      [ASYNC-143] Assert that fixed buffers must have size > 0
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
     0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
@@ -372,6 +373,8 @@ Defect
     0.00   0 Open         [CTYP-228] Type signature for sort is incorrect - never returns nil
     0.00   0 Open         [CTYP-242] adding stop-gap annotation for 'hash-map' results in runtime exception
     0.00   0 Open         [CTYP-278] Impossible to annotate protocol in other namespace
+    0.00   0 Open         [CTYP-279] An invalid type annotation for a function with a record argument passes a type check
+    0.00   0 Open         [CTYP-280] Breaks (my) repl
 
 ========================================
 Enhancement
@@ -516,12 +519,15 @@ Project DIMAP tickets
 Defect
 
     0.00   0 Open         [DIMAP-2] Proper seq on int-sets
+    0.00   0 Open         [DIMAP-5] NullPointerException in IntSet union
 
 ========================================
 Enhancement
 
     0.00   0 Open         [DIMAP-1] Support efficient rseq on int maps
     0.00   0 Open         [DIMAP-4] Worth the effort to make int-map and int-set sorted?
+    0.00   0 Open         [DIMAP-6] int-map doc string is overly restrictive?
+    0.00   0 Open         [DIMAP-7] Minor typos in README and docstring
 
 
 Project DJSON tickets
@@ -856,6 +862,8 @@ Enhancement
              Chas Emerick (1/2)
     1.00   1 Open         [TCHECK-31] Doc improvements: how to separate "size" from "range"
              Brian Craft (1)
+    1.00   1 Open         [TCHECK-81] Create gen/let for syntax sugar and to address fmap/bind confusion
+             Nicolás Berger (1)
     0.50   1 Open         [TCHECK-8] Bound tests and shrinks in time
              Chas Emerick (1/2)
     0.50   1 Open         [TCHECK-43] Test.check lacks a generator for all floats and floats in a range
