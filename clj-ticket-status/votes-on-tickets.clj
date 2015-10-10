@@ -26,6 +26,10 @@
   :usernames #{"sw1nn"},
   :emails #{"neale@isismanor.com"}}
  (),
+ {:display-name "Leon Barrett",
+  :usernames #{"lbarrett"},
+  :emails #{"leon@barrettnexus.com"}}
+ (),
  {:display-name "Chas Emerick",
   :usernames #{"cemerick"},
   :emails #{"chas@cemerick.com"}}
@@ -1117,7 +1121,7 @@
  {:display-name "Alex Baranosky",
   :usernames #{"alexbaranosky"},
   :emails #{"alexander.baranosky@gmail.com"}}
- ("CLJ-1771"),
+ ("CLJ-1771" "CLJ-1239"),
  {:display-name "Oliver Charles",
   :usernames #{"ocharles"},
   :emails #{"ollie@ocharles.org.uk"}}
@@ -1587,7 +1591,7 @@
  {:display-name "James Henderson",
   :usernames #{"jarohen"},
   :emails #{"james@jarohen.me.uk"}}
- ("ASYNC-99"),
+ ("CLJS-1461" "CLJS-1228" "CLJS-957" "ASYNC-99"),
  {:display-name "Christian H.",
   :usernames #{"chrish1"},
   :emails #{"c.hoedl@gmx.net"}}
@@ -2632,7 +2636,7 @@
  {:display-name "Michael Griffiths",
   :usernames #{"cichli"},
   :emails #{"mikey@cich.li"}}
- ("CLJ-304"),
+ ("CLJS-1463" "CLJS-1461" "CLJS-1228" "CLJS-957" "CLJ-1527" "CLJ-304"),
  {:display-name "Lingyong Wang",
   :usernames #{"lingyong"},
   :emails #{"lingyong.w@gmail.com"}}
@@ -7012,6 +7016,10 @@
   :usernames #{"bdf"},
   :emails #{"brian.forester+Jira@gmail.com"}}
  (),
+ {:display-name "Alex K",
+  :usernames #{"me"},
+  :emails #{"clojure.jira@day.pm"}}
+ (),
  {:display-name "Jacob Maine",
   :usernames #{"mainej"},
   :emails #{"jacob.maine@gmail.com"}}
@@ -7734,7 +7742,8 @@
   "ASYNC-126"
   "ASYNC-124"
   "ASYNC-117"
-  "ASYNC-103"),
+  "ASYNC-103"
+  "ASYNC-90"),
  {:display-name "Stephen Wan",
   :usernames #{"stephenhk"},
   :emails #{"stephenwyy@gmail.com"}}

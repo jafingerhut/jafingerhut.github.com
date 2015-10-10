@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: October 8, 2015
+Date: October 10, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -75,9 +75,9 @@ Defect
     1.50   2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
              Ryan Sundberg (1)
              Howard Lewis Ship (1/2)
-    1.20   2 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
+    1.17   2 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
              Thomas Down (1)
-             Daniel Compton (1/5)
+             Daniel Compton (1/6)
     1.00   2 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
              Colin Taylor (1/2)
              Gary Trakhman (1/2)
@@ -93,8 +93,10 @@ Defect
              Willy Blandin (1/2)
     0.50   1 Triaged      [ASYNC-138] Go blocks leak memory
              Gary Trakhman (1/2)
-    0.20   1 Bad: Match n [ASYNC-124] put! into channel that has mapcat transducer fails to dispatch more than one waiting takes
-             Daniel Compton (1/5)
+    0.17   1 Bad: Match n [ASYNC-124] put! into channel that has mapcat transducer fails to dispatch more than one waiting takes
+             Daniel Compton (1/6)
+    0.17   1 Open         [ASYNC-90] Pub/sub leaks memory
+             Daniel Compton (1/6)
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
     0.00   0 Open         [ASYNC-51] Core.async memory leak in Safari and Mobile Safari
     0.00   0 Open         [ASYNC-54] MAX-QUEUE-SIZE has a wrong type-hint
@@ -103,7 +105,6 @@ Defect
     0.00   0 Open         [ASYNC-73] try-catch-finally broken inside go-blocks
     0.00   0 Open         [ASYNC-77] StackOverflowError in go macro with cemerick.cljs.test (CLJS)
     0.00   0 Open         [ASYNC-78] deadlock in multi catch
-    0.00   0 Open         [ASYNC-90] Pub/sub leaks memory
     0.00   0 Open         [ASYNC-96] FixedBuffer's full checking in cljs
     0.00   0 Open         [ASYNC-97] CLJS: alts! sporadically failing to unblock despite channel activity (Safari 7)
     0.00   0 Open         [ASYNC-108] cljs to-chan hangs on infinite lazy sequences
@@ -136,11 +137,11 @@ Enhancement
              Thomas Engelschmidt (1)
              Colin Taylor (1/2)
              Howard Lewis Ship (1/2)
-    3.20   4 Open         [ASYNC-137] Make (<! (timeout 0)) be closer to 0
+    3.17   4 Open         [ASYNC-137] Make (<! (timeout 0)) be closer to 0
              Denis Johnson (1)
              Patrick O'Brien (1)
              Stuart Mitchell (1)
-             Daniel Compton (1/5)
+             Daniel Compton (1/6)
     2.00   2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
              Nahuel Greco (1)
              Reid McKenzie (1)
@@ -150,10 +151,10 @@ Enhancement
     2.00   2 Triaged      [ASYNC-67] Can we get a generic sink operation?
              Adam Clements (1)
              Jan-Paul Bultmann (1)
-    1.70   3 Bad: Match n [ASYNC-103] promise-chan
+    1.67   3 Bad: Match n [ASYNC-103] promise-chan
              Leon Grapenthin (1)
              Wilker Lúcio da Silva (1/2)
-             Daniel Compton (1/5)
+             Daniel Compton (1/6)
     1.50   2 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
              Dennis Schridde (1)
              Eduard Bondarenko (1/2)
@@ -169,8 +170,8 @@ Enhancement
              Vlad Bokov (1/2)
     0.50   1 Open         [ASYNC-119] ClojureScript: combine cljs.core.async.macros and cljs.core.async
              Wilker Lúcio da Silva (1/2)
-    0.20   1 Triaged      [ASYNC-126] Add public channel "closed?" predicate
-             Daniel Compton (1/5)
+    0.17   1 Triaged      [ASYNC-126] Add public channel "closed?" predicate
+             Daniel Compton (1/6)
     0.00   0 Open         [ASYNC-46] Add optional default channel to 'pub'
     0.00   0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
     0.00   0 Open         [ASYNC-130] Improve put! docstring to mention no more than 1024 pending puts are allowed
@@ -990,16 +991,11 @@ Task
 
 Project TTRACE tickets
 ========================================
-Defect
-
-    0.00   0 Open         [TTRACE-11] trace-vars/untrace-vars don't accept vars
-
-========================================
 Enhancement
 
     0.00   0 Open         [TTRACE-9] Use aprint when displaying value
     0.00   0 Open         [TTRACE-10] Add throttling/rate-limiting
-    0.00   0 Open         [TTRACE-12] Move away from Java 5
+    0.00   0 Open         [TTRACE-13] Implicitly quote the name space in the trace-ns macro
 
 
 Project UNIFY tickets
