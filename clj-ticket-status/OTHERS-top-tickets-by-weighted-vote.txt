@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: October 12, 2015
+Date: October 21, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -69,15 +69,16 @@ Defect
              Ken Allen (1)
              Paul Ostazeski (1)
              Willy Blandin (1/2)
+    2.17   3 Open         [ASYNC-90] Pub/sub leaks memory
+             Collider Writer (1)
+             Jan Rychter (1)
+             Daniel Compton (1/6)
     2.00   2 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
              Ghadi Shayban (1)
              Yehonathan Sharvit (1)
     1.50   2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
              Ryan Sundberg (1)
              Howard Lewis Ship (1/2)
-    1.17   2 Open         [ASYNC-90] Pub/sub leaks memory
-             Jan Rychter (1)
-             Daniel Compton (1/6)
     1.17   2 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
              Thomas Down (1)
              Daniel Compton (1/6)
@@ -167,6 +168,8 @@ Enhancement
              Vlad Bokov (1/2)
     1.00   1 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
              Miro Kubicek (1)
+    1.00   1 Open         [ASYNC-142] Rename ClojureScript namespace from cljs.core.async to clojure.core.async
+             J.&nbsp;S.&nbsp;Choi (1)
     0.50   1 Open         [ASYNC-71] exception behavior for thread macro is hard coded
              Vlad Bokov (1/2)
     0.50   1 Open         [ASYNC-119] ClojureScript: combine cljs.core.async.macros and cljs.core.async
@@ -178,7 +181,6 @@ Enhancement
     0.00   0 Open         [ASYNC-130] Improve put! docstring to mention no more than 1024 pending puts are allowed
     0.00   0 Open         [ASYNC-131] go! or "go-now" for CLJS
     0.00   0 Open         [ASYNC-141] Convert project to use Reader Conditionals
-    0.00   0 Open         [ASYNC-142] Rename ClojureScript namespace from cljs.core.async to clojure.core.async
     0.00   0 Open         [ASYNC-148] Shorten core.async go block variable names
     0.00   0 Triaged      [ASYNC-143] Assert that fixed buffers must have size > 0
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
@@ -276,6 +278,7 @@ Defect
     0.00   0 Open         [CLJCLR-74] pprint throws exception on very specific input
     0.00   0 Open         [CLJCLR-76] Reader Conditionals do not behave as expected on the CLR
     0.00   0 Open         [CLJCLR-77] resolve fails in compiled code, but works in source-code
+    0.00   0 Open         [CLJCLR-78] Problems building on Linux
 
 ========================================
 Enhancement
@@ -349,7 +352,6 @@ Defect
     0.00   0 Bad: Unkn Fi [CTYP-232] Let-aliased variabled of HVec lookups should update original HVec
     0.00   0 Bad: Unkn Fi [CTYP-241] Let-aliased variables of plain Map lookups should update original map
     0.00   0 Bad: Unkn Fi [CTYP-272] check-ns: Assert failed: (r/Type? t)
-    0.00   0 Bad: Unkn Fi [CTYP-273] `recur` treated differently from a recursive call
     0.00   0 Bad: Unkn Fi [CTYP-274] Inferred type for {{defn}} and {{typed/fn}} with the same body are different
     0.00   0 Bad: Unkn Fi [CTYP-275] Bad call to path-type: nil
     0.00   0 Bad: Unkn Fi [CTYP-277] Typechecking fails with internal assert error
@@ -398,10 +400,10 @@ Enhancement
     0.00   0 Bad: Match > [CTYP-271] reduce form with (U nil Num) accumulator needs inst to type check
     0.00   0 Bad: Match > [CTYP-276] first on HVec strange/wrong result
     0.00   0 Bad: Unkn Fi [CTYP-192] Use memoization in file-mapping to improve performance.
-    0.00   0 Bad: Unkn Fi [CTYP-239] Search for .cljc files when checking a namespace 
     0.00   0 Bad: Unkn Fi [CTYP-246] Gradually typed namespaces should import untyped vars with a contract
     0.00   0 Bad: Unkn Fi [CTYP-267] bigdec, bigint and biginteger eats (U Number String)
     0.00   0 Bad: Unkn Fi [CTYP-268] Use clojure.lang.Compiler's analyzer
+    0.00   0 Bad: Unkn Fi [CTYP-273] `recur` treated differently from a recursive call
     0.00   0 Open         [CTYP-9] Support metadata types
     0.00   0 Open         [CTYP-11] Infer good types for loop locals
     0.00   0 Open         [CTYP-12] Handle primitives properly
@@ -603,6 +605,7 @@ Project JDATA tickets
 Defect
 
     0.00   0 Open         [JDATA-4] to-java not working on some setters
+    0.00   0 Open         [JDATA-6] to-java not working when setter takes Map as parameter
 
 ========================================
 Enhancement
@@ -619,7 +622,7 @@ Enhancement
 
     3.00   3 Open         [JDBC-99] The age of reduce is upon us
              Ghadi Shayban (1)
-             J.S.&nbsp;Choi (1)
+             J.&nbsp;S.&nbsp;Choi (1)
              Ragnar Dahlen (1)
     1.00   1 Open         [JDBC-48] Support stored procedures with CallableStatement
              Dale Peakall (1)
