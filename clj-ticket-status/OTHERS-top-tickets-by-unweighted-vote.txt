@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: October 21, 2015
+Date: October 27, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -150,12 +150,12 @@ Defect
 Enhancement
 
    1 Open         [CCACHE-14] Asynchronous Cache Support
+   1 Open         [CCACHE-42] Porting core.cache to ClojureScript
    0 Open         [CCACHE-17] Create function backed cache
    0 Open         [CCACHE-35] Add weak-cache
    0 Open         [CCACHE-36] Allow ttl to be set for a key on cache miss
    0 Open         [CCACHE-37] Doc string typo fix
    0 Open         [CCACHE-38] Add ARC or CAR algorithm
-   0 Open         [CCACHE-42] Porting core.cache to ClojureScript
 
 ========================================
 Task
@@ -197,6 +197,7 @@ Project CLASSPATH tickets
 Defect
 
    0 Open         [CLASSPATH-6] classpath "empty" when classpath 0.2.2 used with clojure maven plugin 1.3.20+
+   0 Open         [CLASSPATH-7] Do not assume that all classloaders in hierarchy implement URLClasspath
 
 
 Project CLJCLR tickets
@@ -228,6 +229,7 @@ Defect
 
    1 Open         [CMEMOIZE-12] NPE with memoize/ttl
    1 Open         [CMEMOIZE-14] dependency problem with clojure.core.cache
+   1 Open         [CMEMOIZE-21] core.memoize can run the memoized function twice
    0 Open         [CMEMOIZE-8] memoizing functions that throw exceptions
    0 Open         [CMEMOIZE-15] ttl functions sometimes return nil
    0 Open         [CMEMOIZE-18] Confusing / erroneous documentation regarding seed values for clojure.core.memoize/memo
@@ -305,6 +307,8 @@ Defect
    0 Open         [CTYP-278] Impossible to annotate protocol in other namespace
    0 Open         [CTYP-279] An invalid type annotation for a function with a record argument passes a type check
    0 Open         [CTYP-280] Breaks (my) repl
+   0 Open         [CTYP-282] Internal error with t/defn, sort-by and no refer all
+   0 Bad: Unkn Fi [CTYP-283] load monkey-patching fails with directly-linked Clojure 1.8.0
 
 ========================================
 Enhancement
@@ -349,7 +353,6 @@ Enhancement
    0 Open         [CTYP-240] Annotations for clojure.instant, clojure.template, clojure.set clojure.data and clojure.repl namespaces
    0 Open         [CTYP-243] Dispatch on set of keys
    0 Open         [CTYP-244] Filtering with an instantiated identity function doesn't guarantee removal of nil
-   0 Bad: Unkn Fi [CTYP-246] Gradually typed namespaces should import untyped vars with a contract
    0 Bad: Match > [CTYP-249] Propositional subtyping should consider the lexical type environment
    0 Open         [CTYP-260] Add Queue and BlockingQueue to altered classes
    0 Bad: Match > [CTYP-261] Typed Transients patch
@@ -740,8 +743,8 @@ Defect
 ========================================
 Enhancement
 
+   4 Open         [TCHECK-5] Include a float generator
    3 Open         [TCHECK-15] gen/for macro for alternate combinator syntax
-   3 Open         [TCHECK-5] Include a float generator
    2 Open         [TCHECK-7] Add nested property support
    2 Open         [TCHECK-2] pos-int is confusingly named
    1 Open         [TCHECK-31] Doc improvements: how to separate "size" from "range"
@@ -767,10 +770,14 @@ Enhancement
    0 Open         [TCHECK-70] Redesign gen/choose
    0 Open         [TCHECK-71] Exponential generator
    0 Open         [TCHECK-72] Poisson generator
-   0 Open         [TCHECK-79] Convert to .cljc
 
 
 Project TCLI tickets
+========================================
+Defect
+
+   0 Open         [TCLI-36] Add compilation of spec vector to summarize
+
 
 Project TEMJVM tickets
 ========================================

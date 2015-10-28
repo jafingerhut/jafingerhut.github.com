@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: October 21, 2015
+Date: October 27, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -56,7 +56,6 @@ Defect
    3 Backlog      [CLJ-1620] Constants are leaked in case of a reentrant eval
    3 Open         [CLJ-1279] Fix confusing macroexpand1 ArityException handling
    3 Open         [CLJ-1445] pprint prints some metadata when *print-meta* bound to true, but not all
-   3 Screenable   [CLJ-1453] Most Iterator implementations do not correctly implement next failing to throw the required NoSuchElementException
    2 Triaged      [CLJ-1360] clojure.string/split strips trailing delimiters
    2 Open         [CLJ-1625] Cannot implement protocol methods of the same name inline
    2 Open         [CLJ-1649] Hash/equality inconsistency for floats & doubles
@@ -113,10 +112,7 @@ Defect
    0 Triaged      [CLJ-1770] atom watchers are not atomic with respect to reset!
    0 Vetted       [CLJ-1793] Clear 'this' before calls in tail position
    0 Triaged      [CLJ-1796] Protocol functions fail to find future extensions when assigned to a local or new var
-   0 Screenable   [CLJ-1805] :rettag encourages wrong runtime type hints
-   0 Screened     [CLJ-1809] Compiler produces VerifyError when compiling simple let expression inside a finally block
    0 Triaged      [CLJ-1818] cl-format does not respect aesthetic ~A with a keyword
-   0 Screened     [CLJ-1827] Reflection warning introduced in CLJ-1259
    0 Triaged      [CLJ-1829] VerifyError on Android 
 
 ========================================
@@ -234,8 +230,8 @@ Enhancement
    1 Triaged      [CLJ-1762] Implement IKVReduce for java.util.map
    1 Open         [CLJ-1280] Create reusable exception that can carry file/line/col info
    1 Open         [CLJ-1326] Inconsistent reflection warnings when target is a literal
-   1 Vetted       [CLJ-1130] When unable to match a static method, report arity caller was looking for, avoid misleading field error
    1 Open         [CLJ-1455] Postcondition in defrecord: Compiler unable to resolve symbol %
+   1 Vetted       [CLJ-1130] When unable to match a static method, report arity caller was looking for, avoid misleading field error
    1 Open         [CLJ-1008] Make sorted maps and sets implement j.u.NavigableMap and NavigableSet interfaces 
    1 Triaged      [CLJ-1386] Add transient? predicate
    1 Triaged      [CLJ-1599] Add a reset! that returns old value
@@ -246,6 +242,7 @@ Enhancement
    1 Open         [CLJ-666] Add support for Big* numeric types to Reflector
    1 Open         [CLJ-792] Refactor method resolution code out of Compiler and into Reflector
    1 Open         [CLJ-864] defrecord positional arity factory fn should have an inline version that calls the record constructor
+   1 Open         [CLJ-938] Output of clojure.reflect is not suitable for type hints
    1 Open         [CLJ-1284] Clojure functions and reified objects should expose a public static field to identify their proper Clojure name
    1 Open         [CLJ-1340] Emit unboxed cohercions from int/long to float/double
    1 Triaged      [CLJ-1373] LazySeq should utilize cached hash from its underlying seq.
@@ -300,6 +297,4 @@ Enhancement
    0 Triaged      [CLJ-1804] take transducer optimization
    0 Triaged      [CLJ-1808] map-invert should use transients and reduce-kv instead of reduce
    0 Triaged      [CLJ-1811] test line reporting doesn't always report test's file & line number
-   0 Screenable   [CLJ-1823] Document new :load-ns option to deftype/defrecord introduced by CLJ-1208
    0 Triaged      [CLJ-1826] drop-last docstring refers to 'coll' args refer to 's'
-   0 Screenable   [CLJ-1831] Add map-entry? predicate
