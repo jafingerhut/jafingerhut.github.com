@@ -1002,6 +1002,10 @@
   :usernames #{"morgandev"},
   :emails #{"morgandev@gmail.com"}}
  (),
+ {:display-name "Artur Cygan",
+  :usernames #{"artur"},
+  :emails #{"arczicygan@gmail.com"}}
+ (),
  {:display-name "Jean-Francois Brouillet",
   :usernames #{"verec"},
   :emails #{"verec@mac.com"}}
@@ -4772,7 +4776,7 @@
  {:display-name "Leon Grapenthin",
   :usernames #{"lgs32a"},
   :emails #{"grapenthin.leon@gmail.com"}}
- ("ASYNC-103"),
+ (),
  {:display-name "Pascal Germroth",
   :usernames #{"neapel"},
   :emails #{"pascal@ensieve.org"}}
@@ -4992,7 +4996,7 @@
  {:display-name "Wilker Lúcio da Silva",
   :usernames #{"wilkerlucio"},
   :emails #{"wilkerlucio@gmail.com"}}
- ("ASYNC-119" "ASYNC-103"),
+ ("ASYNC-119"),
  {:display-name "Scott Bale",
   :usernames #{"scottbale"},
   :emails #{"scott@balehaus.org"}}
@@ -5970,6 +5974,10 @@
  {:display-name "Ben Burdette",
   :usernames #{"bburdette"},
   :emails #{"bburdette@gmai.com"}}
+ (),
+ {:display-name "Yue Ni",
+  :usernames #{"nybon"},
+  :emails #{"ni2yue4@gmail.com"}}
  (),
  {:display-name "Harold Ancell",
   :usernames #{"hga"},
@@ -7782,6 +7790,7 @@
   :emails #{"desk@danielcompton.net"}}
  ("CLJS-1437"
   "CLJS-957"
+  "CLJ-1832"
   "CLJ-1647"
   "CLJ-1544"
   "CLJ-1517"
@@ -7797,9 +7806,7 @@
   "CLJ-124"
   "ASYNC-137"
   "ASYNC-126"
-  "ASYNC-124"
   "ASYNC-117"
-  "ASYNC-103"
   "ASYNC-90"),
  {:display-name "Stephen Wan",
   :usernames #{"stephenhk"},
