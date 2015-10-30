@@ -79,13 +79,30 @@ To make maven 3.2.3 the default, please run
 	sudo port select --set maven maven3
 
 ----------------------------------------------------------------------
---->  Installing python27 @2.7.9_0
---->  Activating python27 @2.7.9_0
+--->  Installing python27 @2.7.10_3
+--->  Activating python27 @2.7.10_3
 
-To make python 2.7 the default (i.e. the version you get when you run 'python'),
-please run:
+To make this the default Python or Python 2 (i.e., the version run by the 'python' or 'python2' commands),
+run one or both of:
 
-sudo port select --set python python27
+(Andy's note: See also similar note about Python 3 below)
+
+    sudo port select --set python python27
+    sudo port select --set python2 python27
+
+###########################################################
+# A startup item has been generated that will aid in
+# starting rsync with launchd. It is disabled
+# by default. Execute the following command to start it,
+# and to cause it to launch at startup:
+#
+# sudo port load rsync
+###########################################################
+--->  Installing rsync @3.1.1_0
+--->  Activating rsync @3.1.1_0
+
+To use the rsyncd server you must copy /opt/local/etc/rsyncd.conf.example to rsyncd.conf and add your modules
+there. See 'man rsyncd.conf' for more information.
 
 --->  Installing dbus @1.8.16_0
 --->  Activating dbus @1.8.16_0
@@ -96,8 +113,49 @@ sudo port select --set python python27
 # by default. Execute the following commands to start them,
 # and to cause them to launch at startup:
 #
-# sudo launchctl load -w
-/Library/LaunchDaemons/org.freedesktop.dbus-system.plist
+# sudo launchctl load -w /Library/LaunchDaemons/org.freedesktop.dbus-system.plist
 # launchctl load -w /Library/LaunchAgents/org.freedesktop.dbus-session.plist
 ############################################################################
+
+--->  Installing python34 @3.4.3_5
+--->  Activating python34 @3.4.3_5
+
+To make this the default Python or Python 3 (i.e., the version run by the 'python' or 'python3' commands),
+run one or both of:
+
+    sudo port select --set python python34
+    sudo port select --set python3 python34
+
+--->  Installing coreutils @8.24_0
+--->  Activating coreutils @8.24_0
+
+The tools provided by GNU coreutils are prefixed with the character 'g' by default to distinguish them from
+the BSD commands.
+For example, cp becomes gcp and ls becomes gls.
+
+If you want to use the GNU tools by default, add this directory to the front of your PATH environment
+variable:
+    /opt/local/libexec/gnubin/
+
+
+(Andy's note: I believe openldap was installed because it was needed by gnupg)
+
+###########################################################
+# A startup item has been generated that will aid in
+# starting openldap with launchd. It is disabled
+# by default. Execute the following command to start it,
+# and to cause it to launch at startup:
+#
+# sudo port load openldap
+###########################################################
+--->  Installing openldap @2.4.40_1
+--->  Activating openldap @2.4.40_1
+
+
+--->  Activating py27-cython @0.23.4_0
+
+To make the Python 2.7 version of Cython the one that is run when you execute the commands without a version
+suffix, e.g. 'cython', run:
+
+port select --set cython cython27
 
