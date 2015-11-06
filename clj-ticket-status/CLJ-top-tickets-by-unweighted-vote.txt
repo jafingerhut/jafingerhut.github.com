@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: October 29, 2015
+Date: November 5, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -116,6 +116,7 @@ Defect
    0 Ok           [CLJ-1805] :rettag encourages wrong runtime type hints
    0 Triaged      [CLJ-1818] cl-format does not respect aesthetic ~A with a keyword
    0 Triaged      [CLJ-1829] VerifyError on Android 
+   0 Triaged      [CLJ-1841] core/bean into [] creates a buggy result
 
 ========================================
 Enhancement
@@ -154,6 +155,7 @@ Enhancement
    5 Open         [CLJ-1467] Implement Comparable in PersistentList
    5 Triaged      [CLJ-1490] Exception on protocol implementation after protocol reloaded could be improved
    5 Vetted       [CLJ-1553] Parallel transduce
+   5 Triaged      [CLJ-1293] Portable "catch-all" mechanism
    5 Triaged      [CLJ-1656] Unroll assoc and assoc! for small numbers of arguments
    5 Triaged      [CLJ-1451] Add take-until
    4 Open         [CLJ-1573] Support (Java) transient fields in deftype, e.g. for hashcodes
@@ -161,16 +163,16 @@ Enhancement
    4 Triaged      [CLJ-1743] Avoid compile-time static initialization of classes when using inheritance
    4 Open         [CLJ-899] Accept and ignore colon between key and value in map literals
    4 Triaged      [CLJ-735] Improve error message when a protocol method is not found
+   4 Open         [CLJ-1519] Added extra arity to clojure.core/ns-* fns
    4 Triaged      [CLJ-1473] Badly formed pre/post conditions silently passed
    4 Triaged      [CLJ-1209] clojure.test does not print ex-info in error reports
-   4 Triaged      [CLJ-1293] Portable "catch-all" mechanism
    4 Open         [CLJ-1201] There should also be writing in clojure.edn
    4 Triaged      [CLJ-1381] Improve support for extending protocols to primitive arrays
-   3 Open         [CLJ-1519] Added extra arity to clojure.core/ns-* fns
    3 Open         [CLJ-272] load/ns/require/use overhaul
    3 Triaged      [CLJ-99] GC Issue 95: max-key and min-key evaluate k multiple times for arguments
    3 Open         [CLJ-1218] mapcat is too eager
    3 Triaged      [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
+   3 Triaged      [CLJ-1814] Make `satisfies?` as fast as a protocol method call
    3 Triaged      [CLJ-1094] Add zero-arity versions of every-pred and some-fn
    3 Backlog      [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
    3 Triaged      [CLJ-825] Protocol implementation inconsistencies when overloading arity
@@ -212,18 +214,18 @@ Enhancement
    1 Open         [CLJ-1316] for doesn't support :let binding as its first seq-expr
    1 Open         [CLJ-1321] Documentation improvement for clojure.walk, to note use of recursion that can easily blow the JVM stack
    1 Open         [CLJ-1332] Exceptions are not cached in lazy seqs
-   1 Triaged      [CLJ-1585] Report boxed math warning on function that boxes primitive return value
    1 Open         [CLJ-1721] Enable test case for char?
    1 Open         [CLJ-1729] Make Counted and count() return long instead of integer
    1 Open         [CLJ-148] Poor reporting of symbol conflicts when using (ns)
    1 Open         [CLJ-1010] A left-to-right-variant of `comp`
    1 Triaged      [CLJ-1073] Make print-sequential interruptible
    1 Open         [CLJ-1266] Better primitive support for floats
+   1 Triaged      [CLJ-1585] Report boxed math warning on function that boxes primitive return value
    1 Triaged      [CLJ-1730] Improve `refer` performance
    1 Open         [CLJ-1342] Byte comparison boxes both bytes and converts to longs to compare (which is slow)
-   1 Triaged      [CLJ-1398] Update URLs in javadoc.clj
    1 Triaged      [CLJ-1607] docstring for clojure.core/counted? should be more specific
    1 Open         [CLJ-1189] Map-destructuring :or fumble needs compiler warning
+   1 Triaged      [CLJ-1398] Update URLs in javadoc.clj
    1 Open         [CLJ-252] Support typed non-primitive fields in deftype
    1 Open         [CLJ-993] `range` reducer
    1 Vetted       [CLJ-1099] better error message when passing non-seq to seq
@@ -239,7 +241,6 @@ Enhancement
    1 Triaged      [CLJ-1599] Add a reset! that returns old value
    1 Triaged      [CLJ-1613] :or defaults should refer to enclosing scope in map destructuring
    1 Triaged      [CLJ-1807] Add prefer-proto, like prefer-method but for protocols
-   1 Triaged      [CLJ-1814] Make `satisfies?` as fast as a protocol method call
    1 Open         [CLJ-140] Single :tag for type hints conflates value's type with type of return value from an invoke
    1 Open         [CLJ-666] Add support for Big* numeric types to Reflector
    1 Open         [CLJ-792] Refactor method resolution code out of Compiler and into Reflector
