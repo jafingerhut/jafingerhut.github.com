@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: November 5, 2015
+Date: November 16, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -56,7 +56,6 @@ Project ASYNC tickets
 ========================================
 Defect
 
-   4 Open         [ASYNC-99] go block with <! inside protocol method invocation fails to compile (dispatch :protocol-invoke on '-item-to-ssa')
    3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
    3 Triaged      [ASYNC-100] core.async with multiple catch blocks causing weird loop behaviour
    3 Open         [ASYNC-90] Pub/sub leaks memory
@@ -96,7 +95,6 @@ Defect
    0 Open         [ASYNC-134] async/alts!! with an empty vector throws ArrayIndexOutOfBoundsException
    0 Open         [ASYNC-144] pipeline-async docstring correction
    0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
-   0 Open         [ASYNC-149] Cannot compile a recur in a case statement when in a go-loop with a <!
 
 ========================================
 Enhancement
@@ -197,7 +195,6 @@ Project CLASSPATH tickets
 Defect
 
    0 Open         [CLASSPATH-6] classpath "empty" when classpath 0.2.2 used with clojure maven plugin 1.3.20+
-   0 Open         [CLASSPATH-7] Do not assume that all classloaders in hierarchy implement URLClasspath
 
 
 Project CLJCLR tickets
@@ -227,9 +224,6 @@ Project CMEMOIZE tickets
 ========================================
 Defect
 
-   1 Open         [CMEMOIZE-12] NPE with memoize/ttl
-   1 Open         [CMEMOIZE-21] core.memoize can run the memoized function twice
-   0 Open         [CMEMOIZE-8] memoizing functions that throw exceptions
    0 Open         [CMEMOIZE-15] ttl functions sometimes return nil
    0 Open         [CMEMOIZE-18] Confusing / erroneous documentation regarding seed values for clojure.core.memoize/memo
 
@@ -308,6 +302,7 @@ Defect
    0 Open         [CTYP-280] Breaks (my) repl
    0 Open         [CTYP-282] Internal error with t/defn, sort-by and no refer all
    0 Bad: Unkn Fi [CTYP-285] Cljc reader conditionals in ns form cause core.typed to skip checking namespace
+   0 Open         [CTYP-293] Should check upcast to Dyn
 
 ========================================
 Enhancement
@@ -361,7 +356,10 @@ Enhancement
    0 Bad: Match > [CTYP-273] `recur` treated differently from a recursive call
    0 Bad: Match > [CTYP-276] first on HVec strange/wrong result
    0 Bad: Unkn Fi [CTYP-284] Remove redundant checking in typed load
-   0 Open         [CTYP-287] Add contract system
+   0 Open         [CTYP-289] Add ability to specify the static type expected for a particular extend-type dispatch
+   0 Open         [CTYP-290] Support older versions of Clojure in the runtime module
+   0 Open         [CTYP-292] Provide a new alias for Any, dedicated for use as a placeholder, thus reserving Any for situations when truly every type is acceptable.
+   0 Open         [CTYP-294] Add dynamic type top/bottom type for unannotated foreign vars in select namespaces
 
 ========================================
 Task
@@ -503,6 +501,7 @@ Enhancement
    2 Open         [DXML-10] Support for DOCTYPE when emitting XML
    0 Open         [DXML-22] Adding hiccup generation function for elements
    0 Open         [DXML-25] Emit Empty Elements using EmptyElementTag
+   0 Open         [DXML-29] ClojureScript support
 
 
 Project DZIP tickets
@@ -745,7 +744,6 @@ Defect
    0 Open         [TCHECK-34] clojure.test reporting is uninformative
    0 Open         [TCHECK-57] Performance regression in map generator between 0.5.8 and 0.5.9
    0 Open         [TCHECK-59] s-pos-int and s-pos-int generators have an off-by-1 issue 
-   0 Open         [TCHECK-74] gen-int generates very small ints
    0 Open         [TCHECK-75] gen-seq->seq-gen is named out of sync with its description/comment (and presumably impl).
    0 Open         [TCHECK-76] `sample` should pass num-samples to `sample-seq` as max-size to avoid unnecessary generation of cases.
    0 Open         [TCHECK-80] last-trial-report (used by trial-report-periodic) is not being reset at :begin-test-var in cljs
@@ -755,14 +753,12 @@ Defect
 ========================================
 Enhancement
 
-   4 Open         [TCHECK-5] Include a float generator
    3 Open         [TCHECK-15] gen/for macro for alternate combinator syntax
    2 Open         [TCHECK-7] Add nested property support
    2 Open         [TCHECK-2] pos-int is confusingly named
    1 Open         [TCHECK-31] Doc improvements: how to separate "size" from "range"
-   1 Open         [TCHECK-81] Create gen/let for syntax sugar and to address fmap/bind confusion
-   1 Open         [TCHECK-8] Bound tests and shrinks in time
    1 Open         [TCHECK-43] Test.check lacks a generator for all floats and floats in a range
+   1 Open         [TCHECK-8] Bound tests and shrinks in time
    0 Open         [TCHECK-3] Add ability to customize test output when a test fails
    0 Open         [TCHECK-4] Handle sigint
    0 Open         [TCHECK-9] Properly document how :max-size works 
@@ -779,6 +775,7 @@ Enhancement
    0 Open         [TCHECK-70] Redesign gen/choose
    0 Open         [TCHECK-71] Exponential generator
    0 Open         [TCHECK-72] Poisson generator
+   0 Open         [TCHECK-84] Add gen/uniform-double
 
 
 Project TCLI tickets
@@ -857,13 +854,12 @@ Defect
    1 Open         [TNS-6] Attempt to reload deleted file
    1 Open         [TNS-7] Stack overflow on refresh after circular dependency detected
    0 Open         [TNS-24] Broken tracker after mis-named namespace
-   0 Open         [TNS-38] circular dependency when CLJS namespace requires CLJ for macros
 
 ========================================
 Enhancement
 
-   0 Open         [TNS-36] Use java.classpath
    0 Open         [TNS-37] c.t.n.move: does not support to move .cljc files
+   0 Open         [TNS-39] Single classpath argument for c.t.n.move
 
 
 Project TRDR tickets
@@ -875,7 +871,6 @@ Enhancement
 ========================================
 Task
 
-   0 Open         [TRDR-13] Better documentation wrt interaction between reader-types and java readers
    0 Open         [TRDR-29] Simple benchmarking bash script to test before & after applying a batch
 
 
