@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: November 16, 2015
+Date: November 21, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -86,12 +86,15 @@ Defect
              Francis Avila (1)
     1.00   1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
              Patrick Killean (1)
+    0.67   2 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
+             Alex Nixon (1/3)
+             Eduard Bondarenko (1/3)
     0.50   1 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
              Willy Blandin (1/2)
     0.50   1 Triaged      [ASYNC-138] Go blocks leak memory
              Gary Trakhman (1/2)
-    0.33   1 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
-             Eduard Bondarenko (1/3)
+    0.33   1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
+             Alex Nixon (1/3)
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
     0.00   0 Open         [ASYNC-51] Core.async memory leak in Safari and Mobile Safari
     0.00   0 Open         [ASYNC-54] MAX-QUEUE-SIZE has a wrong type-hint
@@ -117,7 +120,7 @@ Defect
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
     0.00   0 Triaged      [ASYNC-113] alt!! should not evaluate the :default expr if a non-default clause is selected
-    0.00   0 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
+    0.00   0 Vetted       [ASYNC-152] Reflection warning when binding received values to names.
 
 ========================================
 Enhancement
@@ -137,6 +140,10 @@ Enhancement
              Patrick O'Brien (1)
              Stuart Mitchell (1)
              Daniel Compton (1/5)
+    3.00   3 Open         [ASYNC-107] Improved docstring for alt!
+             Baishampayan Ghose (1)
+             Greg Chapman (1)
+             Oleksandr Shyshko (1)
     2.03   4 Open         [ASYNC-119] ClojureScript: combine cljs.core.async.macros and cljs.core.async
              Wilker Lúcio da Silva (1)
              Dom Kiva-Meyer (1/2)
@@ -149,9 +156,6 @@ Enhancement
     2.00   2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
              Nahuel Greco (1)
              Reid McKenzie (1)
-    2.00   2 Open         [ASYNC-107] Improved docstring for alt!
-             Baishampayan Ghose (1)
-             Oleksandr Shyshko (1)
     2.00   2 Triaged      [ASYNC-67] Can we get a generic sink operation?
              Adam Clements (1)
              Jan-Paul Bultmann (1)
@@ -170,10 +174,10 @@ Enhancement
              J.&nbsp;S.&nbsp;Choi (1/2)
     1.00   1 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
              Miro Kubicek (1)
-    1.00   1 Triaged      [ASYNC-143] Assert that fixed buffers must have size > 0
-             Alex Nixon (1)
     0.50   1 Open         [ASYNC-71] exception behavior for thread macro is hard coded
              Vlad Bokov (1/2)
+    0.33   1 Triaged      [ASYNC-143] Assert that fixed buffers must have size > 0
+             Alex Nixon (1/3)
     0.00   0 Open         [ASYNC-46] Add optional default channel to 'pub'
     0.00   0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
     0.00   0 Open         [ASYNC-130] Improve put! docstring to mention no more than 1024 pending puts are allowed
@@ -181,6 +185,7 @@ Enhancement
     0.00   0 Open         [ASYNC-141] Convert project to use Reader Conditionals
     0.00   0 Open         [ASYNC-148] Shorten core.async go block variable names
     0.00   0 Open         [ASYNC-150] Unordered pipeline
+    0.00   0 Open         [ASYNC-151] Accept optional transducer in `to-chan`
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
     0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
     0.00   0 Vetted       [ASYNC-69] How to better communicate "mix" lifecycle wrt coordination
@@ -397,10 +402,12 @@ Enhancement
     0.00   0 Bad: Match > [CTYP-271] reduce form with (U nil Num) accumulator needs inst to type check
     0.00   0 Bad: Match > [CTYP-273] `recur` treated differently from a recursive call
     0.00   0 Bad: Match > [CTYP-276] first on HVec strange/wrong result
+    0.00   0 Bad: Match > [CTYP-301] Abstract over keyword arguments
     0.00   0 Bad: Unkn Fi [CTYP-192] Use memoization in file-mapping to improve performance.
     0.00   0 Bad: Unkn Fi [CTYP-267] bigdec, bigint and biginteger eats (U Number String)
     0.00   0 Bad: Unkn Fi [CTYP-268] Use clojure.lang.Compiler's analyzer
     0.00   0 Bad: Unkn Fi [CTYP-284] Remove redundant checking in typed load
+    0.00   0 Bad: Unkn Fi [CTYP-297] Allow defmulti without expected type
     0.00   0 Open         [CTYP-9] Support metadata types
     0.00   0 Open         [CTYP-11] Infer good types for loop locals
     0.00   0 Open         [CTYP-12] Handle primitives properly
@@ -436,7 +443,8 @@ Enhancement
     0.00   0 Open         [CTYP-289] Add ability to specify the static type expected for a particular extend-type dispatch
     0.00   0 Open         [CTYP-290] Support older versions of Clojure in the runtime module
     0.00   0 Open         [CTYP-292] Provide a new alias for Any, dedicated for use as a placeholder, thus reserving Any for situations when truly every type is acceptable.
-    0.00   0 Open         [CTYP-294] Add dynamic type top/bottom type for unannotated foreign vars in select namespaces
+    0.00   0 Open         [CTYP-294] Infer untyped vars via unsafe Dyn-like type
+    0.00   0 Open         [CTYP-298] Should blame sub-parts of casts
     0.00   0 Triaged      [CTYP-217] Basic support for transients
 
 ========================================
@@ -859,6 +867,7 @@ Defect
     0.00   0 Open         [TCHECK-80] last-trial-report (used by trial-report-periodic) is not being reset at :begin-test-var in cljs
     0.00   0 Open         [TCHECK-82] Shrinking is not entirely lazy
     0.00   0 Open         [TCHECK-83] gen/any only generates collections
+    0.00   0 Open         [TCHECK-86] Eastwood gives bad-arglists warning for defspec
 
 ========================================
 Enhancement
@@ -896,6 +905,7 @@ Enhancement
     0.00   0 Open         [TCHECK-71] Exponential generator
     0.00   0 Open         [TCHECK-72] Poisson generator
     0.00   0 Open         [TCHECK-84] Add gen/uniform-double
+    0.00   0 Open         [TCHECK-85] prop/for-all should let later bindings refer to earlier bindings
 
 
 Project TCLI tickets
