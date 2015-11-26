@@ -77,7 +77,7 @@
  {:display-name "Daniel Woelfel",
   :usernames #{"dwwoelfel"},
   :emails #{"dwwoelfel@gmail.com"}}
- (),
+ ("CLJ-1852"),
  {:display-name "Obadz",
   :usernames #{"obadz"},
   :emails #{"dav-clojure-jira@odav.org"}}
@@ -1546,6 +1546,10 @@
   :usernames #{"dpeakall"},
   :emails #{"dpeakall@thoughtworks.com"}}
  ("JDBC-48"),
+ {:display-name "Christopher Jeris",
+  :usernames #{"cjeris"},
+  :emails #{"cjeris@gmail.com"}}
+ (),
  {:display-name "Daniel Guimaraes",
   :usernames #{"dcguim"},
   :emails #{"dcguim@gmail.com"}}
@@ -3035,6 +3039,10 @@
  {:display-name "Sanchay Harneja",
   :usernames #{"na_ka_na"},
   :emails #{"sanchay.h@gmail.com"}}
+ (),
+ {:display-name "Nicolas HA",
+  :usernames #{"nha"},
+  :emails #{"hanicolas74+clojure@gmail.com"}}
  (),
  {:display-name "Jeff Chiu",
   :usernames #{"codeforkjeff"},
@@ -4844,6 +4852,7 @@
   "CLJS-1194"
   "CLJS-719"
   "CLJ-1459"
+  "CLJ-1141"
   "CLJ-1078"
   "CLJ-1059"
   "CLJ-976"
@@ -4936,7 +4945,7 @@
  {:display-name "Simon Belak",
   :usernames #{"sbelak"},
   :emails #{"simon.belak@gmail.com"}}
- (),
+ ("CLJ-1744"),
  {:display-name "Tom Jack",
   :usernames #{"tomoj"},
   :emails #{"tom@tomjack.co"}}
@@ -5205,6 +5214,10 @@
   :usernames #{"hippiccolo"},
   :emails #{"hippiccolo@gmail.com"}}
  (),
+ {:display-name "Jeremy R Sellars",
+  :usernames #{"jeremyrsellars"},
+  :emails #{"jeremyrsellars@gmail.com"}}
+ (),
  {:display-name "Brendan Ribera",
   :usernames #{"abscondment"},
   :emails #{"brendan.ribera@gmail.com"}}
@@ -5280,6 +5293,10 @@
  {:display-name "Dr. Christian Betz",
   :usernames #{"chrisbetz"},
   :emails #{"cb.betz@gmail.com"}}
+ (),
+ {:display-name "Eric Shull",
+  :usernames #{"exupero"},
+  :emails #{"eric@exupero.org"}}
  (),
  {:display-name "Damien Picasso",
   :usernames #{"damien"},
@@ -7943,7 +7960,6 @@
   "CLJ-1544"
   "CLJ-1517"
   "CLJ-1372"
-  "CLJ-1298"
   "CLJ-1201"
   "CLJ-1148"
   "CLJ-1117"
@@ -8111,6 +8127,10 @@
  {:display-name "Sebastian Hennebrueder",
   :usernames #{"laliluna"},
   :emails #{"usenet@laliluna.de"}}
+ (),
+ {:display-name "mariyaronald",
+  :usernames #{"mariyaronald.jp177@gmail.com"},
+  :emails #{"mariyaronald.jp177@gmail.com"}}
  (),
  {:display-name "Alexei Guevara",
   :usernames #{"zb0th"},
