@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: November 26, 2015
+Date: December 5, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -96,6 +96,7 @@ Defect
    0 Open         [ASYNC-144] pipeline-async docstring correction
    0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
    0 Vetted       [ASYNC-152] Reflection warning when binding received values to names.
+   0 Triaged      [ASYNC-154] (require :reload-all) causes NullPointerException
 
 ========================================
 Enhancement
@@ -126,6 +127,7 @@ Enhancement
    0 Open         [ASYNC-148] Shorten core.async go block variable names
    0 Open         [ASYNC-150] Unordered pipeline
    0 Open         [ASYNC-151] Accept optional transducer in `to-chan`
+   0 Triaged      [ASYNC-153] Return value of pipe is not documented
 
 ========================================
 Task
@@ -209,7 +211,6 @@ Defect
    0 Open         [CLJCLR-48] Error when starting Clojure.Main.exe
    0 Open         [CLJCLR-67] Cannot call new/hidden interface method
    0 Open         [CLJCLR-73] Regularize handling of clojure.compile.x environment variables
-   0 Open         [CLJCLR-74] pprint throws exception on very specific input
    0 Open         [CLJCLR-76] Reader Conditionals do not behave as expected on the CLR
    0 Open         [CLJCLR-77] resolve fails in compiled code, but works in source-code
    0 Open         [CLJCLR-78] Problems building on Linux
@@ -310,7 +311,7 @@ Defect
 Enhancement
 
    3 Bad: Match > [CTYP-167] Several failure cases for comp for polyadic fns and type variables
-   1 Bad: Match > [CTYP-133] Typechecker fails when checking involves an object from reify
+   2 Bad: Match > [CTYP-133] Typechecker fails when checking involves an object from reify
    1 Bad: Match > [CTYP-134] Allow namespace aliases in `ann`
    0 Bad: Match > [CTYP-8] Support complex map manipulation functions
    0 Open         [CTYP-9] Support metadata types
@@ -749,12 +750,9 @@ Defect
    0 Open         [TCHECK-34] clojure.test reporting is uninformative
    0 Open         [TCHECK-57] Performance regression in map generator between 0.5.8 and 0.5.9
    0 Open         [TCHECK-59] s-pos-int and s-pos-int generators have an off-by-1 issue 
-   0 Open         [TCHECK-75] gen-seq->seq-gen is named out of sync with its description/comment (and presumably impl).
-   0 Open         [TCHECK-76] `sample` should pass num-samples to `sample-seq` as max-size to avoid unnecessary generation of cases.
    0 Open         [TCHECK-80] last-trial-report (used by trial-report-periodic) is not being reset at :begin-test-var in cljs
    0 Open         [TCHECK-82] Shrinking is not entirely lazy
    0 Open         [TCHECK-83] gen/any only generates collections
-   0 Open         [TCHECK-86] Eastwood gives bad-arglists warning for defspec
 
 ========================================
 Enhancement
@@ -763,7 +761,6 @@ Enhancement
    2 Open         [TCHECK-7] Add nested property support
    2 Open         [TCHECK-2] pos-int is confusingly named
    1 Open         [TCHECK-31] Doc improvements: how to separate "size" from "range"
-   1 Open         [TCHECK-43] Test.check lacks a generator for all floats and floats in a range
    1 Open         [TCHECK-8] Bound tests and shrinks in time
    0 Open         [TCHECK-3] Add ability to customize test output when a test fails
    0 Open         [TCHECK-4] Handle sigint
@@ -783,6 +780,7 @@ Enhancement
    0 Open         [TCHECK-72] Poisson generator
    0 Open         [TCHECK-84] Add gen/uniform-double
    0 Open         [TCHECK-85] prop/for-all should let later bindings refer to earlier bindings
+   0 Open         [TCHECK-87] New stats feature: Adds ability to assign labels to test cases to report the test case distribution when running a test
 
 
 Project TCLI tickets
@@ -860,6 +858,7 @@ Defect
 
    1 Open         [TNS-6] Attempt to reload deleted file
    1 Open         [TNS-7] Stack overflow on refresh after circular dependency detected
+   1 Open         [TNS-38] circular dependency when CLJS namespace requires CLJ for macros
    0 Open         [TNS-24] Broken tracker after mis-named namespace
    0 Open         [TNS-40] Don't catch all exceptions in read-file-ns-decl
 
