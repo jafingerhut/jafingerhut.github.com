@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: November 26, 2015
+Date: December 5, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -120,6 +120,7 @@ Defect
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
     0.00   0 Triaged      [ASYNC-113] alt!! should not evaluate the :default expr if a non-default clause is selected
+    0.00   0 Triaged      [ASYNC-154] (require :reload-all) causes NullPointerException
     0.00   0 Vetted       [ASYNC-152] Reflection warning when binding received values to names.
 
 ========================================
@@ -186,6 +187,7 @@ Enhancement
     0.00   0 Open         [ASYNC-148] Shorten core.async go block variable names
     0.00   0 Open         [ASYNC-150] Unordered pipeline
     0.00   0 Open         [ASYNC-151] Accept optional transducer in `to-chan`
+    0.00   0 Triaged      [ASYNC-153] Return value of pipe is not documented
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
     0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
     0.00   0 Vetted       [ASYNC-69] How to better communicate "mix" lifecycle wrt coordination
@@ -279,7 +281,6 @@ Defect
     0.00   0 Open         [CLJCLR-48] Error when starting Clojure.Main.exe
     0.00   0 Open         [CLJCLR-67] Cannot call new/hidden interface method
     0.00   0 Open         [CLJCLR-73] Regularize handling of clojure.compile.x environment variables
-    0.00   0 Open         [CLJCLR-74] pprint throws exception on very specific input
     0.00   0 Open         [CLJCLR-76] Reader Conditionals do not behave as expected on the CLR
     0.00   0 Open         [CLJCLR-77] resolve fails in compiled code, but works in source-code
     0.00   0 Open         [CLJCLR-78] Problems building on Linux
@@ -329,12 +330,12 @@ Defect
     2.00   2 Bad: Match > [CTYP-176] No such var: ana/ns->relpath when loading the ClojureScript typechecker
              Vic Goldfeld (1)
              Vince Broz (1)
-    1.00   1 Bad: Match > [CTYP-262] Accessing keys from a Heterogeneous Map w/ Polymorphic type signature throws type error
-             Joshua Tilles (1)
     1.00   1 Open         [CTYP-129] select-keys on HMap returns Map with union key and value types
              Juho Teperi (1)
     1.00   1 Open         [CTYP-197] No matching arities when defining multiple arity protocol method
              Johan Gall (1)
+    0.50   1 Bad: Match > [CTYP-262] Accessing keys from a Heterogeneous Map w/ Polymorphic type signature throws type error
+             Joshua Tilles (1/2)
     0.00   0 Bad: Match > [CTYP-32] Cannot instantiate variables that have bounds 
     0.00   0 Bad: Match > [CTYP-49] Applying flow filter resulted in local being bottom
     0.00   0 Bad: Match > [CTYP-52] Heterogeneous Vector is not ISeqable in CLJS
@@ -389,8 +390,9 @@ Enhancement
              Chris McDevitt (1)
              Marc O'Morain (1)
              Oskar Wickstrom (1)
-    1.00   1 Bad: Match > [CTYP-133] Typechecker fails when checking involves an object from reify
+    1.50   2 Bad: Match > [CTYP-133] Typechecker fails when checking involves an object from reify
              Jochen Hinrichsen (1)
+             Joshua Tilles (1/2)
     1.00   1 Bad: Match > [CTYP-134] Allow namespace aliases in `ann`
              Reid McKenzie (1)
     0.00   0 Bad: Match > [CTYP-8] Support complex map manipulation functions
@@ -862,12 +864,9 @@ Defect
     0.00   0 Open         [TCHECK-34] clojure.test reporting is uninformative
     0.00   0 Open         [TCHECK-57] Performance regression in map generator between 0.5.8 and 0.5.9
     0.00   0 Open         [TCHECK-59] s-pos-int and s-pos-int generators have an off-by-1 issue 
-    0.00   0 Open         [TCHECK-75] gen-seq->seq-gen is named out of sync with its description/comment (and presumably impl).
-    0.00   0 Open         [TCHECK-76] `sample` should pass num-samples to `sample-seq` as max-size to avoid unnecessary generation of cases.
     0.00   0 Open         [TCHECK-80] last-trial-report (used by trial-report-periodic) is not being reset at :begin-test-var in cljs
     0.00   0 Open         [TCHECK-82] Shrinking is not entirely lazy
     0.00   0 Open         [TCHECK-83] gen/any only generates collections
-    0.00   0 Open         [TCHECK-86] Eastwood gives bad-arglists warning for defspec
 
 ========================================
 Enhancement
@@ -884,8 +883,6 @@ Enhancement
              Chas Emerick (1/2)
     1.00   1 Open         [TCHECK-31] Doc improvements: how to separate "size" from "range"
              Brian Craft (1)
-    1.00   1 Open         [TCHECK-43] Test.check lacks a generator for all floats and floats in a range
-             Reid McKenzie (1)
     0.50   1 Open         [TCHECK-8] Bound tests and shrinks in time
              Chas Emerick (1/2)
     0.00   0 Open         [TCHECK-3] Add ability to customize test output when a test fails
@@ -906,6 +903,7 @@ Enhancement
     0.00   0 Open         [TCHECK-72] Poisson generator
     0.00   0 Open         [TCHECK-84] Add gen/uniform-double
     0.00   0 Open         [TCHECK-85] prop/for-all should let later bindings refer to earlier bindings
+    0.00   0 Open         [TCHECK-87] New stats feature: Adds ability to assign labels to test cases to report the test case distribution when running a test
 
 
 Project TCLI tickets
@@ -985,6 +983,8 @@ Defect
              deliminator (1)
     1.00   1 Open         [TNS-7] Stack overflow on refresh after circular dependency detected
              Anthony Marcar (1)
+    1.00   1 Open         [TNS-38] circular dependency when CLJS namespace requires CLJ for macros
+             Lars Andersen (1)
     0.00   0 Open         [TNS-24] Broken tracker after mis-named namespace
     0.00   0 Open         [TNS-40] Don't catch all exceptions in read-file-ns-decl
 
