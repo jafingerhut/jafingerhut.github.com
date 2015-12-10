@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: December 5, 2015
+Date: December 10, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -92,6 +92,7 @@ Defect
    1 Open         [CLJ-1548] primitive type hints on protocol methods break call sites
    1 Open         [CLJ-1577] Some hints accept both symbols and class objects, others only symbols
    1 Triaged      [CLJ-1790] Error extending protocols to Java arrays
+   1 Triaged      [CLJ-1864] clojure.core/proxy does not work when reloading namespaces
    0 Backlog      [CLJ-84] GC Issue 81: compile gen-class fail when class returns self
    0 Backlog      [CLJ-346] (pprint-newline :fill) is not handled correctly
    0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
@@ -120,8 +121,8 @@ Defect
    0 Triaged      [CLJ-1818] cl-format does not respect aesthetic ~A with a keyword
    0 Triaged      [CLJ-1829] VerifyError on Android 
    0 Triaged      [CLJ-1841] core/bean into [] creates a buggy result
-   0 Ok           [CLJ-1856] Direct-linking breaks clojure.test do-report stack-depth assumptions for failure reporting.
    0 Triaged      [CLJ-1860] 0.0 and -0.0 compare equal but have different hash values
+   0 Triaged      [CLJ-1867] with-redefs used on a macro permanently changes it to a function
 
 ========================================
 Enhancement
@@ -149,9 +150,9 @@ Enhancement
    8 Triaged      [CLJ-1239] faster, more flexible dispatch for clojure.walk
    7 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
    7 Triaged      [CLJ-440] java method calls cannot omit varargs
+   7 Vetted       [CLJ-1553] Parallel transduce
    7 Triaged      [CLJ-1063] Missing dissoc-in
    7 Triaged      [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
-   6 Vetted       [CLJ-1553] Parallel transduce
    6 Triaged      [CLJ-1611] clojure.java.io/pushback-reader
    6 Triaged      [CLJ-1293] Portable "catch-all" mechanism
    6 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
@@ -213,6 +214,7 @@ Enhancement
    1 Open         [CLJ-994] repeat reducer
    1 Open         [CLJ-1223] Improve App Engine Support by Providing an Option to Use the App Engine ThreadManger
    1 Open         [CLJ-1526] clojure.core/> inconsistent behavior wrt to documentation.
+   1 Open         [CLJ-1760] Add `partial` reader macro
    1 Open         [CLJ-1817] Allow AssertionError messages for function :pre and :post conditions to be specified.
    1 Backlog      [CLJ-1861] Remove unnecessary var interning
    1 Triaged      [CLJ-970] extend/implement parameterized types (generics)
@@ -241,6 +243,7 @@ Enhancement
    1 Triaged      [CLJ-1416] Support transients in gvec
    1 Triaged      [CLJ-1762] Implement IKVReduce for java.util.map
    1 Open         [CLJ-1280] Create reusable exception that can carry file/line/col info
+   1 Triaged      [CLJ-1289] aset-* and aget perform poorly on multi-dimensional arrays even with type hints. 
    1 Open         [CLJ-1326] Inconsistent reflection warnings when target is a literal
    1 Open         [CLJ-1455] Postcondition in defrecord: Compiler unable to resolve symbol %
    1 Vetted       [CLJ-1130] When unable to match a static method, report arity caller was looking for, avoid misleading field error
@@ -272,7 +275,6 @@ Enhancement
    0 Backlog      [CLJ-771] Move unchecked-prim casts to clojure.unchecked
    0 Vetted       [CLJ-992] `iterate` reducer
    0 Backlog      [CLJ-1104] Concurrent with-redefs do not unwind properly, leaving a var permanently changed
-   0 Triaged      [CLJ-1289] aset-* and aget perform poorly on multi-dimensional arrays even with type hints. 
    0 Triaged      [CLJ-1290] clojure.xml parse docstring omits InputSource
    0 Backlog      [CLJ-1400] Error "Can't refer to qualified var that doesn't exist" should name the bad symbol
    0 Triaged      [CLJ-1401] CompilerException / IllegalStateException when overriding vars
@@ -308,6 +310,9 @@ Enhancement
    0 Triaged      [CLJ-1811] test line reporting doesn't always report test's file & line number
    0 Triaged      [CLJ-1826] drop-last docstring refers to 'coll' args refer to 's'
    0 Triaged      [CLJ-1836] Expose clojure.repl/doc as a function call
-   0 Ok           [CLJ-1845] Allow load to be redefined
-   0 Ok           [CLJ-1851] Add :redef key for vars to avoid being direct linked
    0 Triaged      [CLJ-1859] Update parameter name to reflect docstring
+
+========================================
+Task
+
+   3 Open         [CLJ-1862] Release both a direct linked and a non direct linked clojure
