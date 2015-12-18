@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: December 10, 2015
+Date: December 17, 2015
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -50,12 +50,13 @@ Defect
              Tassilo Horn (1/7)
              Daniel Compton (1/13)
              Nicola Mometto (1/57)
-    4.76  10 Triaged      [CLJ-1744] Unused destructured local not cleared, causes memory leak
+    5.26  11 Triaged      [CLJ-1744] Unused destructured local not cleared, causes memory leak
              Dave Aitken (1)
              Rohit Aggarwal (1)
              Simon Belak (1)
              Daniel Solano Gómez (1/2)
              James Henderson (1/2)
+             Ragnar Dahlen (1/2)
              Jozef Wagner (1/4)
              Michael Griffiths (1/5)
              Andrey Antukh (1/7)
@@ -119,6 +120,9 @@ Defect
              Sunil Abraham (1)
              Kei Tsuji (1/2)
              Ryan Neufeld (1/2)
+    2.00   2 Open         [CLJ-1852] Clojure-generated class names length exceed file-system limit
+             Daniel Woelfel (1)
+             Stas Krichevsky (1)
     1.58   3 Open         [CLJ-1243] Cannot resolve public generic method from package-private base class
              Sébastien Wagener (1)
              Noam Ben Ari (1/3)
@@ -149,10 +153,10 @@ Defect
              Nicola Mometto (1/57)
     1.00   1 Open         [CLJ-1013] Clojure's classloader cannot handle out-of-order loading
              Daniel Kwiecinski (1)
+    1.00   1 Open         [CLJ-1172] Cross-linking between clojure.lang.Compiler and clojure.lang.RT
+             Alex Maletz (1)
     1.00   1 Open         [CLJ-1317] clojure.zip/seq-zip returns spurious nils during traversal
              Lee Spector (1)
-    1.00   1 Open         [CLJ-1852] Clojure-generated class names length exceed file-system limit
-             Daniel Woelfel (1)
     0.81   4 Triaged      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
              Daniel Solano Gómez (1/2)
              Alexander Yakushev (1/5)
@@ -234,8 +238,6 @@ Defect
              Daniel Compton (1/13)
     0.07   1 Open         [CLJ-1582] Overriding in-ns and ns is problematic 
              Reid McKenzie (1/15)
-    0.04   1 Open         [CLJ-1668] ns macro throws NPE if empty reference is specified
-             Michael Blume (1/23)
     0.02   1 Open         [CLJ-1017] Metadata expressions are evaluated after the expression they affect
              Nicola Mometto (1/57)
     0.02   1 Open         [CLJ-1548] primitive type hints on protocol methods break call sites
@@ -251,8 +253,8 @@ Defect
     0.00   0 Backlog      [CLJ-84] GC Issue 81: compile gen-class fail when class returns self
     0.00   0 Backlog      [CLJ-346] (pprint-newline :fill) is not handled correctly
     0.00   0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
-    0.00   0 Backlog      [CLJ-1161] sources jar has bad versions.properties resource
     0.00   0 Backlog      [CLJ-1741] deftype class literals and instances loaded from different classloaders when recompiling namespace
+    0.00   0 Screenable   [CLJ-1868] Unknown return type class throws NPE instead of useful exception
     0.00   0 Triaged      [CLJ-929] Accessing Java property starting with _ has issues in 1.4
     0.00   0 Triaged      [CLJ-1142] Incorrect divide-by-zero error with floating point numbers
     0.00   0 Triaged      [CLJ-1159] clojure.java.io/delete-file doesn't return the status of the deletion(true/false)
@@ -395,6 +397,27 @@ Enhancement
              Gary Trakhman (1/11)
              David Greenberg (1/16)
              Nicola Mometto (1/57)
+    7.05  20 Triaged      [CLJ-304] clojure.repl/source does not work with deftype
+             Alex Walker (1)
+             Andrew Rudenko (1)
+             Frank Siebenlist (1)
+             Akiva Schoen (1/3)
+             Artur Malabarba (1/3)
+             Chris Sims (1/3)
+             Daemian Mack (1/3)
+             Dmitri Naumov (1/3)
+             Dominic LoBue (1/3)
+             Eli Naeher (1/3)
+             Ivan Kryvoruchko (1/3)
+             Magnar Sveen (1/4)
+             Alexander Yakushev (1/5)
+             Michael Griffiths (1/5)
+             Stephen Caudill (1/5)
+             Jan Rychter (1/8)
+             Lars Andersen (1/8)
+             Andrew Rosa (1/9)
+             Gary Trakhman (1/11)
+             Bozhidar Batsov (1/13)
     6.99  11 Triaged      [CLJ-1435] 'numerator and 'denominator fail to handle integral values (i.e. N/1)
              David Cravey (1)
              Eduard Bondarenko (1)
@@ -407,27 +430,6 @@ Enhancement
              Gary Fredericks (1/5)
              Mike Anderson (1/7)
              Stephen C. Gilardi (1/7)
-    6.96  20 Triaged      [CLJ-304] clojure.repl/source does not work with deftype
-             Alex Walker (1)
-             Andrew Rudenko (1)
-             Frank Siebenlist (1)
-             Akiva Schoen (1/3)
-             Artur Malabarba (1/3)
-             Chris Sims (1/3)
-             Daemian Mack (1/3)
-             Dominic LoBue (1/3)
-             Eli Naeher (1/3)
-             Ivan Kryvoruchko (1/3)
-             Dmitri Naumov (1/4)
-             Magnar Sveen (1/4)
-             Alexander Yakushev (1/5)
-             Michael Griffiths (1/5)
-             Stephen Caudill (1/5)
-             Jan Rychter (1/8)
-             Lars Andersen (1/8)
-             Andrew Rosa (1/9)
-             Gary Trakhman (1/11)
-             Bozhidar Batsov (1/13)
     6.79  18 Triaged      [CLJ-1298] Add more type predicate fns to core
              Alexander Redington (1)
              Gunnar Völkel (1)
@@ -447,6 +449,17 @@ Enhancement
              Bozhidar Batsov (1/13)
              Reid McKenzie (1/15)
              Nicola Mometto (1/57)
+    5.75  10 Vetted       [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
+             Mark Feeney (1)
+             Ryan Fowler (1)
+             Steven E. Harris (1)
+             Toby Crawley (1)
+             serzh Nechyporchuk (1)
+             Michael van Acken (1/5)
+             Patrick Houk (1/5)
+             Tim McCormack (1/5)
+             Andy Fingerhut (1/13)
+             Daniel Compton (1/13)
     5.72  17 Triaged      [CLJ-1522] Enhance multimethods metadata
              Simon Katz (1)
              Fernando Varesi (1/2)
@@ -496,16 +509,6 @@ Enhancement
              Jonas Enlund (1/2)
              Trevor Hartman (1/2)
              David Leatherman (1/6)
-             Daniel Compton (1/13)
-    4.75   9 Vetted       [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
-             Mark Feeney (1)
-             Steven E. Harris (1)
-             Toby Crawley (1)
-             serzh Nechyporchuk (1)
-             Michael van Acken (1/5)
-             Patrick Houk (1/5)
-             Tim McCormack (1/5)
-             Andy Fingerhut (1/13)
              Daniel Compton (1/13)
     4.41  11 Open         [CLJ-1078] Add queue and queue? to clojure.core
              Allen Rohner (1)
@@ -675,6 +678,12 @@ Enhancement
              Alan Thompson (1)
              Greg Chapman (1/6)
              Reid McKenzie (1/15)
+    2.14   5 Open         [CLJ-1201] There should also be writing in clojure.edn
+             Mike Hughes (1)
+             Marc Limotte (1/2)
+             Trevor Hartman (1/2)
+             Daniel Compton (1/13)
+             Reid McKenzie (1/15)
     2.03   4 Open         [CLJ-1141] Allow pre and post-conditions in defprotocol and deftype macros
              Vjeran Marcinko (1)
              Joe R. Smith (1/2)
@@ -689,10 +698,10 @@ Enhancement
              Mike Rodriguez (1/6)
              Colin Taylor (1/8)
              Bozhidar Batsov (1/13)
-    1.75   3 Open         [CLJ-272] load/ns/require/use overhaul
+    1.83   3 Open         [CLJ-272] load/ns/require/use overhaul
              Kevin Krouse (1)
              Paudi Moriarty (1/2)
-             Dmitri Naumov (1/4)
+             Dmitri Naumov (1/3)
     1.67   3 Triaged      [CLJ-99] GC Issue 95: max-key and min-key evaluate k multiple times for arguments
              Hildeberto Mendonça (1)
              Frank Schmidt (1/2)
@@ -784,11 +793,6 @@ Enhancement
              Michael van Acken (1/5)
              Daniel Compton (1/13)
              David Greenberg (1/16)
-    1.14   4 Open         [CLJ-1201] There should also be writing in clojure.edn
-             Marc Limotte (1/2)
-             Trevor Hartman (1/2)
-             Daniel Compton (1/13)
-             Reid McKenzie (1/15)
     1.10   5 Open         [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
              César Bolaños (1/3)
              Jenan Wise (1/3)
@@ -805,8 +809,6 @@ Enhancement
     1.04   2 Open         [CLJ-1162] Error Message when calling deref on a non-IDeref is unhelpful
              Jason W Zwolak (1)
              Michael Blume (1/23)
-    1.00   1 Backlog      [CLJ-1861] Remove unnecessary var interning
-             Sergiy Nechyporchuk (1)
     1.00   1 Open         [CLJ-994] repeat reducer
              Alan Malloy (1)
     1.00   1 Open         [CLJ-1223] Improve App Engine Support by Providing an Option to Use the App Engine ThreadManger
@@ -817,13 +819,13 @@ Enhancement
              Wilson Marçal Barros Filho (1)
     1.00   1 Open         [CLJ-1817] Allow AssertionError messages for function :pre and :post conditions to be specified.
              Larry Staton Jr. (1)
+    0.98   3 Triaged      [CLJ-825] Protocol implementation inconsistencies when overloading arity
+             Michael Klishin (1/2)
+             Dmitri Naumov (1/3)
+             Mike Anderson (1/7)
     0.89   3 Backlog      [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
              Maris Orbidans (1/2)
              Chas Emerick (1/4)
-             Mike Anderson (1/7)
-    0.89   3 Triaged      [CLJ-825] Protocol implementation inconsistencies when overloading arity
-             Michael Klishin (1/2)
-             Dmitri Naumov (1/4)
              Mike Anderson (1/7)
     0.89   4 Triaged      [CLJ-1814] Make `satisfies?` as fast as a protocol method call
              James Henderson (1/2)
@@ -911,16 +913,14 @@ Enhancement
     0.26   2 Open         [CLJ-978] bean unable to handle non-public classes
              Mike Rodriguez (1/6)
              Gary Trakhman (1/11)
-    0.25   1 Open         [CLJ-148] Poor reporting of symbol conflicts when using (ns)
-             Dmitri Naumov (1/4)
     0.25   1 Open         [CLJ-1010] A left-to-right-variant of `comp`
              Vlad Bokov (1/4)
     0.25   1 Open         [CLJ-1266] Better primitive support for floats
              Alex Fowler (1/4)
+    0.25   1 Open         [CLJ-1585] Report boxed math warning on function that boxes primitive return value
+             Peter Taoussanis (1/4)
     0.25   1 Triaged      [CLJ-1073] Make print-sequential interruptible
              Yongqian Li (1/4)
-    0.25   1 Triaged      [CLJ-1585] Report boxed math warning on function that boxes primitive return value
-             Peter Taoussanis (1/4)
     0.25   1 Triaged      [CLJ-1730] Improve `refer` performance
              Jean Fabio Baro (1/4)
     0.20   2 Triaged      [CLJ-1598] Make if forms compile directly to the appropriate branch expression if the test is a literal
@@ -976,6 +976,8 @@ Enhancement
              Michael Blume (1/23)
     0.04   1 Triaged      [CLJ-1613] :or defaults should refer to enclosing scope in map destructuring
              Michael Blume (1/23)
+    0.04   1 Triaged      [CLJ-1668] ns macro throws NPE if empty reference is specified
+             Michael Blume (1/23)
     0.02   1 Open         [CLJ-140] Single :tag for type hints conflates value's type with type of return value from an invoke
              Nicola Mometto (1/57)
     0.02   1 Open         [CLJ-666] Add support for Big* numeric types to Reflector
@@ -1004,7 +1006,6 @@ Enhancement
              Nicola Mometto (1/57)
     0.02   1 Triaged      [CLJ-1493] Fast keyword intern
              Nicola Mometto (1/57)
-    0.00   0 Backlog      [CLJ-5] Unintuitive error response in clojure 1.0
     0.00   0 Backlog      [CLJ-69] GC Issue 66: Add "keyset" to Clojure; make .keySet for APersistentMap return IPersistentSet
     0.00   0 Backlog      [CLJ-211] Support arbitrary functional destructuring via -> and ->>
     0.00   0 Backlog      [CLJ-250] debug builds
@@ -1015,6 +1016,8 @@ Enhancement
     0.00   0 Backlog      [CLJ-1400] Error "Can't refer to qualified var that doesn't exist" should name the bad symbol
     0.00   0 Backlog      [CLJ-1420] ThreadLocalRandom instead of Math/random
     0.00   0 Backlog      [CLJ-1673] Improve clojure.repl/dir-fn to work on namespace aliases in addition to canonical namespaces.
+    0.00   0 Triaged      [CLJ-5] Sequential destructuring of map gives confusing error message
+    0.00   0 Triaged      [CLJ-405] better error messages for bad defrecord calls
     0.00   0 Triaged      [CLJ-704] range function has missing documentation
     0.00   0 Triaged      [CLJ-1290] clojure.xml parse docstring omits InputSource
     0.00   0 Triaged      [CLJ-1401] CompilerException / IllegalStateException when overriding vars
@@ -1033,6 +1036,7 @@ Enhancement
     0.00   0 Triaged      [CLJ-1676] map destructuring: prevent evaluation of values in :or when they are not used/needed
     0.00   0 Triaged      [CLJ-1693] into: merge metadata
     0.00   0 Triaged      [CLJ-1732] Add docstring explanation of (isa? [x1 x2...] [parent1 parent2...])
+    0.00   0 Triaged      [CLJ-1737] Omit java exception class from CompilerException message
     0.00   0 Triaged      [CLJ-1750] There should be a way to observe platform features at runtime
     0.00   0 Triaged      [CLJ-1752] realized? return true for an instance that is not IPending
     0.00   0 Triaged      [CLJ-1763] clojure.core/sort is not thread-safe on Java collections with backing arrays
@@ -1054,7 +1058,7 @@ Enhancement
 ========================================
 Task
 
-    3.00   3 Open         [CLJ-1862] Release both a direct linked and a non direct linked clojure
+    2.50   3 Open         [CLJ-1862] Release both a direct linked and a non direct linked clojure
              Aleksander (1)
-             Ragnar Dahlen (1)
              Robin Lunn (1)
+             Ragnar Dahlen (1/2)
