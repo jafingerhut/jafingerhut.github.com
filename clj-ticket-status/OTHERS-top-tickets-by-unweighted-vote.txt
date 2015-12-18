@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: December 5, 2015
+Date: December 17, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -56,20 +56,22 @@ Project ASYNC tickets
 ========================================
 Defect
 
+   4 Triaged      [ASYNC-100] core.async with multiple catch blocks causing weird loop behaviour
+   4 Triaged      [ASYNC-138] Go blocks leak memory
+   4 Open         [ASYNC-90] Pub/sub leaks memory
    3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
-   3 Triaged      [ASYNC-100] core.async with multiple catch blocks causing weird loop behaviour
-   3 Open         [ASYNC-90] Pub/sub leaks memory
    2 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
    2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
    2 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
    2 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
+   2 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
    2 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
    1 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
    1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
    1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
-   1 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
-   1 Triaged      [ASYNC-138] Go blocks leak memory
+   1 Triaged      [ASYNC-154] (require :reload-all) causes NullPointerException
    1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
+   1 Open         [ASYNC-78] deadlock in multi catch
    0 Triaged      [ASYNC-4] Record literals become ordinary maps
    0 Open         [ASYNC-39] Processes spawned by mix never terminate
    0 Open         [ASYNC-51] Core.async memory leak in Safari and Mobile Safari
@@ -79,7 +81,6 @@ Defect
    0 Open         [ASYNC-70] documentation of thread macro should include behavior of nil (closes the channel)
    0 Open         [ASYNC-73] try-catch-finally broken inside go-blocks
    0 Open         [ASYNC-77] StackOverflowError in go macro with cemerick.cljs.test (CLJS)
-   0 Open         [ASYNC-78] deadlock in multi catch
    0 Open         [ASYNC-96] FixedBuffer's full checking in cljs
    0 Open         [ASYNC-97] CLJS: alts! sporadically failing to unblock despite channel activity (Safari 7)
    0 Open         [ASYNC-108] cljs to-chan hangs on infinite lazy sequences
@@ -96,7 +97,7 @@ Defect
    0 Open         [ASYNC-144] pipeline-async docstring correction
    0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
    0 Vetted       [ASYNC-152] Reflection warning when binding received values to names.
-   0 Triaged      [ASYNC-154] (require :reload-all) causes NullPointerException
+   0 Open         [ASYNC-155] Preserve loop binding metadata when inside a go block
 
 ========================================
 Enhancement
@@ -104,9 +105,9 @@ Enhancement
    9 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
    4 Open         [ASYNC-137] Make (<! (timeout 0)) be closer to 0
    4 Open         [ASYNC-119] ClojureScript: combine cljs.core.async.macros and cljs.core.async
+   4 Triaged      [ASYNC-126] Add public channel "closed?" predicate
    3 Open         [ASYNC-107] Improved docstring for alt!
    3 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
-   3 Triaged      [ASYNC-126] Add public channel "closed?" predicate
    2 Triaged      [ASYNC-67] Can we get a generic sink operation?
    2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
    2 Open         [ASYNC-114] Allow a second arity on channel ex-handler which takes val as well as throwable
@@ -212,7 +213,6 @@ Defect
    0 Open         [CLJCLR-67] Cannot call new/hidden interface method
    0 Open         [CLJCLR-73] Regularize handling of clojure.compile.x environment variables
    0 Open         [CLJCLR-76] Reader Conditionals do not behave as expected on the CLR
-   0 Open         [CLJCLR-77] resolve fails in compiled code, but works in source-code
    0 Open         [CLJCLR-78] Problems building on Linux
 
 ========================================
@@ -379,11 +379,6 @@ Task
 
 
 Project DAVL tickets
-========================================
-Defect
-
-   1 Open         [DAVL-6] ClojureScript version IMeta & IFn protocols implementation broken
-
 
 Project DCODEC tickets
 ========================================
@@ -431,6 +426,7 @@ Project DFRS tickets
 Defect
 
    0 Open         [DFRS-7] Roundtrip encoding of values are unequal under Clojure 1.6
+   0 Open         [DFRS-8] missing support for bytes
 
 ========================================
 Enhancement
@@ -457,7 +453,6 @@ Project DIMAP tickets
 Defect
 
    0 Open         [DIMAP-2] Proper seq on int-sets
-   0 Open         [DIMAP-5] NullPointerException in IntSet union
 
 ========================================
 Enhancement
@@ -592,6 +587,8 @@ Defect
    0 Open         [LOGIC-172] nafc doesn't work with more complex goals
    0 Open         [LOGIC-173] StackOverflowError when logic variable is unified with a set
    0 Open         [LOGIC-174] LCons fails for inequality
+   0 Open         [LOGIC-175] Disequality might not eliminate when `(!= (_0 _0))`
+   0 Open         [LOGIC-176] Extending IUnifyTerms doesn't work anymore
 
 ========================================
 Enhancement
