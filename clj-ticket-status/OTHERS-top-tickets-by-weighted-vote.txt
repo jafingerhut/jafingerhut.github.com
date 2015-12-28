@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: December 17, 2015
+Date: December 28, 2015
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -56,6 +56,15 @@ Project ASYNC tickets
 ========================================
 Defect
 
+    6.08   8 Triaged      [ASYNC-138] Go blocks leak memory
+             Dave Aitken (1)
+             James Henderson (1)
+             Solicode (1)
+             Timothy Pote (1)
+             Yen-Chin, Lee (1)
+             Gary Trakhman (1/2)
+             Jan Rychter (1/3)
+             Nicola Mometto (1/4)
     3.00   3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
              Hugo Duncan (1)
              Martin Raison (1)
@@ -65,32 +74,30 @@ Defect
              Paul Ostazeski (1)
              Willy Blandin (1/2)
              Nicola Mometto (1/4)
-    2.75   4 Triaged      [ASYNC-138] Go blocks leak memory
-             Dave Aitken (1)
-             James Henderson (1)
-             Gary Trakhman (1/2)
-             Nicola Mometto (1/4)
-    2.70   4 Open         [ASYNC-90] Pub/sub leaks memory
+    2.03   4 Triaged      [ASYNC-90] Pub/sub leaks memory
              Collider Writer (1)
-             Jan Rychter (1)
              Jonas Enlund (1/2)
+             Jan Rychter (1/3)
              Daniel Compton (1/5)
     2.00   2 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
              Ghadi Shayban (1)
              Yehonathan Sharvit (1)
+    1.33   3 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
+             Colin Taylor (1/2)
+             Gary Trakhman (1/2)
+             Jan Rychter (1/3)
     1.33   2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
              Ryan Sundberg (1)
              Howard Lewis Ship (1/3)
     1.20   2 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
              Thomas Down (1)
              Daniel Compton (1/5)
-    1.00   2 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
-             Colin Taylor (1/2)
-             Gary Trakhman (1/2)
     1.00   1 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
              Marcus Lewis (1)
     1.00   1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
              Francis Avila (1)
+    1.00   1 Open         [ASYNC-128] or evaluation not stopped when exp nests take
+             Christian Weilbach (1)
     1.00   1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
              Patrick Killean (1)
     1.00   1 Triaged      [ASYNC-154] (require :reload-all) causes NullPointerException
@@ -118,19 +125,17 @@ Defect
     0.00   0 Open         [ASYNC-111] maps are represented different inside and outside of go blocks
     0.00   0 Open         [ASYNC-118] (ClojureScript) A let-binding named 'arguments' not bound in go block on nodejs 
     0.00   0 Open         [ASYNC-121] compilation warning when calling 'satisfies?' inside a go block
-    0.00   0 Open         [ASYNC-122] Parking in finally block replaces result
     0.00   0 Open         [ASYNC-123] Channel operations fail in for comprehension.
-    0.00   0 Open         [ASYNC-128] or evaluation not stopped when exp nests take
     0.00   0 Open         [ASYNC-129] Channels with transducer using reduced don't work as intended
     0.00   0 Open         [ASYNC-132] Can't close over locals in #js in go
     0.00   0 Open         [ASYNC-134] async/alts!! with an empty vector throws ArrayIndexOutOfBoundsException
     0.00   0 Open         [ASYNC-144] pipeline-async docstring correction
     0.00   0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
-    0.00   0 Open         [ASYNC-155] Preserve loop binding metadata when inside a go block
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
     0.00   0 Triaged      [ASYNC-113] alt!! should not evaluate the :default expr if a non-default clause is selected
-    0.00   0 Vetted       [ASYNC-152] Reflection warning when binding received values to names.
+    0.00   0 Triaged      [ASYNC-122] Parking in finally block replaces result
+    0.00   0 Triaged      [ASYNC-155] Preserve loop binding metadata when inside a go block
 
 ========================================
 Enhancement
@@ -582,7 +587,6 @@ Project DXML tickets
 Defect
 
     0.00   0 Open         [DXML-15] data.xml can't parse own output if there's a colon in an attribute name
-    0.00   0 Open         [DXML-23] Prefix is null in Inkscape SVG
     0.00   0 Open         [DXML-27] Element java.util.Date throws IllegalArgumentException
     0.00   0 Open         [DXML-28] pull-seq :characters events are not compatible with emit-event
 
@@ -702,6 +706,7 @@ Defect
     0.00   0 Open         [LOGIC-174] LCons fails for inequality
     0.00   0 Open         [LOGIC-175] Disequality might not eliminate when `(!= (_0 _0))`
     0.00   0 Open         [LOGIC-176] Extending IUnifyTerms doesn't work anymore
+    0.00   0 Open         [LOGIC-177] binding to a deep nested vector takes too much time
 
 ========================================
 Enhancement
@@ -984,12 +989,13 @@ Project TNS tickets
 ========================================
 Defect
 
+    2.00   2 Open         [TNS-38] circular dependency when CLJS namespace requires CLJ for macros
+             Benedek Fazekas (1)
+             Lars Andersen (1)
     1.00   1 Open         [TNS-6] Attempt to reload deleted file
              deliminator (1)
     1.00   1 Open         [TNS-7] Stack overflow on refresh after circular dependency detected
              Anthony Marcar (1)
-    1.00   1 Open         [TNS-38] circular dependency when CLJS namespace requires CLJ for macros
-             Lars Andersen (1)
     0.00   0 Open         [TNS-24] Broken tracker after mis-named namespace
     0.00   0 Open         [TNS-40] Don't catch all exceptions in read-file-ns-decl
 
@@ -998,6 +1004,7 @@ Enhancement
 
     0.00   0 Open         [TNS-37] c.t.n.move: does not support to move .cljc files
     0.00   0 Open         [TNS-39] Single classpath argument for c.t.n.move
+    0.00   0 Open         [TNS-41] Provide warning when AOT enabled for a project
 
 
 Project TRDR tickets
