@@ -3224,6 +3224,10 @@
   :usernames #{"jcasu"},
   :emails #{"john@chiraldynamics.com"}}
  (),
+ {:display-name "Gabe Johnson",
+  :usernames #{"gabe.johnson"},
+  :emails #{"gijohnson105@gmail.com"}}
+ (),
  {:display-name "Plínio Balduino",
   :usernames #{"pbalduino"},
   :emails #{"pbalduino@gmail.com"}}
@@ -3861,6 +3865,10 @@
   :usernames #{"obobo"},
   :emails #{"kleiman@obbr.net"}}
  ("CLJ-1527"),
+ {:display-name "Kevin Nolan",
+  :usernames #{"kpnolan"},
+  :emails #{"insgraph.kevin@gmail.com"}}
+ (),
  {:display-name "Anders Sveen",
   :usernames #{"anderssv"},
   :emails #{"anders@f12.no"}}
@@ -3969,7 +3977,7 @@
  {:display-name "Ivan Kryvoruchko",
   :usernames #{"gsnewmark"},
   :emails #{"gildraug@gmail.com"}}
- ("CLJ-1550" "CLJ-1522" "CLJ-304"),
+ ("CLJ-1550" "CLJ-1522" "CLJ-304" "CCACHE-42"),
  {:display-name "Ben Mabey",
   :usernames #{"bmabey"},
   :emails #{"ben@benmabey.com"}}
@@ -6189,6 +6197,10 @@
   :usernames #{"ezyang"},
   :emails #{"ezyang@mit.edu"}}
  (),
+ {:display-name "August Lilleaas",
+  :usernames #{"augustl"},
+  :emails #{"august@augustl.com"}}
+ (),
  {:display-name "Matthew West",
   :usernames #{"matthewwest217@gmail.com"},
   :emails #{"matthewwest217@gmail.com"}}
@@ -6373,6 +6385,10 @@
   :usernames #{"xumingming"},
   :emails #{"xumingming64398966@gmail.com"}}
  (),
+ {:display-name "James Aarons",
+  :usernames #{"jra1978"},
+  :emails #{"jim.aarons@gmail.com"}}
+ ("CLJ-1381"),
  {:display-name "Ralph Möritz",
   :usernames #{"ralmoritz"},
   :emails #{"ralmoritz@gmail.com"}}
@@ -6571,6 +6587,10 @@
   :usernames #{"nevenavv"},
   :emails #{"nevenavv@gmail.com"}}
  ("CLJ-440"),
+ {:display-name "Santiago Pelufo",
+  :usernames #{"spelufo"},
+  :emails #{"santiagopelufo@gmail.com"}}
+ (),
  {:display-name "Tom Hicks",
   :usernames #{"hickst"},
   :emails #{"hickst@theriver.com"}}
