@@ -6,14 +6,22 @@
 
 
 
+
 <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Clojure expression benchmarks</title>
   <meta content="Andy Fingerhut" name="author"></head><body>
 [<a href="Clojure-benchmarks.html">benchmarks main page</a>] [<a href="Clojure-whole-program-benchmarks.html">whole program benchmarks</a>] [expression benchmarks] [<a href="Clojure-version-history.html">Clojure version history</a>] [<a href="Hardware-and-software-used-for-Clojure-benchmarks.html">hardware and software used</a>]<br>
 <h1>Clojure expression benchmarks</h1>Graphs of measurements are <a href="Clojure-expression-benchmark-graphs.html">here</a>.<br>
 <br>
-
-
-For these benchmarks I used Hugo Duncan's <a href="https://github.com/hugoduncan/criterium">criterium</a>
+JDK version notes: 64-bit Oracle JDK 1.7.0_80 is downloaded from
+Oracle's web site.&nbsp; 64-bit Oracle JDK 1.7.0_91 is a version of
+OpenJDK installed via Ubuntu's apt-get.&nbsp; Here is the output of
+'java-version' for it:<br>
+<br>
+<code>java version "1.7.0_91"<br>
+OpenJDK Runtime Environment (IcedTea 2.6.3) (7u91-2.6.3-0ubuntu0.14.04.1)<br>
+OpenJDK 64-bit Server VM (build 24.91-b01, mixed mode)<br>
+</code>
+<br>For these benchmarks I used Hugo Duncan's <a href="https://github.com/hugoduncan/criterium">criterium</a>
 library to perform the measurements, version 0.4.2 (the latest released as of Nov 2013).&nbsp; The
 basic idea of criterium is to do the following for each expression:<br>
 <ol>
