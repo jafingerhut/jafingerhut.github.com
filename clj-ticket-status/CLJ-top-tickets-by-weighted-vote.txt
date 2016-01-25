@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: January 21, 2016
+Date: January 25, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -39,7 +39,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
-    5.90  10 Backlog      [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
+    5.90  10 Incomplete   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
              Daniel Glauser (1)
              Emrehan Tuzun (1)
              James Conroy-Finn (1)
@@ -63,7 +63,7 @@ Defect
              Andrey Antukh (1/7)
              Lars Andersen (1/8)
              Michael Blume (1/22)
-    4.48  18 Backlog      [CLJ-700] contains? broken for transient collections
+    4.48  18 Incomplete   [CLJ-700] contains? broken for transient collections
              Laszlo Török (1)
              Dom Kiva-Meyer (1/2)
              Chris Blom (1/3)
@@ -82,7 +82,7 @@ Defect
              Reid McKenzie (1/15)
              David Greenberg (1/16)
              Nicola Mometto (1/54)
-    4.18   9 Backlog      [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
+    4.18   9 Incomplete   [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
              Coen De Roover (1)
              Stephen Nelson (1)
              Volkert Oakley Jurgens (1)
@@ -110,7 +110,7 @@ Defect
              Andy Fingerhut (1/13)
              Daniel Compton (1/13)
              Nicola Mometto (1/54)
-    2.36   6 Backlog      [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
+    2.36   6 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
              Achint Sandhu (1)
              Ghadi Shayban (1/2)
              Stuart Halloway (1/2)
@@ -139,7 +139,7 @@ Defect
     1.33   2 Triaged      [CLJ-1360] clojure.string/split strips trailing delimiters
              Crispin Wellington (1)
              César Bolaños (1/3)
-    1.21   3 Backlog      [CLJ-787] transient blows up when passed a vector created by subvec
+    1.21   3 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
              Anderson De Andrade (1)
              John Walker (1/7)
              David Greenberg (1/16)
@@ -163,7 +163,7 @@ Defect
     0.67   2 Open         [CLJ-1206] 'eval' of closures or fns with runtime metadata within a call expr yields "No matching ctor found" exceptions
              Richard Davies (1/2)
              Tom Crayford (1/6)
-    0.66   3 Backlog      [CLJ-1620] Constants are leaked in case of a reentrant eval
+    0.66   3 Incomplete   [CLJ-1620] Constants are leaked in case of a reentrant eval
              Laurent Petit (1/2)
              Colin Fleming (1/7)
              Nicola Mometto (1/54)
@@ -194,7 +194,7 @@ Defect
     0.35   2 Backlog      [CLJ-274] cannot close over mutable fields (in deftype)
              John Hume (1/3)
              Nicola Mometto (1/54)
-    0.35   2 Backlog      [CLJ-701] Primitive return type of loop and try is lost
+    0.35   2 Incomplete   [CLJ-701] Primitive return type of loop and try is lost
              Kevin Downey (1/3)
              Nicola Mometto (1/54)
     0.33   1 Open         [CLJ-968] ns emitting gen-class before imports results in imported annotations being discarded.
@@ -216,10 +216,10 @@ Defect
              Nicola Mometto (1/54)
     0.17   1 Open         [CLJ-1198] Apply metadata to primitive fns causes them to lose their primitive-ness
              Tom Crayford (1/6)
+    0.17   1 Prescreened  [CLJ-1403] ns-resolve might throw ClassNotFoundException but should return nil
+             Mike Rodriguez (1/6)
     0.17   1 Triaged      [CLJ-1254] Incorrect long quot result involving Long/MIN_VALUE
              Colin Jones (1/6)
-    0.17   1 Triaged      [CLJ-1403] ns-resolve might throw ClassNotFoundException but should return nil
-             Mike Rodriguez (1/6)
     0.14   1 Triaged      [CLJ-1770] atom watchers are not atomic with respect to reset!
              Andrey Antukh (1/7)
     0.08   1 Open         [CLJ-1308] extend-type doesn't type-hint correctly as promised by the doc when the class is determined at run-time
@@ -247,12 +247,13 @@ Defect
     0.00   0 Backlog      [CLJ-84] GC Issue 81: compile gen-class fail when class returns self
     0.00   0 Backlog      [CLJ-346] (pprint-newline :fill) is not handled correctly
     0.00   0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
-    0.00   0 Backlog      [CLJ-1741] deftype class literals and instances loaded from different classloaders when recompiling namespace
+    0.00   0 Incomplete   [CLJ-1741] deftype class literals and instances loaded from different classloaders when recompiling namespace
     0.00   0 Prescreened  [CLJ-1159] Improve docstring of clojure.java.io/delete-file to be clearer about intent of silently arg
     0.00   0 Prescreened  [CLJ-1180] defprotocol doesn't resolve tag classnames
     0.00   0 Prescreened  [CLJ-1358] doc macro does not expand special cases properly
     0.00   0 Prescreened  [CLJ-1705] vector-of throws NullPointerException if given unrecognized type
     0.00   0 Prescreened  [CLJ-1759] macroexpand throws runtime exception on symbol bound to a class
+    0.00   0 Prescreened  [CLJ-1841] core/bean iterator is broken
     0.00   0 Prescreened  [CLJ-1870] Reloading a defmulti nukes metadata on the var
     0.00   0 Triaged      [CLJ-929] Accessing Java property starting with _ has issues in 1.4
     0.00   0 Triaged      [CLJ-1142] Incorrect divide-by-zero error with floating point numbers
@@ -268,7 +269,6 @@ Defect
     0.00   0 Triaged      [CLJ-1768] quote of an empty lazyseq produces an error when evaled
     0.00   0 Triaged      [CLJ-1796] Protocol functions fail to find future extensions when assigned to a local or new var
     0.00   0 Triaged      [CLJ-1818] cl-format does not respect aesthetic ~A with a keyword
-    0.00   0 Triaged      [CLJ-1841] core/bean into [] creates a buggy result
     0.00   0 Triaged      [CLJ-1860] 0.0 and -0.0 compare equal but have different hash values
     0.00   0 Triaged      [CLJ-1867] with-redefs used on a macro permanently changes it to a function
     0.00   0 Triaged      [CLJ-1872] empty? is broken for transient collections
@@ -372,7 +372,7 @@ Enhancement
              Daniel Compton (1/13)
              Reid McKenzie (1/15)
              Michael Blume (1/22)
-    7.15  18 Backlog      [CLJ-1224] Records do not cache hash like normal maps
+    7.15  18 Screened     [CLJ-1224] Records do not cache hash like normal maps
              Daniel R. Schlegel (1)
              Luca Barozzi (1)
              Steven Yi (1)
@@ -580,7 +580,7 @@ Enhancement
              Greg Chapman (1/6)
              Christoffer Sawicki (1/7)
              David Greenberg (1/16)
-    3.65   7 Vetted       [CLJ-1553] Parallel transduce
+    3.65   7 Open         [CLJ-1553] Parallel transduce
              Darrick Wiebe (1)
              Rafik NACCACHE (1)
              Alejandro Ciniglio (1/2)
@@ -719,7 +719,7 @@ Enhancement
              Bridget Hillyer (1/3)
              Daniel James (1/5)
              Reid McKenzie (1/15)
-    1.56   9 Vetted       [CLJ-1610] Unrolled small maps
+    1.56   9 Open         [CLJ-1610] Unrolled small maps
              Michał Marczyk (1/2)
              Jean Fabio Baro (1/4)
              Michael Patrick O'Keefe (1/5)
@@ -824,8 +824,6 @@ Enhancement
              Shlomi (1)
     1.00   1 Open         [CLJ-1526] clojure.core/> inconsistent behavior wrt to documentation.
              kalina todorova (1)
-    1.00   1 Open         [CLJ-1760] Add `partial` reader macro
-             Wilson Marçal Barros Filho (1)
     1.00   1 Open         [CLJ-1817] Allow AssertionError messages for function :pre and :post conditions to be specified.
              Larry Staton Jr. (1)
     0.98   3 Triaged      [CLJ-825] Protocol implementation inconsistencies when overloading arity
@@ -870,7 +868,7 @@ Enhancement
              Mike Thompson (1/2)
     0.50   1 Triaged      [CLJ-970] extend/implement parameterized types (generics)
              Stuart Halloway (1/2)
-    0.40   2 Backlog      [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
+    0.40   2 Screenable   [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
              Ambrose Bonnaire-Sergeant (1/5)
              Gary Fredericks (1/5)
     0.39   3 Open         [CLJ-1120] Introduce ex-message and ex-cause to abstract away the platform in dealing with ExceptionInfo
@@ -1008,15 +1006,15 @@ Enhancement
     0.00   0 Backlog      [CLJ-326] add :as-of option to refer
     0.00   0 Backlog      [CLJ-771] Move unchecked-prim casts to clojure.unchecked
     0.00   0 Backlog      [CLJ-1104] Concurrent with-redefs do not unwind properly, leaving a var permanently changed
-    0.00   0 Backlog      [CLJ-1400] Error "Can't refer to qualified var that doesn't exist" should name the bad symbol
     0.00   0 Backlog      [CLJ-1420] ThreadLocalRandom instead of Math/random
-    0.00   0 Backlog      [CLJ-1673] Improve clojure.repl/dir-fn to work on namespace aliases in addition to canonical namespaces.
+    0.00   0 Incomplete   [CLJ-1400] Error "Can't refer to qualified var that doesn't exist" should name the bad symbol
     0.00   0 Prescreened  [CLJ-1654] Reuse seq in some
     0.00   0 Prescreened  [CLJ-1797] Mention cljc when require fails
     0.00   0 Prescreened  [CLJ-1808] map-invert should use transients and reduce-kv instead of reduce
     0.00   0 Prescreened  [CLJ-1826] drop-last docstring refers to 'coll' args refer to 's'
     0.00   0 Prescreened  [CLJ-1837] Improve wording of index-of and last-index-of doc strings
     0.00   0 Prescreened  [CLJ-1873] Docstrings for require and *data-readers* do not mention cljc files
+    0.00   0 Screenable   [CLJ-1673] Improve clojure.repl/dir-fn to work on namespace aliases in addition to canonical namespaces.
     0.00   0 Triaged      [CLJ-5] Sequential destructuring of map gives confusing error message
     0.00   0 Triaged      [CLJ-405] better error messages for bad defrecord calls
     0.00   0 Triaged      [CLJ-704] range function has missing documentation
@@ -1055,7 +1053,6 @@ Enhancement
     0.00   0 Triaged      [CLJ-1881] Can :or destructuring refer to previous sequential bindings?
     0.00   0 Vetted       [CLJ-992] `iterate` reducer
     0.00   0 Vetted       [CLJ-1551] Consider transducer support for primitives
-    0.00   0 Vetted       [CLJ-1552] Consider kv support for transducers (similar to reducers fold)
 
 ========================================
 Task

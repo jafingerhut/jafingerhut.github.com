@@ -3028,7 +3028,7 @@
  {:display-name "Dave Aitken",
   :usernames #{"actionshrimp"},
   :emails #{"dave.aitken@gmail.com"}}
- ("CLJ-1744" "ASYNC-138"),
+ ("CLJS-794" "CLJS-485" "CLJ-1744" "ASYNC-138"),
  {:display-name "Mark Godfrey",
   :usernames #{"msgodf"},
   :emails #{"msgodf@gmail.com"}}
@@ -3882,6 +3882,10 @@
   :usernames #{"bbates"},
   :emails #{"bbates@icm-consulting.com.au"}}
  (),
+ {:display-name "Konrad Rzezniczak",
+  :usernames #{"konrad"},
+  :emails #{"konradrzez@gmail.com"}}
+ ("ASYNC-100"),
  {:display-name "Takeshi Banse",
   :usernames #{"hchbaw"},
   :emails #{"takebi@laafc.net"}}
@@ -5117,7 +5121,7 @@
  {:display-name "Wilson Marçal Barros Filho",
   :usernames #{"wilsonmacariano"},
   :emails #{"wilsonmacariano@gmail.com"}}
- ("CLJ-1760"),
+ (),
  {:display-name "Tom Jack",
   :usernames #{"tomoj"},
   :emails #{"tom@tomjack.co"}}
