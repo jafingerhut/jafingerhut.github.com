@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: January 25, 2016
+Date: January 28, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -53,6 +53,7 @@ Defect
    4 Prescreened  [CLJ-1423] Applying a var to an infinite arglist consumes all available memory
    3 Open         [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
    3 Open         [CLJ-1243] Cannot resolve public generic method from package-private base class
+   3 Triaged      [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
    3 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
    3 Incomplete   [CLJ-1620] Constants are leaked in case of a reentrant eval
    3 Open         [CLJ-1279] Fix confusing macroexpand1 ArityException handling
@@ -95,7 +96,6 @@ Defect
    0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
    0 Triaged      [CLJ-929] Accessing Java property starting with _ has issues in 1.4
    0 Triaged      [CLJ-1142] Incorrect divide-by-zero error with floating point numbers
-   0 Prescreened  [CLJ-1159] Improve docstring of clojure.java.io/delete-file to be clearer about intent of silently arg
    0 Prescreened  [CLJ-1180] defprotocol doesn't resolve tag classnames
    0 Prescreened  [CLJ-1358] doc macro does not expand special cases properly
    0 Triaged      [CLJ-1475] :post condition causes compiler error with recur
@@ -121,6 +121,7 @@ Defect
    0 Triaged      [CLJ-1872] empty? is broken for transient collections
    0 Triaged      [CLJ-1879] reduce-kv on a PHMs doesn't consistently execute the intended fastpath
    0 Triaged      [CLJ-1885] data/diff does not return a tuple when comparing different maps
+   0 Prescreened  [CLJ-1887] clojure.core.Vec does not fully implement clojure.lang.IPersistentVector
 
 ========================================
 Enhancement
@@ -141,8 +142,8 @@ Enhancement
   11 Vetted       [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
   11 Open         [CLJ-1078] Add queue and queue? to clojure.core
    9 Triaged      [CLJ-1278] State function's unmunged full name in compiled function's toString()
+   9 Vetted       [CLJ-1148] adds docstring support to defonce
    9 Open         [CLJ-1610] Unrolled small maps
-   8 Vetted       [CLJ-1148] adds docstring support to defonce
    8 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
    8 Triaged      [CLJ-308] protocol-ize with-open
    8 Triaged      [CLJ-1454] Add a swap! that returns old value
@@ -152,12 +153,12 @@ Enhancement
    7 Open         [CLJ-1553] Parallel transduce
    7 Triaged      [CLJ-1063] Missing dissoc-in
    7 Triaged      [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
+   7 Triaged      [CLJ-401] Add seqable? predicate
    6 Open         [CLJ-1467] Implement Comparable in PersistentList
    6 Triaged      [CLJ-1611] clojure.java.io/pushback-reader
    6 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
    6 Triaged      [CLJ-1458] Enhance the performance of map merges
    6 Triaged      [CLJ-1117] partition docstring should be more explicit about dropped or partial trailing elements
-   6 Triaged      [CLJ-401] Add seqable? predicate
    5 Triaged      [CLJ-1743] Avoid compile-time static initialization of classes when using inheritance
    5 Triaged      [CLJ-1490] Exception on protocol implementation after protocol reloaded could be improved
    5 Open         [CLJ-1201] There should also be writing in clojure.edn
@@ -176,13 +177,11 @@ Enhancement
    3 Open         [CLJ-272] load/ns/require/use overhaul
    3 Triaged      [CLJ-99] GC Issue 95: max-key and min-key evaluate k multiple times for arguments
    3 Open         [CLJ-1218] mapcat is too eager
-   3 Triaged      [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
    3 Triaged      [CLJ-1094] Add zero-arity versions of every-pred and some-fn
    3 Triaged      [CLJ-825] Protocol implementation inconsistencies when overloading arity
    3 Triaged      [CLJ-1096] Make destructuring emit direct keyword lookups
    3 Backlog      [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
    3 Open         [CLJ-891] make (symbol foo "bar") work with foo being a namespace
-   3 Open         [CLJ-1026] Mixed end-of-line endings in the source code
    3 Triaged      [CLJ-1305] Add optional not-found argument when invoking vectors or sets as functions
    3 Open         [CLJ-1120] Introduce ex-message and ex-cause to abstract away the platform in dealing with ExceptionInfo
    3 Triaged      [CLJ-888] defprotocol should throw error when signatures include variable number of parameters
@@ -197,6 +196,7 @@ Enhancement
    2 Open         [CLJ-2] Scopes
    2 Open         [CLJ-1402] sort-by calls keyfn more times than is necessary
    2 Triaged      [CLJ-1771] Support for multiple key(s)-value pairs in assoc-in
+   2 Open         [CLJ-1026] Mixed end-of-line endings in the source code
    2 Backlog      [CLJ-731] Create macro to variadically unroll a combinator function definition
    2 Screenable   [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
    2 Open         [CLJ-428] subseq, rsubseq enhancements to support priority maps?
@@ -271,6 +271,7 @@ Enhancement
    0 Backlog      [CLJ-771] Move unchecked-prim casts to clojure.unchecked
    0 Vetted       [CLJ-992] `iterate` reducer
    0 Backlog      [CLJ-1104] Concurrent with-redefs do not unwind properly, leaving a var permanently changed
+   0 Prescreened  [CLJ-1159] Improve docstring of clojure.java.io/delete-file to be clearer about intent of silently arg
    0 Triaged      [CLJ-1290] clojure.xml parse docstring omits InputSource
    0 Incomplete   [CLJ-1400] Error "Can't refer to qualified var that doesn't exist" should name the bad symbol
    0 Triaged      [CLJ-1401] CompilerException / IllegalStateException when overriding vars
@@ -314,6 +315,8 @@ Enhancement
    0 Triaged      [CLJ-1875] Parameter names in docstring for `into` 
    0 Triaged      [CLJ-1880] IKVReduce impl for records
    0 Triaged      [CLJ-1881] Can :or destructuring refer to previous sequential bindings?
+   0 Triaged      [CLJ-1888] AReference#meta() is synchronized
+   0 Triaged      [CLJ-1889] Add optional predicate to string trim functions that determines if a character should be trimmed
 
 ========================================
 Task
