@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: January 28, 2016
+Date: February 3, 2016
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -61,15 +61,15 @@ Project ASYNC tickets
 ========================================
 Defect
 
-    8.03  10 Triaged      [ASYNC-138] Go blocks leak memory
+    7.53  10 Triaged      [ASYNC-138] Go blocks leak memory
              Dave Aitken (1)
              James Henderson (1)
              Joseph Biggert (1)
              Mitchel Kuijpers (1)
              Solicode (1)
-             Timothy Pote (1)
              Yen-Chin, Lee (1)
              Gary Trakhman (1/2)
+             Timothy Pote (1/2)
              Jan Rychter (1/3)
              Nicola Mometto (1/5)
     3.70   5 Triaged      [ASYNC-100] core.async with multiple catch blocks causing weird loop behaviour
@@ -152,7 +152,7 @@ Defect
 ========================================
 Enhancement
 
-    8.03  10 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
+    8.53  11 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
              Chad Harrington (1)
              Michael Drogalis (1)
              Paul Michael Bauer (1)
@@ -161,6 +161,7 @@ Enhancement
              Stuart Halloway (1)
              Thomas Engelschmidt (1)
              Colin Taylor (1/2)
+             Timothy Pote (1/2)
              Howard Lewis Ship (1/3)
              Nicola Mometto (1/5)
     3.20   4 Open         [ASYNC-137] Make (<! (timeout 0)) be closer to 0
@@ -377,14 +378,15 @@ Defect
     0.00   0 Bad: Match > [CTYP-177] Compile error with core.async
     0.00   0 Bad: Match > [CTYP-231] (Array X) is broken and undocumented
     0.00   0 Bad: Match > [CTYP-270] "Method code too large!" with protocols (more than 38 functions in the protocol)
+    0.00   0 Bad: Match > [CTYP-278] Impossible to annotate protocol in other namespace
     0.00   0 Bad: Unkn Fi [CTYP-232] Let-aliased variabled of HVec lookups should update original HVec
     0.00   0 Bad: Unkn Fi [CTYP-241] Let-aliased variables of plain Map lookups should update original map
     0.00   0 Bad: Unkn Fi [CTYP-272] check-ns: Assert failed: (r/Type? t)
     0.00   0 Bad: Unkn Fi [CTYP-274] Inferred type for {{defn}} and {{typed/fn}} with the same body are different
     0.00   0 Bad: Unkn Fi [CTYP-275] Bad call to path-type: nil
     0.00   0 Bad: Unkn Fi [CTYP-277] Typechecking fails with internal assert error
-    0.00   0 Bad: Unkn Fi [CTYP-285] Cljc reader conditionals in ns form cause core.typed to skip checking namespace
     0.00   0 Bad: Unkn Fi [CTYP-303] cast doesn't work for recursive types
+    0.00   0 Bad: Unkn Fi [CTYP-306] pred doesn't work for non-literal HVecs with varargs
     0.00   0 Open         [CTYP-35] Should use fresh names when checking plambdas
     0.00   0 Open         [CTYP-47] Expected: IFn, Actual (Fn [Any -> Any])
     0.00   0 Open         [CTYP-171] nil should not be treated as subtype of repeat list/vector
@@ -397,7 +399,6 @@ Defect
     0.00   0 Open         [CTYP-201] Calling a multimethod from a protocol function breaks the type checker
     0.00   0 Open         [CTYP-204] Assoc doesn't work with multiple entries
     0.00   0 Open         [CTYP-209] method-type is broken
-    0.00   0 Open         [CTYP-216] PermGen memory leak when type checking with faulty types
     0.00   0 Open         [CTYP-218] wrap-clj-repl causes error
     0.00   0 Open         [CTYP-221] group-by produces "Cannot resolve type: Seqable"
     0.00   0 Open         [CTYP-222] if-let on an hmap with an optional entry always expected to succeed
@@ -406,9 +407,7 @@ Defect
     0.00   0 Open         [CTYP-225] Intersections of value types broken
     0.00   0 Open         [CTYP-228] Type signature for sort is incorrect - never returns nil
     0.00   0 Open         [CTYP-242] adding stop-gap annotation for 'hash-map' results in runtime exception
-    0.00   0 Open         [CTYP-278] Impossible to annotate protocol in other namespace
     0.00   0 Open         [CTYP-279] An invalid type annotation for a function with a record argument passes a type check
-    0.00   0 Open         [CTYP-280] Breaks (my) repl
     0.00   0 Open         [CTYP-282] Internal error with t/defn, sort-by and no refer all
     0.00   0 Open         [CTYP-293] Should check upcast to Dyn
 
@@ -437,13 +436,12 @@ Enhancement
     0.00   0 Bad: Unkn Fi [CTYP-192] Use memoization in file-mapping to improve performance.
     0.00   0 Bad: Unkn Fi [CTYP-267] bigdec, bigint and biginteger eats (U Number String)
     0.00   0 Bad: Unkn Fi [CTYP-268] Use clojure.lang.Compiler's analyzer
-    0.00   0 Bad: Unkn Fi [CTYP-284] Remove redundant checking in typed load
     0.00   0 Bad: Unkn Fi [CTYP-297] Allow defmulti without expected type
+    0.00   0 Bad: Unkn Fi [CTYP-309] Export typed vars with contracts to untyped namespaces
     0.00   0 Open         [CTYP-9] Support metadata types
     0.00   0 Open         [CTYP-11] Infer good types for loop locals
     0.00   0 Open         [CTYP-12] Handle primitives properly
     0.00   0 Open         [CTYP-13] Understand common contract functions
-    0.00   0 Open         [CTYP-18] Implement equality filters
     0.00   0 Open         [CTYP-76] Support KwArgsSeq in apply
     0.00   0 Open         [CTYP-109] Better error message for TFn app
     0.00   0 Open         [CTYP-110] Add satisfies?
@@ -464,7 +462,6 @@ Enhancement
     0.00   0 Open         [CTYP-220] Data generator for a type
     0.00   0 Open         [CTYP-226] Update clojure.core/get-in annotations to use polymorphic function types (similar to clojure.core/get)
     0.00   0 Open         [CTYP-227] Show file and line number of duplicate definitions
-    0.00   0 Open         [CTYP-229] Checker slows development in rechecking dependent namespaces
     0.00   0 Open         [CTYP-230] Improve error messages by highlighting unmatched argument
     0.00   0 Open         [CTYP-233] Java interop should consider automatic numeric promotions
     0.00   0 Open         [CTYP-240] Annotations for clojure.instant, clojure.template, clojure.set clojure.data and clojure.repl namespaces

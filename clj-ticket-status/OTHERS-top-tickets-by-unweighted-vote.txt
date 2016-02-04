@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: January 28, 2016
+Date: February 3, 2016
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -109,7 +109,7 @@ Defect
 ========================================
 Enhancement
 
-  10 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
+  11 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
    4 Open         [ASYNC-137] Make (<! (timeout 0)) be closer to 0
    4 Open         [ASYNC-119] ClojureScript: combine cljs.core.async.macros and cljs.core.async
    4 Triaged      [ASYNC-126] Add public channel "closed?" predicate
@@ -289,7 +289,6 @@ Defect
    0 Open         [CTYP-201] Calling a multimethod from a protocol function breaks the type checker
    0 Open         [CTYP-204] Assoc doesn't work with multiple entries
    0 Open         [CTYP-209] method-type is broken
-   0 Open         [CTYP-216] PermGen memory leak when type checking with faulty types
    0 Open         [CTYP-218] wrap-clj-repl causes error
    0 Open         [CTYP-221] group-by produces "Cannot resolve type: Seqable"
    0 Open         [CTYP-222] if-let on an hmap with an optional entry always expected to succeed
@@ -306,13 +305,12 @@ Defect
    0 Bad: Unkn Fi [CTYP-274] Inferred type for {{defn}} and {{typed/fn}} with the same body are different
    0 Bad: Unkn Fi [CTYP-275] Bad call to path-type: nil
    0 Bad: Unkn Fi [CTYP-277] Typechecking fails with internal assert error
-   0 Open         [CTYP-278] Impossible to annotate protocol in other namespace
+   0 Bad: Match > [CTYP-278] Impossible to annotate protocol in other namespace
    0 Open         [CTYP-279] An invalid type annotation for a function with a record argument passes a type check
-   0 Open         [CTYP-280] Breaks (my) repl
    0 Open         [CTYP-282] Internal error with t/defn, sort-by and no refer all
-   0 Bad: Unkn Fi [CTYP-285] Cljc reader conditionals in ns form cause core.typed to skip checking namespace
    0 Open         [CTYP-293] Should check upcast to Dyn
    0 Bad: Unkn Fi [CTYP-303] cast doesn't work for recursive types
+   0 Bad: Unkn Fi [CTYP-306] pred doesn't work for non-literal HVecs with varargs
 
 ========================================
 Enhancement
@@ -325,7 +323,6 @@ Enhancement
    0 Open         [CTYP-11] Infer good types for loop locals
    0 Open         [CTYP-12] Handle primitives properly
    0 Open         [CTYP-13] Understand common contract functions
-   0 Open         [CTYP-18] Implement equality filters
    0 Bad: Match > [CTYP-50] Support overriding fields
    0 Open         [CTYP-76] Support KwArgsSeq in apply
    0 Bad: Match > [CTYP-98] Implement a defrecord macro for Clojure
@@ -350,7 +347,6 @@ Enhancement
    0 Open         [CTYP-220] Data generator for a type
    0 Open         [CTYP-226] Update clojure.core/get-in annotations to use polymorphic function types (similar to clojure.core/get)
    0 Open         [CTYP-227] Show file and line number of duplicate definitions
-   0 Open         [CTYP-229] Checker slows development in rechecking dependent namespaces
    0 Open         [CTYP-230] Improve error messages by highlighting unmatched argument
    0 Open         [CTYP-233] Java interop should consider automatic numeric promotions
    0 Bad: Match > [CTYP-235] Warn on duplicate defalias'
@@ -365,7 +361,6 @@ Enhancement
    0 Bad: Match > [CTYP-271] reduce form with (U nil Num) accumulator needs inst to type check
    0 Bad: Match > [CTYP-273] `recur` treated differently from a recursive call
    0 Bad: Match > [CTYP-276] first on HVec strange/wrong result
-   0 Bad: Unkn Fi [CTYP-284] Remove redundant checking in typed load
    0 Open         [CTYP-289] Add ability to specify the static type expected for a particular extend-type dispatch
    0 Open         [CTYP-290] Support older versions of Clojure in the runtime module
    0 Open         [CTYP-292] Provide a new alias for Any, dedicated for use as a placeholder, thus reserving Any for situations when truly every type is acceptable.
@@ -374,6 +369,7 @@ Enhancement
    0 Open         [CTYP-298] Should blame sub-parts of casts
    0 Bad: Match > [CTYP-301] Abstract over keyword arguments
    0 Open         [CTYP-302] Add typed Compiler
+   0 Bad: Unkn Fi [CTYP-309] Export typed vars with contracts to untyped namespaces
 
 ========================================
 Task
