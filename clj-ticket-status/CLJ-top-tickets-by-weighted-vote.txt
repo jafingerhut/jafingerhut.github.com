@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: February 3, 2016
+Date: February 11, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -39,30 +39,31 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
-    5.90  10 Incomplete   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
-             Daniel Glauser (1)
-             Emrehan Tuzun (1)
-             James Conroy-Finn (1)
-             Michael Fogleman (1)
-             davie moston (1)
-             Johan Gall (1/2)
-             Tom Crayford (1/6)
-             Tassilo Horn (1/7)
-             Daniel Compton (1/13)
-             Nicola Mometto (1/54)
-    5.51  12 Prescreened  [CLJ-1744] Unused destructured local not cleared, causes memory leak
+    5.85  13 Prescreened  [CLJ-1744] Unused destructured local not cleared, causes memory leak
              Dave Aitken (1)
              Rohit Aggarwal (1)
              Simon Belak (1)
              Daniel Solano Gómez (1/2)
              James Henderson (1/2)
              Ragnar Dahlen (1/2)
+             Johan Gall (1/3)
              Alex Miller (1/4)
              Jozef Wagner (1/4)
              Michael Griffiths (1/5)
              Andrey Antukh (1/7)
              Lars Andersen (1/8)
              Michael Blume (1/22)
+    5.74  10 Incomplete   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
+             Daniel Glauser (1)
+             Emrehan Tuzun (1)
+             James Conroy-Finn (1)
+             Michael Fogleman (1)
+             davie moston (1)
+             Johan Gall (1/3)
+             Tom Crayford (1/6)
+             Tassilo Horn (1/7)
+             Daniel Compton (1/13)
+             Nicola Mometto (1/54)
     4.47  18 Incomplete   [CLJ-700] contains? broken for transient collections
              Laszlo Török (1)
              Dom Kiva-Meyer (1/2)
@@ -193,6 +194,8 @@ Defect
              Jean Niklas L'orange (1/2)
     0.50   1 Prescreened  [CLJ-1587] PersistentArrayMap's assoc doesn't respect HASHTABLE_THRESHOLD
              Jean Niklas L'orange (1/2)
+    0.50   1 Triaged      [CLJ-1860] 0.0 and -0.0 compare equal but have different hash values
+             Stephen Hopper (1/2)
     0.37   2 Open         [CLJ-750] clojure.lang.MapEntry violates .equals and .hashCode contracts of HashMap.Entry; leads to non-reflexive .equals, etc.
              Matthew O. Smith (1/5)
              Tom Crayford (1/6)
@@ -276,7 +279,6 @@ Defect
     0.00   0 Triaged      [CLJ-1768] quote of an empty lazyseq produces an error when evaled
     0.00   0 Triaged      [CLJ-1796] Protocol functions fail to find future extensions when assigned to a local or new var
     0.00   0 Triaged      [CLJ-1818] cl-format does not respect aesthetic ~A with a keyword
-    0.00   0 Triaged      [CLJ-1860] 0.0 and -0.0 compare equal but have different hash values
     0.00   0 Triaged      [CLJ-1867] with-redefs used on a macro permanently changes it to a function
     0.00   0 Triaged      [CLJ-1872] empty? is broken for transient collections
     0.00   0 Triaged      [CLJ-1879] reduce-kv on a PHMs doesn't consistently execute the intended fastpath
@@ -286,20 +288,20 @@ Defect
 ========================================
 Enhancement
 
-   11.17  28 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
+   11.01  28 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
              Adam Krieg (1)
              Gabriel Ki (1)
              Lei Wang (1)
              Ryan Senior (1)
              Theodore Konukhov (1)
              Jeff Weiss (1/2)
-             Johan Gall (1/2)
              Kuldeep (1/2)
              Laurent Petit (1/2)
              Paudi Moriarty (1/2)
              Paul Gearon (1/2)
              Phil Hagelberg (1/2)
              Sean Corfield (1/2)
+             Johan Gall (1/3)
              Zach Tellman (1/3)
              Jean Fabio Baro (1/4)
              Jozef Wagner (1/4)
@@ -693,11 +695,6 @@ Enhancement
              Marshall Brekka (1/2)
              Stephen C. Gilardi (1/7)
              Jan Rychter (1/8)
-    2.23   4 Open         [CLJ-1519] Added extra arity to clojure.core/ns-* fns
-             Alan Forrester (1)
-             Alan Thompson (1)
-             Greg Chapman (1/6)
-             Reid McKenzie (1/17)
     2.00   2 Open         [CLJ-1852] Clojure-generated class names length exceed file-system limit
              Daniel Woelfel (1)
              Stas Krichevsky (1)
@@ -719,6 +716,11 @@ Enhancement
              Kevin Krouse (1)
              Paudi Moriarty (1/2)
              Dmitri Naumov (1/3)
+    1.73   4 Open         [CLJ-1519] Added extra arity to clojure.core/ns-* fns
+             Alan Forrester (1)
+             Alan Thompson (1/2)
+             Greg Chapman (1/6)
+             Reid McKenzie (1/17)
     1.67   3 Triaged      [CLJ-99] GC Issue 95: max-key and min-key evaluate k multiple times for arguments
              Hildeberto Mendonça (1)
              Frank Schmidt (1/2)
@@ -873,6 +875,10 @@ Enhancement
              François Rey (1/2)
     0.50   1 Open         [CLJ-1734] Display more descriptive error message when trying to use reader conditionals in a non-cljc file
              Mike Thompson (1/2)
+    0.50   1 Open         [CLJ-1782] Hide local IDE files in .gitignore
+             Stephen Hopper (1/2)
+    0.50   1 Prescreened  [CLJ-1890] enhance pprint to print names of defrecord types
+             Alan Thompson (1/2)
     0.50   1 Triaged      [CLJ-970] extend/implement parameterized types (generics)
              Stuart Halloway (1/2)
     0.50   1 Triaged      [CLJ-1843] Add =to function exposing Util/equivPred 
@@ -1023,6 +1029,7 @@ Enhancement
     0.00   0 Prescreened  [CLJ-1826] drop-last docstring refers to 'coll' args refer to 's'
     0.00   0 Prescreened  [CLJ-1837] Improve wording of index-of and last-index-of doc strings
     0.00   0 Prescreened  [CLJ-1873] Docstrings for require and *data-readers* do not mention cljc files
+    0.00   0 Prescreened  [CLJ-1891] New socket server startup proactively loads too much code, slowing boot time
     0.00   0 Screenable   [CLJ-1673] Improve clojure.repl/dir-fn to work on namespace aliases in addition to canonical namespaces.
     0.00   0 Triaged      [CLJ-5] Sequential destructuring of map gives confusing error message
     0.00   0 Triaged      [CLJ-405] better error messages for bad defrecord calls

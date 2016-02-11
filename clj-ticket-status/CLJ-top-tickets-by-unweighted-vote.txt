@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: February 3, 2016
+Date: February 11, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -40,7 +40,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 Defect
 
   18 Incomplete   [CLJ-700] contains? broken for transient collections
-  12 Prescreened  [CLJ-1744] Unused destructured local not cleared, causes memory leak
+  13 Prescreened  [CLJ-1744] Unused destructured local not cleared, causes memory leak
   10 Incomplete   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
    9 Incomplete   [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
    9 Backlog      [CLJ-1372] Inconsistent hash with java collections
@@ -74,6 +74,7 @@ Defect
    1 Triaged      [CLJ-1317] clojure.zip/seq-zip returns spurious nils during traversal
    1 Open         [CLJ-1181] clojure.pprint/code-dispatch breaks on certain types of anonymous functions
    1 Prescreened  [CLJ-1587] PersistentArrayMap's assoc doesn't respect HASHTABLE_THRESHOLD
+   1 Triaged      [CLJ-1860] 0.0 and -0.0 compare equal but have different hash values
    1 Open         [CLJ-968] ns emitting gen-class before imports results in imported annotations being discarded.
    1 Triaged      [CLJ-1714] Some static initialisers still run at compile time if used in type hints
    1 Open         [CLJ-1198] Apply metadata to primitive fns causes them to lose their primitive-ness
@@ -116,7 +117,6 @@ Defect
    0 Triaged      [CLJ-1796] Protocol functions fail to find future extensions when assigned to a local or new var
    0 Triaged      [CLJ-1818] cl-format does not respect aesthetic ~A with a keyword
    0 Prescreened  [CLJ-1841] core/bean iterator is broken
-   0 Triaged      [CLJ-1860] 0.0 and -0.0 compare equal but have different hash values
    0 Triaged      [CLJ-1867] with-redefs used on a macro permanently changes it to a function
    0 Prescreened  [CLJ-1870] Reloading a defmulti nukes metadata on the var
    0 Triaged      [CLJ-1872] empty? is broken for transient collections
@@ -171,8 +171,8 @@ Enhancement
    4 Triaged      [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
    4 Open         [CLJ-899] Accept and ignore colon between key and value in map literals
    4 Triaged      [CLJ-735] Improve error message when a protocol method is not found
-   4 Open         [CLJ-1519] Added extra arity to clojure.core/ns-* fns
    4 Open         [CLJ-1141] Allow pre and post-conditions in defprotocol and deftype macros
+   4 Open         [CLJ-1519] Added extra arity to clojure.core/ns-* fns
    4 Triaged      [CLJ-1473] Badly formed pre/post conditions silently passed
    4 Triaged      [CLJ-1209] clojure.test does not print ex-info in error reports
    3 Open         [CLJ-272] load/ns/require/use overhaul
@@ -219,7 +219,9 @@ Enhancement
    1 Open         [CLJ-994] repeat reducer
    1 Open         [CLJ-995] sorted-set doesn't support IEditableCollection
    1 Open         [CLJ-1734] Display more descriptive error message when trying to use reader conditionals in a non-cljc file
+   1 Open         [CLJ-1782] Hide local IDE files in .gitignore
    1 Triaged      [CLJ-1843] Add =to function exposing Util/equivPred 
+   1 Prescreened  [CLJ-1890] enhance pprint to print names of defrecord types
    1 Open         [CLJ-1266] Better primitive support for floats
    1 Open         [CLJ-1316] for doesn't support :let binding as its first seq-expr
    1 Open         [CLJ-1321] Documentation improvement for clojure.walk, to note use of recursion that can easily blow the JVM stack
@@ -317,6 +319,7 @@ Enhancement
    0 Triaged      [CLJ-1881] Can :or destructuring refer to previous sequential bindings?
    0 Triaged      [CLJ-1888] AReference#meta() is synchronized
    0 Triaged      [CLJ-1889] Add optional predicate to string trim functions that determines if a character should be trimmed
+   0 Prescreened  [CLJ-1891] New socket server startup proactively loads too much code, slowing boot time
 
 ========================================
 Task

@@ -643,7 +643,7 @@
  {:display-name "Alan Thompson",
   :usernames #{"cloojure"},
   :emails #{"cloojure@gmail.com"}}
- ("CLJ-1519"),
+ ("CLJ-1890" "CLJ-1519"),
  {:display-name "John Wiseman",
   :usernames #{"wiseman"},
   :emails #{"jjwiseman@gmail.com"}}
@@ -980,6 +980,10 @@
  {:display-name "Liam F",
   :usernames #{"lfn3"},
   :emails #{"liam@lfn3.net"}}
+ (),
+ {:display-name "Isaac Cambron",
+  :usernames #{"icambron"},
+  :emails #{"icambron@gmail.com"}}
  (),
  {:display-name "Ivo Wever",
   :usernames #{"confusion"},
@@ -2018,6 +2022,10 @@
  {:display-name "Andy Sheldon",
   :usernames #{"asheldo"},
   :emails #{"andymsheldon@gmail.com"}}
+ (),
+ {:display-name "Jason Gilman",
+  :usernames #{"jasongilman"},
+  :emails #{"jason.gilman@gmail.com"}}
  (),
  {:display-name "Jeff Sigmon",
   :usernames #{"jeffsigmon"},
@@ -5125,7 +5133,7 @@
  {:display-name "Ruslan Prokopchuk",
   :usernames #{"ul"},
   :emails #{"fer.obbee@gmail.com"}}
- ("CLJS-1550" "CLJS-1009"),
+ ("CLJS-1009"),
  {:display-name "Bob Ernst",
   :usernames #{"bobernst"},
   :emails #{"BobErnstStl@gmail.com"}}
@@ -5646,6 +5654,10 @@
   :usernames #{"gtasso"},
   :emails #{"getasso@gmail.com"}}
  (),
+ {:display-name "Dominykas Mostauskis",
+  :usernames #{"dmos"},
+  :emails #{"dominykas.mostauskis@gmail.com"}}
+ (),
  {:display-name "Frederik De Bleser",
   :usernames #{"frederikdb"},
   :emails #{"frederik@debleser.be"}}
@@ -6002,6 +6014,10 @@
   :usernames #{"quezion"},
   :emails #{"quest@yarbrough.net"}}
  (),
+ {:display-name "Stephen Hopper",
+  :usernames #{"enragedginger"},
+  :emails #{"stephenmhopper@gmail.com"}}
+ ("CLJ-1860" "CLJ-1782"),
  {:display-name "Brandon van Beekum",
   :usernames #{"marsmining"},
   :emails #{"marsmining@gmail.com"}}
@@ -7655,7 +7671,7 @@
  {:display-name "Johan Gall",
   :usernames #{"freakhill"},
   :emails #{"johan.gall@gmail.com"}}
- ("CTYP-197" "CLJ-1544" "CLJ-322"),
+ ("CTYP-197" "CLJ-1744" "CLJ-1544" "CLJ-322"),
  {:display-name "Marco Dalla Stella",
   :usernames #{"mdallastella"},
   :emails #{"marco@dallastella.name"}}
@@ -8053,7 +8069,7 @@
  {:display-name "Jake McCrary",
   :usernames #{"jake@jakemccrary.com"},
   :emails #{"jake@jakemccrary.com"}}
- (),
+ ("CLJS-794" "CLJS-485"),
  {:display-name "Adam Wittenberg",
   :usernames #{"wiiittttt"},
   :emails #{"adam.wittenberg@gmail.com"}}
@@ -8287,6 +8303,10 @@
   :usernames #{"pyr"},
   :emails #{"pyr@spootnik.org"}}
  ("ASYNC-94"),
+ {:display-name "Carl Hicks",
+  :usernames #{"hicksca"},
+  :emails #{"mail@carlhicks.me"}}
+ (),
  {:display-name "Don Mullen",
   :usernames #{"donmullen"},
   :emails #{"don@thinkrelevance.com"}}
