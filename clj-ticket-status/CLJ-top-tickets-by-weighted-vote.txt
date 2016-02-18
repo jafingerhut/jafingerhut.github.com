@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: February 11, 2016
+Date: February 18, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -39,20 +39,6 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
-    5.85  13 Prescreened  [CLJ-1744] Unused destructured local not cleared, causes memory leak
-             Dave Aitken (1)
-             Rohit Aggarwal (1)
-             Simon Belak (1)
-             Daniel Solano Gómez (1/2)
-             James Henderson (1/2)
-             Ragnar Dahlen (1/2)
-             Johan Gall (1/3)
-             Alex Miller (1/4)
-             Jozef Wagner (1/4)
-             Michael Griffiths (1/5)
-             Andrey Antukh (1/7)
-             Lars Andersen (1/8)
-             Michael Blume (1/22)
     5.74  10 Incomplete   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
              Daniel Glauser (1)
              Emrehan Tuzun (1)
@@ -64,6 +50,20 @@ Defect
              Tassilo Horn (1/7)
              Daniel Compton (1/13)
              Nicola Mometto (1/54)
+    5.35  13 Prescreened  [CLJ-1744] Unused destructured local not cleared, causes memory leak
+             Dave Aitken (1)
+             Rohit Aggarwal (1)
+             Daniel Solano Gómez (1/2)
+             James Henderson (1/2)
+             Ragnar Dahlen (1/2)
+             Simon Belak (1/2)
+             Johan Gall (1/3)
+             Alex Miller (1/4)
+             Jozef Wagner (1/4)
+             Michael Griffiths (1/5)
+             Andrey Antukh (1/7)
+             Lars Andersen (1/8)
+             Michael Blume (1/22)
     4.47  18 Incomplete   [CLJ-700] contains? broken for transient collections
              Laszlo Török (1)
              Dom Kiva-Meyer (1/2)
@@ -122,6 +122,10 @@ Defect
              Sunil Abraham (1)
              Kei Tsuji (1/2)
              Ryan Neufeld (1/2)
+    1.67   3 Open         [CLJ-1206] 'eval' of closures or fns with runtime metadata within a call expr yields "No matching ctor found" exceptions
+             Dmitri Gaskin (1)
+             Richard Davies (1/2)
+             Tom Crayford (1/6)
     1.62   4 Prescreened  [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
              Chris Tennant (1)
              Chas Emerick (1/4)
@@ -166,9 +170,6 @@ Defect
              Alexander Yakushev (1/5)
              Reid McKenzie (1/17)
              Michael Blume (1/22)
-    0.67   2 Open         [CLJ-1206] 'eval' of closures or fns with runtime metadata within a call expr yields "No matching ctor found" exceptions
-             Richard Davies (1/2)
-             Tom Crayford (1/6)
     0.66   3 Incomplete   [CLJ-1620] Constants are leaked in case of a reentrant eval
              Laurent Petit (1/2)
              Colin Fleming (1/7)
@@ -482,6 +483,17 @@ Enhancement
              Stephen Caudill (1/5)
              Jan Rychter (1/8)
              Andrew Rosa (1/9)
+    5.64  10 Vetted       [CLJ-1148] adds docstring support to defonce
+             Brad Koch (1)
+             Joshua Tilles (1)
+             Nahuel Greco (1)
+             Norman Richards (1)
+             Chris Perkins (1/2)
+             Jonas Enlund (1/2)
+             Julian Gamble (1/3)
+             David Leatherman (1/6)
+             Daniel Compton (1/13)
+             Bozhidar Batsov (1/15)
     5.49   9 Triaged      [CLJ-1278] State function's unmunged full name in compiled function's toString()
              Dave Kincaid (1)
              Guillermo Winkler (1)
@@ -505,16 +517,6 @@ Enhancement
              Andy Fingerhut (1/12)
              Bozhidar Batsov (1/15)
              Reid McKenzie (1/17)
-    5.14   9 Vetted       [CLJ-1148] adds docstring support to defonce
-             Brad Koch (1)
-             Joshua Tilles (1)
-             Nahuel Greco (1)
-             Norman Richards (1)
-             Jonas Enlund (1/2)
-             Julian Gamble (1/3)
-             David Leatherman (1/6)
-             Daniel Compton (1/13)
-             Bozhidar Batsov (1/15)
     4.53   6 Open         [CLJ-1467] Implement Comparable in PersistentList
              Aspasia Beneti (1)
              Bart Kastermans (1)
@@ -547,6 +549,13 @@ Enhancement
              Greg Chapman (1/6)
              Max Penet (1/9)
              Nicola Mometto (1/54)
+    4.13   6 Triaged      [CLJ-1490] Exception on protocol implementation after protocol reloaded could be improved
+             Alan Crowley (1)
+             Sebastián Moreno (1)
+             Ted Coakley (1)
+             Jeremy Heiler (1/2)
+             Sanel Zukan (1/2)
+             Lars Andersen (1/8)
     4.02   5 Triaged      [CLJ-1743] Avoid compile-time static initialization of classes when using inheritance
              C. H. Graham (1)
              Didier A. (1)
@@ -599,11 +608,26 @@ Enhancement
              Daniel James (1/5)
              Devin Walters (1/5)
              Michael Griffiths (1/5)
+    3.57   8 Triaged      [CLJ-1063] Missing dissoc-in
+             Michael D Pendergrass (1)
+             Timothy Pratley (1)
+             Chris Perkins (1/2)
+             Bridget Hillyer (1/3)
+             Noam Ben Ari (1/3)
+             Huahai Yang (1/5)
+             Lars Andersen (1/8)
+             Daniel Compton (1/13)
     3.50   4 Open         [CLJ-1573] Support (Java) transient fields in deftype, e.g. for hashcodes
              Daniel J Jolicoeur (1)
              Ian Eslick (1)
              Roberto Robles (1)
              Adrian Medina (1/2)
+    3.33   5 Triaged      [CLJ-735] Improve error message when a protocol method is not found
+             Antonio Terreno (1)
+             John Downs (1)
+             Scott Bale (1)
+             Colin Jones (1/6)
+             David Leatherman (1/6)
     3.33   4 Triaged      [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
              Jakub Arnold (1)
              Jens Bendisposto (1)
@@ -618,12 +642,6 @@ Enhancement
              Tassilo Horn (1/7)
              Brandon Bloom (1/8)
              Max Penet (1/9)
-    3.13   5 Triaged      [CLJ-1490] Exception on protocol implementation after protocol reloaded could be improved
-             Alan Crowley (1)
-             Ted Coakley (1)
-             Jeremy Heiler (1/2)
-             Sanel Zukan (1/2)
-             Lars Andersen (1/8)
     3.09   8 Triaged      [CLJ-1454] Add a swap! that returns old value
              Peter Monks (1)
              Timothy Baldridge (1)
@@ -656,14 +674,6 @@ Enhancement
              Bozhidar Batsov (1/15)
              David Greenberg (1/16)
              Nicola Mometto (1/54)
-    3.07   7 Triaged      [CLJ-1063] Missing dissoc-in
-             Michael D Pendergrass (1)
-             Timothy Pratley (1)
-             Bridget Hillyer (1/3)
-             Noam Ben Ari (1/3)
-             Huahai Yang (1/5)
-             Lars Andersen (1/8)
-             Daniel Compton (1/13)
     2.75   4 Open         [CLJ-899] Accept and ignore colon between key and value in map literals
              Fogus (1)
              Tavis Rudd (1)
@@ -683,11 +693,6 @@ Enhancement
              Marc Limotte (1/2)
              Daniel Compton (1/13)
              Reid McKenzie (1/17)
-    2.33   4 Triaged      [CLJ-735] Improve error message when a protocol method is not found
-             Antonio Terreno (1)
-             Scott Bale (1)
-             Colin Jones (1/6)
-             David Leatherman (1/6)
     2.27   6 Triaged      [CLJ-1611] clojure.java.io/pushback-reader
              Benny Tsai (1/2)
              Johann Makram Salib Bestowrous (1/2)
@@ -754,6 +759,9 @@ Enhancement
     1.50   2 Backlog      [CLJ-415] smarter assert (prints locals)
              Kevin Sookocheff (1)
              Jeff Weiss (1/2)
+    1.50   2 Open         [CLJ-1817] Allow AssertionError messages for function :pre and :post conditions to be specified.
+             Larry Staton Jr. (1)
+             Simon Belak (1/2)
     1.33   2 Open         [CLJ-1256] Support type-hinted overrides of function parameters
              Xiaoyu Zhang (1)
              Alex Fowler (1/3)
@@ -830,8 +838,6 @@ Enhancement
              Shlomi (1)
     1.00   1 Open         [CLJ-1526] clojure.core/> inconsistent behavior wrt to documentation.
              kalina todorova (1)
-    1.00   1 Open         [CLJ-1817] Allow AssertionError messages for function :pre and :post conditions to be specified.
-             Larry Staton Jr. (1)
     1.00   1 Triaged      [CLJ-1750] There should be a way to observe platform features at runtime
              Alexander Solovyov (1)
     0.98   3 Triaged      [CLJ-825] Protocol implementation inconsistencies when overloading arity

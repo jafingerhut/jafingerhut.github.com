@@ -222,6 +222,10 @@
   :usernames #{"msw"},
   :emails #{"clojure-jira@ayaken.net"}}
  (),
+ {:display-name "Dmitri Gaskin",
+  :usernames #{"dmitirg01"},
+  :emails #{"dmitrig01@gmail.com"}}
+ (),
  {:display-name "Petr Gladkikh",
   :usernames #{"petrglad"},
   :emails #{"PetrGlad@gmail.com"}}
@@ -237,7 +241,7 @@
  {:display-name "Chris Perkins",
   :usernames #{"cperkins"},
   :emails #{"chrisperkins99@gmail.com"}}
- (),
+ ("CLJ-1148" "CLJ-1063"),
  {:display-name "Yesudeep Mangalapilly",
   :usernames #{"yesudeep"},
   :emails #{"yesudeep@gmail.com"}}
@@ -1135,7 +1139,7 @@
  {:display-name "John Downs",
   :usernames #{"jdowns"},
   :emails #{"john.a.downs@gmail.com"}}
- (),
+ ("CLJ-735"),
  {:display-name "Chouser",
   :usernames #{"chouser@n01se.net"},
   :emails #{"chouser@n01se.net"}}
@@ -1304,6 +1308,10 @@
   :usernames #{"bytesbymike"},
   :emails #{"mrl@bytesbymike.com"}}
  (),
+ {:display-name "Dmitri Gaskin",
+  :usernames #{"dmitrig01"},
+  :emails #{"dmitri@branchmetrics.io"}}
+ ("CLJ-1206"),
  {:display-name "Marcel Möhring",
   :usernames #{"mmoehring"},
   :emails #{"marcel.moehring@mail.com"}}
@@ -1743,6 +1751,10 @@
  {:display-name "rasefon wang",
   :usernames #{"rasefon@gmail.com"},
   :emails #{"rasefon@gmail.com"}}
+ (),
+ {:display-name "Karol Majta",
+  :usernames #{"karolmajta"},
+  :emails #{"karolmajta@gmail.com"}}
  (),
  {:display-name "Blake Jakopovic",
   :usernames #{"blakejakopovic"},
@@ -2788,7 +2800,7 @@
  {:display-name "Stephen Nelson",
   :usernames #{"sfnelson"},
   :emails #{"stephen@montoux.com"}}
- ("CLJ-1152"),
+ ("CLJS-1570" "CLJ-1152"),
  {:display-name "Alan Effrig",
   :usernames #{"arethenes"},
   :emails #{"alan.effrig@gmail.com"}}
@@ -2825,6 +2837,10 @@
   :usernames #{"peking2"},
   :emails #{"garyzhao@live.com"}}
  (),
+ {:display-name "Sebastián Moreno",
+  :usernames #{"kernelp4nic"},
+  :emails #{"smoreno.uy@gmail.com"}}
+ ("CLJ-1490"),
  {:display-name "Steven Devijver",
   :usernames #{"sdevijver"},
   :emails #{"sdevijver@gmail.com"}}
@@ -4040,6 +4056,10 @@
   :usernames #{"adrianm"},
   :emails #{"adrian.medina@mail.yu.edu"}}
  ("CLJ-1573" "CLJ-1452"),
+ {:display-name "Wenjie Yang",
+  :usernames #{"mrmiywj"},
+  :emails #{"jsyangwenjie@gmail.com"}}
+ (),
  {:display-name "Sanel Zukan",
   :usernames #{"sanel"},
   :emails #{"sanelz@gmail.com"}}
@@ -5149,7 +5169,7 @@
  {:display-name "Simon Belak",
   :usernames #{"sbelak"},
   :emails #{"simon.belak@gmail.com"}}
- ("CLJ-1744"),
+ ("CLJ-1817" "CLJ-1744"),
  {:display-name "Wilson Marçal Barros Filho",
   :usernames #{"wilsonmacariano"},
   :emails #{"wilsonmacariano@gmail.com"}}
@@ -5790,6 +5810,10 @@
   :usernames #{"guruma"},
   :emails #{"psk810@gmail.com"}}
  (),
+ {:display-name "Saul Shanabrook",
+  :usernames #{"saulshanabrook"},
+  :emails #{"s.shanabrook@gmail.com"}}
+ (),
  {:display-name "Dig Gashinsky",
   :usernames #{"digash"},
   :emails #{"i+clojuredev@gashinsky.com"}}
@@ -5982,10 +6006,6 @@
   :usernames #{"jamesd3142"},
   :emails #{"jsdavo@icloud.com"}}
  (),
- {:display-name "Sun Ning",
-  :usernames #{"sunng"},
-  :emails #{"classicning@gmail.com"}}
- (),
  {:display-name "Eric Stewart",
   :usernames #{"ericstewart"},
   :emails #{"eric@eric-stewart.com"}}
@@ -5997,6 +6017,10 @@
  {:display-name "Timo Mihaljov",
   :usernames #{"noidi"},
   :emails #{"timo@mihaljov.info"}}
+ (),
+ {:display-name "Peter Jaros",
+  :usernames #{"peeja"},
+  :emails #{"peter.a.jaros@gmail.com"}}
  (),
  {:display-name "Bruno Tavares",
   :usernames #{"bltavares"},
@@ -6223,6 +6247,10 @@
  {:display-name "James Aley",
   :usernames #{"jaley"},
   :emails #{"james.aley@gmail.com"}}
+ (),
+ {:display-name "Abhishek Kumar",
+  :usernames #{"_slytherin"},
+  :emails #{"abhishekkmr18@gmail.com"}}
  (),
  {:display-name "Rangel Spasov",
   :usernames #{"raspasov"},
@@ -6515,6 +6543,10 @@
   :usernames #{"paraseba"},
   :emails #{"paraseba@gmail.com"}}
  (),
+ {:display-name "Paulo Cuneo",
+  :usernames #{"qneo"},
+  :emails #{"cuneo.paulo.cesar@gmail.com"}}
+ (),
  {:display-name "Gregory Schlomoff",
   :usernames #{"gregschlom"},
   :emails #{"gregory.schlomoff@gmail.com"}}
@@ -6693,6 +6725,10 @@
   :usernames #{"ki6i"},
   :emails #{"kalinalyudmilova@gmail.com"}}
  ("CLJ-1526"),
+ {:display-name "Kristian Mandrup",
+  :usernames #{"kmandrup@gmail.com"},
+  :emails #{"kmandrup@gmail.com"}}
+ (),
  {:display-name "Ross McDonald",
   :usernames #{"rossputin"},
   :emails #{"rossajmcd@yahoo.co.uk"}}
@@ -7084,6 +7120,10 @@
  {:display-name "matias elgart",
   :usernames #{"melgart"},
   :emails #{"melgart@gmail.com"}}
+ (),
+ {:display-name "Umarov German",
+  :usernames #{"german"},
+  :emails #{"umarov.german@gmail.com"}}
  (),
  {:display-name "François Rey",
   :usernames #{"fmjrey"},
@@ -7869,6 +7909,10 @@
  {:display-name "Cees van Kemenade",
   :usernames #{"cvkemenade"},
   :emails #{"cde@vinzi.nl"}}
+ (),
+ {:display-name "Ning Sun",
+  :usernames #{"sunng"},
+  :emails #{"classicning@gmail.com"}}
  (),
  {:display-name "Matt Huebert",
   :usernames #{"mhuebert"},
