@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: February 18, 2016
+Date: February 25, 2016
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -66,7 +66,7 @@ Project ASYNC tickets
 ========================================
 Defect
 
-  10 Triaged      [ASYNC-138] Go blocks leak memory
+  11 Triaged      [ASYNC-138] Go blocks leak memory
    5 Triaged      [ASYNC-100] core.async with multiple catch blocks causing weird loop behaviour
    4 Triaged      [ASYNC-90] Pub/sub leaks memory
    3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
@@ -111,6 +111,8 @@ Defect
    0 Open         [ASYNC-156] (ClojureScript) go block containing letfn does not compile
    0 Open         [ASYNC-157] Reflection warning with doseq
    0 Open         [ASYNC-159] promise-chan in ClojureScript is broken
+   0 Open         [ASYNC-160] `(vector :blah)` and `[:blah]` crashing with `inst_XXXX.call not a function` within core.async go routine
+   0 Open         [ASYNC-161] `<!` inside nested `let` inside `go` block erroneously yields "<! not used inside go block" error
 
 ========================================
 Enhancement
@@ -125,10 +127,10 @@ Enhancement
    2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
    2 Open         [ASYNC-114] Allow a second arity on channel ex-handler which takes val as well as throwable
    2 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
+   2 Triaged      [ASYNC-143] Assert that fixed buffers must have size > 0
    2 Open         [ASYNC-142] Rename ClojureScript namespace from cljs.core.async to clojure.core.async
    1 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
    1 Open         [ASYNC-71] exception behavior for thread macro is hard coded
-   1 Triaged      [ASYNC-143] Assert that fixed buffers must have size > 0
    0 Open         [ASYNC-46] Add optional default channel to 'pub'
    0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
    0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
@@ -153,7 +155,7 @@ Project CCACHE tickets
 ========================================
 Defect
 
-   2 Open         [CCACHE-41] defcache needs to impl. iterator() to avoid Clojure 1.7 breakage
+   3 Open         [CCACHE-41] defcache needs to impl. iterator() to avoid Clojure 1.7 breakage
    1 Open         [CCACHE-31] SoftCaches update in-place, other cache types don't
    1 Open         [CCACHE-43] through method should always have cache as first argument to make it more friendly for swap!
    0 Open         [CCACHE-15] It appears that TTL cache exhibits quadratic performance (+ its evict is buggy)
@@ -761,13 +763,14 @@ Defect
    1 Open         [TCHECK-73] gen/int can generate doubles
    0 Open         [TCHECK-26] defspec does not respect (is (thrown? ...))
    0 Open         [TCHECK-32] Default sizing on gen/any needs re-evaluation
-   0 Open         [TCHECK-33] test.check is entangled with clojure.test
    0 Open         [TCHECK-34] clojure.test reporting is uninformative
    0 Open         [TCHECK-57] Performance regression in map generator between 0.5.8 and 0.5.9
    0 Open         [TCHECK-59] s-pos-int and s-pos-int generators have an off-by-1 issue 
    0 Open         [TCHECK-80] last-trial-report (used by trial-report-periodic) is not being reset at :begin-test-var in cljs
    0 Open         [TCHECK-82] Shrinking is not entirely lazy
    0 Open         [TCHECK-83] gen/any only generates collections
+   0 Open         [TCHECK-88] defspec is needlessly anaphoric
+   0 Open         [TCHECK-89] the clojure-test namespace has a global atom
 
 ========================================
 Enhancement
