@@ -1270,6 +1270,10 @@
   :usernames #{"pyrtsa"},
   :emails #{"pyry.jahkola@iki.fi"}}
  (),
+ {:display-name "Jiri Zuna",
+  :usernames #{"zuzkins"},
+  :emails #{"jiri@zunovi.cz"}}
+ (),
  {:display-name "Ignacio Thayer",
   :usernames #{"ithayer"},
   :emails #{"ithayer@gmail.com"}}
@@ -2018,7 +2022,7 @@
  {:display-name "Steven Yi",
   :usernames #{"kunstmusik"},
   :emails #{"stevenyi@gmail.com"}}
- ("CLJ-1224"),
+ ("CLJ-1454" "CLJ-1224"),
  {:display-name "Atamert Ölçgen",
   :usernames #{"muhuk"},
   :emails #{"muhuk@muhuk.com"}}
@@ -2735,7 +2739,6 @@
   "CLJ-1656"
   "CLJ-1613"
   "CLJ-1610"
-  "CLJ-1599"
   "CLJ-1532"
   "CLJ-1517"
   "CLJ-1472"
@@ -3537,6 +3540,10 @@
  {:display-name "Shannon Severance",
   :usernames #{"srseverance"},
   :emails #{"srs@s53.me"}}
+ (),
+ {:display-name "Avi Flax",
+  :usernames #{"avi"},
+  :emails #{"avi@aviflax.com"}}
  (),
  {:display-name "Anton Frolov",
   :usernames #{"antonf"},
@@ -5041,6 +5048,10 @@
   :usernames #{"tixxit"},
   :emails #{"thomas.switzer@gmail.com"}}
  (),
+ {:display-name "Michael Zhou",
+  :usernames #{"dominator008"},
+  :emails #{"zhoumotongxue008@gmail.com"}}
+ (),
  {:display-name "Javier Neira Sanchez",
   :usernames #{"jneira"},
   :emails #{"atreyu.bbb@gmail.com"}}
@@ -5121,7 +5132,7 @@
  {:display-name "Leon Grapenthin",
   :usernames #{"lgs32a"},
   :emails #{"grapenthin.leon@gmail.com"}}
- (),
+ ("CLJS-1074"),
  {:display-name "Pascal Germroth",
   :usernames #{"neapel"},
   :emails #{"pascal@ensieve.org"}}
@@ -5178,6 +5189,10 @@
   :usernames #{"alex.nixon"},
   :emails #{"alex.nixon.88@gmail.com"}}
  ("ASYNC-143" "ASYNC-125" "ASYNC-58"),
+ {:display-name "Steven Degutis",
+  :usernames #{"sdegutis"},
+  :emails #{"sbdegutis@gmail.com"}}
+ (),
  {:display-name "Rasmus Svensson",
   :usernames #{"raek"},
   :emails #{"raek@raek.se"}}
@@ -6399,7 +6414,7 @@
  {:display-name "Nicolás Berger",
   :usernames #{"nberger"},
   :emails #{"nicoberger@gmail.com"}}
- (),
+ ("CCACHE-42"),
  {:display-name "Alex E.",
   :usernames #{"pepelea"},
   :emails #{"lx@lxnch.ro"}}
@@ -8617,6 +8632,10 @@
  {:display-name "Konrad Hinsen",
   :usernames #{"khinsen"},
   :emails #{"konrad.hinsen@fastmail.net"}}
+ (),
+ {:display-name "Prajjwol Gautam",
+  :usernames #{"notacyborg"},
+  :emails #{"not@acyb.org"}}
  (),
  {:display-name "Evan Mezeske",
   :usernames #{"emezeske"},

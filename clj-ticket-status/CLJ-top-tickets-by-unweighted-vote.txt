@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: February 25, 2016
+Date: March 3, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -144,12 +144,12 @@ Enhancement
   11 Vetted       [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
   10 Vetted       [CLJ-1148] adds docstring support to defonce
    9 Triaged      [CLJ-1278] State function's unmunged full name in compiled function's toString()
+   9 Triaged      [CLJ-1454] Add deref-swap! and deref-reset! (swap! and reset! that return prior value)
    9 Open         [CLJ-1610] Unrolled small maps
    8 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
    8 Triaged      [CLJ-440] java method calls cannot omit varargs
    8 Triaged      [CLJ-1063] Missing dissoc-in
    8 Triaged      [CLJ-308] protocol-ize with-open
-   8 Triaged      [CLJ-1454] Add a swap! that returns old value
    8 Triaged      [CLJ-1293] Portable "catch-all" mechanism
    8 Triaged      [CLJ-1239] faster, more flexible dispatch for clojure.walk
    7 Open         [CLJ-1553] Parallel transduce
@@ -176,6 +176,7 @@ Enhancement
    4 Triaged      [CLJ-1473] Badly formed pre/post conditions silently passed
    4 Triaged      [CLJ-1209] clojure.test does not print ex-info in error reports
    4 Triaged      [CLJ-1096] Make destructuring emit direct keyword lookups
+   3 Open         [CLJ-1862] Release both a direct linked and a non direct linked clojure
    3 Open         [CLJ-272] load/ns/require/use overhaul
    3 Triaged      [CLJ-99] GC Issue 95: max-key and min-key evaluate k multiple times for arguments
    3 Open         [CLJ-1218] mapcat is too eager
@@ -253,7 +254,6 @@ Enhancement
    1 Open         [CLJ-1455] Postcondition in defrecord: Compiler unable to resolve symbol %
    1 Open         [CLJ-1008] Make sorted maps and sets implement j.u.NavigableMap and NavigableSet interfaces 
    1 Triaged      [CLJ-1386] Add transient? predicate
-   1 Triaged      [CLJ-1599] Add a reset! that returns old value
    1 Prescreened  [CLJ-1668] ns macro throws NPE if empty reference is specified
    1 Open         [CLJ-140] Single :tag for type hints conflates value's type with type of return value from an invoke
    1 Open         [CLJ-666] Add support for Big* numeric types to Reflector
@@ -324,8 +324,3 @@ Enhancement
    0 Prescreened  [CLJ-1891] New socket server startup proactively loads too much code, slowing boot time
    0 Prescreened  [CLJ-1895] Remove loading of clojure.string in clojure.java.io
    0 Triaged      [CLJ-1896] Support transducers in vec and set fns
-
-========================================
-Task
-
-   3 Open         [CLJ-1862] Release both a direct linked and a non direct linked clojure
