@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: March 10, 2016
+Date: March 17, 2016
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -77,6 +77,7 @@ Defect
    3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
    3 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
    2 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
+   2 Open         [ASYNC-158] and with multiple <! does not short-circuit in go
    2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
    2 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
    2 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
@@ -86,7 +87,7 @@ Defect
    1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
    1 Open         [ASYNC-128] or evaluation not stopped when exp nests take
    1 Triaged      [ASYNC-154] (require :reload-all) causes NullPointerException
-   1 Open         [ASYNC-158] and with multiple <! does not short-circuit in go
+   1 Open         [ASYNC-159] promise-chan in ClojureScript is broken
    1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
    1 Open         [ASYNC-78] deadlock in multi catch
    0 Triaged      [ASYNC-4] Record literals become ordinary maps
@@ -115,7 +116,6 @@ Defect
    0 Triaged      [ASYNC-155] Preserve loop binding metadata when inside a go block
    0 Open         [ASYNC-156] (ClojureScript) go block containing letfn does not compile
    0 Open         [ASYNC-157] Reflection warning with doseq
-   0 Open         [ASYNC-159] promise-chan in ClojureScript is broken
    0 Open         [ASYNC-160] `(vector :blah)` and `[:blah]` crashing with `inst_XXXX.call not a function` within core.async go routine
    0 Open         [ASYNC-161] `<!` inside nested `let` inside `go` block erroneously yields "<! not used inside go block" error
 
@@ -173,7 +173,7 @@ Defect
 ========================================
 Enhancement
 
-   3 Open         [CCACHE-42] Porting core.cache to ClojureScript
+   4 Open         [CCACHE-42] Porting core.cache to ClojureScript
    1 Open         [CCACHE-14] Asynchronous Cache Support
    0 Open         [CCACHE-17] Create function backed cache
    0 Open         [CCACHE-35] Add weak-cache
@@ -778,7 +778,6 @@ Defect
    0 Open         [TCHECK-59] s-pos-int and s-pos-int generators have an off-by-1 issue 
    0 Open         [TCHECK-80] last-trial-report (used by trial-report-periodic) is not being reset at :begin-test-var in cljs
    0 Open         [TCHECK-89] the clojure-test namespace has a global atom
-   0 Open         [TCHECK-92] Discrepancy between trial-number and num-tests in case of failure
    0 Open         [TCHECK-94] Collections don't shrink very aggressively 
 
 ========================================

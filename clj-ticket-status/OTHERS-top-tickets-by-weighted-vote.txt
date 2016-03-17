@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: March 10, 2016
+Date: March 17, 2016
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -101,6 +101,9 @@ Defect
     1.50   2 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
              Ghadi Shayban (1)
              Yehonathan Sharvit (1/2)
+    1.50   2 Open         [ASYNC-158] and with multiple <! does not short-circuit in go
+             Wang Xing (1)
+             Yehonathan Sharvit (1/2)
     1.33   3 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
              Colin Taylor (1/2)
              Gary Trakhman (1/2)
@@ -117,6 +120,8 @@ Defect
              Francis Avila (1)
     1.00   1 Open         [ASYNC-128] or evaluation not stopped when exp nests take
              Christian Weilbach (1)
+    1.00   1 Open         [ASYNC-159] promise-chan in ClojureScript is broken
+             Johannes Gustafsson (1)
     1.00   1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
              Patrick Killean (1)
     1.00   1 Triaged      [ASYNC-154] (require :reload-all) causes NullPointerException
@@ -127,8 +132,6 @@ Defect
     0.67   2 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
              Alex Nixon (1/3)
              Eduard Bondarenko (1/3)
-    0.50   1 Open         [ASYNC-158] and with multiple <! does not short-circuit in go
-             Yehonathan Sharvit (1/2)
     0.33   1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
              Alex Nixon (1/3)
     0.20   1 Open         [ASYNC-78] deadlock in multi catch
@@ -154,7 +157,6 @@ Defect
     0.00   0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
     0.00   0 Open         [ASYNC-156] (ClojureScript) go block containing letfn does not compile
     0.00   0 Open         [ASYNC-157] Reflection warning with doseq
-    0.00   0 Open         [ASYNC-159] promise-chan in ClojureScript is broken
     0.00   0 Open         [ASYNC-160] `(vector :blah)` and `[:blah]` crashing with `inst_XXXX.call not a function` within core.async go routine
     0.00   0 Open         [ASYNC-161] `<!` inside nested `let` inside `go` block erroneously yields "<! not used inside go block" error
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
@@ -266,9 +268,10 @@ Defect
 ========================================
 Enhancement
 
-    3.00   3 Open         [CCACHE-42] Porting core.cache to ClojureScript
+    4.00   4 Open         [CCACHE-42] Porting core.cache to ClojureScript
              Ivan Kryvoruchko (1)
              Nicolás Berger (1)
+             Oleksandr Shyshko (1)
              Yen-Chin, Lee (1)
     1.00   1 Open         [CCACHE-14] Asynchronous Cache Support
              Eduard Bondarenko (1)
@@ -906,7 +909,6 @@ Defect
     0.00   0 Open         [TCHECK-59] s-pos-int and s-pos-int generators have an off-by-1 issue 
     0.00   0 Open         [TCHECK-80] last-trial-report (used by trial-report-periodic) is not being reset at :begin-test-var in cljs
     0.00   0 Open         [TCHECK-89] the clojure-test namespace has a global atom
-    0.00   0 Open         [TCHECK-92] Discrepancy between trial-number and num-tests in case of failure
     0.00   0 Open         [TCHECK-94] Collections don't shrink very aggressively 
 
 ========================================
