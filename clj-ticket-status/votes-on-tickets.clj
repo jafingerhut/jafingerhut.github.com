@@ -1195,7 +1195,7 @@
  {:display-name "Donald Ball",
   :usernames #{"donald.ball"},
   :emails #{"donald.ball@gmail.com"}}
- (),
+ ("CTYP-133"),
  {:display-name "Andrew Inggs",
   :usernames #{"aminggs"},
   :emails #{"andrew@inggs.com"}}
@@ -4665,6 +4665,7 @@
   :emails #{"brobronsa@gmail.com"}}
  ("CLJS-1461"
   "CLJ-1864"
+  "CLJ-1793"
   "CLJ-1790"
   "CLJ-1774"
   "CLJ-1746"
@@ -5427,7 +5428,7 @@
  {:display-name "Moritz Heidkamp",
   :usernames #{"dergutemoritz"},
   :emails #{"moritz-clojure@twoticketsplease.de"}}
- (),
+ ("ASYNC-144"),
  {:display-name "Turnip",
   :usernames #{"amturnip"},
   :emails #{"amturnip@yahoo.com.mx"}}
@@ -5839,6 +5840,10 @@
  {:display-name "tutysara",
   :usernames #{"tutysara"},
   :emails #{"tutysara@gmail.com"}}
+ (),
+ {:display-name "Ryan Haney",
+  :usernames #{"yoshiquest"},
+  :emails #{"yoshiquest@gmail.com"}}
  (),
  {:display-name "Jingguo Yao",
   :usernames #{"yaojingguo"},
@@ -6449,7 +6454,7 @@
  {:display-name "Michael Sperber",
   :usernames #{"sperber"},
   :emails #{"sperber@deinprogramm.de"}}
- (),
+ ("CLJ-1750"),
  {:display-name "Matt Oquist",
   :usernames #{"moquist@majen.net"},
   :emails #{"moquist@majen.net"}}
@@ -6958,6 +6963,10 @@
  {:display-name "Bobby Calderwood",
   :usernames #{"bobby"},
   :emails #{"bobby@thinkrelevance.com"}}
+ (),
+ {:display-name "Fernando Hurtado",
+  :usernames #{"fernandohur"},
+  :emails #{"fernandohur@gmail.com"}}
  (),
  {:display-name "ewen grosjean",
   :usernames #{"ewen"},
@@ -7685,7 +7694,7 @@
  {:display-name "Juho Teperi",
   :usernames #{"deraen"},
   :emails #{"juho.teperi@metosin.fi"}}
- ("CTYP-129" "CLJ-706"),
+ ("CTYP-129" "CLJ-1120" "CLJ-706"),
  {:display-name "Hiram Madelaine",
   :usernames #{"hmadelaine"},
   :emails #{"Hiram.madelaine@gmail.com"}}

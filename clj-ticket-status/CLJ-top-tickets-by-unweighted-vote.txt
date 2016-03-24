@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: March 17, 2016
+Date: March 24, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -58,7 +58,7 @@ Defect
    3 Open         [CLJ-1243] Cannot resolve public generic method from package-private base class
    3 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
    3 Incomplete   [CLJ-1620] Constants are leaked in case of a reentrant eval
-   3 Open         [CLJ-1279] Fix confusing macroexpand1 ArityException handling
+   3 Triaged      [CLJ-1279] Fix confusing macroexpand1 ArityException handling
    3 Open         [CLJ-1445] pprint prints some metadata when *print-meta* bound to true, but not all
    2 Triaged      [CLJ-1360] clojure.string/split strips trailing delimiters
    2 Open         [CLJ-1625] Cannot implement protocol methods of the same name inline
@@ -92,6 +92,7 @@ Defect
    1 Open         [CLJ-1548] primitive type hints on protocol methods break call sites
    1 Open         [CLJ-1577] Some hints accept both symbols and class objects, others only symbols
    1 Triaged      [CLJ-1790] Error extending protocols to Java arrays
+   1 Vetted       [CLJ-1793] Clear 'this' before calls in tail position
    1 Triaged      [CLJ-1864] clojure.core/proxy does not work when reloading namespaces
    0 Backlog      [CLJ-84] GC Issue 81: compile gen-class fail when class returns self
    0 Backlog      [CLJ-346] (pprint-newline :fill) is not handled correctly
@@ -113,7 +114,6 @@ Defect
    0 Prescreened  [CLJ-1759] macroexpand throws runtime exception on symbol bound to a class
    0 Prescreened  [CLJ-1764] partition-by runs infinite loop when one element of infinite partition is accessed
    0 Triaged      [CLJ-1768] quote of an empty lazyseq produces an error when evaled
-   0 Vetted       [CLJ-1793] Clear 'this' before calls in tail position
    0 Triaged      [CLJ-1796] Protocol functions fail to find future extensions when assigned to a local or new var
    0 Triaged      [CLJ-1818] cl-format does not respect aesthetic ~A with a keyword
    0 Prescreened  [CLJ-1841] core/bean iterator is broken
@@ -177,6 +177,7 @@ Enhancement
    4 Open         [CLJ-1519] Added extra arity to clojure.core/ns-* fns
    4 Triaged      [CLJ-1209] clojure.test does not print ex-info in error reports
    4 Triaged      [CLJ-1096] Make destructuring emit direct keyword lookups
+   4 Open         [CLJ-1120] Introduce ex-message and ex-cause to abstract away the platform in dealing with ExceptionInfo
    3 Open         [CLJ-1862] Release both a direct linked and a non direct linked clojure
    3 Prescreened  [CLJ-1899] Add function transform-keys to clojure.walk
    3 Open         [CLJ-272] load/ns/require/use overhaul
@@ -187,9 +188,9 @@ Enhancement
    3 Backlog      [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
    3 Open         [CLJ-891] make (symbol foo "bar") work with foo being a namespace
    3 Triaged      [CLJ-1305] Add optional not-found argument when invoking vectors or sets as functions
-   3 Open         [CLJ-1120] Introduce ex-message and ex-cause to abstract away the platform in dealing with ExceptionInfo
    3 Triaged      [CLJ-888] defprotocol should throw error when signatures include variable number of parameters
    3 Open         [CLJ-1777] Add function version of vswap!
+   2 Triaged      [CLJ-1750] There should be a way to observe platform features at runtime
    2 Open         [CLJ-1852] Clojure-generated class names length exceed file-system limit
    2 Backlog      [CLJ-415] smarter assert (prints locals)
    2 Open         [CLJ-1256] Support type-hinted overrides of function parameters
@@ -218,7 +219,6 @@ Enhancement
    1 Open         [CLJ-1223] Improve App Engine Support by Providing an Option to Use the App Engine ThreadManger
    1 Open         [CLJ-1296] locking expressions cause vars to be dereferenced, even if not executed, unless wrapped in let
    1 Open         [CLJ-1526] clojure.core/> inconsistent behavior wrt to documentation.
-   1 Triaged      [CLJ-1750] There should be a way to observe platform features at runtime
    1 Triaged      [CLJ-970] extend/implement parameterized types (generics)
    1 Open         [CLJ-994] repeat reducer
    1 Open         [CLJ-995] sorted-set doesn't support IEditableCollection
@@ -327,3 +327,4 @@ Enhancement
    0 Prescreened  [CLJ-1895] Remove loading of clojure.string in clojure.java.io
    0 Triaged      [CLJ-1896] Support transducers in vec and set fns
    0 Prescreened  [CLJ-1901] amap calls `alength` at every iteration step
+   0 Triaged      [CLJ-1903] Provide a transducer for reductions

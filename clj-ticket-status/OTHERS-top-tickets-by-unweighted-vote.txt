@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: March 17, 2016
+Date: March 24, 2016
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -86,6 +86,7 @@ Defect
    1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
    1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
    1 Open         [ASYNC-128] or evaluation not stopped when exp nests take
+   1 Open         [ASYNC-144] pipeline-async docstring correction
    1 Triaged      [ASYNC-154] (require :reload-all) causes NullPointerException
    1 Open         [ASYNC-159] promise-chan in ClojureScript is broken
    1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
@@ -111,13 +112,12 @@ Defect
    0 Open         [ASYNC-129] Channels with transducer using reduced don't work as intended
    0 Open         [ASYNC-132] Can't close over locals in #js in go
    0 Open         [ASYNC-134] async/alts!! with an empty vector throws ArrayIndexOutOfBoundsException
-   0 Open         [ASYNC-144] pipeline-async docstring correction
    0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
    0 Triaged      [ASYNC-155] Preserve loop binding metadata when inside a go block
    0 Open         [ASYNC-156] (ClojureScript) go block containing letfn does not compile
    0 Open         [ASYNC-157] Reflection warning with doseq
-   0 Open         [ASYNC-160] `(vector :blah)` and `[:blah]` crashing with `inst_XXXX.call not a function` within core.async go routine
    0 Open         [ASYNC-161] `<!` inside nested `let` inside `go` block erroneously yields "<! not used inside go block" error
+   0 Open         [ASYNC-163] Off-by-two in pipeline-async parallelism
 
 ========================================
 Enhancement
@@ -161,11 +161,9 @@ Project CCACHE tickets
 ========================================
 Defect
 
-   3 Open         [CCACHE-41] defcache needs to impl. iterator() to avoid Clojure 1.7 breakage
+   3 Vetted       [CCACHE-41] defcache needs to impl. iterator() to avoid Clojure 1.7 breakage
    1 Open         [CCACHE-31] SoftCaches update in-place, other cache types don't
-   1 Open         [CCACHE-43] through method should always have cache as first argument to make it more friendly for swap!
    0 Open         [CCACHE-15] It appears that TTL cache exhibits quadratic performance (+ its evict is buggy)
-   0 Open         [CCACHE-27] Missing LU and LRU is linear complexity - performance
    0 Open         [CCACHE-32] LIRSCache defect allows it's memory use to grow without bound
    0 Open         [CCACHE-39] FIFOCache member exempted from expulsion after evict
    0 Open         [CCACHE-40] FIFOCache StackOverflowError with high :threshold due to concat
@@ -175,10 +173,10 @@ Enhancement
 
    4 Open         [CCACHE-42] Porting core.cache to ClojureScript
    1 Open         [CCACHE-14] Asynchronous Cache Support
+   1 Open         [CCACHE-43] through method should always have cache as first argument to make it more friendly for swap!
    0 Open         [CCACHE-17] Create function backed cache
    0 Open         [CCACHE-35] Add weak-cache
    0 Open         [CCACHE-36] Allow ttl to be set for a key on cache miss
-   0 Open         [CCACHE-37] Doc string typo fix
    0 Open         [CCACHE-38] Add ARC or CAR algorithm
 
 ========================================
@@ -325,12 +323,13 @@ Defect
    0 Open         [CTYP-293] Should check upcast to Dyn
    0 Bad: Unkn Fi [CTYP-303] cast doesn't work for recursive types
    0 Bad: Unkn Fi [CTYP-306] pred doesn't work for non-literal HVecs with varargs
+   0 Open         [CTYP-312] pred doesn't work with polymorphic protocols?
 
 ========================================
 Enhancement
 
    3 Bad: Match > [CTYP-167] Several failure cases for comp for polyadic fns and type variables
-   2 Bad: Match > [CTYP-133] Typechecker fails when checking involves an object from reify
+   3 Bad: Match > [CTYP-133] Typechecker fails when checking involves an object from reify
    1 Bad: Match > [CTYP-134] Allow namespace aliases in `ann`
    0 Bad: Match > [CTYP-8] Support complex map manipulation functions
    0 Open         [CTYP-9] Support metadata types
@@ -688,6 +687,11 @@ Task
 
 Project MCOMB tickets
 ========================================
+Enhancement
+
+   0 Open         [MCOMB-6] Support ClojureScript by converting from CLJ to CLJC
+
+========================================
 Task
 
    0 Open         [MCOMB-3] Please add project.clj
@@ -779,6 +783,7 @@ Defect
    0 Open         [TCHECK-80] last-trial-report (used by trial-report-periodic) is not being reset at :begin-test-var in cljs
    0 Open         [TCHECK-89] the clojure-test namespace has a global atom
    0 Open         [TCHECK-94] Collections don't shrink very aggressively 
+   0 Open         [TCHECK-98] gen/let uses gen/bind even when it doesn't have to
 
 ========================================
 Enhancement
