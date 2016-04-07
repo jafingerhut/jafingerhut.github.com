@@ -532,6 +532,10 @@
   :usernames #{"jedahu"},
   :emails #{"jedahu@gmail.com"}}
  (),
+ {:display-name "Tom Raithel",
+  :usernames #{"mortox"},
+  :emails #{"t.raithel@googlemail.com"}}
+ (),
  {:display-name "Edward",
   :usernames #{"appodictic"},
   :emails #{"edlinuxguru@gmail.com"}}
@@ -1423,7 +1427,7 @@
  {:display-name "Anna Pawlicka",
   :usernames #{"annapawlicka"},
   :emails #{"pawlicka.anna@gmail.com"}}
- (),
+ ("CLJ-1908"),
  {:display-name "Christian Blunden",
   :usernames #{"christianralph"},
   :emails #{"christian.blunden@gmail.com"}}
@@ -1887,7 +1891,8 @@
  {:display-name "Colin Taylor",
   :usernames #{"coltnz"},
   :emails #{"colin.taylor@gmail.com"}}
- ("CLJ-1610"
+ ("CLJ-1817"
+  "CLJ-1610"
   "CLJ-1598"
   "CLJ-1298"
   "CLJ-1239"
@@ -2548,7 +2553,7 @@
  {:display-name "Brandon Adams",
   :usernames #{"emidln"},
   :emails #{"emidln@gmail.com"}}
- (),
+ ("CLJ-1793"),
  {:display-name "David Miller",
   :usernames #{"davidmiller"},
   :emails #{"david@deadpansincerity.com"}}
@@ -2632,7 +2637,7 @@
  {:display-name "Ghadi Shayban",
   :usernames #{"gshayban"},
   :emails #{"gshayban@gmail.com"}}
- ("JDBC-99" "CLJ-1322" "CLJ-1096" "ASYNC-79"),
+ ("JDBC-99" "CLJ-1906" "CLJ-1322" "CLJ-1096" "ASYNC-79"),
  {:display-name "Michael S. Daines",
   :usernames #{"defndaines"},
   :emails #{"defndaines@gmail.com"}}
@@ -5658,6 +5663,10 @@
   :usernames #{"macdevign"},
   :emails #{"macdevign@gmail.com"}}
  (),
+ {:display-name "Sam Roberton",
+  :usernames #{"sam.roberton"},
+  :emails #{"sam@samroberton.com"}}
+ (),
  {:display-name "Greg Mitchell",
   :usernames #{"greg.mitchell"},
   :emails #{"gam7491@gmail.com"}}
@@ -8173,6 +8182,10 @@
  {:display-name "Raphael Boukara",
   :usernames #{"raphael.boukara@gmail.com"},
   :emails #{"raphael.boukara@gmail.com"}}
+ (),
+ {:display-name "Devon Peticolas",
+  :usernames #{"dpeticolas"},
+  :emails #{"devon+clojure_jira@peticol.as"}}
  (),
  {:display-name "Akhil Wali",
   :usernames #{"darth10"},
