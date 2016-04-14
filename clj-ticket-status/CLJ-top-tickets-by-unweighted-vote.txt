@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: April 7, 2016
+Date: April 14, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -95,6 +95,7 @@ Defect
    1 Open         [CLJ-1577] Some hints accept both symbols and class objects, others only symbols
    1 Triaged      [CLJ-1790] Error extending protocols to Java arrays
    1 Triaged      [CLJ-1864] clojure.core/proxy does not work when reloading namespaces
+   1 Open         [CLJ-1911] min-key and max-key should return NaN if any of the argument is NaN
    0 Backlog      [CLJ-84] GC Issue 81: compile gen-class fail when class returns self
    0 Backlog      [CLJ-346] (pprint-newline :fill) is not handled correctly
    0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
@@ -172,6 +173,7 @@ Enhancement
    4 Open         [CLJ-1573] Support (Java) transient fields in deftype, e.g. for hashcodes
    4 Triaged      [CLJ-1149] Unhelpful error message from :use (and use function) when arguments are malformed
    4 Open         [CLJ-899] Accept and ignore colon between key and value in map literals
+   4 Open         [CLJ-200] Extend cond to support inline let, much like for
    4 Open         [CLJ-1141] Allow pre and post-conditions in defprotocol and deftype macros
    4 Triaged      [CLJ-1473] Badly formed pre/post conditions silently passed
    4 Open         [CLJ-1519] Added extra arity to clojure.core/ns-* fns
@@ -195,7 +197,6 @@ Enhancement
    2 Open         [CLJ-1852] Clojure-generated class names length exceed file-system limit
    2 Backlog      [CLJ-415] smarter assert (prints locals)
    2 Open         [CLJ-1256] Support type-hinted overrides of function parameters
-   2 Open         [CLJ-200] Extend cond to support inline let, much like for
    2 Triaged      [CLJ-1523] Add 'doseq' like macro for transducers
    2 Open         [CLJ-1367] Allow case statement to compare java constants
    2 Open         [CLJ-1162] Error Message when calling deref on a non-IDeref is unhelpful
@@ -205,6 +206,7 @@ Enhancement
    2 Open         [CLJ-1026] Mixed end-of-line endings in the source code
    2 Backlog      [CLJ-731] Create macro to variadically unroll a combinator function definition
    2 Screenable   [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
+   2 Open         [CLJ-1906] Clojure should make representing iterated api calls easier
    2 Open         [CLJ-428] subseq, rsubseq enhancements to support priority maps?
    2 Triaged      [CLJ-1219] Make identical? variadic
    2 Open         [CLJ-1459] records should support transient
@@ -219,23 +221,22 @@ Enhancement
    1 Open         [CLJ-1223] Improve App Engine Support by Providing an Option to Use the App Engine ThreadManger
    1 Open         [CLJ-1296] locking expressions cause vars to be dereferenced, even if not executed, unless wrapped in let
    1 Open         [CLJ-1526] clojure.core/> inconsistent behavior wrt to documentation.
-   1 Triaged      [CLJ-1908] Add clojure.test api to run single test with fixtures and report
    1 Triaged      [CLJ-970] extend/implement parameterized types (generics)
    1 Open         [CLJ-994] repeat reducer
    1 Open         [CLJ-995] sorted-set doesn't support IEditableCollection
    1 Open         [CLJ-1734] Display more descriptive error message when trying to use reader conditionals in a non-cljc file
    1 Open         [CLJ-1782] Hide local IDE files in .gitignore
    1 Triaged      [CLJ-1843] Add =to function exposing Util/equivPred 
+   1 Triaged      [CLJ-1908] Add clojure.test api to run single test with fixtures and report
    1 Open         [CLJ-1266] Better primitive support for floats
-   1 Open         [CLJ-1316] for doesn't support :let binding as its first seq-expr
    1 Open         [CLJ-1321] Documentation improvement for clojure.walk, to note use of recursion that can easily blow the JVM stack
    1 Open         [CLJ-1332] Exceptions are not cached in lazy seqs
    1 Open         [CLJ-1721] Enable test case for char?
    1 Open         [CLJ-1729] Make Counted and count() return long instead of integer
    1 Prescreened  [CLJ-1890] enhance pprint to print type for defrecord (as in pr)
-   1 Open         [CLJ-1906] Clojure should make representing iterated api calls easier
    1 Open         [CLJ-1010] A left-to-right-variant of `comp`
    1 Triaged      [CLJ-1073] Make print-sequential interruptible
+   1 Open         [CLJ-1316] for doesn't support :let binding as its first seq-expr
    1 Open         [CLJ-1425] Defer literal map construction of syntax-quoted maps to allow for semantically valid unquote splicing
    1 Open         [CLJ-1585] Report boxed math warning on function that boxes primitive return value
    1 Prescreened  [CLJ-1730] Improve `refer` performance
@@ -334,3 +335,4 @@ Enhancement
    0 Prescreened  [CLJ-1901] amap calls `alength` at every iteration step
    0 Triaged      [CLJ-1903] Provide a transducer for reductions
    0 Triaged      [CLJ-1907] Document non-caching behaviour of `iterate` when used as generator
+   0 Screenable   [CLJ-1910] Namespaced maps
