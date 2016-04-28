@@ -2658,6 +2658,10 @@
   :usernames #{"semperos"},
   :emails #{"daniel.l.gregoire@gmail.com"}}
  (),
+ {:display-name "Ricardo Yepes",
+  :usernames #{"ryepesg"},
+  :emails #{"hacktrends@gmail.com"}}
+ (),
  {:display-name "Ghadi Shayban",
   :usernames #{"gshayban"},
   :emails #{"gshayban@gmail.com"}}
@@ -5495,6 +5499,10 @@
   :usernames #{"dergutemoritz"},
   :emails #{"moritz-clojure@twoticketsplease.de"}}
  ("ASYNC-144"),
+ {:display-name "lucica reo",
+  :usernames #{"lucicareo"},
+  :emails #{"lucicareo@yandex.com"}}
+ (),
  {:display-name "Turnip",
   :usernames #{"amturnip"},
   :emails #{"amturnip@yahoo.com.mx"}}
