@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: April 28, 2016
+Date: May 5, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -48,6 +48,22 @@ Defect
              Rick Moynihan (1)
              Greg Chapman (1/6)
              Bozhidar Batsov (1/16)
+    6.08  15 Prescreened  [CLJ-1744] Unused destructured local not cleared, causes memory leak
+             Dave Aitken (1)
+             Rohit Aggarwal (1)
+             Stanislav Yurin (1)
+             Daniel Solano Gómez (1/2)
+             James Henderson (1/2)
+             Ragnar Dahlen (1/2)
+             Johan Gall (1/3)
+             Alex Miller (1/4)
+             Jozef Wagner (1/4)
+             Huahai Yang (1/6)
+             Michael Griffiths (1/6)
+             Andrey Antukh (1/7)
+             Lars Andersen (1/8)
+             Simon Belak (1/10)
+             Michael Blume (1/21)
     5.74  10 Incomplete   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
              Daniel Glauser (1)
              Emrehan Tuzun (1)
@@ -59,21 +75,7 @@ Defect
              Tassilo Horn (1/7)
              Daniel Compton (1/13)
              Nicola Mometto (1/60)
-    4.92  13 Prescreened  [CLJ-1744] Unused destructured local not cleared, causes memory leak
-             Dave Aitken (1)
-             Rohit Aggarwal (1)
-             Daniel Solano Gómez (1/2)
-             James Henderson (1/2)
-             Ragnar Dahlen (1/2)
-             Johan Gall (1/3)
-             Alex Miller (1/4)
-             Jozef Wagner (1/4)
-             Michael Griffiths (1/6)
-             Andrey Antukh (1/7)
-             Lars Andersen (1/8)
-             Simon Belak (1/10)
-             Michael Blume (1/21)
-    4.44  18 Incomplete   [CLJ-700] contains? broken for transient collections
+    4.41  18 Incomplete   [CLJ-700] contains? broken for transient collections
              Laszlo Török (1)
              Dom Kiva-Meyer (1/2)
              Chris Blom (1/3)
@@ -82,10 +84,10 @@ Defect
              Mark Engelberg (1/4)
              Peter Taoussanis (1/4)
              Phill Wolf (1/4)
-             Huahai Yang (1/5)
              Justin Glenn Smith (1/5)
              Patrick Houk (1/5)
              Greg Chapman (1/6)
+             Huahai Yang (1/6)
              Atamert Ölçgen (1/7)
              John Walker (1/7)
              Gary Trakhman (1/11)
@@ -180,6 +182,8 @@ Defect
              Daniel Kwiecinski (1)
     1.00   1 Open         [CLJ-1172] Cross-linking between clojure.lang.Compiler and clojure.lang.RT
              Alex Maletz (1)
+    1.00   1 Prescreened  [CLJ-1870] Reloading a defmulti nukes metadata on the var
+             Matt Oquist (1)
     1.00   1 Triaged      [CLJ-1317] clojure.zip/seq-zip returns spurious nils during traversal
              Lee Spector (1)
     0.80   4 Backlog      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
@@ -285,7 +289,6 @@ Defect
     0.00   0 Prescreened  [CLJ-1759] macroexpand throws runtime exception on symbol bound to a class
     0.00   0 Prescreened  [CLJ-1764] partition-by runs infinite loop when one element of infinite partition is accessed
     0.00   0 Prescreened  [CLJ-1841] core/bean iterator is broken
-    0.00   0 Prescreened  [CLJ-1870] Reloading a defmulti nukes metadata on the var
     0.00   0 Prescreened  [CLJ-1887] clojure.core.Vec does not fully implement clojure.lang.IPersistentVector
     0.00   0 Prescreened  [CLJ-1914] Range realization has a race during concurrent execution
     0.00   0 Triaged      [CLJ-929] Accessing Java property starting with _ has issues in 1.4
@@ -379,7 +382,7 @@ Enhancement
              Daniel Compton (1/13)
              Bozhidar Batsov (1/16)
              Michael Blume (1/21)
-    7.50  22 Backlog      [CLJ-1517] Unrolled small vectors
+    7.47  22 Backlog      [CLJ-1517] Unrolled small vectors
              David Dossot (1)
              Deepak Giridharagopal (1)
              Steffen Dienst (1)
@@ -390,8 +393,8 @@ Enhancement
              Jean Fabio Baro (1/4)
              Jozef Wagner (1/4)
              Mitchel Kuijpers (1/4)
-             Huahai Yang (1/5)
              Michael Patrick O'Keefe (1/5)
+             Huahai Yang (1/6)
              Atamert Ölçgen (1/7)
              Christoffer Sawicki (1/7)
              Colin Fleming (1/7)
@@ -633,15 +636,6 @@ Enhancement
              Jan Rychter (1/8)
              Michael Blume (1/21)
              Nicola Mometto (1/60)
-    3.57   8 Triaged      [CLJ-1063] Missing dissoc-in
-             Michael D Pendergrass (1)
-             Timothy Pratley (1)
-             Chris Perkins (1/2)
-             Bridget Hillyer (1/3)
-             Noam Ben Ari (1/3)
-             Huahai Yang (1/5)
-             Lars Andersen (1/8)
-             Daniel Compton (1/13)
     3.57   7 Open         [CLJ-1553] Parallel transduce
              Darrick Wiebe (1)
              Rafik NACCACHE (1)
@@ -650,6 +644,15 @@ Enhancement
              Daniel James (1/5)
              Devin Walters (1/5)
              Michael Griffiths (1/6)
+    3.54   8 Triaged      [CLJ-1063] Missing dissoc-in
+             Michael D Pendergrass (1)
+             Timothy Pratley (1)
+             Chris Perkins (1/2)
+             Bridget Hillyer (1/3)
+             Noam Ben Ari (1/3)
+             Huahai Yang (1/6)
+             Lars Andersen (1/8)
+             Daniel Compton (1/13)
     3.50   4 Open         [CLJ-1573] Support (Java) transient fields in deftype, e.g. for hashcodes
              Daniel J Jolicoeur (1)
              Ian Eslick (1)
@@ -685,14 +688,14 @@ Enhancement
              Andrew Rosa (1/9)
              David Greenberg (1/16)
              Nicola Mometto (1/60)
-    3.04  13 Vetted       [CLJ-1005] Use transient map in zipmap
+    3.01  13 Vetted       [CLJ-1005] Use transient map in zipmap
              Joshua Ballanco (1)
              Bobby Eickhoff (1/2)
              Yongqian Li (1/4)
              Ambrose Bonnaire-Sergeant (1/5)
              Daniel James (1/5)
-             Huahai Yang (1/5)
              Gary Fredericks (1/6)
+             Huahai Yang (1/6)
              Mike Rodriguez (1/6)
              Jan Rychter (1/8)
              Gary Trakhman (1/11)
@@ -729,6 +732,12 @@ Enhancement
              Marshall Brekka (1/2)
              Stephen C. Gilardi (1/7)
              Jan Rychter (1/8)
+    2.27   5 Triaged      [CLJ-1817] Allow AssertionError messages for function :pre and :post conditions to be specified.
+             Derek Troy-West (1)
+             Larry Staton Jr. (1)
+             Colin Taylor (1/9)
+             Simon Belak (1/10)
+             Reid McKenzie (1/18)
     2.17   3 Prescreened  [CLJ-1899] Add function transform-keys to clojure.walk
              Joe James (1)
              Łukasz Korecki (1)
@@ -816,14 +825,6 @@ Enhancement
              Chris McDevitt (1/4)
              Justin Glenn Smith (1/5)
              Michael Blume (1/21)
-    1.33   7 Triaged      [CLJ-1458] Enhance the performance of map merges
-             Alejandro Ciniglio (1/2)
-             Daniel James (1/5)
-             Huahai Yang (1/5)
-             John Walker (1/7)
-             Jan Rychter (1/8)
-             Simon Belak (1/10)
-             David Greenberg (1/16)
     1.32   6 Prescreened  [CLJ-1451] Add take-until
              Jan-Paul Bultmann (1/2)
              Jenan Wise (1/3)
@@ -831,11 +832,14 @@ Enhancement
              Lars Andersen (1/8)
              Simon Belak (1/10)
              Bozhidar Batsov (1/16)
-    1.27   4 Triaged      [CLJ-1817] Allow AssertionError messages for function :pre and :post conditions to be specified.
-             Larry Staton Jr. (1)
-             Colin Taylor (1/9)
+    1.30   7 Triaged      [CLJ-1458] Enhance the performance of map merges
+             Alejandro Ciniglio (1/2)
+             Daniel James (1/5)
+             Huahai Yang (1/6)
+             John Walker (1/7)
+             Jan Rychter (1/8)
              Simon Belak (1/10)
-             Reid McKenzie (1/18)
+             David Greenberg (1/16)
     1.25   2 Triaged      [CLJ-1523] Add 'doseq' like macro for transducers
              Niels van Klaveren (1)
              Jozef Wagner (1/4)
@@ -882,6 +886,8 @@ Enhancement
              Shlomi (1)
     1.00   1 Open         [CLJ-1526] clojure.core/> inconsistent behavior wrt to documentation.
              kalina todorova (1)
+    1.00   1 Prescreened  [CLJ-1797] Mention cljc when require fails
+             Aaron Iba (1)
     1.00   1 Triaged      [CLJ-1903] Provide a transducer for reductions
              Bruno Renié (1)
     0.98   3 Triaged      [CLJ-825] Protocol implementation inconsistencies when overloading arity
@@ -909,7 +915,7 @@ Enhancement
     0.70   2 Open         [CLJ-2] Scopes
              Ivan Kozik (1/2)
              Matthew O. Smith (1/5)
-    0.67   2 Open         [CLJ-1402] sort-by calls keyfn more times than is necessary
+    0.67   2 Triaged      [CLJ-1402] sort-by calls keyfn more times than is necessary
              Frank Schmidt (1/2)
              Tom Crayford (1/6)
     0.67   2 Triaged      [CLJ-1771] Support for multiple key(s)-value pairs in assoc-in
@@ -1088,7 +1094,6 @@ Enhancement
     0.00   0 Prescreened  [CLJ-1159] Improve docstring of clojure.java.io/delete-file to be clearer about intent of silently arg
     0.00   0 Prescreened  [CLJ-1314] Correct placement of doc string for function bubble-max-key
     0.00   0 Prescreened  [CLJ-1654] Reuse seq in some
-    0.00   0 Prescreened  [CLJ-1797] Mention cljc when require fails
     0.00   0 Prescreened  [CLJ-1808] map-invert should use transients and reduce-kv instead of reduce
     0.00   0 Prescreened  [CLJ-1826] drop-last docstring refers to 'coll' args refer to 's'
     0.00   0 Prescreened  [CLJ-1837] Improve wording of index-of and last-index-of doc strings
