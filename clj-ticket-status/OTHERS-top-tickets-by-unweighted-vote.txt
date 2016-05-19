@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: May 13, 2016
+Date: May 19, 2016
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -78,10 +78,11 @@ Defect
    3 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
    2 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
    2 Open         [ASYNC-158] and with multiple <! does not short-circuit in go
+   2 Open         [ASYNC-42] (try (catch :default)) inside a cljs go block raises an exception
    2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
    2 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
-   2 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
    2 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
+   2 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
    1 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
    1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
    1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
@@ -120,6 +121,7 @@ Defect
    0 Open         [ASYNC-163] Off-by-two in pipeline-async parallelism
    0 Open         [ASYNC-165] the binding macro/let binding is wrongly inlined
    0 Open         [ASYNC-168] Bad interaction between go, try and fn body
+   0 Open         [ASYNC-169] Try/catch block loops eternally inside go block
 
 ========================================
 Enhancement
@@ -684,7 +686,6 @@ Project MCOMB tickets
 Enhancement
 
    0 Open         [MCOMB-6] Support ClojureScript by converting from CLJ to CLJC
-   0 Open         [MCOMB-7] Fix reflection errors
 
 ========================================
 Task

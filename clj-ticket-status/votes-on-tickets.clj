@@ -314,6 +314,10 @@
   :usernames #{"bsmith.occs@gmail.com"},
   :emails #{"bsmith.occs@gmail.com"}}
  (),
+ {:display-name "Frank Burnham",
+  :usernames #{"fraburnham"},
+  :emails #{"frank@farmlogs.com"}}
+ (),
  {:display-name "Xavi Caballé",
   :usernames #{"xavi"},
   :emails #{"xavi.caballe@gmail.com"}}
@@ -384,6 +388,10 @@
   :usernames #{"techpractical"},
   :emails #{"james.laver@gmail.com"}}
  ("CLJ-1527"),
+ {:display-name "jun.chen",
+  :usernames #{"stonecj"},
+  :emails #{"125512485@qq.com"}}
+ (),
  {:display-name "Dan Burton",
   :usernames #{"danburton"},
   :emails #{"danburton.email@gmail.com"}}
@@ -1253,6 +1261,10 @@
   :usernames #{"td123"},
   :emails #{"gostrc@gmail.com"}}
  (),
+ {:display-name "Stephen Brady",
+  :usernames #{"sbrady"},
+  :emails #{"stephen.brady@gmail.com"}}
+ (),
  {:display-name "François-René Rideau",
   :usernames #{"fahree"},
   :emails #{"fahree@gmail.com"}}
@@ -2076,6 +2088,10 @@
  {:display-name "Erwin Kroon",
   :usernames #{"ekroon"},
   :emails #{"erwin@k3n.nl"}}
+ (),
+ {:display-name "sachsolution09",
+  :usernames #{"sachsolution09"},
+  :emails #{"sachsolution09@gmail.com"}}
  (),
  {:display-name "Joel Kaasinen",
   :usernames #{"opqdonut"},
@@ -3582,7 +3598,7 @@
  {:display-name "Willy Blandin",
   :usernames #{"blandw"},
   :emails #{"wblandin@gmail.com"}}
- ("ASYNC-100" "ASYNC-92"),
+ ("ASYNC-100" "ASYNC-92" "ASYNC-42"),
  {:display-name "Dan Lipsitt",
   :usernames #{"danlipsitt"},
   :emails #{"danlipsitt@gmail.com"}}
@@ -4955,6 +4971,7 @@
   :usernames #{"bronsa"},
   :emails #{"brobronsa@gmail.com"}}
  ("CLJS-1461"
+  "CLJ-1929"
   "CLJ-1921"
   "CLJ-1911"
   "CLJ-1906"
@@ -5002,6 +5019,7 @@
   "CLJ-1103"
   "CLJ-1078"
   "CLJ-1074"
+  "CLJ-1063"
   "CLJ-1017"
   "CLJ-1005"
   "CLJ-938"
@@ -5910,6 +5928,10 @@
   :usernames #{"abstractj"},
   :emails #{"bruno@abstractj.com"}}
  (),
+ {:display-name "Ram Singh",
+  :usernames #{"ramsingh"},
+  :emails #{"ramsingh01241@gmail.com"}}
+ (),
  {:display-name "Justin Glenn Smith",
   :usernames #{"noisesmith"},
   :emails #{"noisesmith@gmail.com"}}
@@ -6053,6 +6075,10 @@
  {:display-name "Craig Brozefsky",
   :usernames #{"craigbrozefsky"},
   :emails #{"craig@red-bean.com"}}
+ (),
+ {:display-name "mamta pandey",
+  :usernames #{"mamtapandey"},
+  :emails #{"rdtrfgfyh@gustr.com"}}
  (),
  {:display-name "Dusan Maliarik",
   :usernames #{"skrat"},
@@ -6450,6 +6476,10 @@
   :usernames #{"tiredpixel"},
   :emails #{"tp@tiredpixel.com"}}
  (),
+ {:display-name "David Bürgin",
+  :usernames #{"glts"},
+  :emails #{"676c7473@gmail.com"}}
+ (),
  {:display-name "Joe James",
   :usernames #{"joejamesio"},
   :emails #{"joe@joejames.io"}}
@@ -6759,6 +6789,10 @@
  {:display-name "Aleksandar Bakalov",
   :usernames #{"abakalov"},
   :emails #{"aleksandar.bakalov@gmail.com"}}
+ (),
+ {:display-name "barkha singh",
+  :usernames #{"barkha00"},
+  :emails #{"barkha00@muchomail.com"}}
  (),
  {:display-name "Stuart Sierra",
   :usernames #{"stuart.sierra"},
@@ -7871,6 +7905,10 @@
   :usernames #{"jsy"},
   :emails #{"jns0019@uah.edu"}}
  (),
+ {:display-name "ravi isngh",
+  :usernames #{"ravissss"},
+  :emails #{"ravi1991allahabaduniversity@gmail.com"}}
+ (),
  {:display-name "Elliot Block",
   :usernames #{"elliot42"},
   :emails #{"elliot@framed.io"}}
@@ -8058,6 +8096,10 @@
  {:display-name "Mayank Jain",
   :usernames #{"firesofmay"},
   :emails #{"firesofmay@gmail.com"}}
+ (),
+ {:display-name "Jay Lee",
+  :usernames #{"popopome"},
+  :emails #{"popopome@gmail.com"}}
  (),
  {:display-name "Dmitr Sotnikov",
   :usernames #{"yogthos"},
@@ -8644,6 +8686,10 @@
   :usernames #{"m.c.patella@gmail.com"},
   :emails #{"m.c.patella@gmail.com"}}
  (),
+ {:display-name "web support",
+  :usernames #{"helptech"},
+  :emails #{"helptech76@gmail.com"}}
+ (),
  {:display-name "Bobby Wilson",
   :usernames #{"bobbywilson0"},
   :emails #{"bobbywilson0@gmail.com"}}
@@ -8903,7 +8949,7 @@
  {:display-name "Kevin Neaton",
   :usernames #{"neatonk"},
   :emails #{"neatonk@gmail.com"}}
- ("CLJS-890"),
+ ("CLJS-890" "ASYNC-42"),
  {:display-name "Wilfred Hughes",
   :usernames #{"wilfred"},
   :emails #{"me@wilfred.me.uk"}}
@@ -9388,6 +9434,10 @@
  {:display-name "Aleksey Kladov",
   :usernames #{"matklad"},
   :emails #{"aleksey.kladov@gmail.com"}}
+ (),
+ {:display-name "Tim Simpson",
+  :usernames #{"timsimpson"},
+  :emails #{"timsimpson4@gmail.com"}}
  (),
  {:display-name "davie moston",
   :usernames #{"davie"},
