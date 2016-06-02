@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: May 26, 2016
+Date: June 2, 2016
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -89,6 +89,7 @@ Defect
    1 Open         [ASYNC-128] or evaluation not stopped when exp nests take
    1 Open         [ASYNC-144] pipeline-async docstring correction
    1 Triaged      [ASYNC-154] (require :reload-all) causes NullPointerException
+   1 Triaged      [ASYNC-155] Preserve loop binding metadata when inside a go block
    1 Open         [ASYNC-159] promise-chan in ClojureScript is broken
    1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
    1 Open         [ASYNC-78] deadlock in multi catch
@@ -114,7 +115,6 @@ Defect
    0 Open         [ASYNC-132] Can't close over locals in #js in go
    0 Open         [ASYNC-134] async/alts!! with an empty vector throws ArrayIndexOutOfBoundsException
    0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
-   0 Triaged      [ASYNC-155] Preserve loop binding metadata when inside a go block
    0 Open         [ASYNC-156] (ClojureScript) go block containing letfn does not compile
    0 Open         [ASYNC-157] Reflection warning with doseq
    0 Open         [ASYNC-161] `<!` inside nested `let` inside `go` block erroneously yields "<! not used inside go block" error
@@ -166,8 +166,8 @@ Project CCACHE tickets
 ========================================
 Defect
 
+   2 Open         [CCACHE-15] It appears that TTL cache exhibits quadratic performance (+ its evict is buggy)
    1 Open         [CCACHE-31] SoftCaches update in-place, other cache types don't
-   0 Open         [CCACHE-15] It appears that TTL cache exhibits quadratic performance (+ its evict is buggy)
    0 Open         [CCACHE-32] LIRSCache defect allows it's memory use to grow without bound
    0 Open         [CCACHE-39] FIFOCache member exempted from expulsion after evict
    0 Open         [CCACHE-40] FIFOCache StackOverflowError with high :threshold due to concat
@@ -517,6 +517,7 @@ Defect
    0 Open         [DXML-15] data.xml can't parse own output if there's a colon in an attribute name
    0 Open         [DXML-27] Element java.util.Date throws IllegalArgumentException
    0 Open         [DXML-31] Parsed events cannot be emitted
+   0 Open         [DXML-32] data.xml fails when used with Java 9
 
 ========================================
 Enhancement
