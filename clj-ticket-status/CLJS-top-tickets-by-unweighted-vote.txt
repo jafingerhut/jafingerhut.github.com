@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: June 9, 2016
+Date: June 16, 2016
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -48,6 +48,7 @@ Defect
    1 Bad: Match > [CLJS-871] .-default property access returns nil
    1 Open         [CLJS-890] Incorrect behaviour of (str obj) when obj has valueOf method
    1 Bad: Match > [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
+   1 Open         [CLJS-1607] Advanced compilation bug with `specify!` in JS prototypes
    1 Bad: Match > [CLJS-719] this-as behaves incorrectly in "scoping function"
    1 Open         [CLJS-1593] Self-host: Munged minus macro
    1 Open         [CLJS-1657] Self-host: Implicit macro loading with alias
@@ -71,8 +72,8 @@ Defect
    0 Bad: Match > [CLJS-1485] Error when requiring `goog` namespace in a ns declaration 
    0 Bad: Match > [CLJS-1497] `find` on an associative collection does not return collection key
    0 Bad: Match > [CLJS-1544] cljs.test REPL reload support
-   0 Bad: Unkn Fi [CLJS-1673] Can't s/instrument a multimethod
-   0 Bad: Unkn Fi [CLJS-1674] cljs.test/run-all-tests fails when passed a regexp variable
+   0 Bad: Match > [CLJS-1641] Multi-arity defn copies arguments unnecessarily for all cases
+   0 Bad: Match > [CLJS-1666] Flag to optionally disable transit analysis cache encoding
 
 ========================================
 Enhancement
@@ -81,14 +82,15 @@ Enhancement
    3 Bad: Unkn Fi [CLJS-1074] Externs inference
    2 Bad: Match > [CLJS-1350] Compiler support for browser REPL
    2 Open         [CLJS-555] CLONE - Implement ratios
+   2 Bad: Match > [CLJS-1238] Setting *main-cli-fn* when using :target :nodejs shouldn't be manditory
    2 Open         [CLJS-1241] Add cljs.core/boolean? predicate
    2 Open         [CLJS-1507] Implicit macro loading: macro var inference in :refer
    1 Open         [CLJS-1009] Allow deps.cljs to declare a foreign lib as remote
    1 Bad: Unkn Fi [CLJS-1047] externs checking for js/foo
    1 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
-   1 Bad: Match > [CLJS-1238] Setting *main-cli-fn* when using :target :nodejs shouldn't be manditory
    1 Open         [CLJS-1428] Add a cljs.core/*command-line-args* var
    1 Open         [CLJS-1346] Support require outside of ns 
+   1 Open         [CLJS-1076] :nashorn target
    1 Open         [CLJS-1508] Extend ns form to support :rename option
    1 Open         [CLJS-324] cljs.core/format
    1 Bad: Match > [CLJS-1194] data_readers.cljc
@@ -110,8 +112,6 @@ Enhancement
    0 Bad: Match > [CLJS-1415] Handling JSDoc param name [x] optional syntax
    0 Bad: Match > [CLJS-1419] enhance numeric inference, if + number? test on local var should tag local var in the successful branch
    0 Bad: Match > [CLJS-1443] ES6 Module Processing at individual :foreign-lib spec
-   0 Bad: Unkn Fi [CLJS-1672] port new preds, specs, and gens 
-   0 Bad: Unkn Fi [CLJS-1675] Update Closure Library
 
 ========================================
 Task
