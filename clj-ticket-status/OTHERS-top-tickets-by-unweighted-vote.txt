@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: March 3, 2016
+Date: June 16, 2016
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -49,6 +49,11 @@ Enhancement
    0 Open         [ALGOG-5] Addition of generic modulus
    0 Open         [ALGOG-12] Implement abs, round for additional number types (patch attached)
 
+========================================
+Task
+
+   0 Open         [ALGOG-15] aps issue
+
 
 Project ALGOM tickets
 ========================================
@@ -72,16 +77,20 @@ Defect
    3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
    3 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
    2 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
+   2 Open         [ASYNC-158] and with multiple <! does not short-circuit in go
+   2 Open         [ASYNC-42] (try (catch :default)) inside a cljs go block raises an exception
    2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
    2 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
-   2 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
    2 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
+   2 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
    1 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
    1 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
    1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
    1 Open         [ASYNC-128] or evaluation not stopped when exp nests take
+   1 Open         [ASYNC-144] pipeline-async docstring correction
    1 Triaged      [ASYNC-154] (require :reload-all) causes NullPointerException
-   1 Open         [ASYNC-158] and with multiple <! does not short-circuit in go
+   1 Triaged      [ASYNC-155] Preserve loop binding metadata when inside a go block
+   1 Open         [ASYNC-159] promise-chan in ClojureScript is broken
    1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
    1 Open         [ASYNC-78] deadlock in multi catch
    0 Triaged      [ASYNC-4] Record literals become ordinary maps
@@ -105,19 +114,20 @@ Defect
    0 Open         [ASYNC-129] Channels with transducer using reduced don't work as intended
    0 Open         [ASYNC-132] Can't close over locals in #js in go
    0 Open         [ASYNC-134] async/alts!! with an empty vector throws ArrayIndexOutOfBoundsException
-   0 Open         [ASYNC-144] pipeline-async docstring correction
    0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
-   0 Triaged      [ASYNC-155] Preserve loop binding metadata when inside a go block
    0 Open         [ASYNC-156] (ClojureScript) go block containing letfn does not compile
    0 Open         [ASYNC-157] Reflection warning with doseq
-   0 Open         [ASYNC-159] promise-chan in ClojureScript is broken
-   0 Open         [ASYNC-160] `(vector :blah)` and `[:blah]` crashing with `inst_XXXX.call not a function` within core.async go routine
    0 Open         [ASYNC-161] `<!` inside nested `let` inside `go` block erroneously yields "<! not used inside go block" error
+   0 Open         [ASYNC-163] Off-by-two in pipeline-async parallelism
+   0 Open         [ASYNC-165] the binding macro/let binding is wrongly inlined
+   0 Open         [ASYNC-168] Bad interaction between go, try and fn body
+   0 Open         [ASYNC-169] Try/catch block loops eternally inside go block
+   0 Open         [ASYNC-170] binding in go block causes tread binding error: "Pop without matching push"
 
 ========================================
 Enhancement
 
-  11 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
+  12 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
    4 Open         [ASYNC-137] Make (<! (timeout 0)) be closer to 0
    4 Open         [ASYNC-119] ClojureScript: combine cljs.core.async.macros and cljs.core.async
    4 Triaged      [ASYNC-126] Add public channel "closed?" predicate
@@ -144,23 +154,20 @@ Enhancement
    0 Open         [ASYNC-150] Unordered pipeline
    0 Open         [ASYNC-151] Accept optional transducer in `to-chan`
    0 Triaged      [ASYNC-153] Return value of pipe is not documented
+   0 Open         [ASYNC-166] Clarify clojure.core.async/chan docstring
 
 ========================================
 Task
 
    1 Open         [ASYNC-116] Convert core.async ClojureScript tests to cljs.test
-   0 Open         [ASYNC-162] Published API docs seem way out of date
 
 
 Project CCACHE tickets
 ========================================
 Defect
 
-   3 Open         [CCACHE-41] defcache needs to impl. iterator() to avoid Clojure 1.7 breakage
+   2 Open         [CCACHE-15] It appears that TTL cache exhibits quadratic performance (+ its evict is buggy)
    1 Open         [CCACHE-31] SoftCaches update in-place, other cache types don't
-   1 Open         [CCACHE-43] through method should always have cache as first argument to make it more friendly for swap!
-   0 Open         [CCACHE-15] It appears that TTL cache exhibits quadratic performance (+ its evict is buggy)
-   0 Open         [CCACHE-27] Missing LU and LRU is linear complexity - performance
    0 Open         [CCACHE-32] LIRSCache defect allows it's memory use to grow without bound
    0 Open         [CCACHE-39] FIFOCache member exempted from expulsion after evict
    0 Open         [CCACHE-40] FIFOCache StackOverflowError with high :threshold due to concat
@@ -168,12 +175,12 @@ Defect
 ========================================
 Enhancement
 
-   3 Open         [CCACHE-42] Porting core.cache to ClojureScript
+   4 Open         [CCACHE-42] Porting core.cache to ClojureScript
    1 Open         [CCACHE-14] Asynchronous Cache Support
+   1 Open         [CCACHE-43] through method should always have cache as first argument to make it more friendly for swap!
    0 Open         [CCACHE-17] Create function backed cache
    0 Open         [CCACHE-35] Add weak-cache
    0 Open         [CCACHE-36] Allow ttl to be set for a key on cache miss
-   0 Open         [CCACHE-37] Doc string typo fix
    0 Open         [CCACHE-38] Add ARC or CAR algorithm
 
 ========================================
@@ -320,12 +327,13 @@ Defect
    0 Open         [CTYP-293] Should check upcast to Dyn
    0 Bad: Unkn Fi [CTYP-303] cast doesn't work for recursive types
    0 Bad: Unkn Fi [CTYP-306] pred doesn't work for non-literal HVecs with varargs
+   0 Open         [CTYP-312] pred doesn't work with polymorphic protocols?
 
 ========================================
 Enhancement
 
+   4 Bad: Match > [CTYP-133] Typechecker fails when checking involves an object from reify
    3 Bad: Match > [CTYP-167] Several failure cases for comp for polyadic fns and type variables
-   2 Bad: Match > [CTYP-133] Typechecker fails when checking involves an object from reify
    1 Bad: Match > [CTYP-134] Allow namespace aliases in `ann`
    0 Bad: Match > [CTYP-8] Support complex map manipulation functions
    0 Open         [CTYP-9] Support metadata types
@@ -421,6 +429,8 @@ Enhancement
    0 Open         [DCSV-1] pom.xml directives
    0 Open         [DCSV-5] No option for parsing into maps
    0 Open         [DCSV-9] write-csv and quote? predicate
+   0 Open         [DCSV-12] Add project.clj for easier local development
+   0 Open         [DCSV-13] Port data.csv to clojurescript
 
 ========================================
 Task
@@ -506,6 +516,8 @@ Defect
 
    0 Open         [DXML-15] data.xml can't parse own output if there's a colon in an attribute name
    0 Open         [DXML-27] Element java.util.Date throws IllegalArgumentException
+   0 Open         [DXML-31] Parsed events cannot be emitted
+   0 Open         [DXML-32] data.xml fails when used with Java 9
 
 ========================================
 Enhancement
@@ -523,16 +535,6 @@ Task
 
 
 Project DZIP tickets
-========================================
-Defect
-
-   0 Open         [DZIP-3] Not returning expected result for 'tag='
-
-========================================
-Enhancement
-
-   0 Open         [DZIP-5] Make it compatible with ClojureScript
-
 
 Project JDATA tickets
 ========================================
@@ -548,6 +550,11 @@ Enhancement
    0 Open         [JDATA-2] Eliminate many occurrences of Clojure reflection in java.data
    0 Open         [JDATA-3] Simplify use cases / split up to-java
    0 Open         [JDATA-5] Translate - into camel casing in to-java
+
+========================================
+Task
+
+   0 Bad: Unkn Ap [JDATA-7] new issue
 
 
 Project JDBC tickets
@@ -653,6 +660,7 @@ Defect
    0 Open         [MATCH-106] variable binding fails with :or guard
    0 Open         [MATCH-107] Map pattern with vector key raises "clojure.lang.PersistentVector cannot be cast to clojure.lang.Named" exception
    0 Open         [MATCH-112] :as and & interaction issue
+   0 Open         [MATCH-113] Typo in match.clj
 
 ========================================
 Enhancement
@@ -678,6 +686,11 @@ Task
 
 Project MCOMB tickets
 ========================================
+Enhancement
+
+   0 Open         [MCOMB-6] Support ClojureScript by converting from CLJ to CLJC
+
+========================================
 Task
 
    0 Open         [MCOMB-3] Please add project.clj
@@ -699,6 +712,8 @@ Defect
    0 Open         [NREPL-54] No version of nrepl when connect to the lein-droid REPL
    0 Open         [NREPL-76] Some messages to an nREPL server never result in a response that includes status :done
    0 Open         [NREPL-80] Thread used to evaluate forms changes over time
+   0 Open         [NREPL-81] Transport/send hangs when sending non-bencodable information outside of :value slot
+   0 Open         [NREPL-82] Descriptor for "add-stdin" appears to incorrectly declare :returns "need-input"
 
 ========================================
 Enhancement
@@ -760,17 +775,12 @@ Project TCHECK tickets
 ========================================
 Defect
 
-   1 Open         [TCHECK-61] defspec throwing errors in cljs
-   1 Open         [TCHECK-73] gen/int can generate doubles
    0 Open         [TCHECK-26] defspec does not respect (is (thrown? ...))
    0 Open         [TCHECK-34] clojure.test reporting is uninformative
    0 Open         [TCHECK-57] Performance regression in map generator between 0.5.8 and 0.5.9
-   0 Open         [TCHECK-59] s-pos-int and s-pos-int generators have an off-by-1 issue 
-   0 Open         [TCHECK-80] last-trial-report (used by trial-report-periodic) is not being reset at :begin-test-var in cljs
    0 Open         [TCHECK-89] the clojure-test namespace has a global atom
-   0 Open         [TCHECK-92] Discrepancy between trial-number and num-tests in case of failure
-   0 Open         [TCHECK-93] gen/any can be disproportionately slow in clojurescript
-   0 Open         [TCHECK-94] Collections don't shrink very aggressively 
+   0 Open         [TCHECK-98] gen/let uses gen/bind even when it doesn't have to
+   0 Open         [TCHECK-106] Variable-sized collection generators have exponential sizing issues when composed
 
 ========================================
 Enhancement
@@ -780,7 +790,6 @@ Enhancement
    2 Open         [TCHECK-2] pos-int is confusingly named
    1 Open         [TCHECK-31] Doc improvements: how to separate "size" from "range"
    1 Open         [TCHECK-8] Bound tests and shrinks in time
-   0 Open         [TCHECK-3] Add ability to customize test output when a test fails
    0 Open         [TCHECK-4] Handle sigint
    0 Open         [TCHECK-9] Properly document how :max-size works 
    0 Open         [TCHECK-14] re-organize README and doc/
@@ -799,16 +808,22 @@ Enhancement
    0 Open         [TCHECK-84] Add gen/uniform-double
    0 Open         [TCHECK-85] prop/for-all should let later bindings refer to earlier bindings
    0 Open         [TCHECK-87] New stats feature: Adds ability to assign labels to test cases to report the test case distribution when running a test
-   0 Open         [TCHECK-91] On test completion, reporter-fn should be called with :type :complete
    0 Open         [TCHECK-95] quick-check should report how long it ran
    0 Open         [TCHECK-96] quick-check should accept an arg for maximum shrinking time
+   0 Open         [TCHECK-97] Support Unicode chararacters for char based generators
+   0 Open         [TCHECK-99] Create a generator that will limit the size of a generated sequence
+   0 Open         [TCHECK-101] Add a prop/for-all alternative to c.t.c.clojure-test that uses clojure.test/is &c
+   0 Open         [TCHECK-102] Provide a mechanism for getting output from a test run after interrupting it.
+   0 Open         [TCHECK-105] Support for bootstrapped / self-host ClojureScript
+   0 Open         [TCHECK-107] such-that should provide a way to customize its error message
+   0 Open         [TCHECK-108] Clarify docstrings for dev functions in the generators namespace
 
 
 Project TCLI tickets
 ========================================
-Defect
+Enhancement
 
-   0 Open         [TCLI-36] Add compilation of spec vector to summarize
+   0 Open         [TCLI-86] Global options
 
 
 Project TEMJVM tickets
@@ -881,6 +896,7 @@ Defect
    1 Open         [TNS-7] Stack overflow on refresh after circular dependency detected
    0 Open         [TNS-24] Broken tracker after mis-named namespace
    0 Open         [TNS-42] scan-dirs / scan-all can return incorrect dependencies when both clj and cljc files define same namespace
+   0 Open         [TNS-43] ns-decl? treats (ns) as valid
 
 ========================================
 Enhancement
