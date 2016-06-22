@@ -2258,7 +2258,13 @@ Macro
   (take 100 (for [x (range 100000000) y (range 1000000) :while (< y x)] [x y]))
 
 11 examples totaling 144 lines, 6 comments on Fri Aug 29 2014
-See also: doseq, doall, recur">for</a></code></td>
+See also: doseq, doall, recur">for</a> (1.7) <a href="http://clojuredocs.org/clojure_core/clojure.core/dedupe" title="clojure.core/dedupe
+([] [coll])
+  Returns a lazy sequence removing consecutive duplicates in coll.
+  Returns a transducer when no collection is provided.">dedupe</a> <a href="http://clojuredocs.org/clojure_core/clojure.core/random-sample" title="clojure.core/random-sample
+([prob] [prob coll])
+  Returns items from coll with random probability of prob (0.0 -
+  1.0).  Returns a transducer when no collection is provided.">random-sample</a></code></td>
               </tr>
               <tr class="even">
                 <td>Get longer</td>

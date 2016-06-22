@@ -1507,7 +1507,13 @@ Macro
    binding-forms.  Supported modifiers are: :let [binding-form expr ...],
    :while test, :when test.
 
-  (take 100 (for [x (range 100000000) y (range 1000000) :while (< y x)] [x y]))</pre>">for</a></code></td>
+  (take 100 (for [x (range 100000000) y (range 1000000) :while (< y x)] [x y]))</pre>">for</a> (1.7) <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/dedupe/" class="tooltip" title="<pre>clojure.core/dedupe
+([] [coll])
+  Returns a lazy sequence removing consecutive duplicates in coll.
+  Returns a transducer when no collection is provided.</pre>">dedupe</a> <a href="http://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/random-sample/" class="tooltip" title="<pre>clojure.core/random-sample
+([prob] [prob coll])
+  Returns items from coll with random probability of prob (0.0 -
+  1.0).  Returns a transducer when no collection is provided.</pre>">random-sample</a></code></td>
               </tr>
               <tr class="even">
                 <td>Get longer</td>
