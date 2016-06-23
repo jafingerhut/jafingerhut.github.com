@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: June 16, 2016
+Date: June 23, 2016
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -90,7 +90,7 @@ Defect
    1 Open         [ASYNC-144] pipeline-async docstring correction
    1 Triaged      [ASYNC-154] (require :reload-all) causes NullPointerException
    1 Triaged      [ASYNC-155] Preserve loop binding metadata when inside a go block
-   1 Open         [ASYNC-159] promise-chan in ClojureScript is broken
+   1 Triaged      [ASYNC-159] promise-chan in ClojureScript is broken
    1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
    1 Open         [ASYNC-78] deadlock in multi catch
    0 Triaged      [ASYNC-4] Record literals become ordinary maps
@@ -115,19 +115,18 @@ Defect
    0 Open         [ASYNC-132] Can't close over locals in #js in go
    0 Open         [ASYNC-134] async/alts!! with an empty vector throws ArrayIndexOutOfBoundsException
    0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
-   0 Open         [ASYNC-156] (ClojureScript) go block containing letfn does not compile
-   0 Open         [ASYNC-157] Reflection warning with doseq
+   0 Triaged      [ASYNC-156] (ClojureScript) go block containing letfn does not compile
    0 Open         [ASYNC-161] `<!` inside nested `let` inside `go` block erroneously yields "<! not used inside go block" error
    0 Open         [ASYNC-163] Off-by-two in pipeline-async parallelism
-   0 Open         [ASYNC-165] the binding macro/let binding is wrongly inlined
+   0 Triaged      [ASYNC-165] the binding macro/let binding is wrongly inlined
    0 Open         [ASYNC-168] Bad interaction between go, try and fn body
-   0 Open         [ASYNC-169] Try/catch block loops eternally inside go block
-   0 Open         [ASYNC-170] binding in go block causes tread binding error: "Pop without matching push"
+   0 Triaged      [ASYNC-169] Try/catch block loops eternally inside go block
+   0 Triaged      [ASYNC-170] binding in go block causes thread binding error: "Pop without matching push"
 
 ========================================
 Enhancement
 
-  12 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
+  13 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
    4 Open         [ASYNC-137] Make (<! (timeout 0)) be closer to 0
    4 Open         [ASYNC-119] ClojureScript: combine cljs.core.async.macros and cljs.core.async
    4 Triaged      [ASYNC-126] Add public channel "closed?" predicate
@@ -518,6 +517,7 @@ Defect
    0 Open         [DXML-27] Element java.util.Date throws IllegalArgumentException
    0 Open         [DXML-31] Parsed events cannot be emitted
    0 Open         [DXML-32] data.xml fails when used with Java 9
+   0 Open         [DXML-33] No XML namespace attribute emitted for namespaced sibling elements
 
 ========================================
 Enhancement
@@ -531,7 +531,7 @@ Enhancement
 ========================================
 Task
 
-   0 Open         [DXML-30] Generate inconsistent namespace prefixes for subtrees, randomly omit namespace URIs in non-prefixed elements
+   1 Open         [DXML-30] Generate inconsistent namespace prefixes for subtrees, randomly omit namespace URIs in non-prefixed elements
 
 
 Project DZIP tickets
@@ -781,6 +781,8 @@ Defect
    0 Open         [TCHECK-89] the clojure-test namespace has a global atom
    0 Open         [TCHECK-98] gen/let uses gen/bind even when it doesn't have to
    0 Open         [TCHECK-106] Variable-sized collection generators have exponential sizing issues when composed
+   0 Open         [TCHECK-111] The latest recursive-gen algorithm seems to exhibit a peculiar lack of variety in depths
+   0 Open         [TCHECK-112] bind doesn't shrink very well
 
 ========================================
 Enhancement
@@ -817,6 +819,7 @@ Enhancement
    0 Open         [TCHECK-105] Support for bootstrapped / self-host ClojureScript
    0 Open         [TCHECK-107] such-that should provide a way to customize its error message
    0 Open         [TCHECK-108] Clarify docstrings for dev functions in the generators namespace
+   0 Open         [TCHECK-110] Enable shrinking on recursive generators
 
 
 Project TCLI tickets

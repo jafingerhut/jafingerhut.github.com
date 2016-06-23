@@ -196,6 +196,10 @@
   :usernames #{"mnicky"},
   :emails #{"markus.master@gmail.com"}}
  ("CLJ-865"),
+ {:display-name "Tony Gaetani",
+  :usernames #{"tonygaetani"},
+  :emails #{"tony.gaetani@gmail.com"}}
+ (),
  {:display-name "Jean-Louis Giordano",
   :usernames #{"jell"},
   :emails #{"jean-louis@jawaninja.com"}}
@@ -5164,6 +5168,10 @@
   :usernames #{"ajcummings"},
   :emails #{"aaron@aaroncummings.com"}}
  (),
+ {:display-name "Wow Done",
+  :usernames #{"wowdone"},
+  :emails #{"wowdone367@gmail.com"}}
+ (),
  {:display-name "Vesa Karvonen",
   :usernames #{"vesa.a.j.k"},
   :emails #{"vesa.a.j.k@gmail.com"}}
@@ -6598,7 +6606,7 @@
  {:display-name "David Bürgin",
   :usernames #{"glts"},
   :emails #{"676c7473@gmail.com"}}
- (),
+ ("DXML-30"),
  {:display-name "Joe James",
   :usernames #{"joejamesio"},
   :emails #{"joe@joejames.io"}}
@@ -7715,6 +7723,10 @@
   :usernames #{"thatiparthysreenivas@gmail.com"},
   :emails #{"thatiparthysreenivas@gmail.com"}}
  (),
+ {:display-name "Martin Josefsson",
+  :usernames #{"fromheten"},
+  :emails #{"hello@martinjosefsson.com"}}
+ (),
  {:display-name "Bhaskar Mookerji",
   :usernames #{"mookerji"},
   :emails #{"mookerji@gmail.com"}}
@@ -7852,6 +7864,10 @@
  {:display-name "Tom Faulhaber",
   :usernames #{"tomfaulhaber"},
   :emails #{"clojure_org@infolace.com"}}
+ (),
+ {:display-name "Kai Strempel",
+  :usernames #{"kstrempel"},
+  :emails #{"kstrempel@gmail.com"}}
  (),
  {:display-name "António Pereira",
   :usernames #{"@antonio"},
@@ -9022,6 +9038,10 @@
   :usernames #{"rohitaggarwal"},
   :emails #{"rohit.aggarwal@gmail.com"}}
  ("CLJS-1238" "CLJ-1744"),
+ {:display-name "Ahmed Fasih",
+  :usernames #{"fasiha"},
+  :emails #{"wuzzyview@gmail.com"}}
+ (),
  {:display-name "Magnar Sveen",
   :usernames #{"magnars"},
   :emails #{"magnars@gmail.com"}}
@@ -9675,7 +9695,7 @@
  {:display-name "Derek Troy-West",
   :usernames #{"d-t-w"},
   :emails #{"derek@troywest.com"}}
- ("CLJ-1817"),
+ ("CLJ-1817" "ASYNC-94"),
  {:display-name "Konstantin Shabanov",
   :usernames #{"etehtsea"},
   :emails #{"etehtsea@me.com"}}
