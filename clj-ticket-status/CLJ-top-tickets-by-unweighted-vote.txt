@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: June 23, 2016
+Date: June 30, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -89,8 +89,8 @@ Defect
    1 Prescreened  [CLJ-1364] Primitive VecSeq does not implement equals or hashing methods
    1 Prescreened  [CLJ-1647] infinite loop in 'partition' and 'partition-all' when 'step' or 'n' is not positive
    1 Prescreened  [CLJ-1832] unchecked-* functions have different behavior on primitive longs vs boxed Longs
-   1 Open         [CLJ-1582] Overriding in-ns and ns is problematic 
    1 Triaged      [CLJ-1770] atom watchers are not atomic with respect to reset!
+   1 Open         [CLJ-1582] Overriding in-ns and ns is problematic 
    1 Open         [CLJ-1017] Metadata expressions are evaluated after the expression they affect
    1 Triaged      [CLJ-1138] data-reader returning nil causes exception
    1 Open         [CLJ-1548] primitive type hints on protocol methods break call sites
@@ -132,7 +132,9 @@ Defect
    0 Triaged      [CLJ-1898] Inconsistent duplicate check in set/map literals with quoted/unquoted equal constants
    0 Prescreened  [CLJ-1914] Range realization has a race during concurrent execution
    0 Triaged      [CLJ-1960] Bug in clojure.core/mod with large Double argument
-   0 Triaged      [CLJ-1964] rmap / *recursion-limit* not respected through custom generators
+   0 Triaged      [CLJ-1968] clojure.test/report :error does not flush *out* when the test fails with an exception
+   0 Needs Patch  [CLJ-1970] instrumented macros never conform valid forms
+   0 Triaged      [CLJ-1972] issue with browse-url
 
 ========================================
 Enhancement
@@ -152,8 +154,8 @@ Enhancement
   11 Triaged      [CLJ-1435] 'numerator and 'denominator fail to handle integral values (i.e. N/1)
   11 Vetted       [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
   10 Vetted       [CLJ-1148] adds docstring support to defonce
+  10 Open         [CLJ-200] Extend cond to support inline let, much like for
    9 Triaged      [CLJ-1278] State function's unmunged full name in compiled function's toString()
-   9 Open         [CLJ-200] Extend cond to support inline let, much like for
    9 Prescreened  [CLJ-1454] Add deref-swap! and deref-reset! (swap! and reset! that return prior value)
    9 Triaged      [CLJ-1063] Missing dissoc-in
    9 Triaged      [CLJ-308] protocol-ize with-open
@@ -232,7 +234,6 @@ Enhancement
    1 Open         [CLJ-1526] clojure.core/> inconsistent behavior wrt to documentation.
    1 Prescreened  [CLJ-1797] Mention cljc when require fails
    1 Triaged      [CLJ-1903] Provide a transducer for reductions
-   1 Ok           [CLJ-1910] Namespaced maps
    1 Triaged      [CLJ-970] extend/implement parameterized types (generics)
    1 Open         [CLJ-994] repeat reducer
    1 Open         [CLJ-995] sorted-set doesn't support IEditableCollection
@@ -266,11 +267,10 @@ Enhancement
    1 Open         [CLJ-1280] Create reusable exception that can carry file/line/col info
    1 Triaged      [CLJ-1289] aset-* and aget perform poorly on multi-dimensional arrays even with type hints. 
    1 Open         [CLJ-1326] Inconsistent reflection warnings when target is a literal
-   1 Vetted       [CLJ-1130] When unable to match a static method, report arity caller was looking for, avoid misleading field error
-   1 Open         [CLJ-1455] Postcondition in defrecord: Compiler unable to resolve symbol %
-   1 Ok           [CLJ-1919] Destructuring support for namespaced keys and syms
    1 Triaged      [CLJ-1950] cl-format is too slow for production use
    1 Open         [CLJ-1951] bigint? predicate and generator
+   1 Vetted       [CLJ-1130] When unable to match a static method, report arity caller was looking for, avoid misleading field error
+   1 Open         [CLJ-1455] Postcondition in defrecord: Compiler unable to resolve symbol %
    1 Open         [CLJ-1008] Make sorted maps and sets implement j.u.NavigableMap and NavigableSet interfaces 
    1 Triaged      [CLJ-1386] Add transient? predicate
    1 Prescreened  [CLJ-1668] ns macro throws NPE if empty reference is specified
@@ -355,3 +355,4 @@ Enhancement
    0 Prescreened  [CLJ-1918] Document await that it will never return if shutdown-agents was called
    0 Triaged      [CLJ-1942] Add predicate for sequential search in a collection
    0 Triaged      [CLJ-1952] include var->sym in clojure.core
+   0 Triaged      [CLJ-1967] Enhanced namespaced map print support
