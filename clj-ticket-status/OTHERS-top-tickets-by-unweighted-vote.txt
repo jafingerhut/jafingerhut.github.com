@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: June 30, 2016
+Date: July 7, 2016
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -130,13 +130,13 @@ Enhancement
    4 Open         [ASYNC-137] Make (<! (timeout 0)) be closer to 0
    4 Open         [ASYNC-119] ClojureScript: combine cljs.core.async.macros and cljs.core.async
    4 Triaged      [ASYNC-126] Add public channel "closed?" predicate
+   3 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
    3 Open         [ASYNC-107] Improved docstring for alt!
+   3 Triaged      [ASYNC-143] Assert that fixed buffers must have size > 0
    3 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
    2 Triaged      [ASYNC-67] Can we get a generic sink operation?
-   2 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
    2 Open         [ASYNC-114] Allow a second arity on channel ex-handler which takes val as well as throwable
    2 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
-   2 Triaged      [ASYNC-143] Assert that fixed buffers must have size > 0
    2 Open         [ASYNC-142] Rename ClojureScript namespace from cljs.core.async to clojure.core.async
    1 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
    1 Open         [ASYNC-71] exception behavior for thread macro is hard coded
@@ -312,20 +312,20 @@ Defect
    0 Open         [CTYP-225] Intersections of value types broken
    0 Open         [CTYP-228] Type signature for sort is incorrect - never returns nil
    0 Bad: Match > [CTYP-231] (Array X) is broken and undocumented
-   0 Bad: Unkn Fi [CTYP-232] Let-aliased variabled of HVec lookups should update original HVec
-   0 Bad: Unkn Fi [CTYP-241] Let-aliased variables of plain Map lookups should update original map
+   0 Bad: Match > [CTYP-232] Let-aliased variabled of HVec lookups should update original HVec
+   0 Bad: Match > [CTYP-241] Let-aliased variables of plain Map lookups should update original map
    0 Open         [CTYP-242] adding stop-gap annotation for 'hash-map' results in runtime exception
    0 Bad: Match > [CTYP-270] "Method code too large!" with protocols (more than 38 functions in the protocol)
-   0 Bad: Unkn Fi [CTYP-272] check-ns: Assert failed: (r/Type? t)
-   0 Bad: Unkn Fi [CTYP-274] Inferred type for {{defn}} and {{typed/fn}} with the same body are different
-   0 Bad: Unkn Fi [CTYP-275] Bad call to path-type: nil
-   0 Bad: Unkn Fi [CTYP-277] Typechecking fails with internal assert error
+   0 Bad: Match > [CTYP-272] check-ns: Assert failed: (r/Type? t)
+   0 Bad: Match > [CTYP-274] Inferred type for {{defn}} and {{typed/fn}} with the same body are different
+   0 Bad: Match > [CTYP-275] Bad call to path-type: nil
+   0 Bad: Match > [CTYP-277] Typechecking fails with internal assert error
    0 Bad: Match > [CTYP-278] Impossible to annotate protocol in other namespace
    0 Open         [CTYP-279] An invalid type annotation for a function with a record argument passes a type check
    0 Open         [CTYP-282] Internal error with t/defn, sort-by and no refer all
    0 Open         [CTYP-293] Should check upcast to Dyn
-   0 Bad: Unkn Fi [CTYP-303] cast doesn't work for recursive types
-   0 Bad: Unkn Fi [CTYP-306] pred doesn't work for non-literal HVecs with varargs
+   0 Bad: Match > [CTYP-303] cast doesn't work for recursive types
+   0 Bad: Match > [CTYP-306] pred doesn't work for non-literal HVecs with varargs
    0 Open         [CTYP-312] pred doesn't work with polymorphic protocols?
 
 ========================================
@@ -353,7 +353,7 @@ Enhancement
    0 Open         [CTYP-160] Correctly check IFn ancestor with type/record
    0 Open         [CTYP-165] GSOC 2014 Heterogeneous operations & Dotted Polymorphism
    0 Open         [CTYP-187] Add a defn- macro for private functions
-   0 Bad: Unkn Fi [CTYP-192] Use memoization in file-mapping to improve performance.
+   0 Bad: Match > [CTYP-192] Use memoization in file-mapping to improve performance.
    0 Open         [CTYP-194] HMap merged type
    0 Open         [CTYP-202] Provide a way to annotate a throw-on-nil function
    0 Open         [CTYP-205] Better filter checking
@@ -372,7 +372,7 @@ Enhancement
    0 Bad: Match > [CTYP-249] Propositional subtyping should consider the lexical type environment
    0 Open         [CTYP-260] Add Queue and BlockingQueue to altered classes
    0 Bad: Match > [CTYP-261] Typed Transients patch
-   0 Bad: Unkn Fi [CTYP-267] bigdec, bigint and biginteger eats (U Number String)
+   0 Bad: Match > [CTYP-267] bigdec, bigint and biginteger eats (U Number String)
    0 Bad: Unkn Fi [CTYP-268] Use clojure.lang.Compiler's analyzer
    0 Bad: Match > [CTYP-271] reduce form with (U nil Num) accumulator needs inst to type check
    0 Bad: Match > [CTYP-273] `recur` treated differently from a recursive call
@@ -381,12 +381,12 @@ Enhancement
    0 Open         [CTYP-290] Support older versions of Clojure in the runtime module
    0 Open         [CTYP-292] Provide a new alias for Any, dedicated for use as a placeholder, thus reserving Any for situations when truly every type is acceptable.
    0 Open         [CTYP-294] Infer untyped vars via unsafe Dyn-like type
-   0 Bad: Unkn Fi [CTYP-297] Allow defmulti without expected type
+   0 Bad: Match > [CTYP-297] Allow defmulti without expected type
    0 Open         [CTYP-298] Should blame sub-parts of casts
    0 Bad: Match > [CTYP-301] Abstract over keyword arguments
    0 Open         [CTYP-302] Add typed Compiler
    0 Bad: Unkn Fi [CTYP-309] Export typed vars with contracts to untyped namespaces
-   0 Bad: Unkn Fi [CTYP-311] Use dynamic inference to generate library annotations
+   0 Bad: Match > [CTYP-311] Use dynamic inference to generate library annotations
 
 ========================================
 Task
@@ -395,7 +395,7 @@ Task
    0 Open         [CTYP-236] Refactor core.async annnotations into its own jar
    0 Open         [CTYP-237] Convert .clj files to .cljc
    0 Open         [CTYP-238] Move CLJS checker to its own jar
-   0 Bad: Unkn Fi [CTYP-245] Remove NotTypeFilter
+   0 Bad: Match > [CTYP-245] Remove NotTypeFilter
    0 Bad: Unkn Fi [CTYP-310] Remove support for mixing "typed eval" and check-ns
 
 
@@ -476,6 +476,8 @@ Project DIMAP tickets
 Defect
 
    0 Open         [DIMAP-2] Proper seq on int-sets
+   0 Open         [DIMAP-9] Unlike regular transient sets, data.int-map transient sets do not support the IFn interface
+   0 Open         [DIMAP-10] StackOverflowError clojure.data.int_map.Nodes$Leaf.assoc (Nodes.java:623)
 
 ========================================
 Enhancement
@@ -493,6 +495,7 @@ Defect
 
    0 Open         [DJSON-21] Improper parsing of literals
    0 Open         [DJSON-22] Improper parsing of numbers - leading zeroes should be disallowed
+   0 Open         [DJSON-24] clojure.json.data should handle non breking whitespace
 
 ========================================
 Enhancement
@@ -565,8 +568,6 @@ Enhancement
    1 Open         [JDBC-48] Support stored procedures with CallableStatement
    0 Open         [JDBC-37] Provide support for alternate transaction strategies
    0 Open         [JDBC-64] Support multiple result sets?
-   0 Open         [JDBC-135] Add some sort of explain option
-   0 Open         [JDBC-136] Provide global options in the db-spec map
 
 
 Project JMX tickets
@@ -663,6 +664,7 @@ Defect
    0 Open         [MATCH-107] Map pattern with vector key raises "clojure.lang.PersistentVector cannot be cast to clojure.lang.Named" exception
    0 Open         [MATCH-112] :as and & interaction issue
    0 Open         [MATCH-113] Typo in match.clj
+   0 Open         [MATCH-114] Rather simple match fails with code too large
 
 ========================================
 Enhancement

@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: June 30, 2016
+Date: July 7, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -61,7 +61,7 @@ Defect
              Rick Moynihan (1)
              Greg Chapman (1/6)
              Bozhidar Batsov (1/14)
-    6.00  15 Prescreened  [CLJ-1744] Unused destructured local not cleared, causes memory leak
+    6.02  15 Prescreened  [CLJ-1744] Unused destructured local not cleared, causes memory leak
              Dave Aitken (1)
              Rohit Aggarwal (1)
              Stanislav Yurin (1)
@@ -71,26 +71,26 @@ Defect
              Johan Gall (1/3)
              Alex Miller (1/4)
              Jozef Wagner (1/4)
+             Huahai Yang (1/6)
              Michael Griffiths (1/6)
-             Huahai Yang (1/7)
              Lars Andersen (1/7)
              Simon Belak (1/10)
              Andrey Antukh (1/15)
              Michael Blume (1/23)
-    4.28  19 Incomplete   [CLJ-700] contains? broken for transient collections
+    4.40  19 Incomplete   [CLJ-700] contains? broken for transient collections
              Laszlo Török (1)
              Dom Kiva-Meyer (1/2)
              Chris Blom (1/3)
              Alex Miller (1/4)
              Jason Wolfe (1/4)
+             Mark Engelberg (1/4)
              Peter Taoussanis (1/4)
+             Phill Wolf (1/4)
              Justin Glenn Smith (1/5)
-             Mark Engelberg (1/5)
              Patrick Houk (1/5)
-             Phill Wolf (1/5)
              Greg Chapman (1/6)
+             Huahai Yang (1/6)
              Atamert Ölçgen (1/7)
-             Huahai Yang (1/7)
              John Walker (1/7)
              Gary Trakhman (1/11)
              Andrey Antukh (1/15)
@@ -125,11 +125,11 @@ Defect
              Andy Fingerhut (1/12)
              Daniel Compton (1/14)
              Nicola Mometto (1/68)
-    2.14   6 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
+    2.19   6 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
              Achint Sandhu (1)
              Stuart Halloway (1/2)
              Ghadi Shayban (1/3)
-             Phill Wolf (1/5)
+             Phill Wolf (1/4)
              David Greenberg (1/16)
              Michael Blume (1/23)
     2.01   3 Triaged      [CLJ-1911] min-key and max-key should return NaN if any of the argument is NaN
@@ -140,15 +140,15 @@ Defect
              Sunil Abraham (1)
              Kei Tsuji (1/2)
              Ryan Neufeld (1/2)
+    1.58   3 Open         [CLJ-1243] Cannot resolve public generic method from package-private base class
+             Sébastien Wagener (1)
+             Noam Ben Ari (1/3)
+             Phill Wolf (1/4)
     1.57   4 Prescreened  [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
              Chris Tennant (1)
              Chas Emerick (1/5)
              Devin Walters (1/5)
              David Leatherman (1/6)
-    1.53   3 Open         [CLJ-1243] Cannot resolve public generic method from package-private base class
-             Sébastien Wagener (1)
-             Noam Ben Ari (1/3)
-             Phill Wolf (1/5)
     1.47   5 Triaged      [CLJ-1074] Read/print round-trip for +/-Infinity and NaN
              Andrew Tarzwell (1)
              Marshall T. Vandegrift (1/3)
@@ -185,6 +185,8 @@ Defect
              Matt Oquist (1)
     1.00   1 Triaged      [CLJ-1317] clojure.zip/seq-zip returns spurious nils during traversal
              Lee Spector (1)
+    1.00   1 Triaged      [CLJ-1935] clojure.spec/multi-spec ignores the multimethod hierarchy
+             Paul Dlug (1)
     0.81   4 Backlog      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
              Daniel Solano Gómez (1/2)
              Alexander Yakushev (1/5)
@@ -293,7 +295,6 @@ Defect
     0.00   0 Backlog      [CLJ-346] (pprint-newline :fill) is not handled correctly
     0.00   0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
     0.00   0 Incomplete   [CLJ-1741] deftype class literals and instances loaded from different classloaders when recompiling namespace
-    0.00   0 Needs Patch  [CLJ-1970] instrumented macros never conform valid forms
     0.00   0 Prescreened  [CLJ-1180] defprotocol doesn't resolve tag classnames
     0.00   0 Prescreened  [CLJ-1358] doc macro does not expand special cases properly
     0.00   0 Prescreened  [CLJ-1705] vector-of throws NullPointerException if given unrecognized type
@@ -302,6 +303,7 @@ Defect
     0.00   0 Prescreened  [CLJ-1841] core/bean iterator is broken
     0.00   0 Prescreened  [CLJ-1887] clojure.core.Vec does not fully implement clojure.lang.IPersistentVector
     0.00   0 Prescreened  [CLJ-1914] Range realization has a race during concurrent execution
+    0.00   0 Screenable   [CLJ-1977] Printing a Throwable throws if Throwable has no cause / stacktrace
     0.00   0 Triaged      [CLJ-929] Accessing Java property starting with _ has issues in 1.4
     0.00   0 Triaged      [CLJ-1475] :post condition causes compiler error with recur
     0.00   0 Triaged      [CLJ-1492] PersistentQueue objects are improperly eval'd and compiled
@@ -326,7 +328,7 @@ Defect
 ========================================
 Enhancement
 
-   11.19  28 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
+   11.20  28 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
              Adam Krieg (1)
              Gabriel Ki (1)
              Lei Wang (1)
@@ -348,7 +350,7 @@ Enhancement
              Tim McCormack (1/5)
              Colin Fleming (1/6)
              Andrew Rosa (1/8)
-             Colin Taylor (1/9)
+             Colin Taylor (1/8)
              Gary Trakhman (1/11)
              Bozhidar Batsov (1/14)
              Daniel Compton (1/14)
@@ -376,7 +378,7 @@ Enhancement
              Daniel Compton (1/14)
              David Greenberg (1/16)
              Nicola Mometto (1/68)
-    8.15  20 Screened     [CLJ-1224] Records do not cache hash like normal maps
+    8.21  20 Screened     [CLJ-1224] Records do not cache hash like normal maps
              Brian Olsen (1)
              Daniel R. Schlegel (1)
              Luca Barozzi (1)
@@ -386,13 +388,13 @@ Enhancement
              Steven Yi (1/2)
              Steve Miner (1/3)
              David Nolen (1/4)
+             Mark Engelberg (1/4)
              Yongqian Li (1/4)
              Ambrose Bonnaire-Sergeant (1/5)
-             Mark Engelberg (1/5)
              Michael Patrick O'Keefe (1/5)
              Michael van Acken (1/5)
              Mike Rodriguez (1/6)
-             Colin Taylor (1/9)
+             Colin Taylor (1/8)
              Gary Trakhman (1/11)
              Andrey Antukh (1/15)
              David Greenberg (1/16)
@@ -417,7 +419,7 @@ Enhancement
              Bozhidar Batsov (1/14)
              Daniel Compton (1/14)
              Michael Blume (1/23)
-    7.53  22 Backlog      [CLJ-1517] Unrolled small vectors
+    7.56  22 Backlog      [CLJ-1517] Unrolled small vectors
              David Dossot (1)
              Deepak Giridharagopal (1)
              Steffen Dienst (1)
@@ -431,8 +433,8 @@ Enhancement
              Christoffer Sawicki (1/5)
              Michael Patrick O'Keefe (1/5)
              Colin Fleming (1/6)
+             Huahai Yang (1/6)
              Atamert Ölçgen (1/7)
-             Huahai Yang (1/7)
              John Walker (1/7)
              Andrew Rosa (1/8)
              Jan Rychter (1/8)
@@ -546,17 +548,6 @@ Enhancement
              Andy Fingerhut (1/12)
              Bozhidar Batsov (1/14)
              Reid McKenzie (1/16)
-    5.40  10 Open         [CLJ-200] Extend cond to support inline let, much like for
-             Alex Engelberg (1)
-             John Szakmeister (1)
-             Kim Kinnear (1)
-             Maik Schünemann (1)
-             Anna Pawlicka (1/2)
-             Howard Lewis Ship (1/4)
-             Mark Engelberg (1/5)
-             Phill Wolf (1/5)
-             Huahai Yang (1/7)
-             Colin Taylor (1/9)
     4.64   6 Triaged      [CLJ-1490] Exception on protocol implementation after protocol reloaded could be improved
              Alan Crowley (1)
              Jeremy Heiler (1)
@@ -564,7 +555,7 @@ Enhancement
              Ted Coakley (1)
              Sanel Zukan (1/2)
              Lars Andersen (1/7)
-    4.50  13 Open         [CLJ-1078] Add queue and queue? to clojure.core
+    4.52  13 Open         [CLJ-1078] Add queue and queue? to clojure.core
              Allen Rohner (1)
              Anthony Grimes (1)
              Bruce Hauman (1/2)
@@ -573,7 +564,7 @@ Enhancement
              Jenan Wise (1/3)
              John Jacobsen (1/3)
              Lars Andersen (1/7)
-             Colin Taylor (1/9)
+             Colin Taylor (1/8)
              Simon Belak (1/10)
              Bozhidar Batsov (1/14)
              David Greenberg (1/16)
@@ -636,14 +627,14 @@ Enhancement
              Greg Chapman (1/6)
              David Greenberg (1/16)
              Reid McKenzie (1/16)
-    3.77   8 Open         [CLJ-1553] Parallel transduce
+    3.82   8 Open         [CLJ-1553] Parallel transduce
              Darrick Wiebe (1)
              Rafik NACCACHE (1)
              Alejandro Ciniglio (1/2)
              Kei Tsuji (1/2)
+             Mark Engelberg (1/4)
              Daniel James (1/5)
              Devin Walters (1/5)
-             Mark Engelberg (1/5)
              Michael Griffiths (1/6)
     3.58   9 Prescreened  [CLJ-1454] Add deref-swap! and deref-reset! (swap! and reset! that return prior value)
              Peter Monks (1)
@@ -655,13 +646,13 @@ Enhancement
              Jan Rychter (1/8)
              Michael Blume (1/23)
              Nicola Mometto (1/68)
-    3.54   9 Triaged      [CLJ-1063] Missing dissoc-in
+    3.56   9 Triaged      [CLJ-1063] Missing dissoc-in
              Michael D Pendergrass (1)
              Timothy Pratley (1)
              Chris Perkins (1/2)
              Bridget Hillyer (1/3)
              Noam Ben Ari (1/3)
-             Huahai Yang (1/7)
+             Huahai Yang (1/6)
              Lars Andersen (1/7)
              Daniel Compton (1/14)
              Nicola Mometto (1/68)
@@ -691,15 +682,15 @@ Enhancement
              Tassilo Horn (1/7)
              Max Penet (1/9)
              Nicola Mometto (1/68)
-    3.02  13 Vetted       [CLJ-1005] Use transient map in zipmap
+    3.05  13 Vetted       [CLJ-1005] Use transient map in zipmap
              Joshua Ballanco (1)
              Bobby Eickhoff (1/2)
              Yongqian Li (1/4)
              Ambrose Bonnaire-Sergeant (1/5)
              Daniel James (1/5)
              Gary Fredericks (1/5)
+             Huahai Yang (1/6)
              Mike Rodriguez (1/6)
-             Huahai Yang (1/7)
              Jan Rychter (1/8)
              Gary Trakhman (1/11)
              Bozhidar Batsov (1/14)
@@ -737,10 +728,14 @@ Enhancement
              Aleksander (1)
              Robin Lunn (1)
              Ragnar Dahlen (1/2)
-    2.27   5 Triaged      [CLJ-1817] Allow AssertionError messages for function :pre and :post conditions to be specified.
+    2.33   3 Open         [CLJ-1332] Exceptions are not cached in lazy seqs
+             Joseph Biggert (1)
+             Timothy Pote (1)
+             Herwig Hochleitner (1/3)
+    2.29   5 Triaged      [CLJ-1817] Allow AssertionError messages for function :pre and :post conditions to be specified.
              Derek Troy-West (1)
              Larry Staton Jr. (1)
-             Colin Taylor (1/9)
+             Colin Taylor (1/8)
              Simon Belak (1/10)
              Reid McKenzie (1/16)
     2.27   6 Triaged      [CLJ-1611] clojure.java.io/pushback-reader
@@ -760,20 +755,20 @@ Enhancement
     2.00   2 Open         [CLJ-1943] clojure.spec should implicitly convert classes to specs
              Chris Price (1)
              Russell Mull (1)
-    1.89   4 Open         [CLJ-1141] Allow pre and post-conditions in defprotocol and deftype macros
-             Vjeran Marcinko (1)
-             Joe R. Smith (1/2)
-             J.&nbsp;S.&nbsp;Choi (1/4)
-             Atamert Ölçgen (1/7)
-    1.88   8 Triaged      [CLJ-1239] faster, more flexible dispatch for clojure.walk
+    1.90   8 Triaged      [CLJ-1239] faster, more flexible dispatch for clojure.walk
              Ryan Neufeld (1/2)
              Alex Baranosky (1/3)
              Alex Miller (1/4)
              Mitchel Kuijpers (1/4)
              Chas Emerick (1/5)
              Mike Rodriguez (1/6)
-             Colin Taylor (1/9)
+             Colin Taylor (1/8)
              Bozhidar Batsov (1/14)
+    1.89   4 Open         [CLJ-1141] Allow pre and post-conditions in defprotocol and deftype macros
+             Vjeran Marcinko (1)
+             Joe R. Smith (1/2)
+             J.&nbsp;S.&nbsp;Choi (1/4)
+             Atamert Ölçgen (1/7)
     1.83   3 Open         [CLJ-272] load/ns/require/use overhaul
              Kevin Krouse (1)
              Paudi Moriarty (1/2)
@@ -783,6 +778,13 @@ Enhancement
              Michael Sperber (1/2)
              Jason Wolfe (1/4)
              Daniel Compton (1/14)
+    1.71   6 Triaged      [CLJ-1209] clojure.test does not print ex-info in error reports
+             Ivan Kozik (1/2)
+             Stuart Sierra (1/2)
+             Howard Lewis Ship (1/3)
+             David Leatherman (1/6)
+             Stephen C. Gilardi (1/7)
+             Andrey Antukh (1/15)
     1.70   3 Prescreened  [CLJ-99] max-key and min-key evaluate k multiple times for arguments
              Hildeberto Mendonça (1)
              Frank Schmidt (1/2)
@@ -795,13 +797,6 @@ Enhancement
              Brandon Bloom (1/7)
              Simon Belak (1/10)
              Michael Blume (1/23)
-    1.63   6 Triaged      [CLJ-1209] clojure.test does not print ex-info in error reports
-             Ivan Kozik (1/2)
-             Stuart Sierra (1/2)
-             Howard Lewis Ship (1/4)
-             David Leatherman (1/6)
-             Stephen C. Gilardi (1/7)
-             Andrey Antukh (1/15)
     1.60   4 Triaged      [CLJ-1473] Badly formed pre/post conditions silently passed
              Antti Virtanen (1)
              Bridget Hillyer (1/3)
@@ -819,12 +814,12 @@ Enhancement
     1.50   2 Backlog      [CLJ-415] smarter assert (prints locals)
              Kevin Sookocheff (1)
              Jeff Weiss (1/2)
-    1.44   9 Open         [CLJ-1610] Unrolled small maps
+    1.45   9 Open         [CLJ-1610] Unrolled small maps
              Michał Marczyk (1/2)
              Jean Fabio Baro (1/4)
              Michael Patrick O'Keefe (1/5)
              Atamert Ölçgen (1/7)
-             Colin Taylor (1/9)
+             Colin Taylor (1/8)
              Max Penet (1/9)
              Andrey Antukh (1/15)
              Michael Blume (1/23)
@@ -852,10 +847,10 @@ Enhancement
              Max Penet (1/9)
              Michael Blume (1/23)
              Nicola Mometto (1/68)
-    1.27   7 Triaged      [CLJ-1458] Enhance the performance of map merges
+    1.30   7 Triaged      [CLJ-1458] Enhance the performance of map merges
              Alejandro Ciniglio (1/2)
              Daniel James (1/5)
-             Huahai Yang (1/7)
+             Huahai Yang (1/6)
              John Walker (1/7)
              Jan Rychter (1/8)
              Simon Belak (1/10)
@@ -870,22 +865,25 @@ Enhancement
     1.20   2 Open         [CLJ-1367] Allow case statement to compare java constants
              Benjamin Peter (1)
              Patrick Houk (1/5)
+    1.17   6 Prescreened  [CLJ-1117] partition docstring should be more explicit about dropped or partial trailing elements
+             Howard Lewis Ship (1/3)
+             Phill Wolf (1/4)
+             Yongqian Li (1/4)
+             Michael van Acken (1/5)
+             Daniel Compton (1/14)
+             David Greenberg (1/16)
     1.10   5 Open         [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
              César Bolaños (1/3)
              Jenan Wise (1/3)
              Gary Fredericks (1/5)
              Greg Chapman (1/6)
              Reid McKenzie (1/16)
+    1.07   2 Prescreened  [CLJ-1908] Add clojure.test api to run single test with fixtures and report
+             Anna Pawlicka (1)
+             Andrey Antukh (1/15)
     1.04   2 Open         [CLJ-1162] Error Message when calling deref on a non-IDeref is unhelpful
              Jason W Zwolak (1)
              Michael Blume (1/23)
-    1.03   6 Prescreened  [CLJ-1117] partition docstring should be more explicit about dropped or partial trailing elements
-             Howard Lewis Ship (1/4)
-             Yongqian Li (1/4)
-             Michael van Acken (1/5)
-             Phill Wolf (1/5)
-             Daniel Compton (1/14)
-             David Greenberg (1/16)
     1.03   5 Triaged      [CLJ-1814] Make `satisfies?` as fast as a protocol method call
              James Henderson (1/2)
              J.&nbsp;S.&nbsp;Choi (1/4)
@@ -906,11 +904,11 @@ Enhancement
              Michael Klishin (1/2)
              Dmitri Naumov (1/3)
              Mike Anderson (1/7)
-    0.90   4 Open         [CLJ-1120] Introduce ex-message and ex-cause to abstract away the platform in dealing with ExceptionInfo
+    0.91   4 Open         [CLJ-1120] Introduce ex-message and ex-cause to abstract away the platform in dealing with ExceptionInfo
              Juho Teperi (1/2)
              Brandon Bloom (1/7)
              Stephen C. Gilardi (1/7)
-             Colin Taylor (1/9)
+             Colin Taylor (1/8)
     0.88   4 Triaged      [CLJ-1096] Make destructuring emit direct keyword lookups
              Ghadi Shayban (1/3)
              John Hume (1/3)
@@ -940,9 +938,6 @@ Enhancement
              Paul Gearon (1/2)
              Bozhidar Batsov (1/14)
              Nicola Mometto (1/68)
-    0.57   2 Prescreened  [CLJ-1908] Add clojure.test api to run single test with fixtures and report
-             Anna Pawlicka (1/2)
-             Andrey Antukh (1/15)
     0.51   2 Backlog      [CLJ-731] Create macro to variadically unroll a combinator function definition
              Andrew S (1/2)
              Nicola Mometto (1/68)
@@ -969,12 +964,15 @@ Enhancement
              Michael van Acken (1/5)
              Tassilo Horn (1/7)
              Michael Blume (1/23)
+    0.33   2 Open         [CLJ-428] subseq, rsubseq enhancements to support priority maps?
+             Mark Engelberg (1/4)
+             Andy Fingerhut (1/12)
     0.33   1 Open         [CLJ-1266] Better primitive support for floats
              Alex Fowler (1/3)
+    0.33   1 Open         [CLJ-1316] for doesn't support :let binding as its first seq-expr
+             Howard Lewis Ship (1/3)
     0.33   1 Open         [CLJ-1321] Documentation improvement for clojure.walk, to note use of recursion that can easily blow the JVM stack
              Noam Ben Ari (1/3)
-    0.33   1 Open         [CLJ-1332] Exceptions are not cached in lazy seqs
-             Herwig Hochleitner (1/3)
     0.33   1 Open         [CLJ-1721] Enable test case for char?
              Bridget Hillyer (1/3)
     0.33   1 Open         [CLJ-1729] Make Counted and count() return long instead of integer
@@ -984,9 +982,6 @@ Enhancement
     0.29   2 Triaged      [CLJ-1219] Make identical? variadic
              Brandon Bloom (1/7)
              Tassilo Horn (1/7)
-    0.28   2 Open         [CLJ-428] subseq, rsubseq enhancements to support priority maps?
-             Mark Engelberg (1/5)
-             Andy Fingerhut (1/12)
     0.28   3 Open         [CLJ-1777] Add function version of vswap!
              Colin Fleming (1/6)
              Andrey Antukh (1/15)
@@ -999,8 +994,6 @@ Enhancement
              Gary Trakhman (1/11)
     0.25   1 Open         [CLJ-1010] A left-to-right-variant of `comp`
              Vlad Bokov (1/4)
-    0.25   1 Open         [CLJ-1316] for doesn't support :let binding as its first seq-expr
-             Howard Lewis Ship (1/4)
     0.25   1 Open         [CLJ-1425] Defer literal map construction of syntax-quoted maps to allow for semantically valid unquote splicing
              Eli Naeher (1/4)
     0.25   1 Open         [CLJ-1585] Report boxed math warning on function that boxes primitive return value
@@ -1009,13 +1002,13 @@ Enhancement
              Jean Fabio Baro (1/4)
     0.25   1 Triaged      [CLJ-1073] Make print-sequential interruptible
              Yongqian Li (1/4)
+    0.21   2 Triaged      [CLJ-1598] Make if forms compile directly to the appropriate branch expression if the test is a literal
+             Colin Taylor (1/8)
+             Andy Fingerhut (1/12)
     0.20   1 Open         [CLJ-1342] Byte comparison boxes both bytes and converts to longs to compare (which is slow)
              Matthew O. Smith (1/5)
     0.20   1 Triaged      [CLJ-1607] docstring for clojure.core/counted? should be more specific
              Justin Glenn Smith (1/5)
-    0.19   2 Triaged      [CLJ-1598] Make if forms compile directly to the appropriate branch expression if the test is a literal
-             Colin Taylor (1/9)
-             Andy Fingerhut (1/12)
     0.17   1 Open         [CLJ-1189] Map-destructuring :or fumble needs compiler warning
              David Leatherman (1/6)
     0.14   2 Triaged      [CLJ-1613] :or defaults should refer to enclosing scope in map destructuring
@@ -1126,6 +1119,7 @@ Enhancement
     0.00   0 Prescreened  [CLJ-1895] Remove loading of clojure.string in clojure.java.io
     0.00   0 Prescreened  [CLJ-1901] amap calls `alength` at every iteration step
     0.00   0 Prescreened  [CLJ-1918] Document await that it will never return if shutdown-agents was called
+    0.00   0 Prescreened  [CLJ-1973] generate-proxy produces unpredictable method order in generated classes
     0.00   0 Screened     [CLJ-1673] Improve clojure.repl/dir-fn to work on namespace aliases in addition to canonical namespaces.
     0.00   0 Triaged      [CLJ-5] Sequential destructuring of map gives confusing error message
     0.00   0 Triaged      [CLJ-405] better error messages for bad defrecord calls
