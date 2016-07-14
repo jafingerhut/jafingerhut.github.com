@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: July 7, 2016
+Date: July 14, 2016
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -71,7 +71,7 @@ Project ASYNC tickets
 ========================================
 Defect
 
-    8.53  11 Triaged      [ASYNC-138] Go blocks leak memory
+    8.87  12 Triaged      [ASYNC-138] Go blocks leak memory
              Caleb Phillips (1)
              Dave Aitken (1)
              James Henderson (1)
@@ -82,11 +82,13 @@ Defect
              Gary Trakhman (1/2)
              Timothy Pote (1/2)
              Jan Rychter (1/3)
+             Semyon Skorokhodov (1/3)
              Nicola Mometto (1/5)
-    3.53   5 Triaged      [ASYNC-100] core.async with multiple catch blocks causing weird loop behaviour
+    3.87   6 Triaged      [ASYNC-100] core.async with multiple catch blocks causing weird loop behaviour
              Ken Allen (1)
              Konrad Rzezniczak (1)
              Paul Ostazeski (1)
+             Semyon Skorokhodov (1/3)
              Willy Blandin (1/3)
              Nicola Mometto (1/5)
     3.00   3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
@@ -104,6 +106,9 @@ Defect
     1.50   2 Open         [ASYNC-158] and with multiple <! does not short-circuit in go
              Wang Xing (1)
              Yehonathan Sharvit (1/2)
+    1.50   2 Triaged      [ASYNC-159] promise-chan in ClojureScript is broken
+             Johannes Gustafsson (1)
+             Wilker Lúcio da Silva (1/2)
     1.33   3 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
              Colin Taylor (1/2)
              Gary Trakhman (1/2)
@@ -114,6 +119,9 @@ Defect
     1.33   2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
              Ryan Sundberg (1)
              Howard Lewis Ship (1/3)
+    1.33   2 Triaged      [ASYNC-169] Try/catch block loops eternally inside go block
+             Alexey Aristov (1)
+             Semyon Skorokhodov (1/3)
     1.17   2 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
              Thomas Down (1)
              Daniel Compton (1/6)
@@ -131,8 +139,6 @@ Defect
              Martin Puppe (1)
     1.00   1 Triaged      [ASYNC-155] Preserve loop binding metadata when inside a go block
              Leon Grapenthin (1)
-    1.00   1 Triaged      [ASYNC-159] promise-chan in ClojureScript is broken
-             Johannes Gustafsson (1)
     0.67   2 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
              Alex Nixon (1/3)
              Eduard Bondarenko (1/3)
@@ -170,7 +176,6 @@ Defect
     0.00   0 Triaged      [ASYNC-122] Parking in finally block replaces result
     0.00   0 Triaged      [ASYNC-156] (ClojureScript) go block containing letfn does not compile
     0.00   0 Triaged      [ASYNC-165] the binding macro/let binding is wrongly inlined
-    0.00   0 Triaged      [ASYNC-169] Try/catch block loops eternally inside go block
     0.00   0 Triaged      [ASYNC-170] binding in go block causes thread binding error: "Pop without matching push"
 
 ========================================
@@ -207,11 +212,6 @@ Enhancement
              Aaron Iba (1)
              Jarppe Lansio (1)
              Alex Nixon (1/3)
-    2.00   4 Open         [ASYNC-119] ClojureScript: combine cljs.core.async.macros and cljs.core.async
-             Wilker Lúcio da Silva (1)
-             Dom Kiva-Meyer (1/2)
-             Howard Lewis Ship (1/3)
-             Daniel Compton (1/6)
     2.00   3 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
              Valerie Houseman (1)
              Max Penet (1/2)
@@ -219,6 +219,11 @@ Enhancement
     2.00   2 Triaged      [ASYNC-67] Can we get a generic sink operation?
              Adam Clements (1)
              Jan-Paul Bultmann (1)
+    1.50   4 Open         [ASYNC-119] ClojureScript: combine cljs.core.async.macros and cljs.core.async
+             Dom Kiva-Meyer (1/2)
+             Wilker Lúcio da Silva (1/2)
+             Howard Lewis Ship (1/3)
+             Daniel Compton (1/6)
     1.50   4 Triaged      [ASYNC-126] Add public channel "closed?" predicate
              J.&nbsp;S.&nbsp;Choi (1/2)
              Jonas Enlund (1/2)
@@ -598,7 +603,6 @@ Defect
 
     0.00   0 Open         [DIMAP-2] Proper seq on int-sets
     0.00   0 Open         [DIMAP-9] Unlike regular transient sets, data.int-map transient sets do not support the IFn interface
-    0.00   0 Open         [DIMAP-10] StackOverflowError clojure.data.int_map.Nodes$Leaf.assoc (Nodes.java:623)
 
 ========================================
 Enhancement
@@ -942,6 +946,8 @@ Enhancement
              Chas Emerick (1/2)
     1.00   1 Open         [TCHECK-31] Doc improvements: how to separate "size" from "range"
              Brian Craft (1)
+    1.00   1 Open         [TCHECK-105] Support for bootstrapped / self-host ClojureScript
+             Yehonathan Sharvit (1)
     0.50   1 Open         [TCHECK-8] Bound tests and shrinks in time
              Chas Emerick (1/2)
     0.00   0 Open         [TCHECK-4] Handle sigint
@@ -968,7 +974,6 @@ Enhancement
     0.00   0 Open         [TCHECK-99] Create a generator that will limit the size of a generated sequence
     0.00   0 Open         [TCHECK-101] Add a prop/for-all alternative to c.t.c.clojure-test that uses clojure.test/is &c
     0.00   0 Open         [TCHECK-102] Provide a mechanism for getting output from a test run after interrupting it.
-    0.00   0 Open         [TCHECK-105] Support for bootstrapped / self-host ClojureScript
     0.00   0 Open         [TCHECK-107] such-that should provide a way to customize its error message
     0.00   0 Open         [TCHECK-108] Clarify docstrings for dev functions in the generators namespace
     0.00   0 Open         [TCHECK-110] Enable shrinking on recursive generators
