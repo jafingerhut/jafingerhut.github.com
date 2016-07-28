@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: July 21, 2016
+Date: July 28, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -42,9 +42,9 @@ Defect
   19 Incomplete   [CLJ-700] contains? broken for transient collections
   15 Prescreened  [CLJ-1744] Unused destructured local not cleared, causes memory leak
   12 Incomplete   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
+   9 Prescreened  [CLJ-1398] Update URLs in javadoc.clj
    9 Incomplete   [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
    9 Backlog      [CLJ-1372] Inconsistent hash with java collections
-   8 Prescreened  [CLJ-1398] Update URLs in javadoc.clj
    7 Open         [CLJ-1532] pr-str captures stdout from printing side-effects of lazily evaluated expressions.
    6 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
    5 Triaged      [CLJ-1242] = on sorted collections with different key types incorrectly throws
@@ -62,6 +62,7 @@ Defect
    3 Triaged      [CLJ-1279] Fix confusing macroexpand1 ArityException handling
    3 Open         [CLJ-1445] pprint prints some metadata when *print-meta* bound to true, but not all
    2 Prescreened  [CLJ-1360] clojure.string/split strips trailing delimiters
+   2 Open         [CLJ-1936] spec generative testing should be optional
    2 Open         [CLJ-1625] Cannot implement protocol methods of the same name inline
    2 Triaged      [CLJ-1649] Hash/equality inconsistency for floats & doubles
    2 Open         [CLJ-1941] Instrumentation of fns with primitive type hints fails
@@ -77,7 +78,6 @@ Defect
    1 Triaged      [CLJ-1317] clojure.zip/seq-zip returns spurious nils during traversal
    1 Prescreened  [CLJ-1870] Reloading a defmulti nukes metadata on the var
    1 Triaged      [CLJ-1935] clojure.spec/multi-spec ignores the multimethod hierarchy
-   1 Open         [CLJ-1936] spec generative testing should be optional
    1 Open         [CLJ-968] ns emitting gen-class before imports results in imported annotations being discarded.
    1 Open         [CLJ-1181] clojure.pprint/code-dispatch breaks on certain types of anonymous functions
    1 Prescreened  [CLJ-1587] PersistentArrayMap's assoc doesn't respect HASHTABLE_THRESHOLD
@@ -210,6 +210,7 @@ Enhancement
    2 Open         [CLJ-1852] Clojure-generated class names length exceed file-system limit
    2 Open         [CLJ-1943] clojure.spec should implicitly convert classes to specs
    2 Backlog      [CLJ-415] smarter assert (prints locals)
+   2 Triaged      [CLJ-1990] Add an async macro that behaves the same as ClojureScript's
    2 Triaged      [CLJ-1523] Add 'doseq' like macro for transducers
    2 Open         [CLJ-1367] Allow case statement to compare java constants
    2 Prescreened  [CLJ-1908] Add clojure.test api to run single test with fixtures and report
@@ -239,7 +240,6 @@ Enhancement
    1 Triaged      [CLJ-970] extend/implement parameterized types (generics)
    1 Open         [CLJ-994] repeat reducer
    1 Open         [CLJ-995] sorted-set doesn't support IEditableCollection
-   1 Open         [CLJ-1734] Display more descriptive error message when trying to use reader conditionals in a non-cljc file
    1 Open         [CLJ-1782] Hide local IDE files in .gitignore
    1 Triaged      [CLJ-1843] Add =to function exposing Util/equivPred 
    1 Open         [CLJ-1266] Better primitive support for floats
@@ -247,6 +247,7 @@ Enhancement
    1 Open         [CLJ-1321] Documentation improvement for clojure.walk, to note use of recursion that can easily blow the JVM stack
    1 Open         [CLJ-1721] Enable test case for char?
    1 Open         [CLJ-1729] Make Counted and count() return long instead of integer
+   1 Open         [CLJ-1734] Display more descriptive error message when trying to use reader conditionals in a non-cljc file
    1 Prescreened  [CLJ-1890] enhance pprint to print type for defrecord (as in pr)
    1 Open         [CLJ-1010] A left-to-right-variant of `comp`
    1 Triaged      [CLJ-1073] Make print-sequential interruptible
@@ -357,3 +358,4 @@ Enhancement
    0 Triaged      [CLJ-1952] include var->sym in clojure.core
    0 Triaged      [CLJ-1967] Enhanced namespaced map print support
    0 Prescreened  [CLJ-1973] generate-proxy produces unpredictable method order in generated classes
+   0 Prescreened  [CLJ-1986] Suppress printing namespace map literal syntax when only one namespaced key
