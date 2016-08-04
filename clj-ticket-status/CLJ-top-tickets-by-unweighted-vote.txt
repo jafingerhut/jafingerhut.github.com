@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: July 28, 2016
+Date: August 4, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -78,6 +78,7 @@ Defect
    1 Triaged      [CLJ-1317] clojure.zip/seq-zip returns spurious nils during traversal
    1 Prescreened  [CLJ-1870] Reloading a defmulti nukes metadata on the var
    1 Triaged      [CLJ-1935] clojure.spec/multi-spec ignores the multimethod hierarchy
+   1 Screenable   [CLJ-1985] with-gen of conformer loses unform fn
    1 Open         [CLJ-968] ns emitting gen-class before imports results in imported annotations being discarded.
    1 Open         [CLJ-1181] clojure.pprint/code-dispatch breaks on certain types of anonymous functions
    1 Prescreened  [CLJ-1587] PersistentArrayMap's assoc doesn't respect HASHTABLE_THRESHOLD
@@ -134,7 +135,6 @@ Defect
    0 Triaged      [CLJ-1960] Bug in clojure.core/mod with large Double argument
    0 Triaged      [CLJ-1968] clojure.test/report :error does not flush *out* when the test fails with an exception
    0 Triaged      [CLJ-1972] issue with browse-url
-   0 Screenable   [CLJ-1985] with-gen of conformer loses unform fn
 
 ========================================
 Enhancement
@@ -215,12 +215,12 @@ Enhancement
    2 Open         [CLJ-1367] Allow case statement to compare java constants
    2 Prescreened  [CLJ-1908] Add clojure.test api to run single test with fixtures and report
    2 Open         [CLJ-1162] Error Message when calling deref on a non-IDeref is unhelpful
-   2 Open         [CLJ-1534] Adding condp-> and condp->> macros to core library
    2 Open         [CLJ-2] Scopes
    2 Open         [CLJ-1026] Mixed end-of-line endings in the source code
    2 Triaged      [CLJ-1402] sort-by calls keyfn more times than is necessary
    2 Triaged      [CLJ-1771] Support for multiple key(s)-value pairs in assoc-in
    2 Backlog      [CLJ-731] Create macro to variadically unroll a combinator function definition
+   2 Open         [CLJ-1534] Adding condp-> and condp->> macros to core library
    2 Screenable   [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
    2 Open         [CLJ-428] subseq, rsubseq enhancements to support priority maps?
    2 Triaged      [CLJ-1219] Make identical? variadic
@@ -237,6 +237,7 @@ Enhancement
    1 Open         [CLJ-1526] clojure.core/> inconsistent behavior wrt to documentation.
    1 Prescreened  [CLJ-1797] Mention cljc when require fails
    1 Triaged      [CLJ-1903] Provide a transducer for reductions
+   1 Open         [CLJ-889] Specifically allow '.' inside keywords
    1 Triaged      [CLJ-970] extend/implement parameterized types (generics)
    1 Open         [CLJ-994] repeat reducer
    1 Open         [CLJ-995] sorted-set doesn't support IEditableCollection
@@ -254,6 +255,7 @@ Enhancement
    1 Open         [CLJ-1425] Defer literal map construction of syntax-quoted maps to allow for semantically valid unquote splicing
    1 Open         [CLJ-1585] Report boxed math warning on function that boxes primitive return value
    1 Prescreened  [CLJ-1730] Improve `refer` performance
+   1 Prescreened  [CLJ-1986] Suppress printing namespace map literal syntax when only one namespaced key
    1 Open         [CLJ-1342] Byte comparison boxes both bytes and converts to longs to compare (which is slow)
    1 Triaged      [CLJ-1607] docstring for clojure.core/counted? should be more specific
    1 Open         [CLJ-1189] Map-destructuring :or fumble needs compiler warning
@@ -356,6 +358,7 @@ Enhancement
    0 Prescreened  [CLJ-1918] Document await that it will never return if shutdown-agents was called
    0 Triaged      [CLJ-1942] Add predicate for sequential search in a collection
    0 Triaged      [CLJ-1952] include var->sym in clojure.core
-   0 Triaged      [CLJ-1967] Enhanced namespaced map print support
+   0 Needs Patch  [CLJ-1967] Enhanced namespaced map pprint support
    0 Prescreened  [CLJ-1973] generate-proxy produces unpredictable method order in generated classes
-   0 Prescreened  [CLJ-1986] Suppress printing namespace map literal syntax when only one namespaced key
+   0 Needs Patch  [CLJ-1993] Print flag to suppress namespace map syntax
+   0 Triaged      [CLJ-1995] Improved docstring for explain-data

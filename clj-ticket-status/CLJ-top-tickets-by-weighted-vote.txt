@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: July 28, 2016
+Date: August 4, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -187,6 +187,8 @@ Defect
              Nicola Mometto (1/68)
     1.00   1 Prescreened  [CLJ-1870] Reloading a defmulti nukes metadata on the var
              Matt Oquist (1)
+    1.00   1 Screenable   [CLJ-1985] with-gen of conformer loses unform fn
+             Alexander Kiel (1)
     1.00   1 Triaged      [CLJ-1317] clojure.zip/seq-zip returns spurious nils during traversal
              Lee Spector (1)
     1.00   1 Triaged      [CLJ-1935] clojure.spec/multi-spec ignores the multimethod hierarchy
@@ -305,7 +307,6 @@ Defect
     0.00   0 Prescreened  [CLJ-1841] core/bean iterator is broken
     0.00   0 Prescreened  [CLJ-1887] clojure.core.Vec does not fully implement clojure.lang.IPersistentVector
     0.00   0 Prescreened  [CLJ-1914] Range realization has a race during concurrent execution
-    0.00   0 Screenable   [CLJ-1985] with-gen of conformer loses unform fn
     0.00   0 Triaged      [CLJ-929] Accessing Java property starting with _ has issues in 1.4
     0.00   0 Triaged      [CLJ-1475] :post condition causes compiler error with recur
     0.00   0 Triaged      [CLJ-1492] PersistentQueue objects are improperly eval'd and compiled
@@ -380,7 +381,7 @@ Enhancement
              Daniel Compton (1/16)
              David Greenberg (1/16)
              Nicola Mometto (1/68)
-    8.21  20 Screened     [CLJ-1224] Records do not cache hash like normal maps
+    8.13  20 Screened     [CLJ-1224] Records do not cache hash like normal maps
              Brian Olsen (1)
              Daniel R. Schlegel (1)
              Luca Barozzi (1)
@@ -388,9 +389,9 @@ Enhancement
              deliminator (1)
              Bobby Eickhoff (1/2)
              Steven Yi (1/2)
-             Steve Miner (1/3)
              David Nolen (1/4)
              Mark Engelberg (1/4)
+             Steve Miner (1/4)
              Yongqian Li (1/4)
              Ambrose Bonnaire-Sergeant (1/5)
              Michael Patrick O'Keefe (1/5)
@@ -802,19 +803,19 @@ Enhancement
              Hildeberto Mendonça (1)
              Frank Schmidt (1/2)
              Tom Crayford (1/5)
-    1.65   7 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
-             Adrian Medina (1/2)
-             Matt Earnshaw (1/3)
-             Steve Miner (1/3)
-             Tim McCormack (1/5)
-             Brandon Bloom (1/7)
-             Simon Belak (1/10)
-             Michael Blume (1/23)
     1.60   4 Triaged      [CLJ-1473] Badly formed pre/post conditions silently passed
              Antti Virtanen (1)
              Bridget Hillyer (1/3)
              Daniel James (1/5)
              Reid McKenzie (1/16)
+    1.57   7 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
+             Adrian Medina (1/2)
+             Matt Earnshaw (1/3)
+             Steve Miner (1/4)
+             Tim McCormack (1/5)
+             Brandon Bloom (1/7)
+             Simon Belak (1/10)
+             Michael Blume (1/23)
     1.56   4 Open         [CLJ-1519] Added extra arity to clojure.core/ns-* fns
              Alan Forrester (1)
              Alan Thompson (1/3)
@@ -906,9 +907,6 @@ Enhancement
              Michael Griffiths (1/6)
              Andrey Antukh (1/15)
              Michael Blume (1/23)
-    1.01   2 Open         [CLJ-1534] Adding condp-> and condp->> macros to core library
-             Vitalie Spinu (1)
-             Nicola Mometto (1/68)
     1.00   1 Open         [CLJ-1223] Improve App Engine Support by Providing an Option to Use the App Engine ThreadManger
              Stu West (1)
     1.00   1 Open         [CLJ-1296] locking expressions cause vars to be dereferenced, even if not executed, unless wrapped in let
@@ -937,10 +935,6 @@ Enhancement
              Maris Orbidans (1/2)
              Chas Emerick (1/5)
              Mike Anderson (1/7)
-    0.75   3 Open         [CLJ-891] make (symbol foo "bar") work with foo being a namespace
-             Steve Miner (1/3)
-             Kevin Downey (1/4)
-             David Leatherman (1/6)
     0.70   2 Open         [CLJ-2] Scopes
              Ivan Kozik (1/2)
              Matthew O. Smith (1/5)
@@ -950,6 +944,10 @@ Enhancement
     0.70   2 Triaged      [CLJ-1402] sort-by calls keyfn more times than is necessary
              Frank Schmidt (1/2)
              Tom Crayford (1/5)
+    0.67   3 Open         [CLJ-891] make (symbol foo "bar") work with foo being a namespace
+             Kevin Downey (1/4)
+             Steve Miner (1/4)
+             David Leatherman (1/6)
     0.59   3 Triaged      [CLJ-1305] Add optional not-found argument when invoking vectors or sets as functions
              Paul Gearon (1/2)
              Bozhidar Batsov (1/14)
@@ -960,6 +958,11 @@ Enhancement
     0.51   2 Backlog      [CLJ-731] Create macro to variadically unroll a combinator function definition
              Andrew S (1/2)
              Nicola Mometto (1/68)
+    0.51   2 Open         [CLJ-1534] Adding condp-> and condp->> macros to core library
+             Vitalie Spinu (1/2)
+             Nicola Mometto (1/68)
+    0.50   1 Open         [CLJ-889] Specifically allow '.' inside keywords
+             Vitalie Spinu (1/2)
     0.50   1 Open         [CLJ-994] repeat reducer
              Alan Malloy (1/2)
     0.50   1 Open         [CLJ-995] sorted-set doesn't support IEditableCollection
@@ -1023,6 +1026,8 @@ Enhancement
              Peter Taoussanis (1/4)
     0.25   1 Prescreened  [CLJ-1730] Improve `refer` performance
              Jean Fabio Baro (1/4)
+    0.25   1 Prescreened  [CLJ-1986] Suppress printing namespace map literal syntax when only one namespaced key
+             Steve Miner (1/4)
     0.25   1 Triaged      [CLJ-1073] Make print-sequential interruptible
              Yongqian Li (1/4)
     0.21   2 Triaged      [CLJ-1598] Make if forms compile directly to the appropriate branch expression if the test is a literal
@@ -1125,6 +1130,8 @@ Enhancement
     0.00   0 Backlog      [CLJ-1104] Concurrent with-redefs do not unwind properly, leaving a var permanently changed
     0.00   0 Backlog      [CLJ-1420] ThreadLocalRandom instead of Math/random
     0.00   0 Incomplete   [CLJ-1400] Error "Can't refer to qualified var that doesn't exist" should name the bad symbol
+    0.00   0 Needs Patch  [CLJ-1967] Enhanced namespaced map pprint support
+    0.00   0 Needs Patch  [CLJ-1993] Print flag to suppress namespace map syntax
     0.00   0 Prescreened  [CLJ-1159] Improve docstring of clojure.java.io/delete-file to be clearer about intent of silently arg
     0.00   0 Prescreened  [CLJ-1314] Correct placement of doc string for function bubble-max-key
     0.00   0 Prescreened  [CLJ-1654] Reuse seq in some
@@ -1138,7 +1145,6 @@ Enhancement
     0.00   0 Prescreened  [CLJ-1901] amap calls `alength` at every iteration step
     0.00   0 Prescreened  [CLJ-1918] Document await that it will never return if shutdown-agents was called
     0.00   0 Prescreened  [CLJ-1973] generate-proxy produces unpredictable method order in generated classes
-    0.00   0 Prescreened  [CLJ-1986] Suppress printing namespace map literal syntax when only one namespaced key
     0.00   0 Screened     [CLJ-1673] Improve clojure.repl/dir-fn to work on namespace aliases in addition to canonical namespaces.
     0.00   0 Triaged      [CLJ-5] Sequential destructuring of map gives confusing error message
     0.00   0 Triaged      [CLJ-405] better error messages for bad defrecord calls
@@ -1182,6 +1188,6 @@ Enhancement
     0.00   0 Triaged      [CLJ-1917] internal-reduce extended on StringSeq calls `.length` on every iteration step
     0.00   0 Triaged      [CLJ-1942] Add predicate for sequential search in a collection
     0.00   0 Triaged      [CLJ-1952] include var->sym in clojure.core
-    0.00   0 Triaged      [CLJ-1967] Enhanced namespaced map print support
+    0.00   0 Triaged      [CLJ-1995] Improved docstring for explain-data
     0.00   0 Vetted       [CLJ-992] `iterate` reducer
     0.00   0 Vetted       [CLJ-1551] Consider transducer support for primitives
