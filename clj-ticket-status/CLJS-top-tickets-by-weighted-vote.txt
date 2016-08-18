@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: August 11, 2016
+Date: August 18, 2016
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -44,10 +44,11 @@ Defect
              Francis Avila (1)
              Mike Longworth (1)
              Peter Taoussanis (1/2)
-    2.20   3 Open         [CLJS-884] with-redefs don't restores previous values when used inside go block
+    2.75   4 Open         [CLJS-884] with-redefs don't restores previous values when used inside go block
              Kris Jenkins (1)
              Tolga Paksoy (1)
-             Yehonathan Sharvit (1/5)
+             Daniel Compton (1/2)
+             Yehonathan Sharvit (1/4)
     1.50   2 Bad: Unkn Fi [CLJS-968] Metadata on function literal inside of a let produces invalid Javascript
              David Nolen (1)
              Herwig Hochleitner (1/2)
@@ -63,15 +64,13 @@ Defect
              Thomas Heller (1)
     1.00   1 Open         [CLJS-890] Incorrect behaviour of (str obj) when obj has valueOf method
              Kevin Neaton (1)
-    0.70   2 Open         [CLJS-1572] REPL doesn't give error for expressions with too many right parentheses.
+    0.75   2 Open         [CLJS-1572] REPL doesn't give error for expressions with too many right parentheses.
              Herwig Hochleitner (1/2)
-             Yehonathan Sharvit (1/5)
+             Yehonathan Sharvit (1/4)
     0.25   1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
              J.&nbsp;S.&nbsp;Choi (1/4)
-    0.20   1 Open         [CLJS-1593] Self-host: Munged minus macro
-             Yehonathan Sharvit (1/5)
-    0.20   1 Open         [CLJS-1657] Self-host: Implicit macro loading with alias
-             Yehonathan Sharvit (1/5)
+    0.25   1 Open         [CLJS-1593] Self-host: Munged minus macro
+             Yehonathan Sharvit (1/4)
     0.00   0 Bad: Unkn Fi [CLJS-349] cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
     0.00   0 Bad: Unkn Fi [CLJS-375] loop doesn't seem to preserve tag information as evidenced by extra cljs.core.truth_ calls
     0.00   0 Bad: Unkn Fi [CLJS-434] ClojureScript compiler prepends "self__" to defmulti forms when metadata in form of ^:field.
@@ -91,6 +90,7 @@ Defect
     0.00   0 Bad: Unkn Fi [CLJS-1453] cljs.compiler/load-libs does not preserve user expressed require order
     0.00   0 Bad: Unkn Fi [CLJS-1485] Error when requiring `goog` namespace in a ns declaration 
     0.00   0 Bad: Unkn Fi [CLJS-1497] `find` on an associative collection does not return collection key
+    0.00   0 Bad: Unkn Fi [CLJS-1536] REPL def symbol init collision
     0.00   0 Bad: Unkn Fi [CLJS-1544] cljs.test REPL reload support
     0.00   0 Bad: Unkn Fi [CLJS-1641] Multi-arity defn copies arguments unnecessarily for all cases
     0.00   0 Bad: Unkn Fi [CLJS-1666] Flag to optionally disable transit analysis cache encoding
@@ -121,8 +121,12 @@ Enhancement
              Patrick Killean (1)
     1.00   1 Open         [CLJS-1428] Add a cljs.core/*command-line-args* var
              Matthew Nespor (1)
+    1.00   1 Open         [CLJS-1628] Make instances of js/Symbol printable
+             Nikita Prokopov (1)
     0.50   1 Open         [CLJS-1346] Support require outside of ns 
              Peter Taoussanis (1/2)
+    0.50   1 Open         [CLJS-1634] Track bound dynamic variables to support binding in async mechanisms.
+             Daniel Compton (1/2)
     0.33   1 Open         [CLJS-527] Support dynamic runtime extension of protocols to types
              Andrey Antukh (1/3)
     0.33   1 Open         [CLJS-1076] :nashorn target
@@ -131,10 +135,10 @@ Enhancement
              J.&nbsp;S.&nbsp;Choi (1/4)
     0.25   1 Bad: Unkn Fi [CLJS-1328] Support defrecord reader tags
              J.&nbsp;S.&nbsp;Choi (1/4)
+    0.25   1 Open         [CLJS-324] cljs.core/format
+             Yehonathan Sharvit (1/4)
     0.25   1 Open         [CLJS-1410] Support source maps in deps.cljs
              J.&nbsp;S.&nbsp;Choi (1/4)
-    0.20   1 Open         [CLJS-324] cljs.core/format
-             Yehonathan Sharvit (1/5)
     0.00   0 Bad: Unkn Fi [CLJS-773] Use unchecked-*-int functions for real 32-bit math
     0.00   0 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
     0.00   0 Bad: Unkn Fi [CLJS-1125] Simple corrupted compiled file detection
@@ -151,6 +155,7 @@ Enhancement
     0.00   0 Bad: Unkn Fi [CLJS-1415] Handling JSDoc param name [x] optional syntax
     0.00   0 Bad: Unkn Fi [CLJS-1419] enhance numeric inference, if + number? test on local var should tag local var in the successful branch
     0.00   0 Bad: Unkn Fi [CLJS-1443] ES6 Module Processing at individual :foreign-lib spec
+    0.00   0 Bad: Unkn Fi [CLJS-1756] Add test.check JAR to the bootstrap script
 
 ========================================
 Task

@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: August 11, 2016
+Date: August 18, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -63,13 +63,13 @@ Defect
              Rick Moynihan (1)
              Greg Chapman (1/6)
              Bozhidar Batsov (1/14)
-    6.05  16 Prescreened  [CLJ-1744] Unused destructured local not cleared, causes memory leak
+    5.55  16 Prescreened  [CLJ-1744] Unused destructured local not cleared, causes memory leak
              Dave Aitken (1)
              Rohit Aggarwal (1)
-             Stanislav Yurin (1)
              Daniel Solano Gómez (1/2)
              James Henderson (1/2)
              Ragnar Dahlen (1/2)
+             Stanislav Yurin (1/2)
              Johan Gall (1/3)
              Jozef Wagner (1/4)
              Alex Miller (1/5)
@@ -167,7 +167,7 @@ Defect
     1.33   2 Prescreened  [CLJ-1360] clojure.string/split strips trailing delimiters
              Crispin Wellington (1)
              César Bolaños (1/3)
-    1.26   3 Vetted       [CLJ-1793] Clear 'this' before calls in tail position
+    1.26   3 Vetted       [CLJ-1793] Reducer instances hold onto the head of seqs
              Brandon Adams (1)
              Kevin Downey (1/4)
              Nicola Mometto (1/68)
@@ -189,8 +189,6 @@ Defect
              Nicola Mometto (1/68)
     1.00   1 Prescreened  [CLJ-1870] Reloading a defmulti nukes metadata on the var
              Matt Oquist (1)
-    1.00   1 Screenable   [CLJ-1985] with-gen of conformer loses unform fn
-             Alexander Kiel (1)
     1.00   1 Triaged      [CLJ-1317] clojure.zip/seq-zip returns spurious nils during traversal
              Lee Spector (1)
     1.00   1 Triaged      [CLJ-1935] clojure.spec/multi-spec ignores the multimethod hierarchy
@@ -310,6 +308,7 @@ Defect
     0.00   0 Prescreened  [CLJ-1887] clojure.core.Vec does not fully implement clojure.lang.IPersistentVector
     0.00   0 Prescreened  [CLJ-1914] Range realization has a race during concurrent execution
     0.00   0 Triaged      [CLJ-929] Accessing Java property starting with _ has issues in 1.4
+    0.00   0 Triaged      [CLJ-1406] Libs are blindly added into loaded-libs even if an error occurs during loading
     0.00   0 Triaged      [CLJ-1475] :post condition causes compiler error with recur
     0.00   0 Triaged      [CLJ-1492] PersistentQueue objects are improperly eval'd and compiled
     0.00   0 Triaged      [CLJ-1579] source-fn can fail due to reading namespace-aliased keywords while in another namespace context
@@ -330,6 +329,8 @@ Defect
     0.00   0 Triaged      [CLJ-1968] clojure.test/report :error does not flush *out* when the test fails with an exception
     0.00   0 Triaged      [CLJ-1972] issue with browse-url
     0.00   0 Triaged      [CLJ-2001] Invalid conversion from BigDecimal to long using clojure.core/long
+    0.00   0 Triaged      [CLJ-2002] StackOverflowError in clojure.spec
+    0.00   0 Triaged      [CLJ-2003] Nesting cat inside ? causes unform to return nested result
 
 ========================================
 Enhancement
@@ -494,18 +495,6 @@ Enhancement
              Jan Rychter (1/8)
              Gary Trakhman (1/12)
              Bozhidar Batsov (1/14)
-    6.63  11 Vetted       [CLJ-1148] adds docstring support to defonce
-             Brad Koch (1)
-             Jonas Enlund (1)
-             Joshua Tilles (1)
-             Nahuel Greco (1)
-             Norman Richards (1)
-             Chris Perkins (1/2)
-             Julian Gamble (1/2)
-             Adam Frey (1/3)
-             David Leatherman (1/6)
-             Bozhidar Batsov (1/14)
-             Daniel Compton (1/16)
     6.31   8 Open         [CLJ-1965] clojure.spec/def should support an optional doc-string
              Donald Ball (1)
              Gunnar Völkel (1)
@@ -514,6 +503,17 @@ Enhancement
              Mohammad Sadegh Khoeini (1)
              quan (1)
              Chris Sims (1/4)
+             Daniel Compton (1/16)
+    5.63  10 Vetted       [CLJ-1148] adds docstring support to defonce
+             Brad Koch (1)
+             Jonas Enlund (1)
+             Nahuel Greco (1)
+             Norman Richards (1)
+             Chris Perkins (1/2)
+             Julian Gamble (1/2)
+             Adam Frey (1/3)
+             David Leatherman (1/6)
+             Bozhidar Batsov (1/14)
              Daniel Compton (1/16)
     5.62  17 Triaged      [CLJ-1522] Enhance multimethods metadata
              Simon Katz (1)
@@ -586,6 +586,16 @@ Enhancement
              Bozhidar Batsov (1/14)
              David Greenberg (1/16)
              Nicola Mometto (1/68)
+    4.32   9 Open         [CLJ-1553] Parallel transduce
+             Darrick Wiebe (1)
+             Rafik NACCACHE (1)
+             Alejandro Ciniglio (1/2)
+             Kei Tsuji (1/2)
+             Stanislav Yurin (1/2)
+             Mark Engelberg (1/4)
+             Daniel James (1/5)
+             Devin Walters (1/5)
+             Michael Griffiths (1/6)
     4.30  17 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
              Brian Pratt (1)
              Stefan Kamphausen (1/2)
@@ -644,15 +654,6 @@ Enhancement
              Greg Chapman (1/6)
              David Greenberg (1/16)
              Reid McKenzie (1/16)
-    3.82   8 Open         [CLJ-1553] Parallel transduce
-             Darrick Wiebe (1)
-             Rafik NACCACHE (1)
-             Alejandro Ciniglio (1/2)
-             Kei Tsuji (1/2)
-             Mark Engelberg (1/4)
-             Daniel James (1/5)
-             Devin Walters (1/5)
-             Michael Griffiths (1/6)
     3.58   9 Prescreened  [CLJ-1454] Add deref-swap! and deref-reset! (swap! and reset! that return prior value)
              Peter Monks (1)
              Timothy Baldridge (1)
@@ -969,6 +970,9 @@ Enhancement
     0.51   2 Open         [CLJ-1534] Adding condp-> and condp->> macros to core library
              Vitalie Spinu (1/2)
              Nicola Mometto (1/68)
+    0.51   2 Triaged      [CLJ-1959] adding functions `map-vals` and `map-keys`
+             Takashi AOKI (1/2)
+             Nicola Mometto (1/68)
     0.50   1 Open         [CLJ-889] Specifically allow '.' inside keywords
              Vitalie Spinu (1/2)
     0.50   1 Open         [CLJ-994] repeat reducer
@@ -981,6 +985,8 @@ Enhancement
              Stuart Halloway (1/2)
     0.50   1 Triaged      [CLJ-1843] Add =to function exposing Util/equivPred 
              Alan Malloy (1/2)
+    0.50   1 Triaged      [CLJ-1942] Add predicate for sequential search in a collection
+             Takashi AOKI (1/2)
     0.45   3 Open         [CLJ-1906] Clojure should make representing iterated api calls easier
              Ghadi Shayban (1/3)
              Simon Belak (1/10)
@@ -1128,8 +1134,6 @@ Enhancement
              Nicola Mometto (1/68)
     0.01   1 Triaged      [CLJ-1493] Fast keyword intern
              Nicola Mometto (1/68)
-    0.01   1 Triaged      [CLJ-1959] adding functions `map-vals` and `map-keys`
-             Nicola Mometto (1/68)
     0.00   0 Backlog      [CLJ-211] Support arbitrary functional destructuring via -> and ->>
     0.00   0 Backlog      [CLJ-250] debug builds
     0.00   0 Backlog      [CLJ-291] (take-nth 0 coll) redux...
@@ -1152,7 +1156,6 @@ Enhancement
     0.00   0 Prescreened  [CLJ-1901] amap calls `alength` at every iteration step
     0.00   0 Prescreened  [CLJ-1918] Document await that it will never return if shutdown-agents was called
     0.00   0 Prescreened  [CLJ-1973] generate-proxy produces unpredictable method order in generated classes
-    0.00   0 Screenable   [CLJ-1993] Print flag to suppress namespace map syntax
     0.00   0 Screened     [CLJ-1673] Improve clojure.repl/dir-fn to work on namespace aliases in addition to canonical namespaces.
     0.00   0 Triaged      [CLJ-5] Sequential destructuring of map gives confusing error message
     0.00   0 Triaged      [CLJ-405] better error messages for bad defrecord calls
@@ -1194,7 +1197,6 @@ Enhancement
     0.00   0 Triaged      [CLJ-1907] Document non-caching behaviour of `iterate` when used as generator
     0.00   0 Triaged      [CLJ-1915] Tests for clojure.core/atom
     0.00   0 Triaged      [CLJ-1917] internal-reduce extended on StringSeq calls `.length` on every iteration step
-    0.00   0 Triaged      [CLJ-1942] Add predicate for sequential search in a collection
     0.00   0 Triaged      [CLJ-1952] include var->sym in clojure.core
     0.00   0 Triaged      [CLJ-1995] Improved docstring for explain-data
     0.00   0 Vetted       [CLJ-992] `iterate` reducer

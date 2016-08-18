@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: August 11, 2016
+Date: August 18, 2016
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -40,7 +40,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 Defect
 
    4 Open         [CLJS-677] cljs.reader doesn't support keywords starting with a digit
-   3 Open         [CLJS-884] with-redefs don't restores previous values when used inside go block
+   4 Open         [CLJS-884] with-redefs don't restores previous values when used inside go block
    2 Bad: Unkn Fi [CLJS-968] Metadata on function literal inside of a let produces invalid Javascript
    2 Bad: Unkn Fi [CLJS-485] clojure.string/replace ignores regex flags
    2 Bad: Unkn Fi [CLJS-794] RegExp flags are being dropped by `string/replace`
@@ -50,7 +50,6 @@ Defect
    1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
    1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
    1 Open         [CLJS-1593] Self-host: Munged minus macro
-   1 Open         [CLJS-1657] Self-host: Implicit macro loading with alias
    0 Bad: Unkn Fi [CLJS-349] cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
    0 Bad: Unkn Fi [CLJS-375] loop doesn't seem to preserve tag information as evidenced by extra cljs.core.truth_ calls
    0 Bad: Unkn Fi [CLJS-434] ClojureScript compiler prepends "self__" to defmulti forms when metadata in form of ^:field.
@@ -70,6 +69,7 @@ Defect
    0 Bad: Unkn Fi [CLJS-1453] cljs.compiler/load-libs does not preserve user expressed require order
    0 Bad: Unkn Fi [CLJS-1485] Error when requiring `goog` namespace in a ns declaration 
    0 Bad: Unkn Fi [CLJS-1497] `find` on an associative collection does not return collection key
+   0 Bad: Unkn Fi [CLJS-1536] REPL def symbol init collision
    0 Bad: Unkn Fi [CLJS-1544] cljs.test REPL reload support
    0 Bad: Unkn Fi [CLJS-1641] Multi-arity defn copies arguments unnecessarily for all cases
    0 Bad: Unkn Fi [CLJS-1666] Flag to optionally disable transit analysis cache encoding
@@ -85,13 +85,15 @@ Enhancement
    1 Bad: Unkn Fi [CLJS-1047] externs checking for js/foo
    1 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
    1 Open         [CLJS-1428] Add a cljs.core/*command-line-args* var
+   1 Open         [CLJS-1628] Make instances of js/Symbol printable
    1 Open         [CLJS-1346] Support require outside of ns 
+   1 Open         [CLJS-1634] Track bound dynamic variables to support binding in async mechanisms.
    1 Open         [CLJS-527] Support dynamic runtime extension of protocols to types
    1 Open         [CLJS-1076] :nashorn target
+   1 Open         [CLJS-324] cljs.core/format
    1 Bad: Unkn Fi [CLJS-1194] data_readers.cljc
    1 Bad: Unkn Fi [CLJS-1328] Support defrecord reader tags
    1 Open         [CLJS-1410] Support source maps in deps.cljs
-   1 Open         [CLJS-324] cljs.core/format
    0 Bad: Unkn Fi [CLJS-773] Use unchecked-*-int functions for real 32-bit math
    0 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
    0 Bad: Unkn Fi [CLJS-1125] Simple corrupted compiled file detection
@@ -108,6 +110,7 @@ Enhancement
    0 Bad: Unkn Fi [CLJS-1415] Handling JSDoc param name [x] optional syntax
    0 Bad: Unkn Fi [CLJS-1419] enhance numeric inference, if + number? test on local var should tag local var in the successful branch
    0 Bad: Unkn Fi [CLJS-1443] ES6 Module Processing at individual :foreign-lib spec
+   0 Bad: Unkn Fi [CLJS-1756] Add test.check JAR to the bootstrap script
 
 ========================================
 Task
