@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: August 25, 2016
+Date: September 1, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -63,7 +63,7 @@ Defect
              Rick Moynihan (1)
              Greg Chapman (1/6)
              Bozhidar Batsov (1/14)
-    4.94  20 Screenable   [CLJ-700] contains? broken for transient collections
+    4.94  20 Incomplete   [CLJ-700] contains? broken for transient collections
              Laszlo Török (1)
              Dom Kiva-Meyer (1/2)
              John Szakmeister (1/2)
@@ -157,12 +157,7 @@ Defect
     1.33   2 Prescreened  [CLJ-1360] clojure.string/split strips trailing delimiters
              Crispin Wellington (1)
              César Bolaños (1/3)
-    1.31   4 Backlog      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
-             Daniel Solano Gómez (1)
-             Alexander Yakushev (1/5)
-             Reid McKenzie (1/16)
-             Michael Blume (1/22)
-    1.26   3 Open         [CLJ-1941] Instrumentation of fns with primitive type hints fails
+    1.26   3 Triaged      [CLJ-1941] Instrumentation of fns with primitive type hints fails
              James Carragher (1)
              Sean Corfield (1/4)
              Nicola Mometto (1/67)
@@ -174,7 +169,7 @@ Defect
              Anderson De Andrade (1)
              John Walker (1/6)
              David Greenberg (1/15)
-    1.09   2 Open         [CLJ-1936] spec generative testing should be optional
+    1.09   2 Triaged      [CLJ-1936] instrumented fdef with fspec unnecessarily invokes fspec generator
              Zach Oakes (1)
              Max Penet (1/11)
     1.01   2 Open         [CLJ-1625] Cannot implement protocol methods of the same name inline
@@ -183,10 +178,15 @@ Defect
     1.01   2 Triaged      [CLJ-1649] Hash/equality inconsistency for floats & doubles
              Immo Heikkinen (1)
              Nicola Mometto (1/67)
+    1.00   1 Screenable   [CLJ-1935] clojure.spec/multi-spec ignores the multimethod hierarchy
+             Paul Dlug (1)
     1.00   1 Triaged      [CLJ-1317] clojure.zip/seq-zip returns spurious nils during traversal
              Lee Spector (1)
-    1.00   1 Triaged      [CLJ-1935] clojure.spec/multi-spec ignores the multimethod hierarchy
-             Paul Dlug (1)
+    0.81   4 Backlog      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
+             Daniel Solano Gómez (1/2)
+             Alexander Yakushev (1/5)
+             Reid McKenzie (1/16)
+             Michael Blume (1/22)
     0.68   3 Incomplete   [CLJ-1620] Constants are leaked in case of a reentrant eval
              Laurent Petit (1/2)
              Colin Fleming (1/6)
@@ -276,7 +276,6 @@ Defect
     0.00   0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
     0.00   0 Incomplete   [CLJ-1741] deftype class literals and instances loaded from different classloaders when recompiling namespace
     0.00   0 Needs Patch  [CLJ-1872] empty? is broken for transient collections
-    0.00   0 Needs Patch  [CLJ-2004] s/multispec doesn't include :retag in `s/form`
     0.00   0 Ok           [CLJ-1630] Destructuring allows multiple &-params
     0.00   0 Prescreened  [CLJ-1180] defprotocol doesn't resolve tag classnames
     0.00   0 Prescreened  [CLJ-1358] doc macro does not expand special cases properly
@@ -286,9 +285,11 @@ Defect
     0.00   0 Prescreened  [CLJ-1841] core/bean iterator is broken
     0.00   0 Prescreened  [CLJ-1887] clojure.core.Vec does not fully implement clojure.lang.IPersistentVector
     0.00   0 Screenable   [CLJ-1406] Libs are blindly added into loaded-libs even if an error occurs during loading
-    0.00   0 Screenable   [CLJ-2006] clojure.spec/fdef mentions nonexistent clojure.spec.test/run-tests
-    0.00   0 Screenable   [CLJ-2008] clojure.spec.test/check without args tests fns from clojure.core, erroring out with #:clojure.spec{:failure :no-fn}
+    0.00   0 Screenable   [CLJ-1988] collection specs conform to reversed list when used on a sequence
+    0.00   0 Screenable   [CLJ-2004] s/multi-spec doesn't include :retag in `s/form`
     0.00   0 Screenable   [CLJ-2012] ns spec breaks gen-class forms that use strings as class names
+    0.00   0 Screened     [CLJ-2006] clojure.spec/fdef mentions nonexistent clojure.spec.test/run-tests
+    0.00   0 Screened     [CLJ-2008] clojure.spec.test/check without args tests fns from clojure.core, erroring out with #:clojure.spec{:failure :no-fn}
     0.00   0 Triaged      [CLJ-929] Accessing Java property starting with _ has issues in 1.4
     0.00   0 Triaged      [CLJ-1475] :post condition causes compiler error with recur
     0.00   0 Triaged      [CLJ-1492] PersistentQueue objects are improperly eval'd and compiled
@@ -303,10 +304,13 @@ Defect
     0.00   0 Triaged      [CLJ-1867] with-redefs used on a macro permanently changes it to a function
     0.00   0 Triaged      [CLJ-1885] data/diff does not return a tuple when comparing different maps
     0.00   0 Triaged      [CLJ-1898] Inconsistent duplicate check in set/map literals with quoted/unquoted equal constants
+    0.00   0 Triaged      [CLJ-1949] Generator for fspec is not deterministic & ignores sizing
     0.00   0 Triaged      [CLJ-1960] Bug in clojure.core/mod with large Double argument
     0.00   0 Triaged      [CLJ-1968] clojure.test/report :error does not flush *out* when the test fails with an exception
     0.00   0 Triaged      [CLJ-1972] issue with browse-url
-    0.00   0 Triaged      [CLJ-1988] collection specs conform to reversed list when used on a sequence
+    0.00   0 Triaged      [CLJ-1975] clojure.spec attempts to make `empty` records
+    0.00   0 Triaged      [CLJ-1978] recursion-limit not respected
+    0.00   0 Triaged      [CLJ-1980] Unable to construct gen in indirectly recursive specs with s/every and derivations
     0.00   0 Triaged      [CLJ-2001] Invalid conversion from BigDecimal to long using clojure.core/long
     0.00   0 Triaged      [CLJ-2002] StackOverflowError in clojure.spec
     0.00   0 Triaged      [CLJ-2003] Nesting cat inside ? causes unform to return nested result
@@ -389,6 +393,19 @@ Enhancement
              Andrey Antukh (1/14)
              David Greenberg (1/15)
              Nicola Mometto (1/67)
+    8.90  12 Triaged      [CLJ-1965] clojure.spec/def should support an optional doc-string
+             Donald Ball (1)
+             Edwin Park (1)
+             Felix Andrews (1)
+             Kurt Smith (1)
+             Liam F (1)
+             Maik Schünemann (1)
+             Mohammad Sadegh Khoeini (1)
+             quan (1)
+             Gunnar Völkel (1/3)
+             Chris Sims (1/4)
+             Sean Corfield (1/4)
+             Daniel Compton (1/16)
     7.69  19 Prescreened  [CLJ-706] make use of deprecated namespaces/vars easier to spot
              Carlo Sciolla (1)
              Chad Harrington (1)
@@ -466,17 +483,6 @@ Enhancement
              Jan Rychter (1/8)
              Gary Trakhman (1/10)
              Bozhidar Batsov (1/14)
-    6.90  10 Open         [CLJ-1965] clojure.spec/def should support an optional doc-string
-             Donald Ball (1)
-             Felix Andrews (1)
-             Kurt Smith (1)
-             Maik Schünemann (1)
-             Mohammad Sadegh Khoeini (1)
-             quan (1)
-             Gunnar Völkel (1/3)
-             Chris Sims (1/4)
-             Sean Corfield (1/4)
-             Daniel Compton (1/16)
     6.49  10 Triaged      [CLJ-1435] 'numerator and 'denominator fail to handle integral values (i.e. N/1)
              David Cravey (1)
              Eduard Bondarenko (1)
@@ -648,12 +654,13 @@ Enhancement
              Elliot Murphy (1)
              Gabriel Horner (1)
              Nicola Mometto (1/67)
-    3.61   9 Triaged      [CLJ-1063] Missing dissoc-in
+    3.86  10 Triaged      [CLJ-1063] Missing dissoc-in
              Michael D Pendergrass (1)
              Timothy Pratley (1)
              Chris Perkins (1/2)
              Bridget Hillyer (1/3)
              Noam Ben Ari (1/3)
+             Vitalie Spinu (1/4)
              Huahai Yang (1/5)
              Lars Andersen (1/6)
              Daniel Compton (1/16)
@@ -886,6 +893,9 @@ Enhancement
              Max Penet (1/11)
              Michael Blume (1/22)
              Nicola Mometto (1/67)
+    1.25   2 Open         [CLJ-1820] Move rename-keys from clojure.set to clojure.core
+             David Liepmann (1)
+             Vitalie Spinu (1/4)
     1.23   3 Triaged      [CLJ-1094] Add zero-arity versions of every-pred and some-fn
              Michael Nygard (1)
              Brandon Bloom (1/7)
@@ -960,14 +970,9 @@ Enhancement
     0.51   2 Backlog      [CLJ-731] Create macro to variadically unroll a combinator function definition
              Andrew S (1/2)
              Nicola Mometto (1/67)
-    0.51   2 Open         [CLJ-1534] Adding condp-> and condp->> macros to core library
-             Vitalie Spinu (1/2)
-             Nicola Mometto (1/67)
     0.51   2 Triaged      [CLJ-1959] adding functions `map-vals` and `map-keys`
              Takashi AOKI (1/2)
              Nicola Mometto (1/67)
-    0.50   1 Open         [CLJ-889] Specifically allow '.' inside keywords
-             Vitalie Spinu (1/2)
     0.50   1 Open         [CLJ-994] repeat reducer
              Alan Malloy (1/2)
     0.50   1 Open         [CLJ-995] sorted-set doesn't support IEditableCollection
@@ -980,6 +985,8 @@ Enhancement
              Alan Malloy (1/2)
     0.50   1 Triaged      [CLJ-1942] Add predicate for sequential search in a collection
              Takashi AOKI (1/2)
+    0.50   1 Triaged      [CLJ-2015] with-instrument
+             Daniel Solano Gómez (1/2)
     0.46   3 Open         [CLJ-1906] Clojure should make representing iterated api calls easier
              Ghadi Shayban (1/3)
              Simon Belak (1/9)
@@ -1027,6 +1034,11 @@ Enhancement
     0.26   2 Open         [CLJ-1459] records should support transient
              J.&nbsp;S.&nbsp;Choi (1/4)
              Nicola Mometto (1/67)
+    0.26   2 Open         [CLJ-1534] Adding condp-> and condp->> macros to core library
+             Vitalie Spinu (1/4)
+             Nicola Mometto (1/67)
+    0.25   1 Open         [CLJ-889] Specifically allow '.' inside keywords
+             Vitalie Spinu (1/4)
     0.25   1 Open         [CLJ-1425] Defer literal map construction of syntax-quoted maps to allow for semantically valid unquote splicing
              Eli Naeher (1/4)
     0.25   1 Open         [CLJ-1585] Report boxed math warning on function that boxes primitive return value
@@ -1148,7 +1160,6 @@ Enhancement
     0.00   0 Prescreened  [CLJ-1901] amap calls `alength` at every iteration step
     0.00   0 Prescreened  [CLJ-1918] Document await that it will never return if shutdown-agents was called
     0.00   0 Prescreened  [CLJ-1973] generate-proxy produces unpredictable method order in generated classes
-    0.00   0 Screenable   [CLJ-1967] Enhanced namespaced map pprint support
     0.00   0 Screened     [CLJ-1673] Improve clojure.repl/dir-fn to work on namespace aliases in addition to canonical namespaces.
     0.00   0 Triaged      [CLJ-5] Sequential destructuring of map gives confusing error message
     0.00   0 Triaged      [CLJ-405] better error messages for bad defrecord calls
@@ -1190,6 +1201,8 @@ Enhancement
     0.00   0 Triaged      [CLJ-1915] Tests for clojure.core/atom
     0.00   0 Triaged      [CLJ-1917] internal-reduce extended on StringSeq calls `.length` on every iteration step
     0.00   0 Triaged      [CLJ-1952] include var->sym in clojure.core
+    0.00   0 Triaged      [CLJ-1982] Better explain reporting on a failed zero or one match with an embedded spec. 
     0.00   0 Triaged      [CLJ-1995] Improved docstring for explain-data
+    0.00   0 Triaged      [CLJ-2013] spec doesn't explain failing path of a s/cat with purely optional branches
     0.00   0 Vetted       [CLJ-992] `iterate` reducer
     0.00   0 Vetted       [CLJ-1551] Consider transducer support for primitives

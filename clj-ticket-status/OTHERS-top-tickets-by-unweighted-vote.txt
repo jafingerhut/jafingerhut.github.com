@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: August 25, 2016
+Date: September 1, 2016
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -71,8 +71,9 @@ Project ASYNC tickets
 ========================================
 Defect
 
-  12 Triaged      [ASYNC-138] Go blocks leak memory
-   6 Triaged      [ASYNC-100] core.async with multiple catch blocks causing weird loop behaviour
+  13 Triaged      [ASYNC-138] Go blocks leak memory
+   7 Triaged      [ASYNC-100] core.async with multiple catch blocks causing weird loop behaviour
+   4 Triaged      [ASYNC-169] Try/catch block loops eternally inside go block
    4 Triaged      [ASYNC-90] Pub/sub leaks memory
    3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
    3 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
@@ -81,7 +82,6 @@ Defect
    2 Triaged      [ASYNC-159] promise-chan in ClojureScript is broken
    2 Open         [ASYNC-42] (try (catch :default)) inside a cljs go block raises an exception
    2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
-   2 Triaged      [ASYNC-169] Try/catch block loops eternally inside go block
    2 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
    2 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
    2 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
@@ -331,7 +331,6 @@ Defect
    0 Bad: Match > [CTYP-303] cast doesn't work for recursive types
    0 Bad: Match > [CTYP-306] pred doesn't work for non-literal HVecs with varargs
    0 Open         [CTYP-312] pred doesn't work with polymorphic protocols?
-   0 Open         [CTYP-314] Current version of core.typed does not work with current Clojure 1.9.0-alpha11 
 
 ========================================
 Enhancement
@@ -378,7 +377,6 @@ Enhancement
    0 Open         [CTYP-260] Add Queue and BlockingQueue to altered classes
    0 Bad: Match > [CTYP-261] Typed Transients patch
    0 Bad: Match > [CTYP-267] bigdec, bigint and biginteger eats (U Number String)
-   0 Bad: Unkn Fi [CTYP-268] Use clojure.lang.Compiler's analyzer
    0 Bad: Match > [CTYP-271] reduce form with (U nil Num) accumulator needs inst to type check
    0 Bad: Match > [CTYP-273] `recur` treated differently from a recursive call
    0 Bad: Match > [CTYP-276] first on HVec strange/wrong result
@@ -391,7 +389,6 @@ Enhancement
    0 Bad: Match > [CTYP-301] Abstract over keyword arguments
    0 Open         [CTYP-302] Add typed Compiler
    0 Bad: Unkn Fi [CTYP-309] Export typed vars with contracts to untyped namespaces
-   0 Bad: Match > [CTYP-311] Use dynamic inference to generate library annotations
 
 ========================================
 Task
@@ -401,7 +398,7 @@ Task
    0 Open         [CTYP-237] Convert .clj files to .cljc
    0 Open         [CTYP-238] Move CLJS checker to its own jar
    0 Bad: Match > [CTYP-245] Remove NotTypeFilter
-   0 Bad: Unkn Fi [CTYP-310] Remove support for mixing "typed eval" and check-ns
+   0 Bad: Match > [CTYP-310] Remove support for mixing "typed eval" and check-ns
 
 
 Project DAVL tickets
@@ -523,23 +520,15 @@ Defect
 
    0 Open         [DXML-15] data.xml can't parse own output if there's a colon in an attribute name
    0 Open         [DXML-27] Element java.util.Date throws IllegalArgumentException
-   0 Open         [DXML-31] Parsed events cannot be emitted
    0 Open         [DXML-32] data.xml fails when used with Java 9
-   0 Open         [DXML-33] No XML namespace attribute emitted for namespaced sibling elements
 
 ========================================
 Enhancement
 
-   3 Open         [DXML-10] Support for DOCTYPE when emitting XML
    3 Open         [DXML-13] Support for preserving whitespace between tags
    0 Open         [DXML-22] Adding hiccup generation function for elements
    0 Open         [DXML-25] Emit Empty Elements using EmptyElementTag
    0 Open         [DXML-29] ClojureScript support
-
-========================================
-Task
-
-   1 Open         [DXML-30] Generate inconsistent namespace prefixes for subtrees, randomly omit namespace URIs in non-prefixed elements
 
 
 Project DZIP tickets
@@ -573,12 +562,6 @@ Enhancement
    1 Open         [JDBC-48] Support stored procedures with CallableStatement
    0 Open         [JDBC-37] Provide support for alternate transaction strategies
    0 Open         [JDBC-64] Support multiple result sets?
-   0 Open         [JDBC-137] make 'result-set-seq' accept customized result-set-read-column to support multi-database environment 
-
-========================================
-Task
-
-   0 Open         [JDBC-140] Both :identifiers and :entities should be ident? -> ident? functions
 
 
 Project JMX tickets
