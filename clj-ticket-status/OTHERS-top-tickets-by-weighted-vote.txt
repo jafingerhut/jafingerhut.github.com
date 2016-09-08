@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: September 1, 2016
+Date: September 8, 2016
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -93,15 +93,16 @@ Defect
              Willy Blandin (1/3)
              Semyon Skorokhodov (1/4)
              Nicola Mometto (1/5)
+    3.75   5 Triaged      [ASYNC-169] Try/catch block loops eternally inside go block
+             Alexey Aristov (1)
+             Liam F (1)
+             Patrick Oliver (1)
+             Josh Comer (1/2)
+             Semyon Skorokhodov (1/4)
     3.00   3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
              Hugo Duncan (1)
              Martin Raison (1)
              Michael Nygard (1)
-    2.75   4 Triaged      [ASYNC-169] Try/catch block loops eternally inside go block
-             Alexey Aristov (1)
-             Liam F (1)
-             Josh Comer (1/2)
-             Semyon Skorokhodov (1/4)
     2.00   4 Triaged      [ASYNC-90] Pub/sub leaks memory
              Collider Writer (1)
              Jonas Enlund (1/2)
@@ -179,6 +180,7 @@ Defect
     0.00   0 Open         [ASYNC-172] ClojureScript `catch :default` in `go` fails with non-`js/Error` classes
     0.00   0 Open         [ASYNC-173] Infinite loop in go block when non-Exception thrown
     0.00   0 Open         [ASYNC-174] Executor service cannot be shutdown
+    0.00   0 Open         [ASYNC-175] excluded bounded-count in use in cljs.core.async
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
     0.00   0 Triaged      [ASYNC-113] alt!! should not evaluate the :default expr if a non-default clause is selected
@@ -193,7 +195,7 @@ Enhancement
              Chad Harrington (1)
              Derek Troy-West (1)
              Michael Drogalis (1)
-             Paul Michael Bauer (1)
+             Paul Bauer (1)
              Pierre-Yves Ritschard (1)
              Ryan Neufeld (1)
              Stuart Halloway (1)
@@ -361,6 +363,8 @@ Defect
     0.00   0 Open         [CLJCLR-73] Regularize handling of clojure.compile.x environment variables
     0.00   0 Open         [CLJCLR-78] Problems building on Linux
     0.00   0 Open         [CLJCLR-79] ILmerged Clojure.dll is missing clojure.core.server
+    0.00   0 Open         [CLJCLR-80] clojure.lang.Numbers.not is missing
+    0.00   0 Open         [CLJCLR-81] Compute RT.DEFAULT_IMPORTS at startup
 
 ========================================
 Enhancement
@@ -461,6 +465,7 @@ Defect
     0.00   0 Open         [CTYP-282] Internal error with t/defn, sort-by and no refer all
     0.00   0 Open         [CTYP-293] Should check upcast to Dyn
     0.00   0 Open         [CTYP-312] pred doesn't work with polymorphic protocols?
+    0.00   0 Open         [CTYP-316] Support primitive functions in runtime instrumentation
 
 ========================================
 Enhancement
@@ -526,6 +531,7 @@ Enhancement
     0.00   0 Open         [CTYP-294] Infer untyped vars via unsafe Dyn-like type
     0.00   0 Open         [CTYP-298] Should blame sub-parts of casts
     0.00   0 Open         [CTYP-302] Add typed Compiler
+    0.00   0 Open         [CTYP-317] Port Compiler.java to Clojure
     0.00   0 Triaged      [CTYP-217] Basic support for transients
 
 ========================================
@@ -618,6 +624,7 @@ Defect
 
     0.00   0 Open         [DIMAP-2] Proper seq on int-sets
     0.00   0 Open         [DIMAP-9] Unlike regular transient sets, data.int-map transient sets do not support the IFn interface
+    0.00   0 Open         [DIMAP-12] range sometimes breaks seq
 
 ========================================
 Enhancement
@@ -627,6 +634,7 @@ Enhancement
     0.00   0 Open         [DIMAP-6] int-map doc string is overly restrictive?
     0.00   0 Open         [DIMAP-7] Minor typos in README and docstring
     0.00   0 Open         [DIMAP-8] Union, intersection and difference have only 2 arguments versions
+    0.00   0 Open         [DIMAP-11] Align equiv/equals semantics to core PMs and improve performance
 
 
 Project DJSON tickets
@@ -659,6 +667,7 @@ Defect
     0.00   0 Open         [DXML-15] data.xml can't parse own output if there's a colon in an attribute name
     0.00   0 Open         [DXML-27] Element java.util.Date throws IllegalArgumentException
     0.00   0 Open         [DXML-32] data.xml fails when used with Java 9
+    0.00   0 Open         [DXML-34] Issue parsing and then emitting xml:lang attribute.
 
 ========================================
 Enhancement
@@ -933,11 +942,10 @@ Defect
     0.00   0 Open         [TCHECK-34] clojure.test reporting is uninformative
     0.00   0 Open         [TCHECK-57] Performance regression in map generator between 0.5.8 and 0.5.9
     0.00   0 Open         [TCHECK-89] the clojure-test namespace has a global atom
-    0.00   0 Open         [TCHECK-98] gen/let uses gen/bind even when it doesn't have to
     0.00   0 Open         [TCHECK-106] Variable-sized collection generators have exponential sizing issues when composed
     0.00   0 Open         [TCHECK-111] The latest recursive-gen algorithm seems to exhibit a peculiar lack of variety in depths
     0.00   0 Open         [TCHECK-112] bind doesn't shrink very well
-    0.00   0 Open         [TCHECK-117] Use a default-opts var instead of default-reporter-fn
+    0.00   0 Open         [TCHECK-120] size of args is conflated with depth in shrink tree
 
 ========================================
 Enhancement
@@ -958,8 +966,6 @@ Enhancement
              Chas Emerick (1/2)
     1.00   1 Open         [TCHECK-31] Doc improvements: how to separate "size" from "range"
              Brian Craft (1)
-    1.00   1 Open         [TCHECK-105] Support for bootstrapped / self-host ClojureScript
-             Yehonathan Sharvit (1)
     0.50   1 Open         [TCHECK-8] Bound tests and shrinks in time
              Chas Emerick (1/2)
     0.00   0 Open         [TCHECK-4] Handle sigint
@@ -986,12 +992,10 @@ Enhancement
     0.00   0 Open         [TCHECK-99] Create a generator that will limit the size of a generated sequence
     0.00   0 Open         [TCHECK-101] Add a prop/for-all alternative to c.t.c.clojure-test that uses clojure.test/is &c
     0.00   0 Open         [TCHECK-102] Provide a mechanism for getting output from a test run after interrupting it.
-    0.00   0 Open         [TCHECK-107] such-that should provide a way to customize its error message
-    0.00   0 Open         [TCHECK-108] Clarify docstrings for dev functions in the generators namespace
     0.00   0 Open         [TCHECK-110] Enable shrinking on recursive generators
-    0.00   0 Open         [TCHECK-114] gen/frequency should shrink to earlier generators
     0.00   0 Open         [TCHECK-115] run tests in parallel on the jvm
-    0.00   0 Open         [TCHECK-118] Pass shrunk input on to clojure.test when using defspec
+    0.00   0 Open         [TCHECK-119] Checking of interesting edge cases is not very creative
+    0.00   0 Open         [TCHECK-121] for-all's signature suggests multiple expressions are allowed, but this doesn't work as you'd expect
 
 
 Project TCLI tickets
