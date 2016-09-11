@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: July 7, 2016
+Date: September 8, 2016
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -39,39 +39,41 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
-    2.50   3 Open         [CLJS-677] cljs.reader doesn't support keywords starting with a digit
+    3.50   4 Open         [CLJS-677] cljs.reader doesn't support keywords starting with a digit
+             Damon Kropf-Untucht (1)
              Francis Avila (1)
              Mike Longworth (1)
              Peter Taoussanis (1/2)
-    2.00   2 Open         [CLJS-884] with-redefs don't restores previous values when used inside go block
+    2.70   4 Open         [CLJS-884] with-redefs don't restores previous values when used inside go block
              Kris Jenkins (1)
              Tolga Paksoy (1)
+             Daniel Compton (1/2)
+             Yehonathan Sharvit (1/5)
+    2.00   3 Bad: Unkn Fi [CLJS-485] clojure.string/replace ignores regex flags
+             Stuart Mitchell (1)
+             Dave Aitken (1/2)
+             Jake McCrary (1/2)
     1.50   2 Bad: Unkn Fi [CLJS-968] Metadata on function literal inside of a let produces invalid Javascript
              David Nolen (1)
              Herwig Hochleitner (1/2)
-    1.00   2 Bad: Unkn Fi [CLJS-485] clojure.string/replace ignores regex flags
-             Dave Aitken (1/2)
-             Jake McCrary (1/2)
     1.00   2 Bad: Unkn Fi [CLJS-794] RegExp flags are being dropped by `string/replace`
              Dave Aitken (1/2)
              Jake McCrary (1/2)
     1.00   1 Bad: Unkn Fi [CLJS-871] .-default property access returns nil
              Timothy Pratley (1)
+    1.00   1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
+             Thomas Heller (1)
     1.00   1 Open         [CLJS-890] Incorrect behaviour of (str obj) when obj has valueOf method
              Kevin Neaton (1)
-    0.75   2 Open         [CLJS-1572] REPL doesn't give error for expressions with too many right parentheses.
+    1.00   1 Open         [CLJS-1710] spec/double-in not implemented
+             Felix Andrews (1)
+    0.70   2 Open         [CLJS-1572] REPL doesn't give error for expressions with too many right parentheses.
              Herwig Hochleitner (1/2)
-             Yehonathan Sharvit (1/4)
-    0.50   1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
-             Thomas Heller (1/2)
-    0.33   1 Open         [CLJS-1607] Advanced compilation bug with `specify!` in JS prototypes
-             Andrey Antukh (1/3)
+             Yehonathan Sharvit (1/5)
     0.25   1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
              J.&nbsp;S.&nbsp;Choi (1/4)
-    0.25   1 Open         [CLJS-1593] Self-host: Munged minus macro
-             Yehonathan Sharvit (1/4)
-    0.25   1 Open         [CLJS-1657] Self-host: Implicit macro loading with alias
-             Yehonathan Sharvit (1/4)
+    0.20   1 Open         [CLJS-1593] Self-host: Munged minus macro
+             Yehonathan Sharvit (1/5)
     0.00   0 Bad: Unkn Fi [CLJS-349] cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
     0.00   0 Bad: Unkn Fi [CLJS-375] loop doesn't seem to preserve tag information as evidenced by extra cljs.core.truth_ calls
     0.00   0 Bad: Unkn Fi [CLJS-434] ClojureScript compiler prepends "self__" to defmulti forms when metadata in form of ^:field.
@@ -91,6 +93,7 @@ Defect
     0.00   0 Bad: Unkn Fi [CLJS-1453] cljs.compiler/load-libs does not preserve user expressed require order
     0.00   0 Bad: Unkn Fi [CLJS-1485] Error when requiring `goog` namespace in a ns declaration 
     0.00   0 Bad: Unkn Fi [CLJS-1497] `find` on an associative collection does not return collection key
+    0.00   0 Bad: Unkn Fi [CLJS-1536] REPL def symbol init collision
     0.00   0 Bad: Unkn Fi [CLJS-1544] cljs.test REPL reload support
     0.00   0 Bad: Unkn Fi [CLJS-1641] Multi-arity defn copies arguments unnecessarily for all cases
     0.00   0 Bad: Unkn Fi [CLJS-1666] Flag to optionally disable transit analysis cache encoding
@@ -107,40 +110,38 @@ Enhancement
              Leon Grapenthin (1)
              Vlad Bokov (1)
              shulang (1)
-    2.00   2 Bad: Unkn Fi [CLJS-1350] Compiler support for browser REPL
-             Antonin Hildebrand (1)
-             Brandon Bloom (1)
+    1.50   2 Open         [CLJS-555] CLONE - Implement ratios
+             Marcus H (1)
+             Mike Fikes (1/2)
     1.33   2 Bad: Unkn Fi [CLJS-1238] Setting *main-cli-fn* when using :target :nodejs shouldn't be manditory
              Rohit Aggarwal (1)
              Andrey Antukh (1/3)
-    1.33   2 Open         [CLJS-555] CLONE - Implement ratios
-             Marcus H (1)
-             Mike Fikes (1/3)
-    1.33   2 Open         [CLJS-1241] Add cljs.core/boolean? predicate
-             Bridget Hillyer (1)
-             Mike Fikes (1/3)
     1.00   1 Bad: Unkn Fi [CLJS-1047] externs checking for js/foo
              Bozhidar Batsov (1)
     1.00   1 Open         [CLJS-1009] Allow deps.cljs to declare a foreign lib as remote
              Ruslan Prokopchuk (1)
-    1.00   1 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
-             Patrick Killean (1)
     1.00   1 Open         [CLJS-1428] Add a cljs.core/*command-line-args* var
              Matthew Nespor (1)
+    1.00   1 Open         [CLJS-1628] Make instances of js/Symbol printable
+             Nikita Prokopov (1)
+    0.50   1 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
+             Patrick Killean (1/2)
     0.50   1 Open         [CLJS-1346] Support require outside of ns 
              Peter Taoussanis (1/2)
-    0.50   1 Open         [CLJS-1508] Extend ns form to support :rename option
-             Thomas Heller (1/2)
+    0.50   1 Open         [CLJS-1634] Track bound dynamic variables to support binding in async mechanisms.
+             Daniel Compton (1/2)
+    0.33   1 Open         [CLJS-527] Support dynamic runtime extension of protocols to types
+             Andrey Antukh (1/3)
     0.33   1 Open         [CLJS-1076] :nashorn target
              Andrey Antukh (1/3)
     0.25   1 Bad: Unkn Fi [CLJS-1194] data_readers.cljc
              J.&nbsp;S.&nbsp;Choi (1/4)
     0.25   1 Bad: Unkn Fi [CLJS-1328] Support defrecord reader tags
              J.&nbsp;S.&nbsp;Choi (1/4)
-    0.25   1 Open         [CLJS-324] cljs.core/format
-             Yehonathan Sharvit (1/4)
     0.25   1 Open         [CLJS-1410] Support source maps in deps.cljs
              J.&nbsp;S.&nbsp;Choi (1/4)
+    0.20   1 Open         [CLJS-324] cljs.core/format
+             Yehonathan Sharvit (1/5)
     0.00   0 Bad: Unkn Fi [CLJS-773] Use unchecked-*-int functions for real 32-bit math
     0.00   0 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
     0.00   0 Bad: Unkn Fi [CLJS-1125] Simple corrupted compiled file detection
@@ -157,16 +158,18 @@ Enhancement
     0.00   0 Bad: Unkn Fi [CLJS-1415] Handling JSDoc param name [x] optional syntax
     0.00   0 Bad: Unkn Fi [CLJS-1419] enhance numeric inference, if + number? test on local var should tag local var in the successful branch
     0.00   0 Bad: Unkn Fi [CLJS-1443] ES6 Module Processing at individual :foreign-lib spec
-    0.00   0 Bad: Unkn Fi [CLJS-1700] Support clojure.* aliasing when not in vector
 
 ========================================
 Task
 
-    0.33   1 Open         [CLJS-901] Protocolize compiler access to the file system
-             Mike Fikes (1/3)
+    1.20   3 Open         [CLJS-901] Protocolize compiler access to the file system
+             Mike Fikes (1/2)
+             Patrick Killean (1/2)
+             Yehonathan Sharvit (1/5)
     0.00   0 Bad: Unkn Fi [CLJS-1128] Describe internationalization strategies via Google Closure on the wiki
     0.00   0 Bad: Unkn Fi [CLJS-1129] :modules tutorial for wiki
     0.00   0 Bad: Unkn Fi [CLJS-1134] Lift protocols from cljs.closure into cljs.protocols ns
     0.00   0 Bad: Unkn Fi [CLJS-1446] autodoc + gh-pages for cljs.*.api namespaces
     0.00   0 Bad: Unkn Fi [CLJS-1447] IFn implementors have a broken call implementation, all args after 20th argument should be collected into a seq
     0.00   0 Bad: Unkn Fi [CLJS-1501] Add :parallel-build support to REPLs
+    0.00   0 Bad: Unkn Fi [CLJS-1762] Bump Closure Compiler
