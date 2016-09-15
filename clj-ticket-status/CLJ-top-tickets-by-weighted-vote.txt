@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: September 8, 2016
+Date: September 15, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -112,18 +112,19 @@ Defect
              Andy Fingerhut (1/12)
              Daniel Compton (1/16)
              Nicola Mometto (1/67)
-    2.25   4 Open         [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
-             Sunil Abraham (1)
-             Kei Tsuji (1/2)
-             Ryan Neufeld (1/2)
-             Sean Corfield (1/4)
-    2.20   6 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
+    2.45   7 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
              Achint Sandhu (1)
              Stuart Halloway (1/2)
              Ghadi Shayban (1/3)
+             Juho Teperi (1/4)
              Phill Wolf (1/4)
              David Greenberg (1/14)
              Michael Blume (1/22)
+    2.33   4 Open         [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
+             Sunil Abraham (1)
+             Kei Tsuji (1/2)
+             Ryan Neufeld (1/2)
+             Sean Corfield (1/3)
     2.19   6 Screenable   [CLJ-1242] = on sorted collections with different key types incorrectly throws
              François Rey (1/2)
              James Reeves (1/2)
@@ -151,6 +152,10 @@ Defect
              Chas Emerick (1/5)
              Devin Walters (1/5)
              David Leatherman (1/6)
+    1.35   3 Triaged      [CLJ-1941] Instrumentation of fns with primitive type hints fails
+             James Carragher (1)
+             Sean Corfield (1/3)
+             Nicola Mometto (1/67)
     1.34   3 Triaged      [CLJ-1142] Incorrect divide-by-zero error with floating point numbers
              Jeff Stokes (1)
              Gary Fredericks (1/5)
@@ -158,11 +163,7 @@ Defect
     1.33   2 Prescreened  [CLJ-1360] clojure.string/split strips trailing delimiters
              Crispin Wellington (1)
              César Bolaños (1/3)
-    1.26   3 Triaged      [CLJ-1941] Instrumentation of fns with primitive type hints fails
-             James Carragher (1)
-             Sean Corfield (1/4)
-             Nicola Mometto (1/67)
-    1.26   3 Vetted       [CLJ-1793] Reducer instances hold onto the head of seqs
+    1.26   3 Bad: Match n [CLJ-1793] Reducer instances hold onto the head of seqs
              Brandon Adams (1)
              Kevin Downey (1/4)
              Nicola Mometto (1/67)
@@ -313,7 +314,7 @@ Defect
 ========================================
 Enhancement
 
-   11.24  28 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
+   10.99  27 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
              Adam Krieg (1)
              Gabriel Ki (1)
              Lei Wang (1)
@@ -329,7 +330,6 @@ Enhancement
              Zach Tellman (1/2)
              Jozef Wagner (1/3)
              Jean Fabio Baro (1/4)
-             Sean Corfield (1/4)
              Devin Walters (1/5)
              Patrick Houk (1/5)
              Tim McCormack (1/5)
@@ -364,7 +364,7 @@ Enhancement
              David Greenberg (1/14)
              Daniel Compton (1/16)
              Nicola Mometto (1/67)
-    8.90  12 Triaged      [CLJ-1965] clojure.spec/def should support an optional doc-string
+    8.98  12 Triaged      [CLJ-1965] clojure.spec/def should support an optional doc-string
              Donald Ball (1)
              Edwin Park (1)
              Felix Andrews (1)
@@ -374,8 +374,8 @@ Enhancement
              Mohammad Sadegh Khoeini (1)
              quan (1)
              Gunnar Völkel (1/3)
+             Sean Corfield (1/3)
              Chris Sims (1/4)
-             Sean Corfield (1/4)
              Daniel Compton (1/16)
     7.72  22 Backlog      [CLJ-1517] Unrolled small vectors
              David Dossot (1)
@@ -400,16 +400,16 @@ Enhancement
              Daniel Compton (1/16)
              Reid McKenzie (1/16)
              Michael Blume (1/22)
-    7.70  19 Prescreened  [CLJ-706] make use of deprecated namespaces/vars easier to spot
+    7.45  19 Prescreened  [CLJ-706] make use of deprecated namespaces/vars easier to spot
              Carlo Sciolla (1)
              Chad Harrington (1)
              Dmitr Sotnikov (1)
              Matthew Boston (1)
              Mikhail Malchevskiy (1)
-             Juho Teperi (1/2)
              Alex Baranosky (1/3)
              Eric Normand (1/3)
              Mike Thompson (1/3)
+             Juho Teperi (1/4)
              Magnar Sveen (1/4)
              Lars Andersen (1/6)
              Atamert Ölçgen (1/7)
@@ -433,7 +433,7 @@ Enhancement
              Tim McCormack (1/5)
              Andy Fingerhut (1/12)
              Daniel Compton (1/16)
-    7.00  20 Triaged      [CLJ-304] clojure.repl/source does not work with deftype
+    7.25  21 Triaged      [CLJ-304] clojure.repl/source does not work with deftype
              Alex Walker (1)
              Andrew Rudenko (1)
              Frank Siebenlist (1)
@@ -445,6 +445,7 @@ Enhancement
              Ivan Kryvoruchko (1/3)
              Chris Sims (1/4)
              Eli Naeher (1/4)
+             Juho Teperi (1/4)
              Magnar Sveen (1/4)
              Stephen Caudill (1/4)
              Alexander Yakushev (1/5)
@@ -902,11 +903,6 @@ Enhancement
              Michael Klishin (1/2)
              Dmitri Naumov (1/3)
              Mike Anderson (1/7)
-    0.93   4 Open         [CLJ-1120] Introduce ex-message and ex-cause to abstract away the platform in dealing with ExceptionInfo
-             Juho Teperi (1/2)
-             Brandon Bloom (1/7)
-             Colin Taylor (1/7)
-             Stephen C. Gilardi (1/7)
     0.87   4 Triaged      [CLJ-1096] Make destructuring emit direct keyword lookups
              Ghadi Shayban (1/3)
              John Hume (1/3)
@@ -929,6 +925,11 @@ Enhancement
     0.70   2 Triaged      [CLJ-1402] sort-by calls keyfn more times than is necessary
              Frank Schmidt (1/2)
              Tom Crayford (1/5)
+    0.68   4 Open         [CLJ-1120] Introduce ex-message and ex-cause to abstract away the platform in dealing with ExceptionInfo
+             Juho Teperi (1/4)
+             Brandon Bloom (1/7)
+             Colin Taylor (1/7)
+             Stephen C. Gilardi (1/7)
     0.59   3 Triaged      [CLJ-1305] Add optional not-found argument when invoking vectors or sets as functions
              Paul Gearon (1/2)
              Bozhidar Batsov (1/14)
