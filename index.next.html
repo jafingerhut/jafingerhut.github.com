@@ -5,18 +5,38 @@
     <title>Clojure Cheatsheets</title>
     <style>
       body {
-      #font-family: sans-serif;
+      font-family: sans-serif;
       }
-      td {
-      #border-radius: 15px;
-      border: 1px inset gray;
-      #background-color: #a7cece;
-      #padding: 3px;
-      #margin: 10px;
+      h1 {
+      text-align: center;
+      }
+      h2 {
+      border-bottom: thin solid #5ca3a3;
+      }
+      h1, h2, h3 {
+      color: #5ca3a3;
+      }
+      a:hover {
+      color: #00cc66;
       }
       table {
       width: 600px;
       border: 1px outset gray;
+      }
+      td {
+      #border-radius: 15px;
+      #padding: 3px;
+      #margin: 10px;
+      }
+      td.tableoutside {
+      }
+      td.tableheading {
+      border: 1px inset gray;
+      background-color: #a7cece;
+      }
+      td.tablecell {
+      border: 1px inset gray;
+      background-color: #cee3e3;
       }
     </style>
   </head>
@@ -31,29 +51,29 @@
     <table>
       <tbody>
         <tr>
-          <td><br>
+          <td class="tableoutside"><br>
           </td>
-          <td>Tooltip contains doc string only</td>
-          <td>Tooltip also includes 1-line summary of clojuredocs.org content</td>
+          <td class="tableheading">Tooltip contains doc string only</td>
+          <td class="tableheading">Tooltip also includes 1-line summary of clojuredocs.org content</td>
         </tr>
         <tr>
-          <td>Tooltips using TipTip</td>
-          <td style="text-align: center;"><a href="cheatsheet/clojuredocs/cheatsheet-tiptip-no-cdocs-summary.html">ClojureDocs</a><br>
+          <td class="tableheading">Tooltips using TipTip</td>
+          <td class="tablecell" style="text-align: center;"><a href="cheatsheet/clojuredocs/cheatsheet-tiptip-no-cdocs-summary.html">ClojureDocs</a><br>
             <a href="cheatsheet/grimoire/cheatsheet-tiptip-no-cdocs-summary.html">Grimoire</a></td>
-          <td style="text-align: center;"><a href="cheatsheet/clojuredocs/cheatsheet-tiptip-cdocs-summary.html">ClojureDocs</a><br>
+          <td class="tablecell" style="text-align: center;"><a href="cheatsheet/clojuredocs/cheatsheet-tiptip-cdocs-summary.html">ClojureDocs</a><br>
             <a href="cheatsheet/grimoire/cheatsheet-tiptip-cdocs-summary.html">Grimoire</a>
             (&lt;-- MY FAVORITE)</td>
         </tr>
         <tr>
-          <td>Vanilla tooltips</td>
-          <td style="text-align: center;"><a href="cheatsheet/clojuredocs/cheatsheet-use-title-attribute-no-cdocs-summary.html">ClojureDocs</a><br>
+          <td class="tableheading">Vanilla tooltips</td>
+          <td class="tablecell" style="text-align: center;"><a href="cheatsheet/clojuredocs/cheatsheet-use-title-attribute-no-cdocs-summary.html">ClojureDocs</a><br>
             <a href="cheatsheet/grimoire/cheatsheet-use-title-attribute-no-cdocs-summary.html">Grimoire</a></td>
-          <td style="text-align: center;"><a href="cheatsheet/clojuredocs/cheatsheet-use-title-attribute-cdocs-summary.html">ClojureDocs</a><br>
+          <td class="tablecell" style="text-align: center;"><a href="cheatsheet/clojuredocs/cheatsheet-use-title-attribute-cdocs-summary.html">ClojureDocs</a><br>
             <a href="cheatsheet/grimoire/cheatsheet-use-title-attribute-cdocs-summary.html">Grimoire</a></td>
         </tr>
         <tr>
-          <td>No tooltips</td>
-          <td style="text-align: center;" colspan="2" rowspan="1"><a href="cheatsheet/clojuredocs/cheatsheet-no-tooltips-no-cdocs-summary.html">ClojureDocs</a><br>
+          <td class="tableheading">No tooltips</td>
+          <td class="tablecell" style="text-align: center;" colspan="2" rowspan="1"><a href="cheatsheet/clojuredocs/cheatsheet-no-tooltips-no-cdocs-summary.html">ClojureDocs</a><br>
             <a href="cheatsheet/grimoire/cheatsheet-no-tooltips-no-cdocs-summary.html">Grimoire</a></td>
         </tr>
       </tbody>
@@ -96,7 +116,7 @@
     <a href="clojure-benchmarks-results/Clojure-benchmarks.html">Clojure
       benchmarks</a><br>
     <br>
-    <h2>Other info unrelated to Clojure</h2>
+    <h1>Other info unrelated to Clojure</h1>
     <a href="notes/vmware-fusion-shrink-linux-ext4-disk.txt">Instructions</a>
     for shrinking a VMware Fusion Linux ext4 virtual disk drive.<br>
     <a href="notes/linux-setting-date-time.txt">Setting
