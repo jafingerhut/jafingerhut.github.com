@@ -1,23 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="content-type">
-<title>Top CLJS tickets by weighted vote</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+  <title>Top CLJS tickets by weighted vote</title>
+  <link type="text/css" rel="stylesheet" href="../jafingerhut-clojure.css">
 </head>
 <body>
 
 <h1>Top CLJS tickets by weighted vote</h1>
 
-Date: September 15, 2016<br>
+Date: September 18, 2016<br>
 <br>
 
+<p>
 Open CLJS tickets with at least one vote, sorted in descending order of
-their <span style="font-style: italic;">weighted vote</span>.&nbsp;
+their <em>weighted vote</em>.&nbsp;
 At the end of the CLJ and CLJS lists are tickets with no votes, but
 they have been at least Triaged.  For the CLJ project, Triaged means
 that at least one Clojure screener thinks the ticket describes a real
 issue.  At the end of other project ticket lists are all open tickets,
 whether they have votes or not.
+</p>
 
 <p>
 Suppose someone has currently voted on <span style="font-style:
@@ -26,1178 +29,1169 @@ style="font-style: italic;">1/N</span> for each of those
 tickets.&nbsp; Thus voting on all tickets has the same relative effect
 on their ranking as voting on no tickets.&nbsp; You must be selective
 to change the rankings.
+</p>
 
 <p>
 Each person gets 1 weighted vote to divide up as they wish for each
 project, i.e. 1 for CLJ, 1 for CLJS, 1 for MATCH, etc.
+</p>
 
 <p>
 Note: Ticket wranglers sometimes look at unweighted vote counts on
 tickets, too, when deciding which to act upon, so feel free to vote on
 many tickets if you care about them.
+</p>
 
 <p>
 State is one of the states in the JIRA flow diagram <a
 href="http://dev.clojure.org/display/community/JIRA+workflow">here</a>.
+</p>
 
 <p>
 Note that a state of "Backlog" is shown below if the next release is
 <span style="font-style: italic;">N</span>, and the ticket is marked for fix in release <span style="font-style: italic;">N+1</span> (e.g. the next
 release is 1.7, but the ticket is marked for fix in release 1.8).
+</p>
 <h2><a name="CLJS_Defect"></a>Defect</h2>
 
-<table style="text-align: left; width: 950px;" border="1" cellpadding="2" cellspacing="2">
+<table class="table-of-top-voted-tickets">
   <tbody>
     <tr>
-        <td style="vertical-align: bottom;">Weighted vote
+        <td class="tableheading">Weighted vote
         </td>
-        <td style="vertical-align: bottom;"># of Votes
+        <td class="tableheading"># of Votes
         </td>
-        <td style="vertical-align: bottom;">State
+        <td class="tableheading">State
         </td>
-        <td style="vertical-align: bottom;">Ticket
+        <td class="tableheading">Ticket
         </td>
-        <td style="vertical-align: bottom;">Summary
+        <td class="tableheading">Summary
         </td>
-        <td style="vertical-align: bottom; width: 200px;">Voters
+        <td class="tableheading tableheading-voters">Voters
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">3.50
+        <td class="tablecell">3.50
         </td>
-        <td style="vertical-align: top;">4
+        <td class="tablecell">4
         </td>
-        <td style="vertical-align: top;">Open
+        <td class="tablecell">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-677">CLJS-677</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-677">CLJS-677</a>
         </td>
-        <td style="vertical-align: top;">cljs.reader doesn't support keywords starting with a digit
+        <td class="tablecell">cljs.reader doesn't support keywords starting with a digit
         </td>
-        <td style="vertical-align: top;">Damon Kropf-Untucht (1)<br>
+        <td class="tablecell">Damon Kropf-Untucht (1)<br>
 Francis Avila (1)<br>
 Mike Longworth (1)<br>
 Peter Taoussanis (1/2)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">2.70
+        <td class="tablecell">2.70
         </td>
-        <td style="vertical-align: top;">4
+        <td class="tablecell">4
         </td>
-        <td style="vertical-align: top;">Open
+        <td class="tablecell">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-884">CLJS-884</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-884">CLJS-884</a>
         </td>
-        <td style="vertical-align: top;">with-redefs don't restores previous values when used inside go block
+        <td class="tablecell">with-redefs don't restores previous values when used inside go block
         </td>
-        <td style="vertical-align: top;">Kris Jenkins (1)<br>
+        <td class="tablecell">Kris Jenkins (1)<br>
 Tolga Paksoy (1)<br>
 Daniel Compton (1/2)<br>
 Yehonathan Sharvit (1/5)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">2.00
+        <td class="tablecell">2.00
         </td>
-        <td style="vertical-align: top;">3
+        <td class="tablecell">3
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-485">CLJS-485</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-485">CLJS-485</a>
         </td>
-        <td style="vertical-align: top;">clojure.string/replace ignores regex flags
+        <td class="tablecell">clojure.string/replace ignores regex flags
         </td>
-        <td style="vertical-align: top;">Stuart Mitchell (1)<br>
+        <td class="tablecell">Stuart Mitchell (1)<br>
 Dave Aitken (1/2)<br>
 Jake McCrary (1/2)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">1.50
+        <td class="tablecell">1.50
         </td>
-        <td style="vertical-align: top;">2
+        <td class="tablecell">2
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-968">CLJS-968</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-968">CLJS-968</a>
         </td>
-        <td style="vertical-align: top;">Metadata on function literal inside of a let produces invalid Javascript
+        <td class="tablecell">Metadata on function literal inside of a let produces invalid Javascript
         </td>
-        <td style="vertical-align: top;">David Nolen (1)<br>
+        <td class="tablecell">David Nolen (1)<br>
 Herwig Hochleitner (1/2)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">1.00
+        <td class="tablecell">1.00
         </td>
-        <td style="vertical-align: top;">2
+        <td class="tablecell">2
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-794">CLJS-794</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-794">CLJS-794</a>
         </td>
-        <td style="vertical-align: top;">RegExp flags are being dropped by `string/replace`
+        <td class="tablecell">RegExp flags are being dropped by `string/replace`
         </td>
-        <td style="vertical-align: top;">Dave Aitken (1/2)<br>
+        <td class="tablecell">Dave Aitken (1/2)<br>
 Jake McCrary (1/2)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">1.00
+        <td class="tablecell">1.00
         </td>
-        <td style="vertical-align: top;">1
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-871">CLJS-871</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-871">CLJS-871</a>
         </td>
-        <td style="vertical-align: top;">.-default property access returns nil
+        <td class="tablecell">.-default property access returns nil
         </td>
-        <td style="vertical-align: top;">Timothy Pratley (1)
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">1.00
-        </td>
-        <td style="vertical-align: top;">1
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1159">CLJS-1159</a>
-        </td>
-        <td style="vertical-align: top;">compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
-        </td>
-        <td style="vertical-align: top;">Thomas Heller (1)
+        <td class="tablecell">Timothy Pratley (1)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">1.00
+        <td class="tablecell">1.00
         </td>
-        <td style="vertical-align: top;">1
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Open
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-890">CLJS-890</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1159">CLJS-1159</a>
         </td>
-        <td style="vertical-align: top;">Incorrect behaviour of (str obj) when obj has valueOf method
+        <td class="tablecell">compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
         </td>
-        <td style="vertical-align: top;">Kevin Neaton (1)
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">1.00
-        </td>
-        <td style="vertical-align: top;">1
-        </td>
-        <td style="vertical-align: top;">Open
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1710">CLJS-1710</a>
-        </td>
-        <td style="vertical-align: top;">spec/double-in not implemented
-        </td>
-        <td style="vertical-align: top;">Felix Andrews (1)
+        <td class="tablecell">Thomas Heller (1)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.70
+        <td class="tablecell">1.00
         </td>
-        <td style="vertical-align: top;">2
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Open
+        <td class="tablecell">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1572">CLJS-1572</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-890">CLJS-890</a>
         </td>
-        <td style="vertical-align: top;">REPL doesn't give error for expressions with too many right parentheses.
+        <td class="tablecell">Incorrect behaviour of (str obj) when obj has valueOf method
         </td>
-        <td style="vertical-align: top;">Herwig Hochleitner (1/2)<br>
+        <td class="tablecell">Kevin Neaton (1)
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1.00
+        </td>
+        <td class="tablecell">1
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1710">CLJS-1710</a>
+        </td>
+        <td class="tablecell">spec/double-in not implemented
+        </td>
+        <td class="tablecell">Felix Andrews (1)
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.70
+        </td>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1572">CLJS-1572</a>
+        </td>
+        <td class="tablecell">REPL doesn't give error for expressions with too many right parentheses.
+        </td>
+        <td class="tablecell">Herwig Hochleitner (1/2)<br>
 Yehonathan Sharvit (1/5)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.25
+        <td class="tablecell">0.25
         </td>
-        <td style="vertical-align: top;">1
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-719">CLJS-719</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-719">CLJS-719</a>
         </td>
-        <td style="vertical-align: top;">this-as behaves incorrectly in "scoping function"
+        <td class="tablecell">this-as behaves incorrectly in "scoping function"
         </td>
-        <td style="vertical-align: top;">J.&amp;nbsp;S.&amp;nbsp;Choi (1/4)
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.20
-        </td>
-        <td style="vertical-align: top;">1
-        </td>
-        <td style="vertical-align: top;">Open
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1593">CLJS-1593</a>
-        </td>
-        <td style="vertical-align: top;">Self-host: Munged minus macro
-        </td>
-        <td style="vertical-align: top;">Yehonathan Sharvit (1/5)
+        <td class="tablecell">J.&amp;nbsp;S.&amp;nbsp;Choi (1/4)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.20
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-349">CLJS-349</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1593">CLJS-1593</a>
         </td>
-        <td style="vertical-align: top;">cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
+        <td class="tablecell">Self-host: Munged minus macro
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-375">CLJS-375</a>
-        </td>
-        <td style="vertical-align: top;">loop doesn't seem to preserve tag information as evidenced by extra cljs.core.truth_ calls
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">Yehonathan Sharvit (1/5)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-434">CLJS-434</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-349">CLJS-349</a>
         </td>
-        <td style="vertical-align: top;">ClojureScript compiler prepends "self__" to defmulti forms when metadata in form of ^:field.
+        <td class="tablecell">cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-712">CLJS-712</a>
-        </td>
-        <td style="vertical-align: top;">resolve-var for symbol with dot still wrong
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-868">CLJS-868</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-375">CLJS-375</a>
         </td>
-        <td style="vertical-align: top;">no arity warnings on recursive calls
+        <td class="tablecell">loop doesn't seem to preserve tag information as evidenced by extra cljs.core.truth_ calls
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1070">CLJS-1070</a>
-        </td>
-        <td style="vertical-align: top;">top-level boolean inference does not work
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1133">CLJS-1133</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-434">CLJS-434</a>
         </td>
-        <td style="vertical-align: top;">REPL require results in warnings to be emitted twice
+        <td class="tablecell">ClojureScript compiler prepends "self__" to defmulti forms when metadata in form of ^:field.
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1136">CLJS-1136</a>
-        </td>
-        <td style="vertical-align: top;">Initial require fails to fully load added symbols
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1139">CLJS-1139</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-712">CLJS-712</a>
         </td>
-        <td style="vertical-align: top;">Repeated applications of `ns` form at the REPL are not additive
+        <td class="tablecell">resolve-var for symbol with dot still wrong
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1222">CLJS-1222</a>
-        </td>
-        <td style="vertical-align: top;">Sequence of a stateful transducer is producing the wrong answer
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1237">CLJS-1237</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-868">CLJS-868</a>
         </td>
-        <td style="vertical-align: top;">ns-unmap doesn't work on refers from cljs.core
+        <td class="tablecell">no arity warnings on recursive calls
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1271">CLJS-1271</a>
-        </td>
-        <td style="vertical-align: top;">Missing warning when assigning namespaces via def
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1286">CLJS-1286</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1070">CLJS-1070</a>
         </td>
-        <td style="vertical-align: top;">REPL environment should be able to provide advice if source mapping fails
+        <td class="tablecell">top-level boolean inference does not work
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1297">CLJS-1297</a>
-        </td>
-        <td style="vertical-align: top;">defrecord does not emit IKVReduce protocol
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1300">CLJS-1300</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1133">CLJS-1133</a>
         </td>
-        <td style="vertical-align: top;">REPLs do no write out updated deps.js when compiling files
+        <td class="tablecell">REPL require results in warnings to be emitted twice
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1315">CLJS-1315</a>
-        </td>
-        <td style="vertical-align: top;">Warning on Google Closure enum property access with /
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1453">CLJS-1453</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1136">CLJS-1136</a>
         </td>
-        <td style="vertical-align: top;">cljs.compiler/load-libs does not preserve user expressed require order
+        <td class="tablecell">Initial require fails to fully load added symbols
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1485">CLJS-1485</a>
-        </td>
-        <td style="vertical-align: top;">Error when requiring `goog` namespace in a ns declaration 
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1497">CLJS-1497</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1139">CLJS-1139</a>
         </td>
-        <td style="vertical-align: top;">`find` on an associative collection does not return collection key
+        <td class="tablecell">Repeated applications of `ns` form at the REPL are not additive
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1536">CLJS-1536</a>
-        </td>
-        <td style="vertical-align: top;">REPL def symbol init collision
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1544">CLJS-1544</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1222">CLJS-1222</a>
         </td>
-        <td style="vertical-align: top;">cljs.test REPL reload support
+        <td class="tablecell">Sequence of a stateful transducer is producing the wrong answer
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1641">CLJS-1641</a>
-        </td>
-        <td style="vertical-align: top;">Multi-arity defn copies arguments unnecessarily for all cases
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1666">CLJS-1666</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1237">CLJS-1237</a>
         </td>
-        <td style="vertical-align: top;">Flag to optionally disable transit analysis cache encoding
+        <td class="tablecell">ns-unmap doesn't work on refers from cljs.core
         </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1775">CLJS-1775</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1271">CLJS-1271</a>
         </td>
-        <td style="vertical-align: top;">`get` with `nil` returns as if `get` with `0`
+        <td class="tablecell">Missing warning when assigning namespaces via def
         </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1286">CLJS-1286</a>
+        </td>
+        <td class="tablecell">REPL environment should be able to provide advice if source mapping fails
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1297">CLJS-1297</a>
+        </td>
+        <td class="tablecell">defrecord does not emit IKVReduce protocol
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1300">CLJS-1300</a>
+        </td>
+        <td class="tablecell">REPLs do no write out updated deps.js when compiling files
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1315">CLJS-1315</a>
+        </td>
+        <td class="tablecell">Warning on Google Closure enum property access with /
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1453">CLJS-1453</a>
+        </td>
+        <td class="tablecell">cljs.compiler/load-libs does not preserve user expressed require order
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1485">CLJS-1485</a>
+        </td>
+        <td class="tablecell">Error when requiring `goog` namespace in a ns declaration 
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1497">CLJS-1497</a>
+        </td>
+        <td class="tablecell">`find` on an associative collection does not return collection key
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1536">CLJS-1536</a>
+        </td>
+        <td class="tablecell">REPL def symbol init collision
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1544">CLJS-1544</a>
+        </td>
+        <td class="tablecell">cljs.test REPL reload support
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1641">CLJS-1641</a>
+        </td>
+        <td class="tablecell">Multi-arity defn copies arguments unnecessarily for all cases
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1666">CLJS-1666</a>
+        </td>
+        <td class="tablecell">Flag to optionally disable transit analysis cache encoding
+        </td>
+        <td class="tablecell">
         </td>
     </tr>
   </tbody>
 </table>
 <h2><a name="CLJS_Enhancement"></a>Enhancement</h2>
 
-<table style="text-align: left; width: 950px;" border="1" cellpadding="2" cellspacing="2">
+<table class="table-of-top-voted-tickets">
   <tbody>
     <tr>
-        <td style="vertical-align: bottom;">Weighted vote
+        <td class="tableheading">Weighted vote
         </td>
-        <td style="vertical-align: bottom;"># of Votes
+        <td class="tableheading"># of Votes
         </td>
-        <td style="vertical-align: bottom;">State
+        <td class="tableheading">State
         </td>
-        <td style="vertical-align: bottom;">Ticket
+        <td class="tableheading">Ticket
         </td>
-        <td style="vertical-align: bottom;">Summary
+        <td class="tableheading">Summary
         </td>
-        <td style="vertical-align: bottom; width: 200px;">Voters
+        <td class="tableheading tableheading-voters">Voters
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">4.00
+        <td class="tablecell">4.00
         </td>
-        <td style="vertical-align: top;">4
+        <td class="tablecell">4
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1461">CLJS-1461</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1461">CLJS-1461</a>
         </td>
-        <td style="vertical-align: top;">Convert analyzer to conform to tools.analyzer's spec
+        <td class="tablecell">Convert analyzer to conform to tools.analyzer's spec
         </td>
-        <td style="vertical-align: top;">James Henderson (1)<br>
+        <td class="tablecell">James Henderson (1)<br>
 Michael Griffiths (1)<br>
 Nicola Mometto (1)<br>
 Nicolas HA (1)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">3.00
+        <td class="tablecell">3.00
         </td>
-        <td style="vertical-align: top;">3
+        <td class="tablecell">3
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1074">CLJS-1074</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1074">CLJS-1074</a>
         </td>
-        <td style="vertical-align: top;">Externs inference
+        <td class="tablecell">Externs inference
         </td>
-        <td style="vertical-align: top;">Leon Grapenthin (1)<br>
+        <td class="tablecell">Leon Grapenthin (1)<br>
 Vlad Bokov (1)<br>
 shulang (1)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">1.50
+        <td class="tablecell">1.50
         </td>
-        <td style="vertical-align: top;">2
+        <td class="tablecell">2
         </td>
-        <td style="vertical-align: top;">Open
+        <td class="tablecell">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-555">CLJS-555</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-555">CLJS-555</a>
         </td>
-        <td style="vertical-align: top;">CLONE - Implement ratios
+        <td class="tablecell">CLONE - Implement ratios
         </td>
-        <td style="vertical-align: top;">Marcus H (1)<br>
+        <td class="tablecell">Marcus H (1)<br>
 Mike Fikes (1/2)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">1.33
+        <td class="tablecell">1.33
         </td>
-        <td style="vertical-align: top;">2
+        <td class="tablecell">2
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1238">CLJS-1238</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1238">CLJS-1238</a>
         </td>
-        <td style="vertical-align: top;">Setting *main-cli-fn* when using :target :nodejs shouldn't be manditory
+        <td class="tablecell">Setting *main-cli-fn* when using :target :nodejs shouldn't be manditory
         </td>
-        <td style="vertical-align: top;">Rohit Aggarwal (1)<br>
+        <td class="tablecell">Rohit Aggarwal (1)<br>
 Andrey Antukh (1/3)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">1.00
+        <td class="tablecell">1.00
         </td>
-        <td style="vertical-align: top;">1
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1047">CLJS-1047</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1047">CLJS-1047</a>
         </td>
-        <td style="vertical-align: top;">externs checking for js/foo
+        <td class="tablecell">externs checking for js/foo
         </td>
-        <td style="vertical-align: top;">Bozhidar Batsov (1)
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">1.00
-        </td>
-        <td style="vertical-align: top;">1
-        </td>
-        <td style="vertical-align: top;">Open
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1009">CLJS-1009</a>
-        </td>
-        <td style="vertical-align: top;">Allow deps.cljs to declare a foreign lib as remote
-        </td>
-        <td style="vertical-align: top;">Ruslan Prokopchuk (1)
+        <td class="tablecell">Bozhidar Batsov (1)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">1.00
+        <td class="tablecell">1.00
         </td>
-        <td style="vertical-align: top;">1
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Open
+        <td class="tablecell">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1428">CLJS-1428</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1009">CLJS-1009</a>
         </td>
-        <td style="vertical-align: top;">Add a cljs.core/*command-line-args* var
+        <td class="tablecell">Allow deps.cljs to declare a foreign lib as remote
         </td>
-        <td style="vertical-align: top;">Matthew Nespor (1)
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">1.00
-        </td>
-        <td style="vertical-align: top;">1
-        </td>
-        <td style="vertical-align: top;">Open
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1628">CLJS-1628</a>
-        </td>
-        <td style="vertical-align: top;">Make instances of js/Symbol printable
-        </td>
-        <td style="vertical-align: top;">Nikita Prokopov (1)
+        <td class="tablecell">Ruslan Prokopchuk (1)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.50
+        <td class="tablecell">1.00
         </td>
-        <td style="vertical-align: top;">1
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Open
+        <td class="tablecell">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1153">CLJS-1153</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1428">CLJS-1428</a>
         </td>
-        <td style="vertical-align: top;">Typed Array backed PersistentVector based on clojure.core/Vec
+        <td class="tablecell">Add a cljs.core/*command-line-args* var
         </td>
-        <td style="vertical-align: top;">Patrick Killean (1/2)
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.50
-        </td>
-        <td style="vertical-align: top;">1
-        </td>
-        <td style="vertical-align: top;">Open
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1346">CLJS-1346</a>
-        </td>
-        <td style="vertical-align: top;">Support require outside of ns 
-        </td>
-        <td style="vertical-align: top;">Peter Taoussanis (1/2)
+        <td class="tablecell">Matthew Nespor (1)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.50
+        <td class="tablecell">1.00
         </td>
-        <td style="vertical-align: top;">1
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Open
+        <td class="tablecell">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1634">CLJS-1634</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1628">CLJS-1628</a>
         </td>
-        <td style="vertical-align: top;">Track bound dynamic variables to support binding in async mechanisms.
+        <td class="tablecell">Make instances of js/Symbol printable
         </td>
-        <td style="vertical-align: top;">Daniel Compton (1/2)
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.33
-        </td>
-        <td style="vertical-align: top;">1
-        </td>
-        <td style="vertical-align: top;">Open
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-527">CLJS-527</a>
-        </td>
-        <td style="vertical-align: top;">Support dynamic runtime extension of protocols to types
-        </td>
-        <td style="vertical-align: top;">Andrey Antukh (1/3)
+        <td class="tablecell">Nikita Prokopov (1)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.33
+        <td class="tablecell">0.50
         </td>
-        <td style="vertical-align: top;">1
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Open
+        <td class="tablecell">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1076">CLJS-1076</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1153">CLJS-1153</a>
         </td>
-        <td style="vertical-align: top;">:nashorn target
+        <td class="tablecell">Typed Array backed PersistentVector based on clojure.core/Vec
         </td>
-        <td style="vertical-align: top;">Andrey Antukh (1/3)
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.25
-        </td>
-        <td style="vertical-align: top;">1
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1194">CLJS-1194</a>
-        </td>
-        <td style="vertical-align: top;">data_readers.cljc
-        </td>
-        <td style="vertical-align: top;">J.&amp;nbsp;S.&amp;nbsp;Choi (1/4)
+        <td class="tablecell">Patrick Killean (1/2)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.25
+        <td class="tablecell">0.50
         </td>
-        <td style="vertical-align: top;">1
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1328">CLJS-1328</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1346">CLJS-1346</a>
         </td>
-        <td style="vertical-align: top;">Support defrecord reader tags
+        <td class="tablecell">Support require outside of ns 
         </td>
-        <td style="vertical-align: top;">J.&amp;nbsp;S.&amp;nbsp;Choi (1/4)
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.25
-        </td>
-        <td style="vertical-align: top;">1
-        </td>
-        <td style="vertical-align: top;">Open
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1410">CLJS-1410</a>
-        </td>
-        <td style="vertical-align: top;">Support source maps in deps.cljs
-        </td>
-        <td style="vertical-align: top;">J.&amp;nbsp;S.&amp;nbsp;Choi (1/4)
+        <td class="tablecell">Peter Taoussanis (1/2)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.20
+        <td class="tablecell">0.50
         </td>
-        <td style="vertical-align: top;">1
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Open
+        <td class="tablecell">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-324">CLJS-324</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1634">CLJS-1634</a>
         </td>
-        <td style="vertical-align: top;">cljs.core/format
+        <td class="tablecell">Track bound dynamic variables to support binding in async mechanisms.
         </td>
-        <td style="vertical-align: top;">Yehonathan Sharvit (1/5)
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-773">CLJS-773</a>
-        </td>
-        <td style="vertical-align: top;">Use unchecked-*-int functions for real 32-bit math
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">Daniel Compton (1/2)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.33
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-994">CLJS-994</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-527">CLJS-527</a>
         </td>
-        <td style="vertical-align: top;">print a warning when :externs file paths can't be found.
+        <td class="tablecell">Support dynamic runtime extension of protocols to types
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1125">CLJS-1125</a>
-        </td>
-        <td style="vertical-align: top;">Simple corrupted compiled file detection
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">Andrey Antukh (1/3)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.33
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1127">CLJS-1127</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1076">CLJS-1076</a>
         </td>
-        <td style="vertical-align: top;">validate compiled file written to disk
+        <td class="tablecell">:nashorn target
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1141">CLJS-1141</a>
-        </td>
-        <td style="vertical-align: top;">memoization of js-dependency-index and get-upstream-deps needs knobs
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">Andrey Antukh (1/3)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.25
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1147">CLJS-1147</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1194">CLJS-1194</a>
         </td>
-        <td style="vertical-align: top;">reconnect logic for browser REPLs
+        <td class="tablecell">data_readers.cljc
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1174">CLJS-1174</a>
-        </td>
-        <td style="vertical-align: top;">Simple warning if a namespace with dashes not found but a file path with dashes exists
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">J.&amp;nbsp;S.&amp;nbsp;Choi (1/4)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.25
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1195">CLJS-1195</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1328">CLJS-1328</a>
         </td>
-        <td style="vertical-align: top;">generic reusable command line argument parsing for REPLs
+        <td class="tablecell">Support defrecord reader tags
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1207">CLJS-1207</a>
-        </td>
-        <td style="vertical-align: top;">Emit a warning if multiple resources found for a ClojureScript namespace
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">J.&amp;nbsp;S.&amp;nbsp;Choi (1/4)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.25
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1277">CLJS-1277</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1410">CLJS-1410</a>
         </td>
-        <td style="vertical-align: top;">relax requirement that files must declare a namespace, default to cljs.user
+        <td class="tablecell">Support source maps in deps.cljs
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1373">CLJS-1373</a>
-        </td>
-        <td style="vertical-align: top;">Generalize CLJS-1324, check invokes of all IFn implementors
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">J.&amp;nbsp;S.&amp;nbsp;Choi (1/4)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.20
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">1
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1402">CLJS-1402</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-324">CLJS-324</a>
         </td>
-        <td style="vertical-align: top;">Source Mapping Closure Error Logger
+        <td class="tablecell">cljs.core/format
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1412">CLJS-1412</a>
-        </td>
-        <td style="vertical-align: top;">Add JSDoc type information to individual IFn methods
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">Yehonathan Sharvit (1/5)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1415">CLJS-1415</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-773">CLJS-773</a>
         </td>
-        <td style="vertical-align: top;">Handling JSDoc param name [x] optional syntax
+        <td class="tablecell">Use unchecked-*-int functions for real 32-bit math
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1419">CLJS-1419</a>
-        </td>
-        <td style="vertical-align: top;">enhance numeric inference, if + number? test on local var should tag local var in the successful branch
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1443">CLJS-1443</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-994">CLJS-994</a>
         </td>
-        <td style="vertical-align: top;">ES6 Module Processing at individual :foreign-lib spec
+        <td class="tablecell">print a warning when :externs file paths can't be found.
         </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1125">CLJS-1125</a>
+        </td>
+        <td class="tablecell">Simple corrupted compiled file detection
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1127">CLJS-1127</a>
+        </td>
+        <td class="tablecell">validate compiled file written to disk
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1141">CLJS-1141</a>
+        </td>
+        <td class="tablecell">memoization of js-dependency-index and get-upstream-deps needs knobs
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1147">CLJS-1147</a>
+        </td>
+        <td class="tablecell">reconnect logic for browser REPLs
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1174">CLJS-1174</a>
+        </td>
+        <td class="tablecell">Simple warning if a namespace with dashes not found but a file path with dashes exists
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1195">CLJS-1195</a>
+        </td>
+        <td class="tablecell">generic reusable command line argument parsing for REPLs
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1207">CLJS-1207</a>
+        </td>
+        <td class="tablecell">Emit a warning if multiple resources found for a ClojureScript namespace
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1277">CLJS-1277</a>
+        </td>
+        <td class="tablecell">relax requirement that files must declare a namespace, default to cljs.user
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1373">CLJS-1373</a>
+        </td>
+        <td class="tablecell">Generalize CLJS-1324, check invokes of all IFn implementors
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1402">CLJS-1402</a>
+        </td>
+        <td class="tablecell">Source Mapping Closure Error Logger
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1412">CLJS-1412</a>
+        </td>
+        <td class="tablecell">Add JSDoc type information to individual IFn methods
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1415">CLJS-1415</a>
+        </td>
+        <td class="tablecell">Handling JSDoc param name [x] optional syntax
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1419">CLJS-1419</a>
+        </td>
+        <td class="tablecell">enhance numeric inference, if + number? test on local var should tag local var in the successful branch
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1443">CLJS-1443</a>
+        </td>
+        <td class="tablecell">ES6 Module Processing at individual :foreign-lib spec
+        </td>
+        <td class="tablecell">
         </td>
     </tr>
   </tbody>
 </table>
 <h2><a name="CLJS_Task"></a>Task</h2>
 
-<table style="text-align: left; width: 950px;" border="1" cellpadding="2" cellspacing="2">
+<table class="table-of-top-voted-tickets">
   <tbody>
     <tr>
-        <td style="vertical-align: bottom;">Weighted vote
+        <td class="tableheading">Weighted vote
         </td>
-        <td style="vertical-align: bottom;"># of Votes
+        <td class="tableheading"># of Votes
         </td>
-        <td style="vertical-align: bottom;">State
+        <td class="tableheading">State
         </td>
-        <td style="vertical-align: bottom;">Ticket
+        <td class="tableheading">Ticket
         </td>
-        <td style="vertical-align: bottom;">Summary
+        <td class="tableheading">Summary
         </td>
-        <td style="vertical-align: bottom; width: 200px;">Voters
+        <td class="tableheading tableheading-voters">Voters
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">1.20
+        <td class="tablecell">1.20
         </td>
-        <td style="vertical-align: top;">3
+        <td class="tablecell">3
         </td>
-        <td style="vertical-align: top;">Open
+        <td class="tablecell">Open
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-901">CLJS-901</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-901">CLJS-901</a>
         </td>
-        <td style="vertical-align: top;">Protocolize compiler access to the file system
+        <td class="tablecell">Protocolize compiler access to the file system
         </td>
-        <td style="vertical-align: top;">Mike Fikes (1/2)<br>
+        <td class="tablecell">Mike Fikes (1/2)<br>
 Patrick Killean (1/2)<br>
 Yehonathan Sharvit (1/5)
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1128">CLJS-1128</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1128">CLJS-1128</a>
         </td>
-        <td style="vertical-align: top;">Describe internationalization strategies via Google Closure on the wiki
+        <td class="tablecell">Describe internationalization strategies via Google Closure on the wiki
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1129">CLJS-1129</a>
-        </td>
-        <td style="vertical-align: top;">:modules tutorial for wiki
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1134">CLJS-1134</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1129">CLJS-1129</a>
         </td>
-        <td style="vertical-align: top;">Lift protocols from cljs.closure into cljs.protocols ns
+        <td class="tablecell">:modules tutorial for wiki
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1446">CLJS-1446</a>
-        </td>
-        <td style="vertical-align: top;">autodoc + gh-pages for cljs.*.api namespaces
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1447">CLJS-1447</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1134">CLJS-1134</a>
         </td>
-        <td style="vertical-align: top;">IFn implementors have a broken call implementation, all args after 20th argument should be collected into a seq
+        <td class="tablecell">Lift protocols from cljs.closure into cljs.protocols ns
         </td>
-        <td style="vertical-align: top;">
-        </td>
-    </tr>
-    <tr>
-        <td style="vertical-align: top;">0.00
-        </td>
-        <td style="vertical-align: top;">0
-        </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
-        </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1501">CLJS-1501</a>
-        </td>
-        <td style="vertical-align: top;">Add :parallel-build support to REPLs
-        </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
         </td>
     </tr>
     <tr>
-        <td style="vertical-align: top;">0.00
+        <td class="tablecell">0.00
         </td>
-        <td style="vertical-align: top;">0
+        <td class="tablecell">0
         </td>
-        <td style="vertical-align: top;">Bad: Unkn Fix Version
+        <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td style="vertical-align: top;"><a href="http://dev.clojure.org/jira/browse/CLJS-1762">CLJS-1762</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1446">CLJS-1446</a>
         </td>
-        <td style="vertical-align: top;">Bump Closure Compiler
+        <td class="tablecell">autodoc + gh-pages for cljs.*.api namespaces
         </td>
-        <td style="vertical-align: top;">
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1447">CLJS-1447</a>
+        </td>
+        <td class="tablecell">IFn implementors have a broken call implementation, all args after 20th argument should be collected into a seq
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1501">CLJS-1501</a>
+        </td>
+        <td class="tablecell">Add :parallel-build support to REPLs
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1762">CLJS-1762</a>
+        </td>
+        <td class="tablecell">Bump Closure Compiler
+        </td>
+        <td class="tablecell">
         </td>
     </tr>
   </tbody>
