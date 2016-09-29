@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: September 18, 2016
+Date: September 29, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -112,6 +112,17 @@ Defect
              Andy Fingerhut (1/12)
              Daniel Compton (1/16)
              Nicola Mometto (1/67)
+    2.83   5 Open         [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
+             Sunil Abraham (1)
+             Kei Tsuji (1/2)
+             Ryan Neufeld (1/2)
+             Trevor Hartman (1/2)
+             Sean Corfield (1/3)
+    2.58   4 Triaged      [CLJ-1243] Cannot resolve public generic method from package-private base class
+             Michal Růžička (1)
+             Sébastien Wagener (1)
+             Noam Ben Ari (1/3)
+             Phill Wolf (1/4)
     2.45   7 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
              Achint Sandhu (1)
              Stuart Halloway (1/2)
@@ -120,12 +131,7 @@ Defect
              Phill Wolf (1/4)
              David Greenberg (1/14)
              Michael Blume (1/22)
-    2.33   4 Open         [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
-             Sunil Abraham (1)
-             Kei Tsuji (1/2)
-             Ryan Neufeld (1/2)
-             Sean Corfield (1/3)
-    2.19   6 Screenable   [CLJ-1242] = on sorted collections with different key types incorrectly throws
+    2.19   6 Incomplete   [CLJ-1242] = on sorted collections with different key types incorrectly throws
              François Rey (1/2)
              James Reeves (1/2)
              John Szakmeister (1/2)
@@ -143,10 +149,6 @@ Defect
              David Greenberg (1/14)
              Reid McKenzie (1/16)
              Nicola Mometto (1/67)
-    1.58   3 Open         [CLJ-1243] Cannot resolve public generic method from package-private base class
-             Sébastien Wagener (1)
-             Noam Ben Ari (1/3)
-             Phill Wolf (1/4)
     1.57   4 Prescreened  [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
              Chris Tennant (1)
              Chas Emerick (1/5)
@@ -163,11 +165,11 @@ Defect
     1.33   2 Prescreened  [CLJ-1360] clojure.string/split strips trailing delimiters
              Crispin Wellington (1)
              César Bolaños (1/3)
-    1.26   3 Bad: Match n [CLJ-1793] Reducer instances hold onto the head of seqs
+    1.26   3 Screened     [CLJ-1793] Reducer instances hold onto the head of seqs
              Brandon Adams (1)
              Kevin Downey (1/4)
              Nicola Mometto (1/67)
-    1.24   3 Screenable   [CLJ-787] transient blows up when passed a vector created by subvec
+    1.24   3 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
              Anderson De Andrade (1)
              John Walker (1/6)
              David Greenberg (1/14)
@@ -229,7 +231,7 @@ Defect
              Mike Rodriguez (1/4)
     0.20   1 Open         [CLJ-1198] Apply metadata to primitive fns causes them to lose their primitive-ness
              Tom Crayford (1/5)
-    0.20   1 Triaged      [CLJ-1714] Some static initialisers still run at compile time if used in type hints
+    0.20   1 Prescreened  [CLJ-1714] Some static initialisers still run at compile time if used in type hints
              Alexander Yakushev (1/5)
     0.16   2 Triaged      [CLJ-1253] Incorrect long division involving Long/MIN_VALUE
              Colin Jones (1/7)
@@ -274,6 +276,7 @@ Defect
     0.00   0 Backlog      [CLJ-84] GC Issue 81: compile gen-class fail when class returns self
     0.00   0 Backlog      [CLJ-346] (pprint-newline :fill) is not handled correctly
     0.00   0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
+    0.00   0 Incomplete   [CLJ-1406] Libs are blindly added into loaded-libs even if an error occurs during loading
     0.00   0 Incomplete   [CLJ-1741] deftype class literals and instances loaded from different classloaders when recompiling namespace
     0.00   0 Needs Patch  [CLJ-1872] empty? is broken for transient collections
     0.00   0 Prescreened  [CLJ-1180] defprotocol doesn't resolve tag classnames
@@ -283,7 +286,8 @@ Defect
     0.00   0 Prescreened  [CLJ-1764] partition-by runs infinite loop when one element of infinite partition is accessed
     0.00   0 Prescreened  [CLJ-1841] core/bean iterator is broken
     0.00   0 Prescreened  [CLJ-1887] clojure.core.Vec does not fully implement clojure.lang.IPersistentVector
-    0.00   0 Screenable   [CLJ-1406] Libs are blindly added into loaded-libs even if an error occurs during loading
+    0.00   0 Screenable   [CLJ-2024] Check should specize function specs before checking
+    0.00   0 Screenable   [CLJ-2027] bean printing regression from namespace map printing
     0.00   0 Triaged      [CLJ-929] Accessing Java property starting with _ has issues in 1.4
     0.00   0 Triaged      [CLJ-1475] :post condition causes compiler error with recur
     0.00   0 Triaged      [CLJ-1492] PersistentQueue objects are improperly eval'd and compiled
@@ -309,6 +313,7 @@ Defect
     0.00   0 Triaged      [CLJ-2002] StackOverflowError in clojure.spec
     0.00   0 Triaged      [CLJ-2003] Nesting cat inside ? causes unform to return nested result
     0.00   0 Triaged      [CLJ-2005] Type hint fails with direct linking disabled
+    0.00   0 Triaged      [CLJ-2026] Transient exceptions thrown in clojure.spec.test/check
     0.00   0 Vetted       [CLJ-1879] reduce-kv on a PHMs doesn't consistently execute the intended fastpath
 
 ========================================
@@ -342,6 +347,20 @@ Enhancement
              Daniel Compton (1/16)
              Michael Blume (1/22)
              Nicola Mometto (1/67)
+    9.98  13 Triaged      [CLJ-1965] clojure.spec/def should support an optional doc-string
+             Donald Ball (1)
+             Edwin Park (1)
+             Felix Andrews (1)
+             Kurt Smith (1)
+             Liam F (1)
+             Maik Schünemann (1)
+             Mohammad Sadegh Khoeini (1)
+             Parker Lawrence (1)
+             quan (1)
+             Gunnar Völkel (1/3)
+             Sean Corfield (1/3)
+             Chris Sims (1/4)
+             Daniel Compton (1/16)
     9.71  21 Vetted       [CLJ-865] Macroexpansion discards &form metadata
              Anthony Simpson (1)
              Chris Granger (1)
@@ -364,19 +383,6 @@ Enhancement
              David Greenberg (1/14)
              Daniel Compton (1/16)
              Nicola Mometto (1/67)
-    8.98  12 Triaged      [CLJ-1965] clojure.spec/def should support an optional doc-string
-             Donald Ball (1)
-             Edwin Park (1)
-             Felix Andrews (1)
-             Kurt Smith (1)
-             Liam F (1)
-             Maik Schünemann (1)
-             Mohammad Sadegh Khoeini (1)
-             quan (1)
-             Gunnar Völkel (1/3)
-             Sean Corfield (1/3)
-             Chris Sims (1/4)
-             Daniel Compton (1/16)
     7.72  22 Backlog      [CLJ-1517] Unrolled small vectors
              David Dossot (1)
              Deepak Giridharagopal (1)
@@ -718,12 +724,6 @@ Enhancement
              Brandon Bloom (1/7)
              Michael Blume (1/22)
              Nicola Mometto (1/67)
-    2.63   5 Open         [CLJ-1201] There should also be writing in clojure.edn
-             Mike Hughes (1)
-             Trevor Hartman (1)
-             Marc Limotte (1/2)
-             Daniel Compton (1/16)
-             Reid McKenzie (1/16)
     2.32   5 Triaged      [CLJ-1817] Allow AssertionError messages for function :pre and :post conditions to be specified.
              Derek Troy-West (1)
              Larry Staton Jr. (1)
@@ -738,6 +738,12 @@ Enhancement
              Joe James (1)
              Łukasz Korecki (1)
              Michael Griffiths (1/5)
+    2.13   5 Open         [CLJ-1201] There should also be writing in clojure.edn
+             Mike Hughes (1)
+             Marc Limotte (1/2)
+             Trevor Hartman (1/2)
+             Daniel Compton (1/16)
+             Reid McKenzie (1/16)
     2.09   3 Open         [CLJ-1943] clojure.spec should implicitly convert classes to specs
              Chris Price (1)
              Russell Mull (1)
@@ -934,7 +940,7 @@ Enhancement
              Paul Gearon (1/2)
              Bozhidar Batsov (1/14)
              Nicola Mometto (1/67)
-    0.53   2 Screenable   [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
+    0.53   2 Incomplete   [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
              Ambrose Bonnaire-Sergeant (1/3)
              Gary Fredericks (1/5)
     0.51   2 Backlog      [CLJ-731] Create macro to variadically unroll a combinator function definition
@@ -1172,5 +1178,8 @@ Enhancement
     0.00   0 Triaged      [CLJ-1982] Better explain reporting on a failed zero or one match with an embedded spec. 
     0.00   0 Triaged      [CLJ-1995] Improved docstring for explain-data
     0.00   0 Triaged      [CLJ-2013] spec doesn't explain failing path of a s/cat with purely optional branches
+    0.00   0 Triaged      [CLJ-2025] When a generator fails to gen, state which spec/pred failed
+    0.00   0 Triaged      [CLJ-2028] Docstring error in clojure.core/filter, remove, and take-while
+    0.00   0 Triaged      [CLJ-2030] Auto-create alias namespaces
     0.00   0 Vetted       [CLJ-992] `iterate` reducer
     0.00   0 Vetted       [CLJ-1551] Consider transducer support for primitives

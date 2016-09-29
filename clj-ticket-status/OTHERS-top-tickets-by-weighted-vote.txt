@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: September 18, 2016
+Date: September 29, 2016
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -184,6 +184,7 @@ Defect
     0.00   0 Open         [ASYNC-176] A local named `new` breaks go macro in cljs (not in clj)
     0.00   0 Open         [ASYNC-177] Typo in `full?` docstring of the Buffer protocol
     0.00   0 Open         [ASYNC-178] First pending put into a channel always succeeds even if the buffer is full
+    0.00   0 Open         [ASYNC-179] parking take in finally clause in go block causes try expression to yield the finally clause result
     0.00   0 Triaged      [ASYNC-4] Record literals become ordinary maps
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
     0.00   0 Triaged      [ASYNC-113] alt!! should not evaluate the :default expr if a non-default clause is selected
@@ -367,6 +368,7 @@ Defect
     0.00   0 Open         [CLJCLR-73] Regularize handling of clojure.compile.x environment variables
     0.00   0 Open         [CLJCLR-78] Problems building on Linux
     0.00   0 Open         [CLJCLR-81] Compute RT.DEFAULT_IMPORTS at startup
+    0.00   0 Open         [CLJCLR-85] #inst "1939" fails
 
 ========================================
 Enhancement
@@ -629,12 +631,12 @@ Defect
     0.00   0 Open         [DIMAP-2] Proper seq on int-sets
     0.00   0 Open         [DIMAP-9] Unlike regular transient sets, data.int-map transient sets do not support the IFn interface
     0.00   0 Open         [DIMAP-12] range sometimes breaks seq
+    0.00   0 Open         [DIMAP-13] Cannot merge int-sets of different density.
 
 ========================================
 Enhancement
 
     0.00   0 Open         [DIMAP-1] Support efficient rseq on int maps
-    0.00   0 Open         [DIMAP-4] Worth the effort to make int-map and int-set sorted?
     0.00   0 Open         [DIMAP-6] int-map doc string is overly restrictive?
     0.00   0 Open         [DIMAP-7] Minor typos in README and docstring
     0.00   0 Open         [DIMAP-8] Union, intersection and difference have only 2 arguments versions
@@ -648,6 +650,7 @@ Defect
     0.00   0 Open         [DJSON-21] Improper parsing of literals
     0.00   0 Open         [DJSON-22] Improper parsing of numbers - leading zeroes should be disallowed
     0.00   0 Open         [DJSON-24] clojure.json.data should handle non breking whitespace
+    0.00   0 Open         [DJSON-25] Escaped backslash in strings throws
 
 ========================================
 Enhancement
@@ -668,10 +671,12 @@ Project DXML tickets
 ========================================
 Defect
 
-    0.00   0 Open         [DXML-15] data.xml can't parse own output if there's a colon in an attribute name
+    1.00   1 Open         [DXML-15] data.xml can't parse own output if there's a colon in an attribute name
+             Mathias De Wachter (1)
     0.00   0 Open         [DXML-27] Element java.util.Date throws IllegalArgumentException
     0.00   0 Open         [DXML-32] data.xml fails when used with Java 9
     0.00   0 Open         [DXML-34] Issue parsing and then emitting xml:lang attribute.
+    0.00   0 Open         [DXML-35] clojure.data.xml/indent should append a newline after the xml preamble
 
 ========================================
 Enhancement
@@ -686,6 +691,11 @@ Enhancement
 
 
 Project DZIP tickets
+========================================
+Defect
+
+    0.00   0 Open         [DZIP-6] Sub Entries with the same Name can't be selected
+
 
 Project JDATA tickets
 ========================================
@@ -721,6 +731,7 @@ Enhancement
     0.00   0 Open         [JDBC-37] Provide support for alternate transaction strategies
     0.00   0 Open         [JDBC-64] Support multiple result sets?
     0.00   0 Open         [JDBC-143] Make it easier to test java.jdbc in other environments
+    0.00   0 Open         [JDBC-144] Passes options all the way down in key CRUD fns
 
 
 Project JMX tickets
@@ -1051,6 +1062,7 @@ Enhancement
     0.00   0 Open         [TLOG-14] Logging backend (factory) for Android
     0.00   0 Open         [TLOG-16] Add ClojureScript support?
     0.00   0 Open         [TLOG-17] ExceptionInfo not printing data field when AOT?
+    0.00   0 Open         [TLOG-18] Support custom levels
 
 
 Project TMACRO tickets
