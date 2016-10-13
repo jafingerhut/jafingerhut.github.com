@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: October 6, 2016
+Date: October 13, 2016
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -77,6 +77,7 @@ Defect
    4 Triaged      [ASYNC-90] Pub/sub leaks memory
    3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
    3 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
+   2 Triaged      [ASYNC-155] Preserve loop binding metadata when inside a go block
    2 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
    2 Open         [ASYNC-158] and with multiple <! does not short-circuit in go
    2 Triaged      [ASYNC-159] promise-chan in ClojureScript is broken
@@ -91,7 +92,7 @@ Defect
    1 Open         [ASYNC-128] or evaluation not stopped when exp nests take
    1 Open         [ASYNC-144] pipeline-async docstring correction
    1 Triaged      [ASYNC-154] (require :reload-all) causes NullPointerException
-   1 Triaged      [ASYNC-155] Preserve loop binding metadata when inside a go block
+   1 Open         [ASYNC-180] (go (try ... (finally ...))) block with parking operations in finally body loses try body return value
    1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
    1 Triaged      [ASYNC-170] binding in go block causes thread binding error: "Pop without matching push"
    1 Open         [ASYNC-78] deadlock in multi catch
@@ -174,8 +175,8 @@ Project CCACHE tickets
 Defect
 
    2 Open         [CCACHE-15] It appears that TTL cache exhibits quadratic performance (+ its evict is buggy)
+   2 Open         [CCACHE-40] FIFOCache StackOverflowError with high :threshold due to concat
    1 Open         [CCACHE-31] SoftCaches update in-place, other cache types don't
-   1 Open         [CCACHE-40] FIFOCache StackOverflowError with high :threshold due to concat
    0 Open         [CCACHE-32] LIRSCache defect allows it's memory use to grow without bound
    0 Open         [CCACHE-39] FIFOCache member exempted from expulsion after evict
 
