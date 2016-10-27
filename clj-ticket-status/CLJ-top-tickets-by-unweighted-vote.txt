@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: October 20, 2016
+Date: October 27, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -47,17 +47,17 @@ Defect
    7 Open         [CLJ-1532] pr-str captures stdout from printing side-effects of lazily evaluated expressions.
    7 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
    7 Screened     [CLJ-1242] = on sorted collections with different key types incorrectly throws
-   6 Triaged      [CLJ-1074] Read/print round-trip for +/-Infinity and NaN
+   6 Prescreened  [CLJ-1074] Read/print round-trip for +/-Infinity and NaN
    5 Open         [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
+   4 Triaged      [CLJ-2041] clojure.spec/keys requires input collections conform to clojure.core/map?
    4 Triaged      [CLJ-1243] Cannot resolve public generic method from package-private base class
+   4 Triaged      [CLJ-1941] Instrumentation of fns with primitive type hints fails
+   4 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
    4 Prescreened  [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
    4 Backlog      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
-   3 Triaged      [CLJ-2041] clojure.spec/keys requires input collections conform to clojure.core/map?
    3 Triaged      [CLJ-1911] min-key and max-key should return NaN if any of the argument is NaN
-   3 Triaged      [CLJ-1941] Instrumentation of fns with primitive type hints fails
    3 Triaged      [CLJ-1142] Incorrect divide-by-zero error with floating point numbers
    3 Screened     [CLJ-1793] Reducer instances hold onto the head of seqs
-   3 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
    3 Incomplete   [CLJ-1620] Constants are leaked in case of a reentrant eval
    3 Triaged      [CLJ-1279] Fix confusing macroexpand1 ArityException handling
    3 Open         [CLJ-1445] pprint prints some metadata when *print-meta* bound to true, but not all
@@ -143,11 +143,12 @@ Defect
    0 Screenable   [CLJ-2026] Transient exceptions thrown in clojure.spec.test/check
    0 Screened     [CLJ-2027] bean printing regression from namespace map printing
    0 Triaged      [CLJ-2031] clojure.walk/postwalk does not preserve MapEntry type objects
-   0 Screenable   [CLJ-2032] Confusing error conforming fspec with missing arg spec
+   0 Screened     [CLJ-2032] Confusing error conforming fspec with missing arg spec
    0 Screened     [CLJ-2035] Bad s/form for collection specs
    0 Needs Patch  [CLJ-2036] Generators for some? and any? only return collections or nil
    0 Screened     [CLJ-2042] s/form of s/? does not resolve pred
    0 Screened     [CLJ-2043] s/form of conformer is broken
+   0 Prescreened  [CLJ-2048] java.lang.ClassCastException: [Ljava.lang.Object; cannot be cast to [Ljava.lang.StackTraceElement
 
 ========================================
 Enhancement
@@ -170,13 +171,13 @@ Enhancement
   10 Triaged      [CLJ-1063] Missing dissoc-in
    9 Triaged      [CLJ-1278] State function's unmunged full name in compiled function's toString()
    9 Open         [CLJ-1553] Parallel transduce
+   9 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
    9 Triaged      [CLJ-440] java method calls cannot omit varargs
    9 Prescreened  [CLJ-1454] Add deref-swap! and deref-reset! (swap! and reset! that return prior value)
    9 Triaged      [CLJ-308] protocol-ize with-open
    9 Triaged      [CLJ-1293] Portable "catch-all" mechanism
    9 Open         [CLJ-1610] Unrolled small maps
    8 Open         [CLJ-1467] Implement Comparable in PersistentList
-   8 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
    8 Triaged      [CLJ-1239] faster, more flexible dispatch for clojure.walk
    7 Triaged      [CLJ-1611] clojure.java.io/pushback-reader
    7 Triaged      [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
@@ -251,7 +252,7 @@ Enhancement
    1 Open         [CLJ-1223] Improve App Engine Support by Providing an Option to Use the App Engine ThreadManger
    1 Open         [CLJ-1296] locking expressions cause vars to be dereferenced, even if not executed, unless wrapped in let
    1 Open         [CLJ-1526] clojure.core/> inconsistent behavior wrt to documentation.
-   1 Screenable   [CLJ-2030] Auto-create alias namespaces
+   1 Screened     [CLJ-2030] Auto-create alias namespaces
    1 Triaged      [CLJ-970] extend/implement parameterized types (generics)
    1 Open         [CLJ-994] repeat reducer
    1 Open         [CLJ-995] sorted-set doesn't support IEditableCollection
@@ -383,5 +384,6 @@ Enhancement
    0 Triaged      [CLJ-2038] Clojure.spec/exercise-fn should accept custom generator map
    0 Prescreened  [CLJ-2039] typo in deftype doc string
    0 Triaged      [CLJ-2040] Allow runtime modification of REPL exception handling
-   0 Triaged      [CLJ-2044] Four functions in clojure.instant have incomplete documentation
+   0 Prescreened  [CLJ-2044] Four functions in clojure.instant have incomplete documentation
    0 Screened     [CLJ-2046] generate random subsets of or'd required keys in map specs
+   0 Triaged      [CLJ-2049] Improve clojure.zip documentation
