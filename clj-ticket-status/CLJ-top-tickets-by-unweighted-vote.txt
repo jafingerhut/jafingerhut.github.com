@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: November 17, 2016
+Date: November 24, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -54,10 +54,10 @@ Defect
    4 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
    4 Prescreened  [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
    4 Screened     [CLJ-1793] Reducer instances hold onto the head of seqs
+   4 Screened     [CLJ-2035] Bad s/form for collection specs
    4 Backlog      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
    3 Triaged      [CLJ-1911] min-key and max-key should return NaN if any of the argument is NaN
    3 Triaged      [CLJ-1142] Incorrect divide-by-zero error with floating point numbers
-   3 Screened     [CLJ-2035] Bad s/form for collection specs
    3 Screened     [CLJ-2043] s/form of conformer is broken
    3 Incomplete   [CLJ-1620] Constants are leaked in case of a reentrant eval
    3 Triaged      [CLJ-2003] Nesting cat inside ? causes unform to return nested result
@@ -78,13 +78,14 @@ Defect
    1 Open         [CLJ-968] ns emitting gen-class before imports results in imported annotations being discarded.
    1 Open         [CLJ-1181] clojure.pprint/code-dispatch breaks on certain types of anonymous functions
    1 Prescreened  [CLJ-1587] PersistentArrayMap's assoc doesn't respect HASHTABLE_THRESHOLD
-   1 Prescreened  [CLJ-1860] 0.0 and -0.0 compare equal but have different hash values
+   1 Screened     [CLJ-1860] 0.0 and -0.0 compare equal but have different hash values
    1 Triaged      [CLJ-1682] clojure.set/intersection occasionally allows non-set arguments.
    1 Open         [CLJ-1953] clojure.set should check or throw on non-set inputs
    1 Open         [CLJ-1198] Apply metadata to primitive fns causes them to lose their primitive-ness
    1 Prescreened  [CLJ-1403] ns-resolve might throw ClassNotFoundException but should return nil
    1 Prescreened  [CLJ-1714] Some static initialisers still run at compile time if used in type hints
    1 Prescreened  [CLJ-2031] clojure.walk/postwalk does not preserve MapEntry type objects
+   1 Triaged      [CLJ-2066] Reflection on internal classes fails under Java 9
    1 Triaged      [CLJ-1254] Incorrect long quot result involving Long/MIN_VALUE
    1 Open         [CLJ-1308] extend-type doesn't type-hint correctly as promised by the doc when the class is determined at run-time
    1 Prescreened  [CLJ-1364] Primitive VecSeq does not implement equals or hashing methods
@@ -146,14 +147,17 @@ Defect
    0 Screenable   [CLJ-2055] binding-form spec parses symbol-only maps incorrectly
    0 Screenable   [CLJ-2057] Function spec missing :ret can yield wrong answer for valid?
    0 Screenable   [CLJ-2059] explain-data problems don't provide resolved symbols under :pred
+   0 Triaged      [CLJ-2065] reduce-kv fails on subvec
+   0 Needs Patch  [CLJ-2067] (s/def ::a ::b) throws unable to resolve error if ::b is not defined
+   0 Needs Patch  [CLJ-2068] s/explain of non-registered predicate yields :s/unknown
 
 ========================================
 Enhancement
 
   27 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
-  23 Prescreened  [CLJ-2056] Efficient shortcut for (first (filter pred coll)) idiom
+  24 Prescreened  [CLJ-2056] Efficient shortcut for (first (filter pred coll)) idiom
+  23 Triaged      [CLJ-1965] clojure.spec/def should support an optional doc-string
   22 Backlog      [CLJ-1517] Unrolled small vectors
-  21 Triaged      [CLJ-1965] clojure.spec/def should support an optional doc-string
   21 Vetted       [CLJ-865] Macroexpansion discards &form metadata
   21 Triaged      [CLJ-304] clojure.repl/source does not work with deftype
   19 Prescreened  [CLJ-706] make use of deprecated namespaces/vars easier to spot
@@ -207,11 +211,12 @@ Enhancement
    3 Prescreened  [CLJ-1899] Add function transform-keys to clojure.walk
    3 Open         [CLJ-1943] clojure.spec should implicitly convert classes to specs
    3 Open         [CLJ-272] load/ns/require/use overhaul
-   3 Open         [CLJ-1332] Exceptions are not cached in lazy seqs
    3 Prescreened  [CLJ-99] max-key and min-key evaluate k multiple times for arguments
+   3 Open         [CLJ-1332] Exceptions are not cached in lazy seqs
    3 Open         [CLJ-1218] mapcat is too eager
    3 Open         [CLJ-1256] Support type-hinted overrides of function parameters
    3 Triaged      [CLJ-1094] Add zero-arity versions of every-pred and some-fn
+   3 Screened     [CLJ-2030] Auto-create alias namespaces
    3 Triaged      [CLJ-825] Protocol implementation inconsistencies when overloading arity
    3 Triaged      [CLJ-1959] adding functions `map-vals` and `map-keys`
    3 Backlog      [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
@@ -239,20 +244,20 @@ Enhancement
    2 Backlog      [CLJ-731] Create macro to variadically unroll a combinator function definition
    2 Open         [CLJ-428] subseq, rsubseq enhancements to support priority maps?
    2 Open         [CLJ-978] bean unable to handle non-public classes
-   2 Triaged      [CLJ-1219] Make identical? variadic
    2 Open         [CLJ-1534] Adding condp-> and condp->> macros to core library
+   2 Triaged      [CLJ-1219] Make identical? variadic
    2 Triaged      [CLJ-1598] Make if forms compile directly to the appropriate branch expression if the test is a literal
    2 Open         [CLJ-1442] Tag gensym sourced symbols with metadata
    2 Triaged      [CLJ-1807] Add prefer-proto, like prefer-method but for protocols
    2 Open         [CLJ-1376] Initialize internal maps to more efficient version
    2 Open         [CLJ-15] Incremental hashcode calculation for collections
    2 Open         [CLJ-792] Refactor method resolution code out of Compiler and into Reflector
+   1 Triaged      [CLJ-840] Add a way to access the current test var in :each fixtures for clojure.test
    1 Open         [CLJ-995] sorted-set doesn't support IEditableCollection
    1 Triaged      [CLJ-1044] Enable refering to ->type inside deftype
    1 Open         [CLJ-1223] Improve App Engine Support by Providing an Option to Use the App Engine ThreadManger
    1 Open         [CLJ-1296] locking expressions cause vars to be dereferenced, even if not executed, unless wrapped in let
    1 Open         [CLJ-1526] clojure.core/> inconsistent behavior wrt to documentation.
-   1 Screened     [CLJ-2030] Auto-create alias namespaces
    1 Triaged      [CLJ-970] extend/implement parameterized types (generics)
    1 Open         [CLJ-994] repeat reducer
    1 Open         [CLJ-1782] Hide local IDE files in .gitignore
@@ -285,8 +290,8 @@ Enhancement
    1 Open         [CLJ-1112] Var *loading-verbosely* should initialize from a JVM system property
    1 Open         [CLJ-1231] fn and letfn don't support hinting the function's return type
    1 Triaged      [CLJ-2038] Clojure.spec/exercise-fn should accept custom generator map
-   1 Triaged      [CLJ-1416] Support transients in gvec
    1 Triaged      [CLJ-1762] Implement IKVReduce for java.util.map
+   1 Triaged      [CLJ-1416] Support transients in gvec
    1 Open         [CLJ-1884] Add support for two parameters to rand and rand-int
    1 Open         [CLJ-1280] Create reusable exception that can carry file/line/col info
    1 Triaged      [CLJ-1289] aset-* and aget perform poorly on multi-dimensional arrays even with type hints. 
@@ -389,3 +394,6 @@ Enhancement
    0 Prescreened  [CLJ-2050] Remove redundant key comparisons in HashCollisionNode
    0 Triaged      [CLJ-2054] generator for `any?` occasionally generates `Double/NaN` for which equality semantics don't apply, and that is a problem for the :ret spec of many functions.
    0 Screenable   [CLJ-2060] Add undef to remove a spec
+   0 Screenable   [CLJ-2061] Better error message when exercise-fn called on fn without :args spec
+   0 Screenable   [CLJ-2062] Spec import and refer-clojure macros
+   0 Screenable   [CLJ-2063] Show longest path explain error first
