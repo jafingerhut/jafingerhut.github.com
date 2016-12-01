@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: November 24, 2016
+Date: December 1, 2016
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -48,11 +48,11 @@ Defect
    7 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
    6 Prescreened  [CLJ-1074] Read/print round-trip for +/-Infinity and NaN
    5 Open         [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
-   4 Needs Patch  [CLJ-2041] clojure.spec/keys requires input collections conform to clojure.core/map?
    4 Triaged      [CLJ-1243] Cannot resolve public generic method from package-private base class
+   4 Needs Patch  [CLJ-2041] clojure.spec/keys requires input collections conform to clojure.core/map?
    4 Needs Patch  [CLJ-1941] Instrumentation of fns with primitive type hints fails
-   4 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
    4 Prescreened  [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
+   4 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
    4 Screened     [CLJ-1793] Reducer instances hold onto the head of seqs
    4 Screened     [CLJ-2035] Bad s/form for collection specs
    4 Backlog      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
@@ -150,12 +150,13 @@ Defect
    0 Triaged      [CLJ-2065] reduce-kv fails on subvec
    0 Needs Patch  [CLJ-2067] (s/def ::a ::b) throws unable to resolve error if ::b is not defined
    0 Needs Patch  [CLJ-2068] s/explain of non-registered predicate yields :s/unknown
+   0 Prescreened  [CLJ-2069] lazy seq that encounters an exception has differing behavior on repeated use
 
 ========================================
 Enhancement
 
   27 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
-  24 Prescreened  [CLJ-2056] Efficient shortcut for (first (filter pred coll)) idiom
+  25 Prescreened  [CLJ-2056] Efficient shortcut for (first (filter pred coll)) idiom
   23 Triaged      [CLJ-1965] clojure.spec/def should support an optional doc-string
   22 Backlog      [CLJ-1517] Unrolled small vectors
   21 Vetted       [CLJ-865] Macroexpansion discards &form metadata
@@ -183,10 +184,10 @@ Enhancement
    8 Open         [CLJ-1467] Implement Comparable in PersistentList
    8 Triaged      [CLJ-1458] Enhance the performance of map merges
    7 Triaged      [CLJ-1490] Exception on protocol implementation after protocol reloaded could be improved
+   7 Triaged      [CLJ-1771] Support for multiple key(s)-value pairs in assoc-in
    7 Triaged      [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
    7 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
    7 Triaged      [CLJ-1239] faster, more flexible dispatch for clojure.walk
-   6 Triaged      [CLJ-1771] Support for multiple key(s)-value pairs in assoc-in
    6 Triaged      [CLJ-735] Improve error message when a protocol method is not found
    6 Triaged      [CLJ-1814] Make `satisfies?` as fast as a protocol method call
    6 Triaged      [CLJ-1209] clojure.test does not print ex-info in error reports
@@ -266,6 +267,7 @@ Enhancement
    1 Triaged      [CLJ-1843] Add =to function exposing Util/equivPred 
    1 Triaged      [CLJ-1942] Add predicate for sequential search in a collection
    1 Triaged      [CLJ-2015] with-instrument
+   1 Screened     [CLJ-2046] generate random subsets of or'd required keys in map specs
    1 Open         [CLJ-1010] A left-to-right-variant of `comp`
    1 Triaged      [CLJ-1073] Make print-sequential interruptible
    1 Open         [CLJ-1266] Better primitive support for floats
@@ -280,6 +282,7 @@ Enhancement
    1 Open         [CLJ-1585] Report boxed math warning on function that boxes primitive return value
    1 Prescreened  [CLJ-1730] Improve `refer` performance
    1 Open         [CLJ-1342] Byte comparison boxes both bytes and converts to longs to compare (which is slow)
+   1 Triaged      [CLJ-2013] spec doesn't explain failing path of a s/cat with purely optional branches
    1 Prescreened  [CLJ-2028] Docstring error in clojure.core/filter, remove, and take-while
    1 Vetted       [CLJ-1099] better error message when passing non-seq to seq
    1 Open         [CLJ-1189] Map-destructuring :or fumble needs compiler warning
@@ -383,13 +386,11 @@ Enhancement
    0 Prescreened  [CLJ-1973] generate-proxy produces unpredictable method order in generated classes
    0 Triaged      [CLJ-1982] Better explain reporting on a failed zero or one match with an embedded spec. 
    0 Triaged      [CLJ-1995] Improved docstring for explain-data
-   0 Triaged      [CLJ-2013] spec doesn't explain failing path of a s/cat with purely optional branches
    0 Triaged      [CLJ-2025] When a generator fails to gen, state which spec/pred failed
    0 Triaged      [CLJ-2037] specs in registry lack :file metadata despite having :line, :column
    0 Prescreened  [CLJ-2039] typo in deftype doc string
    0 Triaged      [CLJ-2040] Allow runtime modification of REPL exception handling
    0 Prescreened  [CLJ-2044] Four functions in clojure.instant have incomplete documentation
-   0 Screened     [CLJ-2046] generate random subsets of or'd required keys in map specs
    0 Triaged      [CLJ-2049] Improve clojure.zip documentation
    0 Prescreened  [CLJ-2050] Remove redundant key comparisons in HashCollisionNode
    0 Triaged      [CLJ-2054] generator for `any?` occasionally generates `Double/NaN` for which equality semantics don't apply, and that is a problem for the :ret spec of many functions.
@@ -397,3 +398,4 @@ Enhancement
    0 Screenable   [CLJ-2061] Better error message when exercise-fn called on fn without :args spec
    0 Screenable   [CLJ-2062] Spec import and refer-clojure macros
    0 Screenable   [CLJ-2063] Show longest path explain error first
+   0 Prescreened  [CLJ-2070] Faster clojure.core/delay implementation
