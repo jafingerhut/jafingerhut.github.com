@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: December 29, 2016
+Date: January 5, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -64,19 +64,11 @@ Defect
              Rick Moynihan (1)
              Greg Chapman (1/6)
              Bozhidar Batsov (1/14)
-    5.05   8 Open         [CLJ-1532] pr-str captures stdout from printing side-effects of lazily evaluated expressions.
-             Eugene Aksenov (1)
-             Ignacio Thayer (1)
-             Xavi Caballé (1)
-             Benny Tsai (1/2)
-             Johann Makram Salib Bestowrous (1/2)
-             John Wiseman (1/2)
-             Marshall Brekka (1/2)
-             Michael Blume (1/22)
-    4.95  20 Incomplete   [CLJ-700] contains? broken for transient collections
+    5.45  21 Incomplete   [CLJ-700] contains? broken for transient collections
              Alex Miller (1)
              Dom Kiva-Meyer (1/2)
              John Szakmeister (1/2)
+             Nikita Prokopov (1/2)
              Chris Blom (1/3)
              Mark Engelberg (1/3)
              Jason Wolfe (1/4)
@@ -94,6 +86,15 @@ Defect
              David Greenberg (1/14)
              Reid McKenzie (1/16)
              Nicola Mometto (1/68)
+    5.05   8 Open         [CLJ-1532] pr-str captures stdout from printing side-effects of lazily evaluated expressions.
+             Eugene Aksenov (1)
+             Ignacio Thayer (1)
+             Xavi Caballé (1)
+             Benny Tsai (1/2)
+             Johann Makram Salib Bestowrous (1/2)
+             John Wiseman (1/2)
+             Marshall Brekka (1/2)
+             Michael Blume (1/22)
     4.00   4 Needs Patch  [CLJ-2079] Generator overrides for spec aliases are not respected
              Frank Wang (1)
              Ian Davis (1)
@@ -125,6 +126,12 @@ Defect
              Ryan Neufeld (1/2)
              Trevor Hartman (1/2)
              Sean Corfield (1/3)
+    2.68   5 Needs Patch  [CLJ-1941] Instrumentation of fns with primitive type hints fails
+             James Carragher (1)
+             Mark Erickson (1)
+             John Schmidt (1/3)
+             Sean Corfield (1/3)
+             Nicola Mometto (1/68)
     2.58   4 Triaged      [CLJ-1243] Cannot resolve public generic method from package-private base class
              Michal Růžička (1)
              Sébastien Wagener (1)
@@ -135,6 +142,12 @@ Defect
              Odin Standal (1)
              Marc Limotte (1/3)
              Kenny Williams (1/6)
+    2.41   5 Screened     [CLJ-1793] Reducer instances hold onto the head of seqs
+             Brandon Adams (1)
+             David Bürgin (1)
+             Kevin Downey (1/4)
+             Laszlo Török (1/7)
+             Nicola Mometto (1/68)
     2.40   7 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
              Achint Sandhu (1)
              Stuart Halloway (1/2)
@@ -143,11 +156,6 @@ Defect
              Juho Teperi (1/5)
              David Greenberg (1/14)
              Michael Blume (1/22)
-    2.35   4 Needs Patch  [CLJ-1941] Instrumentation of fns with primitive type hints fails
-             James Carragher (1)
-             Mark Erickson (1)
-             Sean Corfield (1/3)
-             Nicola Mometto (1/68)
     2.01   3 Triaged      [CLJ-1911] min-key and max-key should return NaN if any of the argument is NaN
              Nicholas Antonov (1)
              Trevor Miranda (1)
@@ -164,11 +172,6 @@ Defect
              Chas Emerick (1/5)
              Devin Walters (1/5)
              David Leatherman (1/6)
-    1.41   4 Screened     [CLJ-1793] Reducer instances hold onto the head of seqs
-             Brandon Adams (1)
-             Kevin Downey (1/4)
-             Laszlo Török (1/7)
-             Nicola Mometto (1/68)
     1.40   4 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
              Anderson De Andrade (1)
              John Walker (1/6)
@@ -241,6 +244,8 @@ Defect
              Eugene Pakhomov (1/3)
     0.33   1 Triaged      [CLJ-1682] clojure.set/intersection occasionally allows non-set arguments.
              Eugene Pakhomov (1/3)
+    0.33   1 Triaged      [CLJ-1978] recursion-limit not respected
+             John Schmidt (1/3)
     0.28   3 Open         [CLJ-1445] pprint prints some metadata when *print-meta* bound to true, but not all
              Tim McCormack (1/5)
              Reid McKenzie (1/16)
@@ -347,12 +352,13 @@ Defect
     0.00   0 Triaged      [CLJ-1960] Bug in clojure.core/mod with large Double argument
     0.00   0 Triaged      [CLJ-1968] clojure.test/report :error does not flush *out* when the test fails with an exception
     0.00   0 Triaged      [CLJ-1972] issue with browse-url
-    0.00   0 Triaged      [CLJ-1978] recursion-limit not respected
     0.00   0 Triaged      [CLJ-1980] Unable to construct gen in indirectly recursive specs with s/every and derivations
     0.00   0 Triaged      [CLJ-2001] Invalid conversion from BigDecimal to long using clojure.core/long
     0.00   0 Triaged      [CLJ-2002] StackOverflowError in clojure.spec
     0.00   0 Triaged      [CLJ-2005] Type hint fails with direct linking disabled
     0.00   0 Triaged      [CLJ-2065] reduce-kv fails on subvec
+    0.00   0 Triaged      [CLJ-2091] clojure.lang.APersistentVector#hashCode is not thread-safe
+    0.00   0 Triaged      [CLJ-2092] deftype instances with mutable fields cannot be compiled 
     0.00   0 Vetted       [CLJ-1879] reduce-kv on a PHMs doesn't consistently execute the intended fastpath
 
 ========================================
@@ -386,7 +392,8 @@ Enhancement
              Tommi Reiman (1/7)
              Colin Taylor (1/8)
              Andrey Antukh (1/13)
-   15.26  25 Triaged      [CLJ-1965] clojure.spec/def should support an optional doc-string
+   16.26  26 Triaged      [CLJ-1965] clojure.spec/def should support an optional doc-string
+             Aaron Cummings (1)
              Donald Ball (1)
              Edwin Park (1)
              Felix Andrews (1)
@@ -879,6 +886,14 @@ Enhancement
              David Leatherman (1/6)
              Stephen C. Gilardi (1/7)
              Andrey Antukh (1/13)
+    1.72   7 Prescreened  [CLJ-1451] Add take-until
+             Jan-Paul Bultmann (1/2)
+             Jenan Wise (1/3)
+             John Schmidt (1/3)
+             Matthew O. Smith (1/5)
+             Lars Andersen (1/6)
+             Simon Belak (1/9)
+             Bozhidar Batsov (1/14)
     1.70   3 Prescreened  [CLJ-99] max-key and min-key evaluate k multiple times for arguments
              Hildeberto Mendonça (1)
              Frank Schmidt (1/2)
@@ -955,13 +970,6 @@ Enhancement
              Xiaoyu Zhang (1)
              Alex Fowler (1/3)
              Andrey Antukh (1/13)
-    1.38   6 Prescreened  [CLJ-1451] Add take-until
-             Jan-Paul Bultmann (1/2)
-             Jenan Wise (1/3)
-             Matthew O. Smith (1/5)
-             Lars Andersen (1/6)
-             Simon Belak (1/9)
-             Bozhidar Batsov (1/14)
     1.33   2 Open         [CLJ-1734] Display more descriptive error message when trying to use reader conditionals in a non-cljc file
              Marshall Abrams (1)
              Mike Thompson (1/3)
@@ -1002,9 +1010,6 @@ Enhancement
              Gary Fredericks (1/5)
              Greg Chapman (1/6)
              Reid McKenzie (1/16)
-    1.09   2 Prescreened  [CLJ-1912] Optimized version of the '<' and '>' functions for arties larger than 2
-             Nikita Prokopov (1)
-             Jozef Wagner (1/11)
     1.09   2 Triaged      [CLJ-1523] Add 'doseq' like macro for transducers
              Niels van Klaveren (1)
              Jozef Wagner (1/11)
@@ -1061,6 +1066,9 @@ Enhancement
     0.70   2 Triaged      [CLJ-1402] sort-by calls keyfn more times than is necessary
              Frank Schmidt (1/2)
              Tom Crayford (1/5)
+    0.59   2 Prescreened  [CLJ-1912] Optimized version of the '<' and '>' functions for arties larger than 2
+             Nikita Prokopov (1/2)
+             Jozef Wagner (1/11)
     0.59   3 Triaged      [CLJ-1305] Add optional not-found argument when invoking vectors or sets as functions
              Paul Gearon (1/2)
              Bozhidar Batsov (1/14)
@@ -1329,5 +1337,6 @@ Enhancement
     0.00   0 Triaged      [CLJ-2049] Improve clojure.zip documentation
     0.00   0 Triaged      [CLJ-2054] generator for `any?` occasionally generates `Double/NaN` for which equality semantics don't apply, and that is a problem for the :ret spec of many functions.
     0.00   0 Triaged      [CLJ-2081] for macro spec should know :let can't go in the first position
+    0.00   0 Triaged      [CLJ-2090] Improve clojure.core/distinct perf by using transient set
     0.00   0 Vetted       [CLJ-992] `iterate` reducer
     0.00   0 Vetted       [CLJ-1551] Consider transducer support for primitives
