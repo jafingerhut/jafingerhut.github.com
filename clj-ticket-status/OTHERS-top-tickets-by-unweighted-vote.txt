@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: January 12, 2017
+Date: January 16, 2017
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -10,12 +10,14 @@ the ticket describes a real issue.  At the end of other project ticket
 lists are all open tickets, whether they have votes or not.
 
 Suppose someone has currently voted on N open tickets.  Then their
-vote counts as 1/N for each of those tickets.  Thus voting on all
-tickets has the same relative effect on their ranking as voting on no
-tickets.  You must be selective to change the rankings.
+vote counts as (1+log(N,2))/N for each of those tickets, where
+log(N,2) is the base 2 logarithm of N (formerly it was 1/N).  This new
+formula gives those who vote on many tickets more 'points' to divide
+up (suggested by Alex Miller).  Still, it helps to be selective to
+change the rankings.
 
-Each person gets 1 weighted vote to divide up as they wish for each
-project, e.g. 1 for CLJ, 1 for CLJS, 1 for MATCH, etc.
+This calculation is done independently for each project, e.g. for CLJ,
+for CLJS, for MATCH, etc.
 
 Note: Ticket wranglers sometimes look at unweighted vote counts on
 tickets, too, when deciding which to act upon, so feel free to vote on
@@ -84,8 +86,8 @@ Defect
    2 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
    2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
    2 Open         [ASYNC-158] and with multiple <! does not short-circuit in go
-   2 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
    2 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
+   2 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
    2 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
    1 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
    1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
@@ -140,9 +142,9 @@ Enhancement
    5 Triaged      [ASYNC-143] Assert that fixed buffers must have size > 0
    5 Open         [ASYNC-137] Make (<! (timeout 0)) be closer to 0
    4 Triaged      [ASYNC-126] Add public channel "closed?" predicate
+   3 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
    3 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
    3 Open         [ASYNC-107] Improved docstring for alt!
-   3 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
    3 Open         [ASYNC-142] Rename ClojureScript namespace from cljs.core.async to clojure.core.async
    2 Triaged      [ASYNC-67] Can we get a generic sink operation?
    2 Open         [ASYNC-114] Allow a second arity on channel ex-handler which takes val as well as throwable
@@ -641,6 +643,7 @@ Defect
    0 Open         [LOGIC-177] binding to a deep nested vector takes too much time
    0 Open         [LOGIC-180] spec detects error in -inc macro
    0 Open         [LOGIC-181] Running rembero returns :- (!= _0 _0)
+   0 Open         [LOGIC-182] An lvar unified with a keyword behaves differently from a keyword
 
 ========================================
 Enhancement
@@ -825,11 +828,11 @@ Enhancement
 
    3 Open         [TCHECK-15] gen/for macro for alternate combinator syntax
    3 Open         [TCHECK-116] With clojure.test, debug prn should be optional, so you can run tests with minimal output
-   2 Open         [TCHECK-7] Add nested property support
    2 Open         [TCHECK-2] pos-int is confusingly named
+   2 Open         [TCHECK-7] Add nested property support
+   1 Open         [TCHECK-8] Bound tests and shrinks in time
    1 Open         [TCHECK-31] Doc improvements: how to separate "size" from "range"
    1 Open         [TCHECK-123] Interactive documentation
-   1 Open         [TCHECK-8] Bound tests and shrinks in time
    0 Open         [TCHECK-4] Handle sigint
    0 Open         [TCHECK-9] Properly document how :max-size works 
    0 Open         [TCHECK-14] re-organize README and doc/

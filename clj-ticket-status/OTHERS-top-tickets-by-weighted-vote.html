@@ -9,7 +9,7 @@
 
 <h1>Top OTHERS tickets by weighted vote</h1>
 
-Date: January 12, 2017<br>
+Date: January 16, 2017<br>
 <br>
 
 <p>
@@ -25,15 +25,17 @@ whether they have votes or not.
 <p>
 Suppose someone has currently voted on <span style="font-style:
 italic;">N</span> open tickets.&nbsp; Then their vote counts as <span
-style="font-style: italic;">1/N</span> for each of those
-tickets.&nbsp; Thus voting on all tickets has the same relative effect
-on their ranking as voting on no tickets.&nbsp; You must be selective
-to change the rankings.
+style="font-style: italic;">(1+log(N,2))/N</span> for each of those
+tickets, where <span style="font-style: italic;">log(N,2)</span> is
+the base 2 logarithm of N (formerly it was <span style="font-style:
+italic;">1/N</span>).&nbsp; This new formula gives those who vote on many
+tickets more 'points' to divide up (suggested by Alex Miller).&nbsp; Still,
+it helps to be selective to change the rankings.
 </p>
 
 <p>
-Each person gets 1 weighted vote to divide up as they wish for each
-project, i.e. 1 for CLJ, 1 for CLJS, 1 for MATCH, etc.
+This calculation is done independently for each project, e.g. for CLJ,
+for CLJS, for MATCH, etc.
 </p>
 
 <p>
@@ -327,7 +329,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">LOGIC
         </td>
-        <td class="tablecell"><a href="#LOGIC_Defect">32</a>
+        <td class="tablecell"><a href="#LOGIC_Defect">33</a>
         </td>
         <td class="tablecell"><a href="#LOGIC_Enhancement">18</a>
         </td>
@@ -711,7 +713,7 @@ Project ASYNC tickets
         </td>
     </tr>
     <tr>
-        <td class="tablecell">9.78
+        <td class="tablecell">12.28
         </td>
         <td class="tablecell">13
         </td>
@@ -721,23 +723,23 @@ Project ASYNC tickets
         </td>
         <td class="tablecell">Go blocks leak memory
         </td>
-        <td class="tablecell">Anna Pawlicka (1)<br>
-Caleb Phillips (1)<br>
-Dave Aitken (1)<br>
-James Henderson (1)<br>
-Joseph Biggert (1)<br>
-Mitchel Kuijpers (1)<br>
-Solicode (1)<br>
-Yen-Chin, Lee (1)<br>
-Gary Trakhman (1/2)<br>
-Timothy Pote (1/2)<br>
-Jan Rychter (1/3)<br>
-Semyon Skorokhodov (1/4)<br>
-Nicola Mometto (1/5)
+        <td class="tablecell">Anna Pawlicka (1.00)<br>
+Caleb Phillips (1.00)<br>
+Dave Aitken (1.00)<br>
+James Henderson (1.00)<br>
+Joseph Biggert (1.00)<br>
+Mitchel Kuijpers (1.00)<br>
+Solicode (1.00)<br>
+Yen-Chin, Lee (1.00)<br>
+Gary Trakhman (1.00)<br>
+Timothy Pote (1.00)<br>
+Jan Rychter (0.86)<br>
+Semyon Skorokhodov (0.75)<br>
+Nicola Mometto (0.66)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">5.75
+        <td class="tablecell">6.75
         </td>
         <td class="tablecell">7
         </td>
@@ -747,17 +749,17 @@ Nicola Mometto (1/5)
         </td>
         <td class="tablecell">Try/catch block loops eternally inside go block
         </td>
-        <td class="tablecell">Alexey Aristov (1)<br>
-Kenny Williams (1)<br>
-Liam F (1)<br>
-Patrick Oliver (1)<br>
-Roman Pearah (1)<br>
-Josh Comer (1/2)<br>
-Semyon Skorokhodov (1/4)
+        <td class="tablecell">Alexey Aristov (1.00)<br>
+Kenny Williams (1.00)<br>
+Liam F (1.00)<br>
+Patrick Oliver (1.00)<br>
+Roman Pearah (1.00)<br>
+Josh Comer (1.00)<br>
+Semyon Skorokhodov (0.75)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">4.28
+        <td class="tablecell">6.28
         </td>
         <td class="tablecell">7
         </td>
@@ -767,13 +769,30 @@ Semyon Skorokhodov (1/4)
         </td>
         <td class="tablecell">core.async with multiple catch blocks causing weird loop behaviour
         </td>
-        <td class="tablecell">Ken Allen (1)<br>
-Konrad Rzezniczak (1)<br>
-Paul Ostazeski (1)<br>
-Josh Comer (1/2)<br>
-Willy Blandin (1/3)<br>
-Semyon Skorokhodov (1/4)<br>
-Nicola Mometto (1/5)
+        <td class="tablecell">Ken Allen (1.00)<br>
+Konrad Rzezniczak (1.00)<br>
+Paul Ostazeski (1.00)<br>
+Josh Comer (1.00)<br>
+Willy Blandin (0.86)<br>
+Semyon Skorokhodov (0.75)<br>
+Nicola Mometto (0.66)
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">3.46
+        </td>
+        <td class="tablecell">4
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-90">ASYNC-90</a>
+        </td>
+        <td class="tablecell">Pub/sub leaks memory
+        </td>
+        <td class="tablecell">Collider Writer (1.00)<br>
+Jonas Enlund (1.00)<br>
+Jan Rychter (0.86)<br>
+Daniel Compton (0.60)
         </td>
     </tr>
     <tr>
@@ -787,13 +806,13 @@ Nicola Mometto (1/5)
         </td>
         <td class="tablecell">Compilation errors inside go block always reported as first line of block
         </td>
-        <td class="tablecell">Hugo Duncan (1)<br>
-Martin Raison (1)<br>
-Michael Nygard (1)
+        <td class="tablecell">Hugo Duncan (1.00)<br>
+Martin Raison (1.00)<br>
+Michael Nygard (1.00)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">2.50
+        <td class="tablecell">3.00
         </td>
         <td class="tablecell">3
         </td>
@@ -803,26 +822,25 @@ Michael Nygard (1)
         </td>
         <td class="tablecell">promise-chan in ClojureScript is broken
         </td>
-        <td class="tablecell">James Laver (1)<br>
-Johannes Gustafsson (1)<br>
-Wilker Lúcio da Silva (1/2)
+        <td class="tablecell">James Laver (1.00)<br>
+Johannes Gustafsson (1.00)<br>
+Wilker Lúcio da Silva (1.00)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">2.00
+        <td class="tablecell">2.86
         </td>
-        <td class="tablecell">4
+        <td class="tablecell">3
         </td>
         <td class="tablecell">Triaged
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-90">ASYNC-90</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-32">ASYNC-32</a>
         </td>
-        <td class="tablecell">Pub/sub leaks memory
+        <td class="tablecell">onto-chan retains head of input sequence causing OutOfMemoryError
         </td>
-        <td class="tablecell">Collider Writer (1)<br>
-Jonas Enlund (1/2)<br>
-Jan Rychter (1/3)<br>
-Daniel Compton (1/6)
+        <td class="tablecell">Colin Taylor (1.00)<br>
+Gary Trakhman (1.00)<br>
+Jan Rychter (0.86)
         </td>
     </tr>
     <tr>
@@ -836,8 +854,8 @@ Daniel Compton (1/6)
         </td>
         <td class="tablecell">'and' does not short circuit within go block in clojurescript
         </td>
-        <td class="tablecell">Francis Avila (1)<br>
-Rangel Spasov (1)
+        <td class="tablecell">Francis Avila (1.00)<br>
+Rangel Spasov (1.00)
         </td>
     </tr>
     <tr>
@@ -851,28 +869,12 @@ Rangel Spasov (1)
         </td>
         <td class="tablecell">Preserve loop binding metadata when inside a go block
         </td>
-        <td class="tablecell">Bobby Eickhoff (1)<br>
-Leon Grapenthin (1)
+        <td class="tablecell">Bobby Eickhoff (1.00)<br>
+Leon Grapenthin (1.00)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">1.33
-        </td>
-        <td class="tablecell">3
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-32">ASYNC-32</a>
-        </td>
-        <td class="tablecell">onto-chan retains head of input sequence causing OutOfMemoryError
-        </td>
-        <td class="tablecell">Colin Taylor (1/2)<br>
-Gary Trakhman (1/2)<br>
-Jan Rychter (1/3)
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">1.33
+        <td class="tablecell">1.86
         </td>
         <td class="tablecell">2
         </td>
@@ -882,12 +884,12 @@ Jan Rychter (1/3)
         </td>
         <td class="tablecell">(try (catch :default)) inside a cljs go block raises an exception
         </td>
-        <td class="tablecell">Kevin Neaton (1)<br>
-Willy Blandin (1/3)
+        <td class="tablecell">Kevin Neaton (1.00)<br>
+Willy Blandin (0.86)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">1.33
+        <td class="tablecell">1.86
         </td>
         <td class="tablecell">2
         </td>
@@ -897,12 +899,12 @@ Willy Blandin (1/3)
         </td>
         <td class="tablecell">(ClojureScript) go macro not correctly transforming (case) within a macro
         </td>
-        <td class="tablecell">Ghadi Shayban (1)<br>
-Yehonathan Sharvit (1/3)
+        <td class="tablecell">Ghadi Shayban (1.00)<br>
+Yehonathan Sharvit (0.86)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">1.33
+        <td class="tablecell">1.86
         </td>
         <td class="tablecell">2
         </td>
@@ -912,12 +914,12 @@ Yehonathan Sharvit (1/3)
         </td>
         <td class="tablecell">Clarify timeout doc to mention that close! should not be called on a timeout channel
         </td>
-        <td class="tablecell">Ryan Sundberg (1)<br>
-Howard Lewis Ship (1/3)
+        <td class="tablecell">Ryan Sundberg (1.00)<br>
+Howard Lewis Ship (0.86)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">1.33
+        <td class="tablecell">1.86
         </td>
         <td class="tablecell">2
         </td>
@@ -927,12 +929,27 @@ Howard Lewis Ship (1/3)
         </td>
         <td class="tablecell">and with multiple &lt;! does not short-circuit in go
         </td>
-        <td class="tablecell">Wang Xing (1)<br>
-Yehonathan Sharvit (1/3)
+        <td class="tablecell">Wang Xing (1.00)<br>
+Yehonathan Sharvit (0.86)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">1.17
+        <td class="tablecell">1.72
+        </td>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-58">ASYNC-58</a>
+        </td>
+        <td class="tablecell">mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
+        </td>
+        <td class="tablecell">Alex Nixon (0.86)<br>
+Eduard Bondarenko (0.86)
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1.60
         </td>
         <td class="tablecell">2
         </td>
@@ -942,8 +959,23 @@ Yehonathan Sharvit (1/3)
         </td>
         <td class="tablecell">let-bindings unavailable in #js literals in go-blocks
         </td>
-        <td class="tablecell">Thomas Down (1)<br>
-Daniel Compton (1/6)
+        <td class="tablecell">Thomas Down (1.00)<br>
+Daniel Compton (0.60)
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1.53
+        </td>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-92">ASYNC-92</a>
+        </td>
+        <td class="tablecell">go macro removes binding forms that are intialized with logical false value
+        </td>
+        <td class="tablecell">Willy Blandin (0.86)<br>
+Nicola Mometto (0.66)
         </td>
     </tr>
     <tr>
@@ -957,7 +989,7 @@ Daniel Compton (1/6)
         </td>
         <td class="tablecell">cljs IOC macro issue with double-dot form
         </td>
-        <td class="tablecell">Marcus Lewis (1)
+        <td class="tablecell">Marcus Lewis (1.00)
         </td>
     </tr>
     <tr>
@@ -971,7 +1003,7 @@ Daniel Compton (1/6)
         </td>
         <td class="tablecell">or evaluation not stopped when exp nests take
         </td>
-        <td class="tablecell">Christian Weilbach (1)
+        <td class="tablecell">Christian Weilbach (1.00)
         </td>
     </tr>
     <tr>
@@ -985,7 +1017,7 @@ Daniel Compton (1/6)
         </td>
         <td class="tablecell">pipeline-async docstring correction
         </td>
-        <td class="tablecell">Moritz Heidkamp (1)
+        <td class="tablecell">Moritz Heidkamp (1.00)
         </td>
     </tr>
     <tr>
@@ -999,7 +1031,7 @@ Daniel Compton (1/6)
         </td>
         <td class="tablecell">(go (try ... (finally ...))) block with parking operations in finally body loses try body return value
         </td>
-        <td class="tablecell">Richard Newman (1)
+        <td class="tablecell">Richard Newman (1.00)
         </td>
     </tr>
     <tr>
@@ -1013,7 +1045,7 @@ Daniel Compton (1/6)
         </td>
         <td class="tablecell">mult distribution behavior doesn't work as intended
         </td>
-        <td class="tablecell">Patrick Killean (1)
+        <td class="tablecell">Patrick Killean (1.00)
         </td>
     </tr>
     <tr>
@@ -1027,41 +1059,11 @@ Daniel Compton (1/6)
         </td>
         <td class="tablecell">(require :reload-all) causes NullPointerException
         </td>
-        <td class="tablecell">Martin Puppe (1)
+        <td class="tablecell">Martin Puppe (1.00)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">0.67
-        </td>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-58">ASYNC-58</a>
-        </td>
-        <td class="tablecell">mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
-        </td>
-        <td class="tablecell">Alex Nixon (1/3)<br>
-Eduard Bondarenko (1/3)
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0.53
-        </td>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-92">ASYNC-92</a>
-        </td>
-        <td class="tablecell">go macro removes binding forms that are intialized with logical false value
-        </td>
-        <td class="tablecell">Willy Blandin (1/3)<br>
-Nicola Mometto (1/5)
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0.33
+        <td class="tablecell">0.86
         </td>
         <td class="tablecell">1
         </td>
@@ -1071,11 +1073,11 @@ Nicola Mometto (1/5)
         </td>
         <td class="tablecell">Closing a tap with a pending item blocks the mult input channel
         </td>
-        <td class="tablecell">Alex Nixon (1/3)
+        <td class="tablecell">Alex Nixon (0.86)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">0.25
+        <td class="tablecell">0.75
         </td>
         <td class="tablecell">1
         </td>
@@ -1085,11 +1087,11 @@ Nicola Mometto (1/5)
         </td>
         <td class="tablecell">binding in go block causes thread binding error: "Pop without matching push"
         </td>
-        <td class="tablecell">Semyon Skorokhodov (1/4)
+        <td class="tablecell">Semyon Skorokhodov (0.75)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">0.20
+        <td class="tablecell">0.66
         </td>
         <td class="tablecell">1
         </td>
@@ -1099,7 +1101,7 @@ Nicola Mometto (1/5)
         </td>
         <td class="tablecell">deadlock in multi catch
         </td>
-        <td class="tablecell">Nicola Mometto (1/5)
+        <td class="tablecell">Nicola Mometto (0.66)
         </td>
     </tr>
     <tr>
@@ -1613,7 +1615,7 @@ Nicola Mometto (1/5)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">9.70
+        <td class="tablecell">12.12
         </td>
         <td class="tablecell">13
         </td>
@@ -1623,41 +1625,23 @@ Nicola Mometto (1/5)
         </td>
         <td class="tablecell">Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
         </td>
-        <td class="tablecell">Chad Harrington (1)<br>
-Derek Troy-West (1)<br>
-Michael Drogalis (1)<br>
-Paul Bauer (1)<br>
-Pierre-Yves Ritschard (1)<br>
-Ryan Neufeld (1)<br>
-Stuart Halloway (1)<br>
-Thomas Engelschmidt (1)<br>
-Colin Taylor (1/2)<br>
-Timothy Pote (1/2)<br>
-Howard Lewis Ship (1/3)<br>
-Nicola Mometto (1/5)<br>
-Daniel Compton (1/6)
+        <td class="tablecell">Chad Harrington (1.00)<br>
+Derek Troy-West (1.00)<br>
+Michael Drogalis (1.00)<br>
+Paul Bauer (1.00)<br>
+Pierre-Yves Ritschard (1.00)<br>
+Ryan Neufeld (1.00)<br>
+Stuart Halloway (1.00)<br>
+Thomas Engelschmidt (1.00)<br>
+Colin Taylor (1.00)<br>
+Timothy Pote (1.00)<br>
+Howard Lewis Ship (0.86)<br>
+Nicola Mometto (0.66)<br>
+Daniel Compton (0.60)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">4.33
-        </td>
-        <td class="tablecell">5
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-143">ASYNC-143</a>
-        </td>
-        <td class="tablecell">Assert that fixed buffers must have size &gt; 0
-        </td>
-        <td class="tablecell">Aaron Iba (1)<br>
-Alexander Yakushev (1)<br>
-Jarppe Lansio (1)<br>
-Joshua Tilles (1)<br>
-Alex Nixon (1/3)
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">4.00
+        <td class="tablecell">6.46
         </td>
         <td class="tablecell">7
         </td>
@@ -1667,17 +1651,35 @@ Alex Nixon (1/3)
         </td>
         <td class="tablecell">ClojureScript: combine cljs.core.async.macros and cljs.core.async
         </td>
-        <td class="tablecell">Juho Teperi (1)<br>
-Tim Gilbert (1)<br>
-Alexander Solovyov (1/2)<br>
-Dom Kiva-Meyer (1/2)<br>
-Wilker Lúcio da Silva (1/2)<br>
-Howard Lewis Ship (1/3)<br>
-Daniel Compton (1/6)
+        <td class="tablecell">Juho Teperi (1.00)<br>
+Tim Gilbert (1.00)<br>
+Alexander Solovyov (1.00)<br>
+Dom Kiva-Meyer (1.00)<br>
+Wilker Lúcio da Silva (1.00)<br>
+Howard Lewis Ship (0.86)<br>
+Daniel Compton (0.60)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">3.50
+        <td class="tablecell">4.86
+        </td>
+        <td class="tablecell">5
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-143">ASYNC-143</a>
+        </td>
+        <td class="tablecell">Assert that fixed buffers must have size &gt; 0
+        </td>
+        <td class="tablecell">Aaron Iba (1.00)<br>
+Alexander Yakushev (1.00)<br>
+Jarppe Lansio (1.00)<br>
+Joshua Tilles (1.00)<br>
+Alex Nixon (0.86)
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">4.46
         </td>
         <td class="tablecell">5
         </td>
@@ -1687,11 +1689,44 @@ Daniel Compton (1/6)
         </td>
         <td class="tablecell">Make (&lt;! (timeout 0)) be closer to 0
         </td>
-        <td class="tablecell">Denis Johnson (1)<br>
-Patrick O'Brien (1)<br>
-Stuart Mitchell (1)<br>
-Yehonathan Sharvit (1/3)<br>
-Daniel Compton (1/6)
+        <td class="tablecell">Denis Johnson (1.00)<br>
+Patrick O'Brien (1.00)<br>
+Stuart Mitchell (1.00)<br>
+Yehonathan Sharvit (0.86)<br>
+Daniel Compton (0.60)
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">3.46
+        </td>
+        <td class="tablecell">4
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-126">ASYNC-126</a>
+        </td>
+        <td class="tablecell">Add public channel "closed?" predicate
+        </td>
+        <td class="tablecell">J.&amp;nbsp;S.&amp;nbsp;Choi (1.00)<br>
+Jonas Enlund (1.00)<br>
+Eduard Bondarenko (0.86)<br>
+Daniel Compton (0.60)
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">3.00
+        </td>
+        <td class="tablecell">3
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-61">ASYNC-61</a>
+        </td>
+        <td class="tablecell">Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
+        </td>
+        <td class="tablecell">Valerie Houseman (1.00)<br>
+Max Penet (1.00)<br>
+Vlad Bokov (1.00)
         </td>
     </tr>
     <tr>
@@ -1705,9 +1740,9 @@ Daniel Compton (1/6)
         </td>
         <td class="tablecell">Provide a chan? function to determine if a given var is a channel
         </td>
-        <td class="tablecell">Huahai Yang (1)<br>
-Nahuel Greco (1)<br>
-Reid McKenzie (1)
+        <td class="tablecell">Huahai Yang (1.00)<br>
+Nahuel Greco (1.00)<br>
+Reid McKenzie (1.00)
         </td>
     </tr>
     <tr>
@@ -1721,25 +1756,40 @@ Reid McKenzie (1)
         </td>
         <td class="tablecell">Improved docstring for alt!
         </td>
-        <td class="tablecell">Baishampayan Ghose (1)<br>
-Greg Chapman (1)<br>
-Oleksandr Shyshko (1)
+        <td class="tablecell">Baishampayan Ghose (1.00)<br>
+Greg Chapman (1.00)<br>
+Oleksandr Shyshko (1.00)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">2.00
+        <td class="tablecell">3.00
         </td>
         <td class="tablecell">3
         </td>
         <td class="tablecell">Open
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-61">ASYNC-61</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-142">ASYNC-142</a>
         </td>
-        <td class="tablecell">Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
+        <td class="tablecell">Rename ClojureScript namespace from cljs.core.async to clojure.core.async
         </td>
-        <td class="tablecell">Valerie Houseman (1)<br>
-Max Penet (1/2)<br>
-Vlad Bokov (1/2)
+        <td class="tablecell">Alexander Solovyov (1.00)<br>
+Dom Kiva-Meyer (1.00)<br>
+J.&amp;nbsp;S.&amp;nbsp;Choi (1.00)
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">2.00
+        </td>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-114">ASYNC-114</a>
+        </td>
+        <td class="tablecell">Allow a second arity on channel ex-handler which takes val as well as throwable
+        </td>
+        <td class="tablecell">Nivedita Priyadarshini (1.00)<br>
+Max Penet (1.00)
         </td>
     </tr>
     <tr>
@@ -1753,60 +1803,12 @@ Vlad Bokov (1/2)
         </td>
         <td class="tablecell">Can we get a generic sink operation?
         </td>
-        <td class="tablecell">Adam Clements (1)<br>
-Jan-Paul Bultmann (1)
+        <td class="tablecell">Adam Clements (1.00)<br>
+Jan-Paul Bultmann (1.00)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">1.50
-        </td>
-        <td class="tablecell">4
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-126">ASYNC-126</a>
-        </td>
-        <td class="tablecell">Add public channel "closed?" predicate
-        </td>
-        <td class="tablecell">J.&amp;nbsp;S.&amp;nbsp;Choi (1/2)<br>
-Jonas Enlund (1/2)<br>
-Eduard Bondarenko (1/3)<br>
-Daniel Compton (1/6)
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">1.50
-        </td>
-        <td class="tablecell">3
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-142">ASYNC-142</a>
-        </td>
-        <td class="tablecell">Rename ClojureScript namespace from cljs.core.async to clojure.core.async
-        </td>
-        <td class="tablecell">Alexander Solovyov (1/2)<br>
-Dom Kiva-Meyer (1/2)<br>
-J.&amp;nbsp;S.&amp;nbsp;Choi (1/2)
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">1.50
-        </td>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-114">ASYNC-114</a>
-        </td>
-        <td class="tablecell">Allow a second arity on channel ex-handler which takes val as well as throwable
-        </td>
-        <td class="tablecell">Nivedita Priyadarshini (1)<br>
-Max Penet (1/2)
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">1.33
+        <td class="tablecell">1.86
         </td>
         <td class="tablecell">2
         </td>
@@ -1816,8 +1818,8 @@ Max Penet (1/2)
         </td>
         <td class="tablecell">do not transform forms that have :no-transform metadata attached
         </td>
-        <td class="tablecell">Dennis Schridde (1)<br>
-Eduard Bondarenko (1/3)
+        <td class="tablecell">Dennis Schridde (1.00)<br>
+Eduard Bondarenko (0.86)
         </td>
     </tr>
     <tr>
@@ -1831,7 +1833,7 @@ Eduard Bondarenko (1/3)
         </td>
         <td class="tablecell">Add optional default channel to 'pub'
         </td>
-        <td class="tablecell">Terje Norderhaug (1)
+        <td class="tablecell">Terje Norderhaug (1.00)
         </td>
     </tr>
     <tr>
@@ -1845,11 +1847,11 @@ Eduard Bondarenko (1/3)
         </td>
         <td class="tablecell">Notification of items dropped from sliding/dropping buffers
         </td>
-        <td class="tablecell">Miro Kubicek (1)
+        <td class="tablecell">Miro Kubicek (1.00)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">0.50
+        <td class="tablecell">1.00
         </td>
         <td class="tablecell">1
         </td>
@@ -1859,7 +1861,7 @@ Eduard Bondarenko (1/3)
         </td>
         <td class="tablecell">exception behavior for thread macro is hard coded
         </td>
-        <td class="tablecell">Vlad Bokov (1/2)
+        <td class="tablecell">Vlad Bokov (1.00)
         </td>
     </tr>
     <tr>
@@ -2089,7 +2091,7 @@ Eduard Bondarenko (1/3)
         </td>
         <td class="tablecell">Convert core.async ClojureScript tests to cljs.test
         </td>
-        <td class="tablecell">Jenan Wise (1)
+        <td class="tablecell">Jenan Wise (1.00)
         </td>
     </tr>
   </tbody>
@@ -2127,8 +2129,8 @@ Project CCACHE tickets
         </td>
         <td class="tablecell">It appears that TTL cache exhibits quadratic performance (+ its evict is buggy)
         </td>
-        <td class="tablecell">Leon Barrett (1)<br>
-Michael Blume (1)
+        <td class="tablecell">Leon Barrett (1.00)<br>
+Michael Blume (1.00)
         </td>
     </tr>
     <tr>
@@ -2142,8 +2144,8 @@ Michael Blume (1)
         </td>
         <td class="tablecell">FIFOCache StackOverflowError with high :threshold due to concat
         </td>
-        <td class="tablecell">Martin Harrigan (1)<br>
-Wil Yegelwel (1)
+        <td class="tablecell">Martin Harrigan (1.00)<br>
+Wil Yegelwel (1.00)
         </td>
     </tr>
     <tr>
@@ -2157,7 +2159,7 @@ Wil Yegelwel (1)
         </td>
         <td class="tablecell">SoftCaches update in-place, other cache types don't
         </td>
-        <td class="tablecell">Ambrose Bonnaire-Sergeant (1)
+        <td class="tablecell">Ambrose Bonnaire-Sergeant (1.00)
         </td>
     </tr>
     <tr>
@@ -2219,11 +2221,11 @@ Wil Yegelwel (1)
         </td>
         <td class="tablecell">Porting core.cache to ClojureScript
         </td>
-        <td class="tablecell">Ivan Kryvoruchko (1)<br>
-Nicolás Berger (1)<br>
-Oleksandr Shyshko (1)<br>
-Wilker Lúcio da Silva (1)<br>
-Yen-Chin, Lee (1)
+        <td class="tablecell">Ivan Kryvoruchko (1.00)<br>
+Nicolás Berger (1.00)<br>
+Oleksandr Shyshko (1.00)<br>
+Wilker Lúcio da Silva (1.00)<br>
+Yen-Chin, Lee (1.00)
         </td>
     </tr>
     <tr>
@@ -2237,7 +2239,7 @@ Yen-Chin, Lee (1)
         </td>
         <td class="tablecell">Asynchronous Cache Support
         </td>
-        <td class="tablecell">Eduard Bondarenko (1)
+        <td class="tablecell">Eduard Bondarenko (1.00)
         </td>
     </tr>
     <tr>
@@ -2251,7 +2253,7 @@ Yen-Chin, Lee (1)
         </td>
         <td class="tablecell">through method should always have cache as first argument to make it more friendly for swap!
         </td>
-        <td class="tablecell">Morgon Kanter (1)
+        <td class="tablecell">Morgon Kanter (1.00)
         </td>
     </tr>
     <tr>
@@ -2805,7 +2807,7 @@ Project CLJCLR tickets
         </td>
         <td class="tablecell">Clojure.Compile.exe create single dll for all compiled .clj files
         </td>
-        <td class="tablecell">Antti Karanta (1)
+        <td class="tablecell">Antti Karanta (1.00)
         </td>
     </tr>
     <tr>
@@ -2871,9 +2873,9 @@ Project CMEMOIZE tickets
         </td>
         <td class="tablecell">ttl functions sometimes return nil
         </td>
-        <td class="tablecell">Arthur Maciejewicz (1)<br>
-Joshua Tilles (1)<br>
-Zack Dever (1)
+        <td class="tablecell">Arthur Maciejewicz (1.00)<br>
+Joshua Tilles (1.00)<br>
+Zack Dever (1.00)
         </td>
     </tr>
     <tr>
@@ -3129,8 +3131,22 @@ Project CTYP tickets
         </td>
         <td class="tablecell">No such var: ana/ns-&gt;relpath when loading the ClojureScript typechecker
         </td>
-        <td class="tablecell">Vic Goldfeld (1)<br>
-Vince Broz (1)
+        <td class="tablecell">Vic Goldfeld (1.00)<br>
+Vince Broz (1.00)
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1.00
+        </td>
+        <td class="tablecell">1
+        </td>
+        <td class="tablecell">Bad: Match >1 state: Open, Backlog
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CTYP-262">CTYP-262</a>
+        </td>
+        <td class="tablecell">Accessing keys from a Heterogeneous Map w/ Polymorphic type signature throws type error
+        </td>
+        <td class="tablecell">Joshua Tilles (1.00)
         </td>
     </tr>
     <tr>
@@ -3144,7 +3160,7 @@ Vince Broz (1)
         </td>
         <td class="tablecell">select-keys on HMap returns Map with union key and value types
         </td>
-        <td class="tablecell">Juho Teperi (1)
+        <td class="tablecell">Juho Teperi (1.00)
         </td>
     </tr>
     <tr>
@@ -3158,21 +3174,7 @@ Vince Broz (1)
         </td>
         <td class="tablecell">No matching arities when defining multiple arity protocol method
         </td>
-        <td class="tablecell">Johan Gall (1)
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0.50
-        </td>
-        <td class="tablecell">1
-        </td>
-        <td class="tablecell">Bad: Match >1 state: Open, Backlog
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CTYP-262">CTYP-262</a>
-        </td>
-        <td class="tablecell">Accessing keys from a Heterogeneous Map w/ Polymorphic type signature throws type error
-        </td>
-        <td class="tablecell">Joshua Tilles (1/2)
+        <td class="tablecell">Johan Gall (1.00)
         </td>
     </tr>
     <tr>
@@ -3854,7 +3856,7 @@ Vince Broz (1)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">3.50
+        <td class="tablecell">4.00
         </td>
         <td class="tablecell">4
         </td>
@@ -3864,10 +3866,10 @@ Vince Broz (1)
         </td>
         <td class="tablecell">Typechecker fails when checking involves an object from reify
         </td>
-        <td class="tablecell">Donald Ball (1)<br>
-Jochen Hinrichsen (1)<br>
-Leon Grapenthin (1)<br>
-Joshua Tilles (1/2)
+        <td class="tablecell">Donald Ball (1.00)<br>
+Jochen Hinrichsen (1.00)<br>
+Leon Grapenthin (1.00)<br>
+Joshua Tilles (1.00)
         </td>
     </tr>
     <tr>
@@ -3881,9 +3883,9 @@ Joshua Tilles (1/2)
         </td>
         <td class="tablecell">Several failure cases for comp for polyadic fns and type variables
         </td>
-        <td class="tablecell">Chris McDevitt (1)<br>
-Marc O'Morain (1)<br>
-Oskar Wickstrom (1)
+        <td class="tablecell">Chris McDevitt (1.00)<br>
+Marc O'Morain (1.00)<br>
+Oskar Wickstrom (1.00)
         </td>
     </tr>
     <tr>
@@ -3897,7 +3899,7 @@ Oskar Wickstrom (1)
         </td>
         <td class="tablecell">Allow namespace aliases in `ann`
         </td>
-        <td class="tablecell">Reid McKenzie (1)
+        <td class="tablecell">Reid McKenzie (1.00)
         </td>
     </tr>
     <tr>
@@ -6033,9 +6035,9 @@ Project JDBC tickets
         </td>
         <td class="tablecell">The age of reduce is upon us
         </td>
-        <td class="tablecell">Ghadi Shayban (1)<br>
-J.&amp;nbsp;S.&amp;nbsp;Choi (1)<br>
-Ragnar Dahlen (1)
+        <td class="tablecell">Ghadi Shayban (1.00)<br>
+J.&amp;nbsp;S.&amp;nbsp;Choi (1.00)<br>
+Ragnar Dahlen (1.00)
         </td>
     </tr>
     <tr>
@@ -6049,7 +6051,7 @@ Ragnar Dahlen (1)
         </td>
         <td class="tablecell">Support stored procedures with CallableStatement
         </td>
-        <td class="tablecell">Dale Peakall (1)
+        <td class="tablecell">Dale Peakall (1.00)
         </td>
     </tr>
     <tr>
@@ -6129,8 +6131,8 @@ Project JMX tickets
         </td>
         <td class="tablecell">Extend java.jmx to support exposing operations in created beans
         </td>
-        <td class="tablecell">Howard Lewis Ship (1)<br>
-Tim McCormack (1)
+        <td class="tablecell">Howard Lewis Ship (1.00)<br>
+Tim McCormack (1.00)
         </td>
     </tr>
     <tr>
@@ -6665,6 +6667,20 @@ Project LOGIC tickets
         <td class="tablecell">
         </td>
     </tr>
+    <tr>
+        <td class="tablecell">0.00
+        </td>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/LOGIC-182">LOGIC-182</a>
+        </td>
+        <td class="tablecell">An lvar unified with a keyword behaves differently from a keyword
+        </td>
+        <td class="tablecell">
+        </td>
+    </tr>
   </tbody>
 </table>
 <h2><a id="LOGIC_Enhancement"></a>Enhancement</h2>
@@ -7020,8 +7036,8 @@ Project MATCH tickets
         </td>
         <td class="tablecell">Rather simple match fails with code too large
         </td>
-        <td class="tablecell">Andrey Zaytsev (1)<br>
-chuan6 (1)
+        <td class="tablecell">Andrey Zaytsev (1.00)<br>
+chuan6 (1.00)
         </td>
     </tr>
     <tr>
@@ -7035,7 +7051,7 @@ chuan6 (1)
         </td>
         <td class="tablecell">vector patterns should work on seq
         </td>
-        <td class="tablecell">Russell Mull (1)
+        <td class="tablecell">Russell Mull (1.00)
         </td>
     </tr>
     <tr>
@@ -7293,15 +7309,15 @@ chuan6 (1)
         </td>
         <td class="tablecell">core.match clojurescript should be self-host compatible
         </td>
-        <td class="tablecell">Andrea Russo (1)<br>
-Andreas Thoelke (1)<br>
-Brian Dawn (1)<br>
-Dmitr Sotnikov (1)<br>
-Gary Trakhman (1)<br>
-JR Heard (1)<br>
-Jiacai Liu (1)<br>
-Lauri Oherd (1)<br>
-Vincent DM (1)
+        <td class="tablecell">Andrea Russo (1.00)<br>
+Andreas Thoelke (1.00)<br>
+Brian Dawn (1.00)<br>
+Dmitr Sotnikov (1.00)<br>
+Gary Trakhman (1.00)<br>
+JR Heard (1.00)<br>
+Jiacai Liu (1.00)<br>
+Lauri Oherd (1.00)<br>
+Vincent DM (1.00)
         </td>
     </tr>
     <tr>
@@ -7315,7 +7331,7 @@ Vincent DM (1)
         </td>
         <td class="tablecell">Optimized pattern matching on deftype/record, POJOs
         </td>
-        <td class="tablecell">Leonardo Borges (1)
+        <td class="tablecell">Leonardo Borges (1.00)
         </td>
     </tr>
     <tr>
@@ -7631,8 +7647,8 @@ Project NREPL tickets
         </td>
         <td class="tablecell">Adopt default port
         </td>
-        <td class="tablecell">Andrew Rosa (1)<br>
-Bozhidar Batsov (1)
+        <td class="tablecell">Andrew Rosa (1.00)<br>
+Bozhidar Batsov (1.00)
         </td>
     </tr>
     <tr>
@@ -7646,7 +7662,7 @@ Bozhidar Batsov (1)
         </td>
         <td class="tablecell">Interrupt of load-file generates java.lang.ThreadDeath exception
         </td>
-        <td class="tablecell">Lars Andersen (1)
+        <td class="tablecell">Lars Andersen (1.00)
         </td>
     </tr>
     <tr>
@@ -7820,7 +7836,7 @@ Bozhidar Batsov (1)
         </td>
         <td class="tablecell">Support custom value rendering middleware
         </td>
-        <td class="tablecell">Kenny Williams (1)
+        <td class="tablecell">Kenny Williams (1.00)
         </td>
     </tr>
     <tr>
@@ -7834,7 +7850,7 @@ Bozhidar Batsov (1)
         </td>
         <td class="tablecell">Expose installed middlewares via some mechanism
         </td>
-        <td class="tablecell">Dirk Geurs (1)
+        <td class="tablecell">Dirk Geurs (1.00)
         </td>
     </tr>
     <tr>
@@ -8152,7 +8168,7 @@ Project TBENCH tickets
         </td>
         <td class="tablecell">Alioth k-nucleotide
         </td>
-        <td class="tablecell">Mike Anderson (1)
+        <td class="tablecell">Mike Anderson (1.00)
         </td>
     </tr>
     <tr>
@@ -8454,9 +8470,9 @@ Project TCHECK tickets
         </td>
         <td class="tablecell">gen/for macro for alternate combinator syntax
         </td>
-        <td class="tablecell">Gunnar Völkel (1)<br>
-Jason Felice (1)<br>
-Michael Blume (1)
+        <td class="tablecell">Gunnar Völkel (1.00)<br>
+Jason Felice (1.00)<br>
+Michael Blume (1.00)
         </td>
     </tr>
     <tr>
@@ -8470,9 +8486,24 @@ Michael Blume (1)
         </td>
         <td class="tablecell">With clojure.test, debug prn should be optional, so you can run tests with minimal output
         </td>
-        <td class="tablecell">Jacob Kobernik (1)<br>
-Neil Menne (1)<br>
-Noel Weichbrodt (1)
+        <td class="tablecell">Jacob Kobernik (1.00)<br>
+Neil Menne (1.00)<br>
+Noel Weichbrodt (1.00)
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">2.00
+        </td>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/TCHECK-2">TCHECK-2</a>
+        </td>
+        <td class="tablecell">pos-int is confusingly named
+        </td>
+        <td class="tablecell">Steve Miner (1.00)<br>
+Chas Emerick (1.00)
         </td>
     </tr>
     <tr>
@@ -8486,23 +8517,22 @@ Noel Weichbrodt (1)
         </td>
         <td class="tablecell">Add nested property support
         </td>
-        <td class="tablecell">Ben Mabey (1)<br>
-Maciej Jaśkowski (1)
+        <td class="tablecell">Ben Mabey (1.00)<br>
+Maciej Jaśkowski (1.00)
         </td>
     </tr>
     <tr>
-        <td class="tablecell">1.50
+        <td class="tablecell">1.00
         </td>
-        <td class="tablecell">2
+        <td class="tablecell">1
         </td>
         <td class="tablecell">Open
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/TCHECK-2">TCHECK-2</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/TCHECK-8">TCHECK-8</a>
         </td>
-        <td class="tablecell">pos-int is confusingly named
+        <td class="tablecell">Bound tests and shrinks in time
         </td>
-        <td class="tablecell">Steve Miner (1)<br>
-Chas Emerick (1/2)
+        <td class="tablecell">Chas Emerick (1.00)
         </td>
     </tr>
     <tr>
@@ -8516,7 +8546,7 @@ Chas Emerick (1/2)
         </td>
         <td class="tablecell">Doc improvements: how to separate "size" from "range"
         </td>
-        <td class="tablecell">Brian Craft (1)
+        <td class="tablecell">Brian Craft (1.00)
         </td>
     </tr>
     <tr>
@@ -8530,21 +8560,7 @@ Chas Emerick (1/2)
         </td>
         <td class="tablecell">Interactive documentation
         </td>
-        <td class="tablecell">JR Heard (1)
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0.50
-        </td>
-        <td class="tablecell">1
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/TCHECK-8">TCHECK-8</a>
-        </td>
-        <td class="tablecell">Bound tests and shrinks in time
-        </td>
-        <td class="tablecell">Chas Emerick (1/2)
+        <td class="tablecell">JR Heard (1.00)
         </td>
     </tr>
     <tr>
@@ -9510,7 +9526,7 @@ Project TNS tickets
         </td>
         <td class="tablecell">Attempt to reload deleted file
         </td>
-        <td class="tablecell">deliminator (1)
+        <td class="tablecell">deliminator (1.00)
         </td>
     </tr>
     <tr>
@@ -9524,7 +9540,7 @@ Project TNS tickets
         </td>
         <td class="tablecell">Stack overflow on refresh after circular dependency detected
         </td>
-        <td class="tablecell">Anthony Marcar (1)
+        <td class="tablecell">Anthony Marcar (1.00)
         </td>
     </tr>
     <tr>

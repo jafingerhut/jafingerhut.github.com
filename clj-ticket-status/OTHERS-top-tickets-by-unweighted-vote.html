@@ -9,7 +9,7 @@
 
 <h1>Top OTHERS tickets by weighted vote</h1>
 
-Date: January 12, 2017<br>
+Date: January 16, 2017<br>
 <br>
 
 <p>
@@ -25,15 +25,17 @@ whether they have votes or not.
 <p>
 Suppose someone has currently voted on <span style="font-style:
 italic;">N</span> open tickets.&nbsp; Then their vote counts as <span
-style="font-style: italic;">1/N</span> for each of those
-tickets.&nbsp; Thus voting on all tickets has the same relative effect
-on their ranking as voting on no tickets.&nbsp; You must be selective
-to change the rankings.
+style="font-style: italic;">(1+log(N,2))/N</span> for each of those
+tickets, where <span style="font-style: italic;">log(N,2)</span> is
+the base 2 logarithm of N (formerly it was <span style="font-style:
+italic;">1/N</span>).&nbsp; This new formula gives those who vote on many
+tickets more 'points' to divide up (suggested by Alex Miller).&nbsp; Still,
+it helps to be selective to change the rankings.
 </p>
 
 <p>
-Each person gets 1 weighted vote to divide up as they wish for each
-project, i.e. 1 for CLJ, 1 for CLJS, 1 for MATCH, etc.
+This calculation is done independently for each project, e.g. for CLJ,
+for CLJS, for MATCH, etc.
 </p>
 
 <p>
@@ -327,7 +329,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">LOGIC
         </td>
-        <td class="tablecell"><a href="#LOGIC_Defect">32</a>
+        <td class="tablecell"><a href="#LOGIC_Defect">33</a>
         </td>
         <td class="tablecell"><a href="#LOGIC_Enhancement">18</a>
         </td>
@@ -795,21 +797,21 @@ Project ASYNC tickets
     <tr>
         <td class="tablecell">2
         </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-117">ASYNC-117</a>
-        </td>
-        <td class="tablecell">let-bindings unavailable in #js literals in go-blocks
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">2
-        </td>
         <td class="tablecell">Triaged
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-58">ASYNC-58</a>
         </td>
         <td class="tablecell">mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-117">ASYNC-117</a>
+        </td>
+        <td class="tablecell">let-bindings unavailable in #js literals in go-blocks
         </td>
     </tr>
     <tr>
@@ -1333,6 +1335,16 @@ Project ASYNC tickets
         </td>
         <td class="tablecell">Open
         </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-61">ASYNC-61</a>
+        </td>
+        <td class="tablecell">Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">3
+        </td>
+        <td class="tablecell">Open
+        </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-74">ASYNC-74</a>
         </td>
         <td class="tablecell">Provide a chan? function to determine if a given var is a channel
@@ -1346,16 +1358,6 @@ Project ASYNC tickets
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-107">ASYNC-107</a>
         </td>
         <td class="tablecell">Improved docstring for alt!
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">3
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-61">ASYNC-61</a>
-        </td>
-        <td class="tablecell">Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
         </td>
     </tr>
     <tr>
@@ -4946,6 +4948,16 @@ Project LOGIC tickets
         <td class="tablecell">Running rembero returns :- (!= _0 _0)
         </td>
     </tr>
+    <tr>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/LOGIC-182">LOGIC-182</a>
+        </td>
+        <td class="tablecell">An lvar unified with a keyword behaves differently from a keyword
+        </td>
+    </tr>
   </tbody>
 </table>
 <h2><a id="LOGIC_Enhancement"></a>Enhancement</h2>
@@ -6271,9 +6283,9 @@ Project TCHECK tickets
         </td>
         <td class="tablecell">Open
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/TCHECK-7">TCHECK-7</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/TCHECK-2">TCHECK-2</a>
         </td>
-        <td class="tablecell">Add nested property support
+        <td class="tablecell">pos-int is confusingly named
         </td>
     </tr>
     <tr>
@@ -6281,9 +6293,19 @@ Project TCHECK tickets
         </td>
         <td class="tablecell">Open
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/TCHECK-2">TCHECK-2</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/TCHECK-7">TCHECK-7</a>
         </td>
-        <td class="tablecell">pos-int is confusingly named
+        <td class="tablecell">Add nested property support
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/TCHECK-8">TCHECK-8</a>
+        </td>
+        <td class="tablecell">Bound tests and shrinks in time
         </td>
     </tr>
     <tr>
@@ -6304,16 +6326,6 @@ Project TCHECK tickets
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/TCHECK-123">TCHECK-123</a>
         </td>
         <td class="tablecell">Interactive documentation
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">1
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/TCHECK-8">TCHECK-8</a>
-        </td>
-        <td class="tablecell">Bound tests and shrinks in time
         </td>
     </tr>
     <tr>

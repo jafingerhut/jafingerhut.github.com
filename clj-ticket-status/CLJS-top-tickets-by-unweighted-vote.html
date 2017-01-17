@@ -9,7 +9,7 @@
 
 <h1>Top CLJS tickets by weighted vote</h1>
 
-Date: January 12, 2017<br>
+Date: January 16, 2017<br>
 <br>
 
 <p>
@@ -25,15 +25,17 @@ whether they have votes or not.
 <p>
 Suppose someone has currently voted on <span style="font-style:
 italic;">N</span> open tickets.&nbsp; Then their vote counts as <span
-style="font-style: italic;">1/N</span> for each of those
-tickets.&nbsp; Thus voting on all tickets has the same relative effect
-on their ranking as voting on no tickets.&nbsp; You must be selective
-to change the rankings.
+style="font-style: italic;">(1+log(N,2))/N</span> for each of those
+tickets, where <span style="font-style: italic;">log(N,2)</span> is
+the base 2 logarithm of N (formerly it was <span style="font-style:
+italic;">1/N</span>).&nbsp; This new formula gives those who vote on many
+tickets more 'points' to divide up (suggested by Alex Miller).&nbsp; Still,
+it helps to be selective to change the rankings.
 </p>
 
 <p>
-Each person gets 1 weighted vote to divide up as they wish for each
-project, i.e. 1 for CLJ, 1 for CLJS, 1 for MATCH, etc.
+This calculation is done independently for each project, e.g. for CLJ,
+for CLJS, for MATCH, etc.
 </p>
 
 <p>
@@ -101,6 +103,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Bad: Unkn Fix Version
         </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-794">CLJS-794</a>
+        </td>
+        <td class="tablecell">RegExp flags are being dropped by `string/replace`
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Bad: Unkn Fix Version
+        </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-968">CLJS-968</a>
         </td>
         <td class="tablecell">Metadata on function literal inside of a let produces invalid Javascript
@@ -114,16 +126,6 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1806">CLJS-1806</a>
         </td>
         <td class="tablecell">build api fails to generate inline code for :target :nodejs
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Bad: Unkn Fix Version
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-794">CLJS-794</a>
-        </td>
-        <td class="tablecell">RegExp flags are being dropped by `string/replace`
         </td>
     </tr>
     <tr>
@@ -161,16 +163,6 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Open
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1864">CLJS-1864</a>
-        </td>
-        <td class="tablecell">timestamped source maps broken with Node
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">1
-        </td>
-        <td class="tablecell">Open
-        </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1696">CLJS-1696</a>
         </td>
         <td class="tablecell">Alias clojure.spec.gen =&gt; cljs.spec.impl.gen
@@ -184,6 +176,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1706">CLJS-1706</a>
         </td>
         <td class="tablecell">cljs.reader support for namespaced map literal
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1864">CLJS-1864</a>
+        </td>
+        <td class="tablecell">timestamped source maps broken with Node
         </td>
     </tr>
     <tr>
@@ -527,9 +529,9 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Open
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1628">CLJS-1628</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1410">CLJS-1410</a>
         </td>
-        <td class="tablecell">Make instances of js/Symbol printable
+        <td class="tablecell">Support source maps in deps.cljs
         </td>
     </tr>
     <tr>
@@ -537,9 +539,9 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Open
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1410">CLJS-1410</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1628">CLJS-1628</a>
         </td>
-        <td class="tablecell">Support source maps in deps.cljs
+        <td class="tablecell">Make instances of js/Symbol printable
         </td>
     </tr>
     <tr>

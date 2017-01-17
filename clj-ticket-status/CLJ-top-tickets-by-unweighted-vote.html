@@ -9,7 +9,7 @@
 
 <h1>Top CLJ tickets by weighted vote</h1>
 
-Date: January 12, 2017<br>
+Date: January 16, 2017<br>
 <br>
 
 <p>
@@ -25,15 +25,17 @@ whether they have votes or not.
 <p>
 Suppose someone has currently voted on <span style="font-style:
 italic;">N</span> open tickets.&nbsp; Then their vote counts as <span
-style="font-style: italic;">1/N</span> for each of those
-tickets.&nbsp; Thus voting on all tickets has the same relative effect
-on their ranking as voting on no tickets.&nbsp; You must be selective
-to change the rankings.
+style="font-style: italic;">(1+log(N,2))/N</span> for each of those
+tickets, where <span style="font-style: italic;">log(N,2)</span> is
+the base 2 logarithm of N (formerly it was <span style="font-style:
+italic;">1/N</span>).&nbsp; This new formula gives those who vote on many
+tickets more 'points' to divide up (suggested by Alex Miller).&nbsp; Still,
+it helps to be selective to change the rankings.
 </p>
 
 <p>
-Each person gets 1 weighted vote to divide up as they wish for each
-project, i.e. 1 for CLJ, 1 for CLJS, 1 for MATCH, etc.
+This calculation is done independently for each project, e.g. for CLJ,
+for CLJS, for MATCH, etc.
 </p>
 
 <p>
@@ -149,21 +151,21 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">5
         </td>
-        <td class="tablecell">Needs Patch
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2041">CLJ-2041</a>
-        </td>
-        <td class="tablecell">clojure.spec/keys requires input collections conform to clojure.core/map?
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">5
-        </td>
         <td class="tablecell">Open
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1591">CLJ-1591</a>
         </td>
         <td class="tablecell">Symbol not being bound in namespace when name clashes with clojure.core
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">5
+        </td>
+        <td class="tablecell">Needs Patch
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2041">CLJ-2041</a>
+        </td>
+        <td class="tablecell">clojure.spec/keys requires input collections conform to clojure.core/map?
         </td>
     </tr>
     <tr>
@@ -209,6 +211,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">4
         </td>
+        <td class="tablecell">Screened
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2035">CLJ-2035</a>
+        </td>
+        <td class="tablecell">Bad s/form for collection specs
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">4
+        </td>
         <td class="tablecell">Prescreened
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1077">CLJ-1077</a>
@@ -229,21 +241,31 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">4
         </td>
-        <td class="tablecell">Screened
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2035">CLJ-2035</a>
-        </td>
-        <td class="tablecell">Bad s/form for collection specs
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">4
-        </td>
         <td class="tablecell">Backlog
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1472">CLJ-1472</a>
         </td>
         <td class="tablecell">The locking macro fails bytecode verification on ART runtime
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">3
+        </td>
+        <td class="tablecell">Screened
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2043">CLJ-2043</a>
+        </td>
+        <td class="tablecell">s/form of conformer is broken
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">3
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1142">CLJ-1142</a>
+        </td>
+        <td class="tablecell">Incorrect divide-by-zero error with floating point numbers
         </td>
     </tr>
     <tr>
@@ -261,19 +283,9 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Triaged
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1142">CLJ-1142</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2003">CLJ-2003</a>
         </td>
-        <td class="tablecell">Incorrect divide-by-zero error with floating point numbers
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">3
-        </td>
-        <td class="tablecell">Screened
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2043">CLJ-2043</a>
-        </td>
-        <td class="tablecell">s/form of conformer is broken
+        <td class="tablecell">Nesting cat inside ? causes unform to return nested result
         </td>
     </tr>
     <tr>
@@ -284,16 +296,6 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1620">CLJ-1620</a>
         </td>
         <td class="tablecell">Constants are leaked in case of a reentrant eval
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">3
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2003">CLJ-2003</a>
-        </td>
-        <td class="tablecell">Nesting cat inside ? causes unform to return nested result
         </td>
     </tr>
     <tr>
@@ -331,9 +333,39 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Open
         </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1286">CLJ-1286</a>
+        </td>
+        <td class="tablecell">Fix reader spec and regex to match code for keywords starting with digits
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Open
+        </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2021">CLJ-2021</a>
         </td>
         <td class="tablecell">case where spec/conform -&gt; spec/unform -&gt; spec/conform gives invalid result
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-750">CLJ-750</a>
+        </td>
+        <td class="tablecell">clojure.lang.MapEntry violates .equals and .hashCode contracts of HashMap.Entry; leads to non-reflexive .equals, etc.
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1079">CLJ-1079</a>
+        </td>
+        <td class="tablecell">Don't squash explicit :line and :column metadata in the MetaReader
         </td>
     </tr>
     <tr>
@@ -344,16 +376,6 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1138">CLJ-1138</a>
         </td>
         <td class="tablecell">data-reader returning nil causes exception
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1286">CLJ-1286</a>
-        </td>
-        <td class="tablecell">Fix reader spec and regex to match code for keywords starting with digits
         </td>
     </tr>
     <tr>
@@ -371,9 +393,9 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Open
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-750">CLJ-750</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1059">CLJ-1059</a>
         </td>
-        <td class="tablecell">clojure.lang.MapEntry violates .equals and .hashCode contracts of HashMap.Entry; leads to non-reflexive .equals, etc.
+        <td class="tablecell">PersistentQueue doesn't implement java.util.List, causing nontransitive equality
         </td>
     </tr>
     <tr>
@@ -389,31 +411,11 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">2
         </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1079">CLJ-1079</a>
-        </td>
-        <td class="tablecell">Don't squash explicit :line and :column metadata in the MetaReader
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">2
-        </td>
         <td class="tablecell">Incomplete
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-701">CLJ-701</a>
         </td>
         <td class="tablecell">Primitive return type of loop and try is lost
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1059">CLJ-1059</a>
-        </td>
-        <td class="tablecell">PersistentQueue doesn't implement java.util.List, causing nontransitive equality
         </td>
     </tr>
     <tr>
@@ -449,26 +451,6 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">1
         </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1317">CLJ-1317</a>
-        </td>
-        <td class="tablecell">clojure.zip/seq-zip returns spurious nils during traversal
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">1
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1975">CLJ-1975</a>
-        </td>
-        <td class="tablecell">clojure.spec attempts to make `empty` records
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">1
-        </td>
         <td class="tablecell">Open
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-968">CLJ-968</a>
@@ -489,6 +471,26 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">1
         </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1317">CLJ-1317</a>
+        </td>
+        <td class="tablecell">clojure.zip/seq-zip returns spurious nils during traversal
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1433">CLJ-1433</a>
+        </td>
+        <td class="tablecell">proxy-super calls generally use reflection
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1
+        </td>
         <td class="tablecell">Prescreened
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1587">CLJ-1587</a>
@@ -504,6 +506,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1860">CLJ-1860</a>
         </td>
         <td class="tablecell">0.0 and -0.0 compare equal but have different hash values
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1975">CLJ-1975</a>
+        </td>
+        <td class="tablecell">clojure.spec attempts to make `empty` records
         </td>
     </tr>
     <tr>
@@ -1269,7 +1281,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">0
         </td>
-        <td class="tablecell">Vetted
+        <td class="tablecell">Screenable
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2098">CLJ-2098</a>
         </td>
@@ -1305,21 +1317,21 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">27
         </td>
-        <td class="tablecell">Vetted
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-322">CLJ-322</a>
-        </td>
-        <td class="tablecell">Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">26
-        </td>
         <td class="tablecell">Triaged
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1965">CLJ-1965</a>
         </td>
         <td class="tablecell">clojure.spec/def should support an optional doc-string
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">27
+        </td>
+        <td class="tablecell">Vetted
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-322">CLJ-322</a>
+        </td>
+        <td class="tablecell">Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
         </td>
     </tr>
     <tr>
@@ -1395,21 +1407,21 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">15
         </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1078">CLJ-1078</a>
-        </td>
-        <td class="tablecell">Add queue and queue? to clojure.core
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">15
-        </td>
         <td class="tablecell">Prescreened
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1550">CLJ-1550</a>
         </td>
         <td class="tablecell">Classes generated by deftype and defrecord don't play nice with .getPackage
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">15
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1078">CLJ-1078</a>
+        </td>
+        <td class="tablecell">Add queue and queue? to clojure.core
         </td>
     </tr>
     <tr>
@@ -1457,9 +1469,9 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Triaged
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1293">CLJ-1293</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-308">CLJ-308</a>
         </td>
-        <td class="tablecell">Support (try .. (catch :default _ ..)) for portable "catch-all"
+        <td class="tablecell">protocol-ize with-open
         </td>
     </tr>
     <tr>
@@ -1467,9 +1479,19 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Triaged
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-308">CLJ-308</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1293">CLJ-1293</a>
         </td>
-        <td class="tablecell">protocol-ize with-open
+        <td class="tablecell">Support (try .. (catch :default _ ..)) for portable "catch-all"
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">10
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1553">CLJ-1553</a>
+        </td>
+        <td class="tablecell">Parallel transduce
         </td>
     </tr>
     <tr>
@@ -1490,16 +1512,6 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1148">CLJ-1148</a>
         </td>
         <td class="tablecell">adds docstring support to defonce
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">10
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1553">CLJ-1553</a>
-        </td>
-        <td class="tablecell">Parallel transduce
         </td>
     </tr>
     <tr>
@@ -1530,6 +1542,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1278">CLJ-1278</a>
         </td>
         <td class="tablecell">State function's unmunged full name in compiled function's toString()
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">9
+        </td>
+        <td class="tablecell">Prescreened
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1771">CLJ-1771</a>
+        </td>
+        <td class="tablecell">Support for multiple key(s)-value pairs in assoc-in
         </td>
     </tr>
     <tr>
@@ -1585,31 +1607,21 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">7
         </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1771">CLJ-1771</a>
-        </td>
-        <td class="tablecell">Support for multiple key(s)-value pairs in assoc-in
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">7
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1103">CLJ-1103</a>
-        </td>
-        <td class="tablecell">Make conj assoc dissoc and transient versions handle args similarly
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">7
-        </td>
         <td class="tablecell">Prescreened
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1451">CLJ-1451</a>
         </td>
         <td class="tablecell">Add take-until
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">7
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1239">CLJ-1239</a>
+        </td>
+        <td class="tablecell">faster, more flexible dispatch for clojure.walk
         </td>
     </tr>
     <tr>
@@ -1627,9 +1639,9 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Triaged
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1239">CLJ-1239</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1103">CLJ-1103</a>
         </td>
-        <td class="tablecell">faster, more flexible dispatch for clojure.walk
+        <td class="tablecell">Make conj assoc dissoc and transient versions handle args similarly
         </td>
     </tr>
     <tr>
@@ -1640,16 +1652,6 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-735">CLJ-735</a>
         </td>
         <td class="tablecell">Improve error message when a protocol method is not found
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">6
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1814">CLJ-1814</a>
-        </td>
-        <td class="tablecell">Make `satisfies?` as fast as a protocol method call
         </td>
     </tr>
     <tr>
@@ -1670,6 +1672,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1117">CLJ-1117</a>
         </td>
         <td class="tablecell">partition docstring should be more explicit about dropped or partial trailing elements
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">6
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1814">CLJ-1814</a>
+        </td>
+        <td class="tablecell">Make `satisfies?` as fast as a protocol method call
         </td>
     </tr>
     <tr>
@@ -1695,31 +1707,11 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">5
         </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1817">CLJ-1817</a>
-        </td>
-        <td class="tablecell">Allow AssertionError messages for function :pre and :post conditions to be specified.
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">5
-        </td>
         <td class="tablecell">Screened
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2030">CLJ-2030</a>
         </td>
         <td class="tablecell">Auto-create alias namespaces
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">5
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1201">CLJ-1201</a>
-        </td>
-        <td class="tablecell">There should also be writing in clojure.edn
         </td>
     </tr>
     <tr>
@@ -1735,11 +1727,11 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">5
         </td>
-        <td class="tablecell">Needs Patch
+        <td class="tablecell">Open
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1381">CLJ-1381</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1201">CLJ-1201</a>
         </td>
-        <td class="tablecell">Improve support for extending protocols to primitive arrays
+        <td class="tablecell">There should also be writing in clojure.edn
         </td>
     </tr>
     <tr>
@@ -1753,13 +1745,23 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
     </tr>
     <tr>
-        <td class="tablecell">4
+        <td class="tablecell">5
         </td>
-        <td class="tablecell">Open
+        <td class="tablecell">Triaged
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1573">CLJ-1573</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1817">CLJ-1817</a>
         </td>
-        <td class="tablecell">Support (Java) transient fields in deftype, e.g. for hashcodes
+        <td class="tablecell">Allow AssertionError messages for function :pre and :post conditions to be specified.
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">5
+        </td>
+        <td class="tablecell">Needs Patch
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1381">CLJ-1381</a>
+        </td>
+        <td class="tablecell">Improve support for extending protocols to primitive arrays
         </td>
     </tr>
     <tr>
@@ -1777,9 +1779,29 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Open
         </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1573">CLJ-1573</a>
+        </td>
+        <td class="tablecell">Support (Java) transient fields in deftype, e.g. for hashcodes
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">4
+        </td>
+        <td class="tablecell">Open
+        </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1141">CLJ-1141</a>
         </td>
         <td class="tablecell">Allow pre and post-conditions in defprotocol and deftype macros
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">4
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1750">CLJ-1750</a>
+        </td>
+        <td class="tablecell">There should be a way to observe platform features at runtime
         </td>
     </tr>
     <tr>
@@ -1805,31 +1827,21 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">4
         </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1906">CLJ-1906</a>
-        </td>
-        <td class="tablecell">Clojure should make representing iterated api calls easier
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">4
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1750">CLJ-1750</a>
-        </td>
-        <td class="tablecell">There should be a way to observe platform features at runtime
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">4
-        </td>
         <td class="tablecell">Triaged
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1096">CLJ-1096</a>
         </td>
         <td class="tablecell">Make destructuring emit direct keyword lookups
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">4
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1906">CLJ-1906</a>
+        </td>
+        <td class="tablecell">Clojure should make representing iterated api calls easier
         </td>
     </tr>
     <tr>
@@ -1857,6 +1869,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Prescreened
         </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-99">CLJ-99</a>
+        </td>
+        <td class="tablecell">max-key and min-key evaluate k multiple times for arguments
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">3
+        </td>
+        <td class="tablecell">Prescreened
+        </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1899">CLJ-1899</a>
         </td>
         <td class="tablecell">Add function transform-keys to clojure.walk
@@ -1865,11 +1887,11 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">3
         </td>
-        <td class="tablecell">Prescreened
+        <td class="tablecell">Triaged
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-99">CLJ-99</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-825">CLJ-825</a>
         </td>
-        <td class="tablecell">max-key and min-key evaluate k multiple times for arguments
+        <td class="tablecell">Protocol implementation inconsistencies when overloading arity
         </td>
     </tr>
     <tr>
@@ -1905,31 +1927,11 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">3
         </td>
-        <td class="tablecell">Triaged
+        <td class="tablecell">Open
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1094">CLJ-1094</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-891">CLJ-891</a>
         </td>
-        <td class="tablecell">Add zero-arity versions of every-pred and some-fn
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">3
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-825">CLJ-825</a>
-        </td>
-        <td class="tablecell">Protocol implementation inconsistencies when overloading arity
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">3
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1959">CLJ-1959</a>
-        </td>
-        <td class="tablecell">adding functions `map-vals` and `map-keys`
+        <td class="tablecell">make (symbol foo "bar") work with foo being a namespace
         </td>
     </tr>
     <tr>
@@ -1945,11 +1947,11 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">3
         </td>
-        <td class="tablecell">Open
+        <td class="tablecell">Triaged
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-891">CLJ-891</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1959">CLJ-1959</a>
         </td>
-        <td class="tablecell">make (symbol foo "bar") work with foo being a namespace
+        <td class="tablecell">adding functions `map-vals` and `map-keys`
         </td>
     </tr>
     <tr>
@@ -1957,9 +1959,19 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Triaged
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1305">CLJ-1305</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1094">CLJ-1094</a>
         </td>
-        <td class="tablecell">Add optional not-found argument when invoking vectors or sets as functions
+        <td class="tablecell">Add zero-arity versions of every-pred and some-fn
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">3
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-888">CLJ-888</a>
+        </td>
+        <td class="tablecell">defprotocol should throw error when signatures include variable number of parameters
         </td>
     </tr>
     <tr>
@@ -1977,9 +1989,9 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Triaged
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-888">CLJ-888</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1305">CLJ-1305</a>
         </td>
-        <td class="tablecell">defprotocol should throw error when signatures include variable number of parameters
+        <td class="tablecell">Add optional not-found argument when invoking vectors or sets as functions
         </td>
     </tr>
     <tr>
@@ -2015,6 +2027,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">2
         </td>
+        <td class="tablecell">Backlog
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-415">CLJ-415</a>
+        </td>
+        <td class="tablecell">smarter assert (prints locals)
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">2
+        </td>
         <td class="tablecell">Open
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1852">CLJ-1852</a>
@@ -2030,16 +2052,6 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1903">CLJ-1903</a>
         </td>
         <td class="tablecell">Provide a transducer for reductions
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Backlog
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-415">CLJ-415</a>
-        </td>
-        <td class="tablecell">smarter assert (prints locals)
         </td>
     </tr>
     <tr>
@@ -2077,9 +2089,49 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Open
         </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2">CLJ-2</a>
+        </td>
+        <td class="tablecell">Scopes
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1026">CLJ-1026</a>
+        </td>
+        <td class="tablecell">Mixed end-of-line endings in the source code
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Open
+        </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1367">CLJ-1367</a>
         </td>
         <td class="tablecell">Allow case statement to compare java constants
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1402">CLJ-1402</a>
+        </td>
+        <td class="tablecell">sort-by calls keyfn more times than is necessary
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Incomplete
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1385">CLJ-1385</a>
+        </td>
+        <td class="tablecell">Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
         </td>
     </tr>
     <tr>
@@ -2107,59 +2159,9 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Prescreened
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1908">CLJ-1908</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1912">CLJ-1912</a>
         </td>
-        <td class="tablecell">Add clojure.test api to run single test with fixtures and report
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1162">CLJ-1162</a>
-        </td>
-        <td class="tablecell">Error Message when calling deref on a non-IDeref is unhelpful
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1625">CLJ-1625</a>
-        </td>
-        <td class="tablecell">Cannot implement protocol methods of the same name inline
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2">CLJ-2</a>
-        </td>
-        <td class="tablecell">Scopes
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1026">CLJ-1026</a>
-        </td>
-        <td class="tablecell">Mixed end-of-line endings in the source code
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1402">CLJ-1402</a>
-        </td>
-        <td class="tablecell">sort-by calls keyfn more times than is necessary
+        <td class="tablecell">Optimized version of the '&lt;' and '&gt;' functions for arties larger than 2
         </td>
     </tr>
     <tr>
@@ -2167,9 +2169,9 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Prescreened
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1912">CLJ-1912</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1908">CLJ-1908</a>
         </td>
-        <td class="tablecell">Optimized version of the '&lt;' and '&gt;' functions for arties larger than 2
+        <td class="tablecell">Add clojure.test api to run single test with fixtures and report
         </td>
     </tr>
     <tr>
@@ -2185,21 +2187,11 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">2
         </td>
-        <td class="tablecell">Incomplete
+        <td class="tablecell">Open
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1385">CLJ-1385</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1162">CLJ-1162</a>
         </td>
-        <td class="tablecell">Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Backlog
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-731">CLJ-731</a>
-        </td>
-        <td class="tablecell">Create macro to variadically unroll a combinator function definition
+        <td class="tablecell">Error Message when calling deref on a non-IDeref is unhelpful
         </td>
     </tr>
     <tr>
@@ -2225,11 +2217,21 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">2
         </td>
+        <td class="tablecell">Backlog
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-731">CLJ-731</a>
+        </td>
+        <td class="tablecell">Create macro to variadically unroll a combinator function definition
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">2
+        </td>
         <td class="tablecell">Open
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1534">CLJ-1534</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1625">CLJ-1625</a>
         </td>
-        <td class="tablecell">Adding condp-&gt; and condp-&gt;&gt; macros to core library
+        <td class="tablecell">Cannot implement protocol methods of the same name inline
         </td>
     </tr>
     <tr>
@@ -2240,6 +2242,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1219">CLJ-1219</a>
         </td>
         <td class="tablecell">Make identical? variadic
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1534">CLJ-1534</a>
+        </td>
+        <td class="tablecell">Adding condp-&gt; and condp-&gt;&gt; macros to core library
         </td>
     </tr>
     <tr>
@@ -2315,6 +2327,26 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">1
         </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-970">CLJ-970</a>
+        </td>
+        <td class="tablecell">extend/implement parameterized types (generics)
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-994">CLJ-994</a>
+        </td>
+        <td class="tablecell">repeat reducer
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1
+        </td>
         <td class="tablecell">Open
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-995">CLJ-995</a>
@@ -2360,26 +2392,6 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1526">CLJ-1526</a>
         </td>
         <td class="tablecell">clojure.core/&gt; inconsistent behavior wrt to documentation.
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">1
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-970">CLJ-970</a>
-        </td>
-        <td class="tablecell">extend/implement parameterized types (generics)
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">1
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-994">CLJ-994</a>
-        </td>
-        <td class="tablecell">repeat reducer
         </td>
     </tr>
     <tr>
@@ -2450,6 +2462,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2046">CLJ-2046</a>
         </td>
         <td class="tablecell">generate random subsets of or'd required keys in map specs
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1
+        </td>
+        <td class="tablecell">Screenable
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2085">CLJ-2085</a>
+        </td>
+        <td class="tablecell">Add additional info to explain-data to help explain printers
         </td>
     </tr>
     <tr>
@@ -3760,16 +3782,6 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2081">CLJ-2081</a>
         </td>
         <td class="tablecell">for macro spec should know :let can't go in the first position
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Screenable
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2085">CLJ-2085</a>
-        </td>
-        <td class="tablecell">Add additional info to explain-data to help explain printers
         </td>
     </tr>
     <tr>
