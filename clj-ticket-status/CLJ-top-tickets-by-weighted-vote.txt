@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: January 16, 2017
+Date: January 19, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -63,7 +63,7 @@ Defect
              David Greenberg (0.34)
              Reid McKenzie (0.31)
              Nicola Mometto (0.10)
-   11.27  14 Incomplete   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
+   12.02  15 Incomplete   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
              Daniel Glauser (1.00)
              Emrehan Tuzun (1.00)
              James Carnegie (1.00)
@@ -73,6 +73,7 @@ Defect
              Johan Gall (1.00)
              John Szakmeister (1.00)
              Michael Sperber (1.00)
+             Bridget Hillyer (0.75)
              Chas Emerick (0.66)
              Tom Crayford (0.66)
              Tassilo Horn (0.54)
@@ -117,12 +118,6 @@ Defect
              Andy Fingerhut (0.38)
              Daniel Compton (0.30)
              Nicola Mometto (0.10)
-    4.86   5 Open         [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
-             Sunil Abraham (1.00)
-             Kei Tsuji (1.00)
-             Ryan Neufeld (1.00)
-             Trevor Hartman (1.00)
-             Sean Corfield (0.86)
     4.78   7 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
              Achint Sandhu (1.00)
              Stuart Halloway (1.00)
@@ -131,22 +126,34 @@ Defect
              Phill Wolf (0.66)
              David Greenberg (0.34)
              Michael Blume (0.25)
+    4.75   5 Open         [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
+             Sunil Abraham (1.00)
+             Kei Tsuji (1.00)
+             Ryan Neufeld (1.00)
+             Trevor Hartman (1.00)
+             Sean Corfield (0.75)
     4.46   5 Needs Patch  [CLJ-2041] clojure.spec/keys requires input collections conform to clojure.core/map?
              Anders Furseth (1.00)
-             Matthew Geoffrey Russell (1.00)
              Odin Standal (1.00)
+             Matthew Geoffrey Russell (1.00)
              Marc Limotte (0.86)
              Kenny Williams (0.60)
+    4.21   5 Screened     [CLJ-2035] Bad s/form for collection specs
+             Matthew Geoffrey Russell (1.00)
+             Miikka Koskinen (1.00)
+             ewen grosjean (1.00)
+             Juho Teperi (0.66)
+             Tommi Reiman (0.54)
     4.00   4 Needs Patch  [CLJ-2079] Generator overrides for spec aliases are not respected
              Frank Wang (1.00)
              Ian Davis (1.00)
              Peter Jaros (1.00)
              Russell Mull (1.00)
-    3.83   5 Needs Patch  [CLJ-1941] Instrumentation of fns with primitive type hints fails
+    3.71   5 Needs Patch  [CLJ-1941] Instrumentation of fns with primitive type hints fails
              James Carragher (1.00)
              Mark Erickson (1.00)
              John Schmidt (0.86)
-             Sean Corfield (0.86)
+             Sean Corfield (0.75)
              Nicola Mometto (0.10)
     3.62   6 Prescreened  [CLJ-1074] Read/print round-trip for +/-Infinity and NaN
              Andrew Tarzwell (1.00)
@@ -166,11 +173,6 @@ Defect
              Kevin Downey (0.75)
              Laszlo Török (0.54)
              Nicola Mometto (0.10)
-    3.21   4 Screened     [CLJ-2035] Bad s/form for collection specs
-             Miikka Koskinen (1.00)
-             ewen grosjean (1.00)
-             Juho Teperi (0.66)
-             Tommi Reiman (0.54)
     2.93   4 Prescreened  [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
              Chris Tennant (1.00)
              Chas Emerick (0.66)
@@ -345,6 +347,7 @@ Defect
     0.00   0 Screenable   [CLJ-2080] clojure.spec/every-kv does not work correctly on vectors
     0.00   0 Screenable   [CLJ-2089] Sorted colls with default comparator don't check that first element is Comparable
     0.00   0 Screenable   [CLJ-2098] autodoc fails to load clojure/spec.clj
+    0.00   0 Screenable   [CLJ-2100] s/nilable form should include the original spec, not the resolved spec
     0.00   0 Screened     [CLJ-2055] binding-form spec parses symbol-only maps incorrectly
     0.00   0 Triaged      [CLJ-929] Accessing Java property starting with _ has issues in 1.4
     0.00   0 Triaged      [CLJ-1475] :post condition causes compiler error with recur
@@ -401,7 +404,7 @@ Enhancement
              Tommi Reiman (0.54)
              Colin Taylor (0.46)
              Andrey Antukh (0.36)
-   23.34  27 Triaged      [CLJ-1965] clojure.spec/def should support an optional doc-string
+   23.23  27 Triaged      [CLJ-1965] clojure.spec/def should support an optional doc-string
              Aaron Cummings (1.00)
              Donald Ball (1.00)
              Edwin Park (1.00)
@@ -421,9 +424,9 @@ Enhancement
              Nate Smith (1.00)
              Timothy Pote (1.00)
              Gunnar Völkel (0.86)
-             Sean Corfield (0.86)
              Vadim Platonov (0.86)
              Chris Sims (0.75)
+             Sean Corfield (0.75)
              Kenny Williams (0.60)
              Mitchel Kuijpers (0.60)
              Brandon Bloom (0.41)
@@ -703,18 +706,6 @@ Enhancement
              David Leatherman (0.60)
              Bozhidar Batsov (0.34)
              Daniel Compton (0.30)
-    7.68  11 Triaged      [CLJ-1063] Missing dissoc-in
-             Michael D Pendergrass (1.00)
-             Timothy Pratley (1.00)
-             Chris Perkins (1.00)
-             Bridget Hillyer (0.86)
-             Noam Ben Ari (0.86)
-             Vitalie Spinu (0.75)
-             Huahai Yang (0.66)
-             Lars Andersen (0.60)
-             Tommi Reiman (0.54)
-             Daniel Compton (0.30)
-             Nicola Mometto (0.10)
     7.68  10 Triaged      [CLJ-1611] clojure.java.io/pushback-reader
              Benny Tsai (1.00)
              Johann Makram Salib Bestowrous (1.00)
@@ -726,6 +717,18 @@ Enhancement
              Stephen C. Gilardi (0.54)
              Tommi Reiman (0.54)
              Jan Rychter (0.50)
+    7.57  11 Triaged      [CLJ-1063] Missing dissoc-in
+             Michael D Pendergrass (1.00)
+             Timothy Pratley (1.00)
+             Chris Perkins (1.00)
+             Noam Ben Ari (0.86)
+             Bridget Hillyer (0.75)
+             Vitalie Spinu (0.75)
+             Huahai Yang (0.66)
+             Lars Andersen (0.60)
+             Tommi Reiman (0.54)
+             Daniel Compton (0.30)
+             Nicola Mometto (0.10)
     7.26   9 Triaged      [CLJ-1278] State function's unmunged full name in compiled function's toString()
              Dave Kincaid (1.00)
              Guillermo Winkler (1.00)
@@ -856,6 +859,13 @@ Enhancement
              Mitchel Kuijpers (0.60)
              Colin Taylor (0.46)
              Bozhidar Batsov (0.34)
+    4.56   6 Screened     [CLJ-2030] Auto-create alias namespaces
+             Miroslav Kubicek (1.00)
+             Joshua Tilles (1.00)
+             Thomas Heller (1.00)
+             Sean Corfield (0.75)
+             Brandon Bloom (0.41)
+             Max Penet (0.41)
     4.50   7 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
              Matt Earnshaw (1.00)
              Adrian Medina (0.86)
@@ -895,12 +905,6 @@ Enhancement
              Ian Eslick (1.00)
              Roberto Robles (1.00)
              Adrian Medina (0.86)
-    3.81   5 Screened     [CLJ-2030] Auto-create alias namespaces
-             Miroslav Kubicek (1.00)
-             Joshua Tilles (1.00)
-             Thomas Heller (1.00)
-             Brandon Bloom (0.41)
-             Max Penet (0.41)
     3.78   6 Prescreened  [CLJ-1117] partition docstring should be more explicit about dropped or partial trailing elements
              Howard Lewis Ship (0.86)
              Yongqian Li (0.86)
@@ -953,15 +957,15 @@ Enhancement
              Ragnar Dahlen (1.00)
              Robin Lunn (1.00)
              Aleksander (1.00)
-    2.84   4 Triaged      [CLJ-1473] Badly formed pre/post conditions silently passed
-             Antti Virtanen (1.00)
-             Bridget Hillyer (0.86)
-             Daniel James (0.66)
-             Reid McKenzie (0.31)
     2.77   4 Open         [CLJ-1519] Added extra arity to clojure.core/ns-* fns
              Alan Forrester (1.00)
              Alan Thompson (0.86)
              Greg Chapman (0.60)
+             Reid McKenzie (0.31)
+    2.73   4 Triaged      [CLJ-1473] Badly formed pre/post conditions silently passed
+             Antti Virtanen (1.00)
+             Bridget Hillyer (0.75)
+             Daniel James (0.66)
              Reid McKenzie (0.31)
     2.66   3 Prescreened  [CLJ-99] max-key and min-key evaluate k multiple times for arguments
              Hildeberto Mendonça (1.00)
@@ -1156,8 +1160,6 @@ Enhancement
              Howard Lewis Ship (0.86)
     0.86   1 Open         [CLJ-1321] Documentation improvement for clojure.walk, to note use of recursion that can easily blow the JVM stack
              Noam Ben Ari (0.86)
-    0.86   1 Open         [CLJ-1721] Enable test case for char?
-             Bridget Hillyer (0.86)
     0.86   1 Open         [CLJ-1729] Make Counted and count() return long instead of integer
              John Jacobsen (0.86)
     0.86   1 Prescreened  [CLJ-1890] enhance pprint to print type for defrecord (as in pr)
@@ -1178,6 +1180,8 @@ Enhancement
              Eli Naeher (0.75)
     0.75   1 Open         [CLJ-1585] Report boxed math warning on function that boxes primitive return value
              Peter Taoussanis (0.75)
+    0.75   1 Open         [CLJ-1721] Enable test case for char?
+             Bridget Hillyer (0.75)
     0.75   1 Prescreened  [CLJ-1730] Improve `refer` performance
              Jean Fabio Baro (0.75)
     0.66   1 Open         [CLJ-1342] Byte comparison boxes both bytes and converts to longs to compare (which is slow)
