@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: January 26, 2017
+Date: February 2, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -168,8 +168,8 @@ Defect
 ========================================
 Enhancement
 
+  30 Triaged      [CLJ-1965] clojure.spec/def should support an optional doc-string
   27 Prescreened  [CLJ-2056] Efficient shortcut for (first (filter pred coll)) idiom
-  27 Triaged      [CLJ-1965] clojure.spec/def should support an optional doc-string
   27 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
   22 Vetted       [CLJ-865] Macroexpansion discards &form metadata
   22 Backlog      [CLJ-1517] Unrolled small vectors
@@ -232,6 +232,7 @@ Enhancement
    3 Open         [CLJ-1256] Support type-hinted overrides of function parameters
    3 Open         [CLJ-891] make (symbol foo "bar") work with foo being a namespace
    3 Backlog      [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
+   3 Screenable   [CLJ-2102] Reduce collection generator default size from 20
    3 Triaged      [CLJ-1959] adding functions `map-vals` and `map-keys`
    3 Triaged      [CLJ-1094] Add zero-arity versions of every-pred and some-fn
    3 Triaged      [CLJ-888] defprotocol should throw error when signatures include variable number of parameters
@@ -261,9 +262,9 @@ Enhancement
    2 Open         [CLJ-978] bean unable to handle non-public classes
    2 Backlog      [CLJ-731] Create macro to variadically unroll a combinator function definition
    2 Open         [CLJ-1625] Cannot implement protocol methods of the same name inline
-   2 Screenable   [CLJ-2102] Reduce collection generator default size from 20
    2 Triaged      [CLJ-1219] Make identical? variadic
    2 Open         [CLJ-1534] Adding condp-> and condp->> macros to core library
+   2 Prescreened  [CLJ-1730] Improve `refer` performance
    2 Triaged      [CLJ-1598] Make if forms compile directly to the appropriate branch expression if the test is a literal
    2 Open         [CLJ-1442] Tag gensym sourced symbols with metadata
    2 Open         [CLJ-1376] Initialize internal maps to more efficient version
@@ -284,6 +285,7 @@ Enhancement
    1 Triaged      [CLJ-1843] Add =to function exposing Util/equivPred 
    1 Triaged      [CLJ-1942] Add predicate for sequential search in a collection
    1 Triaged      [CLJ-2015] with-instrument
+   1 Triaged      [CLJ-2025] When a generator fails to gen, state which spec/pred failed
    1 Screened     [CLJ-2046] generate random subsets of or'd required keys in map specs
    1 Screenable   [CLJ-2085] Add additional info to explain-data to help explain printers
    1 Open         [CLJ-1010] A left-to-right-variant of `comp`
@@ -299,7 +301,6 @@ Enhancement
    1 Open         [CLJ-1425] Defer literal map construction of syntax-quoted maps to allow for semantically valid unquote splicing
    1 Open         [CLJ-1585] Report boxed math warning on function that boxes primitive return value
    1 Open         [CLJ-1721] Enable test case for char?
-   1 Prescreened  [CLJ-1730] Improve `refer` performance
    1 Open         [CLJ-1342] Byte comparison boxes both bytes and converts to longs to compare (which is slow)
    1 Vetted       [CLJ-1099] better error message when passing non-seq to seq
    1 Open         [CLJ-1189] Map-destructuring :or fumble needs compiler warning
@@ -309,7 +310,7 @@ Enhancement
    1 Open         [CLJ-993] `range` reducer
    1 Open         [CLJ-1112] Var *loading-verbosely* should initialize from a JVM system property
    1 Open         [CLJ-1231] fn and letfn don't support hinting the function's return type
-   1 Triaged      [CLJ-2013] spec doesn't explain failing path of a s/cat with purely optional branches
+   1 Triaged      [CLJ-2013] Alternative s/cat options not error-reported
    1 Triaged      [CLJ-2038] Clojure.spec/exercise-fn should accept custom generator map
    1 Triaged      [CLJ-1762] Implement IKVReduce for java.util.map
    1 Open         [CLJ-1884] Add support for two parameters to rand and rand-int
@@ -404,7 +405,6 @@ Enhancement
    0 Prescreened  [CLJ-1973] generate-proxy produces unpredictable method order in generated classes
    0 Triaged      [CLJ-1982] Better explain reporting on a failed zero or one match with an embedded spec. 
    0 Triaged      [CLJ-1995] Improved docstring for explain-data
-   0 Triaged      [CLJ-2025] When a generator fails to gen, state which spec/pred failed
    0 Triaged      [CLJ-2037] specs in registry lack :file metadata despite having :line, :column
    0 Prescreened  [CLJ-2039] typo in deftype doc string
    0 Triaged      [CLJ-2040] Allow runtime modification of REPL exception handling
@@ -419,3 +419,9 @@ Enhancement
    0 Prescreened  [CLJ-2070] Faster clojure.core/delay implementation
    0 Triaged      [CLJ-2081] for macro spec should know :let can't go in the first position
    0 Triaged      [CLJ-2090] Improve clojure.core/distinct perf by using transient set
+   0 Prescreened  [CLJ-2104] Typo in pprint docstring
+
+========================================
+Task
+
+   1 Open         [CLJ-2103] s/coll-of and s/every take unnecessary long to generate it :into not provided
