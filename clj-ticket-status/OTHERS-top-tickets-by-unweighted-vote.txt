@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: February 2, 2017
+Date: February 16, 2017
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -73,80 +73,59 @@ Project ASYNC tickets
 ========================================
 Defect
 
-  13 Triaged      [ASYNC-138] Go blocks leak memory
-   7 Triaged      [ASYNC-169] Try/catch block loops eternally inside go block
-   7 Triaged      [ASYNC-100] core.async with multiple catch blocks causing weird loop behaviour
+  14 Vetted       [ASYNC-138] Go blocks leak memory
    4 Triaged      [ASYNC-90] Pub/sub leaks memory
    3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
-   3 Triaged      [ASYNC-159] promise-chan in ClojureScript is broken
-   3 Triaged      [ASYNC-32] onto-chan retains head of input sequence causing OutOfMemoryError
-   2 Open         [ASYNC-91] 'and' does not short circuit within go block in clojurescript
-   2 Triaged      [ASYNC-155] Preserve loop binding metadata when inside a go block
-   2 Open         [ASYNC-42] (try (catch :default)) inside a cljs go block raises an exception
-   2 Open         [ASYNC-79] (ClojureScript) go macro not correctly transforming (case) within a macro
-   2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
-   2 Open         [ASYNC-158] and with multiple <! does not short-circuit in go
+   3 Triaged      [ASYNC-159] (CLJS) promise-chan in ClojureScript is broken
+   2 Open         [ASYNC-42] (CLJS) (try (catch :default)) inside a cljs go block raises an exception
+   2 Open         [ASYNC-91] (CLJS) 'and' does not short circuit within go block in clojurescript
    2 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
-   2 Open         [ASYNC-117] let-bindings unavailable in #js literals in go-blocks
+   2 Open         [ASYNC-79] (CLJS) go macro not correctly transforming (case) within a macro
    2 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
-   1 Open         [ASYNC-49] cljs IOC macro issue with double-dot form
-   1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
-   1 Open         [ASYNC-128] or evaluation not stopped when exp nests take
-   1 Open         [ASYNC-144] pipeline-async docstring correction
-   1 Triaged      [ASYNC-154] (require :reload-all) causes NullPointerException
-   1 Open         [ASYNC-180] (go (try ... (finally ...))) block with parking operations in finally body loses try body return value
+   2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
+   2 Open         [ASYNC-158] (CLJS) and with multiple <! does not short-circuit in go
+   2 Open         [ASYNC-117] (CLJS) let-bindings unavailable in #js literals in go-blocks
+   1 Open         [ASYNC-49] (CLJS) cljs IOC macro issue with double-dot form
    1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
+   1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
+   1 Open         [ASYNC-128] (CLJS) or evaluation not stopped when exp nests take
+   1 Open         [ASYNC-144] pipeline-async docstring correction
    1 Triaged      [ASYNC-170] binding in go block causes thread binding error: "Pop without matching push"
-   1 Open         [ASYNC-78] deadlock in multi catch
-   0 Triaged      [ASYNC-4] Record literals become ordinary maps
    0 Open         [ASYNC-39] Processes spawned by mix never terminate
-   0 Open         [ASYNC-51] Core.async memory leak in Safari and Mobile Safari
-   0 Open         [ASYNC-54] MAX-QUEUE-SIZE has a wrong type-hint
-   0 Open         [ASYNC-63] Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
+   0 Open         [ASYNC-51] (CLJS) Core.async memory leak in Safari and Mobile Safari
+   0 Open         [ASYNC-63] (CLJS) Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
    0 Triaged      [ASYNC-64] Race condition when closing mults
-   0 Open         [ASYNC-70] documentation of thread macro should include behavior of nil (closes the channel)
-   0 Open         [ASYNC-73] try-catch-finally broken inside go-blocks
-   0 Open         [ASYNC-77] StackOverflowError in go macro with cemerick.cljs.test (CLJS)
-   0 Open         [ASYNC-96] FixedBuffer's full checking in cljs
-   0 Open         [ASYNC-97] CLJS: alts! sporadically failing to unblock despite channel activity (Safari 7)
-   0 Open         [ASYNC-108] cljs to-chan hangs on infinite lazy sequences
-   0 Open         [ASYNC-111] maps are represented different inside and outside of go blocks
-   0 Triaged      [ASYNC-113] alt!! should not evaluate the :default expr if a non-default clause is selected
-   0 Open         [ASYNC-118] (ClojureScript) A let-binding named 'arguments' not bound in go block on nodejs 
-   0 Open         [ASYNC-121] compilation warning when calling 'satisfies?' inside a go block
-   0 Triaged      [ASYNC-122] Parking in finally block replaces result
-   0 Open         [ASYNC-123] Channel operations fail in for comprehension.
+   0 Open         [ASYNC-73] (CLJS) try-catch-finally broken inside go-blocks
+   0 Open         [ASYNC-77] (CLJS) StackOverflowError in go macro with cemerick.cljs.test
+   0 Open         [ASYNC-96] (CLJS) FixedBuffer's full checking in cljs
+   0 Open         [ASYNC-97] (CLJS) alts! sporadically failing to unblock despite channel activity (Safari 7)
+   0 Open         [ASYNC-108] (CLJS) cljs to-chan hangs on infinite lazy sequences
+   0 Open         [ASYNC-118] (CLJS) A let-binding named 'arguments' not bound in go block on nodejs 
+   0 Open         [ASYNC-121] (CLJS) compilation warning when calling 'satisfies?' inside a go block
    0 Open         [ASYNC-129] Channels with transducer using reduced don't work as intended
-   0 Open         [ASYNC-132] Can't close over locals in #js in go
-   0 Open         [ASYNC-134] async/alts!! with an empty vector throws ArrayIndexOutOfBoundsException
+   0 Open         [ASYNC-132] (CLJS) Can't close over locals in #js in go
    0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
-   0 Triaged      [ASYNC-156] (ClojureScript) go block containing letfn does not compile
+   0 Triaged      [ASYNC-156] (CLJS) go block containing letfn does not compile
    0 Open         [ASYNC-161] `<!` inside nested `let` inside `go` block erroneously yields "<! not used inside go block" error
    0 Open         [ASYNC-163] Off-by-two in pipeline-async parallelism
-   0 Triaged      [ASYNC-165] the binding macro/let binding is wrongly inlined
-   0 Open         [ASYNC-168] Bad interaction between go, try and fn body
-   0 Open         [ASYNC-172] ClojureScript `catch :default` in `go` fails with non-`js/Error` classes
-   0 Open         [ASYNC-173] Infinite loop in go block when non-Exception thrown
-   0 Open         [ASYNC-174] Executor service cannot be shutdown
-   0 Open         [ASYNC-175] excluded bounded-count in use in cljs.core.async
-   0 Open         [ASYNC-176] A local named `new` breaks go macro in cljs (not in clj)
-   0 Open         [ASYNC-177] Typo in `full?` docstring of the Buffer protocol
-   0 Open         [ASYNC-178] First pending put into a channel always succeeds even if the buffer is full
-   0 Open         [ASYNC-179] parking take in finally clause in go block causes try expression to yield the finally clause result
+   0 Triaged      [ASYNC-165] (CLJS) the binding macro/let binding is wrongly inlined
+   0 Open         [ASYNC-172] (CLJS) ClojureScript `catch :default` in `go` fails with non-`js/Error` classes
+   0 Open         [ASYNC-175] (CLJS) excluded bounded-count in use in cljs.core.async
+   0 Open         [ASYNC-176] (CLJS) A local named `new` breaks go macro in cljs (not in clj)
    0 Open         [ASYNC-183] Completion arity of transducer is called twice
+   0 Vetted       [ASYNC-184] (CLJS) Port ASYNC-169 fixes to cljs
 
 ========================================
 Enhancement
 
   13 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
-   7 Open         [ASYNC-119] ClojureScript: combine cljs.core.async.macros and cljs.core.async
-   5 Triaged      [ASYNC-143] Assert that fixed buffers must have size > 0
+   7 Open         [ASYNC-119] (CLJS) ClojureScript: combine cljs.core.async.macros and cljs.core.async
    5 Triaged      [ASYNC-126] Add public channel "closed?" predicate
-   5 Open         [ASYNC-137] Make (<! (timeout 0)) be closer to 0
+   5 Open         [ASYNC-137] (CLJS) Make (<! (timeout 0)) be closer to 0
    4 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
    3 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
    3 Open         [ASYNC-107] Improved docstring for alt!
-   3 Open         [ASYNC-142] Rename ClojureScript namespace from cljs.core.async to clojure.core.async
+   3 Open         [ASYNC-142] (CLJS) Rename ClojureScript namespace from cljs.core.async to clojure.core.async
    2 Triaged      [ASYNC-67] Can we get a generic sink operation?
    2 Open         [ASYNC-114] Allow a second arity on channel ex-handler which takes val as well as throwable
    2 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
@@ -158,20 +137,20 @@ Enhancement
    0 Vetted       [ASYNC-69] How to better communicate "mix" lifecycle wrt coordination
    0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
    0 Vetted       [ASYNC-102] implement IDeref, IBlockingDeref for channels
-   0 Open         [ASYNC-130] Improve put! docstring to mention no more than 1024 pending puts are allowed
-   0 Open         [ASYNC-131] go! or "go-now" for CLJS
+   0 Open         [ASYNC-131] (CLJS) go! or "go-now" for CLJS
    0 Open         [ASYNC-141] Convert project to use Reader Conditionals
-   0 Open         [ASYNC-148] Shorten core.async go block variable names
+   0 Open         [ASYNC-148] (CLJS) Shorten core.async go block variable names
    0 Open         [ASYNC-150] Unordered pipeline
    0 Open         [ASYNC-151] Accept optional transducer in `to-chan`
    0 Triaged      [ASYNC-153] Return value of pipe is not documented
    0 Open         [ASYNC-166] Clarify clojure.core.async/chan docstring
-   0 Open         [ASYNC-182] Support usage from bootstrapped clojurescript
+   0 Open         [ASYNC-174] Executor service cannot be shutdown
+   0 Open         [ASYNC-182] (CLJS) Support usage from bootstrapped clojurescript
 
 ========================================
 Task
 
-   1 Open         [ASYNC-116] Convert core.async ClojureScript tests to cljs.test
+   1 Open         [ASYNC-116] (CLJS) Convert core.async ClojureScript tests to cljs.test
 
 
 Project CCACHE tickets
@@ -290,7 +269,7 @@ Defect
 ========================================
 Enhancement
 
-   2 Open         [CRRBV-16] Support bootstrapped ClojureScript
+   4 Open         [CRRBV-16] Support bootstrapped ClojureScript
    0 Open         [CRRBV-2] Efficient reverse resulting in reversed rrb-vector
 
 
@@ -548,6 +527,7 @@ Defect
 
    0 Open         [DXML-32] data.xml fails when used with Java 9
    0 Open         [DXML-35] clojure.data.xml/indent should append a newline after the xml preamble
+   0 Open         [DXML-39] "Output encoding...doesn't match declaration" message is backwards
 
 ========================================
 Enhancement
@@ -555,6 +535,8 @@ Enhancement
    0 Open         [DXML-22] Adding hiccup generation function for elements
    0 Open         [DXML-25] Emit Empty Elements using EmptyElementTag
    0 Open         [DXML-27] Provide serialization for XML Schema built-in data types
+   0 Open         [DXML-40] README FileWriter example fails if platform default encoding is not UTF-8
+   0 Open         [DXML-41] README - applicability of xml-seq, xml-zip?
 
 
 Project DZIP tickets
@@ -702,7 +684,7 @@ Defect
 ========================================
 Enhancement
 
-  10 Open         [MATCH-116] core.match clojurescript should be self-host compatible
+  11 Open         [MATCH-116] core.match clojurescript should be self-host compatible
    1 Open         [MATCH-4] Optimized pattern matching on deftype/record, POJOs
    0 Open         [MATCH-2] Matching Diagnostics
    0 Open         [MATCH-8] Implement (p|q)ba heuristics
@@ -833,7 +815,6 @@ Enhancement
    2 Open         [TCHECK-2] pos-int is confusingly named
    2 Open         [TCHECK-7] Add nested property support
    1 Open         [TCHECK-8] Bound tests and shrinks in time
-   1 Open         [TCHECK-31] Doc improvements: how to separate "size" from "range"
    1 Open         [TCHECK-123] Interactive documentation
    0 Open         [TCHECK-4] Handle sigint
    0 Open         [TCHECK-9] Properly document how :max-size works 

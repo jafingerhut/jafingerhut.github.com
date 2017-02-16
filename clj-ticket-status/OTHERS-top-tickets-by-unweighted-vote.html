@@ -9,7 +9,7 @@
 
 <h1>Top OTHERS tickets by weighted vote</h1>
 
-Date: February 2, 2017<br>
+Date: February 16, 2017<br>
 <br>
 
 <p>
@@ -89,9 +89,9 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">ASYNC
         </td>
-        <td class="tablecell"><a href="#ASYNC_Defect">61</a>
+        <td class="tablecell"><a href="#ASYNC_Defect">41</a>
         </td>
-        <td class="tablecell"><a href="#ASYNC_Enhancement">29</a>
+        <td class="tablecell"><a href="#ASYNC_Enhancement">28</a>
         </td>
         <td class="tablecell"><a href="#ASYNC_Task">1</a>
         </td>
@@ -269,9 +269,9 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">DXML
         </td>
-        <td class="tablecell"><a href="#DXML_Defect">2</a>
+        <td class="tablecell"><a href="#DXML_Defect">3</a>
         </td>
-        <td class="tablecell"><a href="#DXML_Enhancement">3</a>
+        <td class="tablecell"><a href="#DXML_Enhancement">5</a>
         </td>
         <td class="tablecell">0
         </td>
@@ -401,7 +401,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell"><a href="#TCHECK_Defect">10</a>
         </td>
-        <td class="tablecell"><a href="#TCHECK_Enhancement">37</a>
+        <td class="tablecell"><a href="#TCHECK_Enhancement">36</a>
         </td>
         <td class="tablecell">0
         </td>
@@ -665,33 +665,13 @@ Project ASYNC tickets
         </td>
     </tr>
     <tr>
-        <td class="tablecell">13
+        <td class="tablecell">14
         </td>
-        <td class="tablecell">Triaged
+        <td class="tablecell">Vetted
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-138">ASYNC-138</a>
         </td>
         <td class="tablecell">Go blocks leak memory
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">7
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-169">ASYNC-169</a>
-        </td>
-        <td class="tablecell">Try/catch block loops eternally inside go block
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">7
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-100">ASYNC-100</a>
-        </td>
-        <td class="tablecell">core.async with multiple catch blocks causing weird loop behaviour
         </td>
     </tr>
     <tr>
@@ -721,37 +701,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-159">ASYNC-159</a>
         </td>
-        <td class="tablecell">promise-chan in ClojureScript is broken
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">3
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-32">ASYNC-32</a>
-        </td>
-        <td class="tablecell">onto-chan retains head of input sequence causing OutOfMemoryError
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-91">ASYNC-91</a>
-        </td>
-        <td class="tablecell">'and' does not short circuit within go block in clojurescript
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-155">ASYNC-155</a>
-        </td>
-        <td class="tablecell">Preserve loop binding metadata when inside a go block
+        <td class="tablecell">(CLJS) promise-chan in ClojureScript is broken
         </td>
     </tr>
     <tr>
@@ -761,7 +711,27 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-42">ASYNC-42</a>
         </td>
-        <td class="tablecell">(try (catch :default)) inside a cljs go block raises an exception
+        <td class="tablecell">(CLJS) (try (catch :default)) inside a cljs go block raises an exception
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-91">ASYNC-91</a>
+        </td>
+        <td class="tablecell">(CLJS) 'and' does not short circuit within go block in clojurescript
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-58">ASYNC-58</a>
+        </td>
+        <td class="tablecell">mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
         </td>
     </tr>
     <tr>
@@ -771,7 +741,17 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-79">ASYNC-79</a>
         </td>
-        <td class="tablecell">(ClojureScript) go macro not correctly transforming (case) within a macro
+        <td class="tablecell">(CLJS) go macro not correctly transforming (case) within a macro
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">2
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-92">ASYNC-92</a>
+        </td>
+        <td class="tablecell">go macro removes binding forms that are intialized with logical false value
         </td>
     </tr>
     <tr>
@@ -791,17 +771,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-158">ASYNC-158</a>
         </td>
-        <td class="tablecell">and with multiple &lt;! does not short-circuit in go
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-58">ASYNC-58</a>
-        </td>
-        <td class="tablecell">mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
+        <td class="tablecell">(CLJS) and with multiple &lt;! does not short-circuit in go
         </td>
     </tr>
     <tr>
@@ -811,17 +781,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-117">ASYNC-117</a>
         </td>
-        <td class="tablecell">let-bindings unavailable in #js literals in go-blocks
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-92">ASYNC-92</a>
-        </td>
-        <td class="tablecell">go macro removes binding forms that are intialized with logical false value
+        <td class="tablecell">(CLJS) let-bindings unavailable in #js literals in go-blocks
         </td>
     </tr>
     <tr>
@@ -831,7 +791,17 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-49">ASYNC-49</a>
         </td>
-        <td class="tablecell">cljs IOC macro issue with double-dot form
+        <td class="tablecell">(CLJS) cljs IOC macro issue with double-dot form
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-125">ASYNC-125</a>
+        </td>
+        <td class="tablecell">Closing a tap with a pending item blocks the mult input channel
         </td>
     </tr>
     <tr>
@@ -851,7 +821,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-128">ASYNC-128</a>
         </td>
-        <td class="tablecell">or evaluation not stopped when exp nests take
+        <td class="tablecell">(CLJS) or evaluation not stopped when exp nests take
         </td>
     </tr>
     <tr>
@@ -869,59 +839,9 @@ Project ASYNC tickets
         </td>
         <td class="tablecell">Triaged
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-154">ASYNC-154</a>
-        </td>
-        <td class="tablecell">(require :reload-all) causes NullPointerException
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">1
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-180">ASYNC-180</a>
-        </td>
-        <td class="tablecell">(go (try ... (finally ...))) block with parking operations in finally body loses try body return value
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">1
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-125">ASYNC-125</a>
-        </td>
-        <td class="tablecell">Closing a tap with a pending item blocks the mult input channel
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">1
-        </td>
-        <td class="tablecell">Triaged
-        </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-170">ASYNC-170</a>
         </td>
         <td class="tablecell">binding in go block causes thread binding error: "Pop without matching push"
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">1
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-78">ASYNC-78</a>
-        </td>
-        <td class="tablecell">deadlock in multi catch
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-4">ASYNC-4</a>
-        </td>
-        <td class="tablecell">Record literals become ordinary maps
         </td>
     </tr>
     <tr>
@@ -941,17 +861,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-51">ASYNC-51</a>
         </td>
-        <td class="tablecell">Core.async memory leak in Safari and Mobile Safari
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-54">ASYNC-54</a>
-        </td>
-        <td class="tablecell">MAX-QUEUE-SIZE has a wrong type-hint
+        <td class="tablecell">(CLJS) Core.async memory leak in Safari and Mobile Safari
         </td>
     </tr>
     <tr>
@@ -961,7 +871,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-63">ASYNC-63</a>
         </td>
-        <td class="tablecell">Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
+        <td class="tablecell">(CLJS) Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
         </td>
     </tr>
     <tr>
@@ -979,19 +889,9 @@ Project ASYNC tickets
         </td>
         <td class="tablecell">Open
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-70">ASYNC-70</a>
-        </td>
-        <td class="tablecell">documentation of thread macro should include behavior of nil (closes the channel)
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Open
-        </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-73">ASYNC-73</a>
         </td>
-        <td class="tablecell">try-catch-finally broken inside go-blocks
+        <td class="tablecell">(CLJS) try-catch-finally broken inside go-blocks
         </td>
     </tr>
     <tr>
@@ -1001,7 +901,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-77">ASYNC-77</a>
         </td>
-        <td class="tablecell">StackOverflowError in go macro with cemerick.cljs.test (CLJS)
+        <td class="tablecell">(CLJS) StackOverflowError in go macro with cemerick.cljs.test
         </td>
     </tr>
     <tr>
@@ -1011,7 +911,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-96">ASYNC-96</a>
         </td>
-        <td class="tablecell">FixedBuffer's full checking in cljs
+        <td class="tablecell">(CLJS) FixedBuffer's full checking in cljs
         </td>
     </tr>
     <tr>
@@ -1021,7 +921,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-97">ASYNC-97</a>
         </td>
-        <td class="tablecell">CLJS: alts! sporadically failing to unblock despite channel activity (Safari 7)
+        <td class="tablecell">(CLJS) alts! sporadically failing to unblock despite channel activity (Safari 7)
         </td>
     </tr>
     <tr>
@@ -1031,27 +931,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-108">ASYNC-108</a>
         </td>
-        <td class="tablecell">cljs to-chan hangs on infinite lazy sequences
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-111">ASYNC-111</a>
-        </td>
-        <td class="tablecell">maps are represented different inside and outside of go blocks
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-113">ASYNC-113</a>
-        </td>
-        <td class="tablecell">alt!! should not evaluate the :default expr if a non-default clause is selected
+        <td class="tablecell">(CLJS) cljs to-chan hangs on infinite lazy sequences
         </td>
     </tr>
     <tr>
@@ -1061,7 +941,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-118">ASYNC-118</a>
         </td>
-        <td class="tablecell">(ClojureScript) A let-binding named 'arguments' not bound in go block on nodejs 
+        <td class="tablecell">(CLJS) A let-binding named 'arguments' not bound in go block on nodejs 
         </td>
     </tr>
     <tr>
@@ -1071,27 +951,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-121">ASYNC-121</a>
         </td>
-        <td class="tablecell">compilation warning when calling 'satisfies?' inside a go block
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-122">ASYNC-122</a>
-        </td>
-        <td class="tablecell">Parking in finally block replaces result
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-123">ASYNC-123</a>
-        </td>
-        <td class="tablecell">Channel operations fail in for comprehension.
+        <td class="tablecell">(CLJS) compilation warning when calling 'satisfies?' inside a go block
         </td>
     </tr>
     <tr>
@@ -1111,17 +971,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-132">ASYNC-132</a>
         </td>
-        <td class="tablecell">Can't close over locals in #js in go
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-134">ASYNC-134</a>
-        </td>
-        <td class="tablecell">async/alts!! with an empty vector throws ArrayIndexOutOfBoundsException
+        <td class="tablecell">(CLJS) Can't close over locals in #js in go
         </td>
     </tr>
     <tr>
@@ -1141,7 +991,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-156">ASYNC-156</a>
         </td>
-        <td class="tablecell">(ClojureScript) go block containing letfn does not compile
+        <td class="tablecell">(CLJS) go block containing letfn does not compile
         </td>
     </tr>
     <tr>
@@ -1171,17 +1021,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-165">ASYNC-165</a>
         </td>
-        <td class="tablecell">the binding macro/let binding is wrongly inlined
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-168">ASYNC-168</a>
-        </td>
-        <td class="tablecell">Bad interaction between go, try and fn body
+        <td class="tablecell">(CLJS) the binding macro/let binding is wrongly inlined
         </td>
     </tr>
     <tr>
@@ -1191,27 +1031,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-172">ASYNC-172</a>
         </td>
-        <td class="tablecell">ClojureScript `catch :default` in `go` fails with non-`js/Error` classes
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-173">ASYNC-173</a>
-        </td>
-        <td class="tablecell">Infinite loop in go block when non-Exception thrown
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-174">ASYNC-174</a>
-        </td>
-        <td class="tablecell">Executor service cannot be shutdown
+        <td class="tablecell">(CLJS) ClojureScript `catch :default` in `go` fails with non-`js/Error` classes
         </td>
     </tr>
     <tr>
@@ -1221,7 +1041,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-175">ASYNC-175</a>
         </td>
-        <td class="tablecell">excluded bounded-count in use in cljs.core.async
+        <td class="tablecell">(CLJS) excluded bounded-count in use in cljs.core.async
         </td>
     </tr>
     <tr>
@@ -1231,37 +1051,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-176">ASYNC-176</a>
         </td>
-        <td class="tablecell">A local named `new` breaks go macro in cljs (not in clj)
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-177">ASYNC-177</a>
-        </td>
-        <td class="tablecell">Typo in `full?` docstring of the Buffer protocol
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-178">ASYNC-178</a>
-        </td>
-        <td class="tablecell">First pending put into a channel always succeeds even if the buffer is full
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-179">ASYNC-179</a>
-        </td>
-        <td class="tablecell">parking take in finally clause in go block causes try expression to yield the finally clause result
+        <td class="tablecell">(CLJS) A local named `new` breaks go macro in cljs (not in clj)
         </td>
     </tr>
     <tr>
@@ -1272,6 +1062,16 @@ Project ASYNC tickets
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-183">ASYNC-183</a>
         </td>
         <td class="tablecell">Completion arity of transducer is called twice
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Vetted
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-184">ASYNC-184</a>
+        </td>
+        <td class="tablecell">(CLJS) Port ASYNC-169 fixes to cljs
         </td>
     </tr>
   </tbody>
@@ -1307,17 +1107,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-119">ASYNC-119</a>
         </td>
-        <td class="tablecell">ClojureScript: combine cljs.core.async.macros and cljs.core.async
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">5
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-143">ASYNC-143</a>
-        </td>
-        <td class="tablecell">Assert that fixed buffers must have size &gt; 0
+        <td class="tablecell">(CLJS) ClojureScript: combine cljs.core.async.macros and cljs.core.async
         </td>
     </tr>
     <tr>
@@ -1337,7 +1127,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-137">ASYNC-137</a>
         </td>
-        <td class="tablecell">Make (&lt;! (timeout 0)) be closer to 0
+        <td class="tablecell">(CLJS) Make (&lt;! (timeout 0)) be closer to 0
         </td>
     </tr>
     <tr>
@@ -1377,7 +1167,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-142">ASYNC-142</a>
         </td>
-        <td class="tablecell">Rename ClojureScript namespace from cljs.core.async to clojure.core.async
+        <td class="tablecell">(CLJS) Rename ClojureScript namespace from cljs.core.async to clojure.core.async
         </td>
     </tr>
     <tr>
@@ -1495,19 +1285,9 @@ Project ASYNC tickets
         </td>
         <td class="tablecell">Open
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-130">ASYNC-130</a>
-        </td>
-        <td class="tablecell">Improve put! docstring to mention no more than 1024 pending puts are allowed
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Open
-        </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-131">ASYNC-131</a>
         </td>
-        <td class="tablecell">go! or "go-now" for CLJS
+        <td class="tablecell">(CLJS) go! or "go-now" for CLJS
         </td>
     </tr>
     <tr>
@@ -1527,7 +1307,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-148">ASYNC-148</a>
         </td>
-        <td class="tablecell">Shorten core.async go block variable names
+        <td class="tablecell">(CLJS) Shorten core.async go block variable names
         </td>
     </tr>
     <tr>
@@ -1575,9 +1355,19 @@ Project ASYNC tickets
         </td>
         <td class="tablecell">Open
         </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-174">ASYNC-174</a>
+        </td>
+        <td class="tablecell">Executor service cannot be shutdown
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Open
+        </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-182">ASYNC-182</a>
         </td>
-        <td class="tablecell">Support usage from bootstrapped clojurescript
+        <td class="tablecell">(CLJS) Support usage from bootstrapped clojurescript
         </td>
     </tr>
   </tbody>
@@ -1603,7 +1393,7 @@ Project ASYNC tickets
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/ASYNC-116">ASYNC-116</a>
         </td>
-        <td class="tablecell">Convert core.async ClojureScript tests to cljs.test
+        <td class="tablecell">(CLJS) Convert core.async ClojureScript tests to cljs.test
         </td>
     </tr>
   </tbody>
@@ -2339,7 +2129,7 @@ Project CRRBV tickets
         </td>
     </tr>
     <tr>
-        <td class="tablecell">2
+        <td class="tablecell">4
         </td>
         <td class="tablecell">Open
         </td>
@@ -4286,6 +4076,16 @@ Project DXML tickets
         <td class="tablecell">clojure.data.xml/indent should append a newline after the xml preamble
         </td>
     </tr>
+    <tr>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/DXML-39">DXML-39</a>
+        </td>
+        <td class="tablecell">"Output encoding...doesn't match declaration" message is backwards
+        </td>
+    </tr>
   </tbody>
 </table>
 <h2><a id="DXML_Enhancement"></a>Enhancement</h2>
@@ -4330,6 +4130,26 @@ Project DXML tickets
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/DXML-27">DXML-27</a>
         </td>
         <td class="tablecell">Provide serialization for XML Schema built-in data types
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/DXML-40">DXML-40</a>
+        </td>
+        <td class="tablecell">README FileWriter example fails if platform default encoding is not UTF-8
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/DXML-41">DXML-41</a>
+        </td>
+        <td class="tablecell">README - applicability of xml-seq, xml-zip?
         </td>
     </tr>
   </tbody>
@@ -5427,7 +5247,7 @@ Project MATCH tickets
         </td>
     </tr>
     <tr>
-        <td class="tablecell">10
+        <td class="tablecell">11
         </td>
         <td class="tablecell">Open
         </td>
@@ -6326,16 +6146,6 @@ Project TCHECK tickets
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/TCHECK-8">TCHECK-8</a>
         </td>
         <td class="tablecell">Bound tests and shrinks in time
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">1
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/TCHECK-31">TCHECK-31</a>
-        </td>
-        <td class="tablecell">Doc improvements: how to separate "size" from "range"
         </td>
     </tr>
     <tr>
