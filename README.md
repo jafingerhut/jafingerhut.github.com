@@ -2,7 +2,7 @@
 
 My Github repository that's contents are published here:
 
-    http://jafingerhut.github.io
+    [http://jafingerhut.github.io](http://jafingerhut.github.io)
 
 Most of it is related to the programming language
 [Clojure](https://clojure.org).

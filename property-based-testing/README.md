@@ -28,8 +28,8 @@ a shorter/smaller test case that also does so.
 
 John Hughes, "Testing the Hard Stuff and Staying Sane", Clojure/West
 Conference, March 2014,
-[YouTube](https://www.youtube.com/watch?v=zi0rHwfiX1Q&t=44s)
-[transcript](2014-03-24-john-hughes-testing-the-hard-stuff-and-staying-sane.txt)
+[[YouTube](https://www.youtube.com/watch?v=zi0rHwfiX1Q&t=44s)]
+[[transcript](2014-03-24-john-hughes-testing-the-hard-stuff-and-staying-sane.txt)]
 
 John discusses several examples of finding bugs in stateful systems
 implemented in C and Erlang using QuickCheck.  He starts with a simple
@@ -41,7 +41,7 @@ database system.
 
 
 John Hughes, "The Mysteries of Dropbox", Lambda Days, 2016,
-[YouTube](https://www.youtube.com/watch?v=H18vxq-VsCk)
+[[YouTube](https://www.youtube.com/watch?v=H18vxq-VsCk)]
 
 This is one of the more complicated uses of property-based testing I
 have seen, complicated because of the many possible behaviors one can
