@@ -1,0 +1,798 @@
+Speaker: John Hughes
+Date: 2014-Mar-24
+Title: Testing the Hard Stuff and Staying Sane
+Location: Clojure/West Conference, San Jose, CA
+
+Thank you very much for the invitation.  It has been a great pleasure
+to be here.
+
+I want to start by asking you all a question.  Who really, really
+loves testing?  Oh, well a few, but not very many.  So I didn't really
+used to enjoy it very much either, but then I co-invented QuickCheck.
+
+So why is testing hard, fundamentally?  Well suppose you are writing
+automated tests for a system, and you've got say N features you want
+to test.  What are you going to do?  You're going to write maybe 3 or
+4 tests per feature, right?  That's OK.  That's a linear amount of
+work.
+
+But we all know that you won't catch all of the bugs that way, because
+there are some bugs that only appear when you use two features
+together.  Oh.  Well if you want to test for all of those
+possibilities, then you've got to write a quadratic number of test
+cases.  That's starting to sound not so much fun.
+
+And actually, some bugs don't just appear when you use two things
+together.  Sometimes you need to use three things together to provoke
+them.  If you want to test for all of those you are going to be
+writing a cubic number of test cases.  And this is really starting to
+sound like a lot of work.
+
+And what about race conditions?  They're the worst of the lot, because
+by definition a race condition involves an interaction between at least
+two features, and what is worse, it doesn't even strike every time you
+run the same test.  So you know, AUGH!  This is horrible.
+
+So this is why testing is hard.  You can't test everything.  You can't
+test enough.  So when are you going to stop?
+
+What is the answer?  Don't write tests.  Generate them.
+
+And that is what I'm going to talk about.  It's what I've been doing
+for quite a few years now.  The original Haskell QuickCheck, which
+perhaps many of you have come across is something that Koen Claessen
+and I came up with 15 years ago.  In 2006, then I started Quviq,
+marketing a version in Erlang.  And since then we have added many,
+many extensions, and we found a lot of very fun bugs for Ericsson, and
+Volvo Cars, and Basho, and many others.
+
+So what is QuickCheck?  Well it is a random testing tool, and the most
+common way that we use it is we take an API under test, and often the
+APIs that we want to test are not purely functional, sadly.  But there
+we are.  So in order to test the API, it is not enough just to make
+one call.  We generate a random sequence of calls.  And then maybe
+that test will pass, so we generate another.  And we keep doing that
+until we generate a sequence that fails.
+
+Now when a sequence of calls fails a test, it turns out that it is
+almost always because of just a few calls in that sequence.  So when
+you generate your sequence at random you have a whole lot of
+irrelevant stuff that is mixed in with the few calls that actually
+provoke the bug.
+
+So the next thing that we do is the shrinking process that you might
+have seen Reid Draper talk about.  We search for those calls that are
+really necessary to provoke the failure, and we generate a minimal
+failing example.  And that is then what we report to the user for
+debugging.
+
+I am going to show you an example of using QuickCheck.  I'm going to
+test a little bit of C code.  It's a very simple example, but it
+illustrates testing code with side effects.  It's going to be a
+circular buffer, so there's going to be a call to create a new one.
+Here is a circular buffer with 3 slots.  And it's going to have an
+input pointer and an output pointer.  And then there will be an
+operation to put something in, which just increments the input
+pointer.
+
+And there will be an operation to ask how many elements are in the
+buffer right now.  And of course there will be an operation to take
+things out again.  So, standard circular buffer.  And of course when
+we reach the end of the buffer, then each of these pointers is going
+to wrap around.
+
+So you can imagine that it is quite simple to write this code, but
+maybe the size operation is a little trickier than the other two.  And
+here is the code I wrote for this.
+
+    int size (Queue *q)
+    { return (q->inp - q->outp) % q->size;
+    }
+
+I think it obviously works.  I just take the difference between the
+input and the output pointers -- that is what the q->inp and q->outp
+are -- and then I take that difference modulo the size of the buffer.
+Bound to work.
+
+So how do we test this kind of code?  Well the approach we have found
+that works well is to use a state machine model.  What do I mean by
+that?  We generate test cases as I said that are sequences of API
+calls, but then we also model the state of the system in some simple
+way.  And for each API call we define a state transition function that
+tells us how the model state changes.  And then we write
+post-conditions that compare the results of the real API calls to the
+state of the model.
+
+OK, that is a bit abstract.  Oh, I should say that all of this stuff
+-- my specification is always written in Erlang.  Not Clojure I am
+afraid, but you can't have everything.  But this is a little abstract.
+Let's see how it applies to this circular buffer example.
+
+Well I might generate a test case that looks like this:
+
+    put 1, put 2, get, put 3, get
+
+You put 1, you put 2, you get something out, you put 3.  You get
+something else out.  Hmmm?  How can I model declaratively the state of
+that buffer?  Let's see.  Maybe the list of integers that I think
+should be the state.
+
+    put 1, put 2, get,  put 3, get
+
+    []     [1]    [1,2] [2]    [2,3]
+
+So my green model is going to start off as the empty list.  After I've
+put 1, it is going to be the list containing 1.  After I've put 2, it
+is the list containing 1 and 2.  And so on.
+
+And now my post-conditions will just compare the result -- well the
+result of get is the only interesting one in this case -- and check
+that get actually returns the head of the list.
+
+Here is the specification of get.
+
+    get_pre(S) ->o
+      S#state.ptr /= undefined andalso
+          S#state.contents /= [].
+
+    get_next(S, _Value, _Args) ->
+      S#state{contents=tl(S#state.contents)}.
+
+    get_post(S, _Args, Res) ->
+      eq(Res, hd(S#state.contents)).
+
+We write specifications by defining a number of callbacks.  Callback
+functions which are then invoked by QuickCheck as we run tests.
+
+So get has a precondition.  S there is the model state.  And it is
+slightly more complex than in my diagram.  The state is a record.  And
+that S#state.ptr, that is Erlang's notation for accessing a record
+field.
+
+So what the precondition says is that the pointer must not be
+undefined.  That means you've got to call new before you can call get.
+Makes sense, right?  And also the contents of the queue must not be
+empty.  You shouldn't call get if it is.
+
+The next definition is the state transition function.  It says when
+you call get, then the model state afterwards just has the contents
+equal to the tail of the model contents before.
+
+And the last bit is the post-condition.  It just says that the actual
+result that is returned from get should be equal to the head of the
+list contents.
+
+So as you can see, they are very very simple pure functions that form
+the specification of get.  And the other operations are specified
+equally simply.
+
+So let's run some tests.  Oops.  What has happened?  The right thing.
+Good.  So I'll show you the C code in a minute.  But in order to run
+these tests, I will need to compile my C code.  I am running this in
+the Erlang REPL.  And I've just invoked GCC in the background.
+
+I'll need to compile my specification.  And now I can run QuickCheck,
+and I can give it the property that is in my specification as an
+argument.
+
+And oh!  OK, there is something wrong with my C code.  Now what you
+see here is a whole lot of output.  First of all, this was the random
+test that initially failed.  And then it got shrunk down a bit to
+this.  And what I want to look at is this bit.  This is a kind of
+pretty printed trace of the test that lets us see what actually
+happened.
+
+So I called queue new to create a queue of size 1, and that returned a
+pointer to a queue with that address.  And then I called put, to put 0
+into it.  And then I asked for the size, and the size was 0.  That's
+not consistent with my model.  The post-condition says that 0, what I
+actually got, was not equal to 1.
+
+[Time: 0:10:00]
+
+So what happened there?  Well I just put something into the queue.
+Right?  There should be one thing in it.  But size returns 0.  That
+can't be right.  Let's look at my code.  Here is the size function.
+
+    int size (Queue *q)
+    { return (q->inp - q->outp) % q->size;
+    }
+
+So you saw the test case.  The queue is of size 1.  So I took the
+difference between the input and output pointers, modulo 1.  But
+everything modulo 1 is 0.  So when the queue is of size 1, this
+function always returns 0.  Oh dear.  Well that can't be right.
+
+Let me just demonstrate the queue to you with a little example.  I
+will create a queue of size 3 just to show that it normally behaves as
+we would expect.  We get a pointer back.  Let's put 1 into the queue.
+Let's get something out of the queue.  We got 1.  Let's get something
+else.  You see.  It behaves just as you expect.  There's the 1 again.
+
+OK, but obviously the size function wasn't right.  So if you think
+about it, this isn't just a problem for queues that have size 1.  My
+input and output pointer wrap around when the reach the end of the
+buffer.  So if I've got a queue of size n and I fill it full, the
+input pointer is going to wrap around back to 0.  And now my input and
+output pointers are both going to be 0, just as in an empty queue.
+This is the problem.  I can't tell an empty queue apart from a full
+queue.  What shall I do?  Any ideas?
+
+Well I could, for example -- here is my representation.  This is the
+struct that represents queues.  There's the input and output pointer,
+and the size, and the pointer to where I keep the data.  I could put a
+Boolean in here, couldn't I?  To keep track of whether it is full or
+empty.  But [makes strange face] that would be horrible special case
+code.  No, no, no.  Let me show you a beautiful hack.
+
+The only problem is when the queue gets full.  So when I'm asked to
+create a queue of size n, do you know what I'm going to do?  I'm going
+to create it with size n+1.  OK.  This is where I allocate the data.
+This is where I initialize the size field.  I'll just put n+1 in both
+of those places.  And now, if anybody puts -- actually fills my queue
+and puts n+1 things in, it's their fault!  Because they asked for a
+queue of size n.  So I can avoid blame.  And this is, of course, the
+true purpose of all good software engineering.
+
+OK.  So I fixed that.  Let me recompile my C code.  And now just
+re-run the last test that failed, which I can do if I just take away
+the 'quick' (leaving 'check'), that will re-run the last test.  And it
+passes.  OK, so that's good.
+
+By the way, that hack, it's the standard textbook fix for this
+problem.  I only found that out after I started showing this to
+people.
+
+So now I fixed the bug, and surely it now works, but let's just run
+some more tests.
+
+Oh, darn!  It failed again!  OK, what happened?  I created a queue of
+size 1.  OK.  1 -- that's really 2 -- don't tell anybody.  I put a 0
+into it.  That's all right.  I called get to take a 0 out.  I put
+another 0 into it.  So how many things are in the queue?  One.  And
+size returned minus 1?  What went wrong?  Can anybody debug that?
+There's my code.
+
+    int size (Queue *q)
+    { return (q->inp - q->outp) % q->size;
+    }
+
+Yeah, the size is now really 2.  I put 2 things in.  So I incremented
+the input pointer twice.  It wrapped around to 0.  I took one thing
+out.  So the output pointer is now 1.  So I've down 0 minus 1, modulo
+the size which is now 2.  But what is -1 modulo 2?  It's +1, right?
+Obviously.  Let's just try it in Erlang.  [Tries it at REPL and gets
+-1.]  Oh darn!  Erlang doesn't implement modulo.  It implements
+remainder.  And C doesn't say.
+
+So the problem here is that if this expression is every negative then
+I'm going to get the wrong answer.  I'll get a negative result.  So
+what I have to do to fix this is I have to make sure that this
+expression is never negative.  How can I do that?
+
+Unsigned.  Well, maybe I could do that.  I dread to think what would
+happen.  But absolute value.  Surely.  OK, so let's do that.  I fixed
+my C code.  Let's compile the C.  And I'll just re-run that last test.
+And it passes.
+
+OK, so now I've found a bug.  A tricky bug.  I created a test case
+that exhibited my bug.  I fixed the code.  My test passes.  All my
+tests are green.  I'm done, right?  Shall I just run a few more random
+ones?  Let's see what happens.
+
+Oh no!  It still doesn't work!  Look what happened here.  I created a
+queue of size 2.  Size 2!  That's better.  This is progress.  Now it
+works for queues of size 1. [laughter] I put 3 things into it.
+Remember it's really 3 slots in the queue.  I called get once.  So the
+input pointer wrapped around again.  The output pointer is 1.  I've
+taken 0 minus 1, modulo 3.  That's 2, really.  But what does my code
+compute?  The absolute value of -1 is +1.  So absolute value is the
+wrong thing to do.  Not the right fix.
+
+What I can do is if I just add on another queue size here, woops!  If
+I type the right thing.  That will be enough to ensure that that's
+always positive, and it doesn't change the absolute value.  So if I
+compile this.  Now it ought to work.  Yeah.  That test passes.  I've
+learned my lesson.  Let's run random ones.
+
+Oh, yes.  There we are.  500 tests.  See, it works now.  Tada!
+
+So there was a demo of debugging imperative code in this manner.  What
+can we learn from this?
+
+Well one thing which I hope I've convinced you of is that the same
+property, the same specification, can find many different bugs.  And
+this is something that we see happening again, and again, and again.
+
+And secondly, I hope you agree that those minimal failing test cases
+were quite easy to debug.  This is something that we experience
+repeatedly also, and we believe in very strongly.
+
+So when you do random testing, then you get test cases containing a
+lot of noise.  That is the purpose of random tests.  But when you try
+and diagnose a fault, the last thing you want is a test case with a
+hundred calls in it, of which 7 are relevant.
+
+So this process of shrinking ...  We think of it as extracting the
+signal from the noise, presenting you with something where every call
+matters for the failure.  And this transforms the usefulness of random
+testing.
+
+OK.  That was a tiny, tiny example.  You might be wondering: Does it
+work on any larger programs?  Well we've spent a lot of time over the
+last few years doing exactly this for real, using the same kind of
+specifications, the same interface to C, to test AUTOSAR software,
+which runs in cars.  And we've been doing this for Volvo cars.
+
+So what is AUTOSAR software?  Well you probably know that a car
+contains a lot of processors nowadays -- 50 to 100.  And of course
+they all need to be able to talk to each other.  So the software that
+runs on them, it is going to be running different applications
+depending on what the processor is for, but they all need to talk to
+each other.
+
+[Time: 0:20:00]
+
+In order to do that, they all run what's called the AUTOSAR basic
+software.  This is a diagram of a large part of it.  So you can see
+here, maybe, on the right there is an Ethernet stack.  You might need
+Ethernet in the car.  The CAN bus is a very commonly used bus in
+vehicles.  LIN and FlexRay are other protocol stacks.  The COM
+services up at the top, that does kind of routing between one protocol
+and another.  And the diagnostic cluster, that is the thing that
+remembers fault code 27, one of your cylinders didn't fire, or
+whatever, so that when you take your car to the dealer, they can
+figure out what went wrong.
+
+So all of this stuff runs on every processor.  But there's quite a lot
+of it.  Each of those little colored boxes is a module, and it's
+specified by a PDF document.  So there are what?  How many are there?
+There must be 20 or 30, just on this diagram.
+
+Now you might think, since all these processes have to talk to each
+other, they're all going to run this software, that they right thing
+to do would be to develop a single open source implementation that the
+entire industry would collaborate on.  Wouldn't you expect that?
+
+But no!  This is not what has happened.  Instead, there are many
+competing suppliers.  But there are standards documents that specify
+precisely how each of those colored boxes should behave.  And thanks
+to the standard, car manufacturers can buy code from different
+providers on different processors, and they'll all work together
+seamlessly.  [laughter]
+
+And if they don't, then the car manufacturer, the system integrator
+who has bought subsystems from lots of different suppliers, has a huge
+problem.  Because you put this stuff together, it doesn't work.  The
+processors can't talk to each other.  And then who is Volvo going to
+blame?  They need to know who is following the standard, and who
+isn't.
+
+And so they contracted us to develop QuickCheck specifications of all
+of those boxes, and use them for acceptance testing of the code that
+they were taking delivery of.
+
+So we found a lot of bugs in this code.  Let me show you one of them.
+This is a bug in the CAN stack.  So you need to know, to understand
+this, that when you send a message on the CAN bus, its message ID is
+also its priority.  So every message has a priority.  Lower numbers
+are higher priority.
+
+In this test case, we sent a message with priority 1.  That was sent
+out on the bus.  Now the bus is busy.  It can only send one message at
+a time.  And then we quickly sent two more messages with priority 2
+and 3.  They had to be queued up, of course.  And then we called the
+transmission confirmation function, which basically tells the stack:
+OK, now the bus is finished sending message number 1.
+
+Which message should it send next?  Message number 2.  Which message
+did it send next?  Message number 3.
+
+I can show you why.  This CAN protocol is quite old.  And when it was
+first designed, CAN ids were only allowed 11 bits.  But remember this
+is the message type.  That meant only 2000 different types of message
+in the entire car.  It's just not enough for the modern car.
+
+So there's a new version of the protocol that allows extended CAN ids
+of 29 bits, which is, what, half a billion?  It will keep them going
+for a while.  But of course you may end up putting together processes
+that make use of the standard ids also.  So you have to know which
+kind of id each message type is using, and you have to use the correct
+representation.
+
+In this particular stack, the CAN id was always stored in an unsigned
+32-bit integer.  But look.  The most they can be is 29 bits.  So the
+top bits were spare.  And so the very top bit was used to record an
+extended CAN id.  Unsigned integer.  What that means is that when you
+compare two message ids to decide which message to send, you have to
+mask off that top bit.
+
+What you couldn't see in the test case before was that message 2 used
+an extended CAN id.  So the stack treated it as priority 2^31 plus 2,
+and that's why it was sent last.
+
+So you might ask: does this matter?  Well the priorities are there for
+a reason.  Everything talks on the CAN bus.  The stereo, the brakes,
+everything.  So if you are in an emergency situation, don't fiddle
+with the volume on your stereo. [laughter] So it is important that the
+priorities are respected.
+
+So what I like about this example is that although it was a very low
+level error in C code, failing to mask off a bit deep inside this
+code, there was still a short sequence that could provoke it, that was
+quite easy to debug, and we could find that short sequence by random
+generation with QuickCheck followed by shrinking.
+
+So what I showed you working on that tiny example of the queue also
+works for real.  And it has worked again, and again, and again for
+finding real deep bugs in automotive C code.
+
+So this was quite a big project.  We read 3,000 pages of PDFs, which
+turned into 20,000 lines of QuickCheck.  That might sound like quite a
+bit of specification, but it's simple code, like the code I showed
+you.  It's just a lot of it.
+
+And we used that to test 1,000,000 lines of C code from 6 different
+suppliers.  OK, so we had 6 suppliers, so you might say each supplier
+sent us 160,000 lines.  So our test code is 1/8 the size of the real
+code.  That's a pretty good ratio.
+
+We found 200 problems, of which more than 100 were in the standard
+itself.  I found one where there was a requirement stated in the
+standard, in a little box, and then an explanation in the paragraph
+following which directly contradicted the requirement.  What are the
+poor implementers to do?  So don't believe something is right just
+because it is called a standard.
+
+So this was a very successful project, and we're very proud of it.
+But I want to tell you about one more great story.
+
+And this story begins with a message to the Erlang mailing list back
+in 2007.
+
+    "We know there is a lurking bug somewhere in the dets code.  We
+    have got 'bad object' and 'premature eof' every other month the
+    last year.  We have not been able to track the bug down since the
+    dets file is repaired automatically next time it is opened."
+        -- Tobbe Tornqvist, Klarna, 2007
+
+And this was a message from a guy called Tobbe Tornqvist who works at
+Klarna in Sweden.  So I'm sure we all feel Tobbe's pain.  But what is
+the context here?
+
+So Klarna is a company that started in the mid 2000's to provide
+invoicing services for web shops.  Maybe it doesn't sound very
+exciting, but it was a great business idea.  Lots of people apparently
+don't want to give their credit card number to a web shop, and Klarna
+allows you to avoid that.  You get an invoice instead.  You don't pay
+until you get the goods.  They have been growing like a rocket.
+
+They built their system in Erlang, and they used a database called
+Mnesia to store all their data.  This is a database that is
+distributed together with Erlang.  It is used in many Erlang
+applications.  You get transactions, replication, lots of good stuff.
+But it needs a back end to store its data.  And if you store the data
+on disk, the back end that's used is called Dets.  That provides tuple
+storage in files.
+
+Dets is the component that Tobbe was talking about.  And when you have
+a bug that appears every couple of months, doesn't that just smell
+"race condition" to you?  It did to me, and I was interested at the
+time.  So I thought: oh, let's see whether we can find this bug using
+QuickCheck.
+
+So in order to explain how we did that, I'm going to have to go from
+the sublime to the ridiculous, and talk about testing one of these.
+Do you recognize this?  Is my drawing good enough?  So it's a kind of
+ticket dispenser you have at a bakery counter.
+
+And if I were to simulate that in Erlang, I would need an operation to
+take a ticket.  And every now and then the roll of tickets runs out,
+and somebody has to come along and replace them.  So let's have a
+reset as well.  So it's very easy to imagine how to implement those.
+And it's very easy to write a unit test.
+
+Here would be an example unit test in Erlang.  Here test_dispenser()
+calls reset() and take_ticket(), and I'm using Erlang's pattern
+matching to check that the result in each case is equal to the red
+thing on the left.  So we're just comparing against expected results.
+
+So this is the standard way of writing unit tests, right?  You call
+the API under test, and you compare the result against what you
+expect.
+
+And it's easy to model in QuickCheck as well.  There's a sample test
+case I might generate.
+
+[Time: 0:30:00]
+
+Hmmm!  How could I model the state of a ticket dispenser?  Perhaps an
+integer.  Sure enough.  Let's take an integer.  Maybe reset() takes it
+to 0, and it's incremented by every take().  And then the
+post-condition for take() will just check that take() returns one more
+than the model state when it's called.
+
+So it's easy to do this testing.  But these tests miss a very
+important part of the dispenser's behavior.  What is the purpose of
+the ticket dispenser?  It's to regulate the flow of a lot of
+concurrent customers to one bakery counter.  So if I only test it
+sequentially, then I'm missing an important part of its behavior.
+
+What I really want to do is to run tests that look more like this.  So
+this test is supposed to represent first of all resetting the ticket
+dispenser, and then two customers come along.  And in parallel, one
+takes one ticket, and the one on the left -- for some reason -- takes
+two tickets.
+
+So now let's think.  What are the expected results?  Well the one on
+the left might get tickets 1 and 2, and the one on the right, ticket
+number 3.  That would be OK, right?  But it's not the only OK
+behavior.
+
+We might also see that the one on the right takes ticket number 2.
+Maybe he leaps in in-between the left customer's two attempts to get a
+ticket.  But that's all right.  If the ticket dispenser does that, I'm
+happy.
+
+What it must not do, is this, where both customers get ticket number
+1.
+
+So this is the problem with testing an API like this that is intended
+to be used in parallel.  There is more than one possible correct
+outcome.  So if your strategy of writing tests is to compare actual
+results to expected ones, you have a problem.
+
+Now here, you could of course enumerate the 3 possible correct
+results.  The 3 results where the one on the right gets 1, 2, or 3.
+And you could record the actual results and check that you got one of
+these possible correct ones.
+
+But this is a really tiny test.  I don't want to just run tests like
+this.  I want to run tests like this.  Here I've got 3 customers, and
+2 of them take 2 tickets.  Oh, and the third one isn't a customer.
+It's a service guy replacing the tape at the same time.  How many
+correct results are there to this?  I've worked it out for you.  There
+are 30 correct outcomes.
+
+So the whole idea of comparing against known expected results just
+doesn't scale to this kind of test.  Nobody in their right mind would
+try to predict all 30 correct outcomes.  And anybody who did would get
+at least one of them wrong.  So you just can't decide this sort of
+test in the usual way.
+
+However, what can we do instead?  So here we have the first sort of
+parallel test I showed you, but I've drawn it on its side instead.  I
+think this is a correct result.  If this happens, I'll be happy with
+the dispenser.  But why is it correct?
+
+Well I say it's correct because there's an order in which I could have
+done those calls that would have generated the results that I see.  So
+if I can take a parallel test and find a way of interleaving the calls
+so that the result is consistent with the model, I'm going to say that
+the test passed.
+
+If there's no such interleaving, then I've seen some behavior that
+can't happen in any sequential test.  And I'm going to say that that's
+wrong.
+
+OK, let's go back for another quick demo.  I have the implementation
+of the dispenser here.  Let's compile it.  Now the first thing I'm
+going to do is run QuickCheck, and I'm going to run sequential tests
+of the dispenser.  And they all pass.
+
+So what does that show?  That shows that the model I've made
+corresponds to the sequential behavior.  And there's no point trying
+to use a model that does not correspond to the sequential behavior in
+parallel tests.  Put it this way: If there's a bug you can find with a
+sequential test, why would you run parallel tests to look for it?  It
+would just be crazy.
+
+So the sequential behavior and the model agree.  Now let me run
+parallel tests.  And the thing that I really like about this is that
+I'm using exactly the same model, exactly the same specification, just
+with a different property.
+
+Oh no!  It doesn't work!  And here you can see what happened.  We did
+2 things in parallel.  Two customers took a ticket, and they both got
+ticket number 1.  Now up here you can see the more complicated
+behavior that happened in the test that I originally generated.  So
+that is the unshrunk test case, which I think there's enough going on
+that you probably don't want to try and debug that.
+
+So this is the shrunk result.  And shrinking is equally valuable for
+parallel tests.  Let me just run this again.  Same result.  Same
+result.  You may see that there's no possible interleaving.  This is
+QuickCheck saying there's no way of interleaving these 2 calls to get
+these results.
+
+Let's run it again.  So what I'm showing you here is that although
+this is non-deterministic behavior -- it's a race condition --
+nevertheless we can find it quickly every time, and we can shrink it
+to the correct minimal example every time.  I really like that.
+
+OK.  That's the failed test case that we just saw.  Here's the code
+that I wrote for take_ticket().  Erlang doesn't have global variables,
+but I simulated a global variable, and read() and write(), read()
+reads it, write() writes it.
+
+Wait a minute.  That's a critical section.  Where's the
+synchronization?  There isn't any.  So of course there's a race
+condition in this code.  And my point here is not that this bug is
+hard to find, but that the technology works to find it very nicely.
+
+Let's talk about dets.  Dets is a tuple store.  Erlang tuples have
+curly brackets around them.  And the tuples that you store in a file
+have a key in the first component, and then a collection of values.
+And there are operations to insert a list of tuples into a table, to
+delete all the tuples with a given key.  insert_new() is like
+insert(), except that if any of the keys is already present, then it's
+a no op, and that's atomic.  So that's kind of nice.  And there's some
+more stuff.  None of that will surprise you.
+
+So how can I model a dets table?  Well it's almost as simple as
+saying: let's keep a list of the tuples that should be in there.
+That's going to enable me to predict how these calls should behave.
+So my model is very simple.
+
+In fact, my model for the core of the dets API is less than 100 lines
+of Erlang.  It's simple stuff.  The implementation is in 4 different
+modules, and it's more than 6,000 lines.  It's keeping hash tables on
+the disk, and handling legacy formats, and all kinds of stuff.
+
+So there's much more code, but it's intended behavior is very simple.
+So this 100 lines of code took me a few sessions of maybe an hour at a
+time to develop.  And I had to debug my spec a little.  I didn't
+initially understand exactly what the operations were supposed to do.
+But quite soon I was able to run sequential tests, and they all
+passed.  So I knew my model was correct.
+
+And then I ran a race condition test.  And again, it was exactly the
+same model.  The work of moments to convert it to a race condition
+test.
+
+And here's what happened.  So here in the sequential prefix we open
+the file.  That seems reasonable.  And then in parallel, I inserted an
+empty list of tuples.  That's a no op.  And that returned OK.  And
+another process called insert_new() to insert an empty list of tuples.
+That's also a no op.  And that returned OK.  But QuickCheck says:
+there's no possible interleaving of these two results that can explain
+the values we see.
+
+That's odd, isn't it?  What on earth is wrong with returning OK in
+each case?
+
+Well sometimes there is no alternative.  You just have to read the
+manual.  Here's what it says about insert_new().  Look at the result
+type.  Even in Erlang, a Bool is either true or false.  It's never OK.
+And in thousands of sequential tests, insert_new() returned true or
+false every single time.  I run it in parallel, suddenly it returns
+OK.  Where did that come from?
+
+[Time: 0:40:00]
+
+So I thought ooh, let's see what else we can find.  Run some more
+tests.  This happened.  OK, so I open the file in the prefix, and I
+started 2 processes.  Each one of them inserted the same tuple {0,0}.
+But one used insert() and the other one used insert_new(), and the
+test timed out.  That seems a little odd, really.  And this message
+appeared.  I wondered if there was a bug in my code, but when I got
+this error code: "dets: Bug was found when accessing table
+dets_table", I though "uh huh!"  OK, maybe this is a bug in dets.
+
+So I found these two bugs very quickly.  And then I decided that
+insert_new() just doesn't work.  So I changed my model to exclude
+insert_new() from the testing.
+
+And I found this one.  OK, what happened here?  In the prefix, I open
+the file.  And then in parallel I did two things.  Now the first thing
+I did was open the file again.  You might think that's a bit odd.  But
+remember, Erlang is designed for highly concurrent systems.  We expect
+thousands of processes to be using the table at the same time.  And
+all of them will have to make sure it's open.  So we expect one
+process to be opening the file while others are using it.
+
+So there's another process which is opening the file.  Obviously that
+shouldn't affect anything, while the second process inserts {0,0} into
+the table, and then gets the entire contents.  And it's the empty
+list.  But I just put {0,0} in there!  How could it be gone?
+
+And indeed I found this bug in several forms, where if one process is
+opening the table, another process can see a sequentially inconsistent
+view of the table contents.  Well, so that wasn't good.
+
+So when I found these bugs, I sent them off to the guy who was
+maintaining the code, who worked at Ericsson.  And he said: oh, thank
+you very much.  Next day he sent me back a fixed version.  So that's
+very nice, but I don't think these are the race conditions that are
+occurring at Klarna.  At Klarna, the database is being corrupted.
+
+So maybe the file is being corrupted.  With his help, I added one line
+to my property that just checked to see whether the file was corrupt
+after performing a parallel test.  And then I started running random
+tests.  I had to run tests for several minutes [pause -- laughter] to
+find this one.
+
+OK, what's happened here?  In the prefix, I opened the file, I closed
+it, I opened it again.  And then I did 3 things in parallel: a lookup
+of the key that wasn't there.  And at the same time I did 2 insertions
+of the tuple {0,0}.  And everything said OK.  All of those results are
+consistent with the model.  But when I checked if the file was
+corrupt, I got 'premature eof'.
+
+Oh hoh!  Now I want to emphasize, this is the smallest test case that
+provokes this bug.  I saw it, and I thought: open, close, open.  Come
+on!  That can't be necessary.  And I took out the first open and close
+manually, and I ran the test with just the 4 calls tens of thousands
+of times.  It passed every single time.
+
+And today I know why.  It's because at the beginning of the test case,
+the file does not exist.  That first open creates the file.  Then we
+close it.  The second open opens an existing file.  It's very slightly
+different.  We get into a very slightly different state, and that is
+essential to provoking the race condition.
+
+Now I ask you to imagine any tester writing unit tests by hand who
+would include this one in his test suite.  It's just impossible.
+
+So I thought this was really great.  And then I was due to give a talk
+at a developer conference in Denmark about something else, and I
+thought: no, this is a much better story.  So I rewrote my talk, to
+talk about this.  But I hadn't saved the output from QuickCheck when
+I'd run the tests.  So I had to re-run it so that I could copy and
+paste the output onto my slides.
+
+And as I did that, what did I find but this one!  So in the prefix, we
+open the file.  We insert a tuple into it with key 1.  And then in
+parallel, OK, the second process there is reopening the file again.
+We know that's a bit dodgy.  But the first one looks up something
+that's not there, and then deletes the key that is.  And all of those
+results, they are consistent with the model.  But when I checked for
+corruption, I got a 'bad object' exception.
+
+Here's the quote from the mailing list:
+
+    "We know there is a lurking bug somewhere in the dets code.  We
+    have got 'bad object' and 'premature eof' every other month the
+    last year.
+        -- Tobbe Tornqvist, Klarna, 2007
+
+The symptoms seem to be the same.  I sent these examples off to the
+maintainer.  In each case, next day he sent me a fixed version.  And
+that fixed code has been in service at Klarna for more than a year
+now.  During all that time there's been one bad object exception, when
+reading a file that was last touched before the new code went into
+service.
+
+So it looks as though those bugs really were ones which, by the time
+this was fixed, it was causing their main server to crash every week.
+So they were getting really pretty fed up with it.
+
+So what I really like about this story is that it illustrates the
+tremendous power of finding race conditions this way, and minimizing
+the test cases.
+
+Before I did this work, the guy responsible for the code had spent
+more than 6 weeks at Klarna trying to figure out what on earth was
+going on.  And at the end of that time, he and the other people
+working on this thought: it seems to happen when the database is about
+1 gigabyte.  Maybe it's something to do with rehashing.
+
+When we finally found the bugs, you needed a database with at most one
+record, and either 5 or 6 calls to reproduce it.  And in each case,
+given that tiny example, it took less than a day to find and fix the
+race condition.
+
+So what does this show.  I mean, it doesn't reflect at all on the very
+competent people who had been looking for this bug previously.  What
+it shows is that trying to find this kind of race condition from
+failures in production, where billions of irrelevant things have
+happened, as well as the 5 or 6 that are actually responsible, is just
+a hopeless task.
+
+OK, well those were a number of stories about successes that we've had
+with QuickCheck.  What would I claim?  I think that property based
+testing finds more bugs with less effort.
+
+Don't write tests ...
+
+Generate them!
