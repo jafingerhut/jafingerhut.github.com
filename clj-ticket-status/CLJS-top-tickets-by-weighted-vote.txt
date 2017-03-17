@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: March 9, 2017
+Date: March 17, 2017
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -41,6 +41,12 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
+    5.00   5 Open         [CLJS-1954] "async" needs special munging since Feb2017 closure compiler
+             Aaron Iba (1.00)
+             Francesco Bellomi (1.00)
+             Kenny Williams (1.00)
+             Odin Standal (1.00)
+             Steffen Dienst (1.00)
     4.00   4 Open         [CLJS-677] cljs.reader doesn't support keywords starting with a digit
              Damon Kropf-Untucht (1.00)
              Francis Avila (1.00)
@@ -55,16 +61,9 @@ Defect
              Dave Aitken (1.00)
              Jake McCrary (1.00)
              Stuart Mitchell (1.00)
-    3.00   3 Open         [CLJS-1954] "async" needs special munging since Feb2017 closure compiler
-             Francesco Bellomi (1.00)
-             Kenny Williams (1.00)
-             Steffen Dienst (1.00)
     2.00   2 Bad: Unkn Fi [CLJS-794] RegExp flags are being dropped by `string/replace`
              Dave Aitken (1.00)
              Jake McCrary (1.00)
-    2.00   2 Open         [CLJS-1953] JSC_PARSE_ERROR during prod compilation after update clojurescript to version 1.9.494 from 1.9.229.
-             Francesco Bellomi (1.00)
-             Steffen Dienst (1.00)
     1.86   2 Bad: Unkn Fi [CLJS-968] Metadata on function literal inside of a let produces invalid Javascript
              David Nolen (1.00)
              Herwig Hochleitner (0.86)
@@ -88,12 +87,10 @@ Defect
              Viktor Magyari (1.00)
     1.00   1 Open         [CLJS-1899] Local bindings conflict with global JS namespace
              Martin Clausen (1.00)
+    0.86   1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
+             J.&nbsp;S.&nbsp;Choi (0.86)
     0.86   1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
              Thomas Heller (0.86)
-    0.75   1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
-             J.&nbsp;S.&nbsp;Choi (0.75)
-    0.75   1 Open         [CLJS-1693] rel-output-path produces wrong path for :lib files
-             J.&nbsp;S.&nbsp;Choi (0.75)
     0.50   1 Open         [CLJS-1593] Self-host: Munged minus macro
              Yehonathan Sharvit (0.50)
     0.50   1 Open         [CLJS-1677] Requiring [goog] breaks an :advanced build, but the compiler exits successfully
@@ -121,8 +118,9 @@ Defect
     0.00   0 Bad: Unkn Fi [CLJS-1764] Double warning for undeclared Var
     0.00   0 Bad: Unkn Fi [CLJS-1896] Externs file validation
     0.00   0 Bad: Unkn Fi [CLJS-1956] Add missing JS reserved keywords
-    0.00   0 Bad: Unkn Fi [CLJS-1957] Process JS modules errors and warnings don't get printed
     0.00   0 Bad: Unkn Fi [CLJS-1964] Validate that `:target :nodejs` and no optimizations requires a `:main` option to be present
+    0.00   0 Bad: Unkn Fi [CLJS-1978] Port CLJ-2035
+    0.00   0 Bad: Unkn Fi [CLJS-1979] Port CLJ-2043 (fix s/form of s/conformer)
 
 ========================================
 Enhancement
@@ -134,22 +132,18 @@ Enhancement
              Nicolas HA (1.00)
              Tienson Qin (1.00)
              Thomas Heller (0.86)
-    3.00   3 Bad: Unkn Fi [CLJS-1960] Require CommonJS modules directly from a ClojureScript namespace
-             Andrea Richiardi (1.00)
-             Roman Liutikov (1.00)
-             Kenny Williams (1.00)
     2.00   2 Open         [CLJS-555] CLONE - Implement ratios
              Marcus H (1.00)
              Mike Fikes (1.00)
     1.86   2 Bad: Unkn Fi [CLJS-1238] Setting *main-cli-fn* when using :target :nodejs shouldn't be manditory
              Rohit Aggarwal (1.00)
              Andrey Antukh (0.86)
+    1.61   2 Open         [CLJS-1410] Support source maps in deps.cljs
+             J.&nbsp;S.&nbsp;Choi (0.86)
+             Daniel Compton (0.75)
     1.50   2 Open         [CLJS-324] cljs.core/format
              Ikuru Kanuma (1.00)
              Yehonathan Sharvit (0.50)
-    1.50   2 Open         [CLJS-1410] Support source maps in deps.cljs
-             Daniel Compton (0.75)
-             J.&nbsp;S.&nbsp;Choi (0.75)
     1.50   2 Open         [CLJS-1628] Make instances of js/Symbol printable
              Nikita Prokopov (1.00)
              Yehonathan Sharvit (0.50)
@@ -163,6 +157,8 @@ Enhancement
              Dusan Maliarik (1.00)
     1.00   1 Open         [CLJS-1908] Improve error messages by using pr-str instead of str when printing objects
              Stuart Mitchell (1.00)
+    0.86   1 Bad: Unkn Fi [CLJS-1328] Support defrecord reader tags
+             J.&nbsp;S.&nbsp;Choi (0.86)
     0.86   1 Open         [CLJS-527] Support dynamic runtime extension of protocols to types
              Andrey Antukh (0.86)
     0.86   1 Open         [CLJS-1076] :nashorn target
@@ -173,8 +169,6 @@ Enhancement
              Herwig Hochleitner (0.86)
     0.86   1 Open         [CLJS-1871] A declare with :arglists should generate static function calls
              Thomas Heller (0.86)
-    0.75   1 Bad: Unkn Fi [CLJS-1328] Support defrecord reader tags
-             J.&nbsp;S.&nbsp;Choi (0.75)
     0.75   1 Open         [CLJS-1615] Inlining truth checks can lead to better optimisation results
              Daniel Compton (0.75)
     0.75   1 Open         [CLJS-1634] Track bound dynamic variables to support binding in async mechanisms.
@@ -196,7 +190,7 @@ Enhancement
     0.00   0 Bad: Unkn Fi [CLJS-1415] Handling JSDoc param name [x] optional syntax
     0.00   0 Bad: Unkn Fi [CLJS-1419] enhance numeric inference, if + number? test on local var should tag local var in the successful branch
     0.00   0 Bad: Unkn Fi [CLJS-1822] Use `:file-min` when processing JS modules with advanced optimizations
-    0.00   0 Bad: Unkn Fi [CLJS-1968] Enable calling JS modules that export a single function
+    0.00   0 Bad: Unkn Fi [CLJS-1973] Add support for `:npm-deps` in upstream `deps.cljs`
 
 ========================================
 Task
