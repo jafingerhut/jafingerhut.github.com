@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: March 23, 2017
+Date: March 30, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -188,6 +188,11 @@ Defect
              Jeff Stokes (1.00)
              Gary Fredericks (0.66)
              Atamert Ölçgen (0.54)
+    2.15   4 Triaged      [CLJ-2077] Clojure can't be loaded from the boot classpath under java 9
+             Alex Gunnarson (1.00)
+             Ghadi Shayban (0.75)
+             Daniel Compton (0.30)
+             Nicola Mometto (0.10)
     2.10   3 Triaged      [CLJ-1911] min-key and max-key should return NaN if any of the argument is NaN
              Nicholas Antonov (1.00)
              Trevor Miranda (1.00)
@@ -222,10 +227,6 @@ Defect
     1.21   2 Open         [CLJ-1079] Don't squash explicit :line and :column metadata in the MetaReader
              Christoffer Sawicki (0.66)
              Colin Jones (0.54)
-    1.15   3 Triaged      [CLJ-2077] Clojure can't be loaded from the boot classpath under java 9
-             Ghadi Shayban (0.75)
-             Daniel Compton (0.30)
-             Nicola Mometto (0.10)
     1.10   2 Triaged      [CLJ-1138] data-reader returning nil causes exception
              Malcolm Sparks (1.00)
              Nicola Mometto (0.10)
@@ -250,6 +251,8 @@ Defect
              Stephen Hopper (1.00)
     1.00   1 Screened     [CLJ-2068] s/explain of evaluated predicate yields :s/unknown
              Odin Standal (1.00)
+    1.00   1 Screened     [CLJ-2076] s/coll-of and s/map-of do not unform their elements
+             Mathias De Wachter (1.00)
     1.00   1 Triaged      [CLJ-1317] clojure.zip/seq-zip returns spurious nils during traversal
              Lee Spector (1.00)
     1.00   1 Triaged      [CLJ-1975] clojure.spec attempts to make `empty` records
@@ -286,7 +289,7 @@ Defect
              Herwig Hochleitner (0.54)
     0.54   1 Triaged      [CLJ-1254] Incorrect long quot result involving Long/MIN_VALUE
              Colin Jones (0.54)
-    0.51   2 Triaged      [CLJ-1955] .hashCode throws ClassCastException when called on some functions
+    0.50   2 Triaged      [CLJ-1955] .hashCode throws ClassCastException when called on some functions
              Jozef Wagner (0.41)
              Nicola Mometto (0.10)
     0.41   1 Open         [CLJ-2074] ::keys spec conflicts with destructuring spec
@@ -347,7 +350,6 @@ Defect
     0.00   0 Screenable   [CLJ-2080] clojure.spec/every-kv does not work correctly on vectors
     0.00   0 Screenable   [CLJ-2089] Sorted colls with default comparator don't check that first element is Comparable
     0.00   0 Screenable   [CLJ-2098] autodoc fails to load clojure/spec.clj
-    0.00   0 Screened     [CLJ-2076] s/coll-of and s/map-of do not unform their elements
     0.00   0 Triaged      [CLJ-1475] :post condition causes compiler error with recur
     0.00   0 Triaged      [CLJ-1492] PersistentQueue objects are improperly eval'd and compiled
     0.00   0 Triaged      [CLJ-1579] source-fn can fail due to reading namespace-aliased keywords while in another namespace context
@@ -578,10 +580,10 @@ Enhancement
    12.01  16 Triaged      [CLJ-1527] Clarify and align valid symbol and keyword rules for Clojure (and edn)
              Alan Bustos Kleiman (1.00)
              Fabrizio Ferrai (1.00)
-             James Laver (1.00)
              James Reeves (1.00)
              Jeff Terrell (1.00)
              Joshua Tilles (1.00)
+             James Laver (1.00)
              Steven Yi (1.00)
              Adam Frey (0.75)
              Michael Patrick O'Keefe (0.75)
@@ -717,6 +719,18 @@ Enhancement
              Gary Fredericks (0.66)
              Mike Anderson (0.54)
              Stephen C. Gilardi (0.54)
+    8.18  11 Prescreened  [CLJ-1454] Add deref-swap! and deref-reset! (swap! and reset! that return prior value)
+             Daniel Balke (1.00)
+             Peter Monks (1.00)
+             James Laver (1.00)
+             Steven Yi (1.00)
+             Stuart Sierra (1.00)
+             Timothy Baldridge (1.00)
+             Daniel James (0.66)
+             Matthew O. Smith (0.66)
+             Jan Rychter (0.50)
+             Michael Blume (0.25)
+             Nicola Mometto (0.10)
     7.63  10 Triaged      [CLJ-1611] clojure.java.io/pushback-reader
              Benny Tsai (1.00)
              Johann Makram Salib Bestowrous (1.00)
@@ -763,7 +777,7 @@ Enhancement
              Eric Normand (0.75)
              Mike Anderson (0.54)
              Nicola Mometto (0.10)
-    6.99   9 Incomplete   [CLJ-2112] Add specs for spec forms
+    7.09  10 Incomplete   [CLJ-2112] Add specs for spec forms
              Nuttanart Pornprasitsakul (1.00)
              James Conroy-Finn (1.00)
              Miikka Koskinen (1.00)
@@ -773,6 +787,7 @@ Enhancement
              Kenny Williams (0.50)
              Tommi Reiman (0.50)
              Max Penet (0.38)
+             Nicola Mometto (0.10)
     6.87   9 Prescreened  [CLJ-1771] Support for multiple key(s)-value pairs in assoc-in
              Matthew Gilliard (1.00)
              Michael Glaesemann (1.00)
@@ -822,16 +837,6 @@ Enhancement
              Sebastián Moreno (1.00)
              Bobby Eickhoff (0.86)
              Lars Andersen (0.60)
-    6.18   9 Prescreened  [CLJ-1454] Add deref-swap! and deref-reset! (swap! and reset! that return prior value)
-             Peter Monks (1.00)
-             Steven Yi (1.00)
-             Stuart Sierra (1.00)
-             Timothy Baldridge (1.00)
-             Daniel James (0.66)
-             Matthew O. Smith (0.66)
-             Jan Rychter (0.50)
-             Michael Blume (0.25)
-             Nicola Mometto (0.10)
     5.14   6 Triaged      [CLJ-735] Improve error message when a protocol method is not found
              Antonio Terreno (1.00)
              John Downs (1.00)
@@ -986,9 +991,9 @@ Enhancement
              Jason Wolfe (0.75)
              Daniel Compton (0.30)
     3.00   3 Open         [CLJ-1862] Release both a direct linked and a non direct linked clojure
-             Ragnar Dahlen (1.00)
              Robin Lunn (1.00)
              Aleksander (1.00)
+             Ragnar Dahlen (1.00)
     2.86   3 Open         [CLJ-1734] Display more descriptive error message when trying to use reader conditionals in a non-cljc file
              Chris Murphy (1.00)
              Marshall Abrams (1.00)
@@ -1068,6 +1073,9 @@ Enhancement
     2.00   2 Backlog      [CLJ-415] smarter assert (prints locals)
              Kevin Sookocheff (1.00)
              Jeff Weiss (1.00)
+    2.00   2 Open         [CLJ-2007] if-let* & when-let* with multiple bindings implementation
+             Alex K (1.00)
+             Nico Schneider (1.00)
     2.00   2 Triaged      [CLJ-1903] Provide a transducer for reductions
              Bruno Renié (1.00)
              Jason Felice (1.00)
@@ -1115,6 +1123,9 @@ Enhancement
     1.43   2 Open         [CLJ-1556] Add instance check functions to defrecord/deftype
              Pierre-Yves Ritschard (1.00)
              Colin Taylor (0.43)
+    1.41   2 Triaged      [CLJ-1416] Support transients in gvec
+             Ragnar Dahlen (1.00)
+             Brandon Bloom (0.41)
     1.41   2 Triaged      [CLJ-1523] Add 'doseq' like macro for transducers
              Niels van Klaveren (1.00)
              Jozef Wagner (0.41)
@@ -1171,12 +1182,8 @@ Enhancement
              kalina todorova (1.00)
     1.00   1 Open         [CLJ-1782] Hide local IDE files in .gitignore
              Stephen Hopper (1.00)
-    1.00   1 Open         [CLJ-1789] Use transients with select-keys if possible
-             Aaron Iba (1.00)
-    1.00   1 Open         [CLJ-2007] if-let* & when-let* with multiple bindings implementation
-             Nico Schneider (1.00)
-    1.00   1 Prescreened  [CLJ-1797] Mention cljc when require fails
-             Aaron Iba (1.00)
+    1.00   1 Open         [CLJ-2133] Clarify documentation for the satisfies? function.
+             Roman Liutikov (1.00)
     1.00   1 Triaged      [CLJ-840] Add a way to access the current test var in :each fixtures for clojure.test
              Joe Littlejohn (1.00)
     1.00   1 Triaged      [CLJ-970] extend/implement parameterized types (generics)
@@ -1206,6 +1213,10 @@ Enhancement
              Phil Hagelberg (0.86)
     0.86   1 Open         [CLJ-1729] Make Counted and count() return long instead of integer
              John Jacobsen (0.86)
+    0.86   1 Open         [CLJ-1789] Use transients with select-keys if possible
+             Aaron Iba (0.86)
+    0.86   1 Prescreened  [CLJ-1797] Mention cljc when require fails
+             Aaron Iba (0.86)
     0.86   1 Prescreened  [CLJ-1890] enhance pprint to print type for defrecord (as in pr)
              Alan Thompson (0.86)
     0.86   1 Prescreened  [CLJ-1986] Suppress printing namespace map literal syntax when only one namespaced key
@@ -1216,6 +1227,8 @@ Enhancement
              Yongqian Li (0.86)
     0.86   1 Triaged      [CLJ-1496] Added a new arity to 'ex-info' that only accepts a message. 
              Nikita Prokopov (0.86)
+    0.86   1 Triaged      [CLJ-2124] Catch multiple exceptions in a single catch block
+             Aaron Iba (0.86)
     0.85   2 Open         [CLJ-1534] Adding condp-> and condp->> macros to core library
              Vitalie Spinu (0.75)
              Nicola Mometto (0.10)
@@ -1281,8 +1294,6 @@ Enhancement
              Jozef Wagner (0.41)
     0.41   1 Prescreened  [CLJ-2028] Docstring error in clojure.core/filter, remove, and take-while
              Jozef Wagner (0.41)
-    0.41   1 Triaged      [CLJ-1416] Support transients in gvec
-             Brandon Bloom (0.41)
     0.41   1 Triaged      [CLJ-1896] Support transducers in vec and set fns
              Jozef Wagner (0.41)
     0.38   1 Open         [CLJ-1280] Create reusable exception that can carry file/line/col info
@@ -1361,6 +1372,7 @@ Enhancement
     0.00   0 Prescreened  [CLJ-2104] Typo in pprint docstring
     0.00   0 Screenable   [CLJ-2061] Better error message when exercise-fn called on fn without :args spec
     0.00   0 Screenable   [CLJ-2063] Show longest path explain error first
+    0.00   0 Screenable   [CLJ-2132] Maven pom requires artifact signing to install locally
     0.00   0 Triaged      [CLJ-5] Sequential destructuring of map gives confusing error message
     0.00   0 Triaged      [CLJ-405] better error messages for bad defrecord calls
     0.00   0 Triaged      [CLJ-704] range function has missing documentation
@@ -1406,6 +1418,7 @@ Enhancement
     0.00   0 Triaged      [CLJ-2081] for macro spec should know :let can't go in the first position
     0.00   0 Triaged      [CLJ-2090] Improve clojure.core/distinct perf by using transient set
     0.00   0 Triaged      [CLJ-2122] flatten docstring does not describe lazy result
-    0.00   0 Triaged      [CLJ-2124] Catch multiple exceptions in a single catch block
+    0.00   0 Triaged      [CLJ-2134] Update the docstring of `with-redefs` to reflect how little the macro should be used
+    0.00   0 Triaged      [CLJ-2135] clojure.spec/Spec implementations that don't implement IObj get silently dropped in s/def
     0.00   0 Vetted       [CLJ-992] `iterate` reducer
     0.00   0 Vetted       [CLJ-1551] Consider transducer support for primitives
