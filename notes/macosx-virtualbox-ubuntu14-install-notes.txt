@@ -1,0 +1,112 @@
+2017-Apr-07
+
+On Mac OS X 10.11.6 system
+Installed VirtualBox 5.1.18 r114002
+On that, created new Ubuntu 14.04.1 64-bit VM
+
+Removed several icons from Launcher that I didn't want
+(e.g. LibreOffice), by right-clicking on them and choosing the popup
+menu item to unlock them from the launcher.
+
+Click on the top icon on the Launcher, which creates a text box.
+Enter "terminal" to search for that program.  Click "Terminal" icon to
+start that program.  Right-click on Terminal icon in Launcher and
+select "Lock to Launcher" so it will always be there.
+
+    # Save some disk space by removing large programs I won't use.
+    sudo apt-get purge thunderbird libreoffice-*
+
+    # Useful packages I like to have, not installed by default.
+    sudo apt-get install synaptic git curl vim sshfs python-pip python3-pip
+    # This is necessary to have a display size other than default 640x480
+    sudo apt-get install virtualbox-guest-dkms
+
+    # Do this only if you want Andy Fingerhut's personalized dot
+    # files.  You probably want your own instead.
+    export github_user=jafingerhut
+    bash -c "$(curl -fsSL https://raw.github.com/$github_user/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
+
+
+Reboot system for newly installed kernel modules (installed by
+virtualbox-guest-dkms package) to take effect.  Larger display size
+choices are now available in System Settings -> Displays
+
+To get other custom display sizes not on that menu, just click and
+drag the bottom right corner of the VirtualBox window to resize it,
+then wait several seconds until the guest Ubuntu desktop changes to
+match it.
+
+Way more details than one probably would like on this issue:
+
+    http://askubuntu.com/questions/451805/screen-resolution-problem-with-ubuntu-14-04-and-virtualbox/595192#595192
+
+
+
+Shut down guest Ubuntu OS.
+
+----------------------------------------------------------------------
+Create host-only adapter network between guest Ubuntu VM and host Mac
+OS X, so that host OS will have consistent IPv4 address that guest
+Ubuntu VM can use to sshfs mount directories physically stored in the
+host Mac OS X file system, with a consistent IPv4 address that does
+not depend on where the host Mac OS X laptop is, and thus which IPv4
+address its Wi-Fi adapter happens to have.
+----------------------------------------------------------------------
+
+In VirtualBox, create a Host-only adapter if you haven't done so
+before.  I followed instructions here:
+
+    https://www.virtualbox.org/manual/ch06.html#network_hostonly
+
+* In Mac OS X VirtualBox application, choose menu item VirtualBox ->
+  Preferences...
+
+* Click Network
+* Click Host-only Networks
+* Click icon on right that has hover-text help "Adds new host-only network"
+* I used default name "vboxnet0"
+* In menu, right click vboxnet0 and choose "Edit Host-only Network"
+* In window that appears, I saw under Adapter tab:
+
+IPv4 Address: 192.168.56.1
+IPv4 Network Mask: 255.255.255.0
+IPv6 Address: <blank>
+IPv6 Network Mask Length 0 (grayed out)
+
+I left everything as shown above.  Under "DHCP Server" tab:
+
+Check box next to "Enable Server" was checked.
+Server Address: 192.168.56.100
+Server Mask: 255.255.255.0
+Lower Address Bound: 192.168.56.101
+Upper Address Bound: 192.168.56.254
+
+click Settings for the VM.
+
+System -> Processor -> change to 4 virtual CPUs.  1 is the default.
+
+Network -> Adapter 2
+enable check box next to "Enable Network Adapter"
+in popup menu next to "Attached to:" choose "Host-only Adapter"
+In popup menu next to "Name:" choose vboxnet0
+
+Click OK.  Settings should be saved.
+
+In host Mac OS X system, 'ifconfig' in a terminal should show an
+interface "vboxnet0" with same IPv4 address as shown above
+(192.168.56.1).
+
+Boot up guest Ubuntu VM.
+
+In guest OS, 'ifconfig' in a terminal should show eth1, the 2nd
+network adapter (first is called eth0) with an IPv4 address somewhere
+in the range 192.168.56.101 through 192.168.56.254 (probably the first
+in that range).
+
+From guest OS, should be able to ping host OS at 192.168.56.1.  Also
+should be able to ssh to it, if host Mac OS X is enabled for "Remote
+Login" under System Preferences -> Sharing
+
+From host OS, should be able to ping guest OS at 192.168.56.101.  I
+don't have my guest Ubuntu VM configured to allow ssh into it.
+----------------------------------------------------------------------
