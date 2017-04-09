@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: March 17, 2017
+Date: April 6, 2017
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -41,7 +41,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
-   5 Open         [CLJS-1954] "async" needs special munging since Feb2017 closure compiler
+   7 Open         [CLJS-1954] "async" needs special munging since Feb2017 closure compiler
    4 Open         [CLJS-677] cljs.reader doesn't support keywords starting with a digit
    4 Open         [CLJS-884] with-redefs don't restores previous values when used inside go block
    3 Bad: Unkn Fi [CLJS-485] clojure.string/replace ignores regex flags
@@ -82,10 +82,7 @@ Defect
    0 Bad: Unkn Fi [CLJS-1641] Multi-arity defn copies arguments unnecessarily for all cases
    0 Bad: Unkn Fi [CLJS-1764] Double warning for undeclared Var
    0 Bad: Unkn Fi [CLJS-1896] Externs file validation
-   0 Bad: Unkn Fi [CLJS-1956] Add missing JS reserved keywords
-   0 Bad: Unkn Fi [CLJS-1964] Validate that `:target :nodejs` and no optimizations requires a `:main` option to be present
-   0 Bad: Unkn Fi [CLJS-1978] Port CLJ-2035
-   0 Bad: Unkn Fi [CLJS-1979] Port CLJ-2043 (fix s/form of s/conformer)
+   0 Bad: Unkn Fi [CLJS-1996] Support correct checking of :preloads when :optimizations not specified
 
 ========================================
 Enhancement
@@ -99,16 +96,19 @@ Enhancement
    1 Open         [CLJS-1009] Allow deps.cljs to declare a foreign lib as remote
    1 Bad: Unkn Fi [CLJS-1047] externs checking for js/foo
    1 Open         [CLJS-1428] Add a cljs.core/*command-line-args* var
+   1 Open         [CLJS-1876] Faster PersistentVector, Subvec and ChunkedSeq reduce.
    1 Open         [CLJS-1902] Add support for compiler option :inline-source-maps
    1 Open         [CLJS-1908] Improve error messages by using pr-str instead of str when printing objects
+   1 Open         [CLJS-1986] Support for ES6 generators
    1 Open         [CLJS-527] Support dynamic runtime extension of protocols to types
    1 Open         [CLJS-1076] :nashorn target
    1 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
    1 Bad: Unkn Fi [CLJS-1328] Support defrecord reader tags
    1 Open         [CLJS-1865] Google Closure Compiler in JavaScript
-   1 Open         [CLJS-1871] A declare with :arglists should generate static function calls
    1 Open         [CLJS-1615] Inlining truth checks can lead to better optimisation results
    1 Open         [CLJS-1634] Track bound dynamic variables to support binding in async mechanisms.
+   1 Open         [CLJS-1871] A declare with :arglists should generate static function calls
+   1 Open         [CLJS-1997] Outward function type hint propagation
    1 Open         [CLJS-1601] Optimize cljs.core dump 
    0 Bad: Unkn Fi [CLJS-773] Use unchecked-*-int functions for real 32-bit math
    0 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
@@ -125,7 +125,6 @@ Enhancement
    0 Bad: Unkn Fi [CLJS-1415] Handling JSDoc param name [x] optional syntax
    0 Bad: Unkn Fi [CLJS-1419] enhance numeric inference, if + number? test on local var should tag local var in the successful branch
    0 Bad: Unkn Fi [CLJS-1822] Use `:file-min` when processing JS modules with advanced optimizations
-   0 Bad: Unkn Fi [CLJS-1973] Add support for `:npm-deps` in upstream `deps.cljs`
 
 ========================================
 Task

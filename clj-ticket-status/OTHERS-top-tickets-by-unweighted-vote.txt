@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: March 17, 2017
+Date: April 6, 2017
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -73,9 +73,9 @@ Project ASYNC tickets
 ========================================
 Defect
 
+   4 Triaged      [ASYNC-159] (CLJS) promise-chan in ClojureScript is broken
    4 Triaged      [ASYNC-90] Pub/sub leaks memory
    3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
-   3 Triaged      [ASYNC-159] (CLJS) promise-chan in ClojureScript is broken
    3 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
    2 Open         [ASYNC-42] (CLJS) (try (catch :default)) inside a cljs go block raises an exception
    2 Open         [ASYNC-91] (CLJS) 'and' does not short circuit within go block in clojurescript
@@ -113,6 +113,7 @@ Defect
    0 Open         [ASYNC-176] (CLJS) A local named `new` breaks go macro in cljs (not in clj)
    0 Open         [ASYNC-183] Completion arity of transducer is called twice
    0 Vetted       [ASYNC-184] (CLJS) Port ASYNC-169 fixes to cljs
+   0 Open         [ASYNC-190] (CLJS) Some non-tail-recursive loops compile without error
 
 ========================================
 Enhancement
@@ -145,6 +146,7 @@ Enhancement
    0 Open         [ASYNC-166] Clarify clojure.core.async/chan docstring
    0 Open         [ASYNC-174] Executor service cannot be shutdown
    0 Open         [ASYNC-182] (CLJS) Support usage from bootstrapped clojurescript
+   0 Open         [ASYNC-189] Tap return value not documented
 
 ========================================
 Task
@@ -233,6 +235,10 @@ Defect
    0 Open         [CLJCLR-87] conj can not handle the clojure.lang.LongRange object correctly 
    0 Open         [CLJCLR-88] ClojureClr assembly loading from referenced dll
    0 Open         [CLJCLR-89] Socket REPL breaks
+   0 Open         [CLJCLR-90] Socket Repl Crashes the app when provided with "\'asdf" string including quotes
+   0 Open         [CLJCLR-91] Socket Repl remote connections from places other than localhost
+   0 Open         [CLJCLR-92] clojure.core/spit behaviour differs from JVM version
+   0 Open         [CLJCLR-93] (time) fn does not return partial milliseconds
 
 ========================================
 Enhancement
@@ -487,7 +493,6 @@ Defect
 
    0 Open         [DIMAP-2] Proper seq on int-sets
    0 Open         [DIMAP-9] Unlike regular transient sets, data.int-map transient sets do not support the IFn interface
-   0 Open         [DIMAP-12] range sometimes breaks seq
    0 Open         [DIMAP-13] Cannot merge int-sets of different density.
 
 ========================================
@@ -497,7 +502,6 @@ Enhancement
    0 Open         [DIMAP-6] int-map doc string is overly restrictive?
    0 Open         [DIMAP-7] Minor typos in README and docstring
    0 Open         [DIMAP-8] Union, intersection and difference have only 2 arguments versions
-   0 Open         [DIMAP-11] Align equiv/equals semantics to core PMs and improve performance
 
 
 Project DJSON tickets
@@ -529,6 +533,7 @@ Project DXML tickets
 Defect
 
    0 Open         [DXML-32] data.xml fails when used with Java 9
+   0 Open         [DXML-44] AbstractMethodError: Method clojure/data/xml/node/Element.empty()
 
 ========================================
 Enhancement
@@ -536,6 +541,7 @@ Enhancement
    0 Open         [DXML-22] Adding hiccup generation function for elements
    0 Open         [DXML-40] README FileWriter example fails if platform default encoding is not UTF-8
    0 Open         [DXML-41] README - applicability of xml-seq, xml-zip?
+   0 Open         [DXML-42] Some reflection warnings `[org.clojure/data.xml "0.2.0-alpha2"]`
 
 
 Project DZIP tickets
@@ -679,6 +685,7 @@ Defect
    0 Open         [MATCH-115] AppPattern with single wildcard throws exception
    0 Open         [MATCH-117] Outdated dependencies
    0 Open         [MATCH-119] Fix typo on multimehod 
+   0 Open         [MATCH-120] Empty seq match can throw Exception
 
 ========================================
 Enhancement
@@ -735,7 +742,6 @@ Defect
    0 Open         [NREPL-80] Thread used to evaluate forms changes over time
    0 Open         [NREPL-81] Transport/send hangs when sending non-bencodable information outside of :value slot
    0 Open         [NREPL-82] Descriptor for "add-stdin" appears to incorrectly declare :returns "need-input"
-   0 Open         [NREPL-83] start-server binds to 'localhost'
 
 ========================================
 Enhancement

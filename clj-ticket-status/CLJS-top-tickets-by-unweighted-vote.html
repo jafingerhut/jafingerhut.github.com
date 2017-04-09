@@ -9,7 +9,7 @@
 
 <h1>Top CLJS tickets by weighted vote</h1>
 
-Date: March 17, 2017<br>
+Date: April 6, 2017<br>
 <br>
 
 <p>
@@ -69,7 +69,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
     </tr>
     <tr>
-        <td class="tablecell">5
+        <td class="tablecell">7
         </td>
         <td class="tablecell">Open
         </td>
@@ -483,39 +483,9 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Bad: Unkn Fix Version
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1956">CLJS-1956</a>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1996">CLJS-1996</a>
         </td>
-        <td class="tablecell">Add missing JS reserved keywords
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Bad: Unkn Fix Version
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1964">CLJS-1964</a>
-        </td>
-        <td class="tablecell">Validate that `:target :nodejs` and no optimizations requires a `:main` option to be present
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Bad: Unkn Fix Version
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1978">CLJS-1978</a>
-        </td>
-        <td class="tablecell">Port CLJ-2035
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Bad: Unkn Fix Version
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1979">CLJS-1979</a>
-        </td>
-        <td class="tablecell">Port CLJ-2043 (fix s/form of s/conformer)
+        <td class="tablecell">Support correct checking of :preloads when :optimizations not specified
         </td>
     </tr>
   </tbody>
@@ -629,6 +599,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Open
         </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1876">CLJS-1876</a>
+        </td>
+        <td class="tablecell">Faster PersistentVector, Subvec and ChunkedSeq reduce.
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1
+        </td>
+        <td class="tablecell">Open
+        </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1902">CLJS-1902</a>
         </td>
         <td class="tablecell">Add support for compiler option :inline-source-maps
@@ -642,6 +622,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1908">CLJS-1908</a>
         </td>
         <td class="tablecell">Improve error messages by using pr-str instead of str when printing objects
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1986">CLJS-1986</a>
+        </td>
+        <td class="tablecell">Support for ES6 generators
         </td>
     </tr>
     <tr>
@@ -699,16 +689,6 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
         <td class="tablecell">Open
         </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1871">CLJS-1871</a>
-        </td>
-        <td class="tablecell">A declare with :arglists should generate static function calls
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">1
-        </td>
-        <td class="tablecell">Open
-        </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1615">CLJS-1615</a>
         </td>
         <td class="tablecell">Inlining truth checks can lead to better optimisation results
@@ -722,6 +702,26 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1634">CLJS-1634</a>
         </td>
         <td class="tablecell">Track bound dynamic variables to support binding in async mechanisms.
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1871">CLJS-1871</a>
+        </td>
+        <td class="tablecell">A declare with :arglists should generate static function calls
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1
+        </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1997">CLJS-1997</a>
+        </td>
+        <td class="tablecell">Outward function type hint propagation
         </td>
     </tr>
     <tr>
@@ -882,16 +882,6 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1822">CLJS-1822</a>
         </td>
         <td class="tablecell">Use `:file-min` when processing JS modules with advanced optimizations
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
-        <td class="tablecell">Bad: Unkn Fix Version
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJS-1973">CLJS-1973</a>
-        </td>
-        <td class="tablecell">Add support for `:npm-deps` in upstream `deps.cljs`
         </td>
     </tr>
   </tbody>
