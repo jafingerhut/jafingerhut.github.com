@@ -17,7 +17,7 @@ select "Lock to Launcher" so it will always be there.
     sudo apt-get purge thunderbird libreoffice-*
 
     # Useful packages I like to have, not installed by default.
-    sudo apt-get install synaptic git curl vim sshfs python-pip python3-pip
+    sudo apt-get install synaptic git curl vim sshfs python-pip python3-pip xdiskusage
     # This is necessary to have a display size other than default 640x480
     sudo apt-get install virtualbox-guest-dkms
 
@@ -109,4 +109,16 @@ Login" under System Preferences -> Sharing
 
 From host OS, should be able to ping guest OS at 192.168.56.101.  I
 don't have my guest Ubuntu VM configured to allow ssh into it.
+
+Note: Unfortunately, if the host is Mac OS X, and you run Cisco
+AnyConnect Secure Mobility Client on that host to connect via VPN,
+while you are connected via VPN, the host only network adapter will
+not be able to send or receive packets between the host and the guest.
+Bummer.  Shared folders seems like a better way to go, then, for
+sharing files on the host file system with the guest OS.
 ----------------------------------------------------------------------
+
+A StackOverflow Q&A on compacting/shrinking a guest OS VDI file
+system:
+
+    https://superuser.com/questions/529149/how-to-compact-virtualboxs-vdi-file-size
