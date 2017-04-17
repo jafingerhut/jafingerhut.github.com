@@ -13,18 +13,22 @@ Enter "terminal" to search for that program.  Click "Terminal" icon to
 start that program.  Right-click on Terminal icon in Launcher and
 select "Lock to Launcher" so it will always be there.
 
-    # Save some disk space by removing large programs I won't use.
-    sudo apt-get purge thunderbird libreoffice-*
-
-    # Useful packages I like to have, not installed by default.
-    sudo apt-get install synaptic git curl vim sshfs python-pip python3-pip xdiskusage
-    # This is necessary to have a display size other than default 640x480
-    sudo apt-get install virtualbox-guest-dkms
-
     # Do this only if you want Andy Fingerhut's personalized dot
-    # files.  You probably want your own instead.
+    # files.  You probably want your own instead.  WARNING: Do not
+    # skip the export command.  Shell scripts executed in the second
+    # step need it to be set, or else by default they will get from a
+    # different Github repo belonging to someone else.
+    sudo apt-get install curl
     export github_user=jafingerhut
     bash -c "$(curl -fsSL https://raw.github.com/$github_user/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
+
+    # Save some disk space by removing large programs I won't use.
+    sudo apt-get purge thunderbird libreoffice-*
+    # Useful packages I like to have, not installed by default.
+    sudo apt-get install python-pip python3-pip
+    # This might be necessary to get copy/paste to work between guest
+    # and host OS
+    sudo apt-get install virtualbox-guest-dkms
 
 
 Reboot system for newly installed kernel modules (installed by
@@ -39,6 +43,17 @@ match it.
 Way more details than one probably would like on this issue:
 
     http://askubuntu.com/questions/451805/screen-resolution-problem-with-ubuntu-14-04-and-virtualbox/595192#595192
+
+
+With Ubuntu 14.04 I could get copy and paste between guest and Mac OS
+X to work.  With Ubuntu 16.04.2 I could not.  It was failing to
+install package virtualbox-guest-x11.  Some more details in this
+askubuntu.com question, but I haven't tried the suggestion of removing
+the package libcheese-gtk23 yet, because when I try to do that via
+synaptic, it warns that many other packages need to be removed, also,
+and some of them like ubuntu-desktop look like things I want to keep.
+
+    https://askubuntu.com/questions/526995/installing-guest-additions-causing-problems
 
 Shut down guest Ubuntu OS.
 
@@ -73,9 +88,9 @@ General command to add a user to a group:
 
     sudo usermod -a -G <groupName> <userName>
 
-In this particular case, for my user name 'jafinger':
+In this particular case for the group vboxsf:
 
-    sudo usermod -a -G vboxsf jafinger
+    sudo usermod -a -G vboxsf $USER
 
 Log out and log back in, or shut down and reboot guest OS.  Run the
 command 'id' to confirm that the group 'vboxsf' now shows up in the
