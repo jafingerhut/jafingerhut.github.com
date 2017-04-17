@@ -40,9 +40,54 @@ Way more details than one probably would like on this issue:
 
     http://askubuntu.com/questions/451805/screen-resolution-problem-with-ubuntu-14-04-and-virtualbox/595192#595192
 
-
-
 Shut down guest Ubuntu OS.
+
+
+----------------------------------------------------------------------
+Set up shared folders on Ubuntu guest that can be read and written
+from guest OS
+----------------------------------------------------------------------
+
+I believe I had trouble with shared folder settings disappearing if I
+tried creating them while the guest OS was running.  Shutting down the
+guest OS and then creating the shared folder settings seemed to work
+better, so do that first.
+
+Menu item: Machine -> Settings... -> Shared Folders tab
+Click icon on right side of window with + sign in it
+Select the desired folder on host OS
+Click to enable "Auto-mount"
+Click OK to save settings.
+
+The example folder name I created was 'p4-docs', which I will use
+below for sake of example.
+
+Boot guest OS and log in.
+
+    ls /media
+
+should show a new directory sf_p4-docs/
+Trying to list it will likely give 'Permission denied'.
+
+General command to add a user to a group:
+
+    sudo usermod -a -G <groupName> <userName>
+
+In this particular case, for my user name 'jafinger':
+
+    sudo usermod -a -G vboxsf jafinger
+
+Log out and log back in, or shut down and reboot guest OS.  Run the
+command 'id' to confirm that the group 'vboxsf' now shows up in the
+output.  If so, then this command should now show you the contents of
+the shared folder:
+
+    ls /media/sf_p4-docs
+
+A symbolic link to this shared folder can make it easy to access from
+your home directory, e.g.:
+
+    ln -s /media/sf_p4-docs/ ~/p4-docs
 
 ----------------------------------------------------------------------
 Create host-only adapter network between guest Ubuntu VM and host Mac
