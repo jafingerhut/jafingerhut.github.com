@@ -74,8 +74,8 @@ Select the desired folder on host OS
 Click to enable "Auto-mount"
 Click OK to save settings.
 
-The example folder name I created was 'p4-docs', which I will use
-below for sake of example.
+The folder name I created was 'p4-docs', which I will use below for
+sake of example.
 
 Boot guest OS and log in.
 
@@ -84,11 +84,11 @@ Boot guest OS and log in.
 should show a new directory sf_p4-docs/
 Trying to list it will likely give 'Permission denied'.
 
-General command to add a user to a group:
+Command to add a user to a group:
 
     sudo usermod -a -G <groupName> <userName>
 
-In this particular case for the group vboxsf:
+In this particular case for the group 'vboxsf':
 
     sudo usermod -a -G vboxsf $USER
 
@@ -103,6 +103,46 @@ A symbolic link to this shared folder can make it easy to access from
 your home directory, e.g.:
 
     ln -s /media/sf_p4-docs/ ~/p4-docs
+
+----------------------------------------------------------------------
+Sample sshfs commands
+----------------------------------------------------------------------
+
+sshfs is nice in that you do not need to have root privileges on any
+machines to use it -- only the ability to ssh from the machine
+mounting the remote file system, to the machine where the file system
+is located.
+
+It is not so convenient when used to mount a host OS's file system on
+a guest OS.
+
+(a) One way is to use the IP address of the host OS's main network
+    adapter.  This works well, except that this IP address changes if
+    the host OS is on a laptop, and its Wi-Fi interface gets a new IP
+    address after changing locations.
+
+(b) Another way I have successfully used is to create a host-only
+    network (instructions below).  This prevents the IP address from
+    changing, but unfortunately does not work when the host OS is
+    currently using Cisco AnyConnect with an active VPN connection,
+    because that software prevents 'split tunneling', meaning that no
+    IP traffic on the host can go to any network interface other than
+    the virtual VPN interface, so no IP communication between guest
+    and host during those times.
+
+It is fine for mounting a file system of a machine with a consistent
+IP address on the host or the guest.
+
+# mounting
+# sshfs [user@]host:[dir] mountpoint [options]
+MYIP="10.0.1.40"
+MYIP="192.168.56.1"
+sshfs jafinger@jafinger-aur.cisco.com:/auto/ins-asic-11/jafinger/forwarding/ins-asic $HOME/ins-asic
+
+# unmounting
+# fusermount -u <mountpoint>
+fusermount -u $HOME/ins-asic
+
 
 ----------------------------------------------------------------------
 Create host-only adapter network between guest Ubuntu VM and host Mac
