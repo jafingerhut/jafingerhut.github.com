@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: April 13, 2017
+Date: April 20, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -41,7 +41,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
-  88 Screenable   [CLJ-2141] New qualified-* predicates can return true, nil, and false
+  89 Screenable   [CLJ-2141] New qualified-* predicates can return true, nil, and false
   22 Incomplete   [CLJ-700] contains? broken for transient collections
   15 Incomplete   [CLJ-1544] AOT bug involving namespaces loaded before AOT compilation started
    9 Prescreened  [CLJ-1398] Update URLs in javadoc.clj
@@ -163,7 +163,7 @@ Defect
    0 Prescreened  [CLJ-2069] lazy seq that encounters an exception has differing behavior on repeated use
    0 Screenable   [CLJ-2080] clojure.spec/every-kv does not work correctly on vectors
    0 Screenable   [CLJ-2089] Sorted colls with default comparator don't check that first element is Comparable
-   0 Prescreened  [CLJ-2091] clojure.lang.APersistentVector#hashCode is not thread-safe
+   0 Ok           [CLJ-2091] clojure.lang.APersistentVector#hashCode is not thread-safe
    0 Triaged      [CLJ-2092] deftype instances with mutable fields cannot be compiled 
    0 Needs Patch  [CLJ-2098] autodoc fails to load clojure/spec.clj
    0 Vetted       [CLJ-2105] incorrect spec conform when an optional (?) is inside of a one or more (+) 
@@ -171,12 +171,14 @@ Defect
    0 Triaged      [CLJ-2126] Can set! to fields of a defrecord
    0 Needs Patch  [CLJ-2143] The result of s/form for s/keys* is different from the original form
    0 Needs Patch  [CLJ-2152] clojure.spec: s/& has a broken form
+   0 Triaged      [CLJ-2154] Spec macros keys and keys* silently ignores non-keywords given in the vectors for named arguments :req and :req-un
+   0 Triaged      [CLJ-2155] clojure.string/index-of has some ^long type hints on let bindings that don't actually do anything
 
 ========================================
 Enhancement
 
-  35 Triaged      [CLJ-1965] clojure.spec/def should support an optional doc-string
-  33 Prescreened  [CLJ-2056] Efficient shortcut for (first (filter pred coll)) idiom
+  36 Triaged      [CLJ-1965] clojure.spec/def should support an optional doc-string
+  36 Prescreened  [CLJ-2056] Efficient shortcut for (first (filter pred coll)) idiom
   29 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
   23 Backlog      [CLJ-1517] Unrolled small vectors
   22 Vetted       [CLJ-865] Macroexpansion discards &form metadata
