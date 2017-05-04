@@ -13,3 +13,17 @@ Then I found the method described at the link below, and that worked.
 It is also much more convenient if you wish to tweak the AppleScript
 later, because you edit the one _called_ by the Automator action, not
 the Automator action itself.
+
+Here is the template Automator action AppleScript, copied from the
+article above:
+
+    on run {input, parameters}
+        run script file "Macintosh HD:Some Directory On Disk:a cool script.applescript"
+    end run
+
+The variation below lets you pass the input and parameters arguments
+into your scripts from Automator as well:
+
+    on run {input, parameters}
+        run script file "path to script like above" with parameters {input, parameters
+    end run
