@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: May 4, 2017
+Date: May 11, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -100,6 +100,7 @@ Defect
    1 Triaged      [CLJ-1254] Incorrect long quot result involving Long/MIN_VALUE
    1 Prescreened  [CLJ-1403] ns-resolve might throw ClassNotFoundException but should return nil
    1 Incomplete   [CLJ-2066] Reflection on internal classes fails under Java 9
+   1 Needs Patch  [CLJ-2152] clojure.spec: s/& has a broken form
    1 Triaged      [CLJ-1898] Inconsistent duplicate check in set/map literals with quoted/unquoted equal constants
    1 Prescreened  [CLJ-2031] clojure.walk/postwalk does not preserve MapEntry type objects
    1 Open         [CLJ-2074] ::keys spec conflicts with destructuring spec
@@ -171,7 +172,6 @@ Defect
    0 Vetted       [CLJ-2111] s/every :kind does not work as intended
    0 Triaged      [CLJ-2126] Can set! to fields of a defrecord
    0 Needs Patch  [CLJ-2143] The result of s/form for s/keys* is different from the original form
-   0 Needs Patch  [CLJ-2152] clojure.spec: s/& has a broken form
    0 Triaged      [CLJ-2154] Spec macros keys and keys* silently ignores non-keywords given in the vectors for named arguments :req and :req-un
    0 Prescreened  [CLJ-2156] Document char[] input support in clojure.java.io/copy
    0 Triaged      [CLJ-2158] multi-spec retag generator in conflict with user tag spec/gen
@@ -209,19 +209,19 @@ Enhancement
    9 Triaged      [CLJ-1278] State function's unmunged full name in compiled function's toString()
    9 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
    8 Open         [CLJ-1467] Implement Comparable in PersistentList
+   8 Prescreened  [CLJ-1451] Add take-until
    8 Triaged      [CLJ-1458] Enhance the performance of map merges
    7 Triaged      [CLJ-1490] Exception on protocol implementation after protocol reloaded could be improved
-   7 Prescreened  [CLJ-1451] Add take-until
    7 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
    7 Triaged      [CLJ-1239] faster, more flexible dispatch for clojure.walk
    7 Triaged      [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
    7 Triaged      [CLJ-1814] Make `satisfies?` as fast as a protocol method call
    6 Triaged      [CLJ-735] Improve error message when a protocol method is not found
+   6 Open         [CLJ-2116] Support for selective conforming with clojure.spec
    6 Triaged      [CLJ-1209] clojure.test does not print ex-info in error reports
    6 Prescreened  [CLJ-1117] partition docstring should be more explicit about dropped or partial trailing elements
    5 Open         [CLJ-2075] Add three-arities to < <= > >= = == not=
    5 Triaged      [CLJ-1743] Avoid compile-time static initialization of classes when using inheritance
-   5 Open         [CLJ-2116] Support for selective conforming with clojure.spec
    5 Open         [CLJ-2115] Support data conveying conform errors (alternative/complement to :clojure.spec/invalid)
    5 Triaged      [CLJ-1656] Unroll assoc and assoc! for small numbers of arguments
    5 Open         [CLJ-1201] There should also be writing in clojure.edn
@@ -298,6 +298,7 @@ Enhancement
    1 Open         [CLJ-995] sorted-set doesn't support IEditableCollection
    1 Triaged      [CLJ-1044] Enable refering to ->type inside deftype
    1 Open         [CLJ-1223] Improve App Engine Support by Providing an Option to Use the App Engine ThreadManger
+   1 Open         [CLJ-1257] Suppress warnings when clojure.core symbols are explicitly replaced with "use" or "refer"
    1 Open         [CLJ-1296] locking expressions cause vars to be dereferenced, even if not executed, unless wrapped in let
    1 Open         [CLJ-1526] clojure.core/> inconsistent behavior wrt to documentation.
    1 Triaged      [CLJ-1624] Support get from arbitrary java.util.List data types
@@ -337,8 +338,8 @@ Enhancement
    1 Open         [CLJ-252] Support typed non-primitive fields in deftype
    1 Open         [CLJ-1231] fn and letfn don't support hinting the function's return type
    1 Triaged      [CLJ-1762] Implement IKVReduce for java.util.map
-   1 Triaged      [CLJ-2013] Alternative s/cat options not error-reported
    1 Open         [CLJ-1884] Add support for two parameters to rand and rand-int
+   1 Triaged      [CLJ-2013] Alternative s/cat options not error-reported
    1 Triaged      [CLJ-1896] Support transducers in vec and set fns
    1 Prescreened  [CLJ-1917] internal-reduce extended on StringSeq calls `.length` on every iteration step
    1 Prescreened  [CLJ-1952] include var->sym in clojure.core

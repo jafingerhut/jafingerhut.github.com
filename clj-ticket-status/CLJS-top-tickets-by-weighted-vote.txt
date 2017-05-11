@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: May 4, 2017
+Date: May 11, 2017
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -47,36 +47,23 @@ Defect
              Nate Smith (1.00)
              Peter Jaros (1.00)
              Zachary Scott (1.00)
-    4.25   5 Open         [CLJS-884] with-redefs don't restores previous values when used inside go block
-             Jinseop Kim (1.00)
-             Kris Jenkins (1.00)
-             Tolga Paksoy (1.00)
-             Daniel Compton (0.75)
-             Yehonathan Sharvit (0.50)
     4.00   4 Open         [CLJS-677] cljs.reader doesn't support keywords starting with a digit
              Damon Kropf-Untucht (1.00)
              Francis Avila (1.00)
              Mike Longworth (1.00)
              Peter Taoussanis (1.00)
-    3.00   3 Bad: Unkn Fi [CLJS-485] clojure.string/replace ignores regex flags
-             Dave Aitken (1.00)
-             Jake McCrary (1.00)
-             Stuart Mitchell (1.00)
-    2.00   2 Bad: Unkn Fi [CLJS-794] RegExp flags are being dropped by `string/replace`
-             Dave Aitken (1.00)
-             Jake McCrary (1.00)
+    2.00   2 Bad: Unkn Fi [CLJS-968] Metadata on function literal inside of a let produces invalid Javascript
+             David Nolen (1.00)
+             Herwig Hochleitner (1.00)
     2.00   2 Open         [CLJS-1706] cljs.reader support for namespaced map literal
              Kevin Lynagh (1.00)
              Tim Gilbert (1.00)
-    1.86   2 Bad: Unkn Fi [CLJS-968] Metadata on function literal inside of a let produces invalid Javascript
-             David Nolen (1.00)
-             Herwig Hochleitner (0.86)
+    2.00   2 Open         [CLJS-2019] Some code is generated with invalid arities
+             Jussi Nieminen (1.00)
+             A. R (1.00)
     1.86   2 Open         [CLJS-1806] build api fails to generate inline code for :target :nodejs
              Dusan Maliarik (1.00)
              Patrick Killean (0.86)
-    1.36   2 Open         [CLJS-1572] REPL doesn't give error for expressions with too many right parentheses.
-             Herwig Hochleitner (0.86)
-             Yehonathan Sharvit (0.50)
     1.00   1 Bad: Unkn Fi [CLJS-871] .-default property access returns nil
              Timothy Pratley (1.00)
     1.00   1 Open         [CLJS-890] Incorrect behaviour of (str obj) when obj has valueOf method
@@ -93,12 +80,14 @@ Defect
              Dieter Komendera (1.00)
     0.86   1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
              J.&nbsp;S.&nbsp;Choi (0.86)
-    0.75   1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
-             Thomas Heller (0.75)
-    0.50   1 Open         [CLJS-1593] Self-host: Munged minus macro
-             Yehonathan Sharvit (0.50)
-    0.50   1 Open         [CLJS-1677] Requiring [goog] breaks an :advanced build, but the compiler exits successfully
-             Yehonathan Sharvit (0.50)
+    0.66   1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
+             Thomas Heller (0.66)
+    0.66   1 Open         [CLJS-2023] User supplied type hints stopped working on js/goog.DEBUG which means DCE can fail
+             Thomas Heller (0.66)
+    0.60   1 Open         [CLJS-1593] Self-host: Munged minus macro
+             Yehonathan Sharvit (0.60)
+    0.60   1 Open         [CLJS-1677] Requiring [goog] breaks an :advanced build, but the compiler exits successfully
+             Yehonathan Sharvit (0.60)
     0.00   0 Bad: Unkn Fi [CLJS-349] cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
     0.00   0 Bad: Unkn Fi [CLJS-375] loop doesn't seem to preserve tag information as evidenced by extra cljs.core.truth_ calls
     0.00   0 Bad: Unkn Fi [CLJS-434] ClojureScript compiler prepends "self__" to defmulti forms when metadata in form of ^:field.
@@ -124,13 +113,13 @@ Defect
 ========================================
 Enhancement
 
-    5.75   6 Bad: Unkn Fi [CLJS-1461] Convert analyzer to conform to tools.analyzer's spec
+    5.66   6 Bad: Unkn Fi [CLJS-1461] Convert analyzer to conform to tools.analyzer's spec
              James Henderson (1.00)
              Michael Griffiths (1.00)
              Nicola Mometto (1.00)
              Nicolas HA (1.00)
              Tienson Qin (1.00)
-             Thomas Heller (0.75)
+             Thomas Heller (0.66)
     2.00   2 Open         [CLJS-555] CLONE - Implement ratios
              Marcus H (1.00)
              Mike Fikes (1.00)
@@ -146,22 +135,26 @@ Enhancement
     1.86   2 Bad: Unkn Fi [CLJS-1238] Setting *main-cli-fn* when using :target :nodejs shouldn't be manditory
              Rohit Aggarwal (1.00)
              Andrey Antukh (0.86)
-    1.75   2 Open         [CLJS-1871] A declare with :arglists should generate static function calls
-             Nikita Prokopov (1.00)
-             Thomas Heller (0.75)
-    1.61   2 Open         [CLJS-1410] Support source maps in deps.cljs
+    1.86   2 Open         [CLJS-1410] Support source maps in deps.cljs
+             Daniel Compton (1.00)
              J.&nbsp;S.&nbsp;Choi (0.86)
-             Daniel Compton (0.75)
-    1.50   2 Open         [CLJS-324] cljs.core/format
-             Ikuru Kanuma (1.00)
-             Yehonathan Sharvit (0.50)
-    1.50   2 Open         [CLJS-1628] Make instances of js/Symbol printable
+    1.66   2 Open         [CLJS-1871] A declare with :arglists should generate static function calls
              Nikita Prokopov (1.00)
-             Yehonathan Sharvit (0.50)
+             Thomas Heller (0.66)
+    1.60   2 Open         [CLJS-324] cljs.core/format
+             Ikuru Kanuma (1.00)
+             Yehonathan Sharvit (0.60)
+    1.60   2 Open         [CLJS-1628] Make instances of js/Symbol printable
+             Nikita Prokopov (1.00)
+             Yehonathan Sharvit (0.60)
     1.00   1 Bad: Unkn Fi [CLJS-1047] externs checking for js/foo
              Bozhidar Batsov (1.00)
     1.00   1 Open         [CLJS-1428] Add a cljs.core/*command-line-args* var
              Matthew Nespor (1.00)
+    1.00   1 Open         [CLJS-1615] Inlining truth checks can lead to better optimisation results
+             Daniel Compton (1.00)
+    1.00   1 Open         [CLJS-1865] Google Closure Compiler in JavaScript
+             Herwig Hochleitner (1.00)
     1.00   1 Open         [CLJS-1876] Faster PersistentVector, Subvec and ChunkedSeq reduce.
              A. R (1.00)
     1.00   1 Open         [CLJS-1908] Improve error messages by using pr-str instead of str when printing objects
@@ -176,16 +169,10 @@ Enhancement
              Andrey Antukh (0.86)
     0.86   1 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
              Patrick Killean (0.86)
-    0.86   1 Open         [CLJS-1865] Google Closure Compiler in JavaScript
-             Herwig Hochleitner (0.86)
-    0.75   1 Open         [CLJS-1615] Inlining truth checks can lead to better optimisation results
-             Daniel Compton (0.75)
-    0.75   1 Open         [CLJS-1634] Track bound dynamic variables to support binding in async mechanisms.
-             Daniel Compton (0.75)
-    0.75   1 Open         [CLJS-1997] Outward function type hint propagation
-             Thomas Heller (0.75)
-    0.50   1 Open         [CLJS-1601] Optimize cljs.core dump 
-             Yehonathan Sharvit (0.50)
+    0.66   1 Open         [CLJS-1997] Outward function type hint propagation
+             Thomas Heller (0.66)
+    0.60   1 Open         [CLJS-1601] Optimize cljs.core dump 
+             Yehonathan Sharvit (0.60)
     0.00   0 Bad: Unkn Fi [CLJS-773] Use unchecked-*-int functions for real 32-bit math
     0.00   0 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
     0.00   0 Bad: Unkn Fi [CLJS-1125] Simple corrupted compiled file detection
@@ -205,10 +192,10 @@ Enhancement
 ========================================
 Task
 
-    2.36   3 Open         [CLJS-901] Protocolize compiler access to the file system
+    2.46   3 Open         [CLJS-901] Protocolize compiler access to the file system
              Mike Fikes (1.00)
              Patrick Killean (0.86)
-             Yehonathan Sharvit (0.50)
+             Yehonathan Sharvit (0.60)
     0.00   0 Bad: Unkn Fi [CLJS-1128] Describe internationalization strategies via Google Closure on the wiki
     0.00   0 Bad: Unkn Fi [CLJS-1129] :modules tutorial for wiki
     0.00   0 Bad: Unkn Fi [CLJS-1134] Lift protocols from cljs.closure into cljs.protocols ns

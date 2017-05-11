@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: May 4, 2017
+Date: May 11, 2017
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -42,14 +42,11 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 Defect
 
    5 Open         [CLJS-2021] Passing a non-vector to subvec returns an unusable object
-   5 Open         [CLJS-884] with-redefs don't restores previous values when used inside go block
    4 Open         [CLJS-677] cljs.reader doesn't support keywords starting with a digit
-   3 Bad: Unkn Fi [CLJS-485] clojure.string/replace ignores regex flags
-   2 Bad: Unkn Fi [CLJS-794] RegExp flags are being dropped by `string/replace`
-   2 Open         [CLJS-1706] cljs.reader support for namespaced map literal
    2 Bad: Unkn Fi [CLJS-968] Metadata on function literal inside of a let produces invalid Javascript
+   2 Open         [CLJS-1706] cljs.reader support for namespaced map literal
+   2 Open         [CLJS-2019] Some code is generated with invalid arities
    2 Open         [CLJS-1806] build api fails to generate inline code for :target :nodejs
-   2 Open         [CLJS-1572] REPL doesn't give error for expressions with too many right parentheses.
    1 Bad: Unkn Fi [CLJS-871] .-default property access returns nil
    1 Open         [CLJS-890] Incorrect behaviour of (str obj) when obj has valueOf method
    1 Open         [CLJS-1696] Alias clojure.spec.gen => cljs.spec.impl.gen
@@ -59,6 +56,7 @@ Defect
    1 Open         [CLJS-2011] :modules cannot rely on code motion or dead code removal
    1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
    1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
+   1 Open         [CLJS-2023] User supplied type hints stopped working on js/goog.DEBUG which means DCE can fail
    1 Open         [CLJS-1593] Self-host: Munged minus macro
    1 Open         [CLJS-1677] Requiring [goog] breaks an :advanced build, but the compiler exits successfully
    0 Bad: Unkn Fi [CLJS-349] cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
@@ -92,12 +90,14 @@ Enhancement
    2 Open         [CLJS-1902] Add support for compiler option :inline-source-maps
    2 Open         [CLJS-1907] Improve error message from cljs.reader/read-string when reading keyword with number first (e.g. :0seconds)
    2 Bad: Unkn Fi [CLJS-1238] Setting *main-cli-fn* when using :target :nodejs shouldn't be manditory
-   2 Open         [CLJS-1871] A declare with :arglists should generate static function calls
    2 Open         [CLJS-1410] Support source maps in deps.cljs
+   2 Open         [CLJS-1871] A declare with :arglists should generate static function calls
    2 Open         [CLJS-324] cljs.core/format
    2 Open         [CLJS-1628] Make instances of js/Symbol printable
    1 Bad: Unkn Fi [CLJS-1047] externs checking for js/foo
    1 Open         [CLJS-1428] Add a cljs.core/*command-line-args* var
+   1 Open         [CLJS-1615] Inlining truth checks can lead to better optimisation results
+   1 Open         [CLJS-1865] Google Closure Compiler in JavaScript
    1 Open         [CLJS-1876] Faster PersistentVector, Subvec and ChunkedSeq reduce.
    1 Open         [CLJS-1908] Improve error messages by using pr-str instead of str when printing objects
    1 Open         [CLJS-1986] Support for ES6 generators
@@ -105,9 +105,6 @@ Enhancement
    1 Open         [CLJS-1076] :nashorn target
    1 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
    1 Bad: Unkn Fi [CLJS-1328] Support defrecord reader tags
-   1 Open         [CLJS-1865] Google Closure Compiler in JavaScript
-   1 Open         [CLJS-1615] Inlining truth checks can lead to better optimisation results
-   1 Open         [CLJS-1634] Track bound dynamic variables to support binding in async mechanisms.
    1 Open         [CLJS-1997] Outward function type hint propagation
    1 Open         [CLJS-1601] Optimize cljs.core dump 
    0 Bad: Unkn Fi [CLJS-773] Use unchecked-*-int functions for real 32-bit math
