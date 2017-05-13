@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: April 27, 2017
+Date: May 11, 2017
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -167,6 +167,14 @@ Enhancement
              Nicola Mometto (1.00)
              Howard Lewis Ship (0.86)
              Daniel Compton (0.60)
+    7.00   7 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
+             Alexander Kiel (1.00)
+             Casey Marshall (1.00)
+             Erik Assum (1.00)
+             Huahai Yang (1.00)
+             Nahuel Greco (1.00)
+             Reid McKenzie (1.00)
+             Thomas Heller (1.00)
     6.46   7 Open         [ASYNC-119] (CLJS) ClojureScript: combine cljs.core.async.macros and cljs.core.async
              Juho Teperi (1.00)
              Tim Gilbert (1.00)
@@ -175,13 +183,6 @@ Enhancement
              Wilker Lúcio da Silva (1.00)
              Howard Lewis Ship (0.86)
              Daniel Compton (0.60)
-    6.00   6 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
-             Alexander Kiel (1.00)
-             Casey Marshall (1.00)
-             Huahai Yang (1.00)
-             Nahuel Greco (1.00)
-             Reid McKenzie (1.00)
-             Thomas Heller (1.00)
     4.46   5 Open         [ASYNC-137] (CLJS) Make (<! (timeout 0)) be closer to 0
              Denis Johnson (1.00)
              Patrick O'Brien (1.00)
@@ -221,6 +222,8 @@ Enhancement
              Miro Kubicek (1.00)
     1.00   1 Open         [ASYNC-71] exception behavior for thread macro is hard coded
              Vlad Bokov (1.00)
+    1.00   1 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
+             Sam Umbach (1.00)
     0.00   0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
     0.00   0 Open         [ASYNC-131] (CLJS) go! or "go-now" for CLJS
     0.00   0 Open         [ASYNC-141] Convert project to use Reader Conditionals
@@ -233,7 +236,6 @@ Enhancement
     0.00   0 Open         [ASYNC-189] Tap return value not documented
     0.00   0 Triaged      [ASYNC-153] Return value of pipe is not documented
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
-    0.00   0 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
     0.00   0 Vetted       [ASYNC-69] How to better communicate "mix" lifecycle wrt coordination
     0.00   0 Vetted       [ASYNC-102] implement IDeref, IBlockingDeref for channels
 
@@ -354,9 +356,10 @@ Project CMEMOIZE tickets
 ========================================
 Defect
 
-    3.00   3 Open         [CMEMOIZE-15] ttl functions sometimes return nil
+    4.00   4 Open         [CMEMOIZE-15] ttl functions sometimes return nil
              Arthur Maciejewicz (1.00)
              Joshua Tilles (1.00)
+             Peter Monks (1.00)
              Zack Dever (1.00)
     0.00   0 Open         [CMEMOIZE-18] Confusing / erroneous documentation regarding seed values for clojure.core.memoize/memo
 
@@ -371,13 +374,14 @@ Project CRRBV tickets
 ========================================
 Defect
 
+    1.00   1 Open         [CRRBV-15] rrb-vector won't compile with clojurescript: clojure.lang.ArityException: Wrong number of args (1) passed to: nodes/ranges
+             Stuart Sierra (1.00)
     0.00   0 Open         [CRRBV-9] Repeated subvec and catvec fails
     0.00   0 Open         [CRRBV-10] Calling empty in CLJS results in a PersistentVector
     0.00   0 Open         [CRRBV-11] Issue with Clojure 1.8.0-alpha2 Tuples
     0.00   0 Open         [CRRBV-12] ClassCastException: clojure.lang.PersistentVector$Node cannot be cast to [I
     0.00   0 Open         [CRRBV-13] Throws ClassCastException on assoc
     0.00   0 Open         [CRRBV-14] nth fails with ArrayIndexOutOfBoundsException 33 clojure.core.rrb-vector.rrbt.Vector/fn--19277 (rrbt.clj:373)
-    0.00   0 Open         [CRRBV-15] rrb-vector won't compile with clojurescript: clojure.lang.ArityException: Wrong number of args (1) passed to: nodes/ranges
     0.00   0 Open         [CRRBV-17] StackOverflowError when building rrb-vector by concatenation at the beginning
 
 ========================================
@@ -634,6 +638,8 @@ Defect
     0.00   0 Open         [DJSON-22] Improper parsing of numbers - leading zeroes should be disallowed
     0.00   0 Open         [DJSON-24] clojure.json.data should handle non breking whitespace
     0.00   0 Open         [DJSON-25] Escaped backslash in strings throws
+    0.00   0 Open         [DJSON-26] write-object can retain head of collections
+    0.00   0 Open         [DJSON-27] Separator punctuation is treated as whitespace in arrays and objects
 
 ========================================
 Enhancement
@@ -654,8 +660,9 @@ Project DXML tickets
 ========================================
 Defect
 
+    1.00   1 Open         [DXML-44] AbstractMethodError: Method clojure/data/xml/node/Element.empty()
+             Aaron Iba (1.00)
     0.00   0 Open         [DXML-32] data.xml fails when used with Java 9
-    0.00   0 Open         [DXML-44] AbstractMethodError: Method clojure/data/xml/node/Element.empty()
 
 ========================================
 Enhancement
@@ -664,6 +671,11 @@ Enhancement
     0.00   0 Open         [DXML-40] README FileWriter example fails if platform default encoding is not UTF-8
     0.00   0 Open         [DXML-41] README - applicability of xml-seq, xml-zip?
     0.00   0 Open         [DXML-42] Some reflection warnings `[org.clojure/data.xml "0.2.0-alpha2"]`
+
+========================================
+Task
+
+    0.00   0 Open         [DXML-45] Support UTF-8 XML beginning with BOM
 
 
 Project DZIP tickets
@@ -823,6 +835,8 @@ Defect
     0.00   0 Open         [MATCH-117] Outdated dependencies
     0.00   0 Open         [MATCH-119] Fix typo on multimehod 
     0.00   0 Open         [MATCH-120] Empty seq match can throw Exception
+    0.00   0 Open         [MATCH-122] Or matches with vectors improperly match
+    0.00   0 Open         [MATCH-123] Exception when regexp-matching on a map key that does not exist.
 
 ========================================
 Enhancement
@@ -909,6 +923,7 @@ Enhancement
     0.00   0 Open         [NREPL-29] Provide a mechanism for overriding an operation
     0.00   0 Open         [NREPL-43] Document the availability/usage of *e, *1, *2, ... in nREPL
     0.00   0 Open         [NREPL-44] Expose JMX MBean to provide list of available nREPL endpoints
+    0.00   0 Open         [NREPL-85] Add initial authentication support and simple default
 
 ========================================
 Task
@@ -962,6 +977,7 @@ Defect
     0.00   0 Open         [TCHECK-120] size of args is conflated with depth in shrink tree
     0.00   0 Open         [TCHECK-124] defspec does not set property :name properly
     0.00   0 Open         [TCHECK-125] should fail gracefully when clojure.test/report is not a multimethod
+    0.00   0 Open         [TCHECK-129] frequency shrinks towards early elements even if they have 0 likelihood
 
 ========================================
 Enhancement
