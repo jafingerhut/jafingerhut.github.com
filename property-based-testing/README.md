@@ -78,3 +78,10 @@ Research and Practice, 2005, Vasteras, Sweden,
 
 Thomas Arts, John Hughes, "Erlang/QuickCheck",
 [https://pdfs.semanticscholar.org/6062/b371ea5963c38bfbcca96afe00d3ee548de2.pdf](https://pdfs.semanticscholar.org/6062/b371ea5963c38bfbcca96afe00d3ee548de2.pdf)
+
+
+# Industry
+
+John Hughes started the company [QuviQ](http://www.quviq.com) in order
+to sell tools and services to industry for testing software using
+these methods.
