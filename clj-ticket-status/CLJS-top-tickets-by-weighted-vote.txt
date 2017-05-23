@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: May 11, 2017
+Date: May 15, 2017
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -58,12 +58,14 @@ Defect
     2.00   2 Open         [CLJS-1706] cljs.reader support for namespaced map literal
              Kevin Lynagh (1.00)
              Tim Gilbert (1.00)
-    2.00   2 Open         [CLJS-2019] Some code is generated with invalid arities
-             Jussi Nieminen (1.00)
-             A. R (1.00)
     1.86   2 Open         [CLJS-1806] build api fails to generate inline code for :target :nodejs
              Dusan Maliarik (1.00)
              Patrick Killean (0.86)
+    1.60   2 Open         [CLJS-1677] Requiring [goog] breaks an :advanced build, but the compiler exits successfully
+             Oliver George (1.00)
+             Yehonathan Sharvit (0.60)
+    1.00   1 Bad: Unkn Fi [CLJS-868] no arity warnings on recursive calls
+             A. R (1.00)
     1.00   1 Bad: Unkn Fi [CLJS-871] .-default property access returns nil
              Timothy Pratley (1.00)
     1.00   1 Open         [CLJS-890] Incorrect behaviour of (str obj) when obj has valueOf method
@@ -80,19 +82,14 @@ Defect
              Dieter Komendera (1.00)
     0.86   1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
              J.&nbsp;S.&nbsp;Choi (0.86)
-    0.66   1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
-             Thomas Heller (0.66)
-    0.66   1 Open         [CLJS-2023] User supplied type hints stopped working on js/goog.DEBUG which means DCE can fail
-             Thomas Heller (0.66)
+    0.75   1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
+             Thomas Heller (0.75)
     0.60   1 Open         [CLJS-1593] Self-host: Munged minus macro
-             Yehonathan Sharvit (0.60)
-    0.60   1 Open         [CLJS-1677] Requiring [goog] breaks an :advanced build, but the compiler exits successfully
              Yehonathan Sharvit (0.60)
     0.00   0 Bad: Unkn Fi [CLJS-349] cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
     0.00   0 Bad: Unkn Fi [CLJS-375] loop doesn't seem to preserve tag information as evidenced by extra cljs.core.truth_ calls
     0.00   0 Bad: Unkn Fi [CLJS-434] ClojureScript compiler prepends "self__" to defmulti forms when metadata in form of ^:field.
     0.00   0 Bad: Unkn Fi [CLJS-712] resolve-var for symbol with dot still wrong
-    0.00   0 Bad: Unkn Fi [CLJS-868] no arity warnings on recursive calls
     0.00   0 Bad: Unkn Fi [CLJS-1070] top-level boolean inference does not work
     0.00   0 Bad: Unkn Fi [CLJS-1133] REPL require results in warnings to be emitted twice
     0.00   0 Bad: Unkn Fi [CLJS-1136] Initial require fails to fully load added symbols
@@ -113,13 +110,21 @@ Defect
 ========================================
 Enhancement
 
-    5.66   6 Bad: Unkn Fi [CLJS-1461] Convert analyzer to conform to tools.analyzer's spec
+    5.75   6 Bad: Unkn Fi [CLJS-1461] Convert analyzer to conform to tools.analyzer's spec
              James Henderson (1.00)
              Michael Griffiths (1.00)
              Nicola Mometto (1.00)
              Nicolas HA (1.00)
              Tienson Qin (1.00)
-             Thomas Heller (0.66)
+             Thomas Heller (0.75)
+    3.00   3 Open         [CLJS-1907] Improve error message from cljs.reader/read-string when reading keyword with number first (e.g. :0seconds)
+             John Newman (1.00)
+             John Wiseman (1.00)
+             Oliver George (1.00)
+    2.75   3 Open         [CLJS-1871] A declare with :arglists should generate static function calls
+             Nikita Prokopov (1.00)
+             Rohit Aggarwal (1.00)
+             Thomas Heller (0.75)
     2.00   2 Open         [CLJS-555] CLONE - Implement ratios
              Marcus H (1.00)
              Mike Fikes (1.00)
@@ -129,18 +134,12 @@ Enhancement
     2.00   2 Open         [CLJS-1902] Add support for compiler option :inline-source-maps
              Andrea Richiardi (1.00)
              Dusan Maliarik (1.00)
-    2.00   2 Open         [CLJS-1907] Improve error message from cljs.reader/read-string when reading keyword with number first (e.g. :0seconds)
-             John Wiseman (1.00)
-             Oliver George (1.00)
     1.86   2 Bad: Unkn Fi [CLJS-1238] Setting *main-cli-fn* when using :target :nodejs shouldn't be manditory
              Rohit Aggarwal (1.00)
              Andrey Antukh (0.86)
     1.86   2 Open         [CLJS-1410] Support source maps in deps.cljs
              Daniel Compton (1.00)
              J.&nbsp;S.&nbsp;Choi (0.86)
-    1.66   2 Open         [CLJS-1871] A declare with :arglists should generate static function calls
-             Nikita Prokopov (1.00)
-             Thomas Heller (0.66)
     1.60   2 Open         [CLJS-324] cljs.core/format
              Ikuru Kanuma (1.00)
              Yehonathan Sharvit (0.60)
@@ -169,8 +168,8 @@ Enhancement
              Andrey Antukh (0.86)
     0.86   1 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
              Patrick Killean (0.86)
-    0.66   1 Open         [CLJS-1997] Outward function type hint propagation
-             Thomas Heller (0.66)
+    0.75   1 Open         [CLJS-1997] Outward function type hint propagation
+             Thomas Heller (0.75)
     0.60   1 Open         [CLJS-1601] Optimize cljs.core dump 
              Yehonathan Sharvit (0.60)
     0.00   0 Bad: Unkn Fi [CLJS-773] Use unchecked-*-int functions for real 32-bit math
