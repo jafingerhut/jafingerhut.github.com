@@ -49,6 +49,11 @@ observe and consider correct when using a file synchronization service
 like Dropbox from multiple clients in parallel.
 
 
+There are more recorded talks by John Hughes, and others that work at
+[QuviQ](http://www.quviq.com), on their [seminars
+page](http://www.quviq.com/services/seminars).
+
+
 # Research papers
 
 Koen Claessen, John Hughes, "QuickCheck: A Lightweight Tool for Random
