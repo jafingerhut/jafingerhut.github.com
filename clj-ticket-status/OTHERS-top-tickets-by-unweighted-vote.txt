@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: May 15, 2017
+Date: May 25, 2017
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -73,13 +73,13 @@ Project ASYNC tickets
 ========================================
 Defect
 
-   4 Triaged      [ASYNC-159] (CLJS) promise-chan in ClojureScript is broken
    4 Triaged      [ASYNC-90] Pub/sub leaks memory
    3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
    3 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
    2 Open         [ASYNC-42] (CLJS) (try (catch :default)) inside a cljs go block raises an exception
    2 Open         [ASYNC-91] (CLJS) 'and' does not short circuit within go block in clojurescript
    2 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
+   2 Open         [ASYNC-144] pipeline-async docstring correction
    2 Open         [ASYNC-79] (CLJS) go macro not correctly transforming (case) within a macro
    2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
    2 Open         [ASYNC-158] (CLJS) and with multiple <! does not short-circuit in go
@@ -88,7 +88,6 @@ Defect
    1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
    1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
    1 Open         [ASYNC-128] (CLJS) or evaluation not stopped when exp nests take
-   1 Open         [ASYNC-144] pipeline-async docstring correction
    1 Triaged      [ASYNC-170] binding in go block causes thread binding error: "Pop without matching push"
    0 Open         [ASYNC-39] Processes spawned by mix never terminate
    0 Open         [ASYNC-51] (CLJS) Core.async memory leak in Safari and Mobile Safari
@@ -105,6 +104,7 @@ Defect
    0 Open         [ASYNC-132] (CLJS) Can't close over locals in #js in go
    0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
    0 Triaged      [ASYNC-156] (CLJS) go block containing letfn does not compile
+   0 Triaged      [ASYNC-159] (CLJS) promise-chan in ClojureScript is broken
    0 Open         [ASYNC-161] `<!` inside nested `let` inside `go` block erroneously yields "<! not used inside go block" error
    0 Open         [ASYNC-163] Off-by-two in pipeline-async parallelism
    0 Triaged      [ASYNC-165] (CLJS) the binding macro/let binding is wrongly inlined
@@ -114,6 +114,7 @@ Defect
    0 Open         [ASYNC-183] Completion arity of transducer is called twice
    0 Vetted       [ASYNC-184] (CLJS) Port ASYNC-169 fixes to cljs
    0 Open         [ASYNC-190] (CLJS) Some non-tail-recursive loops compile without error
+   0 Open         [ASYNC-192] Metadata does not persist across go-block boundaries in Clojurescript core.async
 
 ========================================
 Enhancement
@@ -124,9 +125,9 @@ Enhancement
    5 Triaged      [ASYNC-126] Add public channel "closed?" predicate
    5 Open         [ASYNC-137] (CLJS) Make (<! (timeout 0)) be closer to 0
    3 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
+   3 Triaged      [ASYNC-67] Can we get a generic sink operation?
    3 Open         [ASYNC-107] Improved docstring for alt!
    3 Open         [ASYNC-142] (CLJS) Rename ClojureScript namespace from cljs.core.async to clojure.core.async
-   2 Triaged      [ASYNC-67] Can we get a generic sink operation?
    2 Open         [ASYNC-114] Allow a second arity on channel ex-handler which takes val as well as throwable
    2 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
    1 Open         [ASYNC-46] Add optional default channel to 'pub'
@@ -147,6 +148,7 @@ Enhancement
    0 Open         [ASYNC-174] Executor service cannot be shutdown
    0 Open         [ASYNC-182] (CLJS) Support usage from bootstrapped clojurescript
    0 Open         [ASYNC-189] Tap return value not documented
+   0 Open         [ASYNC-193] Opaque string representation of channels in Clojurescript core.async
 
 ========================================
 Task
@@ -429,7 +431,6 @@ Project DCSV tickets
 Defect
 
    0 Open         [DCSV-6] read-csv can not handle white-space at end of line
-   0 Open         [DCSV-7] data.csv does not handle BOMs
    0 Open         [DCSV-8] Allow read-csv to read files without quoting.
    0 Open         [DCSV-14] Double quote at beginning of cell throws exception
 
@@ -437,7 +438,6 @@ Defect
 Enhancement
 
    0 Open         [DCSV-1] pom.xml directives
-   0 Open         [DCSV-5] No option for parsing into maps
    0 Open         [DCSV-9] write-csv and quote? predicate
    0 Open         [DCSV-12] Add project.clj for easier local development
    0 Open         [DCSV-13] Port data.csv to clojurescript
