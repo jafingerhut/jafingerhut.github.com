@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: May 25, 2017
+Date: June 1, 2017
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -41,31 +41,28 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
-    5.00   5 Open         [CLJS-2021] Passing a non-vector to subvec returns an unusable object
-             Andres Cuervo (1.00)
-             Le Wang (1.00)
-             Nate Smith (1.00)
-             Peter Jaros (1.00)
-             Zachary Scott (1.00)
     4.00   4 Open         [CLJS-677] cljs.reader doesn't support keywords starting with a digit
              Damon Kropf-Untucht (1.00)
              Francis Avila (1.00)
              Mike Longworth (1.00)
              Peter Taoussanis (1.00)
+    4.00   4 Open         [CLJS-1706] cljs.reader support for namespaced map literal
+             Kevin Lynagh (1.00)
+             Nuttanart Pornprasitsakul (1.00)
+             Justin Glenn Smith (1.00)
+             Tim Gilbert (1.00)
     2.00   2 Bad: Unkn Fi [CLJS-968] Metadata on function literal inside of a let produces invalid Javascript
              David Nolen (1.00)
              Herwig Hochleitner (1.00)
-    2.00   2 Open         [CLJS-1706] cljs.reader support for namespaced map literal
-             Kevin Lynagh (1.00)
-             Tim Gilbert (1.00)
+    2.00   2 Open         [CLJS-2059] Printing a namespaced qualified map and reading it back to ClojureScript fails
+             Dmitr Sotnikov (1.00)
+             Justin Glenn Smith (1.00)
     1.86   2 Open         [CLJS-1806] build api fails to generate inline code for :target :nodejs
              Dusan Maliarik (1.00)
              Patrick Killean (0.86)
     1.60   2 Open         [CLJS-1677] Requiring [goog] breaks an :advanced build, but the compiler exits successfully
              Oliver George (1.00)
              Yehonathan Sharvit (0.60)
-    1.00   1 Bad: Unkn Fi [CLJS-868] no arity warnings on recursive calls
-             A. R (1.00)
     1.00   1 Bad: Unkn Fi [CLJS-871] .-default property access returns nil
              Timothy Pratley (1.00)
     1.00   1 Open         [CLJS-890] Incorrect behaviour of (str obj) when obj has valueOf method
@@ -78,10 +75,14 @@ Defect
              Viktor Magyari (1.00)
     1.00   1 Open         [CLJS-1899] Local bindings conflict with global JS namespace
              Martin Clausen (1.00)
+    1.00   1 Open         [CLJS-2002] Don't throw when no *print-fn* is set
+             Pedro Girardi (1.00)
     1.00   1 Open         [CLJS-2011] :modules cannot rely on code motion or dead code removal
              Dieter Komendera (1.00)
     0.86   1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
              J.&nbsp;S.&nbsp;Choi (0.86)
+    0.86   1 Bad: Unkn Fi [CLJS-868] no arity warnings on recursive calls
+             A. R (0.86)
     0.66   1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
              Thomas Heller (0.66)
     0.66   1 Bad: Unkn Fi [CLJS-1641] Multi-arity defn copies arguments unnecessarily for all cases
@@ -107,6 +108,7 @@ Defect
     0.00   0 Bad: Unkn Fi [CLJS-1544] cljs.test REPL reload support
     0.00   0 Bad: Unkn Fi [CLJS-1764] Double warning for undeclared Var
     0.00   0 Bad: Unkn Fi [CLJS-1896] Externs file validation
+    0.00   0 Bad: Unkn Fi [CLJS-2054] Private core names still result in "already declared" warnings
 
 ========================================
 Enhancement
@@ -141,6 +143,9 @@ Enhancement
     1.86   2 Open         [CLJS-1410] Support source maps in deps.cljs
              Daniel Compton (1.00)
              J.&nbsp;S.&nbsp;Choi (0.86)
+    1.86   2 Open         [CLJS-1615] Inlining truth checks can lead to better optimisation results
+             Daniel Compton (1.00)
+             A. R (0.86)
     1.60   2 Open         [CLJS-324] cljs.core/format
              Ikuru Kanuma (1.00)
              Yehonathan Sharvit (0.60)
@@ -151,12 +156,8 @@ Enhancement
              Bozhidar Batsov (1.00)
     1.00   1 Open         [CLJS-1428] Add a cljs.core/*command-line-args* var
              Matthew Nespor (1.00)
-    1.00   1 Open         [CLJS-1615] Inlining truth checks can lead to better optimisation results
-             Daniel Compton (1.00)
     1.00   1 Open         [CLJS-1865] Google Closure Compiler in JavaScript
              Herwig Hochleitner (1.00)
-    1.00   1 Open         [CLJS-1876] Faster PersistentVector, Subvec and ChunkedSeq reduce.
-             A. R (1.00)
     1.00   1 Open         [CLJS-1908] Improve error messages by using pr-str instead of str when printing objects
              Stuart Mitchell (1.00)
     1.00   1 Open         [CLJS-1986] Support for ES6 generators
@@ -169,6 +170,8 @@ Enhancement
              Andrey Antukh (0.86)
     0.86   1 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
              Patrick Killean (0.86)
+    0.86   1 Open         [CLJS-1876] Faster PersistentVector, Subvec and ChunkedSeq reduce.
+             A. R (0.86)
     0.66   1 Open         [CLJS-1997] Outward function type hint propagation
              Thomas Heller (0.66)
     0.60   1 Open         [CLJS-1601] Optimize cljs.core dump 
@@ -188,13 +191,13 @@ Enhancement
     0.00   0 Bad: Unkn Fi [CLJS-1415] Handling JSDoc param name [x] optional syntax
     0.00   0 Bad: Unkn Fi [CLJS-1419] enhance numeric inference, if + number? test on local var should tag local var in the successful branch
     0.00   0 Bad: Unkn Fi [CLJS-1822] Use `:file-min` when processing JS modules with advanced optimizations
-    0.00   0 Bad: Unkn Fi [CLJS-2027] Add language-in for ECMA 2017 and ECMA Next
     0.00   0 Bad: Unkn Fi [CLJS-2041] Compiler flag to drop Function.prototype.call invokes
 
 ========================================
 Task
 
-    2.46   3 Open         [CLJS-901] Protocolize compiler access to the file system
+    3.46   4 Open         [CLJS-901] Protocolize compiler access to the file system
+             Dieter Komendera (1.00)
              Mike Fikes (1.00)
              Patrick Killean (0.86)
              Yehonathan Sharvit (0.60)
