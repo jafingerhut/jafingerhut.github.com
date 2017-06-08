@@ -9,7 +9,7 @@
 
 <h1>Top CLJ tickets by weighted vote</h1>
 
-Date: June 1, 2017<br>
+Date: June 8, 2017<br>
 <br>
 
 <p>
@@ -76,16 +76,6 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-700">CLJ-700</a>
         </td>
         <td class="tablecell">contains? broken for transient collections
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">15
-        </td>
-        <td class="tablecell">Incomplete
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1544">CLJ-1544</a>
-        </td>
-        <td class="tablecell">AOT bug involving namespaces loaded before AOT compilation started
         </td>
     </tr>
     <tr>
@@ -1398,6 +1388,66 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell">Default explain printer prints root val and spec
         </td>
     </tr>
+    <tr>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2174">CLJ-2174</a>
+        </td>
+        <td class="tablecell">Spec generated exceptions/error messages are a regression in terms of the out-of-the-box experience with Clojure.
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Screenable
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2176">CLJ-2176</a>
+        </td>
+        <td class="tablecell">s/tuple explain-data :pred problems
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Screenable
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2177">CLJ-2177</a>
+        </td>
+        <td class="tablecell">s/keys explain-data :pred problem
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Screenable
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2178">CLJ-2178</a>
+        </td>
+        <td class="tablecell">s/&amp; explain-data :pred problem
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2181">CLJ-2181</a>
+        </td>
+        <td class="tablecell">try accepts multiple catch blocks for the same class
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Needs Patch
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2182">CLJ-2182</a>
+        </td>
+        <td class="tablecell">s/keys* ignores absence of required keys when input value was empty
+        </td>
+    </tr>
   </tbody>
 </table>
 <h2><a id="CLJ_Enhancement"></a>Enhancement</h2>
@@ -1462,6 +1512,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1107">CLJ-1107</a>
         </td>
         <td class="tablecell">'get' should throw exception on non-Associative argument
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">15
+        </td>
+        <td class="tablecell">Incomplete
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1544">CLJ-1544</a>
+        </td>
+        <td class="tablecell">AOT code cannot see on-the-fly compiled classes
         </td>
     </tr>
     <tr>
@@ -2062,6 +2122,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1986">CLJ-1986</a>
         </td>
         <td class="tablecell">Suppress printing namespace map literal syntax when only one namespaced key
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">1
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2054">CLJ-2054</a>
+        </td>
+        <td class="tablecell">generator for `any?` occasionally generates `Double/NaN` for which equality semantics don't apply, and that is a problem for the :ret spec of many functions.
         </td>
     </tr>
     <tr>
@@ -2997,16 +3067,6 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">0
         </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2054">CLJ-2054</a>
-        </td>
-        <td class="tablecell">generator for `any?` occasionally generates `Double/NaN` for which equality semantics don't apply, and that is a problem for the :ret spec of many functions.
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">0
-        </td>
         <td class="tablecell">Prescreened
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2070">CLJ-2070</a>
@@ -3114,6 +3174,26 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell">LispReader.java and EdnReader.java exception messages could be much more informative.
         </td>
     </tr>
+    <tr>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Screenable
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2179">CLJ-2179</a>
+        </td>
+        <td class="tablecell">s/inst-in and s/int-in generators should have uniform distribution not biased towards min value
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">0
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2180">CLJ-2180</a>
+        </td>
+        <td class="tablecell">Enhancing :path info for s/merge &amp; s/and &amp; s/&amp; to indicate which subspec raised spec error
+        </td>
+    </tr>
   </tbody>
 </table>
 <h2><a id="CLJ_Feature"></a>Feature</h2>
@@ -3131,7 +3211,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         </td>
     </tr>
     <tr>
-        <td class="tablecell">39
+        <td class="tablecell">40
         </td>
         <td class="tablecell">Needs Patch
         </td>
@@ -3313,6 +3393,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
     <tr>
         <td class="tablecell">7
         </td>
+        <td class="tablecell">Open
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1201">CLJ-1201</a>
+        </td>
+        <td class="tablecell">There should also be writing in clojure.edn
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">7
+        </td>
         <td class="tablecell">Triaged
         </td>
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1452">CLJ-1452</a>
@@ -3338,16 +3428,6 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2115">CLJ-2115</a>
         </td>
         <td class="tablecell">Support data conveying conform errors (alternative/complement to :clojure.spec/invalid)
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">5
-        </td>
-        <td class="tablecell">Open
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1201">CLJ-1201</a>
-        </td>
-        <td class="tablecell">There should also be writing in clojure.edn
         </td>
     </tr>
     <tr>
@@ -3408,6 +3488,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1573">CLJ-1573</a>
         </td>
         <td class="tablecell">Support (Java) transient fields in deftype, e.g. for hashcodes
+        </td>
+    </tr>
+    <tr>
+        <td class="tablecell">4
+        </td>
+        <td class="tablecell">Triaged
+        </td>
+        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2124">CLJ-2124</a>
+        </td>
+        <td class="tablecell">Catch multiple exceptions in a single catch block
         </td>
     </tr>
     <tr>
@@ -3568,16 +3658,6 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
         <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-1990">CLJ-1990</a>
         </td>
         <td class="tablecell">Add an async macro that behaves the same as ClojureScript's
-        </td>
-    </tr>
-    <tr>
-        <td class="tablecell">2
-        </td>
-        <td class="tablecell">Triaged
-        </td>
-        <td class="tablecell"><a href="http://dev.clojure.org/jira/browse/CLJ-2124">CLJ-2124</a>
-        </td>
-        <td class="tablecell">Catch multiple exceptions in a single catch block
         </td>
     </tr>
     <tr>
