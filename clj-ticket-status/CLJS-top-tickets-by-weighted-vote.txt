@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: June 8, 2017
+Date: June 15, 2017
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -77,16 +77,16 @@ Defect
              Martin Clausen (1.00)
     1.00   1 Open         [CLJS-2002] Don't throw when no *print-fn* is set
              Pedro Girardi (1.00)
-    1.00   1 Open         [CLJS-2011] :modules cannot rely on code motion or dead code removal
-             Dieter Komendera (1.00)
     0.86   1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
              J.&nbsp;S.&nbsp;Choi (0.86)
-    0.86   1 Bad: Unkn Fi [CLJS-868] no arity warnings on recursive calls
-             A. R (0.86)
-    0.66   1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
-             Thomas Heller (0.66)
-    0.66   1 Bad: Unkn Fi [CLJS-1641] Multi-arity defn copies arguments unnecessarily for all cases
-             Thomas Heller (0.66)
+    0.75   1 Bad: Unkn Fi [CLJS-868] no arity warnings on recursive calls
+             A. R (0.75)
+    0.75   1 Bad: Unkn Fi [CLJS-1297] defrecord does not emit IKVReduce protocol
+             A. R (0.75)
+    0.60   1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
+             Thomas Heller (0.60)
+    0.60   1 Bad: Unkn Fi [CLJS-1641] Multi-arity defn copies arguments unnecessarily for all cases
+             Thomas Heller (0.60)
     0.60   1 Open         [CLJS-1593] Self-host: Munged minus macro
              Yehonathan Sharvit (0.60)
     0.00   0 Bad: Unkn Fi [CLJS-349] cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
@@ -101,7 +101,6 @@ Defect
     0.00   0 Bad: Unkn Fi [CLJS-1237] ns-unmap doesn't work on refers from cljs.core
     0.00   0 Bad: Unkn Fi [CLJS-1271] Missing warning when assigning namespaces via def
     0.00   0 Bad: Unkn Fi [CLJS-1286] REPL environment should be able to provide advice if source mapping fails
-    0.00   0 Bad: Unkn Fi [CLJS-1297] defrecord does not emit IKVReduce protocol
     0.00   0 Bad: Unkn Fi [CLJS-1300] REPLs do no write out updated deps.js when compiling files
     0.00   0 Bad: Unkn Fi [CLJS-1315] Warning on Google Closure enum property access with /
     0.00   0 Bad: Unkn Fi [CLJS-1485] Error when requiring `goog` namespace in a ns declaration 
@@ -113,21 +112,21 @@ Defect
 ========================================
 Enhancement
 
-    5.66   6 Bad: Unkn Fi [CLJS-1461] Convert analyzer to conform to tools.analyzer's spec
+    5.60   6 Bad: Unkn Fi [CLJS-1461] Convert analyzer to conform to tools.analyzer's spec
              James Henderson (1.00)
              Michael Griffiths (1.00)
              Nicola Mometto (1.00)
              Nicolas HA (1.00)
              Tienson Qin (1.00)
-             Thomas Heller (0.66)
+             Thomas Heller (0.60)
     3.00   3 Open         [CLJS-1907] Improve error message from cljs.reader/read-string when reading keyword with number first (e.g. :0seconds)
              John Newman (1.00)
              John Wiseman (1.00)
              Oliver George (1.00)
-    2.66   3 Open         [CLJS-1871] A declare with :arglists should generate static function calls
+    2.60   3 Open         [CLJS-1871] A declare with :arglists should generate static function calls
              Nikita Prokopov (1.00)
              Rohit Aggarwal (1.00)
-             Thomas Heller (0.66)
+             Thomas Heller (0.60)
     2.00   2 Open         [CLJS-555] CLONE - Implement ratios
              Marcus H (1.00)
              Mike Fikes (1.00)
@@ -143,9 +142,9 @@ Enhancement
     1.86   2 Open         [CLJS-1410] Support source maps in deps.cljs
              Daniel Compton (1.00)
              J.&nbsp;S.&nbsp;Choi (0.86)
-    1.86   2 Open         [CLJS-1615] Inlining truth checks can lead to better optimisation results
+    1.75   2 Open         [CLJS-1615] Inlining truth checks can lead to better optimisation results
              Daniel Compton (1.00)
-             A. R (0.86)
+             A. R (0.75)
     1.60   2 Open         [CLJS-324] cljs.core/format
              Ikuru Kanuma (1.00)
              Yehonathan Sharvit (0.60)
@@ -156,6 +155,8 @@ Enhancement
              Bozhidar Batsov (1.00)
     1.00   1 Open         [CLJS-1428] Add a cljs.core/*command-line-args* var
              Matthew Nespor (1.00)
+    1.00   1 Open         [CLJS-1631] The str function should handle JavaScript symbols
+             Egg Syntax (1.00)
     1.00   1 Open         [CLJS-1755] Support sourcesContent in source maps
              Miloslav Nenadál (1.00)
     1.00   1 Open         [CLJS-1865] Google Closure Compiler in JavaScript
@@ -164,6 +165,8 @@ Enhancement
              Stuart Mitchell (1.00)
     1.00   1 Open         [CLJS-1986] Support for ES6 generators
              Antonis Kalou (1.00)
+    1.00   1 Open         [CLJS-2011] :modules should should not move namespaces unconditionally into the base module
+             Dieter Komendera (1.00)
     0.86   1 Bad: Unkn Fi [CLJS-1328] Support defrecord reader tags
              J.&nbsp;S.&nbsp;Choi (0.86)
     0.86   1 Open         [CLJS-527] Support dynamic runtime extension of protocols to types
@@ -172,12 +175,14 @@ Enhancement
              Andrey Antukh (0.86)
     0.86   1 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
              Patrick Killean (0.86)
-    0.86   1 Open         [CLJS-1876] Faster PersistentVector, Subvec and ChunkedSeq reduce.
-             A. R (0.86)
-    0.66   1 Open         [CLJS-1997] Outward function type hint propagation
-             Thomas Heller (0.66)
+    0.75   1 Open         [CLJS-1876] Faster PersistentVector, Subvec and ChunkedSeq reduce.
+             A. R (0.75)
+    0.60   1 Bad: Unkn Fi [CLJS-2077] :module-loader to generate module loader for user
+             Thomas Heller (0.60)
     0.60   1 Open         [CLJS-1601] Optimize cljs.core dump 
              Yehonathan Sharvit (0.60)
+    0.60   1 Open         [CLJS-1997] Outward function type hint propagation
+             Thomas Heller (0.60)
     0.00   0 Bad: Unkn Fi [CLJS-773] Use unchecked-*-int functions for real 32-bit math
     0.00   0 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
     0.00   0 Bad: Unkn Fi [CLJS-1125] Simple corrupted compiled file detection
