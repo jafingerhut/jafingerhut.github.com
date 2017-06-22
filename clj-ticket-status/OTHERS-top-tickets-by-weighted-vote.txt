@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: June 15, 2017
+Date: June 22, 2017
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -141,6 +141,7 @@ Defect
     0.00   0 Open         [ASYNC-183] Completion arity of transducer is called twice
     0.00   0 Open         [ASYNC-190] (CLJS) Some non-tail-recursive loops compile without error
     0.00   0 Open         [ASYNC-192] Metadata does not persist across go-block boundaries in Clojurescript core.async
+    0.00   0 Open         [ASYNC-197] `async/map` output channel not close, when has some input channel not closed, even if I closed one channel of inputs.
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
     0.00   0 Triaged      [ASYNC-156] (CLJS) go block containing letfn does not compile
     0.00   0 Triaged      [ASYNC-165] (CLJS) the binding macro/let binding is wrongly inlined
@@ -485,7 +486,6 @@ Enhancement
     0.00   0 Bad: Match > [CTYP-297] Allow defmulti without expected type
     0.00   0 Bad: Match > [CTYP-301] Abstract over keyword arguments
     0.00   0 Bad: Unkn Fi [CTYP-309] Export typed vars with contracts to untyped namespaces
-    0.00   0 Bad: Unkn Fi [CTYP-324] Remove collect phase
     0.00   0 Open         [CTYP-9] Support metadata types
     0.00   0 Open         [CTYP-11] Infer good types for loop locals
     0.00   0 Open         [CTYP-12] Handle primitives properly
@@ -525,6 +525,7 @@ Enhancement
     0.00   0 Open         [CTYP-321] Make generated type readable
     0.00   0 Open         [CTYP-322] Use specs as types
     0.00   0 Open         [CTYP-323] Support latest Clojurescript compiler
+    0.00   0 Open         [CTYP-325] Support clojure.spec syntax as static types
     0.00   0 Triaged      [CTYP-217] Basic support for transients
 
 ========================================
@@ -671,7 +672,6 @@ Enhancement
     0.00   0 Open         [DXML-22] Adding hiccup generation function for elements
     0.00   0 Open         [DXML-40] README FileWriter example fails if platform default encoding is not UTF-8
     0.00   0 Open         [DXML-41] README - applicability of xml-seq, xml-zip?
-    0.00   0 Open         [DXML-42] Some reflection warnings `[org.clojure/data.xml "0.2.0-alpha2"]`
 
 ========================================
 Task
@@ -980,6 +980,7 @@ Defect
     0.00   0 Open         [TCHECK-124] defspec does not set property :name properly
     0.00   0 Open         [TCHECK-125] should fail gracefully when clojure.test/report is not a multimethod
     0.00   0 Open         [TCHECK-129] frequency shrinks towards early elements even if they have 0 likelihood
+    0.00   0 Open         [TCHECK-131] Breaking change with respect to exceptions and use from spec
 
 ========================================
 Enhancement

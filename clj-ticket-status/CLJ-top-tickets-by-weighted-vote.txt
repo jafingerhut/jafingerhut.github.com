@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: June 15, 2017
+Date: June 22, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -353,11 +353,12 @@ Defect
     0.00   0 Screenable   [CLJ-2177] s/keys explain-data :pred problem
     0.00   0 Screenable   [CLJ-2178] s/& explain-data :pred problem
     0.00   0 Screenable   [CLJ-2182] s/keys* ignores absence of required keys when input value was empty
-    0.00   0 Screenable   [CLJ-2183] `cat` specs should verify value is sequential
     0.00   0 Screened     [CLJ-2026] Transient exceptions thrown in clojure.spec.test/check
     0.00   0 Screened     [CLJ-2080] clojure.spec/every-kv does not work on vectors - improve docs/errors
     0.00   0 Screened     [CLJ-2089] Sorted colls with default comparator don't check that first element is Comparable
     0.00   0 Screened     [CLJ-2167] int-in-range? throws exception when val not an int
+    0.00   0 Screened     [CLJ-2183] `cat` specs should verify value is sequential
+    0.00   0 Triaged      [CLJ-941] NullPointerException possible with seq-zip
     0.00   0 Triaged      [CLJ-1475] :post condition causes compiler error with recur
     0.00   0 Triaged      [CLJ-1492] PersistentQueue objects are improperly eval'd and compiled
     0.00   0 Triaged      [CLJ-1579] source-fn can fail due to reading namespace-aliased keywords while in another namespace context
@@ -772,6 +773,8 @@ Enhancement
     1.10   2 Open         [CLJ-1625] Cannot implement protocol methods of the same name inline
              Kurt Harriger (1.00)
              Nicola Mometto (0.10)
+    1.00   1 Open         [CLJ-1146] Symbol name starting with digits to defn throws "Unmatched delimiter )"
+             Rohit Aggarwal (1.00)
     1.00   1 Open         [CLJ-1257] Suppress warnings when clojure.core symbols are explicitly replaced with "use" or "refer"
              Jonathan Romrell (1.00)
     1.00   1 Open         [CLJ-1296] locking expressions cause vars to be dereferenced, even if not executed, unless wrapped in let
@@ -915,8 +918,9 @@ Enhancement
     0.00   0 Prescreened  [CLJ-2050] Remove redundant key comparisons in HashCollisionNode
     0.00   0 Prescreened  [CLJ-2070] Faster clojure.core/delay implementation
     0.00   0 Prescreened  [CLJ-2104] Typo in pprint docstring
-    0.00   0 Screenable   [CLJ-2163] Add test for var serialization
+    0.00   0 Prescreened  [CLJ-2184] propagate metadata in doto forms
     0.00   0 Screenable   [CLJ-2179] s/inst-in and s/int-in generators should have uniform distribution not biased towards min value
+    0.00   0 Screened     [CLJ-2163] Add test for var serialization
     0.00   0 Triaged      [CLJ-5] Sequential destructuring of map gives confusing error message
     0.00   0 Triaged      [CLJ-405] better error messages for bad defrecord calls
     0.00   0 Triaged      [CLJ-704] range function has missing documentation
@@ -964,7 +968,7 @@ Enhancement
 ========================================
 Feature
 
-   34.94  41 Needs Patch  [CLJ-1965] clojure.spec/def should support an optional doc-string
+   35.94  42 Needs Patch  [CLJ-1965] clojure.spec/def should support an optional doc-string
              Aaron Cummings (1.00)
              Ag Ibragimov (1.00)
              Cameron Dorrat (1.00)
@@ -987,6 +991,7 @@ Feature
              udit (1.00)
              Carlo Sciolla (1.00)
              Donald Ball (1.00)
+             Stathis Sideris (1.00)
              Timothy Pote (1.00)
              Zane Shelby (1.00)
              Aleksander Madland Stapnes (0.86)

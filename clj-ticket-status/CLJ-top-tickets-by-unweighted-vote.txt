@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: June 15, 2017
+Date: June 22, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -120,6 +120,7 @@ Defect
    0 Backlog      [CLJ-84] GC Issue 81: compile gen-class fail when class returns self
    0 Backlog      [CLJ-346] (pprint-newline :fill) is not handled correctly
    0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
+   0 Triaged      [CLJ-941] NullPointerException possible with seq-zip
    0 Prescreened  [CLJ-1180] defprotocol doesn't resolve tag classnames
    0 Prescreened  [CLJ-1358] doc macro does not expand special cases properly
    0 Prescreened  [CLJ-1371] divide(Object, Object) with (NaN, 0) does not return NaN
@@ -179,7 +180,7 @@ Defect
    0 Screenable   [CLJ-2178] s/& explain-data :pred problem
    0 Triaged      [CLJ-2181] try accepts multiple catch blocks for the same class
    0 Screenable   [CLJ-2182] s/keys* ignores absence of required keys when input value was empty
-   0 Screenable   [CLJ-2183] `cat` specs should verify value is sequential
+   0 Screened     [CLJ-2183] `cat` specs should verify value is sequential
 
 ========================================
 Enhancement
@@ -239,6 +240,7 @@ Enhancement
    2 Open         [CLJ-1376] Initialize internal maps to more efficient version
    2 Open         [CLJ-792] Refactor method resolution code out of Compiler and into Reflector
    1 Triaged      [CLJ-1044] Enable refering to ->type inside deftype
+   1 Open         [CLJ-1146] Symbol name starting with digits to defn throws "Unmatched delimiter )"
    1 Open         [CLJ-1257] Suppress warnings when clojure.core symbols are explicitly replaced with "use" or "refer"
    1 Open         [CLJ-1296] locking expressions cause vars to be dereferenced, even if not executed, unless wrapped in let
    1 Open         [CLJ-1782] Hide local IDE files in .gitignore
@@ -353,16 +355,17 @@ Enhancement
    0 Triaged      [CLJ-2122] flatten docstring does not describe lazy result
    0 Triaged      [CLJ-2134] Update the docstring of `with-redefs` to reflect how little the macro should be used
    0 Triaged      [CLJ-2135] clojure.spec/Spec implementations that don't implement IObj get silently dropped in s/def
-   0 Screenable   [CLJ-2163] Add test for var serialization
+   0 Screened     [CLJ-2163] Add test for var serialization
    0 Triaged      [CLJ-2172] Error message for non integer index into vector could be improved.
    0 Triaged      [CLJ-2173] LispReader.java and EdnReader.java exception messages could be much more informative.
    0 Screenable   [CLJ-2179] s/inst-in and s/int-in generators should have uniform distribution not biased towards min value
    0 Triaged      [CLJ-2180] Enhancing :path info for s/merge & s/and & s/& to indicate which subspec raised spec error
+   0 Prescreened  [CLJ-2184] propagate metadata in doto forms
 
 ========================================
 Feature
 
-  41 Needs Patch  [CLJ-1965] clojure.spec/def should support an optional doc-string
+  42 Needs Patch  [CLJ-1965] clojure.spec/def should support an optional doc-string
   29 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
   21 Triaged      [CLJ-304] clojure.repl/source does not work with deftype
   20 Prescreened  [CLJ-706] make use of deprecated namespaces/vars easier to spot
