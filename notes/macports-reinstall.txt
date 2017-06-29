@@ -1,21 +1,31 @@
 Get rid of a couple of directories where most MacPorts things are
 installed:
 
-sudo rm -fr /opt /Applications/MacPorts
+sudo rm -fr /opt/local /Applications/MacPorts
+
+(leave /opt/X11 and other directories that might be inside /opt alone)
 
 Get rid of some files installed by dbus and rsync, installed as a side
 effect of installing emacs and git:
 
-sudo rm /Library/LaunchAgents/org.freedesktop.dbus-session.plist 
-sudo rm /Library/LaunchDaemons/org.freedesktop.dbus-system.plist 
+ls -l /Library/LaunchAgents/org.freedesktop.dbus-session.plist
+ls -l /Library/LaunchDaemons/org.freedesktop.dbus-system.plist
+ls -l /Library/LaunchDaemons/org.macports.rsyncd.plist
+ls -l /Library/LaunchDaemons/org.macports.slapd.plist
+
+sudo rm /Library/LaunchAgents/org.freedesktop.dbus-session.plist
+sudo rm /Library/LaunchDaemons/org.freedesktop.dbus-system.plist
 sudo rm /Library/LaunchDaemons/org.macports.rsyncd.plist
+sudo rm /Library/LaunchDaemons/org.macports.slapd.plist
 
 ----------------------------------------------------------------------
 
 Install MacPorts from installer on MacPorts web page, the one
 appropriate for the version of Mac OS X installed on the system.
 
-Install latest Xquartz from installer package
+Install latest Xquartz from installer package (this might be
+unnecessary as long as you left /opt/X11 directory alone when removing
+/opt/local, above).
 
 ----------------------------------------------------------------------
 
@@ -29,7 +39,10 @@ sudo port install aspell aspell-dict-en bsdiff enscript p5-xml-libxml p5-net-ipv
 
 Install less frequently used packages:
 
-sudo port install gnuplot ipe LyX scapy texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra texlive-generic-extra wireshark
+sudo port install gnuplot ipe LyX scapy texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra texlive-plain-generic wireshark
+
+(Note: Some time around June 2017 the name of texlive-generic-extra
+changed to texlive-plain-generic)
 
 The following are useful for parts of clojure-benchmarks:
 * p5-xml-libxml
@@ -42,7 +55,7 @@ The following are useful for parts of clojure-cheatsheets:
 The following are useful for creating PDF of the P4_16 language
 specification:
 * texlive-latex-extra (needed for etoolbox.sty)
-* texlive-generic-extra (needed for iftex.sty)
+* texlive-plain-generic (needed for iftex.sty)
 
 The following are useful for my ace-pkts program in acl-tools:
 
@@ -70,8 +83,8 @@ Double-check during installation of emacs and git, but last time I did
 these commands were recommended for parts of dbus to be auto-run on
 startup/login:
 
-sudo launchctl load -w /Library/LaunchDaemons/org.freedesktop.dbus-system.plist 
-launchctl load -w /Library/LaunchAgents/org.freedesktop.dbus-session.plist 
+sudo launchctl load -w /Library/LaunchDaemons/org.freedesktop.dbus-system.plist
+launchctl load -w /Library/LaunchAgents/org.freedesktop.dbus-session.plist
 
 
 This is a message appearing during installation of rsync:
