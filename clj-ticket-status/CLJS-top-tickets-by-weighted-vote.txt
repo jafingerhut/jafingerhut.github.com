@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: June 29, 2017
+Date: July 6, 2017
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -82,11 +82,14 @@ Defect
              A. R (0.86)
     0.86   1 Bad: Unkn Fi [CLJS-1297] defrecord does not emit IKVReduce protocol
              A. R (0.86)
-    0.66   1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
-             Thomas Heller (0.66)
+    0.75   1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
+             Thomas Heller (0.75)
     0.66   1 Open         [CLJS-1593] Self-host: Munged minus macro
              Yehonathan Sharvit (0.66)
     0.00   0 Bad: Match > [CLJS-2129] extend-type allow target object to change
+    0.00   0 Bad: Match n [CLJS-2166] Add uri? predicate
+    0.00   0 Bad: Match n [CLJS-2167] Browser REPL leaves a socket open when it fails to connect to the browser
+    0.00   0 Bad: Match n [CLJS-2168] Properly document browser-env options
     0.00   0 Bad: Unkn Fi [CLJS-349] cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
     0.00   0 Bad: Unkn Fi [CLJS-375] loop doesn't seem to preserve tag information as evidenced by extra cljs.core.truth_ calls
     0.00   0 Bad: Unkn Fi [CLJS-434] ClojureScript compiler prepends "self__" to defmulti forms when metadata in form of ^:field.
@@ -104,21 +107,23 @@ Defect
     0.00   0 Bad: Unkn Fi [CLJS-1544] cljs.test REPL reload support
     0.00   0 Bad: Unkn Fi [CLJS-1764] Double warning for undeclared Var
     0.00   0 Bad: Unkn Fi [CLJS-1896] Externs file validation
+    0.00   0 Bad: Unkn Fi [CLJS-2138] Remove redundant checks in ChunkedSeq.-rest and ChunkedSeq.-next 
+    0.00   0 Bad: Unkn Fi [CLJS-2152] "is not a relative path" exception thrown when `:libs` directory is provided.
 
 ========================================
 Enhancement
 
-    5.66   6 Bad: Unkn Fi [CLJS-1461] Convert analyzer to conform to tools.analyzer's spec
+    5.75   6 Bad: Unkn Fi [CLJS-1461] Convert analyzer to conform to tools.analyzer's spec
              James Henderson (1.00)
              Michael Griffiths (1.00)
              Nicola Mometto (1.00)
              Nicolas HA (1.00)
              Tienson Qin (1.00)
-             Thomas Heller (0.66)
-    2.66   3 Open         [CLJS-1871] A declare with :arglists should generate static function calls
+             Thomas Heller (0.75)
+    2.75   3 Open         [CLJS-1871] A declare with :arglists should generate static function calls
              Rohit Aggarwal (1.00)
              Nikita Prokopov (1.00)
-             Thomas Heller (0.66)
+             Thomas Heller (0.75)
     2.00   2 Open         [CLJS-555] CLONE - Implement ratios
              Marcus H (1.00)
              Mike Fikes (1.00)
@@ -147,18 +152,14 @@ Enhancement
              Egg Syntax (1.00)
     1.00   1 Open         [CLJS-1755] Support sourcesContent in source maps
              Miloslav Nenadál (1.00)
-    1.00   1 Open         [CLJS-2011] :modules should should not move namespaces unconditionally into the base module
-             Dieter Komendera (1.00)
     0.86   1 Bad: Unkn Fi [CLJS-1328] Support defrecord reader tags
              J.&nbsp;S.&nbsp;Choi (0.86)
     0.86   1 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
              Patrick Killean (0.86)
-    0.66   1 Bad: Unkn Fi [CLJS-2077] :module-loader to generate module loader for user
-             Thomas Heller (0.66)
+    0.75   1 Open         [CLJS-1997] Outward function type hint propagation
+             Thomas Heller (0.75)
     0.66   1 Open         [CLJS-1601] Optimize cljs.core dump 
              Yehonathan Sharvit (0.66)
-    0.66   1 Open         [CLJS-1997] Outward function type hint propagation
-             Thomas Heller (0.66)
     0.00   0 Bad: Unkn Ap [CLJS-2120] Optimize keyword function
     0.00   0 Bad: Unkn Fi [CLJS-773] Use unchecked-*-int functions for real 32-bit math
     0.00   0 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
@@ -175,9 +176,11 @@ Enhancement
     0.00   0 Bad: Unkn Fi [CLJS-1415] Handling JSDoc param name [x] optional syntax
     0.00   0 Bad: Unkn Fi [CLJS-1419] enhance numeric inference, if + number? test on local var should tag local var in the successful branch
     0.00   0 Bad: Unkn Fi [CLJS-1800] Defer to tools.reader for cljs.reader functionality
-    0.00   0 Bad: Unkn Fi [CLJS-1822] Use `:file-min` when processing JS modules with advanced optimizations
-    0.00   0 Bad: Unkn Fi [CLJS-2061] Support ns :require for JS libs, allow strings along with symbols
     0.00   0 Bad: Unkn Fi [CLJS-2095] Nashorn runner
+    0.00   0 Bad: Unkn Fi [CLJS-2127] Add invoke* helper macro
+    0.00   0 Bad: Unkn Fi [CLJS-2150] Expose simple webserver
+    0.00   0 Bad: Unkn Fi [CLJS-2156] Add postamble, or some other generic way to append code to a file
+    0.00   0 Vetted       [CLJS-2163] Clean up uses of aget / aset on objects
 
 ========================================
 Task
@@ -191,3 +194,5 @@ Task
     0.00   0 Bad: Unkn Fi [CLJS-1446] autodoc + gh-pages for cljs.*.api namespaces
     0.00   0 Bad: Unkn Fi [CLJS-1447] IFn implementors have a broken call implementation, all args after 20th argument should be collected into a seq
     0.00   0 Bad: Unkn Fi [CLJS-1501] Add :parallel-build support to REPLs
+    0.00   0 Bad: Unkn Fi [CLJS-2178] Add tests for `:npm-deps`
+    0.00   0 Bad: Unkn Fi [CLJS-2179] Add test for preprocess JS module as symbol
