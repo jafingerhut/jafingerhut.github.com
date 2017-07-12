@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Clojure Cheat Sheet (Clojure 1.5 - 1.8, sheet v39)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.5 - 1.8, sheet v40)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -974,7 +974,16 @@ format
 ([comparator &amp; keys])
   Returns a new sorted set with supplied keys, using the supplied comparator.">sorted-set-by</a> (flatland.ordered.set/) <a href="https://github.com/amalloy/ordered" title="flatland.ordered.set/ordered-set
 ([] [&amp; xs])
-  nil">ordered-set</a> (clojure.data.int-map/) <a href="https://github.com/clojure/data.int-map" title="clojure.data.int-map/int-set
+  Return a set with the given items, whose items are sorted in the
+order that they are added. conj'ing an item that was already in the
+set leaves its order unchanged. disj'ing an item and then later
+conj'ing it puts it at the end, as if it were being added for the
+first time. Supports transient.
+
+Note that clojure.set functions like union, intersection, and
+difference can change the order of their input sets for efficiency
+purposes, so may not return the order you expect given ordered sets
+as input.">ordered-set</a> (clojure.data.int-map/) <a href="https://github.com/clojure/data.int-map" title="clojure.data.int-map/int-set
 ([] [s])
   Creates an immutable set which can only store integral values.  This should be
 used unless elements are densely
@@ -1093,7 +1102,11 @@ used only if elements are densely
   Returns a new sorted map with supplied mappings, using the supplied
   comparator.">sorted-map-by</a> (flatland.ordered.map/) <a href="https://github.com/amalloy/ordered" title="flatland.ordered.map/ordered-map
 ([] [coll] [k v &amp; more])
-  nil">ordered-map</a> (clojure.data.priority-map/) <a href="https://github.com/clojure/data.priority-map" title="clojure.data.priority-map/priority-map
+  Return a map with the given keys and values, whose entries are
+sorted in the order that keys are added. assoc'ing a key that is
+already in an ordered map leaves its order unchanged. dissoc'ing a
+key and then later assoc'ing it puts it at the end, as if it were
+assoc'ed for the first time. Supports transient.">ordered-map</a> (clojure.data.priority-map/) <a href="https://github.com/clojure/data.priority-map" title="clojure.data.priority-map/priority-map
 ([&amp; keyvals])
   Usage: (priority-map key val key val ...)
 Returns a new priority map with optional supplied mappings.
