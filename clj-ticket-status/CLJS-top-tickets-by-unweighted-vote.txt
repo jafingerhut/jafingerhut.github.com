@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: July 13, 2017
+Date: July 20, 2017
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -50,7 +50,7 @@ Defect
    1 Open         [CLJS-1864] timestamped source maps broken with Node
    1 Open         [CLJS-1889] A lone ampersand `&` can be used to name a var, but throws when invoked. `(&)`
    1 Open         [CLJS-1899] Local bindings conflict with global JS namespace
-   1 Open         [CLJS-2002] Don't throw when no *print-fn* is set
+   1 Bad: Unkn Fi [CLJS-2002] Don't throw when no *print-fn* is set
    1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
    1 Bad: Unkn Fi [CLJS-868] no arity warnings on recursive calls
    1 Bad: Unkn Fi [CLJS-1297] defrecord does not emit IKVReduce protocol
@@ -75,18 +75,18 @@ Defect
    0 Bad: Unkn Fi [CLJS-1702] Warning when using private vars
    0 Bad: Unkn Fi [CLJS-1753] cljs.pprint does not print default tagged literals/elements
    0 Bad: Unkn Fi [CLJS-1896] Externs file validation
-   0 Bad: Unkn Fi [CLJS-1955] data_readers.cljc can't reference handlers in user code
    0 Bad: Unkn Fi [CLJS-2138] Remove redundant checks in ChunkedSeq.-rest and ChunkedSeq.-next 
    0 Bad: Match n [CLJS-2166] Add uri? predicate
    0 Bad: Match n [CLJS-2167] Browser REPL leaves a socket open when it fails to connect to the browser
    0 Bad: Match n [CLJS-2168] Properly document browser-env options
+   0 Bad: Unkn Fi [CLJS-2221] cljs.util/relative-name still has issues on case-insensitive platforms
 
 ========================================
 Enhancement
 
    6 Bad: Unkn Fi [CLJS-1461] Convert analyzer to conform to tools.analyzer's spec
+   3 Open         [CLJS-555] CLONE - Implement ratios
    3 Open         [CLJS-1871] A declare with :arglists should generate static function calls
-   2 Open         [CLJS-555] CLONE - Implement ratios
    2 Open         [CLJS-1009] Allow deps.cljs to declare a foreign lib as remote
    2 Open         [CLJS-1902] Add support for compiler option :inline-source-maps
    2 Open         [CLJS-1410] Support source maps in deps.cljs
@@ -96,6 +96,7 @@ Enhancement
    1 Open         [CLJS-1076] :nashorn target
    1 Open         [CLJS-1631] The str function should handle JavaScript symbols
    1 Open         [CLJS-1755] Support sourcesContent in source maps
+   1 Open         [CLJS-2216] Support targeting webworker
    1 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
    1 Bad: Unkn Fi [CLJS-1328] Support defrecord reader tags
    1 Open         [CLJS-1997] Outward function type hint propagation
@@ -118,10 +119,9 @@ Enhancement
    0 Bad: Unkn Ap [CLJS-2120] Optimize keyword function
    0 Bad: Unkn Fi [CLJS-2127] Add invoke* helper macro
    0 Bad: Unkn Fi [CLJS-2156] Add postamble, or some other generic way to append code to a file
-   0 Bad: Unkn Fi [CLJS-2198] Safe array operations 
    0 Vetted       [CLJS-2209] case docstring should explain constants may be evaluated (cljs only)
-   0 Bad: Unkn Fi [CLJS-2217] Support `:rename` for JS modules
-   0 Bad: Unkn Fi [CLJS-2218] Make ClojureScript aware of native node modules
+   0 Bad: Unkn Fi [CLJS-2235] Allow passing extra maven opts to build scripts
+   0 Bad: Unkn Fi [CLJS-2250] Support :foreign-libs overrides via :provides
 
 ========================================
 Task
@@ -131,5 +131,4 @@ Task
    0 Bad: Unkn Fi [CLJS-1446] autodoc + gh-pages for cljs.*.api namespaces
    0 Bad: Unkn Fi [CLJS-1447] IFn implementors have a broken call implementation, all args after 20th argument should be collected into a seq
    0 Bad: Unkn Fi [CLJS-1501] Add :parallel-build support to REPLs
-   0 Bad: Unkn Fi [CLJS-2206] Refactor :npm-deps functionality to use indexed node_modules instead of handling missing modules in special pass
-   0 Bad: Unkn Fi [CLJS-2220] Add runtime :npm-deps tests
+   0 Bad: Unkn Fi [CLJS-2255] Clean up :npm-deps

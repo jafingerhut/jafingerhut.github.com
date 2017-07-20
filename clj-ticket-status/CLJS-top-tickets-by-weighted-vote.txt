@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: July 13, 2017
+Date: July 20, 2017
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -58,6 +58,8 @@ Defect
     1.66   2 Open         [CLJS-1677] Requiring [goog] breaks an :advanced build, but the compiler exits successfully
              Oliver George (1.00)
              Yehonathan Sharvit (0.66)
+    1.00   1 Bad: Unkn Fi [CLJS-2002] Don't throw when no *print-fn* is set
+             Pedro Girardi (1.00)
     1.00   1 Open         [CLJS-890] Incorrect behaviour of (str obj) when obj has valueOf method
              Kevin Neaton (1.00)
     1.00   1 Open         [CLJS-1864] timestamped source maps broken with Node
@@ -66,8 +68,6 @@ Defect
              Viktor Magyari (1.00)
     1.00   1 Open         [CLJS-1899] Local bindings conflict with global JS namespace
              Martin Clausen (1.00)
-    1.00   1 Open         [CLJS-2002] Don't throw when no *print-fn* is set
-             Pedro Girardi (1.00)
     0.86   1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
              J.&nbsp;S.&nbsp;Choi (0.86)
     0.86   1 Bad: Unkn Fi [CLJS-868] no arity warnings on recursive calls
@@ -100,8 +100,8 @@ Defect
     0.00   0 Bad: Unkn Fi [CLJS-1702] Warning when using private vars
     0.00   0 Bad: Unkn Fi [CLJS-1753] cljs.pprint does not print default tagged literals/elements
     0.00   0 Bad: Unkn Fi [CLJS-1896] Externs file validation
-    0.00   0 Bad: Unkn Fi [CLJS-1955] data_readers.cljc can't reference handlers in user code
     0.00   0 Bad: Unkn Fi [CLJS-2138] Remove redundant checks in ChunkedSeq.-rest and ChunkedSeq.-next 
+    0.00   0 Bad: Unkn Fi [CLJS-2221] cljs.util/relative-name still has issues on case-insensitive platforms
 
 ========================================
 Enhancement
@@ -113,13 +113,14 @@ Enhancement
              Nicolas HA (1.00)
              Tienson Qin (1.00)
              Thomas Heller (0.75)
+    3.00   3 Open         [CLJS-555] CLONE - Implement ratios
+             Marcus H (1.00)
+             Vlad Bokov (1.00)
+             Mike Fikes (1.00)
     2.75   3 Open         [CLJS-1871] A declare with :arglists should generate static function calls
              Rohit Aggarwal (1.00)
              Nikita Prokopov (1.00)
              Thomas Heller (0.75)
-    2.00   2 Open         [CLJS-555] CLONE - Implement ratios
-             Marcus H (1.00)
-             Mike Fikes (1.00)
     2.00   2 Open         [CLJS-1009] Allow deps.cljs to declare a foreign lib as remote
              Nathan Dao (1.00)
              Ruslan Prokopchuk (1.00)
@@ -143,6 +144,8 @@ Enhancement
              Egg Syntax (1.00)
     1.00   1 Open         [CLJS-1755] Support sourcesContent in source maps
              Miloslav Nenadál (1.00)
+    1.00   1 Open         [CLJS-2216] Support targeting webworker
+             Milton J Reder (1.00)
     0.86   1 Bad: Unkn Fi [CLJS-1328] Support defrecord reader tags
              J.&nbsp;S.&nbsp;Choi (0.86)
     0.86   1 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
@@ -169,9 +172,8 @@ Enhancement
     0.00   0 Bad: Unkn Fi [CLJS-2095] Nashorn runner
     0.00   0 Bad: Unkn Fi [CLJS-2127] Add invoke* helper macro
     0.00   0 Bad: Unkn Fi [CLJS-2156] Add postamble, or some other generic way to append code to a file
-    0.00   0 Bad: Unkn Fi [CLJS-2198] Safe array operations 
-    0.00   0 Bad: Unkn Fi [CLJS-2217] Support `:rename` for JS modules
-    0.00   0 Bad: Unkn Fi [CLJS-2218] Make ClojureScript aware of native node modules
+    0.00   0 Bad: Unkn Fi [CLJS-2235] Allow passing extra maven opts to build scripts
+    0.00   0 Bad: Unkn Fi [CLJS-2250] Support :foreign-libs overrides via :provides
     0.00   0 Vetted       [CLJS-2209] case docstring should explain constants may be evaluated (cljs only)
 
 ========================================
@@ -186,5 +188,4 @@ Task
     0.00   0 Bad: Unkn Fi [CLJS-1446] autodoc + gh-pages for cljs.*.api namespaces
     0.00   0 Bad: Unkn Fi [CLJS-1447] IFn implementors have a broken call implementation, all args after 20th argument should be collected into a seq
     0.00   0 Bad: Unkn Fi [CLJS-1501] Add :parallel-build support to REPLs
-    0.00   0 Bad: Unkn Fi [CLJS-2206] Refactor :npm-deps functionality to use indexed node_modules instead of handling missing modules in special pass
-    0.00   0 Bad: Unkn Fi [CLJS-2220] Add runtime :npm-deps tests
+    0.00   0 Bad: Unkn Fi [CLJS-2255] Clean up :npm-deps
