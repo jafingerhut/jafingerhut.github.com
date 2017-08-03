@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: July 27, 2017
+Date: August 3, 2017
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -51,6 +51,7 @@ Defect
    1 Open         [CLJS-1889] A lone ampersand `&` can be used to name a var, but throws when invoked. `(&)`
    1 Open         [CLJS-1899] Local bindings conflict with global JS namespace
    1 Bad: Unkn Fi [CLJS-2002] Don't throw when no *print-fn* is set
+   1 Open         [CLJS-2292] Var being replaced warnings with :refer-clojure :rename
    1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
    1 Bad: Unkn Fi [CLJS-868] no arity warnings on recursive calls
    1 Bad: Unkn Fi [CLJS-1297] defrecord does not emit IKVReduce protocol
@@ -80,7 +81,8 @@ Defect
    0 Bad: Match n [CLJS-2167] Browser REPL leaves a socket open when it fails to connect to the browser
    0 Bad: Match n [CLJS-2168] Properly document browser-env options
    0 Bad: Unkn Fi [CLJS-2221] cljs.util/relative-name still has issues on case-insensitive platforms
-   0 Bad: Unkn Fi [CLJS-2259] Extra .cljs_node_repl directory containing cljs.core output
+   0 Bad: Match > [CLJS-2261] Issue using interop record constructors in macros namespaces
+   0 Bad: Unkn Fi [CLJS-2295] `index-node-modules-dir` can't determine :main for package.json files that have `.` in the string
 
 ========================================
 Enhancement
@@ -121,8 +123,8 @@ Enhancement
    0 Bad: Unkn Fi [CLJS-2127] Add invoke* helper macro
    0 Bad: Unkn Fi [CLJS-2156] Add postamble, or some other generic way to append code to a file
    0 Vetted       [CLJS-2209] case docstring should explain constants may be evaluated (cljs only)
-   0 Bad: Unkn Fi [CLJS-2250] Support :foreign-libs overrides via :provides
    0 Bad: Unkn Fi [CLJS-2270] Support AOT compilation of macro namespaces (bootstrap)
+   0 Bad: Unkn Fi [CLJS-2289] Node packages with browser entry don't work with Closure
 
 ========================================
 Task
@@ -132,4 +134,4 @@ Task
    0 Bad: Unkn Fi [CLJS-1446] autodoc + gh-pages for cljs.*.api namespaces
    0 Bad: Unkn Fi [CLJS-1447] IFn implementors have a broken call implementation, all args after 20th argument should be collected into a seq
    0 Bad: Unkn Fi [CLJS-1501] Add :parallel-build support to REPLs
-   0 Bad: Unkn Fi [CLJS-2274] Update CI script to install deps
+   0 Bad: Unkn Fi [CLJS-2291] Set up Windows CI

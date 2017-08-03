@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: July 27, 2017
+Date: August 3, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -173,6 +173,10 @@ Defect
              Tim (1.00)
              Marcelo Yuji Nomoto (0.86)
              Laszlo Török (0.60)
+    2.43   3 Prescreened  [CLJ-2031] clojure.walk/postwalk does not preserve MapEntry type objects
+             Craig McDaniel (1.00)
+             Luke Burton (1.00)
+             Jozef Wagner (0.43)
     2.36   4 Incomplete   [CLJ-701] Primitive return type of loop and try is lost
              Kevin Downey (0.86)
              Steven Yi (0.86)
@@ -236,9 +240,6 @@ Defect
              César Bolaños (0.86)
              Justin Glenn Smith (0.50)
              Nicola Mometto (0.10)
-    1.43   2 Prescreened  [CLJ-2031] clojure.walk/postwalk does not preserve MapEntry type objects
-             Luke Burton (1.00)
-             Jozef Wagner (0.43)
     1.38   2 Screened     [CLJ-2103] s/coll-of and s/every gen is very slow if :kind specified without :into
              Nils Blum-Oeste (1.00)
              Kenny Williams (0.38)
@@ -411,6 +412,7 @@ Defect
     0.00   0 Triaged      [CLJ-2169] conj has out-of-date :arglists
     0.00   0 Triaged      [CLJ-2174] Spec generated exceptions/error messages are a regression in terms of the out-of-the-box experience with Clojure.
     0.00   0 Triaged      [CLJ-2181] try accepts multiple catch blocks for the same class
+    0.00   0 Triaged      [CLJ-2215] Extend-protocol for array of Object does not work on array of subtypes of Object.
     0.00   0 Vetted       [CLJ-2105] incorrect spec conform when an optional (?) is inside of a one or more (+) 
 
 ========================================
@@ -498,14 +500,14 @@ Enhancement
              Tassilo Horn (0.54)
              Daniel Compton (0.27)
              Nicola Mometto (0.10)
-   11.49  16 Triaged      [CLJ-1527] Clarify and align valid symbol and keyword rules for Clojure (and edn)
+   11.38  16 Triaged      [CLJ-1527] Clarify and align valid symbol and keyword rules for Clojure (and edn)
              Alan Bustos Kleiman (1.00)
              Fabrizio Ferrai (1.00)
              Jeff Terrell (1.00)
              James Laver (1.00)
              James Reeves (1.00)
-             Adam Frey (0.86)
              Steven Yi (0.86)
+             Adam Frey (0.75)
              Joshua Tilles (0.75)
              Michael Patrick O'Keefe (0.75)
              Michael Griffiths (0.66)
@@ -562,18 +564,6 @@ Enhancement
              Bozhidar Batsov (0.31)
              Reid McKenzie (0.31)
              Nicola Mometto (0.10)
-    8.79  11 Vetted       [CLJ-1148] adds docstring support to defonce
-             Brad Koch (1.00)
-             Jonas Enlund (1.00)
-             Nahuel Greco (1.00)
-             Norman Richards (1.00)
-             Chris Perkins (1.00)
-             Julian Gamble (1.00)
-             Adam Frey (0.86)
-             Aleksander Madland Stapnes (0.75)
-             David Leatherman (0.60)
-             Bozhidar Batsov (0.31)
-             Daniel Compton (0.27)
     8.75  10 Prescreened  [CLJ-1435] 'numerator and 'denominator fail to handle integral values (i.e. N/1)
              David Cravey (1.00)
              Eduard Bondarenko (1.00)
@@ -585,11 +575,23 @@ Enhancement
              Gary Fredericks (0.66)
              Mike Anderson (0.54)
              Stephen C. Gilardi (0.54)
-    8.68  14 Vetted       [CLJ-1005] Use transient map in zipmap
+    8.68  11 Vetted       [CLJ-1148] adds docstring support to defonce
+             Brad Koch (1.00)
+             Jonas Enlund (1.00)
+             Nahuel Greco (1.00)
+             Norman Richards (1.00)
+             Chris Perkins (1.00)
+             Julian Gamble (1.00)
+             Adam Frey (0.75)
+             Aleksander Madland Stapnes (0.75)
+             David Leatherman (0.60)
+             Bozhidar Batsov (0.31)
+             Daniel Compton (0.27)
+    8.57  14 Vetted       [CLJ-1005] Use transient map in zipmap
              Joshua Ballanco (1.00)
-             Adam Frey (0.86)
              Bobby Eickhoff (0.86)
              Yongqian Li (0.86)
+             Adam Frey (0.75)
              Ambrose Bonnaire-Sergeant (0.75)
              Daniel James (0.66)
              Gary Fredericks (0.66)
@@ -693,11 +695,11 @@ Enhancement
              David Leatherman (0.60)
              Stephen C. Gilardi (0.54)
              Andrey Antukh (0.38)
-    4.29   5 Open         [CLJ-1820] Move rename-keys from clojure.set to clojure.core
+    4.21   5 Open         [CLJ-1820] Move rename-keys from clojure.set to clojure.core
              David Liepmann (1.00)
              Zachary Scott (1.00)
              Marshall Abrams (1.00)
-             Marc O'Morain (0.75)
+             Marc O'Morain (0.66)
              Vitalie Spinu (0.54)
     4.10   5 Triaged      [CLJ-1743] Avoid compile-time static initialization of classes when using inheritance
              C. H. Graham (1.00)
@@ -767,10 +769,10 @@ Enhancement
              Ghadi Shayban (0.75)
              Simon Belak (0.41)
              Max Penet (0.38)
-    2.25   3 Triaged      [CLJ-1859] Update parameter name to reflect docstring
-             Marc O'Morain (0.75)
+    2.16   3 Triaged      [CLJ-1859] Update parameter name to reflect docstring
              Nate Smith (0.75)
              Peter Jaros (0.75)
+             Marc O'Morain (0.66)
     2.14   3 Backlog      [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
              Maris Orbidans (1.00)
              Chas Emerick (0.60)
@@ -816,6 +818,8 @@ Enhancement
              Michael Blume (0.23)
     1.00   1 Incomplete   [CLJ-1400] Error "Can't refer to qualified var that doesn't exist" should name the bad symbol
              Andy Chambers (1.00)
+    1.00   1 Open         [CLJ-1095] Allow map-indexed to accept multiple collections (a la map)
+             Justin Spedding (1.00)
     1.00   1 Open         [CLJ-1146] Symbol name starting with digits to defn throws "Unmatched delimiter )"
              Rohit Aggarwal (1.00)
     1.00   1 Open         [CLJ-1257] Suppress warnings when clojure.core symbols are explicitly replaced with "use" or "refer"
@@ -858,12 +862,8 @@ Enhancement
              Bridget Hillyer (0.75)
     0.75   1 Open         [CLJ-2097] Improve generation failure exception
              Joshua Tilles (0.75)
-    0.75   1 Prescreened  [CLJ-2188] clojure.core/slurp does not mark its return type as String
-             Marc O'Morain (0.75)
     0.75   1 Screened     [CLJ-2046] generate random subsets of or'd required keys in map specs
              Nate Smith (0.75)
-    0.75   1 Triaged      [CLJ-2196] Allow string keys for `s/key` specs
-             Marc O'Morain (0.75)
     0.69   2 Triaged      [CLJ-1676] map destructuring: prevent evaluation of values in :or when they are not used/needed
              A. R (0.60)
              Nicola Mometto (0.10)
@@ -871,6 +871,12 @@ Enhancement
              Matthew O. Smith (0.66)
     0.66   1 Open         [CLJ-1425] Defer literal map construction of syntax-quoted maps to allow for semantically valid unquote splicing
              Eli Naeher (0.66)
+    0.66   1 Prescreened  [CLJ-2188] clojure.core/slurp does not mark its return type as String
+             Marc O'Morain (0.66)
+    0.66   1 Triaged      [CLJ-2196] Allow string keys for `s/key` specs
+             Marc O'Morain (0.66)
+    0.66   1 Triaged      [CLJ-2214] Add binding conveyance to reducers.
+             Marc O'Morain (0.66)
     0.64   2 Triaged      [CLJ-1469] Emit KeywordInvoke callsites only when keyword is not namespaced
              Daniel Balke (0.54)
              Nicola Mometto (0.10)
@@ -945,6 +951,7 @@ Enhancement
     0.00   0 Backlog      [CLJ-1104] Concurrent with-redefs do not unwind properly, leaving a var permanently changed
     0.00   0 Backlog      [CLJ-1420] ThreadLocalRandom instead of Math/random
     0.00   0 Needs Patch  [CLJ-2108] Loading core specs affects startup time
+    0.00   0 Needs Patch  [CLJ-2216] Change *explain-out* to return string, instead of printing output
     0.00   0 Prescreened  [CLJ-1159] Improve docstring of clojure.java.io/delete-file to be clearer about intent of silently arg
     0.00   0 Prescreened  [CLJ-1314] Correct placement of doc string for function bubble-max-key
     0.00   0 Prescreened  [CLJ-1366] The empty map literal is read as a different map each time
@@ -1014,6 +1021,8 @@ Enhancement
     0.00   0 Triaged      [CLJ-2185] Standardize the running context of all Java to Clojure entry points.
     0.00   0 Triaged      [CLJ-2193] Override function spec within check
     0.00   0 Triaged      [CLJ-2208] Provide a means to ask a spec for its "child" specs
+    0.00   0 Triaged      [CLJ-2211] docstring of defn is not precise about the `attr-map?` and `body` arguments
+    0.00   0 Triaged      [CLJ-2212] docstring for `defmethod` is imprecise 
 
 ========================================
 Feature
@@ -1029,7 +1038,6 @@ Feature
              Josh Brandoff (1.00)
              Julien Fantin (1.00)
              Kurt Smith (1.00)
-             Liam F (1.00)
              Maik Schünemann (1.00)
              Matt Huebert (1.00)
              Mohammad Sadegh Khoeini (1.00)
@@ -1039,6 +1047,7 @@ Feature
              udit (1.00)
              Carlo Sciolla (1.00)
              Donald Ball (1.00)
+             Liam F (1.00)
              Masaru Itoh (1.00)
              Stathis Sideris (1.00)
              Timothy Pote (1.00)
@@ -1139,6 +1148,28 @@ Feature
              Jan Rychter (0.50)
              Juho Teperi (0.50)
              Bozhidar Batsov (0.31)
+   14.08  21 Prescreened  [CLJ-706] make use of deprecated namespaces/vars easier to spot
+             Chad Harrington (1.00)
+             Mikhail Malchevskiy (1.00)
+             Carlo Sciolla (1.00)
+             Matthew Boston (1.00)
+             Alex Baranosky (0.86)
+             Dmitr Sotnikov (0.86)
+             Eric Normand (0.86)
+             Mike Thompson (0.86)
+             Adam Frey (0.75)
+             David Bürgin (0.75)
+             Magnar Sveen (0.75)
+             Lars Andersen (0.60)
+             Atamert Ölçgen (0.54)
+             Stephen C. Gilardi (0.54)
+             Andrew Rosa (0.50)
+             Gary Trakhman (0.50)
+             Juho Teperi (0.50)
+             Andy Fingerhut (0.38)
+             Bozhidar Batsov (0.31)
+             Daniel Compton (0.27)
+             Michael Blume (0.23)
    13.69  16 Needs Patch  [CLJ-2123] Lighter-weight aliasing for keywords
              Andre Richards (1.00)
              Chris Farber (1.00)
@@ -1156,27 +1187,6 @@ Feature
              Chas Emerick (0.60)
              Kenny Williams (0.38)
              Nicola Mometto (0.10)
-   13.33  20 Prescreened  [CLJ-706] make use of deprecated namespaces/vars easier to spot
-             Chad Harrington (1.00)
-             Mikhail Malchevskiy (1.00)
-             Carlo Sciolla (1.00)
-             Matthew Boston (1.00)
-             Alex Baranosky (0.86)
-             Dmitr Sotnikov (0.86)
-             Eric Normand (0.86)
-             Mike Thompson (0.86)
-             David Bürgin (0.75)
-             Magnar Sveen (0.75)
-             Lars Andersen (0.60)
-             Atamert Ölçgen (0.54)
-             Stephen C. Gilardi (0.54)
-             Andrew Rosa (0.50)
-             Gary Trakhman (0.50)
-             Juho Teperi (0.50)
-             Andy Fingerhut (0.38)
-             Bozhidar Batsov (0.31)
-             Daniel Compton (0.27)
-             Michael Blume (0.23)
    11.59  16 Needs Patch  [CLJ-1454] Add deref-swap! and deref-reset! (swap! and reset! that return prior value)
              Charles Duffy (1.00)
              Peter Monks (1.00)
@@ -1377,8 +1387,8 @@ Feature
              Nicola Mometto (0.10)
     4.14   5 Open         [CLJ-2007] if-let* & when-let* with multiple bindings implementation
              Alex K (1.00)
-             Justin Spedding (1.00)
              Nico Schneider (1.00)
+             Justin Spedding (1.00)
              A. R (0.60)
              Vitalie Spinu (0.54)
     4.00   4 Open         [CLJ-899] Accept and ignore colon between key and value in map literals
@@ -1470,6 +1480,9 @@ Feature
              Xiaoyu Zhang (1.00)
              Alex Fowler (0.86)
              Andrey Antukh (0.38)
+    2.00   2 Triaged      [CLJ-840] Add a way to access the current test var in :each fixtures for clojure.test
+             Joe Littlejohn (1.00)
+             Liam F (1.00)
     2.00   2 Triaged      [CLJ-1496] Added a new arity to 'ex-info' that only accepts a message. 
              Nikita Prokopov (1.00)
              Yuri Govorushchenko (1.00)
@@ -1524,8 +1537,6 @@ Feature
              kalina todorova (1.00)
     1.00   1 Open         [CLJ-1806] group-by as reducer / reduction fn
              Matthias Varberg Ingesman (1.00)
-    1.00   1 Triaged      [CLJ-840] Add a way to access the current test var in :each fixtures for clojure.test
-             Joe Littlejohn (1.00)
     1.00   1 Triaged      [CLJ-1624] Support get from arbitrary java.util.List data types
              Michael du Breuil (1.00)
     1.00   1 Triaged      [CLJ-1843] Add =to function exposing Util/equivPred 

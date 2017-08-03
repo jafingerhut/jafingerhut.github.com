@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: July 27, 2017
+Date: August 3, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -61,6 +61,7 @@ Defect
    4 Vetted       [CLJ-1879] reduce-kv on a PHMs doesn't consistently execute the intended fastpath
    4 Backlog      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
    3 Open         [CLJ-2021] case where spec/conform -> spec/unform -> spec/conform gives invalid result
+   3 Prescreened  [CLJ-2031] clojure.walk/postwalk does not preserve MapEntry type objects
    3 Triaged      [CLJ-1142] Incorrect divide-by-zero error with floating point numbers
    3 Triaged      [CLJ-1649] Hash/equality inconsistency for floats & doubles
    3 Triaged      [CLJ-1911] min-key and max-key should return NaN if any of the argument is NaN
@@ -74,7 +75,6 @@ Defect
    2 Prescreened  [CLJ-1360] clojure.string/split strips trailing delimiters
    2 Open         [CLJ-1286] Fix reader spec and regex to match code for keywords starting with digits
    2 Open         [CLJ-1953] clojure.set should check or throw on non-set inputs
-   2 Prescreened  [CLJ-2031] clojure.walk/postwalk does not preserve MapEntry type objects
    2 Screened     [CLJ-2103] s/coll-of and s/every gen is very slow if :kind specified without :into
    2 Open         [CLJ-750] clojure.lang.MapEntry violates .equals and .hashCode contracts of HashMap.Entry; leads to non-reflexive .equals, etc.
    2 Open         [CLJ-1079] Don't squash explicit :line and :column metadata in the MetaReader
@@ -188,6 +188,7 @@ Defect
    0 Screened     [CLJ-2186] ::s/map-bindings definition is underspecified
    0 Needs Patch  [CLJ-2199] Error attempting to unform unconformed keys (no :conform-keys opt)
    0 Screenable   [CLJ-2202] coll-of :min-count and :gen-max used together cause collections that are too large to be generated
+   0 Triaged      [CLJ-2215] Extend-protocol for array of Object does not work on array of subtypes of Object.
 
 ========================================
 Enhancement
@@ -249,6 +250,7 @@ Enhancement
    2 Open         [CLJ-1376] Initialize internal maps to more efficient version
    2 Open         [CLJ-792] Refactor method resolution code out of Compiler and into Reflector
    1 Triaged      [CLJ-1044] Enable refering to ->type inside deftype
+   1 Open         [CLJ-1095] Allow map-indexed to accept multiple collections (a la map)
    1 Open         [CLJ-1146] Symbol name starting with digits to defn throws "Unmatched delimiter )"
    1 Open         [CLJ-1257] Suppress warnings when clojure.core symbols are explicitly replaced with "use" or "refer"
    1 Open         [CLJ-1296] locking expressions cause vars to be dereferenced, even if not executed, unless wrapped in let
@@ -268,10 +270,11 @@ Enhancement
    1 Open         [CLJ-1721] Enable test case for char?
    1 Screened     [CLJ-2046] generate random subsets of or'd required keys in map specs
    1 Open         [CLJ-2097] Improve generation failure exception
-   1 Prescreened  [CLJ-2188] clojure.core/slurp does not mark its return type as String
-   1 Triaged      [CLJ-2196] Allow string keys for `s/key` specs
    1 Open         [CLJ-1342] Byte comparison boxes both bytes and converts to longs to compare (which is slow)
    1 Open         [CLJ-1425] Defer literal map construction of syntax-quoted maps to allow for semantically valid unquote splicing
+   1 Prescreened  [CLJ-2188] clojure.core/slurp does not mark its return type as String
+   1 Triaged      [CLJ-2196] Allow string keys for `s/key` specs
+   1 Triaged      [CLJ-2214] Add binding conveyance to reducers.
    1 Vetted       [CLJ-1099] better error message when passing non-seq to seq
    1 Open         [CLJ-1189] Map-destructuring :or fumble needs compiler warning
    1 Triaged      [CLJ-2038] Clojure.spec/exercise-fn should accept custom generator map
@@ -376,6 +379,9 @@ Enhancement
    0 Screenable   [CLJ-2190] clojure.spec.alpha/exercise-fn should emit a bettor error message when no implementation is found for a symbol
    0 Triaged      [CLJ-2193] Override function spec within check
    0 Triaged      [CLJ-2208] Provide a means to ask a spec for its "child" specs
+   0 Triaged      [CLJ-2211] docstring of defn is not precise about the `attr-map?` and `body` arguments
+   0 Triaged      [CLJ-2212] docstring for `defmethod` is imprecise 
+   0 Needs Patch  [CLJ-2216] Change *explain-out* to return string, instead of printing output
 
 ========================================
 Feature
@@ -384,7 +390,7 @@ Feature
   29 Vetted       [CLJ-322] Enhance AOT compilation process to emit classfiles only for explicitly-specified namespaces
   22 Open         [CLJ-2116] Support for selective conforming with clojure.spec
   21 Triaged      [CLJ-304] clojure.repl/source does not work with deftype
-  20 Prescreened  [CLJ-706] make use of deprecated namespaces/vars easier to spot
+  21 Prescreened  [CLJ-706] make use of deprecated namespaces/vars easier to spot
   17 Open         [CLJ-1078] Add queue and queue? to clojure.core
   16 Needs Patch  [CLJ-2123] Lighter-weight aliasing for keywords
   16 Needs Patch  [CLJ-1454] Add deref-swap! and deref-reset! (swap! and reset! that return prior value)
@@ -425,6 +431,7 @@ Feature
    3 Open         [CLJ-1256] Support type-hinted overrides of function parameters
    3 Triaged      [CLJ-1094] Add zero-arity versions of every-pred and some-fn
    3 Triaged      [CLJ-1305] Add optional not-found argument when invoking vectors or sets as functions
+   2 Triaged      [CLJ-840] Add a way to access the current test var in :each fixtures for clojure.test
    2 Triaged      [CLJ-1496] Added a new arity to 'ex-info' that only accepts a message. 
    2 Triaged      [CLJ-1990] Add an async macro that behaves the same as ClojureScript's
    2 Open         [CLJ-2] Scopes
@@ -437,7 +444,6 @@ Feature
    2 Open         [CLJ-1534] Adding condp-> and condp->> macros to core library
    2 Open         [CLJ-15] Incremental hashcode calculation for collections
    1 Open         [CLJ-248] Add support for subsets and submaps to sorted Sets/Maps
-   1 Triaged      [CLJ-840] Add a way to access the current test var in :each fixtures for clojure.test
    1 Open         [CLJ-994] repeat reducer
    1 Open         [CLJ-995] sorted-set doesn't support IEditableCollection
    1 Open         [CLJ-1223] Improve App Engine Support by Providing an Option to Use the App Engine ThreadManger
