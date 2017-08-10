@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: August 3, 2017
+Date: August 10, 2017
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -62,6 +62,8 @@ Defect
              Pedro Girardi (1.00)
     1.00   1 Open         [CLJS-890] Incorrect behaviour of (str obj) when obj has valueOf method
              Kevin Neaton (1.00)
+    1.00   1 Open         [CLJS-1559] Closure :libs ignored
+             Ales Huzik (1.00)
     1.00   1 Open         [CLJS-1864] timestamped source maps broken with Node
              Alexey Naumov (1.00)
     1.00   1 Open         [CLJS-1889] A lone ampersand `&` can be used to name a var, but throws when invoked. `(&)`
@@ -80,7 +82,6 @@ Defect
              Thomas Heller (0.75)
     0.66   1 Open         [CLJS-1593] Self-host: Munged minus macro
              Yehonathan Sharvit (0.66)
-    0.00   0 Bad: Match > [CLJS-2261] Issue using interop record constructors in macros namespaces
     0.00   0 Bad: Match n [CLJS-2166] Add uri? predicate
     0.00   0 Bad: Match n [CLJS-2167] Browser REPL leaves a socket open when it fails to connect to the browser
     0.00   0 Bad: Match n [CLJS-2168] Properly document browser-env options
@@ -105,7 +106,11 @@ Defect
     0.00   0 Bad: Unkn Fi [CLJS-1896] Externs file validation
     0.00   0 Bad: Unkn Fi [CLJS-2138] Remove redundant checks in ChunkedSeq.-rest and ChunkedSeq.-next 
     0.00   0 Bad: Unkn Fi [CLJS-2221] cljs.util/relative-name still has issues on case-insensitive platforms
-    0.00   0 Bad: Unkn Fi [CLJS-2295] `index-node-modules-dir` can't determine :main for package.json files that have `.` in the string
+    0.00   0 Bad: Unkn Fi [CLJS-2309] :module foreign-libs order not preserved
+    0.00   0 Bad: Unkn Fi [CLJS-2310] should not emit goog.require for foreign-libs under :modules
+    0.00   0 Bad: Unkn Fi [CLJS-2313] :language-out is a build affecting option
+    0.00   0 Bad: Unkn Fi [CLJS-2315] module_deps.js can't resolve JSON modules
+    0.00   0 Vetted       [CLJS-2312] Miss-compile: Uncaught SyntaxError: Unexpected token default
 
 ========================================
 Enhancement
@@ -148,6 +153,8 @@ Enhancement
              Egg Syntax (1.00)
     1.00   1 Open         [CLJS-1755] Support sourcesContent in source maps
              Miloslav Nenadál (1.00)
+    1.00   1 Open         [CLJS-1777] `module` undefined when using `:module-type :commonjs`
+             Wilker Lúcio da Silva (1.00)
     1.00   1 Open         [CLJS-2216] Support targeting webworker
              Milton J Reder (1.00)
     0.86   1 Bad: Unkn Fi [CLJS-1328] Support defrecord reader tags
@@ -178,6 +185,7 @@ Enhancement
     0.00   0 Bad: Unkn Fi [CLJS-2156] Add postamble, or some other generic way to append code to a file
     0.00   0 Bad: Unkn Fi [CLJS-2270] Support AOT compilation of macro namespaces (bootstrap)
     0.00   0 Bad: Unkn Fi [CLJS-2289] Node packages with browser entry don't work with Closure
+    0.00   0 Bad: Unkn Fi [CLJS-2298] REPLs should automatically load user.(cljs|cljc) files at root of Java classpath
     0.00   0 Vetted       [CLJS-2209] case docstring should explain constants may be evaluated (cljs only)
 
 ========================================
@@ -192,4 +200,4 @@ Task
     0.00   0 Bad: Unkn Fi [CLJS-1446] autodoc + gh-pages for cljs.*.api namespaces
     0.00   0 Bad: Unkn Fi [CLJS-1447] IFn implementors have a broken call implementation, all args after 20th argument should be collected into a seq
     0.00   0 Bad: Unkn Fi [CLJS-1501] Add :parallel-build support to REPLs
-    0.00   0 Bad: Unkn Fi [CLJS-2291] Set up Windows CI
+    0.00   0 Bad: Unkn Fi [CLJS-2311] Cut a Closure Library release
