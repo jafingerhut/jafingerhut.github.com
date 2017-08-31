@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: August 24, 2017
+Date: August 31, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -56,7 +56,7 @@ Defect
    4 Prescreened  [CLJ-2210] back referential expressions can cause exponential compilation times
    4 Needs Patch  [CLJ-2079] Generator overrides for spec aliases are not respected
    4 Triaged      [CLJ-1243] Cannot resolve public generic method from package-private base class
-   4 Triaged      [CLJ-2003] Nesting cat inside ? causes unform to return nested result
+   4 Screenable   [CLJ-2003] Nesting cat inside ? causes unform to return nested result
    4 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
    4 Vetted       [CLJ-1879] reduce-kv on a PHMs doesn't consistently execute the intended fastpath
    4 Incomplete   [CLJ-701] Primitive return type of loop and try is lost
@@ -190,6 +190,7 @@ Defect
    0 Needs Patch  [CLJ-2199] Error attempting to unform unconformed keys (no :conform-keys opt)
    0 Screenable   [CLJ-2202] coll-of :min-count and :gen-max used together cause collections that are too large to be generated
    0 Triaged      [CLJ-2215] Extend-protocol for array of Object does not work on array of subtypes of Object.
+   0 Screenable   [CLJ-2231] Remove dep lib exclusions
 
 ========================================
 Enhancement
@@ -245,6 +246,7 @@ Enhancement
    2 Backlog      [CLJ-731] Create macro to variadically unroll a combinator function definition
    2 Open         [CLJ-1625] Cannot implement protocol methods of the same name inline
    2 Triaged      [CLJ-790] Primitive type hints on function names should print error message
+   2 Triaged      [CLJ-2224] Support printing and reading of Java 8 java.time.Instant
    2 Triaged      [CLJ-1598] Make if forms compile directly to the appropriate branch expression if the test is a literal
    2 Prescreened  [CLJ-1730] Improve `refer` performance
    2 Triaged      [CLJ-1676] map destructuring: prevent evaluation of values in :or when they are not used/needed
@@ -280,8 +282,8 @@ Enhancement
    1 Backlog      [CLJ-69] GC Issue 66: Add "keyset" to Clojure; make .keySet for APersistentMap return IPersistentSet
    1 Open         [CLJ-1231] fn and letfn don't support hinting the function's return type
    1 Triaged      [CLJ-1607] docstring for clojure.core/counted? should be more specific
-   1 Triaged      [CLJ-1752] realized? return true for an instance that is not IPending
    1 Triaged      [CLJ-1762] Implement IKVReduce for java.util.map
+   1 Triaged      [CLJ-1752] realized? return true for an instance that is not IPending
    1 Prescreened  [CLJ-2188] clojure.core/slurp does not mark its return type as String
    1 Triaged      [CLJ-2196] Allow string keys for `s/key` specs
    1 Triaged      [CLJ-2214] Add binding conveyance to reducers.
@@ -366,7 +368,7 @@ Enhancement
    0 Triaged      [CLJ-2081] for macro spec should know :let can't go in the first position
    0 Triaged      [CLJ-2090] Improve clojure.core/distinct perf by using transient set
    0 Prescreened  [CLJ-2104] Typo in pprint docstring
-   0 Needs Patch  [CLJ-2108] Loading core specs affects startup time
+   0 Screened     [CLJ-2108] Loading core specs affects startup time
    0 Triaged      [CLJ-2122] flatten docstring does not describe lazy result
    0 Triaged      [CLJ-2134] Update the docstring of `with-redefs` to reflect how little the macro should be used
    0 Triaged      [CLJ-2135] clojure.spec/Spec implementations that don't implement IObj get silently dropped in s/def
@@ -383,8 +385,7 @@ Enhancement
    0 Triaged      [CLJ-2211] docstring of defn is not precise about the `attr-map?` and `body` arguments
    0 Triaged      [CLJ-2212] docstring for `defmethod` is imprecise 
    0 Triaged      [CLJ-2213] Allow multiple bindings for if-let, when-let, if-some, and when-some
-   0 Needs Patch  [CLJ-2216] Change *explain-out* to return string, instead of printing output
-   0 Triaged      [CLJ-2224] Support printing and reading of Java 8 java.time.Instant
+   0 Triaged      [CLJ-2228] Improve performance of constantly
 
 ========================================
 Feature
@@ -397,9 +398,9 @@ Feature
   17 Needs Patch  [CLJ-2123] Lighter-weight aliasing for keywords
   17 Open         [CLJ-1078] Add queue and queue? to clojure.core
   16 Needs Patch  [CLJ-1454] Add deref-swap! and deref-reset! (swap! and reset! that return prior value)
-  15 Incomplete   [CLJ-2112] Add specs for spec forms
+  16 Incomplete   [CLJ-2112] Add specs for spec forms
   14 Triaged      [CLJ-440] java method calls cannot omit varargs
-  12 Triaged      [CLJ-1063] Missing dissoc-in
+  13 Triaged      [CLJ-1063] Missing dissoc-in
   12 Triaged      [CLJ-1293] Support (try .. (catch :default _ ..)) for portable "catch-all"
   11 Open         [CLJ-1553] Parallel transduce
   11 Triaged      [CLJ-1611] clojure.java.io/pushback-reader

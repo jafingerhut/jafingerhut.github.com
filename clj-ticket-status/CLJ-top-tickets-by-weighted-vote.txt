@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: August 24, 2017
+Date: August 31, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -41,7 +41,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
-   15.98  24 Incomplete   [CLJ-700] contains? broken for transient collections
+   15.91  24 Incomplete   [CLJ-700] contains? broken for transient collections
              Philipp Weinfurter (1.00)
              Alex Miller (1.00)
              Dom Kiva-Meyer (1.00)
@@ -54,10 +54,10 @@ Defect
              Peter Taoussanis (0.75)
              Huahai Yang (0.66)
              Patrick Houk (0.66)
-             Phill Wolf (0.66)
              Greg Chapman (0.60)
              John Walker (0.60)
              Laszlo Török (0.60)
+             Phill Wolf (0.60)
              Atamert Ölçgen (0.54)
              Daniel Balke (0.54)
              Gary Trakhman (0.50)
@@ -128,11 +128,11 @@ Defect
              David Greenberg (0.34)
              Reid McKenzie (0.31)
              Nicola Mometto (0.10)
-    4.24   7 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
+    4.17   7 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
              Achint Sandhu (1.00)
              Ghadi Shayban (0.75)
              Stuart Halloway (0.75)
-             Phill Wolf (0.66)
+             Phill Wolf (0.60)
              Juho Teperi (0.50)
              David Greenberg (0.34)
              Michael Blume (0.23)
@@ -159,18 +159,18 @@ Defect
              Ian Davis (1.00)
              Russell Mull (1.00)
              Peter Jaros (0.75)
-    3.53   4 Triaged      [CLJ-1243] Cannot resolve public generic method from package-private base class
+    3.46   4 Triaged      [CLJ-1243] Cannot resolve public generic method from package-private base class
              Michal Růžička (1.00)
              Sébastien Wagener (1.00)
              Noam Ben Ari (0.86)
-             Phill Wolf (0.66)
+             Phill Wolf (0.60)
     2.97   5 Screened     [CLJ-2077] Clojure can't be loaded from the boot classpath under java 9
              Alex Gunnarson (1.00)
              Phil Hagelberg (0.86)
              Ghadi Shayban (0.75)
              Daniel Compton (0.27)
              Nicola Mometto (0.10)
-    2.61   4 Triaged      [CLJ-2003] Nesting cat inside ? causes unform to return nested result
+    2.61   4 Screenable   [CLJ-2003] Nesting cat inside ? causes unform to return nested result
              Yehonathan Sharvit (0.86)
              Francis Avila (0.75)
              Laszlo Török (0.60)
@@ -317,8 +317,8 @@ Defect
     0.53   2 Triaged      [CLJ-1955] .hashCode throws ClassCastException when called on some functions
              Jozef Wagner (0.43)
              Nicola Mometto (0.10)
-    0.50   1 Triaged      [CLJ-2181] try accepts multiple catch blocks for the same class
-             Marc O'Morain (0.50)
+    0.46   1 Triaged      [CLJ-2181] try accepts multiple catch blocks for the same class
+             Marc O'Morain (0.46)
     0.43   1 Triaged      [CLJ-1898] Inconsistent duplicate check in set/map literals with quoted/unquoted equal constants
              Jozef Wagner (0.43)
     0.41   1 Open         [CLJ-2074] ::keys spec conflicts with destructuring spec
@@ -379,6 +379,7 @@ Defect
     0.00   0 Screenable   [CLJ-2111] Clarify s/every docstring for :kind
     0.00   0 Screenable   [CLJ-2168] clojure.spec: :pred in explain for coll-of should have resolved symbols
     0.00   0 Screenable   [CLJ-2202] coll-of :min-count and :gen-max used together cause collections that are too large to be generated
+    0.00   0 Screenable   [CLJ-2231] Remove dep lib exclusions
     0.00   0 Screened     [CLJ-2026] Transient exceptions thrown in clojure.spec.test/check
     0.00   0 Screened     [CLJ-2080] clojure.spec/every-kv does not work on vectors - improve docs/errors
     0.00   0 Screened     [CLJ-2089] Sorted colls with default comparator don't check that first element is Comparable
@@ -710,23 +711,23 @@ Enhancement
              Gabriel Horner (1.00)
              Didier A. (1.00)
              Nicola Mometto (0.10)
-    3.93   5 Open         [CLJ-1820] Move rename-keys from clojure.set to clojure.core
+    3.90   5 Open         [CLJ-1820] Move rename-keys from clojure.set to clojure.core
              David Liepmann (1.00)
              Zachary Scott (1.00)
              Marshall Abrams (1.00)
-             Marc O'Morain (0.50)
+             Marc O'Morain (0.46)
              Vitalie Spinu (0.43)
-    3.75   5 Prescreened  [CLJ-1859] Update parameter name to reflect docstring
+    3.71   5 Prescreened  [CLJ-1859] Update parameter name to reflect docstring
              Ertuğrul Çetin (1.00)
              Dmitr Sotnikov (0.75)
              Nate Smith (0.75)
              Peter Jaros (0.75)
-             Marc O'Morain (0.50)
-    3.75   6 Prescreened  [CLJ-1117] partition docstring should be more explicit about dropped or partial trailing elements
+             Marc O'Morain (0.46)
+    3.68   6 Prescreened  [CLJ-1117] partition docstring should be more explicit about dropped or partial trailing elements
              Howard Lewis Ship (0.86)
              Yongqian Li (0.86)
              Michael van Acken (0.75)
-             Phill Wolf (0.66)
+             Phill Wolf (0.60)
              David Greenberg (0.34)
              Daniel Compton (0.27)
     3.61   4 Screened     [CLJ-2166] instrument exception doesn't contain function name in ex-data
@@ -833,6 +834,9 @@ Enhancement
     1.09   2 Triaged      [CLJ-790] Primitive type hints on function names should print error message
              John Wiseman (0.86)
              Michael Blume (0.23)
+    1.06   2 Triaged      [CLJ-2224] Support printing and reading of Java 8 java.time.Instant
+             Phill Wolf (0.60)
+             Marc O'Morain (0.46)
     1.00   1 Incomplete   [CLJ-1400] Error "Can't refer to qualified var that doesn't exist" should name the bad symbol
              Andy Chambers (1.00)
     1.00   1 Open         [CLJ-1146] Symbol name starting with digits to defn throws "Unmatched delimiter )"
@@ -903,21 +907,21 @@ Enhancement
              Atamert Ölçgen (0.54)
     0.54   1 Open         [CLJ-1231] fn and letfn don't support hinting the function's return type
              Mike Anderson (0.54)
-    0.50   1 Prescreened  [CLJ-2188] clojure.core/slurp does not mark its return type as String
-             Marc O'Morain (0.50)
     0.50   1 Triaged      [CLJ-1607] docstring for clojure.core/counted? should be more specific
              Justin Glenn Smith (0.50)
-    0.50   1 Triaged      [CLJ-1752] realized? return true for an instance that is not IPending
-             Marc O'Morain (0.50)
     0.50   1 Triaged      [CLJ-1762] Implement IKVReduce for java.util.map
              Gary Trakhman (0.50)
-    0.50   1 Triaged      [CLJ-2196] Allow string keys for `s/key` specs
-             Marc O'Morain (0.50)
-    0.50   1 Triaged      [CLJ-2214] Add binding conveyance to reducers.
-             Marc O'Morain (0.50)
     0.48   2 Open         [CLJ-1376] Initialize internal maps to more efficient version
              Max Penet (0.38)
              Nicola Mometto (0.10)
+    0.46   1 Prescreened  [CLJ-2188] clojure.core/slurp does not mark its return type as String
+             Marc O'Morain (0.46)
+    0.46   1 Triaged      [CLJ-1752] realized? return true for an instance that is not IPending
+             Marc O'Morain (0.46)
+    0.46   1 Triaged      [CLJ-2196] Allow string keys for `s/key` specs
+             Marc O'Morain (0.46)
+    0.46   1 Triaged      [CLJ-2214] Add binding conveyance to reducers.
+             Marc O'Morain (0.46)
     0.43   1 Open         [CLJ-889] Specifically allow '.' inside keywords
              Vitalie Spinu (0.43)
     0.43   1 Prescreened  [CLJ-1917] internal-reduce extended on StringSeq calls `.length` on every iteration step
@@ -968,8 +972,6 @@ Enhancement
     0.00   0 Backlog      [CLJ-771] Move unchecked-prim casts to clojure.unchecked
     0.00   0 Backlog      [CLJ-1104] Concurrent with-redefs do not unwind properly, leaving a var permanently changed
     0.00   0 Backlog      [CLJ-1420] ThreadLocalRandom instead of Math/random
-    0.00   0 Needs Patch  [CLJ-2108] Loading core specs affects startup time
-    0.00   0 Needs Patch  [CLJ-2216] Change *explain-out* to return string, instead of printing output
     0.00   0 Prescreened  [CLJ-1159] Improve docstring of clojure.java.io/delete-file to be clearer about intent of silently arg
     0.00   0 Prescreened  [CLJ-1314] Correct placement of doc string for function bubble-max-key
     0.00   0 Prescreened  [CLJ-1366] The empty map literal is read as a different map each time
@@ -992,6 +994,7 @@ Enhancement
     0.00   0 Prescreened  [CLJ-2184] propagate metadata in doto forms
     0.00   0 Screenable   [CLJ-2179] s/inst-in and s/int-in generators should have uniform distribution not biased towards min value
     0.00   0 Screenable   [CLJ-2190] clojure.spec.alpha/exercise-fn should emit a bettor error message when no implementation is found for a symbol
+    0.00   0 Screened     [CLJ-2108] Loading core specs affects startup time
     0.00   0 Screened     [CLJ-2163] Add test for var serialization
     0.00   0 Triaged      [CLJ-5] Sequential destructuring of map gives confusing error message
     0.00   0 Triaged      [CLJ-405] better error messages for bad defrecord calls
@@ -1040,7 +1043,7 @@ Enhancement
     0.00   0 Triaged      [CLJ-2211] docstring of defn is not precise about the `attr-map?` and `body` arguments
     0.00   0 Triaged      [CLJ-2212] docstring for `defmethod` is imprecise 
     0.00   0 Triaged      [CLJ-2213] Allow multiple bindings for if-let, when-let, if-some, and when-some
-    0.00   0 Triaged      [CLJ-2224] Support printing and reading of Java 8 java.time.Instant
+    0.00   0 Triaged      [CLJ-2228] Improve performance of constantly
 
 ========================================
 Feature
@@ -1242,24 +1245,10 @@ Feature
              David Greenberg (0.34)
              Bozhidar Batsov (0.29)
              Nicola Mometto (0.10)
-   10.65  14 Triaged      [CLJ-440] java method calls cannot omit varargs
-             Konstantin Shabanov (1.00)
-             Logan Woodbury (1.00)
-             Nevena Vidojevic (1.00)
-             Nick Klauer (1.00)
-             Maris Orbidans (1.00)
-             Bobby Eickhoff (0.86)
-             Gunnar Völkel (0.86)
-             Christoffer Sawicki (0.75)
-             David Bürgin (0.66)
-             Phill Wolf (0.66)
-             Greg Chapman (0.60)
-             J.&nbsp;S.&nbsp;Choi (0.60)
-             David Greenberg (0.34)
-             Reid McKenzie (0.31)
-   10.17  15 Incomplete   [CLJ-2112] Add specs for spec forms
+   11.17  16 Incomplete   [CLJ-2112] Add specs for spec forms
              Nuttanart Pornprasitsakul (1.00)
              Ben Brinckerhoff (1.00)
+             Enzzo Cavallo (1.00)
              Gert (1.00)
              James Conroy-Finn (1.00)
              Saul Shanabrook (1.00)
@@ -1273,6 +1262,21 @@ Feature
              Tommi Reiman (0.38)
              Daniel Compton (0.27)
              Nicola Mometto (0.10)
+   10.59  14 Triaged      [CLJ-440] java method calls cannot omit varargs
+             Konstantin Shabanov (1.00)
+             Logan Woodbury (1.00)
+             Nevena Vidojevic (1.00)
+             Nick Klauer (1.00)
+             Maris Orbidans (1.00)
+             Bobby Eickhoff (0.86)
+             Gunnar Völkel (0.86)
+             Christoffer Sawicki (0.75)
+             David Bürgin (0.66)
+             Greg Chapman (0.60)
+             J.&nbsp;S.&nbsp;Choi (0.60)
+             Phill Wolf (0.60)
+             David Greenberg (0.34)
+             Reid McKenzie (0.31)
     9.85  11 Open         [CLJ-1553] Parallel transduce
              Darrick Wiebe (1.00)
              Rafik NACCACHE (1.00)
@@ -1285,19 +1289,8 @@ Feature
              Daniel James (0.66)
              Devin Walters (0.66)
              Michael Griffiths (0.66)
-    8.43  11 Triaged      [CLJ-1611] clojure.java.io/pushback-reader
-             David Rupp (1.00)
-             Benny Tsai (1.00)
-             Johann Makram Salib Bestowrous (1.00)
-             Marshall Brekka (1.00)
-             Tim Gilbert (1.00)
-             John Wiseman (0.86)
-             Laszlo Török (0.60)
-             Herwig Hochleitner (0.54)
-             Stephen C. Gilardi (0.54)
-             Jan Rychter (0.50)
-             Tommi Reiman (0.38)
-    7.91  12 Triaged      [CLJ-1063] Missing dissoc-in
+    8.91  13 Triaged      [CLJ-1063] Missing dissoc-in
+             Dennis Schridde (1.00)
              Michael D Pendergrass (1.00)
              Timothy Pratley (1.00)
              Chris Perkins (1.00)
@@ -1310,6 +1303,18 @@ Feature
              Tommi Reiman (0.38)
              Daniel Compton (0.27)
              Nicola Mometto (0.10)
+    8.43  11 Triaged      [CLJ-1611] clojure.java.io/pushback-reader
+             David Rupp (1.00)
+             Benny Tsai (1.00)
+             Johann Makram Salib Bestowrous (1.00)
+             Marshall Brekka (1.00)
+             Tim Gilbert (1.00)
+             John Wiseman (0.86)
+             Laszlo Török (0.60)
+             Herwig Hochleitner (0.54)
+             Stephen C. Gilardi (0.54)
+             Jan Rychter (0.50)
+             Tommi Reiman (0.38)
     7.74  10 Prescreened  [CLJ-1771] Support for multiple key(s)-value pairs in assoc-in
              Björn Ebbinghaus (1.00)
              Matthew Gilliard (1.00)
@@ -1400,13 +1405,13 @@ Feature
              Marc Limotte (0.75)
              Reid McKenzie (0.31)
              Daniel Compton (0.27)
-    4.47   6 Triaged      [CLJ-2124] Catch multiple exceptions in a single catch block
+    4.44   6 Triaged      [CLJ-2124] Catch multiple exceptions in a single catch block
              Juraj Martinka (1.00)
              Aaron Iba (0.86)
              quan (0.86)
              Ivan Kryvoruchko (0.75)
              Justin Glenn Smith (0.50)
-             Marc O'Morain (0.50)
+             Marc O'Morain (0.46)
     4.08   7 Triaged      [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
              Brian Kim (1.00)
              Paul Bauer (1.00)
