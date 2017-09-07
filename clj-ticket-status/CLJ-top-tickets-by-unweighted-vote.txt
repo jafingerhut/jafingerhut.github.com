@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: August 31, 2017
+Date: September 7, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -42,28 +42,26 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 Defect
 
   24 Incomplete   [CLJ-700] contains? broken for transient collections
-   9 Prescreened  [CLJ-1398] Update URLs in javadoc.clj
    9 Incomplete   [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
    9 Backlog      [CLJ-1372] Inconsistent hash with java collections
    8 Open         [CLJ-1532] pr-str captures stdout from printing side-effects of lazily evaluated expressions.
    8 Needs Patch  [CLJ-2041] clojure.spec/keys requires input collections conform to clojure.core/map?
-   7 Prescreened  [CLJ-1074] Read/print round-trip for +/-Infinity and NaN
+   7 Ok           [CLJ-1074] Read/print round-trip for +/-Infinity and NaN
    7 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
    6 Needs Patch  [CLJ-1941] Instrumentation of fns with primitive type hints fails
    5 Open         [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
    5 Prescreened  [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
-   5 Screened     [CLJ-2077] Clojure can't be loaded from the boot classpath under java 9
-   4 Prescreened  [CLJ-2210] back referential expressions can cause exponential compilation times
+   5 Screenable   [CLJ-2077] Clojure can't be loaded from the boot classpath under java 9
    4 Needs Patch  [CLJ-2079] Generator overrides for spec aliases are not respected
    4 Triaged      [CLJ-1243] Cannot resolve public generic method from package-private base class
    4 Screenable   [CLJ-2003] Nesting cat inside ? causes unform to return nested result
    4 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
+   4 Backlog      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
    4 Vetted       [CLJ-1879] reduce-kv on a PHMs doesn't consistently execute the intended fastpath
    4 Incomplete   [CLJ-701] Primitive return type of loop and try is lost
-   4 Backlog      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
    4 Open         [CLJ-1445] pprint prints some metadata when *print-meta* bound to true, but not all
-   3 Open         [CLJ-2021] case where spec/conform -> spec/unform -> spec/conform gives invalid result
    3 Prescreened  [CLJ-2031] clojure.walk/postwalk does not preserve MapEntry type objects
+   3 Open         [CLJ-2021] case where spec/conform -> spec/unform -> spec/conform gives invalid result
    3 Triaged      [CLJ-1142] Incorrect divide-by-zero error with floating point numbers
    3 Triaged      [CLJ-1649] Hash/equality inconsistency for floats & doubles
    3 Triaged      [CLJ-1911] min-key and max-key should return NaN if any of the argument is NaN
@@ -74,10 +72,11 @@ Defect
    2 Triaged      [CLJ-1980] Unable to construct gen in indirectly recursive specs with s/every and derivations
    2 Triaged      [CLJ-2109] Protocol methods not instrumented
    2 Prescreened  [CLJ-1360] clojure.string/split strips trailing delimiters
+   2 Open         [CLJ-1966] :clojure.spec/invalid is not a valid :clojure.spec/any value
    2 Open         [CLJ-1953] clojure.set should check or throw on non-set inputs
    2 Open         [CLJ-1286] Fix reader spec and regex to match code for keywords starting with digits
-   2 Screened     [CLJ-2103] s/coll-of and s/every gen is very slow if :kind specified without :into
    2 Open         [CLJ-750] clojure.lang.MapEntry violates .equals and .hashCode contracts of HashMap.Entry; leads to non-reflexive .equals, etc.
+   2 Screened     [CLJ-2103] s/coll-of and s/every gen is very slow if :kind specified without :into
    2 Open         [CLJ-1079] Don't squash explicit :line and :column metadata in the MetaReader
    2 Prescreened  [CLJ-1647] infinite loop in 'partition' and 'partition-all' when 'step' or 'n' is not positive
    2 Triaged      [CLJ-1138] data-reader returning nil causes exception
@@ -92,31 +91,27 @@ Defect
    1 Triaged      [CLJ-1317] clojure.zip/seq-zip returns spurious nils during traversal
    1 Triaged      [CLJ-1433] proxy-super calls generally use reflection
    1 Prescreened  [CLJ-1587] PersistentArrayMap's assoc doesn't respect HASHTABLE_THRESHOLD
-   1 Open         [CLJ-1966] :clojure.spec/invalid is not a valid :clojure.spec/any value
    1 Triaged      [CLJ-1682] clojure.set/intersection occasionally allows non-set arguments.
    1 Triaged      [CLJ-1978] recursion-limit not respected
    1 Screened     [CLJ-2068] s/explain of evaluated predicate yields :s/unknown
    1 Triaged      [CLJ-2164] case fails when a single single clause with an empty test seq is used
+   1 Open         [CLJ-1198] Apply metadata to primitive fns causes them to lose their primitive-ness
    1 Open         [CLJ-1954] clojure.set/intersection mishandles vectors
    1 Triaged      [CLJ-2145] locals closed over by a ^:once fn aren't cleared if the fn is in a branch
-   1 Open         [CLJ-1198] Apply metadata to primitive fns causes them to lose their primitive-ness
-   1 Prescreened  [CLJ-1714] Some static initialisers still run at compile time if used in type hints
    1 Prescreened  [CLJ-1403] ns-resolve might throw ClassNotFoundException but should return nil
    1 Triaged      [CLJ-1254] Incorrect long quot result involving Long/MIN_VALUE
    1 Incomplete   [CLJ-2066] Reflection on internal classes fails under Java 9
-   1 Triaged      [CLJ-2181] try accepts multiple catch blocks for the same class
    1 Triaged      [CLJ-1898] Inconsistent duplicate check in set/map literals with quoted/unquoted equal constants
+   1 Triaged      [CLJ-2181] try accepts multiple catch blocks for the same class
    1 Open         [CLJ-2074] ::keys spec conflicts with destructuring spec
    1 Open         [CLJ-1308] extend-type doesn't type-hint correctly as promised by the doc when the class is determined at run-time
    1 Prescreened  [CLJ-1364] Primitive VecSeq does not implement equals or hashing methods
    1 Triaged      [CLJ-1770] atom watchers are not atomic with respect to reset!
    1 Open         [CLJ-1582] Overriding in-ns and ns is problematic 
    1 Prescreened  [CLJ-1832] unchecked-* functions have different behavior on primitive longs vs boxed Longs
-   1 Prescreened  [CLJ-2204] Clojure classes can be used to craft a serialized object that runs arbitrary code on deserialization
    1 Open         [CLJ-1017] Metadata expressions are evaluated after the expression they affect
    1 Open         [CLJ-1577] Some hints accept both symbols and class objects, others only symbols
    1 Open         [CLJ-1747] eduction's printer requires/promises that its source collection is Iterable
-   1 Prescreened  [CLJ-1841] core/bean iterator is broken
    1 Triaged      [CLJ-1864] clojure.core/proxy does not work when reloading namespaces
    1 Open         [CLJ-1874] Var redefinition breaks in AOT-compiled code
    1 Open         [CLJ-1921] Wrong numeric result from Math/abs on Java 8
@@ -127,15 +122,14 @@ Defect
    0 Backlog      [CLJ-348] reify allows use of qualified name as method parameter
    0 Triaged      [CLJ-941] NullPointerException possible with seq-zip
    0 Prescreened  [CLJ-1180] defprotocol doesn't resolve tag classnames
-   0 Prescreened  [CLJ-1358] doc macro does not expand special cases properly
-   0 Prescreened  [CLJ-1371] divide(Object, Object) with (NaN, 0) does not return NaN
+   0 Ok           [CLJ-1358] doc macro does not expand special cases properly
    0 Incomplete   [CLJ-1406] Libs are blindly added into loaded-libs even if an error occurs during loading
    0 Triaged      [CLJ-1475] :post condition causes compiler error with recur
    0 Triaged      [CLJ-1492] PersistentQueue objects are improperly eval'd and compiled
    0 Triaged      [CLJ-1579] source-fn can fail due to reading namespace-aliased keywords while in another namespace context
    0 Triaged      [CLJ-1662] folding over hash-map nested hash-map throws exception
    0 Triaged      [CLJ-1680] quot and rem handle doubles badly
-   0 Prescreened  [CLJ-1705] vector-of throws NullPointerException if given unrecognized type
+   0 Ok           [CLJ-1705] vector-of throws NullPointerException if given unrecognized type
    0 Triaged      [CLJ-1708] Volatile mutable in deftype is not settable when using try..finally and returning this
    0 Triaged      [CLJ-1733] print-dup form unreadable for sorted sets and maps
    0 Incomplete   [CLJ-1741] deftype class literals and instances loaded from different classloaders when recompiling namespace
@@ -148,7 +142,6 @@ Defect
    0 Triaged      [CLJ-1867] with-redefs used on a macro permanently changes it to a function
    0 Needs Patch  [CLJ-1872] empty? is broken for transient collections
    0 Triaged      [CLJ-1885] data/diff does not return a tuple when comparing different maps
-   0 Prescreened  [CLJ-1887] clojure.core.Vec does not fully implement clojure.lang.IPersistentVector
    0 Triaged      [CLJ-1949] Generator for fspec is not deterministic & ignores sizing
    0 Triaged      [CLJ-1960] Bug in clojure.core/mod with large Double argument
    0 Triaged      [CLJ-1968] clojure.test/report :error does not flush *out* when the test fails with an exception
@@ -158,8 +151,6 @@ Defect
    0 Triaged      [CLJ-2005] Type hint fails with direct linking disabled
    0 Screened     [CLJ-2026] Transient exceptions thrown in clojure.spec.test/check
    0 Needs Patch  [CLJ-2036] Generators for some? and any? only return collections or nil
-   0 Prescreened  [CLJ-2048] java.lang.ClassCastException: [Ljava.lang.Object; cannot be cast to [Ljava.lang.StackTraceElement
-   0 Prescreened  [CLJ-2051] Typo in clojure.instant/validated docstring
    0 Triaged      [CLJ-2065] reduce-kv fails on subvec
    0 Needs Patch  [CLJ-2067] (s/def ::a ::b) throws unable to resolve error if ::b is not defined
    0 Prescreened  [CLJ-2069] lazy seq that encounters an exception has differing behavior on repeated use
@@ -172,13 +163,11 @@ Defect
    0 Triaged      [CLJ-2126] Can set! to fields of a defrecord
    0 Needs Patch  [CLJ-2143] The result of s/form for s/keys* is different from the original form
    0 Triaged      [CLJ-2154] Spec macros keys and keys* silently ignores non-keywords given in the vectors for named arguments :req and :req-un
-   0 Prescreened  [CLJ-2156] Document char[] input support in clojure.java.io/copy
    0 Triaged      [CLJ-2158] multi-spec retag generator in conflict with user tag spec/gen
    0 Triaged      [CLJ-2160] LispReader allows no-ops macros to sneak in certain other forms (namespaced maps, tagged literals and anonymous arguments)
    0 Screened     [CLJ-2167] int-in-range? throws exception when val not an int
    0 Screenable   [CLJ-2168] clojure.spec: :pred in explain for coll-of should have resolved symbols
    0 Triaged      [CLJ-2169] conj has out-of-date :arglists
-   0 Prescreened  [CLJ-2170] Several top-level forms have improperly-located docstrings
    0 Screened     [CLJ-2171] Default explain printer prints root val and spec
    0 Triaged      [CLJ-2174] Spec generated exceptions/error messages are a regression in terms of the out-of-the-box experience with Clojure.
    0 Screened     [CLJ-2176] s/tuple explain-data :pred problems
@@ -200,7 +189,7 @@ Enhancement
   18 Triaged      [CLJ-1522] Enhance multimethods metadata
   16 Triaged      [CLJ-1527] Clarify and align valid symbol and keyword rules for Clojure (and edn)
   16 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
-  15 Incomplete   [CLJ-1544] AOT code cannot see on-the-fly compiled classes
+  15 Incomplete   [CLJ-1544] If you AOT protocol call sites, then you will also need to AOT the protocol itself
   15 Prescreened  [CLJ-1550] Classes generated by deftype and defrecord don't play nice with .getPackage
   14 Vetted       [CLJ-1005] Use transient map in zipmap
   13 Vetted       [CLJ-124] GC Issue 120: Determine mechanism for controlling automatic shutdown of Agents, with a default policy and mechanism for changing that policy as needed
@@ -216,15 +205,14 @@ Enhancement
    7 Triaged      [CLJ-1239] faster, more flexible dispatch for clojure.walk
    6 Triaged      [CLJ-735] Improve error message when a protocol method is not found
    6 Triaged      [CLJ-1209] clojure.test does not print ex-info in error reports
-   6 Prescreened  [CLJ-1117] partition docstring should be more explicit about dropped or partial trailing elements
+   6 Triaged      [CLJ-1117] partition docstring should be more explicit about dropped or partial trailing elements
    6 Needs Patch  [CLJ-1381] Improve support for extending protocols to primitive arrays
    5 Triaged      [CLJ-1743] Avoid compile-time static initialization of classes when using inheritance
    5 Open         [CLJ-1820] Move rename-keys from clojure.set to clojure.core
-   5 Prescreened  [CLJ-1859] Update parameter name to reflect docstring
+   5 Ok           [CLJ-1859] Update parameter name to reflect docstring
    5 Triaged      [CLJ-1656] Unroll assoc and assoc! for small numbers of arguments
    4 Screened     [CLJ-2166] instrument exception doesn't contain function name in ex-data
    4 Triaged      [CLJ-825] Protocol implementation inconsistencies when overloading arity
-   4 Prescreened  [CLJ-99] max-key and min-key evaluate k multiple times for arguments
    4 Triaged      [CLJ-1473] Badly formed pre/post conditions silently passed
    4 Open         [CLJ-1218] mapcat is too eager
    4 Triaged      [CLJ-1096] Make destructuring emit direct keyword lookups
@@ -236,16 +224,16 @@ Enhancement
    3 Triaged      [CLJ-888] defprotocol should throw error when signatures include variable number of parameters
    3 Triaged      [CLJ-1613] :or defaults should refer to enclosing scope in map destructuring
    2 Backlog      [CLJ-415] smarter assert (prints locals)
-   2 Screened     [CLJ-2046] generate random subsets of or'd required keys in map specs
    2 Triaged      [CLJ-1402] sort-by calls keyfn more times than is necessary
+   2 Screened     [CLJ-2046] generate random subsets of or'd required keys in map specs
    2 Open         [CLJ-1257] Suppress warnings when clojure.core symbols are explicitly replaced with "use" or "refer"
    2 Incomplete   [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
    2 Open         [CLJ-428] subseq, rsubseq enhancements to support priority maps?
    2 Open         [CLJ-1162] Error Message when calling deref on a non-IDeref is unhelpful
+   2 Triaged      [CLJ-790] Primitive type hints on function names should print error message
    2 Open         [CLJ-978] bean unable to handle non-public classes
    2 Backlog      [CLJ-731] Create macro to variadically unroll a combinator function definition
    2 Open         [CLJ-1625] Cannot implement protocol methods of the same name inline
-   2 Triaged      [CLJ-790] Primitive type hints on function names should print error message
    2 Triaged      [CLJ-2224] Support printing and reading of Java 8 java.time.Instant
    2 Triaged      [CLJ-1598] Make if forms compile directly to the appropriate branch expression if the test is a literal
    2 Prescreened  [CLJ-1730] Improve `refer` performance
@@ -256,7 +244,6 @@ Enhancement
    2 Open         [CLJ-1376] Initialize internal maps to more efficient version
    2 Open         [CLJ-792] Refactor method resolution code out of Compiler and into Reflector
    1 Triaged      [CLJ-1044] Enable refering to ->type inside deftype
-   1 Prescreened  [CLJ-1095] Allow map-indexed to accept multiple collections (a la map)
    1 Open         [CLJ-1146] Symbol name starting with digits to defn throws "Unmatched delimiter )"
    1 Open         [CLJ-1296] locking expressions cause vars to be dereferenced, even if not executed, unless wrapped in let
    1 Incomplete   [CLJ-1400] Error "Can't refer to qualified var that doesn't exist" should name the bad symbol
@@ -284,12 +271,11 @@ Enhancement
    1 Triaged      [CLJ-1607] docstring for clojure.core/counted? should be more specific
    1 Triaged      [CLJ-1762] Implement IKVReduce for java.util.map
    1 Triaged      [CLJ-1752] realized? return true for an instance that is not IPending
-   1 Prescreened  [CLJ-2188] clojure.core/slurp does not mark its return type as String
+   1 Ok           [CLJ-2028] Docstring error in clojure.core/filter, remove, and take-while
+   1 Ok           [CLJ-2188] clojure.core/slurp does not mark its return type as String
    1 Triaged      [CLJ-2196] Allow string keys for `s/key` specs
    1 Triaged      [CLJ-2214] Add binding conveyance to reducers.
    1 Open         [CLJ-889] Specifically allow '.' inside keywords
-   1 Prescreened  [CLJ-1917] internal-reduce extended on StringSeq calls `.length` on every iteration step
-   1 Prescreened  [CLJ-2028] Docstring error in clojure.core/filter, remove, and take-while
    1 Triaged      [CLJ-1289] aset-* and aget perform poorly on multi-dimensional arrays even with type hints. 
    1 Open         [CLJ-1326] Inconsistent reflection warnings when target is a literal
    1 Triaged      [CLJ-1950] cl-format is too slow for production use
@@ -316,9 +302,7 @@ Enhancement
    0 Triaged      [CLJ-704] range function has missing documentation
    0 Backlog      [CLJ-771] Move unchecked-prim casts to clojure.unchecked
    0 Backlog      [CLJ-1104] Concurrent with-redefs do not unwind properly, leaving a var permanently changed
-   0 Prescreened  [CLJ-1159] Improve docstring of clojure.java.io/delete-file to be clearer about intent of silently arg
    0 Triaged      [CLJ-1290] clojure.xml parse docstring omits InputSource
-   0 Prescreened  [CLJ-1314] Correct placement of doc string for function bubble-max-key
    0 Prescreened  [CLJ-1366] The empty map literal is read as a different map each time
    0 Triaged      [CLJ-1401] CompilerException / IllegalStateException when overriding vars
    0 Backlog      [CLJ-1420] ThreadLocalRandom instead of Math/random
@@ -344,31 +328,24 @@ Enhancement
    0 Triaged      [CLJ-1804] take transducer optimization
    0 Prescreened  [CLJ-1808] map-invert should use transients and reduce-kv instead of reduce
    0 Triaged      [CLJ-1811] test line reporting doesn't always report test's file & line number
-   0 Prescreened  [CLJ-1826] drop-last docstring refers to 'coll' but args refer to 's'
-   0 Prescreened  [CLJ-1837] Improve wording of index-of and last-index-of doc strings
-   0 Prescreened  [CLJ-1873] Docstrings for require and *data-readers* do not mention cljc files
+   0 Ok           [CLJ-1826] drop-last docstring refers to 'coll' but args refer to 's'
    0 Triaged      [CLJ-1875] Parameter names in docstring for `into` 
    0 Triaged      [CLJ-1880] IKVReduce impl for records
    0 Triaged      [CLJ-1881] Can :or destructuring refer to previous sequential bindings?
    0 Prescreened  [CLJ-1888] AReference#meta() is synchronized
    0 Prescreened  [CLJ-1891] New socket server startup proactively loads too much code, slowing boot time
    0 Prescreened  [CLJ-1895] Remove loading of clojure.string in clojure.java.io
-   0 Prescreened  [CLJ-1901] amap calls `alength` at every iteration step
    0 Triaged      [CLJ-1907] Document non-caching behaviour of `iterate` when used as generator
    0 Triaged      [CLJ-1915] Tests for clojure.core/atom
-   0 Prescreened  [CLJ-1918] Document await that it will never return if shutdown-agents was called
+   0 Ok           [CLJ-1918] Document await that it will never return if shutdown-agents was called
    0 Prescreened  [CLJ-1973] generate-proxy produces unpredictable method order in generated classes
    0 Triaged      [CLJ-1982] Better explain reporting on a failed zero or one match with an embedded spec. 
    0 Triaged      [CLJ-1995] Improved docstring for explain-data
-   0 Prescreened  [CLJ-2039] typo in deftype doc string
    0 Prescreened  [CLJ-2044] Four functions in clojure.instant have incomplete documentation
    0 Triaged      [CLJ-2049] Improve clojure.zip documentation
    0 Prescreened  [CLJ-2050] Remove redundant key comparisons in HashCollisionNode
-   0 Prescreened  [CLJ-2070] Faster clojure.core/delay implementation
    0 Triaged      [CLJ-2081] for macro spec should know :let can't go in the first position
    0 Triaged      [CLJ-2090] Improve clojure.core/distinct perf by using transient set
-   0 Prescreened  [CLJ-2104] Typo in pprint docstring
-   0 Screened     [CLJ-2108] Loading core specs affects startup time
    0 Triaged      [CLJ-2122] flatten docstring does not describe lazy result
    0 Triaged      [CLJ-2134] Update the docstring of `with-redefs` to reflect how little the macro should be used
    0 Triaged      [CLJ-2135] clojure.spec/Spec implementations that don't implement IObj get silently dropped in s/def
@@ -377,7 +354,7 @@ Enhancement
    0 Triaged      [CLJ-2173] LispReader.java and EdnReader.java exception messages could be much more informative.
    0 Screenable   [CLJ-2179] s/inst-in and s/int-in generators should have uniform distribution not biased towards min value
    0 Triaged      [CLJ-2180] Enhancing :path info for s/merge & s/and & s/& to indicate which subspec raised spec error
-   0 Prescreened  [CLJ-2184] propagate metadata in doto forms
+   0 Ok           [CLJ-2184] propagate metadata in doto forms
    0 Triaged      [CLJ-2185] Standardize the running context of all Java to Clojure entry points.
    0 Screenable   [CLJ-2190] clojure.spec.alpha/exercise-fn should emit a bettor error message when no implementation is found for a symbol
    0 Triaged      [CLJ-2193] Override function spec within check
@@ -396,9 +373,9 @@ Feature
   21 Triaged      [CLJ-304] clojure.repl/source does not work with deftype
   21 Prescreened  [CLJ-706] make use of deprecated namespaces/vars easier to spot
   17 Needs Patch  [CLJ-2123] Lighter-weight aliasing for keywords
+  17 Incomplete   [CLJ-2112] Add specs for spec forms
   17 Open         [CLJ-1078] Add queue and queue? to clojure.core
-  16 Needs Patch  [CLJ-1454] Add deref-swap! and deref-reset! (swap! and reset! that return prior value)
-  16 Incomplete   [CLJ-2112] Add specs for spec forms
+  16 Ok           [CLJ-1454] Add swap-vals! and reset-vals! (swap! and reset! that return [old new])
   14 Triaged      [CLJ-440] java method calls cannot omit varargs
   13 Triaged      [CLJ-1063] Missing dissoc-in
   12 Triaged      [CLJ-1293] Support (try .. (catch :default _ ..)) for portable "catch-all"
@@ -407,10 +384,10 @@ Feature
   10 Prescreened  [CLJ-1771] Support for multiple key(s)-value pairs in assoc-in
   10 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
   10 Open         [CLJ-1610] Unrolled small maps
+   9 Triaged      [CLJ-1959] adding functions `map-vals` and `map-keys`
    9 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
    8 Open         [CLJ-1467] Implement Comparable in PersistentList
    8 Triaged      [CLJ-1451] Add take-until
-   7 Triaged      [CLJ-1959] adding functions `map-vals` and `map-keys`
    7 Open         [CLJ-1201] There should also be writing in clojure.edn
    7 Triaged      [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
    6 Triaged      [CLJ-2124] Catch multiple exceptions in a single catch block
@@ -449,18 +426,19 @@ Feature
    1 Open         [CLJ-248] Add support for subsets and submaps to sorted Sets/Maps
    1 Open         [CLJ-994] repeat reducer
    1 Open         [CLJ-995] sorted-set doesn't support IEditableCollection
+   1 Prescreened  [CLJ-1095] Allow map-indexed to accept multiple collections (a la map)
    1 Open         [CLJ-1223] Improve App Engine Support by Providing an Option to Use the App Engine ThreadManger
    1 Open         [CLJ-1526] Add support for 0 arity comparisons in clojure.core/> etc
    1 Triaged      [CLJ-1624] Support get from arbitrary java.util.List data types
    1 Open         [CLJ-1806] group-by as reducer / reduction fn
    1 Triaged      [CLJ-1843] Add =to function exposing Util/equivPred 
+   1 Open         [CLJ-1989] `let` ported from `test.check/let` to `clojure.spec.gen`
    1 Triaged      [CLJ-2015] with-instrument
    1 Triaged      [CLJ-2129] Enhance CompilerException to optionally return the invalid form
    1 Triaged      [CLJ-1073] Make print-sequential interruptible
    1 Open         [CLJ-1266] Better primitive support for floats
    1 Open         [CLJ-1729] Make Counted and count() return long instead of integer
    1 Prescreened  [CLJ-1890] enhance pprint to print type for defrecord (as in pr)
-   1 Open         [CLJ-1989] `let` ported from `test.check/let` to `clojure.spec.gen`
    1 Triaged      [CLJ-970] extend/implement parameterized types (generics)
    1 Needs Patch  [CLJ-2165] #clojure/var tag for transmitting var identity
    1 Open         [CLJ-1010] A left-to-right-variant of `comp`
