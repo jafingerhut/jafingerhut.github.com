@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: September 7, 2017
+Date: September 9, 2017
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -73,7 +73,7 @@ Project ASYNC tickets
 ========================================
 Defect
 
-   4 Open         [ASYNC-144] pipeline-async docstring correction
+   5 Open         [ASYNC-144] pipeline-async docstring correction
    4 Open         [ASYNC-158] (CLJS) and with multiple <! does not short-circuit in go
    4 Triaged      [ASYNC-90] Pub/sub leaks memory
    3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
@@ -90,6 +90,7 @@ Defect
    1 Open         [ASYNC-128] (CLJS) or evaluation not stopped when exp nests take
    1 Triaged      [ASYNC-170] binding in go block causes thread binding error: "Pop without matching push"
    1 Open         [ASYNC-198] core.async exception rewriting can result in an incorrect return value
+   1 Open         [ASYNC-108] (CLJS) cljs to-chan hangs on infinite lazy sequences
    1 Open         [ASYNC-73] (CLJS) try-catch-finally broken inside go-blocks
    1 Vetted       [ASYNC-184] (CLJS) Port ASYNC-169 fixes to cljs
    0 Open         [ASYNC-39] Processes spawned by mix never terminate
@@ -99,7 +100,6 @@ Defect
    0 Open         [ASYNC-77] (CLJS) StackOverflowError in go macro with cemerick.cljs.test
    0 Open         [ASYNC-96] (CLJS) FixedBuffer's full checking in cljs
    0 Open         [ASYNC-97] (CLJS) alts! sporadically failing to unblock despite channel activity (Safari 7)
-   0 Open         [ASYNC-108] (CLJS) cljs to-chan hangs on infinite lazy sequences
    0 Open         [ASYNC-118] (CLJS) A let-binding named 'arguments' not bound in go block on nodejs 
    0 Open         [ASYNC-121] (CLJS) compilation warning when calling 'satisfies?' inside a go block
    0 Open         [ASYNC-129] Channels with transducer using reduced don't work as intended
@@ -135,10 +135,10 @@ Enhancement
    3 Triaged      [ASYNC-67] Can we get a generic sink operation?
    3 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
    2 Open         [ASYNC-114] Allow a second arity on channel ex-handler which takes val as well as throwable
-   1 Open         [ASYNC-46] Add optional default channel to 'pub'
    1 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
    1 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
    1 Open         [ASYNC-71] exception behavior for thread macro is hard coded
+   1 Open         [ASYNC-46] Add optional default channel to 'pub'
    0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
    0 Vetted       [ASYNC-69] How to better communicate "mix" lifecycle wrt coordination
    0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
@@ -513,6 +513,7 @@ Project DJSON tickets
 ========================================
 Defect
 
+   0 Open         [DJSON-20] data.json reads and writes invalid JSON
    0 Open         [DJSON-21] Improper parsing of literals
    0 Open         [DJSON-22] Improper parsing of numbers - leading zeroes should be disallowed
    0 Open         [DJSON-24] clojure.json.data should handle non breking whitespace
