@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: September 9, 2017
+Date: September 14, 2017
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -78,11 +78,11 @@ Defect
    4 Triaged      [ASYNC-90] Pub/sub leaks memory
    3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
    3 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
+   3 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
    3 Open         [ASYNC-42] (CLJS) (try (catch :default)) inside a cljs go block raises an exception
    2 Open         [ASYNC-91] (CLJS) 'and' does not short circuit within go block in clojurescript
    2 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
    2 Open         [ASYNC-79] (CLJS) go macro not correctly transforming (case) within a macro
-   2 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
    2 Open         [ASYNC-117] (CLJS) let-bindings unavailable in #js literals in go-blocks
    1 Open         [ASYNC-49] (CLJS) cljs IOC macro issue with double-dot form
    1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
@@ -90,6 +90,7 @@ Defect
    1 Open         [ASYNC-128] (CLJS) or evaluation not stopped when exp nests take
    1 Triaged      [ASYNC-170] binding in go block causes thread binding error: "Pop without matching push"
    1 Open         [ASYNC-198] core.async exception rewriting can result in an incorrect return value
+   1 Open         [ASYNC-203] "dynamic binding + parking" removes top values of dynamic bindings outside
    1 Open         [ASYNC-108] (CLJS) cljs to-chan hangs on infinite lazy sequences
    1 Open         [ASYNC-73] (CLJS) try-catch-finally broken inside go-blocks
    1 Vetted       [ASYNC-184] (CLJS) Port ASYNC-169 fixes to cljs
@@ -573,6 +574,11 @@ Enhancement
 
 
 Project INST tickets
+========================================
+Enhancement
+
+   0 Open         [INST-2] Add flag to use only project-level deps.edn
+
 
 Project JDATA tickets
 ========================================
@@ -884,11 +890,13 @@ Project TDEPS tickets
 Defect
 
    0 Open         [TDEPS-8] tools.deps does not handle maven relocations
+   0 Open         [TDEPS-11] :providers should not introduce nesting
 
 ========================================
 Enhancement
 
    0 Open         [TDEPS-4] Help option for runner script
+   0 Open         [TDEPS-9] Authentication on Maven repositories
 
 ========================================
 Feature

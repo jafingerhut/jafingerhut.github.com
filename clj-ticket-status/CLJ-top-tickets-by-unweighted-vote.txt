@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: September 9, 2017
+Date: September 14, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -48,7 +48,7 @@ Defect
    8 Needs Patch  [CLJ-2041] clojure.spec/keys requires input collections conform to clojure.core/map?
    7 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
    6 Needs Patch  [CLJ-1941] Instrumentation of fns with primitive type hints fails
-   6 Screened     [CLJ-2077] Clojure can't be loaded from the boot classpath under java 9
+   6 Ok           [CLJ-2077] Clojure can't be loaded from the boot classpath under java 9
    5 Open         [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
    5 Prescreened  [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
    4 Needs Patch  [CLJ-2079] Generator overrides for spec aliases are not respected
@@ -91,6 +91,7 @@ Defect
    1 Triaged      [CLJ-1317] clojure.zip/seq-zip returns spurious nils during traversal
    1 Triaged      [CLJ-1433] proxy-super calls generally use reflection
    1 Prescreened  [CLJ-1587] PersistentArrayMap's assoc doesn't respect HASHTABLE_THRESHOLD
+   1 Prescreened  [CLJ-2069] lazy seq that encounters an exception has differing behavior on repeated use
    1 Open         [CLJ-1198] Apply metadata to primitive fns causes them to lose their primitive-ness
    1 Triaged      [CLJ-1682] clojure.set/intersection occasionally allows non-set arguments.
    1 Triaged      [CLJ-1978] recursion-limit not respected
@@ -150,7 +151,6 @@ Defect
    0 Needs Patch  [CLJ-2036] Generators for some? and any? only return collections or nil
    0 Triaged      [CLJ-2065] reduce-kv fails on subvec
    0 Needs Patch  [CLJ-2067] (s/def ::a ::b) throws unable to resolve error if ::b is not defined
-   0 Prescreened  [CLJ-2069] lazy seq that encounters an exception has differing behavior on repeated use
    0 Screened     [CLJ-2080] clojure.spec/every-kv does not work on vectors - improve docs/errors
    0 Screened     [CLJ-2089] Sorted colls with default comparator don't check that first element is Comparable
    0 Triaged      [CLJ-2092] deftype instances with mutable fields cannot be compiled 
@@ -177,6 +177,7 @@ Defect
    0 Screenable   [CLJ-2202] coll-of :min-count and :gen-max used together cause collections that are too large to be generated
    0 Triaged      [CLJ-2215] Extend-protocol for array of Object does not work on array of subtypes of Object.
    0 Screenable   [CLJ-2231] Remove dep lib exclusions
+   0 Triaged      [CLJ-2234] MultiFn.prefers() ignores the multimethod's internal hierarchy
 
 ========================================
 Enhancement
@@ -213,7 +214,6 @@ Enhancement
    4 Triaged      [CLJ-1096] Make destructuring emit direct keyword lookups
    3 Open         [CLJ-1734] Display more descriptive error message when trying to use reader conditionals in a non-cljc file
    3 Open         [CLJ-1852] Clojure-generated class names length exceed file-system limit
-   3 Open         [CLJ-1332] Exceptions are not cached in lazy seqs
    3 Backlog      [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
    3 Incomplete   [CLJ-2102] Reduce collection generator default size from 20
    3 Triaged      [CLJ-888] defprotocol should throw error when signatures include variable number of parameters
@@ -224,9 +224,9 @@ Enhancement
    2 Open         [CLJ-1257] Suppress warnings when clojure.core symbols are explicitly replaced with "use" or "refer"
    2 Incomplete   [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
    2 Open         [CLJ-1162] Error Message when calling deref on a non-IDeref is unhelpful
-   2 Open         [CLJ-428] subseq, rsubseq enhancements to support priority maps?
    2 Open         [CLJ-978] bean unable to handle non-public classes
    2 Triaged      [CLJ-2224] Support printing and reading of Java 8 java.time.Instant
+   2 Open         [CLJ-428] subseq, rsubseq enhancements to support priority maps?
    2 Triaged      [CLJ-790] Primitive type hints on function names should print error message
    2 Backlog      [CLJ-731] Create macro to variadically unroll a combinator function definition
    2 Open         [CLJ-1625] Cannot implement protocol methods of the same name inline
@@ -352,6 +352,7 @@ Enhancement
    0 Triaged      [CLJ-2211] docstring of defn is not precise about the `attr-map?` and `body` arguments
    0 Triaged      [CLJ-2212] docstring for `defmethod` is imprecise 
    0 Triaged      [CLJ-2213] Allow multiple bindings for if-let, when-let, if-some, and when-some
+   0 Triaged      [CLJ-2225] clojure.core/assert docstring is incorrect
    0 Triaged      [CLJ-2228] Improve performance of constantly
 
 ========================================
@@ -430,6 +431,7 @@ Feature
    1 Prescreened  [CLJ-1890] enhance pprint to print type for defrecord (as in pr)
    1 Needs Patch  [CLJ-2165] #clojure/var tag for transmitting var identity
    1 Open         [CLJ-1010] A left-to-right-variant of `comp`
+   1 Triaged      [CLJ-2235] Add named loop + recur-to facility for nested loops
    1 Open         [CLJ-1758] xf overload for vec and set
    1 Open         [CLJ-993] `range` reducer
    1 Open         [CLJ-1112] Var *loading-verbosely* should initialize from a JVM system property
