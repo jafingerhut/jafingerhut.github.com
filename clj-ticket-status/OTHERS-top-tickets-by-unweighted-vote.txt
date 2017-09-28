@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: September 21, 2017
+Date: September 28, 2017
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -121,13 +121,15 @@ Defect
    0 Open         [ASYNC-200] (CLJS) A "finally" in a "try" in a "go" block is skipped in f a string is thrown.
    0 Vetted       [ASYNC-201] (CLJS) Out-of-bounds index values passed in timers
    0 Open         [ASYNC-202] Channel returned by to-chan not immediately ready for taking?
+   0 Open         [ASYNC-204] Writing on a closed channel doesn't commit the handler
+   0 Open         [ASYNC-205] Pausing in mix is note effective
 
 ========================================
 Enhancement
 
   17 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
+  10 Open         [ASYNC-119] (CLJS) ClojureScript: combine cljs.core.async.macros and cljs.core.async
    8 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
-   8 Open         [ASYNC-119] (CLJS) ClojureScript: combine cljs.core.async.macros and cljs.core.async
    5 Triaged      [ASYNC-126] Add public channel "closed?" predicate
    5 Open         [ASYNC-137] (CLJS) Make (<! (timeout 0)) be closer to 0
    4 Open         [ASYNC-142] (CLJS) Rename ClojureScript namespace from cljs.core.async to clojure.core.async
@@ -500,6 +502,7 @@ Defect
    0 Open         [DIMAP-9] Unlike regular transient sets, data.int-map transient sets do not support the IFn interface
    0 Open         [DIMAP-13] Cannot merge int-sets of different density.
    0 Open         [DIMAP-14] support element lookup on transient sets
+   0 Open         [DIMAP-15] PersistentIntMap equals/equiv gives wrong result 
 
 ========================================
 Enhancement
@@ -574,9 +577,19 @@ Enhancement
 
 Project INST tickets
 ========================================
+Defect
+
+   0 Open         [INST-5] Confusing feedback for syntax error in deps.edn.
+
+========================================
 Enhancement
 
-   0 Open         [INST-2] Add flag to use only project-level deps.edn
+   0 Open         [INST-4] Help option for runner script
+
+========================================
+Feature
+
+   0 Open         [INST-3] Add an option to generate pom.xml from deps.edn
 
 
 Project JDATA tickets
@@ -791,6 +804,7 @@ Enhancement
    0 Open         [NREPL-43] Document the availability/usage of *e, *1, *2, ... in nREPL
    0 Open         [NREPL-44] Expose JMX MBean to provide list of available nREPL endpoints
    0 Open         [NREPL-85] Add initial authentication support and simple default
+   0 Open         [NREPL-86] Update current version number in README
 
 ========================================
 Task
@@ -894,18 +908,11 @@ Project TDEPS tickets
 Defect
 
    0 Open         [TDEPS-8] tools.deps does not handle maven relocations
-   0 Open         [TDEPS-11] :providers should not introduce nesting
 
 ========================================
 Enhancement
 
-   0 Open         [TDEPS-4] Help option for runner script
    0 Open         [TDEPS-9] Authentication on Maven repositories
-
-========================================
-Feature
-
-   0 Open         [TDEPS-7] Add an option to generate pom.xml from deps.edn
 
 
 Project TEMJVM tickets
