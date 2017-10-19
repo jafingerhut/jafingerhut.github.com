@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: October 12, 2017
+Date: October 19, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -41,15 +41,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
+   9 Needs Patch  [CLJ-2041] clojure.spec/keys requires input collections conform to clojure.core/map?
    9 Incomplete   [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
    9 Backlog      [CLJ-1372] Inconsistent hash with java collections
    8 Open         [CLJ-1532] pr-str captures stdout from printing side-effects of lazily evaluated expressions.
-   8 Needs Patch  [CLJ-2041] clojure.spec/keys requires input collections conform to clojure.core/map?
    7 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
    6 Needs Patch  [CLJ-1941] Instrumentation of fns with primitive type hints fails
    5 Open         [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
    5 Prescreened  [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
    4 Needs Patch  [CLJ-2079] Generator overrides for spec aliases are not respected
+   4 Triaged      [CLJ-1852] Clojure-generated class names length exceed file-system limit
    4 Triaged      [CLJ-1243] Cannot resolve public generic method from package-private base class
    4 Screenable   [CLJ-2003] Nesting cat inside ? causes unform to return nested result
    4 Incomplete   [CLJ-701] Primitive return type of loop and try is lost
@@ -212,7 +213,6 @@ Enhancement
    4 Open         [CLJ-1218] mapcat is too eager
    4 Triaged      [CLJ-1096] Make destructuring emit direct keyword lookups
    3 Open         [CLJ-1734] Display more descriptive error message when trying to use reader conditionals in a non-cljc file
-   3 Open         [CLJ-1852] Clojure-generated class names length exceed file-system limit
    3 Open         [CLJ-1257] Suppress warnings when clojure.core symbols are explicitly replaced with "use" or "refer"
    3 Backlog      [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
    3 Triaged      [CLJ-2224] Support printing and reading of Java 8 java.time.Instant
@@ -357,6 +357,7 @@ Enhancement
    0 Prescreened  [CLJ-2228] Unroll constantly to improve performance of multi-arity calls
    0 Triaged      [CLJ-2240] Load user.cljc in classpath root.
    0 Prescreened  [CLJ-2249] Document behavior of clojure.core/get on strings and Java arrays
+   0 Triaged      [CLJ-2252] Add javadoc URL for java 9 to clojure.java.javadoc
 
 ========================================
 Feature
@@ -424,6 +425,7 @@ Feature
    1 Triaged      [CLJ-1624] Support get from arbitrary java.util.List data types
    1 Open         [CLJ-1806] group-by as reducer / reduction fn
    1 Triaged      [CLJ-1843] Add =to function exposing Util/equivPred 
+   1 Open         [CLJ-1925] Add uuid and random-uuid functions
    1 Open         [CLJ-1989] `let` ported from `test.check/let` to `clojure.spec.gen`
    1 Triaged      [CLJ-2015] with-instrument
    1 Triaged      [CLJ-2129] Enhance CompilerException to optionally return the invalid form
