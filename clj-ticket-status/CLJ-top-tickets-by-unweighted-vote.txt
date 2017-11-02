@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: October 26, 2017
+Date: November 2, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -53,11 +53,13 @@ Defect
    4 Triaged      [CLJ-1852] Clojure-generated class names length exceed file-system limit
    4 Triaged      [CLJ-1243] Cannot resolve public generic method from package-private base class
    4 Screenable   [CLJ-2003] Nesting cat inside ? causes unform to return nested result
+   4 Needs Patch  [CLJ-2152] clojure.spec: s/& has a broken form
    4 Incomplete   [CLJ-701] Primitive return type of loop and try is lost
    4 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
    4 Backlog      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
    4 Vetted       [CLJ-1879] reduce-kv on a PHMs doesn't consistently execute the intended fastpath
    4 Open         [CLJ-1445] pprint prints some metadata when *print-meta* bound to true, but not all
+   4 Triaged      [CLJ-1279] Fix confusing macroexpand1 ArityException handling
    3 Triaged      [CLJ-1975] clojure.spec attempts to make `empty` records
    3 Triaged      [CLJ-1980] Unable to construct gen in indirectly recursive specs with s/every and derivations
    3 Open         [CLJ-1966] :clojure.spec/invalid is not a valid :clojure.spec/any value
@@ -67,14 +69,13 @@ Defect
    3 Incomplete   [CLJ-2066] Reflection on internal classes fails under Java 9
    3 Triaged      [CLJ-1649] Hash/equality inconsistency for floats & doubles
    3 Triaged      [CLJ-1911] min-key and max-key should return NaN if any of the argument is NaN
-   3 Needs Patch  [CLJ-2152] clojure.spec: s/& has a broken form
    3 Incomplete   [CLJ-1620] Constants are leaked in case of a reentrant eval
-   3 Triaged      [CLJ-1279] Fix confusing macroexpand1 ArityException handling
    2 Triaged      [CLJ-2109] Protocol methods not instrumented
    2 Prescreened  [CLJ-1360] clojure.string/split strips trailing delimiters
    2 Open         [CLJ-750] clojure.lang.MapEntry violates .equals and .hashCode contracts of HashMap.Entry; leads to non-reflexive .equals, etc.
    2 Open         [CLJ-1953] clojure.set should check or throw on non-set inputs
    2 Open         [CLJ-1286] Fix reader spec and regex to match code for keywords starting with digits
+   2 Screened     [CLJ-2068] s/explain of evaluated predicate yields :s/unknown
    2 Open         [CLJ-1079] Don't squash explicit :line and :column metadata in the MetaReader
    2 Prescreened  [CLJ-1647] infinite loop in 'partition' and 'partition-all' when 'step' or 'n' is not positive
    2 Triaged      [CLJ-1138] data-reader returning nil causes exception
@@ -93,13 +94,15 @@ Defect
    1 Open         [CLJ-1198] Apply metadata to primitive fns causes them to lose their primitive-ness
    1 Triaged      [CLJ-1682] clojure.set/intersection occasionally allows non-set arguments.
    1 Triaged      [CLJ-1978] recursion-limit not respected
-   1 Screened     [CLJ-2068] s/explain of evaluated predicate yields :s/unknown
    1 Triaged      [CLJ-2164] case fails when a single single clause with an empty test seq is used
    1 Open         [CLJ-1954] clojure.set/intersection mishandles vectors
    1 Triaged      [CLJ-2145] locals closed over by a ^:once fn aren't cleared if the fn is in a branch
    1 Prescreened  [CLJ-1403] ns-resolve might throw ClassNotFoundException but should return nil
    1 Triaged      [CLJ-1254] Incorrect long quot result involving Long/MIN_VALUE
    1 Triaged      [CLJ-1898] Inconsistent duplicate check in set/map literals with quoted/unquoted equal constants
+   1 Needs Patch  [CLJ-2143] The result of s/form for s/keys* is different from the original form
+   1 Screenable   [CLJ-2168] clojure.spec: :pred in explain for coll-of should have resolved symbols
+   1 Screened     [CLJ-2178] s/& explain-data :pred problem
    1 Triaged      [CLJ-2181] try accepts multiple catch blocks for the same class
    1 Triaged      [CLJ-1770] atom watchers are not atomic with respect to reset!
    1 Open         [CLJ-2074] ::keys spec conflicts with destructuring spec
@@ -152,21 +155,17 @@ Defect
    0 Screened     [CLJ-2080] clojure.spec/every-kv does not work on vectors - improve docs/errors
    0 Screened     [CLJ-2089] Sorted colls with default comparator don't check that first element is Comparable
    0 Triaged      [CLJ-2092] deftype instances with mutable fields cannot be compiled 
-   0 Needs Patch  [CLJ-2098] autodoc fails to load clojure/spec.clj
    0 Vetted       [CLJ-2105] incorrect spec conform when an optional (?) is inside of a one or more (+) 
    0 Screenable   [CLJ-2111] Clarify s/every docstring for :kind
    0 Triaged      [CLJ-2126] Can set! to fields of a defrecord
-   0 Needs Patch  [CLJ-2143] The result of s/form for s/keys* is different from the original form
    0 Triaged      [CLJ-2154] Spec macros keys and keys* silently ignores non-keywords given in the vectors for named arguments :req and :req-un
    0 Triaged      [CLJ-2158] multi-spec retag generator in conflict with user tag spec/gen
    0 Triaged      [CLJ-2160] LispReader allows no-ops macros to sneak in certain other forms (namespaced maps, tagged literals and anonymous arguments)
    0 Screened     [CLJ-2167] int-in-range? throws exception when val not an int
-   0 Screenable   [CLJ-2168] clojure.spec: :pred in explain for coll-of should have resolved symbols
    0 Triaged      [CLJ-2169] conj has out-of-date :arglists
    0 Triaged      [CLJ-2174] Spec generated exceptions/error messages are a regression in terms of the out-of-the-box experience with Clojure.
    0 Screened     [CLJ-2176] s/tuple explain-data :pred problems
    0 Screened     [CLJ-2177] s/keys explain-data :pred problem
-   0 Screened     [CLJ-2178] s/& explain-data :pred problem
    0 Screened     [CLJ-2182] s/& does not check preds if regex matches empty collection
    0 Screened     [CLJ-2183] `cat` specs should verify value is sequential
    0 Screened     [CLJ-2186] ::s/map-bindings definition is underspecified
@@ -179,6 +178,8 @@ Defect
    0 Triaged      [CLJ-2244] double division by zero inconsistency
    0 Triaged      [CLJ-2246] spec.test/check returns the wrong value of :failure for failing tests
    0 Triaged      [CLJ-2255] When fspec spec fails due to return value, explain-data should contain args
+   0 Prescreened  [CLJ-2257] Documentation typo
+   0 Triaged      [CLJ-2258] When fspec fails, meaning of ":val" is different than in normal spec failure
 
 ========================================
 Enhancement
@@ -224,6 +225,7 @@ Enhancement
    2 Triaged      [CLJ-1402] sort-by calls keyfn more times than is necessary
    2 Screened     [CLJ-2046] generate random subsets of or'd required keys in map specs
    2 Triaged      [CLJ-2054] generator for `any?` occasionally generates `Double/NaN` for which equality semantics don't apply, and that is a problem for the :ret spec of many functions.
+   2 Screened     [CLJ-2060] Add support for undefining a spec
    2 Incomplete   [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
    2 Open         [CLJ-1162] Error Message when calling deref on a non-IDeref is unhelpful
    2 Open         [CLJ-428] subseq, rsubseq enhancements to support priority maps?
@@ -253,7 +255,6 @@ Enhancement
    1 Open         [CLJ-1585] Report boxed math warning on function that boxes primitive return value
    1 Open         [CLJ-1721] Enable test case for char?
    1 Prescreened  [CLJ-1986] Suppress printing namespace map literal syntax when only one namespaced key
-   1 Screened     [CLJ-2060] Add support for undefining a spec
    1 Open         [CLJ-1342] Byte comparison boxes both bytes and converts to longs to compare (which is slow)
    1 Open         [CLJ-1789] Use transients with select-keys if possible
    1 Prescreened  [CLJ-1797] Mention cljc when require fails
