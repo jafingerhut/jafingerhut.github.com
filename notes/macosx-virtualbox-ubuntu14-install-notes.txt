@@ -4,6 +4,11 @@ On Mac OS X 10.11.6 system
 Installed VirtualBox 5.1.18 r114002
 On that, created new Ubuntu 14.04.1 64-bit VM
 
+Also an update from 2017-Nov-07
+On macOS Sierra 10.12.6 system
+Running VirtualBox 5.1.30 r118389
+Created Ubuntu 16.04.3 64-bit desktop VM
+
 Removed several icons from Launcher that I didn't want
 (e.g. LibreOffice), by right-clicking on them and choosing the popup
 menu item to unlock them from the launcher.
@@ -22,14 +27,54 @@ select "Lock to Launcher" so it will always be there.
     export github_user=jafingerhut
     bash -c "$(curl -fsSL https://raw.github.com/$github_user/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
 
-    # Save some disk space by removing large programs I won't use.
+    # Save some disk space by removing large programs I won't use (optional)
     sudo apt-get purge thunderbird libreoffice-*
     # Useful packages I like to have, not installed by default.
     sudo apt-get install python-pip python3-pip
+
+
+The older approach I used for Ubuntu 14.04 is described later below,
+involving installing virtualbox-guest-dkms and virtualbox-guest-x11
+packages.  Search for "Approach installing virtualbox-guest-*
+packages"
+
+----------------------------------------------------------------------
+Approach installing Guest Additions via VirtualBox CD image
+----------------------------------------------------------------------
+
+[Thanks to Sean Adams for these working instructions.]
+
+Start VirtualBox and boot the Ubuntu VM without a CD/DVD in the
+"drive".  Log in to the desktop (assuming you're using the desktop
+edition).  Now on the Mac go to the Devices menu of VirtualBox.  The
+last item will be "Install Guest Additions CD image...".  Select it.
+In the VM, a CD will appear in the dock and a dialog should pop up
+asking if you want to allow the software on the CD to autorun.  Let it
+run.  A second dialog will ask you to authenticate (sudo) to install
+the software.  Once it is done, shutdown and reboot the VM.  When the
+VM comes back up and the bidirectional clipboard is enabled, copy and
+paste should work as expected.
+
+The Guest additions change with every version of VirtualBox.  Be
+prepared to re-install them whenever you upgrade VirtualBox.
+
+Even minor updates trigger a message in the VM suggesting to update.
+I'm not sure it is required, but I do it anyway.
+
+Following the instructions above re-installs the guest additions even
+if they have already been installed in the VM.
+
+----------------------------------------------------------------------
+Approach installing virtualbox-guest-* packages
+----------------------------------------------------------------------
+
+I was able to get host/guest copy and paste working using this
+approach for Ubuntu 14.04.1 guest OS.  See above for steps for an
+Ubuntu 16.04 guest OS.
+
     # This might be necessary to get copy/paste to work between guest
     # and host OS
     sudo apt-get install virtualbox-guest-dkms
-
 
 Reboot system for newly installed kernel modules (installed by
 virtualbox-guest-dkms package) to take effect.  Larger display size
@@ -62,6 +107,9 @@ Shut down guest Ubuntu OS.
 Set up shared folders on Ubuntu guest that can be read and written
 from guest OS
 ----------------------------------------------------------------------
+
+I was able to get shared folders working for both Ubuntu 14.04 and
+Ubuntu 16.04 guest OS's using these instructions.
 
 I believe I had trouble with shared folder settings disappearing if I
 tried creating them while the guest OS was running.  Shutting down the
@@ -107,6 +155,13 @@ your home directory, e.g.:
 ----------------------------------------------------------------------
 Sample sshfs commands
 ----------------------------------------------------------------------
+
+If all you want is to share a directory between host and guest OS, I
+would recommend the previous section to set that up.  Trying to use
+sshfs for this with a host that is a laptop with a changing IP address
+(e.g. by connecting to a different Wi-Fi access point) causes the
+sshfs connection to break and require re-creating, which I find
+annoying.
 
 sshfs is nice in that you do not need to have root privileges on any
 machines to use it -- only the ability to ssh from the machine
