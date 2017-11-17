@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: November 9, 2017
+Date: November 17, 2017
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -77,12 +77,12 @@ Defect
    4 Open         [ASYNC-158] (CLJS) and with multiple <! does not short-circuit in go
    4 Triaged      [ASYNC-90] Pub/sub leaks memory
    3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
-   3 Open         [ASYNC-203] "dynamic binding + parking" removes top values of dynamic bindings outside
    3 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
    3 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
    3 Open         [ASYNC-42] (CLJS) (try (catch :default)) inside a cljs go block raises an exception
    2 Open         [ASYNC-91] (CLJS) 'and' does not short circuit within go block in clojurescript
    2 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
+   2 Open         [ASYNC-203] "dynamic binding + parking" removes top values of dynamic bindings outside
    2 Open         [ASYNC-79] (CLJS) go macro not correctly transforming (case) within a macro
    2 Open         [ASYNC-117] (CLJS) let-bindings unavailable in #js literals in go-blocks
    1 Open         [ASYNC-49] (CLJS) cljs IOC macro issue with double-dot form
@@ -123,16 +123,18 @@ Defect
    0 Open         [ASYNC-202] Channel returned by to-chan not immediately ready for taking?
    0 Open         [ASYNC-204] Writing on a closed channel doesn't commit the handler
    0 Open         [ASYNC-205] Pausing in mix is note effective
+   0 Open         [ASYNC-207] Loop in go breaks type hints
+   0 Open         [ASYNC-208] alts!! completes more than one operation when reading and writing to the same channel.
 
 ========================================
 Enhancement
 
   17 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
-  11 Open         [ASYNC-119] (CLJS) ClojureScript: combine cljs.core.async.macros and cljs.core.async
+  12 Open         [ASYNC-119] (CLJS) ClojureScript: combine cljs.core.async.macros and cljs.core.async
    8 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
+   5 Open         [ASYNC-142] (CLJS) Rename ClojureScript namespace from cljs.core.async to clojure.core.async
    5 Triaged      [ASYNC-126] Add public channel "closed?" predicate
    5 Open         [ASYNC-137] (CLJS) Make (<! (timeout 0)) be closer to 0
-   4 Open         [ASYNC-142] (CLJS) Rename ClojureScript namespace from cljs.core.async to clojure.core.async
    3 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
    3 Open         [ASYNC-107] Improved docstring for alt!
    3 Triaged      [ASYNC-67] Can we get a generic sink operation?
@@ -248,6 +250,7 @@ Defect
    0 Open         [CLJCLR-89] Socket REPL breaks
    0 Open         [CLJCLR-90] Socket Repl Crashes the app when provided with "\'asdf" string including quotes
    0 Open         [CLJCLR-91] Socket Repl remote connections from places other than localhost
+   0 Open         [CLJCLR-95] *data-readers* reset on clojure.core require
 
 ========================================
 Enhancement
@@ -445,6 +448,7 @@ Defect
    0 Open         [DCSV-6] read-csv can not handle white-space at end of line
    0 Open         [DCSV-8] Allow read-csv to read files without quoting.
    0 Open         [DCSV-14] Double quote at beginning of cell throws exception
+   0 Open         [DCSV-17] Adding namespace qualifiers in documentation
 
 ========================================
 Enhancement
@@ -753,6 +757,11 @@ Task
 
 Project MCOMB tickets
 ========================================
+Defect
+
+   0 Open         [MCOMB-9] WARNING: clojure.math.combinatorics/lex-permutations is deprecated. at line 278 resources\test\out\clojure\math\combinatorics.cljc
+
+========================================
 Enhancement
 
    0 Open         [MCOMB-6] Support ClojureScript by converting from CLJ to CLJC
@@ -839,7 +848,6 @@ Project TCHECK tickets
 ========================================
 Defect
 
-   1 Open         [TCHECK-34] clojure.test reporting is uninformative
    1 Open         [TCHECK-124] defspec does not set property :name properly
    0 Open         [TCHECK-26] defspec does not respect (is (thrown? ...))
    0 Open         [TCHECK-57] Performance regression in map generator between 0.5.8 and 0.5.9
@@ -902,13 +910,13 @@ Defect
    0 Open         [TDEPS-8] tools.deps does not handle maven relocations
    0 Open         [TDEPS-12] Depending on same artifact, multiple different classifiers
    0 Open         [TDEPS-13] Support for excluding dependencies
-   0 Open         [TDEPS-16] -Spom fails when classpath is cached
 
 ========================================
 Enhancement
 
    2 Open         [TDEPS-9] Authentication on Maven repositories
    2 Open         [TDEPS-15] consider combining -R and -C option for aliases
+   1 Open         [TDEPS-17] Consider lib overrides
 
 
 Project TEMJVM tickets
