@@ -1,4 +1,4 @@
-= Notes on installing Ubuntu guest VMs in VirtualBox on a macOS host
+# Notes on installing Ubuntu guest VMs in VirtualBox on a macOS host
 
 2017-Apr-07: On Mac OS X 10.11.6 system,
 installed VirtualBox 5.1.18 r114002,
@@ -37,7 +37,7 @@ select "Lock to Launcher" so it will always be there.
 ```
 
 
-= Getting copy/paste working between host and guest OS
+# Getting copy/paste working between host and guest OS
 
 The older approach I used for Ubuntu 14.04 is described later below,
 involving installing virtualbox-guest-dkms and virtualbox-guest-x11
@@ -45,7 +45,7 @@ packages.  Search for "Approach installing virtualbox-guest-*
 packages"
 
 
-== Approach installing Guest Additions via VirtualBox CD image
+## Approach installing Guest Additions via VirtualBox CD image
 
 [Thanks to Sean Adams for these working instructions.]
 
@@ -70,7 +70,7 @@ Following the instructions above re-installs the guest additions even
 if they have already been installed in the VM.
 
 
-== Approach installing virtualbox-guest-* packages
+## Approach installing virtualbox-guest-* packages
 
 I was able to get host/guest copy and paste working using this
 approach for Ubuntu 14.04.1 guest OS.  See above for steps for an
@@ -107,7 +107,7 @@ and some of them like ubuntu-desktop look like things I want to keep.
 Shut down guest Ubuntu OS.
 
 
-= Solving screen flicker issue with Ubuntu 17.10 guest VM in VirtualBox
+# Solving screen flicker issue with Ubuntu 17.10 guest VM in VirtualBox
 
 Found this solution here: https://forums.virtualbox.org/viewtopic.php?f=8&t=85110
 
@@ -120,7 +120,7 @@ This is the comment that I found helped:
 
 
 
-= Set up shared folders between Ubuntu guest OS and host macOS
+# Set up shared folders between Ubuntu guest OS and host macOS
 
 I was able to get shared folders working for both Ubuntu 14.04 and
 Ubuntu 16.04 guest OS's using these instructions.
@@ -177,7 +177,7 @@ your home directory, e.g.:
 ```
 
 
-= Shrinking a guest OS disk image
+# Shrinking a guest OS disk image
 
 A StackOverflow Q&A on compacting/shrinking a guest OS VDI file
 system:
@@ -185,7 +185,7 @@ system:
     https://superuser.com/questions/529149/how-to-compact-virtualboxs-vdi-file-size
 
 
-= Sample sshfs commands
+# Sample sshfs commands
 
 If all you want is to share a directory between host and guest OS, I
 would recommend the previous section to set that up.  Trying to use
