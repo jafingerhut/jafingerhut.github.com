@@ -1,13 +1,13 @@
-2017-Apr-07
+= Notes on installing Ubuntu guest VMs in VirtualBox on a macOS host
 
-On Mac OS X 10.11.6 system
-Installed VirtualBox 5.1.18 r114002
-On that, created new Ubuntu 14.04.1 64-bit VM
+2017-Apr-07: On Mac OS X 10.11.6 system,
+installed VirtualBox 5.1.18 r114002,
+and created new Ubuntu 14.04.1 64-bit VM
 
-Also an update from 2017-Nov-07
-On macOS Sierra 10.12.6 system
-Running VirtualBox 5.1.30 r118389
-Created Ubuntu 16.04.3 64-bit desktop VM
+Also an update from 2017-Nov-07:
+On macOS Sierra 10.12.6 system,
+installed VirtualBox 5.1.30 r118389,
+and created Ubuntu 16.04.3 64-bit desktop VM
 
 Removed several icons from Launcher that I didn't want
 (e.g. LibreOffice), by right-clicking on them and choosing the popup
@@ -18,29 +18,34 @@ Enter "terminal" to search for that program.  Click "Terminal" icon to
 start that program.  Right-click on Terminal icon in Launcher and
 select "Lock to Launcher" so it will always be there.
 
-    # Do this only if you want Andy Fingerhut's personalized dot
-    # files.  You probably want your own instead.  WARNING: Do not
-    # skip the export command.  Shell scripts executed in the second
-    # step need it to be set, or else by default they will get from a
-    # different Github repo belonging to someone else.
-    sudo apt-get install curl
-    export github_user=jafingerhut
-    bash -c "$(curl -fsSL https://raw.github.com/$github_user/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
+```bash
+# Do this only if you want Andy Fingerhut's personalized dot
+# files.  You probably want your own instead.  WARNING: Do not
+# skip the export command.  Shell scripts executed in the step
+# after that need it to be set, or else by default they will get
+# files from a different Github repo belonging to someone else.
 
-    # Save some disk space by removing large programs I won't use (optional)
-    sudo apt-get purge thunderbird libreoffice-*
-    # Useful packages I like to have, not installed by default.
-    sudo apt-get install python-pip python3-pip
+% sudo apt-get install curl
+% export github_user=jafingerhut
+% bash -c "$(curl -fsSL https://raw.github.com/$github_user/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
 
+# (optional) Save some disk space by removing large programs I won't use
+% sudo apt-get purge thunderbird libreoffice-*
+
+# Useful packages I like to have, not installed by default.
+% sudo apt-get install python-pip python3-pip
+```
+
+
+= Getting copy/paste working between host and guest OS
 
 The older approach I used for Ubuntu 14.04 is described later below,
 involving installing virtualbox-guest-dkms and virtualbox-guest-x11
 packages.  Search for "Approach installing virtualbox-guest-*
 packages"
 
-----------------------------------------------------------------------
-Approach installing Guest Additions via VirtualBox CD image
-----------------------------------------------------------------------
+
+== Approach installing Guest Additions via VirtualBox CD image
 
 [Thanks to Sean Adams for these working instructions.]
 
@@ -65,23 +70,7 @@ Following the instructions above re-installs the guest additions even
 if they have already been installed in the VM.
 
 
-Solving screen flicker issue with Ubuntu 17.10 guest VM in VirtualBox
-
-Aside: Link about screen flicker with Ubuntu 17.10 when running inside
-VirtualBox:
-    https://forums.virtualbox.org/viewtopic.php?f=8&t=85110
-This is the comment that I found helped, although it is not obvious
-where to find the option to change from Wheland to Xorg:
-    I found this to be a bug with the new Ubuntu 17.10 in Sierra and
-    VBox 5.2.0 and fixed it by selecting Xorg instead of default
-    Wheland window system. You will find this option in the Ubuntu
-    login dialog under the gear.
-
-
-
-----------------------------------------------------------------------
-Approach installing virtualbox-guest-* packages
-----------------------------------------------------------------------
+== Approach installing virtualbox-guest-* packages
 
 I was able to get host/guest copy and paste working using this
 approach for Ubuntu 14.04.1 guest OS.  See above for steps for an
@@ -118,10 +107,20 @@ and some of them like ubuntu-desktop look like things I want to keep.
 Shut down guest Ubuntu OS.
 
 
-----------------------------------------------------------------------
-Set up shared folders on Ubuntu guest that can be read and written
-from guest OS
-----------------------------------------------------------------------
+= Solving screen flicker issue with Ubuntu 17.10 guest VM in VirtualBox
+
+Found this solution here: https://forums.virtualbox.org/viewtopic.php?f=8&t=85110
+
+This is the comment that I found helped:
+
+    I found this to be a bug with the new Ubuntu 17.10 in Sierra and
+    VBox 5.2.0 and fixed it by selecting Xorg instead of default
+    Wheland window system. You will find this option in the Ubuntu
+    login dialog under the gear.
+
+
+
+= Set up shared folders between Ubuntu guest OS and host macOS
 
 I was able to get shared folders working for both Ubuntu 14.04 and
 Ubuntu 16.04 guest OS's using these instructions.
@@ -142,34 +141,51 @@ sake of example.
 
 Boot guest OS and log in.
 
-    ls /media
+```bash
+% ls /media
+```
 
 should show a new directory sf_p4-docs/
 Trying to list it will likely give 'Permission denied'.
 
 Command to add a user to a group:
 
-    sudo usermod -a -G <groupName> <userName>
+```bash
+% sudo usermod -a -G <groupName> <userName>
+```
 
 In this particular case for the group 'vboxsf':
 
-    sudo usermod -a -G vboxsf $USER
+```bash
+% sudo usermod -a -G vboxsf $USER
+```
 
 Log out and log back in, or shut down and reboot guest OS.  Run the
 command 'id' to confirm that the group 'vboxsf' now shows up in the
 output.  If so, then this command should now show you the contents of
 the shared folder:
 
-    ls /media/sf_p4-docs
+```bash
+% ls /media/sf_p4-docs
+```
 
 A symbolic link to this shared folder can make it easy to access from
 your home directory, e.g.:
 
-    ln -s /media/sf_p4-docs/ ~/p4-docs
+```bash
+% ln -s /media/sf_p4-docs/ ~/p4-docs
+```
 
-----------------------------------------------------------------------
-Sample sshfs commands
-----------------------------------------------------------------------
+
+= Shrinking a guest OS disk image
+
+A StackOverflow Q&A on compacting/shrinking a guest OS VDI file
+system:
+
+    https://superuser.com/questions/529149/how-to-compact-virtualboxs-vdi-file-size
+
+
+= Sample sshfs commands
 
 If all you want is to share a directory between host and guest OS, I
 would recommend the previous section to set that up.  Trying to use
@@ -203,15 +219,18 @@ a guest OS.
 It is fine for mounting a file system of a machine with a consistent
 IP address on the host or the guest.
 
+```bash
 # mounting
 # sshfs [user@]host:[dir] mountpoint [options]
-MYIP="10.0.1.40"
-MYIP="192.168.56.1"
-sshfs jafinger@jafinger-aur.cisco.com:/auto/ins-asic-11/jafinger/forwarding/ins-asic $HOME/ins-asic
+
+% MYIP="10.0.1.40"
+% MYIP="192.168.56.1"
+% sshfs jafinger@jafinger-aur.cisco.com:/auto/ins-asic-11/jafinger/forwarding/ins-asic $HOME/ins-asic
 
 # unmounting
 # fusermount -u <mountpoint>
-fusermount -u $HOME/ins-asic
+% fusermount -u $HOME/ins-asic
+```
 
 
 ----------------------------------------------------------------------
@@ -286,9 +305,3 @@ while you are connected via VPN, the host only network adapter will
 not be able to send or receive packets between the host and the guest.
 Bummer.  Shared folders seems like a better way to go, then, for
 sharing files on the host file system with the guest OS.
-----------------------------------------------------------------------
-
-A StackOverflow Q&A on compacting/shrinking a guest OS VDI file
-system:
-
-    https://superuser.com/questions/529149/how-to-compact-virtualboxs-vdi-file-size
