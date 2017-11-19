@@ -233,14 +233,14 @@ IP address on the host or the guest.
 ```
 
 
-----------------------------------------------------------------------
+# Create host-only adapter network between guest and host OS
+
 Create host-only adapter network between guest Ubuntu VM and host Mac
 OS X, so that host OS will have consistent IPv4 address that guest
 Ubuntu VM can use to sshfs mount directories physically stored in the
 host Mac OS X file system, with a consistent IPv4 address that does
 not depend on where the host Mac OS X laptop is, and thus which IPv4
 address its Wi-Fi adapter happens to have.
-----------------------------------------------------------------------
 
 In VirtualBox, create a Host-only adapter if you haven't done so
 before.  I followed instructions here:
@@ -264,20 +264,20 @@ IPv6 Network Mask Length 0 (grayed out)
 
 I left everything as shown above.  Under "DHCP Server" tab:
 
-Check box next to "Enable Server" was checked.
-Server Address: 192.168.56.100
-Server Mask: 255.255.255.0
-Lower Address Bound: 192.168.56.101
-Upper Address Bound: 192.168.56.254
+    Check box next to "Enable Server" was checked.
+    Server Address: 192.168.56.100
+    Server Mask: 255.255.255.0
+    Lower Address Bound: 192.168.56.101
+    Upper Address Bound: 192.168.56.254
 
 click Settings for the VM.
 
 System -> Processor -> change to 4 virtual CPUs.  1 is the default.
 
-Network -> Adapter 2
-enable check box next to "Enable Network Adapter"
-in popup menu next to "Attached to:" choose "Host-only Adapter"
-In popup menu next to "Name:" choose vboxnet0
+    Network -> Adapter 2
+    enable check box next to "Enable Network Adapter"
+    in popup menu next to "Attached to:" choose "Host-only Adapter"
+    In popup menu next to "Name:" choose vboxnet0
 
 Click OK.  Settings should be saved.
 
