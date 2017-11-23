@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: November 17, 2017
+Date: November 23, 2017
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -77,8 +77,8 @@ Defect
    4 Open         [ASYNC-158] (CLJS) and with multiple <! does not short-circuit in go
    4 Triaged      [ASYNC-90] Pub/sub leaks memory
    3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
-   3 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
    3 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
+   3 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
    3 Open         [ASYNC-42] (CLJS) (try (catch :default)) inside a cljs go block raises an exception
    2 Open         [ASYNC-91] (CLJS) 'and' does not short circuit within go block in clojurescript
    2 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
@@ -119,7 +119,6 @@ Defect
    0 Open         [ASYNC-197] `async/map` output channel not close, when has some input channel not closed, even if I closed one channel of inputs.
    0 Open         [ASYNC-199] (CLJS) A "finally" including an "if" breaks the result of the enclosing "try" if the "try" is in a "go" block
    0 Open         [ASYNC-200] (CLJS) A "finally" in a "try" in a "go" block is skipped in f a string is thrown.
-   0 Vetted       [ASYNC-201] (CLJS) Out-of-bounds index values passed in timers
    0 Open         [ASYNC-202] Channel returned by to-chan not immediately ready for taking?
    0 Open         [ASYNC-204] Writing on a closed channel doesn't commit the handler
    0 Open         [ASYNC-205] Pausing in mix is note effective
@@ -130,9 +129,7 @@ Defect
 Enhancement
 
   17 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
-  12 Open         [ASYNC-119] (CLJS) ClojureScript: combine cljs.core.async.macros and cljs.core.async
    8 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
-   5 Open         [ASYNC-142] (CLJS) Rename ClojureScript namespace from cljs.core.async to clojure.core.async
    5 Triaged      [ASYNC-126] Add public channel "closed?" predicate
    5 Open         [ASYNC-137] (CLJS) Make (<! (timeout 0)) be closer to 0
    3 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
@@ -160,11 +157,6 @@ Enhancement
    0 Open         [ASYNC-189] Tap return value not documented
    0 Open         [ASYNC-193] Opaque string representation of channels in Clojurescript core.async
    0 Triaged      [ASYNC-196] Add ability to transduce values collected via clojure.core.async/into
-
-========================================
-Task
-
-   1 Open         [ASYNC-116] (CLJS) Convert core.async ClojureScript tests to cljs.test
 
 
 Project CCACHE tickets
@@ -734,7 +726,7 @@ Defect
 ========================================
 Enhancement
 
-  12 Open         [MATCH-116] core.match clojurescript should be self-host compatible
+  13 Open         [MATCH-116] core.match clojurescript should be self-host compatible
    1 Open         [MATCH-4] Optimized pattern matching on deftype/record, POJOs
    0 Open         [MATCH-2] Matching Diagnostics
    0 Open         [MATCH-8] Implement (p|q)ba heuristics
@@ -856,13 +848,11 @@ Defect
    0 Open         [TCHECK-111] The latest recursive-gen algorithm seems to exhibit a peculiar lack of variety in depths
    0 Open         [TCHECK-112] bind doesn't shrink very well
    0 Open         [TCHECK-120] size of args is conflated with depth in shrink tree
-   0 Open         [TCHECK-125] should fail gracefully when clojure.test/report is not a multimethod
    0 Open         [TCHECK-133] Are the map bindings in gen/let actually solving a problem?
 
 ========================================
 Enhancement
 
-   4 Open         [TCHECK-116] With clojure.test, debug prn should be optional, so you can run tests with minimal output
    3 Open         [TCHECK-2] pos-int is confusingly named
    3 Open         [TCHECK-15] gen/for macro for alternate combinator syntax
    2 Open         [TCHECK-7] Add nested property support
@@ -914,9 +904,10 @@ Defect
 ========================================
 Enhancement
 
+   3 Open         [TDEPS-15] consider combining -R and -C option for aliases
    2 Open         [TDEPS-9] Authentication on Maven repositories
-   2 Open         [TDEPS-15] consider combining -R and -C option for aliases
    1 Open         [TDEPS-17] Consider lib overrides
+   1 Open         [TDEPS-18] Make alias handling functions public
 
 
 Project TEMJVM tickets
@@ -1021,6 +1012,7 @@ Enhancement
    0 Open         [TTRACE-9] Use aprint when displaying value
    0 Open         [TTRACE-10] Add throttling/rate-limiting
    0 Open         [TTRACE-13] Implicitly quote the name space in the trace-ns macro
+   0 Open         [TTRACE-14] Document how to trace non-public fns
 
 
 Project UNIFY tickets
