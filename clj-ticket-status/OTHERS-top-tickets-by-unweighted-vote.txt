@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: November 30, 2017
+Date: December 7, 2017
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -170,6 +170,7 @@ Defect
    0 Open         [CCACHE-39] FIFOCache member exempted from expulsion after evict
    0 Open         [CCACHE-46] TTL cache's has? doesn't check existence of value in the underlying cache
    0 Open         [CCACHE-47] Can't evict on LIRS cache
+   0 Open         [CCACHE-48] Composition of TTLCache can lead to inconsistent cache lookups
 
 ========================================
 Enhancement
@@ -222,6 +223,7 @@ Project CLASSPATH tickets
 Defect
 
    0 Open         [CLASSPATH-6] classpath "empty" when classpath 0.2.2 used with clojure maven plugin 1.3.20+
+   0 Open         [CLASSPATH-8] Empty classpath returned on Java 9
 
 
 Project CLJCLR tickets
@@ -243,6 +245,7 @@ Defect
    0 Open         [CLJCLR-90] Socket Repl Crashes the app when provided with "\'asdf" string including quotes
    0 Open         [CLJCLR-91] Socket Repl remote connections from places other than localhost
    0 Open         [CLJCLR-95] *data-readers* reset on clojure.core require
+   0 Open         [CLJCLR-96] clojure/test-clojure/reducers seems to take a very long time to run
 
 ========================================
 Enhancement
@@ -291,130 +294,44 @@ Project CTYP tickets
 ========================================
 Defect
 
-   2 Bad: Match > [CTYP-176] No such var: ana/ns->relpath when loading the ClojureScript typechecker
-   1 Open         [CTYP-129] select-keys on HMap returns Map with union key and value types
-   1 Open         [CTYP-197] No matching arities when defining multiple arity protocol method
-   1 Bad: Match > [CTYP-262] Accessing keys from a Heterogeneous Map w/ Polymorphic type signature throws type error
+   1 Bad: Match > [CTYP-197] No matching arities when defining multiple arity protocol method
    0 Bad: Match > [CTYP-32] Cannot instantiate variables that have bounds 
-   0 Open         [CTYP-35] Should use fresh names when checking plambdas
-   0 Open         [CTYP-47] Expected: IFn, Actual (Fn [Any -> Any])
-   0 Bad: Match > [CTYP-49] Applying flow filter resulted in local being bottom
-   0 Bad: Match > [CTYP-52] Heterogeneous Vector is not ISeqable in CLJS
-   0 Bad: Match > [CTYP-72] merge doesn't seem to like records
-   0 Bad: Match > [CTYP-87] Constraint generation does not handle variance well
    0 Bad: Match > [CTYP-88] with-meta doesn't type check with vectors or hash-maps. 
    0 Bad: Match > [CTYP-102] large hashmaps: failure to discover subtype and error-output to complex to understand
    0 Bad: Match > [CTYP-140] HSequential things should correctly erase dotted arguments
-   0 Bad: Match > [CTYP-143] extend & extend-protocol with (Class/forName "[B") as Class dispatch value fails
-   0 Open         [CTYP-171] nil should not be treated as subtype of repeat list/vector
-   0 Bad: Match > [CTYP-173] (first (filter ...)) type checks in Clojure, not ClojureScript
-   0 Bad: Match > [CTYP-177] Compile error with core.async
-   0 Open         [CTYP-178] Dissimilar lengths of HVecs in a union doesn't type-check
-   0 Open         [CTYP-182] macros which define functions containing named anonymous functions crash
-   0 Open         [CTYP-188] ann-record fails for argument-less records
-   0 Open         [CTYP-190] pred doesn't handle much
-   0 Open         [CTYP-191] Bad type syntax when parsing types of macro-generated anonymous functions from required namespaces (when the types are composed, for instance (Option AnyInteger))
-   0 Open         [CTYP-195] Support for clojure.core/extend is broken when used with typed.core/defprotocol
-   0 Open         [CTYP-201] Calling a multimethod from a protocol function breaks the type checker
-   0 Open         [CTYP-204] Assoc doesn't work with multiple entries
-   0 Open         [CTYP-209] method-type is broken
-   0 Open         [CTYP-218] wrap-clj-repl causes error
-   0 Open         [CTYP-221] group-by produces "Cannot resolve type: Seqable"
-   0 Open         [CTYP-222] if-let on an hmap with an optional entry always expected to succeed
-   0 Open         [CTYP-223] checking clojure.core/keep produces Internal Error--Cannot resolve type: Option
-   0 Open         [CTYP-224] Lein REPL Autocomplete in typed namespaces throws a type error
-   0 Open         [CTYP-225] Intersections of value types broken
-   0 Open         [CTYP-228] Type signature for sort is incorrect - never returns nil
+   0 Bad: Match > [CTYP-191] Bad type syntax when parsing types of macro-generated anonymous functions from required namespaces (when the types are composed, for instance (Option AnyInteger))
+   0 Bad: Match > [CTYP-195] Support for clojure.core/extend is broken when used with typed.core/defprotocol
+   0 Bad: Match > [CTYP-201] Calling a multimethod from a protocol function breaks the type checker
+   0 Bad: Match > [CTYP-204] Assoc doesn't work with multiple entries
+   0 Bad: Match > [CTYP-209] method-type is broken
+   0 Bad: Match > [CTYP-219] RPS example does not type check
+   0 Bad: Match > [CTYP-221] group-by produces "Cannot resolve type: Seqable"
+   0 Bad: Match > [CTYP-222] if-let on an hmap with an optional entry always expected to succeed
+   0 Bad: Match > [CTYP-223] checking clojure.core/keep produces Internal Error--Cannot resolve type: Option
+   0 Bad: Match > [CTYP-225] Intersections of value types broken
    0 Bad: Match > [CTYP-231] (Array X) is broken and undocumented
-   0 Bad: Match > [CTYP-232] Let-aliased variabled of HVec lookups should update original HVec
    0 Bad: Match > [CTYP-241] Let-aliased variables of plain Map lookups should update original map
-   0 Open         [CTYP-242] adding stop-gap annotation for 'hash-map' results in runtime exception
+   0 Bad: Match > [CTYP-242] adding stop-gap annotation for 'hash-map' results in runtime exception
    0 Bad: Match > [CTYP-270] "Method code too large!" with protocols (more than 38 functions in the protocol)
-   0 Bad: Match > [CTYP-272] check-ns: Assert failed: (r/Type? t)
    0 Bad: Match > [CTYP-274] Inferred type for {{defn}} and {{typed/fn}} with the same body are different
    0 Bad: Match > [CTYP-275] Bad call to path-type: nil
    0 Bad: Match > [CTYP-277] Typechecking fails with internal assert error
-   0 Bad: Match > [CTYP-278] Impossible to annotate protocol in other namespace
-   0 Open         [CTYP-279] An invalid type annotation for a function with a record argument passes a type check
-   0 Open         [CTYP-282] Internal error with t/defn, sort-by and no refer all
-   0 Open         [CTYP-293] Should check upcast to Dyn
-   0 Bad: Match > [CTYP-303] cast doesn't work for recursive types
+   0 Bad: Match > [CTYP-279] An invalid type annotation for a function with a record argument passes a type check
+   0 Bad: Match > [CTYP-282] Internal error with t/defn, sort-by and no refer all
    0 Bad: Match > [CTYP-306] pred doesn't work for non-literal HVecs with varargs
-   0 Open         [CTYP-312] pred doesn't work with polymorphic protocols?
-   0 Open         [CTYP-316] Support primitive functions in runtime instrumentation
-   0 Open         [CTYP-326] Let-aliasing breaks flow inference for results of `class`
+   0 Bad: Match > [CTYP-326] Let-aliasing breaks flow inference for results of `class`
 
 ========================================
 Enhancement
 
-   4 Bad: Match > [CTYP-133] Typechecker fails when checking involves an object from reify
-   3 Bad: Match > [CTYP-167] Several failure cases for comp for polyadic fns and type variables
+   4 Bad: Unkn Fi [CTYP-133] Typechecker fails when checking involves an object from reify
+   1 Bad: Match > [CTYP-129] select-keys on HMap returns Map with union key and value types
    1 Bad: Match > [CTYP-134] Allow namespace aliases in `ann`
-   0 Bad: Match > [CTYP-8] Support complex map manipulation functions
-   0 Open         [CTYP-9] Support metadata types
-   0 Open         [CTYP-11] Infer good types for loop locals
-   0 Open         [CTYP-12] Handle primitives properly
-   0 Open         [CTYP-13] Understand common contract functions
-   0 Bad: Match > [CTYP-50] Support overriding fields
-   0 Open         [CTYP-76] Support KwArgsSeq in apply
-   0 Bad: Match > [CTYP-98] Implement a defrecord macro for Clojure
-   0 Open         [CTYP-109] Better error message for TFn app
-   0 Open         [CTYP-110] Add satisfies?
-   0 Open         [CTYP-119] Record/datatypes should update like HMaps via occurrence typing
-   0 Open         [CTYP-124] case should utilize negative information
-   0 Open         [CTYP-131] Support (apply f (apply concat hmap))
-   0 Open         [CTYP-138] Support mutually recursive types
-   0 Open         [CTYP-139] Extend what can used as HMap key
-   0 Open         [CTYP-156] Add special arities to `nth` if we know exactly the index argument and CountRange
-   0 Open         [CTYP-160] Correctly check IFn ancestor with type/record
-   0 Open         [CTYP-165] GSOC 2014 Heterogeneous operations & Dotted Polymorphism
-   0 Open         [CTYP-187] Add a defn- macro for private functions
-   0 Bad: Match > [CTYP-192] Use memoization in file-mapping to improve performance.
-   0 Open         [CTYP-194] HMap merged type
-   0 Open         [CTYP-202] Provide a way to annotate a throw-on-nil function
-   0 Open         [CTYP-205] Better filter checking
-   0 Open         [CTYP-206] Fixed as rest args
-   0 Triaged      [CTYP-217] Basic support for transients
-   0 Open         [CTYP-219] RPS example does not type check
-   0 Open         [CTYP-220] Data generator for a type
-   0 Open         [CTYP-226] Update clojure.core/get-in annotations to use polymorphic function types (similar to clojure.core/get)
-   0 Open         [CTYP-227] Show file and line number of duplicate definitions
-   0 Open         [CTYP-230] Improve error messages by highlighting unmatched argument
-   0 Open         [CTYP-233] Java interop should consider automatic numeric promotions
-   0 Bad: Match > [CTYP-235] Warn on duplicate defalias'
-   0 Open         [CTYP-240] Annotations for clojure.instant, clojure.template, clojure.set clojure.data and clojure.repl namespaces
-   0 Open         [CTYP-243] Dispatch on set of keys
-   0 Open         [CTYP-244] Filtering with an instantiated identity function doesn't guarantee removal of nil
-   0 Bad: Match > [CTYP-249] Propositional subtyping should consider the lexical type environment
-   0 Open         [CTYP-260] Add Queue and BlockingQueue to altered classes
-   0 Bad: Match > [CTYP-261] Typed Transients patch
-   0 Bad: Match > [CTYP-267] bigdec, bigint and biginteger eats (U Number String)
-   0 Bad: Match > [CTYP-271] reduce form with (U nil Num) accumulator needs inst to type check
-   0 Bad: Match > [CTYP-273] `recur` treated differently from a recursive call
-   0 Bad: Match > [CTYP-276] first on HVec strange/wrong result
-   0 Open         [CTYP-289] Add ability to specify the static type expected for a particular extend-type dispatch
-   0 Open         [CTYP-290] Support older versions of Clojure in the runtime module
-   0 Open         [CTYP-292] Provide a new alias for Any, dedicated for use as a placeholder, thus reserving Any for situations when truly every type is acceptable.
-   0 Bad: Match > [CTYP-297] Allow defmulti without expected type
-   0 Open         [CTYP-298] Should blame sub-parts of casts
+   0 Bad: Match > [CTYP-72] merge doesn't seem to like records
+   0 Bad: Match > [CTYP-76] Support KwArgsSeq in apply
+   0 Bad: Match > [CTYP-143] extend & extend-protocol with (Class/forName "[B") as Class dispatch value fails
+   0 Bad: Unkn Fi [CTYP-297] Allow defmulti without expected type
    0 Bad: Match > [CTYP-301] Abstract over keyword arguments
-   0 Open         [CTYP-302] Add typed Compiler
-   0 Bad: Unkn Fi [CTYP-309] Export typed vars with contracts to untyped namespaces
-   0 Open         [CTYP-317] Port Compiler.java to Clojure
-   0 Open         [CTYP-321] Make generated type readable
-   0 Open         [CTYP-322] Use specs as types
-   0 Open         [CTYP-323] Support latest Clojurescript compiler
-   0 Open         [CTYP-325] Support clojure.spec syntax as static types
-
-========================================
-Task
-
-   0 Bad: Match > [CTYP-15] Eliminate the need to specify all ancestors in alter-class.
-   0 Open         [CTYP-236] Refactor core.async annnotations into its own jar
-   0 Open         [CTYP-237] Convert .clj files to .cljc
-   0 Open         [CTYP-238] Move CLJS checker to its own jar
-   0 Bad: Match > [CTYP-245] Remove NotTypeFilter
-   0 Bad: Match > [CTYP-310] Remove support for mixing "typed eval" and check-ns
 
 
 Project DAVL tickets
@@ -572,15 +489,10 @@ Enhancement
 
 Project INST tickets
 ========================================
-Defect
-
-   0 Open         [INST-5] Confusing feedback for syntax error in deps.edn.
-
-========================================
 Enhancement
 
-   0 Open         [INST-4] Help option for runner script
-   0 Open         [INST-6] Don't require ruby for install.sh script
+   0 Open         [INST-7] scripts don't detect or warn if file referred to in cached classpath has been deleted
+   0 Open         [INST-8] Move ~/.clojure to ~/.cache/clojure
 
 
 Project JDATA tickets
@@ -603,8 +515,8 @@ Project JDBC tickets
 ========================================
 Enhancement
 
+   2 Open         [JDBC-163] Add option to return generated keys from execute!
    1 Open         [JDBC-48] Support stored procedures with CallableStatement
-   1 Open         [JDBC-163] Add option to return generated keys from execute!
    0 Open         [JDBC-64] Support multiple result sets?
    0 Open         [JDBC-143] Make it easier to test java.jdbc in other environments
 
@@ -851,6 +763,7 @@ Defect
    0 Open         [TCHECK-112] bind doesn't shrink very well
    0 Open         [TCHECK-120] size of args is conflated with depth in shrink tree
    0 Open         [TCHECK-133] Are the map bindings in gen/let actually solving a problem?
+   0 Open         [TCHECK-137] Self-host tests not runnable
 
 ========================================
 Enhancement
@@ -906,10 +819,13 @@ Defect
 ========================================
 Enhancement
 
-   3 Open         [TDEPS-15] consider combining -R and -C option for aliases
+   4 Open         [TDEPS-15] consider combining -R and -C option for aliases
    2 Open         [TDEPS-9] Authentication on Maven repositories
    1 Open         [TDEPS-17] Consider lib overrides
    1 Open         [TDEPS-18] Make alias handling functions public
+   0 Open         [TDEPS-19] Command line switch for configuration overlay
+   0 Open         [TDEPS-20] Cannot resolve Maven artifacts through proxy
+   0 Open         [TDEPS-21] No diagnostic information when building classpath fails
 
 
 Project TEMJVM tickets
