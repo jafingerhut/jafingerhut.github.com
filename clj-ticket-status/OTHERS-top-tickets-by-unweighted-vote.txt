@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: December 7, 2017
+Date: December 14, 2017
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -74,16 +74,16 @@ Project ASYNC tickets
 Defect
 
    5 Open         [ASYNC-144] pipeline-async docstring correction
+   5 Triaged      [ASYNC-90] Pub/sub leaks memory
    4 Open         [ASYNC-158] (CLJS) and with multiple <! does not short-circuit in go
-   4 Triaged      [ASYNC-90] Pub/sub leaks memory
+   4 Open         [ASYNC-42] (CLJS) (try (catch :default)) inside a cljs go block raises an exception
    3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
    3 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
    3 Triaged      [ASYNC-58] mult channel deadlocks when untapping a consuming channel whilst messages are being queued/blocked
-   3 Open         [ASYNC-42] (CLJS) (try (catch :default)) inside a cljs go block raises an exception
-   2 Open         [ASYNC-91] (CLJS) 'and' does not short circuit within go block in clojurescript
-   2 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
+   3 Open         [ASYNC-91] (CLJS) 'and' does not short circuit within go block in clojurescript
+   3 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
+   3 Open         [ASYNC-79] (CLJS) go macro not correctly transforming (case) within a macro
    2 Open         [ASYNC-203] "dynamic binding + parking" removes top values of dynamic bindings outside
-   2 Open         [ASYNC-79] (CLJS) go macro not correctly transforming (case) within a macro
    2 Open         [ASYNC-117] (CLJS) let-bindings unavailable in #js literals in go-blocks
    1 Open         [ASYNC-49] (CLJS) cljs IOC macro issue with double-dot form
    1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
@@ -124,23 +124,24 @@ Defect
    0 Open         [ASYNC-205] Pausing in mix is note effective
    0 Open         [ASYNC-207] Loop in go breaks type hints
    0 Open         [ASYNC-208] alts!! completes more than one operation when reading and writing to the same channel.
+   0 Open         [ASYNC-209] <! and >! should be macros
 
 ========================================
 Enhancement
 
   17 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
-   8 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
-   5 Triaged      [ASYNC-126] Add public channel "closed?" predicate
+   9 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
+   6 Triaged      [ASYNC-126] Add public channel "closed?" predicate
    5 Open         [ASYNC-137] (CLJS) Make (<! (timeout 0)) be closer to 0
    3 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
    3 Open         [ASYNC-107] Improved docstring for alt!
    3 Triaged      [ASYNC-67] Can we get a generic sink operation?
    3 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
    2 Open         [ASYNC-114] Allow a second arity on channel ex-handler which takes val as well as throwable
+   2 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
+   2 Triaged      [ASYNC-153] Return value of pipe is not documented
    1 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
-   1 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
    1 Open         [ASYNC-71] exception behavior for thread macro is hard coded
-   1 Triaged      [ASYNC-153] Return value of pipe is not documented
    1 Open         [ASYNC-46] Add optional default channel to 'pub'
    0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
    0 Vetted       [ASYNC-69] How to better communicate "mix" lifecycle wrt coordination
@@ -492,7 +493,12 @@ Project INST tickets
 Enhancement
 
    0 Open         [INST-7] scripts don't detect or warn if file referred to in cached classpath has been deleted
-   0 Open         [INST-8] Move ~/.clojure to ~/.cache/clojure
+   0 Open         [INST-10] Warn user about no java installed
+
+========================================
+Task
+
+   0 Open         [INST-9] Add --prefix cmd line option to linux-install.sh
 
 
 Project JDATA tickets
@@ -763,7 +769,6 @@ Defect
    0 Open         [TCHECK-112] bind doesn't shrink very well
    0 Open         [TCHECK-120] size of args is conflated with depth in shrink tree
    0 Open         [TCHECK-133] Are the map bindings in gen/let actually solving a problem?
-   0 Open         [TCHECK-137] Self-host tests not runnable
 
 ========================================
 Enhancement

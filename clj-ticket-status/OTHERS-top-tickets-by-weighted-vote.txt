@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: December 7, 2017
+Date: December 14, 2017
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -79,16 +79,22 @@ Defect
              Pierre-Yves Ritschard (1.00)
              David Bürgin (0.86)
              Terje Norderhaug (0.86)
+    4.13   5 Triaged      [ASYNC-90] Pub/sub leaks memory
+             Collider Writer (1.00)
+             Jan Rychter (1.00)
+             Jonas Enlund (1.00)
+             Daniel Compton (0.66)
+             jcr (0.46)
     3.86   4 Open         [ASYNC-158] (CLJS) and with multiple <! does not short-circuit in go
              Jacek Tomaszewski (1.00)
              Wang Xing (1.00)
              Jan Rychter (1.00)
              Yehonathan Sharvit (0.86)
-    3.66   4 Triaged      [ASYNC-90] Pub/sub leaks memory
-             Collider Writer (1.00)
-             Jan Rychter (1.00)
-             Jonas Enlund (1.00)
-             Daniel Compton (0.66)
+    3.21   4 Open         [ASYNC-42] (CLJS) (try (catch :default)) inside a cljs go block raises an exception
+             Kevin Neaton (1.00)
+             Willy Blandin (1.00)
+             Yuri Govorushchenko (0.75)
+             jcr (0.46)
     3.00   3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
              Hugo Duncan (1.00)
              Martin Raison (1.00)
@@ -101,22 +107,21 @@ Defect
              Odin Standal (1.00)
              Alex Nixon (1.00)
              Eduard Bondarenko (0.86)
-    2.75   3 Open         [ASYNC-42] (CLJS) (try (catch :default)) inside a cljs go block raises an exception
-             Kevin Neaton (1.00)
-             Willy Blandin (1.00)
-             Yuri Govorushchenko (0.75)
-    2.00   2 Open         [ASYNC-91] (CLJS) 'and' does not short circuit within go block in clojurescript
+    2.46   3 Open         [ASYNC-91] (CLJS) 'and' does not short circuit within go block in clojurescript
              Francis Avila (1.00)
              Rangel Spasov (1.00)
+             jcr (0.46)
+    2.46   3 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
+             Nicola Mometto (1.00)
+             Willy Blandin (1.00)
+             jcr (0.46)
+    2.32   3 Open         [ASYNC-79] (CLJS) go macro not correctly transforming (case) within a macro
+             Ghadi Shayban (1.00)
+             Yehonathan Sharvit (0.86)
+             jcr (0.46)
     2.00   2 Open         [ASYNC-203] "dynamic binding + parking" removes top values of dynamic bindings outside
              Alexey Aristov (1.00)
              Ilya Shinkarenko (1.00)
-    2.00   2 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
-             Nicola Mometto (1.00)
-             Willy Blandin (1.00)
-    1.86   2 Open         [ASYNC-79] (CLJS) go macro not correctly transforming (case) within a macro
-             Ghadi Shayban (1.00)
-             Yehonathan Sharvit (0.86)
     1.66   2 Open         [ASYNC-117] (CLJS) let-bindings unavailable in #js literals in go-blocks
              Thomas Down (1.00)
              Daniel Compton (0.66)
@@ -165,6 +170,7 @@ Defect
     0.00   0 Open         [ASYNC-205] Pausing in mix is note effective
     0.00   0 Open         [ASYNC-207] Loop in go breaks type hints
     0.00   0 Open         [ASYNC-208] alts!! completes more than one operation when reading and writing to the same channel.
+    0.00   0 Open         [ASYNC-209] <! and >! should be macros
     0.00   0 Triaged      [ASYNC-64] Race condition when closing mults
     0.00   0 Triaged      [ASYNC-156] (CLJS) go block containing letfn does not compile
     0.00   0 Triaged      [ASYNC-165] (CLJS) the binding macro/let binding is wrongly inlined
@@ -190,7 +196,7 @@ Enhancement
              Pierre-Yves Ritschard (1.00)
              David Bürgin (0.86)
              Daniel Compton (0.66)
-    8.00   8 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
+    8.46   9 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
              Alexander Kiel (1.00)
              Casey Marshall (1.00)
              Erik Assum (1.00)
@@ -199,17 +205,19 @@ Enhancement
              Reid McKenzie (1.00)
              Thomas Heller (1.00)
              Brandon Adams (1.00)
+             jcr (0.46)
+    4.99   6 Triaged      [ASYNC-126] Add public channel "closed?" predicate
+             Baptiste Dupuch (1.00)
+             J.&nbsp;S.&nbsp;Choi (1.00)
+             Jonas Enlund (1.00)
+             Eduard Bondarenko (0.86)
+             Daniel Compton (0.66)
+             jcr (0.46)
     4.53   5 Open         [ASYNC-137] (CLJS) Make (<! (timeout 0)) be closer to 0
              Denis Johnson (1.00)
              Patrick O'Brien (1.00)
              Stuart Mitchell (1.00)
              Yehonathan Sharvit (0.86)
-             Daniel Compton (0.66)
-    4.53   5 Triaged      [ASYNC-126] Add public channel "closed?" predicate
-             Baptiste Dupuch (1.00)
-             J.&nbsp;S.&nbsp;Choi (1.00)
-             Jonas Enlund (1.00)
-             Eduard Bondarenko (0.86)
              Daniel Compton (0.66)
     3.00   3 Open         [ASYNC-61] Exceptions thrown inside go/thread blocks propagate up and out of ThreadPoolExcecutor
              Valerie Houseman (1.00)
@@ -230,14 +238,16 @@ Enhancement
     2.00   2 Open         [ASYNC-114] Allow a second arity on channel ex-handler which takes val as well as throwable
              Nivedita Priyadarshini (1.00)
              Max Penet (1.00)
+    1.46   2 Triaged      [ASYNC-153] Return value of pipe is not documented
+             Aaron Iba (1.00)
+             jcr (0.46)
+    1.46   2 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
+             Sam Umbach (1.00)
+             jcr (0.46)
     1.00   1 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
              Miro Kubicek (1.00)
     1.00   1 Open         [ASYNC-71] exception behavior for thread macro is hard coded
              Vlad Bokov (1.00)
-    1.00   1 Triaged      [ASYNC-153] Return value of pipe is not documented
-             Aaron Iba (1.00)
-    1.00   1 Vetted       [ASYNC-66] Add drain! to consume and discard a channel
-             Sam Umbach (1.00)
     0.86   1 Open         [ASYNC-46] Add optional default channel to 'pub'
              Terje Norderhaug (0.86)
     0.00   0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
@@ -627,7 +637,12 @@ Project INST tickets
 Enhancement
 
     0.00   0 Open         [INST-7] scripts don't detect or warn if file referred to in cached classpath has been deleted
-    0.00   0 Open         [INST-8] Move ~/.clojure to ~/.cache/clojure
+    0.00   0 Open         [INST-10] Warn user about no java installed
+
+========================================
+Task
+
+    0.00   0 Open         [INST-9] Add --prefix cmd line option to linux-install.sh
 
 
 Project JDATA tickets
@@ -930,7 +945,6 @@ Defect
     0.00   0 Open         [TCHECK-112] bind doesn't shrink very well
     0.00   0 Open         [TCHECK-120] size of args is conflated with depth in shrink tree
     0.00   0 Open         [TCHECK-133] Are the map bindings in gen/let actually solving a problem?
-    0.00   0 Open         [TCHECK-137] Self-host tests not runnable
 
 ========================================
 Enhancement
