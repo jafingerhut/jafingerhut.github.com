@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Clojure Cheat Sheet (Clojure 1.5 - 1.8, sheet v41)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.6 - 1.9, sheet v42)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -163,7 +163,8 @@ tr.even {
                 <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.repl/doc/" class="tooltip" title="<pre>clojure.repl/doc
 ([name])
 Macro
-  Prints documentation for a var or special form given its name</pre>">doc</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.repl/find-doc/" class="tooltip" title="<pre>clojure.repl/find-doc
+  Prints documentation for a var or special form given its name,
+   or for a spec if given a keyword</pre>">doc</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.repl/find-doc/" class="tooltip" title="<pre>clojure.repl/find-doc
 ([re-string-or-pattern])
   Prints documentation for any var whose documentation or name
  contains a match for re-string-or-pattern</pre>">find-doc</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.repl/apropos/" class="tooltip" title="<pre>clojure.repl/apropos
@@ -213,7 +214,7 @@ supplied, uses the root cause of the
   longs, will throw on overflow. See also: -'</pre>">-</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/*/" class="tooltip" title="<pre>clojure.core/*
 ([] [x] [x y] [x y &amp; more])
   Returns the product of nums. (*) returns 1. Does not auto-promote
-  longs, will throw on overflow. See also: *'</pre>">*</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/%2F/" class="tooltip" title="<pre>clojure.core//
+  longs, will throw on overflow. See also: *'</pre>">*</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/_SLASH_/" class="tooltip" title="<pre>clojure.core//
 ([x] [x y] [x y &amp; more])
   If no denominators are supplied, returns 1/numerator,
   else returns numerator divided by all of the denominators.</pre>">/</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/quot/" class="tooltip" title="<pre>clojure.core/quot
@@ -232,20 +233,20 @@ supplied, uses the root cause of the
 ([x] [x y] [x y &amp; more])
   Returns the greatest of the nums.</pre>">max</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/min/" class="tooltip" title="<pre>clojure.core/min
 ([x] [x y] [x y &amp; more])
-  Returns the least of the nums.</pre>">min</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/%2B%27/" class="tooltip" title="<pre>clojure.core/+'
+  Returns the least of the nums.</pre>">min</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/%2B'/" class="tooltip" title="<pre>clojure.core/+'
 ([] [x] [x y] [x y &amp; more])
   Returns the sum of nums. (+') returns 0. Supports arbitrary precision.
-  See also: +</pre>">+'</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/-%27/" class="tooltip" title="<pre>clojure.core/-'
+  See also: +</pre>">+'</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/-'/" class="tooltip" title="<pre>clojure.core/-'
 ([x] [x y] [x y &amp; more])
   If no ys are supplied, returns the negation of x, else subtracts
   the ys from x and returns the result. Supports arbitrary precision.
-  See also: -</pre>">-'</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/*%27/" class="tooltip" title="<pre>clojure.core/*'
+  See also: -</pre>">-'</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/*'/" class="tooltip" title="<pre>clojure.core/*'
 ([] [x] [x y] [x y &amp; more])
   Returns the product of nums. (*') returns 1. Supports arbitrary precision.
-  See also: *</pre>">*'</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/inc%27/" class="tooltip" title="<pre>clojure.core/inc'
+  See also: *</pre>">*'</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/inc'/" class="tooltip" title="<pre>clojure.core/inc'
 ([x])
   Returns a number one greater than num. Supports arbitrary precision.
-  See also: inc</pre>">inc'</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/dec%27/" class="tooltip" title="<pre>clojure.core/dec'
+  See also: inc</pre>">inc'</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/dec'/" class="tooltip" title="<pre>clojure.core/dec'
 ([x])
   Returns a number one less than num. Supports arbitrary precision.
   See also: dec</pre>">dec'</a></code></td>
@@ -299,7 +300,7 @@ supplied, uses the root cause of the
 ([x n])
   Clear bit at index n</pre>">bit-clear</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/bit-test/" class="tooltip" title="<pre>clojure.core/bit-test
 ([x n])
-  Test bit at index n</pre>">bit-test</a> (1.6) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/unsigned-bit-shift-right/" class="tooltip" title="<pre>clojure.core/unsigned-bit-shift-right
+  Test bit at index n</pre>">bit-test</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/unsigned-bit-shift-right/" class="tooltip" title="<pre>clojure.core/unsigned-bit-shift-right
 ([x n])
   Bitwise shift right, without sign-extension.</pre>">unsigned-bit-shift-right</a> (see <a href="https://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html">BigInteger</a>  for integers larger than Long)</code></td>
               </tr>
@@ -332,11 +333,11 @@ supplied, uses the root cause of the
               <tr class="even">
                 <td>Test</td>
                 <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/zero%3F/" class="tooltip" title="<pre>clojure.core/zero?
-([x])
+([num])
   Returns true if num is zero, else false</pre>">zero?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/pos%3F/" class="tooltip" title="<pre>clojure.core/pos?
-([x])
+([num])
   Returns true if num is greater than zero, else false</pre>">pos?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/neg%3F/" class="tooltip" title="<pre>clojure.core/neg?
-([x])
+([num])
   Returns true if num is less than zero, else false</pre>">neg?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/even%3F/" class="tooltip" title="<pre>clojure.core/even?
 ([n])
   Returns true if n is even, throws an exception if n is not an integer</pre>">even?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/odd%3F/" class="tooltip" title="<pre>clojure.core/odd?
@@ -505,10 +506,10 @@ format
   Returns s with its characters reversed.</pre>">reverse</a> (1.8) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.string/index-of/" class="tooltip" title="<pre>clojure.string/index-of
 ([s value] [s value from-index])
   Return index of value (string or char) in s, optionally searching
-  forward from from-index or nil if not found.</pre>">index-of</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.string/last-index-of/" class="tooltip" title="<pre>clojure.string/last-index-of
+  forward from from-index. Return nil if value not found.</pre>">index-of</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.string/last-index-of/" class="tooltip" title="<pre>clojure.string/last-index-of
 ([s value] [s value from-index])
   Return last index of value (string or char) in s, optionally
-  searching backward from from-index or nil if not found.</pre>">last-index-of</a></code></td>
+  searching backward from from-index. Return nil if value not found.</pre>">last-index-of</a></code></td>
               </tr>
               <tr class="odd">
                 <td><a href="http://www.regular-expressions.info">Regex</a></td>
@@ -692,7 +693,7 @@ format
   Returns an empty collection of the same category as coll, or nil</pre>">empty</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/not-empty/" class="tooltip" title="<pre>clojure.core/not-empty
 ([coll])
   If coll is empty, returns nil, else coll</pre>">not-empty</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/into/" class="tooltip" title="<pre>clojure.core/into
-([to from] [to xform from])
+([] [to] [to from] [to xform from])
   Returns a new coll consisting of to-coll with all of the items of
   from-coll conjoined. A transducer may be supplied.</pre>">into</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/conj/" class="tooltip" title="<pre>clojure.core/conj
 ([coll x] [coll x &amp; xs])
@@ -723,7 +724,10 @@ format
 ([smap form])
   Recursively transforms form by replacing keys in smap with their
   values.  Like clojure/replace but works on any data structure.  Does
-  replacement at the leaves of the tree first.</pre>">postwalk-replace</a></code></td>
+  replacement at the leaves of the tree first.</pre>">postwalk-replace</a> (1.9) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/bounded-count/" class="tooltip" title="<pre>clojure.core/bounded-count
+([n coll])
+  If coll is counted? returns its count, else will count at most the first n
+  elements of coll using its seq</pre>">bounded-count</a></code></td>
               </tr>
               <tr class="even">
                 <td>Content tests</td>
@@ -776,7 +780,7 @@ format
 ([x])
   Return true if x implements IPersistentMap</pre>">map?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/seq%3F/" class="tooltip" title="<pre>clojure.core/seq?
 ([x])
-  Return true if x implements ISeq</pre>">seq?</a> (1.6) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/record%3F/" class="tooltip" title="<pre>clojure.core/record?
+  Return true if x implements ISeq</pre>">seq?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/record%3F/" class="tooltip" title="<pre>clojure.core/record?
 ([x])
   Returns true if x is a record</pre>">record?</a> (1.8) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/map-entry%3F/" class="tooltip" title="<pre>clojure.core/map-entry?
 ([x])
@@ -858,7 +862,7 @@ format
   f should accept number-of-colls arguments.</pre>">mapv</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/filterv/" class="tooltip" title="<pre>clojure.core/filterv
 ([pred coll])
   Returns a vector of the items in coll for which
-  (pred item) returns true. pred must be free of side-effects.</pre>">filterv</a> (clojure.core.rrb-vector/) <a href="https://github.com/clojure/core.rrb-vector" class="tooltip" title="<pre>clojure.core.rrb-vector/vector
+  (pred item) returns logical true. pred must be free of side-effects.</pre>">filterv</a> (clojure.core.rrb-vector/) <a href="https://github.com/clojure/core.rrb-vector" class="tooltip" title="<pre>clojure.core.rrb-vector/vector
 ([] [x1] [x1 x2] [x1 x2 x3] [x1 x2 x3 x4] [x1 x2 x3 x4 &amp; xn])
   Creates a new vector containing the args.</pre>">vector</a> <a href="https://github.com/clojure/core.rrb-vector" class="tooltip" title="<pre>clojure.core.rrb-vector/vec
 ([coll])
@@ -922,7 +926,7 @@ format
 ([rev])
   Returns, in constant time, a seq of the items in rev (which
   can be a vector or sorted-map), in reverse order. If rev is empty returns nil</pre>">rseq</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/update-in/" class="tooltip" title="<pre>clojure.core/update-in
-([m [k &amp; ks] f &amp; args])
+([m ks f &amp; args])
   'Updates' a value in a nested associative structure, where ks is a
   sequence of keys and f is a function that will take the old value
   and any supplied args and return the new value, and returns a new
@@ -1169,7 +1173,7 @@ default-comparator.</pre>">ordering-map</a> (clojure.data.int-map/) <a href="htt
   the result by calling (f val-in-result val-in-latter).</pre>">merge-with</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/select-keys/" class="tooltip" title="<pre>clojure.core/select-keys
 ([map keyseq])
   Returns a map containing only those entries in map whose key is in keys</pre>">select-keys</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/update-in/" class="tooltip" title="<pre>clojure.core/update-in
-([m [k &amp; ks] f &amp; args])
+([m ks f &amp; args])
   'Updates' a value in a nested associative structure, where ks is a
   sequence of keys and f is a function that will take the old value
   and any supplied args and return the new value, and returns a new
@@ -1366,7 +1370,7 @@ data
   Evaluates x and tests if it is an instance of the class
     c. Returns true or false</pre>">instance?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/nil%3F/" class="tooltip" title="<pre>clojure.core/nil?
 ([x])
-  Returns true if x is nil, false otherwise.</pre>">nil?</a> (1.6) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/some%3F/" class="tooltip" title="<pre>clojure.core/some?
+  Returns true if x is nil, false otherwise.</pre>">nil?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/some%3F/" class="tooltip" title="<pre>clojure.core/some?
 ([x])
   Returns true if x is not nil, false otherwise.</pre>">some?</a></code></td>
               </tr>
@@ -1499,11 +1503,11 @@ side-effects</pre>">iterate</a></code></td>
   Returns a stateful transducer when no collection is provided.</pre>">distinct</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/filter/" class="tooltip" title="<pre>clojure.core/filter
 ([pred] [pred coll])
   Returns a lazy sequence of the items in coll for which
-  (pred item) returns true. pred must be free of side-effects.
+  (pred item) returns logical true. pred must be free of side-effects.
   Returns a transducer when no collection is provided.</pre>">filter</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/remove/" class="tooltip" title="<pre>clojure.core/remove
 ([pred] [pred coll])
   Returns a lazy sequence of the items in coll for which
-  (pred item) returns false. pred must be free of side-effects.
+  (pred item) returns logical false. pred must be free of side-effects.
   Returns a transducer when no collection is provided.</pre>">remove</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/take-nth/" class="tooltip" title="<pre>clojure.core/take-nth
 ([n] [n coll])
   Returns a lazy seq of every nth item in coll.  Returns a stateful
@@ -1604,11 +1608,11 @@ Macro
   no collection is provided.</pre>">take</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/take-while/" class="tooltip" title="<pre>clojure.core/take-while
 ([pred] [pred coll])
   Returns a lazy sequence of successive items from coll while
-  (pred item) returns true. pred must be free of side-effects.
+  (pred item) returns logical true. pred must be free of side-effects.
   Returns a transducer when no collection is provided.</pre>">take-while</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/butlast/" class="tooltip" title="<pre>clojure.core/butlast
 ([coll])
   Return a seq of all but the last item in coll, in linear time</pre>">butlast</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/drop-last/" class="tooltip" title="<pre>clojure.core/drop-last
-([s] [n s])
+([coll] [n coll])
   Return a lazy sequence of all but the last n (default 1) items in coll</pre>">drop-last</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/for/" class="tooltip" title="<pre>clojure.core/for
 ([seq-exprs body-expr])
 Macro
@@ -1663,11 +1667,11 @@ supplied colls.</pre>">concat</a> <a href="https://conj.io/store/v0/org.clojure/
   Returns a vector of [(take-while pred coll) (drop-while pred coll)]</pre>">split-with</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/filter/" class="tooltip" title="<pre>clojure.core/filter
 ([pred] [pred coll])
   Returns a lazy sequence of the items in coll for which
-  (pred item) returns true. pred must be free of side-effects.
+  (pred item) returns logical true. pred must be free of side-effects.
   Returns a transducer when no collection is provided.</pre>">filter</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/remove/" class="tooltip" title="<pre>clojure.core/remove
 ([pred] [pred coll])
   Returns a lazy sequence of the items in coll for which
-  (pred item) returns false. pred must be free of side-effects.
+  (pred item) returns logical false. pred must be free of side-effects.
   Returns a transducer when no collection is provided.</pre>">remove</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/replace/" class="tooltip" title="<pre>clojure.core/replace
 ([smap] [smap coll])
   Given a map of replacement pairs and a vector/collection, returns a
@@ -1799,16 +1803,20 @@ Macro
   Roughly the same as (when (seq xs) (let [x (first xs)] body)) but xs is
 evaluated only once</pre>">when-first</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/max-key/" class="tooltip" title="<pre>clojure.core/max-key
 ([k x] [k x y] [k x y &amp; more])
-  Returns the x for which (k x), a number, is greatest.</pre>">max-key</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/min-key/" class="tooltip" title="<pre>clojure.core/min-key
+  Returns the x for which (k x), a number, is greatest.
+
+  If there are multiple such xs, the last one is returned.</pre>">max-key</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/min-key/" class="tooltip" title="<pre>clojure.core/min-key
 ([k x] [k x y] [k x y &amp; more])
-  Returns the x for which (k x), a number, is least.</pre>">min-key</a></code></td>
+  Returns the x for which (k x), a number, is least.
+
+  If there are multiple such xs, the last one is returned.</pre>">min-key</a></code></td>
               </tr>
               <tr class="even">
                 <td>Construct coll</td>
                 <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/zipmap/" class="tooltip" title="<pre>clojure.core/zipmap
 ([keys vals])
   Returns a map with the keys mapped to the corresponding vals.</pre>">zipmap</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/into/" class="tooltip" title="<pre>clojure.core/into
-([to from] [to xform from])
+([] [to] [to from] [to xform from])
   Returns a new coll consisting of to-coll with all of the items of
   from-coll conjoined. A transducer may be supplied.</pre>">into</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/reduce/" class="tooltip" title="<pre>clojure.core/reduce
 ([f coll] [f val coll])
@@ -1847,7 +1855,7 @@ evaluated only once</pre>">when-first</a> <a href="https://conj.io/store/v0/org.
   f should accept number-of-colls arguments.</pre>">mapv</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/filterv/" class="tooltip" title="<pre>clojure.core/filterv
 ([pred coll])
   Returns a vector of the items in coll for which
-  (pred item) returns true. pred must be free of side-effects.</pre>">filterv</a></code></td>
+  (pred item) returns logical true. pred must be free of side-effects.</pre>">filterv</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Pass to fn</td>
@@ -1866,7 +1874,7 @@ to args.</pre>">apply</a></code></td>
   (some #{:fred} coll)</pre>">some</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/filter/" class="tooltip" title="<pre>clojure.core/filter
 ([pred] [pred coll])
   Returns a lazy sequence of the items in coll for which
-  (pred item) returns true. pred must be free of side-effects.
+  (pred item) returns logical true. pred must be free of side-effects.
   Returns a transducer when no collection is provided.</pre>">filter</a></code></td>
               </tr>
               <tr class="odd">
@@ -1924,11 +1932,11 @@ sequence.</pre>">realized?</a></code></td>
   a transducer when no collections are provided</pre>">mapcat</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/filter/" class="tooltip" title="<pre>clojure.core/filter
 ([pred] [pred coll])
   Returns a lazy sequence of the items in coll for which
-  (pred item) returns true. pred must be free of side-effects.
+  (pred item) returns logical true. pred must be free of side-effects.
   Returns a transducer when no collection is provided.</pre>">filter</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/remove/" class="tooltip" title="<pre>clojure.core/remove
 ([pred] [pred coll])
   Returns a lazy sequence of the items in coll for which
-  (pred item) returns false. pred must be free of side-effects.
+  (pred item) returns logical false. pred must be free of side-effects.
   Returns a transducer when no collection is provided.</pre>">remove</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/take/" class="tooltip" title="<pre>clojure.core/take
 ([n] [n coll])
   Returns a lazy sequence of the first n items in coll, or all items if
@@ -1936,7 +1944,7 @@ sequence.</pre>">realized?</a></code></td>
   no collection is provided.</pre>">take</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/take-while/" class="tooltip" title="<pre>clojure.core/take-while
 ([pred] [pred coll])
   Returns a lazy sequence of successive items from coll while
-  (pred item) returns true. pred must be free of side-effects.
+  (pred item) returns logical true. pred must be free of side-effects.
   Returns a transducer when no collection is provided.</pre>">take-while</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/take-nth/" class="tooltip" title="<pre>clojure.core/take-nth
 ([n] [n coll])
   Returns a lazy seq of every nth item in coll.  Returns a stateful
@@ -1990,7 +1998,16 @@ sequence.</pre>">realized?</a></code></td>
   Returns a transducer when no collection is provided.</pre>">dedupe</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/random-sample/" class="tooltip" title="<pre>clojure.core/random-sample
 ([prob] [prob coll])
   Returns items from coll with random probability of prob (0.0 -
-  1.0).  Returns a transducer when no collection is provided.</pre>">random-sample</a></code></td>
+  1.0).  Returns a transducer when no collection is provided.</pre>">random-sample</a> (1.9) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/halt-when/" class="tooltip" title="<pre>clojure.core/halt-when
+([pred] [pred retf])
+  Returns a transducer that ends transduction when pred returns true
+  for an input. When retf is supplied it must be a fn of 2 arguments -
+  it will be passed the (completed) result so far and the input that
+  triggered the predicate, and its return value (if it does not throw
+  an exception) will be the return value of the transducer. If retf
+  is not supplied, the input that triggered the predicate will be
+  returned. If the predicate never returns true the transduction is
+  unaffected.</pre>">halt-when</a></code></td>
               </tr>
               <tr class="even">
                 <td>Create your own</td>
@@ -2007,7 +2024,7 @@ sequence.</pre>">realized?</a></code></td>
               <tr class="odd">
                 <td>Use</td>
                 <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/into/" class="tooltip" title="<pre>clojure.core/into
-([to from] [to xform from])
+([] [to] [to from] [to xform from])
   Returns a new coll consisting of to-coll with all of the items of
   from-coll conjoined. A transducer may be supplied.</pre>">into</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sequence/" class="tooltip" title="<pre>clojure.core/sequence
 ([coll] [xform coll] [xform coll &amp; colls])
@@ -2058,111 +2075,116 @@ transaction,
           </table>
         </div><!-- /section -->
         <div class="section green">
-          <h3>Zippers (clojure.zip/)</h3>
+          <h2>Spec</h2>
+          <h3>Predicates with test.check generators</h3>
           <table>
             <tbody>
               <tr class="odd">
-                <td>Create</td>
-                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/zipper/" class="tooltip" title="<pre>clojure.zip/zipper
-([branch? children make-node root])
-  Creates a new zipper structure.
-
-  branch? is a fn that, given a node, returns true if can have
-  children, even if it currently doesn't.
-
-  children is a fn that, given a branch node, returns a seq of its
-  children.
-
-  make-node is a fn that, given an existing node and a seq of
-  children, returns a new branch node with the supplied children.
-  root is the root node.</pre>">zipper</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/seq-zip/" class="tooltip" title="<pre>clojure.zip/seq-zip
-([root])
-  Returns a zipper for nested sequences, given a root sequence</pre>">seq-zip</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/vector-zip/" class="tooltip" title="<pre>clojure.zip/vector-zip
-([root])
-  Returns a zipper for nested vectors, given a root vector</pre>">vector-zip</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/xml-zip/" class="tooltip" title="<pre>clojure.zip/xml-zip
-([root])
-  Returns a zipper for xml elements (as from xml/parse),
-  given a root element</pre>">xml-zip</a></code></td>
+                <td>Numbers</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/number%3F/" class="tooltip" title="<pre>clojure.core/number?
+([x])
+  Returns true if x is a Number</pre>">number?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/rational%3F/" class="tooltip" title="<pre>clojure.core/rational?
+([n])
+  Returns true if n is a rational number</pre>">rational?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/integer%3F/" class="tooltip" title="<pre>clojure.core/integer?
+([n])
+  Returns true if n is an integer</pre>">integer?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/ratio%3F/" class="tooltip" title="<pre>clojure.core/ratio?
+([n])
+  Returns true if n is a Ratio</pre>">ratio?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/decimal%3F/" class="tooltip" title="<pre>clojure.core/decimal?
+([n])
+  Returns true if n is a BigDecimal</pre>">decimal?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/float%3F/" class="tooltip" title="<pre>clojure.core/float?
+([n])
+  Returns true if n is a floating point number</pre>">float?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/zero%3F/" class="tooltip" title="<pre>clojure.core/zero?
+([num])
+  Returns true if num is zero, else false</pre>">zero?</a> (1.9) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/double%3F/" class="tooltip" title="<pre>clojure.core/double?
+([x])
+  Return true if x is a Double</pre>">double?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/int%3F/" class="tooltip" title="<pre>clojure.core/int?
+([x])
+  Return true if x is a fixed precision integer</pre>">int?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/nat-int%3F/" class="tooltip" title="<pre>clojure.core/nat-int?
+([x])
+  Return true if x is a non-negative fixed precision integer</pre>">nat-int?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/neg-int%3F/" class="tooltip" title="<pre>clojure.core/neg-int?
+([x])
+  Return true if x is a negative fixed precision integer</pre>">neg-int?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/pos-int%3F/" class="tooltip" title="<pre>clojure.core/pos-int?
+([x])
+  Return true if x is a positive fixed precision integer</pre>">pos-int?</a></code></td>
               </tr>
               <tr class="even">
-                <td>Get loc</td>
-                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/up/" class="tooltip" title="<pre>clojure.zip/up
-([loc])
-  Returns the loc of the parent of the node at this loc, or nil if at
-  the top</pre>">up</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/down/" class="tooltip" title="<pre>clojure.zip/down
-([loc])
-  Returns the loc of the leftmost child of the node at this loc, or
-  nil if no children</pre>">down</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/left/" class="tooltip" title="<pre>clojure.zip/left
-([loc])
-  Returns the loc of the left sibling of the node at this loc, or nil</pre>">left</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/right/" class="tooltip" title="<pre>clojure.zip/right
-([loc])
-  Returns the loc of the right sibling of the node at this loc, or nil</pre>">right</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/leftmost/" class="tooltip" title="<pre>clojure.zip/leftmost
-([loc])
-  Returns the loc of the leftmost sibling of the node at this loc, or self</pre>">leftmost</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/rightmost/" class="tooltip" title="<pre>clojure.zip/rightmost
-([loc])
-  Returns the loc of the rightmost sibling of the node at this loc, or self</pre>">rightmost</a></code></td>
+                <td>Symbols, keywords</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/keyword%3F/" class="tooltip" title="<pre>clojure.core/keyword?
+([x])
+  Return true if x is a Keyword</pre>">keyword?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/symbol%3F/" class="tooltip" title="<pre>clojure.core/symbol?
+([x])
+  Return true if x is a Symbol</pre>">symbol?</a> (1.9) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/ident%3F/" class="tooltip" title="<pre>clojure.core/ident?
+([x])
+  Return true if x is a symbol or keyword</pre>">ident?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/qualified-ident%3F/" class="tooltip" title="<pre>clojure.core/qualified-ident?
+([x])
+  Return true if x is a symbol or keyword with a namespace</pre>">qualified-ident?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/qualified-keyword%3F/" class="tooltip" title="<pre>clojure.core/qualified-keyword?
+([x])
+  Return true if x is a keyword with a namespace</pre>">qualified-keyword?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/qualified-symbol%3F/" class="tooltip" title="<pre>clojure.core/qualified-symbol?
+([x])
+  Return true if x is a symbol with a namespace</pre>">qualified-symbol?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/simple-ident%3F/" class="tooltip" title="<pre>clojure.core/simple-ident?
+([x])
+  Return true if x is a symbol or keyword without a namespace</pre>">simple-ident?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/simple-keyword%3F/" class="tooltip" title="<pre>clojure.core/simple-keyword?
+([x])
+  Return true if x is a keyword without a namespace</pre>">simple-keyword?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/simple-symbol%3F/" class="tooltip" title="<pre>clojure.core/simple-symbol?
+([x])
+  Return true if x is a symbol without a namespace</pre>">simple-symbol?</a></code></td>
               </tr>
               <tr class="odd">
-                <td>Get seq</td>
-                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/lefts/" class="tooltip" title="<pre>clojure.zip/lefts
-([loc])
-  Returns a seq of the left siblings of this loc</pre>">lefts</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/rights/" class="tooltip" title="<pre>clojure.zip/rights
-([loc])
-  Returns a seq of the right siblings of this loc</pre>">rights</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/path/" class="tooltip" title="<pre>clojure.zip/path
-([loc])
-  Returns a seq of nodes leading to this loc</pre>">path</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/children/" class="tooltip" title="<pre>clojure.zip/children
-([loc])
-  Returns a seq of the children of node at loc, which must be a branch</pre>">children</a></code></td>
+                <td>Other scalars</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/string%3F/" class="tooltip" title="<pre>clojure.core/string?
+([x])
+  Return true if x is a String</pre>">string?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/true%3F/" class="tooltip" title="<pre>clojure.core/true?
+([x])
+  Returns true if x is the value true, false otherwise.</pre>">true?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/false%3F/" class="tooltip" title="<pre>clojure.core/false?
+([x])
+  Returns true if x is the value false, false otherwise.</pre>">false?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/nil%3F/" class="tooltip" title="<pre>clojure.core/nil?
+([x])
+  Returns true if x is nil, false otherwise.</pre>">nil?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/some%3F/" class="tooltip" title="<pre>clojure.core/some?
+([x])
+  Returns true if x is not nil, false otherwise.</pre>">some?</a> (1.9) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/boolean%3F/" class="tooltip" title="<pre>clojure.core/boolean?
+([x])
+  Return true if x is a Boolean</pre>">boolean?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/bytes%3F/" class="tooltip" title="<pre>clojure.core/bytes?
+([x])
+  Return true if x is a byte array</pre>">bytes?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/inst%3F/" class="tooltip" title="<pre>clojure.core/inst?
+([x])
+  Return true if x satisfies Inst</pre>">inst?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/uri%3F/" class="tooltip" title="<pre>clojure.core/uri?
+([x])
+  Return true if x is a java.net.URI</pre>">uri?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/uuid%3F/" class="tooltip" title="<pre>clojure.core/uuid?
+([x])
+  Return true if x is a java.util.UUID</pre>">uuid?</a></code></td>
               </tr>
               <tr class="even">
-                <td>'Change'</td>
-                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/make-node/" class="tooltip" title="<pre>clojure.zip/make-node
-([loc node children])
-  Returns a new branch node, given an existing node and new
-  children. The loc is only used to supply the constructor.</pre>">make-node</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/replace/" class="tooltip" title="<pre>clojure.zip/replace
-([loc node])
-  Replaces the node at this loc, without moving</pre>">replace</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/edit/" class="tooltip" title="<pre>clojure.zip/edit
-([loc f &amp; args])
-  Replaces the node at this loc with the value of (f node args)</pre>">edit</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/insert-child/" class="tooltip" title="<pre>clojure.zip/insert-child
-([loc item])
-  Inserts the item as the leftmost child of the node at this loc,
-  without moving</pre>">insert-child</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/insert-left/" class="tooltip" title="<pre>clojure.zip/insert-left
-([loc item])
-  Inserts the item as the left sibling of the node at this loc,
- without moving</pre>">insert-left</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/insert-right/" class="tooltip" title="<pre>clojure.zip/insert-right
-([loc item])
-  Inserts the item as the right sibling of the node at this loc,
-  without moving</pre>">insert-right</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/append-child/" class="tooltip" title="<pre>clojure.zip/append-child
-([loc item])
-  Inserts the item as the rightmost child of the node at this loc,
-  without moving</pre>">append-child</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/remove/" class="tooltip" title="<pre>clojure.zip/remove
-([loc])
-  Removes the node at loc, returning the loc that would have preceded
-  it in a depth-first walk.</pre>">remove</a></code></td>
+                <td>Collections</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/list%3F/" class="tooltip" title="<pre>clojure.core/list?
+([x])
+  Returns true if x implements IPersistentList</pre>">list?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/map%3F/" class="tooltip" title="<pre>clojure.core/map?
+([x])
+  Return true if x implements IPersistentMap</pre>">map?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/set%3F/" class="tooltip" title="<pre>clojure.core/set?
+([x])
+  Returns true if x implements IPersistentSet</pre>">set?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/vector%3F/" class="tooltip" title="<pre>clojure.core/vector?
+([x])
+  Return true if x implements IPersistentVector</pre>">vector?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/associative%3F/" class="tooltip" title="<pre>clojure.core/associative?
+([coll])
+  Returns true if coll implements Associative</pre>">associative?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/coll%3F/" class="tooltip" title="<pre>clojure.core/coll?
+([x])
+  Returns true if x implements IPersistentCollection</pre>">coll?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/sequential%3F/" class="tooltip" title="<pre>clojure.core/sequential?
+([coll])
+  Returns true if coll implements Sequential</pre>">sequential?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/seq%3F/" class="tooltip" title="<pre>clojure.core/seq?
+([x])
+  Return true if x implements ISeq</pre>">seq?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/empty%3F/" class="tooltip" title="<pre>clojure.core/empty?
+([coll])
+  Returns true if coll has no items - same as (not (seq coll)).
+  Please use the idiom (seq x) rather than (not (empty? x))</pre>">empty?</a> (1.9) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/indexed%3F/" class="tooltip" title="<pre>clojure.core/indexed?
+([coll])
+  Return true if coll implements Indexed, indicating efficient lookup by index</pre>">indexed?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/seqable%3F/" class="tooltip" title="<pre>clojure.core/seqable?
+([x])
+  Return true if the seq function is supported for x</pre>">seqable?</a></code></td>
               </tr>
               <tr class="odd">
-                <td>Move</td>
-                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/next/" class="tooltip" title="<pre>clojure.zip/next
-([loc])
-  Moves to the next loc in the hierarchy, depth-first. When reaching
-  the end, returns a distinguished loc detectable via end?. If already
-  at the end, stays there.</pre>">next</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/prev/" class="tooltip" title="<pre>clojure.zip/prev
-([loc])
-  Moves to the previous loc in the hierarchy, depth-first. If already
-  at the root, returns nil.</pre>">prev</a></code></td>
-              </tr>
-              <tr class="even">
-                <td>Misc</td>
-                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/root/" class="tooltip" title="<pre>clojure.zip/root
-([loc])
-  zips all the way up and returns the root node, reflecting any
- changes.</pre>">root</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/node/" class="tooltip" title="<pre>clojure.zip/node
-([loc])
-  Returns the node at loc</pre>">node</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/branch%3F/" class="tooltip" title="<pre>clojure.zip/branch?
-([loc])
-  Returns true if the node at loc is a branch</pre>">branch?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/end%3F/" class="tooltip" title="<pre>clojure.zip/end?
-([loc])
-  Returns true if loc represents the end of a depth-first walk</pre>">end?</a></code></td>
+                <td>Other</td>
+                <td><code>(1.9) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/any%3F/" class="tooltip" title="<pre>clojure.core/any?
+([x])
+  Returns true given any argument.</pre>">any?</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -2424,7 +2446,7 @@ Macro
    children relative to the parent.</pre>">file</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.java.io/copy/" class="tooltip" title="<pre>clojure.java.io/copy
 ([input output &amp; opts])
   Copies input to output.  Returns nil or throws IOException.
-  Input may be an InputStream, Reader, File, byte[], or String.
+  Input may be an InputStream, Reader, File, byte[], char[], or String.
   Output may be an OutputStream, Writer, or File.
 
   Options are key/value pairs and may be one of
@@ -2436,7 +2458,8 @@ Macro
   Does not close any streams except those it opens itself
   (on a File).</pre>">copy</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.java.io/delete-file/" class="tooltip" title="<pre>clojure.java.io/delete-file
 ([f &amp; [silently]])
-  Delete file f. Raise an exception if it fails unless silently is true.</pre>">delete-file</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.java.io/resource/" class="tooltip" title="<pre>clojure.java.io/resource
+  Delete file f. If silently is nil or false, raise an exception on failure,
+else return the value of silently.</pre>">delete-file</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.java.io/resource/" class="tooltip" title="<pre>clojure.java.io/resource
 ([n] [n loader])
   Returns the URL for a named resource. Use the context class loader
    if no loader is specified.</pre>">resource</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.java.io/as-file/" class="tooltip" title="<pre>clojure.java.io/as-file
@@ -2454,8 +2477,8 @@ Macro
   Map from reader tag symbols to data reader Vars.
 
   When Clojure starts, it searches for files named 'data_readers.clj'
-  at the root of the classpath. Each such file must contain a literal
-  map of symbols, like this:
+  and 'data_readers.cljc' at the root of the classpath. Each such file
+  must contain a literal map of symbols, like this:
 
       {foo/bar my.project.foo/bar
        foo/baz my.project/baz}
@@ -2500,6 +2523,7 @@ Macro
                 <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/fn/" class="tooltip" title="<pre>clojure.core/fn
   (fn name? [params*] exprs*)
   (fn name? ([params*] exprs*) +)
+([&amp; sigs])
 Special Form
   params =&gt; positional-params* , or positional-params* &amp; next-param
   positional-param =&gt; binding-form
@@ -2508,17 +2532,38 @@ Special Form
 
   Defines a function
 
-  Please see http://clojure.org/special_forms#fn</pre>">fn</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/defn/" class="tooltip" title="<pre>clojure.core/defn
+  Please see http://clojure.org/special_forms#fn
+  params =&gt; positional-params* , or positional-params* &amp; next-param
+  positional-param =&gt; binding-form
+  next-param =&gt; binding-form
+  name =&gt; symbol
+
+  Defines a function
+Spec
+  args: (cat :name (? simple-symbol?) :bs (alt :arity-1
+:clojure.core.specs.alpha/args+body :arity-n (+ (spec
+:clojure.core.specs.alpha/args+body))))
+  ret: any?</pre>">fn</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/defn/" class="tooltip" title="<pre>clojure.core/defn
 ([name doc-string? attr-map? [params*] prepost-map? body] [name doc-string?
 attr-map? ([params*] prepost-map? body) + attr-map?])
 Macro
   Same as (def name (fn [params* ] exprs*)) or (def
     name (fn ([params* ] exprs*)+)) with any doc-string or attrs added
     to the var metadata. prepost-map defines a map with optional keys
-    :pre and :post that contain collections of pre or post conditions.</pre>">defn</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/defn-/" class="tooltip" title="<pre>clojure.core/defn-
+    :pre and :post that contain collections of pre or post conditions.
+Spec
+  args: (cat :name simple-symbol? :docstring (? string?) :meta (? map?) :bs (alt
+:arity-1 :clojure.core.specs.alpha/args+body :arity-n (cat :bodies (+ (spec
+:clojure.core.specs.alpha/args+body)) :attr (? map?))))
+  ret: any?</pre>">defn</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/defn-/" class="tooltip" title="<pre>clojure.core/defn-
 ([name &amp; decls])
 Macro
-  same as defn, yielding non-public def</pre>">defn-</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/definline/" class="tooltip" title="<pre>clojure.core/definline
+  same as defn, yielding non-public def
+Spec
+  args: (cat :name simple-symbol? :docstring (? string?) :meta (? map?) :bs (alt
+:arity-1 :clojure.core.specs.alpha/args+body :arity-n (cat :bodies (+ (spec
+:clojure.core.specs.alpha/args+body)) :attr (? map?))))
+  ret: any?</pre>">defn-</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/definline/" class="tooltip" title="<pre>clojure.core/definline
 ([name &amp; decl])
 Macro
   Experimental - like defmacro, except defines a named function whose
@@ -2893,8 +2938,8 @@ Macro
   Options are expressed as sequential keywords and arguments (in any order).
 
   Supported options:
-  :load-ns - if true, importing the record class will cause the
-             namespace in which the record was defined to be loaded.
+  :load-ns - if true, importing the type class will cause the
+             namespace in which the type was defined to be loaded.
              Defaults to false.
 
   Each spec consists of a protocol or interface name followed by zero
@@ -2931,8 +2976,8 @@ Macro
   Options are expressed as sequential keywords and arguments (in any order).
 
   Supported options:
-  :load-ns - if true, importing the record class will cause the
-             namespace in which the record was defined to be loaded.
+  :load-ns - if true, importing the type class will cause the
+             namespace in which the type was defined to be loaded.
              Defaults to false.
 
   Each spec consists of a protocol or interface name followed by zero
@@ -3117,7 +3162,11 @@ Macro
 Macro
   bindings =&gt; binding-form test
 
-  When test is true, evaluates body with binding-form bound to the value of test</pre>">when-let</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/when-first/" class="tooltip" title="<pre>clojure.core/when-first
+  When test is true, evaluates body with binding-form bound to the value of test
+Spec
+  args: (cat :bindings (and vector? :clojure.core.specs.alpha/binding) :body (*
+any?))
+  ret: any?</pre>">when-let</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/when-first/" class="tooltip" title="<pre>clojure.core/when-first
 ([bindings &amp; body])
 Macro
   bindings =&gt; x xs
@@ -3133,7 +3182,11 @@ Macro
   bindings =&gt; binding-form test
 
   If test is true, evaluates then with binding-form bound to the value of
-  test, if not, yields else</pre>">if-let</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/cond/" class="tooltip" title="<pre>clojure.core/cond
+  test, if not, yields else
+Spec
+  args: (cat :bindings (and vector? :clojure.core.specs.alpha/binding) :then
+any? :else (? any?))
+  ret: any?</pre>">if-let</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/cond/" class="tooltip" title="<pre>clojure.core/cond
 ([&amp; clauses])
 Macro
   Takes a set of test/expr pairs. It evaluates each test one at a
@@ -3183,7 +3236,7 @@ Macro
   symbols, keywords, and (Clojure) composites thereof. Note that since
   lists are used to group multiple constants that map to the same
   expression, a vector can be used to match a list if needed. The
-  test-constants need not be all of the same type.</pre>">case</a> (1.6) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/when-some/" class="tooltip" title="<pre>clojure.core/when-some
+  test-constants need not be all of the same type.</pre>">case</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/when-some/" class="tooltip" title="<pre>clojure.core/when-some
 ([bindings &amp; body])
 Macro
   bindings =&gt; binding-form test
@@ -3229,7 +3282,7 @@ Macro
               </tr>
               <tr class="odd">
                 <td>Arrange</td>
-                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/%2E%2E/" class="tooltip" title="<pre>clojure.core/..
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/_DOT__DOT_/" class="tooltip" title="<pre>clojure.core/..
 ([x form] [x form &amp; more])
 Macro
   form =&gt; fieldName-symbol or (instanceMethodName-symbol args*)
@@ -3397,7 +3450,8 @@ Macro
   Ignores body, yields nil</pre>">comment</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.repl/doc/" class="tooltip" title="<pre>clojure.repl/doc
 ([name])
 Macro
-  Prints documentation for a var or special form given its name</pre>">doc</a></code></td>
+  Prints documentation for a var or special form given its name,
+   or for a spec if given a keyword</pre>">doc</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -3417,7 +3471,8 @@ Macro
 Special Form
   Yields the unevaluated form.
 
-  Please see http://clojure.org/special_forms#quote</pre>">quote</a> <code><var>form</var>)</code></code></td>
+  Please see http://clojure.org/special_forms#quote
+  Yields the unevaluated form.</pre>">quote</a> <code><var>form</var>)</code></code></td>
               </tr>
               <tr class="odd">
                 <td><code>/</code></td>
@@ -3532,7 +3587,9 @@ Special Form
   The symbol must resolve to a var, and the Var object
 itself (not its value) is returned. The reader macro #'x expands to (var x).
 
-  Please see http://clojure.org/special_forms#var</pre>">var</a> <code><var>x</var>)</code></code></td>
+  Please see http://clojure.org/special_forms#var
+  The symbol must resolve to a var, and the Var object
+itself (not its value) is returned. The reader macro #'x expands to (var x).</pre>">var</a> <code><var>x</var>)</code></code></td>
               </tr>
               <tr class="odd">
                 <td><code>#"</code></td>
@@ -3569,7 +3626,7 @@ itself (not its value) is returned. The reader macro #'x expands to (var x).
               <tr class="odd">
                 <td><code>foo?</code></td>
                 <td><code>conventional ending for a predicate, e.g.: <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/zero%3F/" class="tooltip" title="<pre>clojure.core/zero?
-([x])
+([num])
   Returns true if num is zero, else false</pre>">zero?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/vector%3F/" class="tooltip" title="<pre>clojure.core/vector?
 ([x])
   Return true if x implements IPersistentVector</pre>">vector?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/instance%3F/" class="tooltip" title="<pre>clojure.core/instance?
@@ -3587,7 +3644,9 @@ Special Form
   Used to set thread-local-bound vars, Java object instance
 fields, and Java class static fields.
 
-  Please see http://clojure.org/vars#set</pre>">set!</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/swap%21/" class="tooltip" title="<pre>clojure.core/swap!
+  Please see http://clojure.org/vars#set
+  Used to set thread-local-bound vars, Java object instance
+fields, and Java class static fields.</pre>">set!</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/swap%21/" class="tooltip" title="<pre>clojure.core/swap!
 ([atom f] [atom f x] [atom f x y] [atom f x y &amp; args])
   Atomically swaps the value of atom to be:
   (apply f current-value-of-atom args). Note that f may be called
@@ -3653,7 +3712,8 @@ fields, and Java class static fields.
   Atomically resets the metadata for a namespace/var/ref/agent/atom</pre>">reset-meta!</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.repl/doc/" class="tooltip" title="<pre>clojure.repl/doc
 ([name])
 Macro
-  Prints documentation for a var or special form given its name</pre>">doc</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.repl/find-doc/" class="tooltip" title="<pre>clojure.repl/find-doc
+  Prints documentation for a var or special form given its name,
+   or for a spec if given a keyword</pre>">doc</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.repl/find-doc/" class="tooltip" title="<pre>clojure.repl/find-doc
 ([re-string-or-pattern])
   Prints documentation for any var whose documentation or name
  contains a match for re-string-or-pattern</pre>">find-doc</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/test/" class="tooltip" title="<pre>clojure.core/test
@@ -3678,21 +3738,32 @@ Special Form
   root binding of the var is set to the resulting value.  If init is
   not supplied, the root binding of the var is unaffected.
 
-  Please see http://clojure.org/special_forms#def</pre>">def</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/if/" class="tooltip" title="<pre>if
+  Please see http://clojure.org/special_forms#def
+  Creates and interns a global var with the name
+  of symbol in the current namespace (*ns*) or locates such a var if
+  it already exists.  If init is supplied, it is evaluated, and the
+  root binding of the var is set to the resulting value.  If init is
+  not supplied, the root binding of the var is unaffected.</pre>">def</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/if/" class="tooltip" title="<pre>if
   (if test then else?)
 Special Form
   Evaluates test. If not the singular values nil or false,
   evaluates and yields then, otherwise, evaluates and yields else. If
   else is not supplied it defaults to nil.
 
-  Please see http://clojure.org/special_forms#if</pre>">if</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/do/" class="tooltip" title="<pre>do
+  Please see http://clojure.org/special_forms#if
+  Evaluates test. If not the singular values nil or false,
+  evaluates and yields then, otherwise, evaluates and yields else. If
+  else is not supplied it defaults to nil.</pre>">if</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/do/" class="tooltip" title="<pre>do
   (do exprs*)
 Special Form
   Evaluates the expressions in order and returns the value of
   the last. If no expressions are supplied, returns nil.
 
-  Please see http://clojure.org/special_forms#do</pre>">do</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/let/" class="tooltip" title="<pre>clojure.core/let
+  Please see http://clojure.org/special_forms#do
+  Evaluates the expressions in order and returns the value of
+  the last. If no expressions are supplied, returns nil.</pre>">do</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/let/" class="tooltip" title="<pre>clojure.core/let
   (let [bindings*] exprs*)
+([bindings &amp; body])
 Special Form
   binding =&gt; binding-form init-expr
 
@@ -3700,9 +3771,23 @@ Special Form
   the binding-forms are bound to their respective init-exprs or parts
   therein.
 
-  Please see http://clojure.org/special_forms#let</pre>">let</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/letfn/" class="tooltip" title="<pre>clojure.core/letfn
+  Please see http://clojure.org/special_forms#let
+  binding =&gt; binding-form init-expr
+
+  Evaluates the exprs in a lexical context in which the symbols in
+  the binding-forms are bound to their respective init-exprs or parts
+  therein.
+Spec
+  args: (cat :bindings :clojure.core.specs.alpha/bindings :body (* any?))
+  ret: any?</pre>">let</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/letfn/" class="tooltip" title="<pre>clojure.core/letfn
   (letfn [fnspecs*] exprs*)
+([fnspecs &amp; body])
 Special Form
+  fnspec ==&gt; (fname [params*] exprs) or (fname ([params*] exprs)+)
+
+  Takes a vector of function specs and a body, and generates a set of
+  bindings of functions to their names. All of the names are available
+  in all of the definitions of the functions, as well as the body.
   fnspec ==&gt; (fname [params*] exprs) or (fname ([params*] exprs)+)
 
   Takes a vector of function specs and a body, and generates a set of
@@ -3712,15 +3797,19 @@ Special Form
 Special Form
   Yields the unevaluated form.
 
-  Please see http://clojure.org/special_forms#quote</pre>">quote</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/var/" class="tooltip" title="<pre>var
+  Please see http://clojure.org/special_forms#quote
+  Yields the unevaluated form.</pre>">quote</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/var/" class="tooltip" title="<pre>var
   (var symbol)
 Special Form
   The symbol must resolve to a var, and the Var object
 itself (not its value) is returned. The reader macro #'x expands to (var x).
 
-  Please see http://clojure.org/special_forms#var</pre>">var</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/fn/" class="tooltip" title="<pre>clojure.core/fn
+  Please see http://clojure.org/special_forms#var
+  The symbol must resolve to a var, and the Var object
+itself (not its value) is returned. The reader macro #'x expands to (var x).</pre>">var</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/fn/" class="tooltip" title="<pre>clojure.core/fn
   (fn name? [params*] exprs*)
   (fn name? ([params*] exprs*) +)
+([&amp; sigs])
 Special Form
   params =&gt; positional-params* , or positional-params* &amp; next-param
   positional-param =&gt; binding-form
@@ -3729,21 +3818,39 @@ Special Form
 
   Defines a function
 
-  Please see http://clojure.org/special_forms#fn</pre>">fn</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/loop/" class="tooltip" title="<pre>clojure.core/loop
+  Please see http://clojure.org/special_forms#fn
+  params =&gt; positional-params* , or positional-params* &amp; next-param
+  positional-param =&gt; binding-form
+  next-param =&gt; binding-form
+  name =&gt; symbol
+
+  Defines a function
+Spec
+  args: (cat :name (? simple-symbol?) :bs (alt :arity-1
+:clojure.core.specs.alpha/args+body :arity-n (+ (spec
+:clojure.core.specs.alpha/args+body))))
+  ret: any?</pre>">fn</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/loop/" class="tooltip" title="<pre>clojure.core/loop
   (loop [bindings*] exprs*)
+([bindings &amp; body])
 Special Form
   Evaluates the exprs in a lexical context in which the symbols in
   the binding-forms are bound to their respective init-exprs or parts
   therein. Acts as a recur target.
 
-  Please see http://clojure.org/special_forms#loop</pre>">loop</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/recur/" class="tooltip" title="<pre>recur
+  Please see http://clojure.org/special_forms#loop
+  Evaluates the exprs in a lexical context in which the symbols in
+  the binding-forms are bound to their respective init-exprs or parts
+  therein. Acts as a recur target.</pre>">loop</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/recur/" class="tooltip" title="<pre>recur
   (recur exprs*)
 Special Form
   Evaluates the exprs in order, then, in parallel, rebinds
   the bindings of the recursion point to the values of the exprs.
   Execution then jumps back to the recursion point, a loop or fn method.
 
-  Please see http://clojure.org/special_forms#recur</pre>">recur</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/set!" class="tooltip" title="<pre>set!
+  Please see http://clojure.org/special_forms#recur
+  Evaluates the exprs in order, then, in parallel, rebinds
+  the bindings of the recursion point to the values of the exprs.
+  Execution then jumps back to the recursion point, a loop or fn method.</pre>">recur</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/set!" class="tooltip" title="<pre>set!
   (set! var-symbol expr)
   (set! (. instance-expr instanceFieldName-symbol) expr)
   (set! (. Classname-symbol staticFieldName-symbol) expr)
@@ -3751,13 +3858,17 @@ Special Form
   Used to set thread-local-bound vars, Java object instance
 fields, and Java class static fields.
 
-  Please see http://clojure.org/vars#set</pre>">set!</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/throw/" class="tooltip" title="<pre>throw
+  Please see http://clojure.org/vars#set
+  Used to set thread-local-bound vars, Java object instance
+fields, and Java class static fields.</pre>">set!</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/throw/" class="tooltip" title="<pre>throw
   (throw expr)
 Special Form
   The expr is evaluated and thrown, therefore it should
   yield an instance of some derivee of Throwable.
 
-  Please see http://clojure.org/special_forms#throw</pre>">throw</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/try/" class="tooltip" title="<pre>try
+  Please see http://clojure.org/special_forms#throw
+  The expr is evaluated and thrown, therefore it should
+  yield an instance of some derivee of Throwable.</pre>">throw</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/try/" class="tooltip" title="<pre>try
   (try expr* catch-clause* finally-clause?)
 Special Form
   catch-clause =&gt; (catch classname name expr*)
@@ -3765,19 +3876,27 @@ Special Form
 
   Catches and handles Java exceptions.
 
-  Please see http://clojure.org/special_forms#try</pre>">try</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/monitor-enter/" class="tooltip" title="<pre>monitor-enter
+  Please see http://clojure.org/special_forms#try
+  catch-clause =&gt; (catch classname name expr*)
+  finally-clause =&gt; (finally expr*)
+
+  Catches and handles Java exceptions.</pre>">try</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/monitor-enter/" class="tooltip" title="<pre>monitor-enter
   (monitor-enter x)
 Special Form
   Synchronization primitive that should be avoided
   in user code. Use the 'locking' macro.
 
-  Please see http://clojure.org/special_forms#monitor-enter</pre>">monitor-enter</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/monitor-exit/" class="tooltip" title="<pre>monitor-exit
+  Please see http://clojure.org/special_forms#monitor-enter
+  Synchronization primitive that should be avoided
+  in user code. Use the 'locking' macro.</pre>">monitor-enter</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/monitor-exit/" class="tooltip" title="<pre>monitor-exit
   (monitor-exit x)
 Special Form
   Synchronization primitive that should be avoided
   in user code. Use the 'locking' macro.
 
-  Please see http://clojure.org/special_forms#monitor-exit</pre>">monitor-exit</a></code>
+  Please see http://clojure.org/special_forms#monitor-exit
+  Synchronization primitive that should be avoided
+  in user code. Use the 'locking' macro.</pre>">monitor-exit</a></code>
           </div>
           <table>
             <tbody>
@@ -3785,6 +3904,7 @@ Special Form
                 <td>Binding Forms / Destructuring</td>
                 <td><code>(<a href="https://clojure.org/reference/special_forms#binding-forms">examples</a>) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/let/" class="tooltip" title="<pre>clojure.core/let
   (let [bindings*] exprs*)
+([bindings &amp; body])
 Special Form
   binding =&gt; binding-form init-expr
 
@@ -3792,9 +3912,18 @@ Special Form
   the binding-forms are bound to their respective init-exprs or parts
   therein.
 
-  Please see http://clojure.org/special_forms#let</pre>">let</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/fn/" class="tooltip" title="<pre>clojure.core/fn
+  Please see http://clojure.org/special_forms#let
+  binding =&gt; binding-form init-expr
+
+  Evaluates the exprs in a lexical context in which the symbols in
+  the binding-forms are bound to their respective init-exprs or parts
+  therein.
+Spec
+  args: (cat :bindings :clojure.core.specs.alpha/bindings :body (* any?))
+  ret: any?</pre>">let</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/fn/" class="tooltip" title="<pre>clojure.core/fn
   (fn name? [params*] exprs*)
   (fn name? ([params*] exprs*) +)
+([&amp; sigs])
 Special Form
   params =&gt; positional-params* , or positional-params* &amp; next-param
   positional-param =&gt; binding-form
@@ -3803,14 +3932,30 @@ Special Form
 
   Defines a function
 
-  Please see http://clojure.org/special_forms#fn</pre>">fn</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/defn/" class="tooltip" title="<pre>clojure.core/defn
+  Please see http://clojure.org/special_forms#fn
+  params =&gt; positional-params* , or positional-params* &amp; next-param
+  positional-param =&gt; binding-form
+  next-param =&gt; binding-form
+  name =&gt; symbol
+
+  Defines a function
+Spec
+  args: (cat :name (? simple-symbol?) :bs (alt :arity-1
+:clojure.core.specs.alpha/args+body :arity-n (+ (spec
+:clojure.core.specs.alpha/args+body))))
+  ret: any?</pre>">fn</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/defn/" class="tooltip" title="<pre>clojure.core/defn
 ([name doc-string? attr-map? [params*] prepost-map? body] [name doc-string?
 attr-map? ([params*] prepost-map? body) + attr-map?])
 Macro
   Same as (def name (fn [params* ] exprs*)) or (def
     name (fn ([params* ] exprs*)+)) with any doc-string or attrs added
     to the var metadata. prepost-map defines a map with optional keys
-    :pre and :post that contain collections of pre or post conditions.</pre>">defn</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/defmacro/" class="tooltip" title="<pre>clojure.core/defmacro
+    :pre and :post that contain collections of pre or post conditions.
+Spec
+  args: (cat :name simple-symbol? :docstring (? string?) :meta (? map?) :bs (alt
+:arity-1 :clojure.core.specs.alpha/args+body :arity-n (cat :bodies (+ (spec
+:clojure.core.specs.alpha/args+body)) :attr (? map?))))
+  ret: any?</pre>">defn</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/defmacro/" class="tooltip" title="<pre>clojure.core/defmacro
 ([name doc-string? attr-map? [params*] body] [name doc-string? attr-map?
 ([params*] body) + attr-map?])
 Macro
@@ -3818,12 +3963,16 @@ Macro
   macro and will be used as a macro by the compiler when it is
   called.</pre>">defmacro</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/loop/" class="tooltip" title="<pre>clojure.core/loop
   (loop [bindings*] exprs*)
+([bindings &amp; body])
 Special Form
   Evaluates the exprs in a lexical context in which the symbols in
   the binding-forms are bound to their respective init-exprs or parts
   therein. Acts as a recur target.
 
-  Please see http://clojure.org/special_forms#loop</pre>">loop</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/for/" class="tooltip" title="<pre>clojure.core/for
+  Please see http://clojure.org/special_forms#loop
+  Evaluates the exprs in a lexical context in which the symbols in
+  the binding-forms are bound to their respective init-exprs or parts
+  therein. Acts as a recur target.</pre>">loop</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/for/" class="tooltip" title="<pre>clojure.core/for
 ([seq-exprs body-expr])
 Macro
   List comprehension. Takes a vector of one or more
@@ -3845,12 +3994,20 @@ Macro
   bindings =&gt; binding-form test
 
   If test is true, evaluates then with binding-form bound to the value of
-  test, if not, yields else</pre>">if-let</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/when-let/" class="tooltip" title="<pre>clojure.core/when-let
+  test, if not, yields else
+Spec
+  args: (cat :bindings (and vector? :clojure.core.specs.alpha/binding) :then
+any? :else (? any?))
+  ret: any?</pre>">if-let</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/when-let/" class="tooltip" title="<pre>clojure.core/when-let
 ([bindings &amp; body])
 Macro
   bindings =&gt; binding-form test
 
-  When test is true, evaluates body with binding-form bound to the value of test</pre>">when-let</a> (1.6) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/if-some/" class="tooltip" title="<pre>clojure.core/if-some
+  When test is true, evaluates body with binding-form bound to the value of test
+Spec
+  args: (cat :bindings (and vector? :clojure.core.specs.alpha/binding) :body (*
+any?))
+  ret: any?</pre>">when-let</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/if-some/" class="tooltip" title="<pre>clojure.core/if-some
 ([bindings then] [bindings then else &amp; oldform])
 Macro
   bindings =&gt; binding-form test
@@ -3882,17 +4039,32 @@ Special Form
   root binding of the var is set to the resulting value.  If init is
   not supplied, the root binding of the var is unaffected.
 
-  Please see http://clojure.org/special_forms#def</pre>">def</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/defn/" class="tooltip" title="<pre>clojure.core/defn
+  Please see http://clojure.org/special_forms#def
+  Creates and interns a global var with the name
+  of symbol in the current namespace (*ns*) or locates such a var if
+  it already exists.  If init is supplied, it is evaluated, and the
+  root binding of the var is set to the resulting value.  If init is
+  not supplied, the root binding of the var is unaffected.</pre>">def</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/defn/" class="tooltip" title="<pre>clojure.core/defn
 ([name doc-string? attr-map? [params*] prepost-map? body] [name doc-string?
 attr-map? ([params*] prepost-map? body) + attr-map?])
 Macro
   Same as (def name (fn [params* ] exprs*)) or (def
     name (fn ([params* ] exprs*)+)) with any doc-string or attrs added
     to the var metadata. prepost-map defines a map with optional keys
-    :pre and :post that contain collections of pre or post conditions.</pre>">defn</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/defn-/" class="tooltip" title="<pre>clojure.core/defn-
+    :pre and :post that contain collections of pre or post conditions.
+Spec
+  args: (cat :name simple-symbol? :docstring (? string?) :meta (? map?) :bs (alt
+:arity-1 :clojure.core.specs.alpha/args+body :arity-n (cat :bodies (+ (spec
+:clojure.core.specs.alpha/args+body)) :attr (? map?))))
+  ret: any?</pre>">defn</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/defn-/" class="tooltip" title="<pre>clojure.core/defn-
 ([name &amp; decls])
 Macro
-  same as defn, yielding non-public def</pre>">defn-</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/definline/" class="tooltip" title="<pre>clojure.core/definline
+  same as defn, yielding non-public def
+Spec
+  args: (cat :name simple-symbol? :docstring (? string?) :meta (? map?) :bs (alt
+:arity-1 :clojure.core.specs.alpha/args+body :arity-n (cat :bodies (+ (spec
+:clojure.core.specs.alpha/args+body)) :attr (? map?))))
+  ret: any?</pre>">defn-</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/definline/" class="tooltip" title="<pre>clojure.core/definline
 ([name &amp; decl])
 Macro
   Experimental - like defmacro, except defines a named function whose
@@ -3993,7 +4165,9 @@ Special Form
   The symbol must resolve to a var, and the Var object
 itself (not its value) is returned. The reader macro #'x expands to (var x).
 
-  Please see http://clojure.org/special_forms#var</pre>">var</a></code></td>
+  Please see http://clojure.org/special_forms#var
+  The symbol must resolve to a var, and the Var object
+itself (not its value) is returned. The reader macro #'x expands to (var x).</pre>">var</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Var objects</td>
@@ -4077,7 +4251,11 @@ Macro
     (:require (clojure.contrib sql combinatorics))
     (:use (my.lib this that))
     (:import (java.util Date Timer Random)
-             (java.sql Connection Statement)))</pre>">ns</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/in-ns/" class="tooltip" title="<pre>clojure.core/in-ns
+             (java.sql Connection Statement)))
+Spec
+  args: (cat :name simple-symbol? :docstring (? string?) :attr-map (? map?)
+
+[ documentation truncated.  Click link for the rest. ]</pre>">ns</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/in-ns/" class="tooltip" title="<pre>clojure.core/in-ns
 ([name])
   Sets *ns* to the namespace named by the symbol, creating it if needed.</pre>">in-ns</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/create-ns/" class="tooltip" title="<pre>clojure.core/create-ns
 ([sym])
@@ -4102,14 +4280,23 @@ Special Form
   root binding of the var is set to the resulting value.  If init is
   not supplied, the root binding of the var is unaffected.
 
-  Please see http://clojure.org/special_forms#def</pre>">def</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/import/" class="tooltip" title="<pre>clojure.core/import
+  Please see http://clojure.org/special_forms#def
+  Creates and interns a global var with the name
+  of symbol in the current namespace (*ns*) or locates such a var if
+  it already exists.  If init is supplied, it is evaluated, and the
+  root binding of the var is set to the resulting value.  If init is
+  not supplied, the root binding of the var is unaffected.</pre>">def</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/import/" class="tooltip" title="<pre>clojure.core/import
 ([&amp; import-symbols-or-lists])
 Macro
   import-list =&gt; (package-symbol class-name-symbols*)
 
   For each name in class-name-symbols, adds a mapping from name to the
   class named by package.name to the current namespace. Use :import in the ns
-  macro in preference to calling this directly.</pre>">import</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/intern/" class="tooltip" title="<pre>clojure.core/intern
+  macro in preference to calling this directly.
+Spec
+  args: (* (alt :class (quotable simple-symbol?) :package-list (quotable
+:clojure.core.specs.alpha/package-list)))
+  ret: any?</pre>">import</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/intern/" class="tooltip" title="<pre>clojure.core/intern
 ([ns name] [ns name val])
   Finds or creates a var named by the symbol name in the namespace
   ns (which can be a symbol or a namespace), setting its root binding
@@ -4215,9 +4402,10 @@ Macro
   'require loads a lib by loading its root resource. The root resource path
   is derived from the lib name in the following manner:
   Consider a lib named by the symbol 'x.y.z; it has the root directory
-  &lt;classpath&gt;/x/y/, and its root resource is &lt;classpath&gt;/x/y/z.clj. The root
-  resource should contain code to create the lib's namespace (usually by using
-  the ns macro) and load any additional lib resources.
+  &lt;classpath&gt;/x/y/, and its root resource is &lt;classpath&gt;/x/y/z.clj, or
+  &lt;classpath&gt;/x/y/z.cljc if &lt;classpath&gt;/x/y/z.clj does not exist. The
+  root resource should contain code to create the lib's
+  namespace (usually by using the ns macro) and load any additional
 
 [ documentation truncated.  Click link for the rest. ]</pre>">require</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/use/" class="tooltip" title="<pre>clojure.core/use
 ([&amp; args])
@@ -4234,7 +4422,11 @@ Macro
 
   For each name in class-name-symbols, adds a mapping from name to the
   class named by package.name to the current namespace. Use :import in the ns
-  macro in preference to calling this directly.</pre>">import</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/refer/" class="tooltip" title="<pre>clojure.core/refer
+  macro in preference to calling this directly.
+Spec
+  args: (* (alt :class (quotable simple-symbol?) :package-list (quotable
+:clojure.core.specs.alpha/package-list)))
+  ret: any?</pre>">import</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/refer/" class="tooltip" title="<pre>clojure.core/refer
 ([ns-sym &amp; filters])
   refers to all public vars of ns, subject to filters.
   filters can include at most one each of:
@@ -4307,7 +4499,15 @@ Macro
 ([atom oldval newval])
   Atomically sets the value of atom to newval if and only if the
   current value of the atom is identical to oldval. Returns true if
-  set happened, else false</pre>">compare-and-set!</a></code></td>
+  set happened, else false</pre>">compare-and-set!</a> (1.9) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/swap-vals%21/" class="tooltip" title="<pre>clojure.core/swap-vals!
+([atom f] [atom f x] [atom f x y] [atom f x y &amp; args])
+  Atomically swaps the value of atom to be:
+  (apply f current-value-of-atom args). Note that f may be called
+  multiple times, and thus should be free of side effects.
+  Returns [old new], the value of the atom before and after the swap.</pre>">swap-vals!</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/reset-vals%21/" class="tooltip" title="<pre>clojure.core/reset-vals!
+([atom newval])
+  Sets the value of atom to newval. Returns [old new], the value of the
+   atom before and after the reset.</pre>">reset-vals!</a></code></td>
               </tr>
               <tr class="even">
                 <td>Futures</td>
@@ -4639,7 +4839,8 @@ Macro
   Blocks the current thread (indefinitely!) until all actions
   dispatched thus far, from this thread or agent, to the agent(s) have
   occurred.  Will block on failed agents.  Will never return if
-  a failed agent is restarted with :clear-actions true.</pre>">await</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/await-for/" class="tooltip" title="<pre>clojure.core/await-for
+  a failed agent is restarted with :clear-actions true or shutdown-agents was
+called.</pre>">await</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/await-for/" class="tooltip" title="<pre>clojure.core/await-for
 ([timeout-ms &amp; agents])
   Blocks the current thread until all actions dispatched thus
   far (from this thread or agent) to the agents have occurred, or the
@@ -4735,7 +4936,7 @@ Macro
             <tbody>
               <tr class="odd">
                 <td>General</td>
-                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/%2E%2E/" class="tooltip" title="<pre>clojure.core/..
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/_DOT__DOT_/" class="tooltip" title="<pre>clojure.core/..
 ([x form] [x form &amp; more])
 Macro
   form =&gt; fieldName-symbol or (instanceMethodName-symbol args*)
@@ -4765,7 +4966,10 @@ Special Form
   passed to the constructor of the class named by Classname. The
   constructed object is returned.
 
-  Please see http://clojure.org/java_interop#new</pre>">new</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/bean/" class="tooltip" title="<pre>clojure.core/bean
+  Please see http://clojure.org/java_interop#new
+  The args, if any, are evaluated from left to right, and
+  passed to the constructor of the class named by Classname. The
+  constructed object is returned.</pre>">new</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/bean/" class="tooltip" title="<pre>clojure.core/bean
 ([x])
   Takes a Java object and returns a read-only implementation of the
   map abstraction based upon its JavaBean properties.</pre>">bean</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/comparator/" class="tooltip" title="<pre>clojure.core/comparator
@@ -4779,7 +4983,11 @@ Macro
 
   For each name in class-name-symbols, adds a mapping from name to the
   class named by package.name to the current namespace. Use :import in the ns
-  macro in preference to calling this directly.</pre>">import</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/iterator-seq/" class="tooltip" title="<pre>clojure.core/iterator-seq
+  macro in preference to calling this directly.
+Spec
+  args: (* (alt :class (quotable simple-symbol?) :package-list (quotable
+:clojure.core.specs.alpha/package-list)))
+  ret: any?</pre>">import</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/iterator-seq/" class="tooltip" title="<pre>clojure.core/iterator-seq
 ([iter])
   Returns a seq on a java.util.Iterator. Note that most collections
   providing iterators implement Iterable and thus support seq directly.
@@ -4799,7 +5007,9 @@ Special Form
   Used to set thread-local-bound vars, Java object instance
 fields, and Java class static fields.
 
-  Please see http://clojure.org/vars#set</pre>">set!</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/class/" class="tooltip" title="<pre>clojure.core/class
+  Please see http://clojure.org/vars#set
+  Used to set thread-local-bound vars, Java object instance
+fields, and Java class static fields.</pre>">set!</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/class/" class="tooltip" title="<pre>clojure.core/class
 ([x])
   Returns the Class of x</pre>">class</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/class%3F/" class="tooltip" title="<pre>clojure.core/class?
 ([x])
@@ -4910,7 +5120,9 @@ Special Form
   The expr is evaluated and thrown, therefore it should
   yield an instance of some derivee of Throwable.
 
-  Please see http://clojure.org/special_forms#throw</pre>">throw</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/try/" class="tooltip" title="<pre>try
+  Please see http://clojure.org/special_forms#throw
+  The expr is evaluated and thrown, therefore it should
+  yield an instance of some derivee of Throwable.</pre>">throw</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/try/" class="tooltip" title="<pre>try
   (try expr* catch-clause* finally-clause?)
 Special Form
   catch-clause =&gt; (catch classname name expr*)
@@ -4918,7 +5130,11 @@ Special Form
 
   Catches and handles Java exceptions.
 
-  Please see http://clojure.org/special_forms#try</pre>">try</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/catch" class="tooltip" title="<pre>try
+  Please see http://clojure.org/special_forms#try
+  catch-clause =&gt; (catch classname name expr*)
+  finally-clause =&gt; (finally expr*)
+
+  Catches and handles Java exceptions.</pre>">try</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/catch" class="tooltip" title="<pre>try
   (try expr* catch-clause* finally-clause?)
 Special Form
   catch-clause =&gt; (catch classname name expr*)
@@ -4926,7 +5142,11 @@ Special Form
 
   Catches and handles Java exceptions.
 
-  Please see http://clojure.org/special_forms#try</pre>">catch</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/finally" class="tooltip" title="<pre>try
+  Please see http://clojure.org/special_forms#try
+  catch-clause =&gt; (catch classname name expr*)
+  finally-clause =&gt; (finally expr*)
+
+  Catches and handles Java exceptions.</pre>">catch</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/finally" class="tooltip" title="<pre>try
   (try expr* catch-clause* finally-clause?)
 Special Form
   catch-clause =&gt; (catch classname name expr*)
@@ -4934,7 +5154,11 @@ Special Form
 
   Catches and handles Java exceptions.
 
-  Please see http://clojure.org/special_forms#try</pre>">finally</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.repl/pst/" class="tooltip" title="<pre>clojure.repl/pst
+  Please see http://clojure.org/special_forms#try
+  catch-clause =&gt; (catch classname name expr*)
+  finally-clause =&gt; (finally expr*)
+
+  Catches and handles Java exceptions.</pre>">finally</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.repl/pst/" class="tooltip" title="<pre>clojure.repl/pst
 ([] [e-or-depth] [e depth])
   Prints a stack trace of the exception, to the depth requested. If none
 supplied, uses the root cause of the
@@ -4944,7 +5168,9 @@ supplied, uses the root cause of the
    that carries a map of additional data.</pre>">ex-info</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/ex-data/" class="tooltip" title="<pre>clojure.core/ex-data
 ([ex])
   Returns exception data (a map) if ex is an IExceptionInfo.
-   Otherwise returns nil.</pre>">ex-data</a></code></td>
+   Otherwise returns nil.</pre>">ex-data</a> (1.9) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/StackTraceElement-%3Evec/" class="tooltip" title="<pre>clojure.core/StackTraceElement-&gt;vec
+([o])
+  Constructs a data representation for a StackTraceElement</pre>">StackTraceElement-&gt;vec</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -5124,6 +5350,116 @@ Macro
   default behavior. Note that this function can be used to update the
   behavior of an existing instance without changing its identity.
   Returns the proxy.</pre>">update-proxy</a></code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div><!-- /section -->
+        <div class="section blue">
+          <h3>Zippers (clojure.zip/)</h3>
+          <table>
+            <tbody>
+              <tr class="odd">
+                <td>Create</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/zipper/" class="tooltip" title="<pre>clojure.zip/zipper
+([branch? children make-node root])
+  Creates a new zipper structure.
+
+  branch? is a fn that, given a node, returns true if can have
+  children, even if it currently doesn't.
+
+  children is a fn that, given a branch node, returns a seq of its
+  children.
+
+  make-node is a fn that, given an existing node and a seq of
+  children, returns a new branch node with the supplied children.
+  root is the root node.</pre>">zipper</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/seq-zip/" class="tooltip" title="<pre>clojure.zip/seq-zip
+([root])
+  Returns a zipper for nested sequences, given a root sequence</pre>">seq-zip</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/vector-zip/" class="tooltip" title="<pre>clojure.zip/vector-zip
+([root])
+  Returns a zipper for nested vectors, given a root vector</pre>">vector-zip</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/xml-zip/" class="tooltip" title="<pre>clojure.zip/xml-zip
+([root])
+  Returns a zipper for xml elements (as from xml/parse),
+  given a root element</pre>">xml-zip</a></code></td>
+              </tr>
+              <tr class="even">
+                <td>Get loc</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/up/" class="tooltip" title="<pre>clojure.zip/up
+([loc])
+  Returns the loc of the parent of the node at this loc, or nil if at
+  the top</pre>">up</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/down/" class="tooltip" title="<pre>clojure.zip/down
+([loc])
+  Returns the loc of the leftmost child of the node at this loc, or
+  nil if no children</pre>">down</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/left/" class="tooltip" title="<pre>clojure.zip/left
+([loc])
+  Returns the loc of the left sibling of the node at this loc, or nil</pre>">left</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/right/" class="tooltip" title="<pre>clojure.zip/right
+([loc])
+  Returns the loc of the right sibling of the node at this loc, or nil</pre>">right</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/leftmost/" class="tooltip" title="<pre>clojure.zip/leftmost
+([loc])
+  Returns the loc of the leftmost sibling of the node at this loc, or self</pre>">leftmost</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/rightmost/" class="tooltip" title="<pre>clojure.zip/rightmost
+([loc])
+  Returns the loc of the rightmost sibling of the node at this loc, or self</pre>">rightmost</a></code></td>
+              </tr>
+              <tr class="odd">
+                <td>Get seq</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/lefts/" class="tooltip" title="<pre>clojure.zip/lefts
+([loc])
+  Returns a seq of the left siblings of this loc</pre>">lefts</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/rights/" class="tooltip" title="<pre>clojure.zip/rights
+([loc])
+  Returns a seq of the right siblings of this loc</pre>">rights</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/path/" class="tooltip" title="<pre>clojure.zip/path
+([loc])
+  Returns a seq of nodes leading to this loc</pre>">path</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/children/" class="tooltip" title="<pre>clojure.zip/children
+([loc])
+  Returns a seq of the children of node at loc, which must be a branch</pre>">children</a></code></td>
+              </tr>
+              <tr class="even">
+                <td>'Change'</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/make-node/" class="tooltip" title="<pre>clojure.zip/make-node
+([loc node children])
+  Returns a new branch node, given an existing node and new
+  children. The loc is only used to supply the constructor.</pre>">make-node</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/replace/" class="tooltip" title="<pre>clojure.zip/replace
+([loc node])
+  Replaces the node at this loc, without moving</pre>">replace</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/edit/" class="tooltip" title="<pre>clojure.zip/edit
+([loc f &amp; args])
+  Replaces the node at this loc with the value of (f node args)</pre>">edit</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/insert-child/" class="tooltip" title="<pre>clojure.zip/insert-child
+([loc item])
+  Inserts the item as the leftmost child of the node at this loc,
+  without moving</pre>">insert-child</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/insert-left/" class="tooltip" title="<pre>clojure.zip/insert-left
+([loc item])
+  Inserts the item as the left sibling of the node at this loc,
+ without moving</pre>">insert-left</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/insert-right/" class="tooltip" title="<pre>clojure.zip/insert-right
+([loc item])
+  Inserts the item as the right sibling of the node at this loc,
+  without moving</pre>">insert-right</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/append-child/" class="tooltip" title="<pre>clojure.zip/append-child
+([loc item])
+  Inserts the item as the rightmost child of the node at this loc,
+  without moving</pre>">append-child</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/remove/" class="tooltip" title="<pre>clojure.zip/remove
+([loc])
+  Removes the node at loc, returning the loc that would have preceded
+  it in a depth-first walk.</pre>">remove</a></code></td>
+              </tr>
+              <tr class="odd">
+                <td>Move</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/next/" class="tooltip" title="<pre>clojure.zip/next
+([loc])
+  Moves to the next loc in the hierarchy, depth-first. When reaching
+  the end, returns a distinguished loc detectable via end?. If already
+  at the end, stays there.</pre>">next</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/prev/" class="tooltip" title="<pre>clojure.zip/prev
+([loc])
+  Moves to the previous loc in the hierarchy, depth-first. If already
+  at the root, returns nil.</pre>">prev</a></code></td>
+              </tr>
+              <tr class="even">
+                <td>Misc</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/root/" class="tooltip" title="<pre>clojure.zip/root
+([loc])
+  zips all the way up and returns the root node, reflecting any
+ changes.</pre>">root</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/node/" class="tooltip" title="<pre>clojure.zip/node
+([loc])
+  Returns the node at loc</pre>">node</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/branch%3F/" class="tooltip" title="<pre>clojure.zip/branch?
+([loc])
+  Returns true if the node at loc is a branch</pre>">branch?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.zip/end%3F/" class="tooltip" title="<pre>clojure.zip/end?
+([loc])
+  Returns true if loc represents the end of a depth-first walk</pre>">end?</a></code></td>
               </tr>
             </tbody>
           </table>
