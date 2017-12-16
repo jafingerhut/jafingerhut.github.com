@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Clojure Cheat Sheet (Clojure 1.6 - 1.9, sheet v42)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.6 - 1.9, sheet v43)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -386,10 +386,6 @@ tr.even {
               </tr>
             </tbody>
           </table>
-        </div><!-- /section -->
-      </div><!-- /column -->
-      <div class="column">
-        <div class="section yellow">
           <h3>Queues (conj at end, peek &amp; pop from beginning)</h3>
           <table>
             <tbody>
@@ -407,6 +403,10 @@ tr.even {
               </tr>
             </tbody>
           </table>
+        </div><!-- /section -->
+      </div><!-- /column -->
+      <div class="column">
+        <div class="section yellow">
           <h3>Relations (set of maps, each with same keys, aka rels)</h3>
           <table>
             <tbody>
@@ -557,7 +557,47 @@ tr.even {
           </table>
         </div><!-- /section -->
         <div class="section green">
-          <h2>Spec</h2>
+          <h2>Spec (<a href="https://clojure.org/about/spec">rationale</a>, <a href="https://clojure.org/guidess/spec">guide</a>)</h2>
+          <table>
+            <tbody>
+              <tr class="odd">
+                <td>Operations</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/valid%3F/">valid?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/conform/">conform</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/unform/">unform</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/explain/">explain</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/explain-data/">explain-data</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/explain-str/">explain-str</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/explain-out/">explain-out</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/form/">form</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/describe/">describe</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/assert/">assert</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/check-asserts/">check-asserts</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/check-asserts%3F/">check-asserts?</a></code></td>
+              </tr>
+              <tr class="even">
+                <td>Generator ops</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/gen/">gen</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/exercise/">exercise</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/exercise-fn/">exercise-fn</a></code></td>
+              </tr>
+              <tr class="odd">
+                <td>Defn. &amp; registry</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/def/">def</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/fdef/">fdef</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/registry/">registry</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/get-spec/">get-spec</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/spec%3F/">spec?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/spec/">spec</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/with-gen/">with-gen</a></code></td>
+              </tr>
+              <tr class="even">
+                <td>Logical</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/and/">and</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/or/">or</a></code></td>
+              </tr>
+              <tr class="odd">
+                <td>Collection</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/coll-of/">coll-of</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/map-of/">map-of</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/every/">every</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/every-kv/">every-kv</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/keys/">keys</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/merge/">merge</a></code></td>
+              </tr>
+              <tr class="even">
+                <td>Regex</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/cat/">cat</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/alt/">alt</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/*/">*</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/%2B/">+</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/%3F/">?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/%26/">&amp;</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/keys*/">keys*</a></code></td>
+              </tr>
+              <tr class="odd">
+                <td>Range</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/int-in/">int-in</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/inst-in/">inst-in</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/double-in/">double-in</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/int-in-range%3F/">int-in-range?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/inst-in-range%3F/">inst-in-range?</a></code></td>
+              </tr>
+              <tr class="even">
+                <td>Other</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/nilable/">nilable</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/multi-spec/">multi-spec</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/fspec/">fspec</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/conformer/">conformer</a></code></td>
+              </tr>
+              <tr class="odd">
+                <td>Custom explain</td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/explain-printer/">explain-printer</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.spec.alpha/*explain-out*/">*explain-out*</a></code></td>
+              </tr>
+            </tbody>
+          </table>
           <h3>Predicates with test.check generators</h3>
           <table>
             <tbody>
