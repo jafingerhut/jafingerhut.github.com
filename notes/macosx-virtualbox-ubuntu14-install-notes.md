@@ -305,3 +305,55 @@ while you are connected via VPN, the host only network adapter will
 not be able to send or receive packets between the host and the guest.
 Bummer.  Shared folders seems like a better way to go, then, for
 sharing files on the host file system with the guest OS.
+
+
+# Notes on VirtualBox and VMware Fusion on OSX 10.6.8 Snow Leopard
+
+The only reason for this section is that I have an older MacPro model
+MacPro2,1 that cannot run any more recent versions of OSX than 10.6.8
+(maybe 10.7.x, maybe not).  It isn't the fastest machine as of 2017,
+but it does have 32 GB of RAM, which is still the most RAM in one
+machine I own.  I can run Linux on it as the host OS, but I am curious
+to know about running recent versions of Linux as a guest VM.
+
+I have a copy of VMware Fusion 3.1.4 that I bought years ago, and
+installed there.  I found recently that when upgrading Ubuntu 16.04 to
+the most recent version as of Oct 2017, the GUI no longer worked.
+Only console-based access was available in the VM, which is annoying.
+
+Error message I see during boot of guest before GUI fails:
+
+    nsc-ircc, Wrong chip version 00
+
+
+I believe that VirtualBox 4.3.40 is the latest version supported on
+OSX 10.6.8 hosts.  I have a copy of that installed, and I can run the
+most recent 2017-Oct versions of Ubuntu 16.04 in it, but with at most
+2 GB of guest OS RAM.  This is usable, but I'd like to do better.  I
+have tried it with 2.5 GB and 3 GB of guest OS RAM, and the Ubuntu
+install steps failed with an error from VirtualBox about not enough
+memory being available on the host OS.  There is certainly enough
+physical RAM, so this might be some kind of limitation with virtual
+memory in that version of VirtualBox.  Not sure why that happens.
+
+I did a little bit of Google searching for the error message, and some
+people experienced problems on 64-bit Windows host OS's with guest
+Linux VM, when the host had a particular range of versions of the
+Google Chrome browser, which installed some 64-bit application that
+may have been preventing VirtualBox from allocating as much physically
+contiguous RAM as it wanted.  That is just a guess from reading the
+descriptions of the problem briefly.
+
+
+
+I found a VMware Fusion page describing which versions of VMware
+Fusion are supported on which versions of Mac OSX, and found that
+VMware Fusion 5 is the latest one supported, and perhaps only for OSX
+10.6.8 (i.e., no earlier versions of OSX 10.6.x supported).
+
+I will soon try installing that version of VMware Fusion to see if it
+allows me to run the latest versions of Ubuntu 16.04, with GUI, and
+relatively large guest OS memory (e.g. 8 GB or maybe even more).
+
+
+Of course I can also just run Ubuntu as the host OS, too.
