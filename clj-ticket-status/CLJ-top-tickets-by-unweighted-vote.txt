@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: December 21, 2017
+Date: December 28, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -75,7 +75,9 @@ Defect
    2 Open         [CLJ-750] clojure.lang.MapEntry violates .equals and .hashCode contracts of HashMap.Entry; leads to non-reflexive .equals, etc.
    2 Open         [CLJ-1953] clojure.set should check or throw on non-set inputs
    2 Open         [CLJ-1286] Fix reader spec and regex to match code for keywords starting with digits
+   2 Triaged      [CLJ-2284] Incorrect bytecode generated for static methods on interfaces
    2 Triaged      [CLJ-1433] proxy-super calls generally use reflection
+   2 Triaged      [CLJ-2283] doseq should return nil with no collections
    2 Open         [CLJ-1079] Don't squash explicit :line and :column metadata in the MetaReader
    2 Prescreened  [CLJ-1647] infinite loop in 'partition' and 'partition-all' when 'step' or 'n' is not positive
    2 Backlog      [CLJ-2068] s/explain of evaluated predicate yields :s/unknown
@@ -92,7 +94,6 @@ Defect
    1 Triaged      [CLJ-1317] clojure.zip/seq-zip returns spurious nils during traversal
    1 Prescreened  [CLJ-1587] PersistentArrayMap's assoc doesn't respect HASHTABLE_THRESHOLD
    1 Prescreened  [CLJ-2069] lazy seq that encounters an exception has differing behavior on repeated use
-   1 Open         [CLJ-2284] Incorrect bytecode generated for static methods on interfaces
    1 Open         [CLJ-1198] Apply metadata to primitive fns causes them to lose their primitive-ness
    1 Triaged      [CLJ-1682] clojure.set/intersection occasionally allows non-set arguments.
    1 Triaged      [CLJ-1978] recursion-limit not respected
@@ -114,7 +115,6 @@ Defect
    1 Open         [CLJ-1308] extend-type doesn't type-hint correctly as promised by the doc when the class is determined at run-time
    1 Prescreened  [CLJ-1364] Primitive VecSeq does not implement equals or hashing methods
    1 Backlog      [CLJ-2111] Clarify s/every docstring for :kind
-   1 Triaged      [CLJ-2283] doseq should return nil with no collections
    1 Open         [CLJ-1582] Overriding in-ns and ns is problematic 
    1 Prescreened  [CLJ-1832] unchecked-* functions have different behavior on primitive longs vs boxed Longs
    1 Open         [CLJ-1017] Metadata expressions are evaluated after the expression they affect
@@ -388,7 +388,7 @@ Feature
   22 Triaged      [CLJ-304] clojure.repl/source does not work with deftype
   22 Prescreened  [CLJ-706] make use of deprecated namespaces/vars easier to spot
   18 Backlog      [CLJ-2123] Lighter-weight aliasing for keywords
-  17 Backlog      [CLJ-2112] Add specs for spec forms
+  18 Backlog      [CLJ-2112] Add specs for spec forms
   17 Open         [CLJ-1078] Add queue and queue? to clojure.core
   15 Triaged      [CLJ-440] java method calls cannot omit varargs
   14 Triaged      [CLJ-1063] Missing dissoc-in
@@ -398,8 +398,8 @@ Feature
   11 Prescreened  [CLJ-1771] Support for multiple key(s)-value pairs in assoc-in
   11 Triaged      [CLJ-1611] clojure.java.io/pushback-reader
   11 Open         [CLJ-1610] Unrolled small maps
+  10 Triaged      [CLJ-1451] Add take-until
   10 Triaged      [CLJ-1305] Add optional not-found argument when invoking vectors or sets as functions
-   9 Triaged      [CLJ-1451] Add take-until
    9 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
    8 Open         [CLJ-1467] Implement Comparable in PersistentList
    7 Open         [CLJ-1201] There should also be writing in clojure.edn

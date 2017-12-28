@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: December 21, 2017
+Date: December 28, 2017
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -86,6 +86,7 @@ Defect
    2 Open         [ASYNC-203] "dynamic binding + parking" removes top values of dynamic bindings outside
    2 Open         [ASYNC-117] (CLJS) let-bindings unavailable in #js literals in go-blocks
    1 Open         [ASYNC-49] (CLJS) cljs IOC macro issue with double-dot form
+   1 Triaged      [ASYNC-64] Race condition when closing mults
    1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
    1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
    1 Open         [ASYNC-128] (CLJS) or evaluation not stopped when exp nests take
@@ -97,7 +98,6 @@ Defect
    0 Open         [ASYNC-39] Processes spawned by mix never terminate
    0 Open         [ASYNC-51] (CLJS) Core.async memory leak in Safari and Mobile Safari
    0 Open         [ASYNC-63] (CLJS) Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
-   0 Triaged      [ASYNC-64] Race condition when closing mults
    0 Open         [ASYNC-77] (CLJS) StackOverflowError in go macro with cemerick.cljs.test
    0 Open         [ASYNC-96] (CLJS) FixedBuffer's full checking in cljs
    0 Open         [ASYNC-97] (CLJS) alts! sporadically failing to unblock despite channel activity (Safari 7)
@@ -460,7 +460,9 @@ Project DXML tickets
 ========================================
 Defect
 
+   0 Open         [DXML-43] Emitting XML element with :xmlns attribute doesn't work as expected
    0 Open         [DXML-47] Failed to emit CDATA in ClojureScript
+   0 Open         [DXML-51] aggregate-xmlns overwrites metadata
 
 ========================================
 Enhancement
@@ -469,6 +471,7 @@ Enhancement
    0 Open         [DXML-40] README FileWriter example fails if platform default encoding is not UTF-8
    0 Open         [DXML-41] README - applicability of xml-seq, xml-zip?
    0 Open         [DXML-50] Indenting writer
+   0 Open         [DXML-52] Transforming fragments of non-namespaced xml into default xmlns
 
 ========================================
 Task
@@ -836,8 +839,8 @@ Enhancement
    2 Open         [TDEPS-9] Authentication on Maven repositories
    1 Open         [TDEPS-17] Consider lib overrides
    1 Open         [TDEPS-18] Make alias handling functions public
+   1 Open         [TDEPS-20] Cannot resolve Maven artifacts through proxy
    0 Open         [TDEPS-19] Command line switch for configuration overlay
-   0 Open         [TDEPS-20] Cannot resolve Maven artifacts through proxy
    0 Open         [TDEPS-21] No diagnostic information when building classpath fails
 
 
@@ -917,7 +920,7 @@ Defect
 ========================================
 Enhancement
 
-   1 Open         [TNS-45] File in invalid path will mark namespace for reload
+   4 Open         [TNS-45] File in invalid path will mark namespace for reload
    0 Open         [TNS-37] c.t.n.move: does not support to move .cljc files
    0 Open         [TNS-39] Single classpath argument for c.t.n.move
    0 Open         [TNS-46] Add project.clj for easier development

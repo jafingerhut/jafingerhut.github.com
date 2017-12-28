@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: December 21, 2017
+Date: December 28, 2017
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -165,10 +165,10 @@ Defect
              Francis Avila (0.75)
              Laszlo Török (0.66)
              Brandon Bloom (0.41)
-    2.66   3 Open         [CLJ-1966] :clojure.spec/invalid is not a valid :clojure.spec/any value
+    2.60   3 Open         [CLJ-1966] :clojure.spec/invalid is not a valid :clojure.spec/any value
              Kimmo Koskinen (1.00)
              Leon Grapenthin (1.00)
-             Ambrose Bonnaire-Sergeant (0.66)
+             Ambrose Bonnaire-Sergeant (0.60)
     2.48   4 Backlog      [CLJ-787] transient blows up when passed a vector created by subvec
              Anderson De Andrade (1.00)
              John Walker (0.66)
@@ -229,9 +229,15 @@ Defect
     1.50   2 Open         [CLJ-1286] Fix reader spec and regex to match code for keywords starting with digits
              Francis Avila (0.75)
              Michael Patrick O'Keefe (0.75)
+    1.46   2 Triaged      [CLJ-2284] Incorrect bytecode generated for static methods on interfaces
+             Zerg (1.00)
+             David Bürgin (0.46)
     1.41   2 Triaged      [CLJ-1433] proxy-super calls generally use reflection
              Tsutomu Yano (1.00)
              Marc O'Morain (0.41)
+    1.38   2 Triaged      [CLJ-2283] doseq should return nil with no collections
+             Michael Zavarella (1.00)
+             Dmitri Naumov (0.38)
     1.29   2 Open         [CLJ-1079] Don't squash explicit :line and :column metadata in the MetaReader
              Christoffer Sawicki (0.75)
              Colin Jones (0.54)
@@ -248,8 +254,6 @@ Defect
              Julian Gamble (1.00)
     1.00   1 Open         [CLJ-1181] clojure.pprint/code-dispatch breaks on certain types of anonymous functions
              Jean Niklas L'orange (1.00)
-    1.00   1 Open         [CLJ-2284] Incorrect bytecode generated for static methods on interfaces
-             Zerg (1.00)
     1.00   1 Prescreened  [CLJ-1587] PersistentArrayMap's assoc doesn't respect HASHTABLE_THRESHOLD
              Jean Niklas L'orange (1.00)
     1.00   1 Prescreened  [CLJ-2069] lazy seq that encounters an exception has differing behavior on repeated use
@@ -285,17 +289,15 @@ Defect
     0.64   2 Triaged      [CLJ-1955] .hashCode throws ClassCastException when called on some functions
              Jozef Wagner (0.54)
              Nicola Mometto (0.10)
-    0.64   2 Triaged      [CLJ-2155] clojure.string/index-of has some ^long type hints on let bindings that don't actually do anything
-             David Bürgin (0.54)
-             Nicola Mometto (0.10)
     0.60   1 Prescreened  [CLJ-1403] ns-resolve might throw ClassNotFoundException but should return nil
              Mike Rodriguez (0.60)
+    0.56   2 Triaged      [CLJ-2155] clojure.string/index-of has some ^long type hints on let bindings that don't actually do anything
+             David Bürgin (0.46)
+             Nicola Mometto (0.10)
     0.54   1 Triaged      [CLJ-1254] Incorrect long quot result involving Long/MIN_VALUE
              Colin Jones (0.54)
     0.54   1 Triaged      [CLJ-1898] Inconsistent duplicate check in set/map literals with quoted/unquoted equal constants
              Jozef Wagner (0.54)
-    0.54   1 Vetted       [CLJ-2105] incorrect spec conform when an optional (?) is inside of a one or more (+) 
-             David Bürgin (0.54)
     0.46   1 Backlog      [CLJ-2143] The result of s/form for s/keys* is different from the original form
              Ben Brinckerhoff (0.46)
     0.46   1 Backlog      [CLJ-2168] clojure.spec: :pred in explain for coll-of should have resolved symbols
@@ -304,6 +306,8 @@ Defect
              Ben Brinckerhoff (0.46)
     0.46   1 Open         [CLJ-2248] Collections' toString implementations are affected by *print-readably*
              Jan Rychter (0.46)
+    0.46   1 Vetted       [CLJ-2105] incorrect spec conform when an optional (?) is inside of a one or more (+) 
+             David Bürgin (0.46)
     0.41   1 Open         [CLJ-2074] ::keys spec conflicts with destructuring spec
              Brandon Bloom (0.41)
     0.41   1 Triaged      [CLJ-1770] atom watchers are not atomic with respect to reset!
@@ -316,8 +320,6 @@ Defect
              Andy Fingerhut (0.38)
     0.38   1 Prescreened  [CLJ-1364] Primitive VecSeq does not implement equals or hashing methods
              Andy Fingerhut (0.38)
-    0.38   1 Triaged      [CLJ-2283] doseq should return nil with no collections
-             Dmitri Naumov (0.38)
     0.36   2 Triaged      [CLJ-2275] case fails for vectors with negative numbers
              Michael Blume (0.26)
              Nicola Mometto (0.10)
@@ -526,7 +528,7 @@ Enhancement
              Tim McCormack (0.75)
              Andy Fingerhut (0.38)
              Daniel Compton (0.28)
-   10.56  16 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
+   10.49  16 Triaged      [CLJ-1107] 'get' should throw exception on non-Associative argument
              Brian Pratt (1.00)
              Stefan Kamphausen (1.00)
              Alan Thompson (0.86)
@@ -535,27 +537,12 @@ Enhancement
              Michael van Acken (0.75)
              Stephen Caudill (0.75)
              Tim McCormack (0.75)
-             Ambrose Bonnaire-Sergeant (0.66)
              Chas Emerick (0.66)
              Vlad Bokov (0.66)
+             Ambrose Bonnaire-Sergeant (0.60)
              Colin Jones (0.54)
              Stephen C. Gilardi (0.54)
              Reid McKenzie (0.34)
-             Bozhidar Batsov (0.31)
-             Nicola Mometto (0.10)
-    8.78  14 Vetted       [CLJ-1005] Use transient map in zipmap
-             Joshua Ballanco (1.00)
-             Bobby Eickhoff (0.86)
-             Yongqian Li (0.86)
-             Adam Frey (0.75)
-             Daniel James (0.75)
-             Huahai Yang (0.75)
-             Ambrose Bonnaire-Sergeant (0.66)
-             Gary Fredericks (0.66)
-             Gary Trakhman (0.60)
-             Mike Rodriguez (0.60)
-             Jan Rychter (0.46)
-             David Greenberg (0.41)
              Bozhidar Batsov (0.31)
              Nicola Mometto (0.10)
     8.75  10 Prescreened  [CLJ-1435] 'numerator and 'denominator fail to handle integral values (i.e. N/1)
@@ -569,6 +556,21 @@ Enhancement
              Gary Fredericks (0.66)
              Mike Anderson (0.54)
              Stephen C. Gilardi (0.54)
+    8.71  14 Vetted       [CLJ-1005] Use transient map in zipmap
+             Joshua Ballanco (1.00)
+             Bobby Eickhoff (0.86)
+             Yongqian Li (0.86)
+             Adam Frey (0.75)
+             Daniel James (0.75)
+             Huahai Yang (0.75)
+             Gary Fredericks (0.66)
+             Ambrose Bonnaire-Sergeant (0.60)
+             Gary Trakhman (0.60)
+             Mike Rodriguez (0.60)
+             Jan Rychter (0.46)
+             David Greenberg (0.41)
+             Bozhidar Batsov (0.31)
+             Nicola Mometto (0.10)
     8.69  11 Vetted       [CLJ-1148] adds docstring support to defonce
              Brad Koch (1.00)
              Jonas Enlund (1.00)
@@ -737,12 +739,6 @@ Enhancement
              Tsutomu Yano (1.00)
              Mike Anderson (0.54)
              Dmitri Naumov (0.38)
-    2.92   5 Backlog      [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
-             Ambrose Bonnaire-Sergeant (0.66)
-             Gary Fredericks (0.66)
-             Joshua Tilles (0.66)
-             David Bürgin (0.54)
-             Dmitri Naumov (0.38)
     2.86   3 Open         [CLJ-1734] Display more descriptive error message when trying to use reader conditionals in a non-cljc file
              Chris Murphy (1.00)
              Marshall Abrams (1.00)
@@ -752,6 +748,12 @@ Enhancement
              John Jacobsen (0.86)
              Patrick Houk (0.86)
              Nicola Mometto (0.10)
+    2.77   5 Backlog      [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
+             Gary Fredericks (0.66)
+             Joshua Tilles (0.66)
+             Ambrose Bonnaire-Sergeant (0.60)
+             David Bürgin (0.46)
+             Dmitri Naumov (0.38)
     2.75   3 Open         [CLJ-2251] Support Coercion for clojure.spec
              Jeaye Wilkerson (1.00)
              Mark Stuart (1.00)
@@ -880,9 +882,6 @@ Enhancement
              Laszlo Török (0.66)
     0.66   1 Vetted       [CLJ-1099] better error message when passing non-seq to seq
              John Walker (0.66)
-    0.64   2 Prescreened  [CLJ-1905] loop should retain primitive int or float without widening
-             David Bürgin (0.54)
-             Nicola Mometto (0.10)
     0.60   1 Backlog      [CLJ-69] GC Issue 66: Add "keyset" to Clojure; make .keySet for APersistentMap return IPersistentSet
              Atamert Ölçgen (0.60)
     0.60   1 Open         [CLJ-1189] Map-destructuring :or fumble needs compiler warning
@@ -891,6 +890,9 @@ Enhancement
              Gary Trakhman (0.60)
     0.60   1 Triaged      [CLJ-2213] Allow multiple bindings for if-let, when-let, if-some, and when-some
              quan (0.60)
+    0.56   2 Prescreened  [CLJ-1905] loop should retain primitive int or float without widening
+             David Bürgin (0.46)
+             Nicola Mometto (0.10)
     0.54   1 Open         [CLJ-1231] fn and letfn don't support hinting the function's return type
              Mike Anderson (0.54)
     0.50   1 Open         [CLJ-112] GC Issue 108: All Clojure interfaces should specify CharSequence instead of String when possible
@@ -1172,7 +1174,7 @@ Feature
              Juho Teperi (0.46)
              Dmitri Naumov (0.38)
              Bozhidar Batsov (0.31)
-   15.16  22 Prescreened  [CLJ-706] make use of deprecated namespaces/vars easier to spot
+   15.08  22 Prescreened  [CLJ-706] make use of deprecated namespaces/vars easier to spot
              Brian Maddy (1.00)
              Chad Harrington (1.00)
              Mikhail Malchevskiy (1.00)
@@ -1187,15 +1189,15 @@ Feature
              Atamert Ölçgen (0.60)
              Gary Trakhman (0.60)
              Lars Andersen (0.60)
-             David Bürgin (0.54)
              Stephen C. Gilardi (0.54)
              Andrew Rosa (0.50)
+             David Bürgin (0.46)
              Juho Teperi (0.46)
              Andy Fingerhut (0.38)
              Bozhidar Batsov (0.31)
              Daniel Compton (0.28)
              Michael Blume (0.26)
-   13.95  18 Backlog      [CLJ-2123] Lighter-weight aliasing for keywords
+   13.89  18 Backlog      [CLJ-2123] Lighter-weight aliasing for keywords
              Andre Richards (1.00)
              Chris Farber (1.00)
              Robert Stuttaford (1.00)
@@ -1208,13 +1210,13 @@ Feature
              Masaru Itoh (0.75)
              Radford Smith (0.75)
              Terje Sten Bjerkseth (0.75)
-             Ambrose Bonnaire-Sergeant (0.66)
              Chas Emerick (0.66)
+             Ambrose Bonnaire-Sergeant (0.60)
              Herwig Hochleitner (0.54)
              Ben Brinckerhoff (0.46)
              Kenny Williams (0.41)
              Nicola Mometto (0.10)
-   11.81  17 Backlog      [CLJ-2112] Add specs for spec forms
+   12.41  18 Backlog      [CLJ-2112] Add specs for spec forms
              James Conroy-Finn (1.00)
              Nuttanart Pornprasitsakul (1.00)
              Timothy Baldridge (1.00)
@@ -1225,6 +1227,7 @@ Feature
              Peter Jaros (0.86)
              Nate Smith (0.75)
              Miikka Koskinen (0.66)
+             Ambrose Bonnaire-Sergeant (0.60)
              Colin Fleming (0.54)
              Ben Brinckerhoff (0.46)
              Kenny Williams (0.41)
@@ -1250,7 +1253,7 @@ Feature
              Simon Belak (0.41)
              Bozhidar Batsov (0.31)
              Nicola Mometto (0.10)
-   11.04  15 Triaged      [CLJ-440] java method calls cannot omit varargs
+   10.96  15 Triaged      [CLJ-440] java method calls cannot omit varargs
              Konstantin Shabanov (1.00)
              Logan Woodbury (1.00)
              Nevena Vidojevic (1.00)
@@ -1261,8 +1264,8 @@ Feature
              Christoffer Sawicki (0.75)
              Greg Chapman (0.75)
              J.&nbsp;S.&nbsp;Choi (0.60)
-             David Bürgin (0.54)
              Phill Wolf (0.54)
+             David Bürgin (0.46)
              David Greenberg (0.41)
              A. R (0.38)
              Reid McKenzie (0.34)
@@ -1345,6 +1348,17 @@ Feature
              Bozhidar Batsov (0.31)
              Daniel Compton (0.28)
              Nicola Mometto (0.10)
+    7.11  10 Triaged      [CLJ-1451] Add take-until
+             Stefan Keller (1.00)
+             Jan-Paul Bultmann (1.00)
+             Jenan Wise (0.86)
+             John Schmidt (0.86)
+             Michiel Borkent (0.86)
+             Matthew O. Smith (0.75)
+             Lars Andersen (0.60)
+             David Bürgin (0.46)
+             Simon Belak (0.41)
+             Bozhidar Batsov (0.31)
     6.93  10 Triaged      [CLJ-1305] Add optional not-found argument when invoking vectors or sets as functions
              Khalid Jebbari (1.00)
              Luca Barozzi (1.00)
@@ -1356,16 +1370,6 @@ Feature
              Dmitri Naumov (0.38)
              Bozhidar Batsov (0.31)
              Nicola Mometto (0.10)
-    6.65   9 Triaged      [CLJ-1451] Add take-until
-             Stefan Keller (1.00)
-             Jan-Paul Bultmann (1.00)
-             Jenan Wise (0.86)
-             John Schmidt (0.86)
-             Michiel Borkent (0.86)
-             Matthew O. Smith (0.75)
-             Lars Andersen (0.60)
-             Simon Belak (0.41)
-             Bozhidar Batsov (0.31)
     6.31   8 Open         [CLJ-1467] Implement Comparable in PersistentList
              Aspasia Beneti (1.00)
              Bart Kastermans (1.00)
@@ -1542,9 +1546,9 @@ Feature
     1.75   2 Open         [CLJ-2] Scopes
              Ivan Kozik (1.00)
              Matthew O. Smith (0.75)
-    1.75   4 Open         [CLJ-1777] Add function version of vswap!
+    1.67   4 Open         [CLJ-1777] Add function version of vswap!
              Colin Fleming (0.54)
-             David Bürgin (0.54)
+             David Bürgin (0.46)
              Andrey Antukh (0.41)
              Michael Blume (0.26)
     1.54   2 Prescreened  [CLJ-1095] Allow map-indexed to accept multiple collections (a la map)
