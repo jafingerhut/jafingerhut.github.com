@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: January 4, 2018
+Date: January 11, 2018
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -173,6 +173,8 @@ Defect
     0.00   0 Open         [ASYNC-207] Loop in go breaks type hints
     0.00   0 Open         [ASYNC-208] alts!! completes more than one operation when reading and writing to the same channel.
     0.00   0 Open         [ASYNC-209] <! and >! should be macros
+    0.00   0 Open         [ASYNC-210] Puts committed on take! when buffer is full and buffer contains an expanding transducer
+    0.00   0 Open         [ASYNC-211] `a/map` close out channel immediately when any one of inputs closed
     0.00   0 Triaged      [ASYNC-156] (CLJS) go block containing letfn does not compile
     0.00   0 Triaged      [ASYNC-165] (CLJS) the binding macro/let binding is wrongly inlined
 
@@ -604,6 +606,7 @@ Defect
     0.00   0 Open         [DXML-43] Emitting XML element with :xmlns attribute doesn't work as expected
     0.00   0 Open         [DXML-47] Failed to emit CDATA in ClojureScript
     0.00   0 Open         [DXML-51] aggregate-xmlns overwrites metadata
+    0.00   0 Open         [DXML-53] Java 9 changes indented xml output (adds newlines)
 
 ========================================
 Enhancement
@@ -893,12 +896,13 @@ Enhancement
              Kenny Williams (1.00)
     1.00   1 Open         [NREPL-77] Expose installed middlewares via some mechanism
              Dirk Geurs (1.00)
+    1.00   1 Open         [NREPL-85] Add initial authentication support and simple default
+             Emlyn Corrin (1.00)
     0.00   0 Open         [NREPL-4] Provide sane multiplexing of output in the face of multithreaded, asynchronous operation
     0.00   0 Open         [NREPL-15] Allow clients to specify an ID for newly-retained sessions
     0.00   0 Open         [NREPL-29] Provide a mechanism for overriding an operation
     0.00   0 Open         [NREPL-43] Document the availability/usage of *e, *1, *2, ... in nREPL
     0.00   0 Open         [NREPL-44] Expose JMX MBean to provide list of available nREPL endpoints
-    0.00   0 Open         [NREPL-85] Add initial authentication support and simple default
     0.00   0 Open         [NREPL-86] Update current version number in README
 
 ========================================
@@ -1015,26 +1019,28 @@ Defect
     0.00   0 Open         [TDEPS-12] Depending on same artifact, multiple different classifiers
     0.00   0 Open         [TDEPS-23] :extra-deps from alias pull artifact older then specified in :deps
     0.00   0 Open         [TDEPS-24] Incorrect dependency included in classpath
+    0.00   0 Open         [TDEPS-29] Updates to pom continually adds superfluous newlines under Java 9
 
 ========================================
 Enhancement
 
-    4.00   4 Open         [TDEPS-15] consider combining -R and -C option for aliases
+    5.00   5 Open         [TDEPS-15] consider combining -R and -C option for aliases
              David Bürgin (1.00)
              Sean Corfield (1.00)
+             Timothy Pote (1.00)
              Arne Brasseur (1.00)
              Dieter Komendera (1.00)
+    3.00   3 Open         [TDEPS-20] Cannot resolve Maven artifacts through proxy
+             Joshua Tilles (1.00)
+             Scott Olsen (1.00)
+             Umesh Telang (1.00)
     2.00   2 Open         [TDEPS-9] Authentication on Maven repositories
              Arne Brasseur (1.00)
              Dieter Komendera (1.00)
     1.00   1 Open         [TDEPS-17] Consider lib overrides
              Dominic Monroe (1.00)
-    1.00   1 Open         [TDEPS-18] Make alias handling functions public
-             Nicola Mometto (1.00)
     1.00   1 Open         [TDEPS-19] Command line switch for configuration overlay
              Gary Fredericks (1.00)
-    1.00   1 Open         [TDEPS-20] Cannot resolve Maven artifacts through proxy
-             Umesh Telang (1.00)
     0.00   0 Open         [TDEPS-21] No diagnostic information when building classpath fails
 
 
@@ -1136,6 +1142,7 @@ Project TRDR tickets
 Enhancement
 
     0.00   0 Open         [TRDR-45] The error feedback from the read-string function would be improved if it used an indexing reader.
+    0.00   0 Open         [TRDR-49] Partial parses and complete source info (i.e. info on atoms without metadata)
 
 ========================================
 Task
