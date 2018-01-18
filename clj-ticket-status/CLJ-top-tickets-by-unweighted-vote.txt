@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: January 11, 2018
+Date: January 18, 2018
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -76,6 +76,7 @@ Defect
    2 Open         [CLJ-750] clojure.lang.MapEntry violates .equals and .hashCode contracts of HashMap.Entry; leads to non-reflexive .equals, etc.
    2 Open         [CLJ-1953] clojure.set should check or throw on non-set inputs
    2 Open         [CLJ-1286] Fix reader spec and regex to match code for keywords starting with digits
+   2 Vetted       [CLJ-2105] incorrect spec conform when an optional (?) is inside of a one or more (+) 
    2 Triaged      [CLJ-1433] proxy-super calls generally use reflection
    2 Triaged      [CLJ-2283] doseq should return nil with no collections
    2 Open         [CLJ-1079] Don't squash explicit :line and :column metadata in the MetaReader
@@ -104,7 +105,6 @@ Defect
    1 Prescreened  [CLJ-1403] ns-resolve might throw ClassNotFoundException but should return nil
    1 Triaged      [CLJ-1254] Incorrect long quot result involving Long/MIN_VALUE
    1 Triaged      [CLJ-1898] Inconsistent duplicate check in set/map literals with quoted/unquoted equal constants
-   1 Vetted       [CLJ-2105] incorrect spec conform when an optional (?) is inside of a one or more (+) 
    1 Needs Patch  [CLJ-2143] The result of s/form for s/keys* is different from the original form
    1 Screenable   [CLJ-2168] clojure.spec: :pred in explain for coll-of should have resolved symbols
    1 Screened     [CLJ-2178] s/& explain-data :pred problem
@@ -119,6 +119,7 @@ Defect
    1 Prescreened  [CLJ-1832] unchecked-* functions have different behavior on primitive longs vs boxed Longs
    1 Open         [CLJ-1017] Metadata expressions are evaluated after the expression they affect
    1 Open         [CLJ-1577] Some hints accept both symbols and class objects, others only symbols
+   1 Open         [CLJ-1595] Nested doseqs leak with sequence of huge lazy-seqs
    1 Open         [CLJ-1747] eduction's printer requires/promises that its source collection is Iterable
    1 Triaged      [CLJ-1864] clojure.core/proxy does not work when reloading namespaces
    1 Open         [CLJ-1874] Var redefinition breaks in AOT-compiled code
@@ -191,6 +192,7 @@ Defect
    0 Triaged      [CLJ-2269] definterface seems not to resolve imported classes in type hints
    0 Triaged      [CLJ-2271] "caller" information missing in explain-data during macro instrumentation failure
    0 Triaged      [CLJ-2274] Line numbers in stack trace are wrong when type hints satisfaction fails
+   0 Triaged      [CLJ-2311] Spec generator override won't work on multi-spec dispatch key
 
 ========================================
 Enhancement
@@ -405,15 +407,15 @@ Feature
   10 Triaged      [CLJ-1451] Add take-until
    9 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
    8 Open         [CLJ-1467] Implement Comparable in PersistentList
+   8 Triaged      [CLJ-2124] Catch multiple exceptions in a single catch block
    7 Open         [CLJ-1201] There should also be writing in clojure.edn
    7 Triaged      [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
    6 Open         [CLJ-2115] Support data conveying conform errors (alternative/complement to :clojure.spec/invalid)
    6 Open         [CLJ-976] Implement reader literal and print support for PersistentQueue data structure
-   6 Triaged      [CLJ-2124] Catch multiple exceptions in a single catch block
+   6 Open         [CLJ-1906] Clojure should make representing iterated api calls easier
    6 Triaged      [CLJ-1807] Add prefer-proto, like prefer-method but for protocols
    5 Prescreened  [CLJ-1903] Provide a transducer for reductions
    5 Triaged      [CLJ-1817] Allow AssertionError messages for function :pre and :post conditions to be specified.
-   5 Open         [CLJ-1906] Clojure should make representing iterated api calls easier
    5 Open         [CLJ-1459] records should support transient
    5 Triaged      [CLJ-1120] Introduce ex-message and ex-cause to abstract away the platform in dealing with ExceptionInfo
    4 Open         [CLJ-899] Accept and ignore colon between key and value in map literals

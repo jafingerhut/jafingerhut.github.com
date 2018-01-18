@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: January 11, 2018
+Date: January 18, 2018
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -175,6 +175,7 @@ Defect
     0.00   0 Open         [ASYNC-209] <! and >! should be macros
     0.00   0 Open         [ASYNC-210] Puts committed on take! when buffer is full and buffer contains an expanding transducer
     0.00   0 Open         [ASYNC-211] `a/map` close out channel immediately when any one of inputs closed
+    0.00   0 Open         [ASYNC-212] `go` fails to compile expressions with literal `nil` as a let value 
     0.00   0 Triaged      [ASYNC-156] (CLJS) go block containing letfn does not compile
     0.00   0 Triaged      [ASYNC-165] (CLJS) the binding macro/let binding is wrongly inlined
 
@@ -807,6 +808,7 @@ Defect
     0.00   0 Open         [MATCH-122] Or matches with vectors improperly match
     0.00   0 Open         [MATCH-123] Exception when regexp-matching on a map key that does not exist.
     0.00   0 Open         [MATCH-125] Keyword literal as function apply(:<<) result
+    0.00   0 Open         [MATCH-126] Shadowing bindings does not work as expected
 
 ========================================
 Enhancement
@@ -956,6 +958,7 @@ Defect
     0.00   0 Open         [TCHECK-120] size of args is conflated with depth in shrink tree
     0.00   0 Open         [TCHECK-133] Are the map bindings in gen/let actually solving a problem?
     0.00   0 Open         [TCHECK-139] CLJS test warnings re: cljs.test$macros
+    0.00   0 Open         [TCHECK-140] Calling defspecs as functions throws an NPE
 
 ========================================
 Enhancement
@@ -1020,6 +1023,8 @@ Defect
     0.00   0 Open         [TDEPS-23] :extra-deps from alias pull artifact older then specified in :deps
     0.00   0 Open         [TDEPS-24] Incorrect dependency included in classpath
     0.00   0 Open         [TDEPS-29] Updates to pom continually adds superfluous newlines under Java 9
+    0.00   0 Open         [TDEPS-31] Doesn't work with some SSH algorithms
+    0.00   0 Open         [TDEPS-32] Git ignores deps/root
 
 ========================================
 Enhancement
@@ -1030,18 +1035,21 @@ Enhancement
              Timothy Pote (1.00)
              Arne Brasseur (1.00)
              Dieter Komendera (1.00)
+    3.00   3 Open         [TDEPS-9] Authentication on Maven repositories
+             Arne Brasseur (1.00)
+             Dieter Komendera (1.00)
+             Dominic Monroe (1.00)
     3.00   3 Open         [TDEPS-20] Cannot resolve Maven artifacts through proxy
              Joshua Tilles (1.00)
              Scott Olsen (1.00)
              Umesh Telang (1.00)
-    2.00   2 Open         [TDEPS-9] Authentication on Maven repositories
-             Arne Brasseur (1.00)
-             Dieter Komendera (1.00)
+    2.00   2 Open         [TDEPS-19] Command line switch for configuration overlay
+             Andrea Richiardi (1.00)
+             Gary Fredericks (1.00)
     1.00   1 Open         [TDEPS-17] Consider lib overrides
              Dominic Monroe (1.00)
-    1.00   1 Open         [TDEPS-19] Command line switch for configuration overlay
-             Gary Fredericks (1.00)
     0.00   0 Open         [TDEPS-21] No diagnostic information when building classpath fails
+    0.00   0 Open         [TDEPS-33] Consider https git authentication
 
 
 Project TEMJVM tickets
@@ -1125,10 +1133,11 @@ Defect
 ========================================
 Enhancement
 
-    4.00   4 Open         [TNS-45] File in invalid path will mark namespace for reload
+    5.00   5 Open         [TNS-45] File in invalid path will mark namespace for reload
              Ag Ibragimov (1.00)
              Avi Flax (1.00)
              Dieter Komendera (1.00)
+             Dominic Monroe (1.00)
              Tianxiang Xiong (1.00)
     0.00   0 Open         [TNS-37] c.t.n.move: does not support to move .cljc files
     0.00   0 Open         [TNS-39] Single classpath argument for c.t.n.move
