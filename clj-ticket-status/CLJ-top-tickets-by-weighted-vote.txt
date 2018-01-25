@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: January 18, 2018
+Date: January 25, 2018
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -106,6 +106,12 @@ Defect
              quan (0.60)
              Daniel Compton (0.28)
              Nicola Mometto (0.10)
+    4.53   5 Open         [CLJ-2021] case where spec/conform -> spec/unform -> spec/conform gives invalid result
+             Angus Fletcher (1.00)
+             Steven Collins (1.00)
+             Tim (1.00)
+             Marcelo Yuji Nomoto (0.86)
+             Laszlo Török (0.66)
     4.39   7 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
              Achint Sandhu (1.00)
              Ghadi Shayban (0.86)
@@ -131,11 +137,6 @@ Defect
              Ian Davis (1.00)
              Russell Mull (1.00)
              Peter Jaros (0.86)
-    3.53   4 Open         [CLJ-2021] case where spec/conform -> spec/unform -> spec/conform gives invalid result
-             Steven Collins (1.00)
-             Tim (1.00)
-             Marcelo Yuji Nomoto (0.86)
-             Laszlo Török (0.66)
     3.41   4 Triaged      [CLJ-1243] Cannot resolve public generic method from package-private base class
              Michal Růžička (1.00)
              Sébastien Wagener (1.00)
@@ -415,6 +416,7 @@ Defect
     0.00   0 Triaged      [CLJ-2271] "caller" information missing in explain-data during macro instrumentation failure
     0.00   0 Triaged      [CLJ-2274] Line numbers in stack trace are wrong when type hints satisfaction fails
     0.00   0 Triaged      [CLJ-2311] Spec generator override won't work on multi-spec dispatch key
+    0.00   0 Vetted       [CLJ-2314] String array hinting in :gen-class fails spec - No other method available
 
 ========================================
 Enhancement
@@ -614,7 +616,7 @@ Enhancement
              Marc O'Morain (0.41)
              Max Penet (0.38)
              Nicola Mometto (0.10)
-    7.86  10 Triaged      [CLJ-2075] Add three-arities to < <= > >= = == not=
+    7.88  10 Triaged      [CLJ-2075] Add three-arities to < <= > >= = == not=
              Igor Bondarenko (1.00)
              Markus Graf (1.00)
              Mathias Picker (1.00)
@@ -623,8 +625,8 @@ Enhancement
              Piotr Bzdyl (1.00)
              Jarppe Lansio (0.75)
              Kenny Williams (0.41)
+             A. R (0.36)
              Tommi Reiman (0.36)
-             A. R (0.34)
     7.25   9 Triaged      [CLJ-1278] State function's unmunged full name in compiled function's toString()
              Dave Kincaid (1.00)
              Dom Kiva-Meyer (1.00)
@@ -810,9 +812,9 @@ Enhancement
              Chris Blom (0.60)
              Vitalie Spinu (0.43)
              Bozhidar Batsov (0.31)
-    1.30   3 Prescreened  [CLJ-1730] Improve `refer` performance
+    1.32   3 Prescreened  [CLJ-1730] Improve `refer` performance
              Jean Fabio Baro (0.86)
-             A. R (0.34)
+             A. R (0.36)
              Nicola Mometto (0.10)
     1.26   2 Open         [CLJ-1162] Error Message when calling deref on a non-IDeref is unhelpful
              Jason W Zwolak (1.00)
@@ -839,9 +841,9 @@ Enhancement
     1.10   2 Open         [CLJ-2237] Provide a type predicate for ex-info? 
              Camilo Roca (1.00)
              Nicola Mometto (0.10)
-    1.04   3 Open         [CLJ-1442] Tag gensym sourced symbols with metadata
+    1.06   3 Open         [CLJ-1442] Tag gensym sourced symbols with metadata
              Gary Trakhman (0.60)
-             A. R (0.34)
+             A. R (0.36)
              Nicola Mometto (0.10)
     1.01   2 Triaged      [CLJ-790] Primitive type hints on function names should print error message
              John Wiseman (0.75)
@@ -862,6 +864,8 @@ Enhancement
              Sam Estep (1.00)
     1.00   1 Triaged      [CLJ-2025] When a generator fails to gen, state which spec/pred failed
              Griffin Smith (1.00)
+    1.00   1 Triaged      [CLJ-2211] docstring of defn is not precise about the `attr-map?` and `body` arguments
+             Jakub Holy (1.00)
     0.86   1 Open         [CLJ-1316] for doesn't support :let binding as its first seq-expr
              Howard Lewis Ship (0.86)
     0.86   1 Open         [CLJ-1321] Documentation improvement for clojure.walk, to note use of recursion that can easily blow the JVM stack
@@ -914,11 +918,11 @@ Enhancement
              Nicola Mometto (0.10)
     0.46   1 Open         [CLJ-2218] Improving consistency of explain-data for instrument/macroexpand-check
              Ben Brinckerhoff (0.46)
+    0.46   2 Triaged      [CLJ-1676] map destructuring: prevent evaluation of values in :or when they are not used/needed
+             A. R (0.36)
+             Nicola Mometto (0.10)
     0.44   2 Open         [CLJ-792] Refactor method resolution code out of Compiler and into Reflector
              Reid McKenzie (0.34)
-             Nicola Mometto (0.10)
-    0.44   2 Triaged      [CLJ-1676] map destructuring: prevent evaluation of values in :or when they are not used/needed
-             A. R (0.34)
              Nicola Mometto (0.10)
     0.43   1 Open         [CLJ-889] Specifically allow '.' inside keywords
              Vitalie Spinu (0.43)
@@ -936,14 +940,12 @@ Enhancement
              Andy Fingerhut (0.36)
     0.36   1 Open         [CLJ-1326] Inconsistent reflection warnings when target is a literal
              Andy Fingerhut (0.36)
+    0.36   1 Prescreened  [CLJ-2228] Unroll constantly to improve performance of multi-arity calls
+             A. R (0.36)
     0.36   1 Triaged      [CLJ-1289] aset-* and aget perform poorly on multi-dimensional arrays even with type hints. 
              Andy Fingerhut (0.36)
     0.34   1 Open         [CLJ-1455] Postcondition in defrecord: Compiler unable to resolve symbol %
              Reid McKenzie (0.34)
-    0.34   1 Open         [CLJ-2308] Reduce based some
-             A. R (0.34)
-    0.34   1 Prescreened  [CLJ-2228] Unroll constantly to improve performance of multi-arity calls
-             A. R (0.34)
     0.26   1 Prescreened  [CLJ-1668] ns macro throws NPE if empty reference is specified
              Michael Blume (0.26)
     0.10   1 Open         [CLJ-140] Single :tag for type hints conflates value's type with type of return value from an invoke
@@ -1030,7 +1032,6 @@ Enhancement
     0.00   0 Triaged      [CLJ-2185] Standardize the running context of all Java to Clojure entry points.
     0.00   0 Triaged      [CLJ-2193] Override function spec within check
     0.00   0 Triaged      [CLJ-2208] Provide a means to ask a spec for its "child" specs
-    0.00   0 Triaged      [CLJ-2211] docstring of defn is not precise about the `attr-map?` and `body` arguments
     0.00   0 Triaged      [CLJ-2212] docstring for `defmethod` is imprecise 
     0.00   0 Triaged      [CLJ-2225] clojure.core/assert docstring is incorrect
     0.00   0 Triaged      [CLJ-2240] Load user.cljc in classpath root.
@@ -1038,6 +1039,8 @@ Enhancement
     0.00   0 Triaged      [CLJ-2263] When calling a multi method with the wrong number of arguments, the error message could be better.
     0.00   0 Triaged      [CLJ-2273] Add original 'assert' form to explain-data for s/assert
     0.00   0 Triaged      [CLJ-2309] Readable keyword validation
+    0.00   0 Triaged      [CLJ-2316] Support fully qualified Symbol for clojure.main -m
+    0.00   0 Triaged      [CLJ-2317] Disallow `recur` to `^:once fn*`
 
 ========================================
 Feature
@@ -1095,7 +1098,7 @@ Feature
              Bozhidar Batsov (0.31)
              Daniel Compton (0.28)
              Nicola Mometto (0.10)
-   34.06  42 Triaged      [CLJ-1959] adding functions `map-vals` and `map-keys`
+   34.08  42 Triaged      [CLJ-1959] adding functions `map-vals` and `map-keys`
              AJ Taylor (1.00)
              Andrea Richiardi (1.00)
              Antoine Chesnais (1.00)
@@ -1135,7 +1138,7 @@ Feature
              Juho Teperi (0.46)
              Vitalie Spinu (0.43)
              Dmitri Naumov (0.38)
-             A. R (0.34)
+             A. R (0.36)
              Daniel Compton (0.28)
              Nicola Mometto (0.10)
    23.62  27 Open         [CLJ-2116] Support for selective conforming with clojure.spec
@@ -1268,7 +1271,7 @@ Feature
              Simon Belak (0.41)
              Bozhidar Batsov (0.31)
              Nicola Mometto (0.10)
-   10.92  15 Triaged      [CLJ-440] java method calls cannot omit varargs
+   10.94  15 Triaged      [CLJ-440] java method calls cannot omit varargs
              Konstantin Shabanov (1.00)
              Logan Woodbury (1.00)
              Nevena Vidojevic (1.00)
@@ -1282,7 +1285,7 @@ Feature
              Phill Wolf (0.54)
              David Bürgin (0.46)
              David Greenberg (0.41)
-             A. R (0.34)
+             A. R (0.36)
              Reid McKenzie (0.34)
    10.03  11 Open         [CLJ-1553] Parallel transduce
              Darrick Wiebe (1.00)
@@ -1296,7 +1299,7 @@ Feature
              Daniel James (0.75)
              Devin Walters (0.75)
              Michael Griffiths (0.66)
-    9.43  13 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
+    9.44  13 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
              Andreas Steffan (1.00)
              Tom Coupland (1.00)
              Tomoharu Fujita (1.00)
@@ -1308,7 +1311,7 @@ Feature
              Greg Chapman (0.75)
              Marc O'Morain (0.41)
              Max Penet (0.38)
-             A. R (0.34)
+             A. R (0.36)
              Nicola Mometto (0.10)
     9.22  14 Triaged      [CLJ-1063] Missing dissoc-in
              Dennis Schridde (1.00)
@@ -1349,7 +1352,7 @@ Feature
              Stephen C. Gilardi (0.54)
              Jan Rychter (0.46)
              Tommi Reiman (0.36)
-    7.48  11 Triaged      [CLJ-1305] Add optional not-found argument when invoking vectors or sets as functions
+    7.50  11 Triaged      [CLJ-1305] Add optional not-found argument when invoking vectors or sets as functions
              Luca Barozzi (1.00)
              Paul Gearon (1.00)
              jcr (1.00)
@@ -1358,7 +1361,7 @@ Feature
              John Wiseman (0.75)
              Aleksander Madland Stapnes (0.60)
              Dmitri Naumov (0.38)
-             A. R (0.34)
+             A. R (0.36)
              Bozhidar Batsov (0.31)
              Nicola Mometto (0.10)
     7.38  13 Triaged      [CLJ-1293] Support (try .. (catch :default _ ..)) for portable "catch-all"
@@ -1416,7 +1419,7 @@ Feature
              Ivan Kryvoruchko (0.54)
              Justin Glenn Smith (0.50)
              Marc O'Morain (0.41)
-    5.32   9 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
+    5.33   9 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
              Matt Earnshaw (1.00)
              Adrian Medina (0.86)
              Steve Miner (0.86)
@@ -1424,7 +1427,7 @@ Feature
              Vitalie Spinu (0.43)
              Brandon Bloom (0.41)
              Simon Belak (0.41)
-             A. R (0.34)
+             A. R (0.36)
              Michael Blume (0.26)
     4.83   7 Open         [CLJ-1201] There should also be writing in clojure.edn
              Mike Hughes (1.00)
@@ -1441,12 +1444,12 @@ Feature
              Terje Sten Bjerkseth (0.75)
              Mike Rodriguez (0.60)
              Tommi Reiman (0.36)
-    4.21   5 Prescreened  [CLJ-1903] Provide a transducer for reductions
+    4.22   5 Prescreened  [CLJ-1903] Provide a transducer for reductions
              Bruno Renié (1.00)
              Ray McDermott (1.00)
              Jason Felice (1.00)
              Peter Jaros (0.86)
-             A. R (0.34)
+             A. R (0.36)
     4.18   7 Triaged      [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
              Brian Kim (1.00)
              Paul Bauer (1.00)
@@ -1523,11 +1526,11 @@ Feature
              Kevin Downey (0.86)
              Steve Miner (0.86)
              David Leatherman (0.66)
-    2.28   5 Open         [CLJ-1459] records should support transient
+    2.30   5 Open         [CLJ-1459] records should support transient
              Léo NOEL (0.86)
              J.&nbsp;S.&nbsp;Choi (0.60)
              Max Penet (0.38)
-             A. R (0.34)
+             A. R (0.36)
              Nicola Mometto (0.10)
     2.27   3 Open         [CLJ-1256] Support type-hinted overrides of function parameters
              Xiaoyu Zhang (1.00)
@@ -1644,8 +1647,8 @@ Feature
              Simon Belak (0.41)
     0.36   1 Open         [CLJ-1280] Create reusable exception that can carry file/line/col info
              Andy Fingerhut (0.36)
-    0.34   1 Open         [CLJ-1758] xf overload for vec and set
-             A. R (0.34)
+    0.36   1 Open         [CLJ-1758] xf overload for vec and set
+             A. R (0.36)
     0.26   1 Open         [CLJ-1008] Make sorted maps and sets implement j.u.NavigableMap and NavigableSet interfaces 
              Michael Blume (0.26)
     0.26   1 Open         [CLJ-1920] Create an easy way to gracefully shutdown agents

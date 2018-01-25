@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: January 18, 2018
+Date: January 25, 2018
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -373,6 +373,7 @@ Defect
     0.00   0 Open         [CLJCLR-91] Socket Repl remote connections from places other than localhost
     0.00   0 Open         [CLJCLR-95] *data-readers* reset on clojure.core require
     0.00   0 Open         [CLJCLR-96] clojure/test-clojure/reducers seems to take a very long time to run
+    0.00   0 Open         [CLJCLR-97] 'Exception Not enough arguments for format definition' deep inside pprint
 
 ========================================
 Enhancement
@@ -657,15 +658,17 @@ Enhancement
 Task
 
     0.00   0 Open         [INST-9] Add --prefix cmd line option to linux-install.sh
+    0.00   0 Open         [INST-15] Windows installation scripts
 
 
 Project JDATA tickets
 ========================================
 Defect
 
+    1.00   1 Open         [JDATA-9] from-java does not convert Boolean to clojure keyword
+             Nick MacGyver (1.00)
     0.00   0 Open         [JDATA-4] to-java not working on some setters
     0.00   0 Open         [JDATA-6] to-java not working when setter takes Map as parameter
-    0.00   0 Open         [JDATA-9] from-java does not convert Boolean to clojure keyword
 
 ========================================
 Enhancement
@@ -710,6 +713,7 @@ Project LOGIC tickets
 ========================================
 Defect
 
+    0.00   0 Bad: Match n [LOGIC-186] spurious disequality constraints
     0.00   0 Open         [LOGIC-26] Generate a better error when adding facts for arities that do not exist
     0.00   0 Open         [LOGIC-28] defrel cannot be called inside function
     0.00   0 Open         [LOGIC-47] is macro needs to be improved
@@ -956,9 +960,8 @@ Defect
     0.00   0 Open         [TCHECK-111] The latest recursive-gen algorithm seems to exhibit a peculiar lack of variety in depths
     0.00   0 Open         [TCHECK-112] bind doesn't shrink very well
     0.00   0 Open         [TCHECK-120] size of args is conflated with depth in shrink tree
-    0.00   0 Open         [TCHECK-133] Are the map bindings in gen/let actually solving a problem?
-    0.00   0 Open         [TCHECK-139] CLJS test warnings re: cljs.test$macros
-    0.00   0 Open         [TCHECK-140] Calling defspecs as functions throws an NPE
+    0.00   0 Open         [TCHECK-141] The Result protocol should probably be in the .check namespace
+    0.00   0 Open         [TCHECK-142] Consider whether the tweaked semantics of the :result key should be reserved for quick-check-2
 
 ========================================
 Enhancement
@@ -1016,25 +1019,25 @@ Project TDEPS tickets
 ========================================
 Defect
 
-    1.00   1 Open         [TDEPS-26] Maven dependencies with scope runtime are ignored
-             Thomas Heller (1.00)
+    0.86   1 Open         [TDEPS-26] Maven dependencies with scope runtime are ignored
+             Thomas Heller (0.86)
     0.00   0 Open         [TDEPS-8] tools.deps does not handle maven relocations
     0.00   0 Open         [TDEPS-12] Depending on same artifact, multiple different classifiers
-    0.00   0 Open         [TDEPS-23] :extra-deps from alias pull artifact older then specified in :deps
-    0.00   0 Open         [TDEPS-24] Incorrect dependency included in classpath
     0.00   0 Open         [TDEPS-29] Updates to pom continually adds superfluous newlines under Java 9
-    0.00   0 Open         [TDEPS-31] Doesn't work with some SSH algorithms
-    0.00   0 Open         [TDEPS-32] Git ignores deps/root
+    0.00   0 Open         [TDEPS-31] ssh git repository doesn't work with some SSH host key algorithms
+    0.00   0 Open         [TDEPS-37] Multiple -R arguments silently replace each other
+    0.00   0 Open         [TDEPS-38] Merging deps maps fails when values are not maps
 
 ========================================
 Enhancement
 
-    5.00   5 Open         [TDEPS-15] consider combining -R and -C option for aliases
+    5.86   6 Open         [TDEPS-15] consider combining -R and -C option for aliases
              David Bürgin (1.00)
              Sean Corfield (1.00)
              Timothy Pote (1.00)
              Arne Brasseur (1.00)
              Dieter Komendera (1.00)
+             Thomas Heller (0.86)
     3.00   3 Open         [TDEPS-9] Authentication on Maven repositories
              Arne Brasseur (1.00)
              Dieter Komendera (1.00)
@@ -1043,13 +1046,17 @@ Enhancement
              Joshua Tilles (1.00)
              Scott Olsen (1.00)
              Umesh Telang (1.00)
-    2.00   2 Open         [TDEPS-19] Command line switch for configuration overlay
-             Andrea Richiardi (1.00)
-             Gary Fredericks (1.00)
     1.00   1 Open         [TDEPS-17] Consider lib overrides
              Dominic Monroe (1.00)
     0.00   0 Open         [TDEPS-21] No diagnostic information when building classpath fails
     0.00   0 Open         [TDEPS-33] Consider https git authentication
+
+========================================
+Feature
+
+    0.86   1 Open         [TDEPS-35] Windows port of clojure/clj tool
+             Thomas Heller (0.86)
+    0.00   0 Open         [TDEPS-36] Better support Linux packaging needs and distribution
 
 
 Project TEMJVM tickets
