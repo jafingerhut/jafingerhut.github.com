@@ -100,3 +100,10 @@ a
 ;; (let [x :foo {a x} {:foo 1}] a)
 ;; => 1
 ;; dnolen: learn something new everyday
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; From noisesmith on Clojurians Slack group (== justin_smith above)
+
+(-> [x y z] (fn [z] (+' ('+ z 0) x (* y y))) (#(% 6 6 6)))
+;; 42
