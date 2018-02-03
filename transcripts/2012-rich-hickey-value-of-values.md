@@ -10,7 +10,11 @@ So The Value of Values.
 Who here works in I.T.?  Everybody, I think.  Alright.  What does that
 mean?  What does that stand for, I.T.?
 
-![IT](ValueOfValues/00m24s.jpg)
+```
+slide:
+
+     IT
+```
 
 Information Technology.
 
@@ -35,7 +39,7 @@ As you may know from my other key notes, all I do to make a key note
 is I use my dictionary, because my dictionary has all the answers.
 And my dictionary says: information is based on the word inform, which
 means to convey knowledge via facts and the purpose of that is to give
-shape to the mind.  And information is just those facts.  That's what
+shape to the mind.  And information is just those facts.  That is what
 information is.  Information is facts.
 
 
@@ -55,12 +59,12 @@ Operations control how facts can change
 To convey a fact, convey its location
 ```
 
-So what's a fact?  Well, fact is a place where information is stored.
-And what's great about that is that there's a place for every piece of
-information.  Facts have operations like get and set and they may have
-other operations.  Those operations control how facts can change.
+So what is a fact?  Well, fact is a place where information is stored.
+And what is great about that is that there is a place for every piece
+of information.  Facts have operations like get and set and they may
+have other operations.  Those operations control how facts can change.
 
-The other great thing about facts is that it's easy to convey them.
+The other great thing about facts is that it is easy to convey them.
 To convey a fact, we just convey its location.
 
 How many people are uncomfortable right now?
@@ -87,10 +91,10 @@ slide title: Place
 Memory address, disk sector
 ```
 
-So are facts places?  Well, what's a place?
+So are facts places?  Well, what is a place?
 
 Again, back to the dictionary.  A place is a particular portion of
-space.  And space is an important word.  We're going to dig into it
+space.  And space is an important word.  We are going to dig into it
 later.
 
 In particular, the part about place that matters is the fact that it
@@ -755,7 +759,7 @@ place log?  Anyone use a log that says: the last latency was five?
 Yeah?  No.  Anybody use a log that does not put time stamps on every
 entry?  No, of course not.  How could we possibly understand what our
 systems were doing if we did not have this information?  How could we
-make decisions?  We know there is no way.  No way.  So we don't do
+make decisions?  We know there is no way.  No way.  So we do not do
 this.
 
 
@@ -866,7 +870,7 @@ cannot?  Because my disk is only 5 megabytes."  Anybody ever have a 5
 megabyte disk that cost thousands of dollars?  That is not that way
 anymore, right?  So you can afford to do this.
 
- Lots of interesting things will happen when you take this approach.
+Lots of interesting things will happen when you take this approach.
 A lot of the things that happen in memory with garbage collection are
 going to happen with storage.  There will be garbage.
 
