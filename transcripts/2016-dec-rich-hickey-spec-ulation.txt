@@ -1,16 +1,18 @@
-Speaker: Rich Hickey
-Title: Spec-ulation
-Date: 2016-Dec-01
-Video: https://www.youtube.com/watch?v=oyLBGkS5ICk
+# Spec-ulation
+
+* **Speaker: Rich Hickey**
+* **Conference: [Clojure/Conj 2016](http://2016.clojure-conj.org) - Dec 2016**
+* **Video: [https://www.youtube.com/watch?v=oyLBGkS5ICk](https://www.youtube.com/watch?v=oyLBGkS5ICk)**
 
 Transcription by Andy Fingerhut
 Email: andy.fingerhut@gmail.com
 Github: jafingerhut
 
-[slide title: Spec-ulation
+```
+slide title: Spec-ulation
 
 Rich Hickey
-]
+```
 
 Hi.  Once again, it is fantastic to come to the Conj and see
 everybody.  Old friends, and all the new faces, and everybody being so
@@ -26,7 +28,8 @@ covering the fact that it is a rant.
 
 [Time 0:00:57]
 
-[slide title: This is not a talk about
+```
+slide title: This is not a talk about
                        _spec_
 
 + It is a talk about what spec is _about_
@@ -37,7 +40,7 @@ covering the fact that it is a rant.
   + Making a _commitment_
 
     + i.e. not taking it away later
-]
+```
 
 So I think we have a few talks about spec, and there was a spec
 workshop.  So this is not a talk about spec.  It is not a tutorial
@@ -70,10 +73,11 @@ away later."  So I want to emphasize that today.
 
 [Time 0:02:46]
 
-[slide title: Change
+```
+slide title: Change
 
 Is it a thing?
-]
+```
 
 And spec is designed around that.  And that is sort of part of a
 bigger problem, which is change.  It is interesting to look at spec
@@ -92,7 +96,8 @@ development lives?"
 
 [Time 0:03:35]
 
-[slide title: 'Change'
+```
+slide title: 'Change'
 
 + Origin:
 
@@ -107,7 +112,7 @@ development lives?"
   + Anti-social at least
 
 + Productivity and soul-crushing at worst
-]
+```
 
 So of course, I do not think this has happened yet today.  I am
 surprised, but here we go, the mandatory definition of a word.  I was
@@ -136,7 +141,8 @@ enjoyed that?  OK.
 
 [Time 0:05:12]
 
-[slide:
+```
+slide:
 
 We want our software (esp.
 libraries/services) to be
@@ -144,7 +150,7 @@ different/better tomorrow.
 
 What will that mean for our
 consumers?
-]
+```
 
 So what are we going to do?  It is not like software should be
 immutable.  That is not the thing, but how do we move it forward?  So
@@ -156,17 +162,10 @@ that when we make it better?
 
 [Time 0:05:40]
 
-[slide title: Dependencies
-
-POM deps
-
-          +---------+
-          |   app   |
-          +---------+
-
-... TBD consider creating ASCII art for entire slide contents
-
-]
+```
+slide title: Dependencies
+```
+![0:05:40 Dependencies](images-spec-ulation/dependencies.png)
 
 So we all know how we do change.  We use Maven, or something that
 drives Maven.  And we have artifacts, which are libraries.  And our
@@ -190,14 +189,15 @@ You all know better than to answer yes/no rhetorical questions with a
 
 [Time 0:06:58]
 
-[slide:
+```
+slide:
 
        But...
 
 + Artifacts don't actually _use_ other artifacts
 
 + There is nothing in the _code_ about artifacts
-]
+```
 
 So the first thing is that artifacts do not use anything.  A library
 does not use a library at that level, because artifacts are not doing
@@ -216,14 +216,10 @@ So what does your application actually need?
 
 [Time 0:07:42]
 
-[slide title: Dependencies Redux
-
-POM deps
-
-ns requires/imports
-
-... TBD ASCII art would be nice
-]
+```
+slide title: Dependencies Redux
+```
+![0:07:42 Dependencies Redux](images-spec-ulation/dependencies-redux.png)
 
 And so we will look at this problem again, and we have expanded it a
 little bit.  So when we look inside each of those artifacts, what do
@@ -260,7 +256,8 @@ ethel.  Hmmm.
 
 [Time 0:09:46]
 
-[slide:
+```
+slide:
 
          But...
 
@@ -271,7 +268,7 @@ ethel.  Hmmm.
   code
 
 + Where is the mapping to artifacts?
-]
+```
 
 So it is actually the same thing, right?  Namespaces are not code.
 They do not _do_ anything.  Well, namespaces could be effect-ful, so
@@ -292,12 +289,10 @@ problem.
 
 [Time 0:10:46]
 
-[slide title: Dependency Truth (code)
-
-POM deps
-
-... TBD ASCII art would be getting a bit busy for this figure
-]
+```
+slide title: Dependency Truth (code)
+```
+![0:10:46 Dependencies Truth (code)](images-spec-ulation/dependencies-truth-code.png)
 
 So what is the truth?  The truth is, you need better and better
 eyesight to solve this problem.  So we open it up a little bit more,
@@ -346,7 +341,8 @@ more stuff than you need, whatever stuff you need should match.
 
 [Time 0:13:45]
 
-[slide title: Do deps Force Versioning?
+```
+slide title: Do deps Force Versioning?
 
 "What you can do is let Semantic Versioning provide you
 with a sane way to release and upgrade packages without
@@ -362,7 +358,7 @@ http://semver.org/spec/v2.0.0.html
     leaves, even if path nodes' code unchanged
 
   + level violation
-]
+```
 
 So this is not great, but supposedly this is not a problem.  One of
 the reasons why is because we have semantic versioning.  And in the
@@ -400,7 +396,8 @@ about levels.
 
 [Time 0:15:27]
 
-[slide title: Names, Levels, Scopes,
+```
+slide title: Names, Levels, Scopes,
                    Contexts
 
 + fns depend on (call) fns by _name_
@@ -414,7 +411,7 @@ about levels.
 + fn name scopes include ns _but not artifact_
 
   + artifact context is _MAGIC_
-]
+```
 
 So what is actually happening?  Well there is a stratification of
 problems here.
@@ -450,7 +447,8 @@ namespace requires, artifacts.
 
 [Time 0:17:18]
 
-[slide title: Basis
+```
+slide title: Basis
 
 + Why put things in our deps/pom?
 
@@ -466,7 +464,7 @@ namespace requires, artifacts.
 + But, coarse-grained, implies too much
 
   + doesn't capture actual deps, just context
-]
+```
 
 So why do we do this?  What is this doing for us?  I do not think it
 is just inherently terrible, but what is happening?  Can we
@@ -515,7 +513,8 @@ context.
 
 [Time 0:19:48]
 
-[slide title: (Ex)changes in Software
+```
+slide title: (Ex)changes in Software
 
 + What is _required_?
 
@@ -532,7 +531,7 @@ context.
   + ns - vars/fns
 
   + artifact - namespaces/packages
-]
+```
 
 So what I would like to talk about is: how we talk about change.
 Because I have mentioned things change, and then we are going to
@@ -579,7 +578,8 @@ So that is how we exchange things.
 
 [Time 0:22:11]
 
-[slide title: Growing Your Software
+```
+slide title: Growing Your Software
 
 + Accretion
 
@@ -592,7 +592,7 @@ So that is how we exchange things.
 + Fixation
 
   + bash bugs
-]
+```
 
 So what I will say is that you can now look at the kinds
 categorically, the kinds of changes you would make in these ways.  The
@@ -630,14 +630,15 @@ whatever.  It does not impact what you provide or require.
 
 [Time 0:24:14]
 
-[slide title: Breaking Your Software
+```
+slide title: Breaking Your Software
 
 + Require more
 
 + Provide less
 
 + Unrelated stuff under same name
-]
+```
 
 Because again, this blanket concept of change, it also is used,
 casually in conversation, to talk about these things, which is
@@ -669,7 +670,8 @@ semantics are shot.  It is a complete do over.
 
 [Time 0:25:55]
 
-[slide: Change is Not a Thing
+```
+slide: Change is Not a Thing
 
 + It's one of _two_ things
 
@@ -682,7 +684,7 @@ semantics are shot.  It is a complete do over.
 
 + As long as we don't try to do something
   silly like _versioning_ specs!
-]
+```
 
 So the thing here is that change is _not_ a thing.  We should not
 really be saying, "I changed it".  Because you are telling me nothing
@@ -725,7 +727,8 @@ me gold now.  Do not do that.
 
 [Time 0:27:56]
 
-[slide title: Recognizing Collections
+```
+slide title: Recognizing Collections
 
 + You only 'change' a collection by adding/
   removing members
@@ -739,7 +742,7 @@ me gold now.  Do not do that.
 + Don't conflate levels!
 
   + My family doesn't change when I put on a hat
-]
+```
 
 So what about change in the large?  Well, the key thing here I would
 say is that we need to start recognizing when things are collections,
@@ -776,7 +779,8 @@ is breaking.
 
 [Time 0:29:52]
 
-[slide title: "Semantic" Versioning
+```
+slide title: "Semantic" Versioning
                   "Semantics"
 
 + 1.2.changed
@@ -790,7 +794,7 @@ is breaking.
 + changed.0.0
 
   + "you're screwed"
-]
+```
 
 All right.  Now we get really ranty.  Semantic versioning.  I looked
 this up in the dictionary and it was not there.  What if we had
@@ -813,7 +817,8 @@ you in what way.  Right?
 
 [Time 0:31:18]
 
-[slide title: Even worse...
+```
+slide title: Even worse...
 
 + "you might be screwed"
 
@@ -822,7 +827,7 @@ you in what way.  Right?
   + Good luck determining where
 
 + Might just as well change the name
-]
+```
 
 What it really says is "you might be screwed".  So if somebody says,
 "you are screwed", you are like "oh, that is terrible.  Ugh."
@@ -845,22 +850,24 @@ to steal my thunder: you might as well just change the name.  Going to
 
 [Time 0:32:24]
 
-[slide:
+```
+slide:
 
 
 Might just as well change
         the name
-]
+```
 
 
 [Time 0:32:27]
 
-[slide:
+```
+slide:
 
 
 MIGHT JUST AS WELL
 _CHANGE THE NAME_
-]
+```
 
 Yeah.  Just change the name.  I mean, what does it mean?  I mean, it
 is just completely not meaningful to do this to somebody.  It just
@@ -871,7 +878,8 @@ played.  You thought you did.  I predict you are going to lose."
 
 [Time 0:32:52]
 
-[slide:
+```
+slide:
 
          But...
 
@@ -880,7 +888,7 @@ played.  You thought you did.  I predict you are going to lose."
     That's a new thing!
 
          Right.
-]
+```
 
 And I think the thing is, you are like, "well then I am not changing
 it."  That is a new thing!  Yeah.  That is exactly right.  It is a new
@@ -889,10 +897,11 @@ thing.
 
 [Time 0:33:06]
 
-[slide title: Which Name?
+```
+slide title: Which Name?
 
       Levels again
-]
+```
 
 So this raises the question of which name do you change?  Because we
 just saw this smashing together up into the version of the artifact is
@@ -905,7 +914,8 @@ functions, should I change the artifact name to "new game"?
 
 [Time 0:33:39]
 
-[slide title: Requiring More args?
+```
+slide title: Requiring More args?
             Providing Less on return?
 
 + i.e. incompatible spec
@@ -917,7 +927,7 @@ functions, should I change the artifact name to "new game"?
 + N.B. - the namespace is part of the name
 
   + ns aliases can ease transitions
-]
+```
 
 And no, it is the same thing, right?  You are going to go look at the
 levels for providing, requiring.  So are you requiring more arguments,
@@ -966,11 +976,12 @@ to do that.  I got a lot of wheat to get rid of.
 
 [Time 0:36:13]
 
-[slide title: Providing Fewer fns/
+```
+slide title: Providing Fewer fns/
                      vars?
 
 + New namespace/package
-]
+```
 
 So what about if you want to get rid of a fn?  I mean, I just hate
 this function!  I hate it!  I hate it!  I hate that people call it.  I
@@ -996,7 +1007,8 @@ So this is the way to do that.
 
 [Time 0:37:18]
 
-[slide title: Providing Fewer
+```
+slide title: Providing Fewer
           namespaces/packages?
 
 + _New artifactId_?
@@ -1011,7 +1023,7 @@ So this is the way to do that.
   means possibility of collision
 
   + No 'scope' implicitly renaming children
-]
+```
 
 All right, moving up another level.  What about at the artifact level?
 So what if I want to get rid of this namespace?  I hate this
@@ -1071,7 +1083,8 @@ would like to fix this.
 
 [Time 0:40:32]
 
-[slide:
+```
+slide:
 
   Doesn't Doing the
 Right Thing Name-wise
@@ -1079,7 +1092,7 @@ Make You Reluctant to
    Remove Things?
 
      Yes.  Good.
-]
+```
 
 So this just seems like a lot of work, right?  And doesn't this make
 you reluctant to remove things?  This is a rhetorical question.  The
@@ -1093,7 +1106,8 @@ what is more important?
 
 [Time 0:41:01]
 
-[slide title: Breaking Changes are
+```
+slide title: Breaking Changes are
                   _Broken_
 
 + Full stop
@@ -1105,7 +1119,7 @@ what is more important?
 + Avoid _breakage_ by turning it into _accretion_
 
   + old and new can co-exist
-]
+```
 
 OK, so here is the root of the rant.  Breaking changes are broken.  It
 is just a terrible idea.  Don't do it.  Don't do it.  Don't try to
@@ -1134,7 +1148,8 @@ breakage into accretion.
 
 [Time 0:42:24]
 
-[slide title: So Maven is Broken?
+```
+slide title: So Maven is Broken?
 
 + Not really - how we use it may be broken
 
@@ -1149,7 +1164,7 @@ breakage into accretion.
   + Why?
 
   + it's an accreting collection of immutable things
-]
+```
 
 So, is Maven broken?  Right, this is what we do with Maven.  Not
 really, right?  We are doing this to ourselves.  Maven is actually
@@ -1188,11 +1203,11 @@ like this.
 
 [Time 0:44:27]
 
-[slide:
+```
+slide:
 
 (insert rotten sandwich image here)
-
-]
+```
 
 So I will just advise you right now not to look up rotten sandwich on
 the Internet, because it is quite unpleasant.  But you can imagine
@@ -1230,7 +1245,8 @@ signatures, is a complete mess.
 
 [Time 0:46:28]
 
-[slide: So SemVer is Broken?
+```
+slide: So SemVer is Broken?
 
 + Yes
 
@@ -1246,7 +1262,7 @@ signatures, is a complete mess.
 
   + Conveys more and supports some forms
     of relativism
-]
+```
 
 So this is not a surprise at this point in the talk.  Is Semantic
 Versioning broken?  Totally.  Yes, broken.  Bad idea.  We should
@@ -1288,7 +1304,8 @@ and have some sort of possibilities for relativism.
 
 [Time 0:48:47]
 
-[slide title: What about Git?
+```
+slide title: What about Git?
 
 + Wonderful, immutable, truth-of-the-code
   system, widely adopted
@@ -1301,7 +1318,7 @@ and have some sort of possibilities for relativism.
 + Deserves a role
 
   + but, SHAs vs order/causality/readability
-]
+```
 
 What about Git?  So this is another thing.  I mean, obviously these
 approaches predate Git.  Everything we are doing about JARs and Maven
@@ -1335,14 +1352,15 @@ it would be driven from the bottom back up to make a solution.
 
 [Time 0:50:37]
 
-[slide title: It's a Social Thing
+```
+slide title: It's a Social Thing
 
 + We won't be able to tech ourselves out of
   this
 
 + We need to agree that treating each other
   well is important
-]
+```
 
 Now this is not like me preaching to you.  I think we all could do
 better with this.  Clojure does not have a perfect track record in
@@ -1358,14 +1376,15 @@ considering other people.
 
 [Time 0:51:17]
 
-[slide title: Local dev vs Open dev
+```
+slide title: Local dev vs Open dev
 
 + Incompatible churn acceptable in private
 
 + Slack is not standup
 
 + OS user base is _open_ and _unknown_
-]
+```
 
 One of the things that I think makes this challenging is open source.
 Because when we work in a local team, or whatever.  In your team.  It
@@ -1413,7 +1432,8 @@ standup.
 
 [Time 0:54:15]
 
-[slide title: Coding for Growth
+```
+slide title: Coding for Growth
 
 + _Open_ specs and data formats are _key_
 
@@ -1427,7 +1447,7 @@ standup.
   more than what you need or know about
 
   + ignore, or have policy for it
-]
+```
 
 So how do we code for growth?  Alex Miller has talked about spec a
 bunch, and so has Stu, and the number one question they get about spec
@@ -1505,7 +1525,8 @@ specification, this has to be OK.
 
 [Time 0:58:31]
 
-[slide title: What about Iterative
+```
+slide title: What about Iterative
                 Development?
 
 + Alphas are OK
@@ -1516,7 +1537,7 @@ specification, this has to be OK.
 
 + Open source is not an excuse for indefinite
   public thrashing around
-]
+```
 
 So what about iterative development?  This all sounds like, "I have
 got to get it right the first time."  And that is not the case.  You
@@ -1549,7 +1570,8 @@ you I would do that.
 
 [Time 1:00:14]
 
-[slide title: The Only Truth is
+```
+slide title: The Only Truth is
                   Runtime
 
 + Deps/POMs are just suggestions
@@ -1562,7 +1584,7 @@ you I would do that.
 
 + Possibly a lib set that _none_ of the
   components have ever run against
-]
+```
 
 Did I go this far already?  Yeah, OK.
 
@@ -1598,7 +1620,8 @@ is what context means.
 
 [Time 1:01:59]
 
-[slide title: Testing is Runtime
+```
+slide title: Testing is Runtime
                  Dependent
 
 + And runtimes are independent (if related)
@@ -1611,7 +1634,7 @@ is what context means.
 
 + We could be reifying artifact sets at a
   macro (e.g. app or multi-app) level
-]
+```
 
 So this has an impact on testing.  We think we tested.  Oh, you know.
 Reproducible development.  Reproducible builds.  Oh.  [TBD] A lot of
@@ -1646,11 +1669,11 @@ deps and updating your version.
 
 [Time 1:03:47]
 
-[slide:
+```
+slide:
 
 (Live Coding Demo)
-
-]
+```
 
 All right.
 
@@ -1660,7 +1683,8 @@ for the talk, and it said "insert joke here".
 
 [Time 1:04:01]
 
-[slide title: What about Web
+```
+slide title: What about Web
                 Services?
 
 + Same problems, same mistakes
@@ -1675,7 +1699,7 @@ for the talk, and it said "insert joke here".
 
 + Accretion could prevent a lot of client/
   service version hell
-]
+```
 
 So what about web services?  It is the same thing, right?  Some people
 are like, "Oh, JARs.  Oh, man.  You are old.  We do everything with
@@ -1731,7 +1755,8 @@ in exactly the same way.
 
 [Time 1:07:03]
 
-[slide title: We Need to Bring FP to
+```
+slide title: We Need to Bring FP to
                the Library Ecosystem
 
 + Currently update-in-place, excused but not
@@ -1744,7 +1769,7 @@ in exactly the same way.
 + Libraries less useful
 
   + Even undesirable, whatever their features
-]
+```
 
 So what we need to do is bring functional programming to the library
 ecosystem.  That is it.  We need to take this thing.  We need to make
@@ -1772,7 +1797,8 @@ sort of a social thing.
 
 [Time 1:08:18]
 
-[slide title: "This is Impossible/
+```
+slide title: "This is Impossible/
                  Impractical"
 
 + Nope
@@ -1788,7 +1814,7 @@ sort of a social thing.
   + Clojure?
 
 + Compatibility a prerequisite of success?
-]
+```
 
 Now, how many people are saying, "No"?  This all sounds fine, but it
 is easy for me to make a little piece of data immutable.  It is easy
@@ -1816,7 +1842,8 @@ value the stuff that you write, you need to consider this.
 
 [Time 1:09:47]
 
-[slide title: What If We Never
+```
+slide title: What If We Never
                Broke Anything?
 
 + names become enduringly meaningful
@@ -1829,7 +1856,7 @@ value the stuff that you write, you need to consider this.
 + use the latest with impunity
 
 + compose with impunity
-]
+```
 
 So what would happen if we never broke anything?  Names would be
 enduringly meaningful.  Maven Central.  I know what it does for me,
@@ -1859,7 +1886,8 @@ something we value as functional programmers.
 
 [Time 1:10:54]
 
-[slide title: Open Challenges
+```
+slide title: Open Challenges
 
 + We can't 'see' some changes
 
@@ -1876,7 +1904,7 @@ something we value as functional programmers.
 + repo->artifact->namespace not first class
 
 + tooling that reinforces the status quo
-]
+```
 
 So I think there are a bunch of open challenges here.  One is that
 there are some changes we cannot see.  I talked earlier about
@@ -1911,7 +1939,8 @@ problem.  We have major versions for this.
 
 [Time 1:12:39]
 
-[slide title: Opportunities for
+```
+slide title: Opportunities for
                  Clojure
 
 + spec
@@ -1927,7 +1956,7 @@ problem.  We have major versions for this.
 + Testing based on fine-grained deps
 
   + generative testing needs this
-]
+```
 
 OK, so Clojure can help.  We have spec.  I think that will lead us to
 flexible dep awareness, as opposed to this fragile/brittle thing,
@@ -1968,7 +1997,8 @@ generative testing.
 
 [Time 1:14:23]
 
-[slide title: Exchange > Change
+```
+slide title: Exchange > Change
 
 + _Grow_ your software
 
@@ -1982,7 +2012,7 @@ generative testing.
 
 + Create a lib/service ecosystem of which we
   can all be proud
-]
+```
 
 All right.  I know everybody wants to eat, and I certainly do.
 
