@@ -5,6 +5,10 @@
 * **Video: [https://www.youtube.com/watch?v=ROor6_NGIWU](https://www.youtube.com/watch?v=ROor6_NGIWU)**
 
 
+[ This transcript has intentionally left out some "filler" words such
+as "right", "you know", "I mean", that are common in speech, but I
+prefer not to read in transcripts.  -- Andy Fingerhut ]
+
 [Time 0:00:00]
 
 ```
@@ -36,7 +40,7 @@ slide:
     T   D
 ```
 
-You know, it is like one of those Apple, Apple keynotes.
+It is like one of those Apple keynotes.
 
 So TBD.
 
@@ -105,18 +109,17 @@ hopefully it will make some sense by the end.
 
 So one of the things I think happens to us all, especially as
 enthusiasts of languages, and some people use their language as like,
-it is just a tool or whatever.  And then you are like, you find
-something that you really like, and you become enthusiastic about it,
-and you look forward to enhancing it, or making libraries for it, or
-making things to interconnect with other things.  And you sort of
-define your world synonymously with the world that is implied by your
-programming language.
+it is just a tool or whatever.  And then you find something that you
+really like, and you become enthusiastic about it, and you look
+forward to enhancing it, or making libraries for it, or making things
+to interconnect with other things.  And you sort of define your world
+synonymously with the world that is implied by your programming
+language.
 
-And it is impossible to avoid this, right, because the semantics of a
-language, they eventually, you know, pervade your brain.  We say
-things in these conferences that, you know, people from outside the
-Clojure would be like, how come you can say that?  And everybody says,
-oh, yeah, you know.
+And it is impossible to avoid this, because the semantics of a
+language, they eventually pervade your brain.  We say things in these
+conferences that people from outside the Clojure would be like, how
+come you can say that?  And everybody says, oh, yeah, you know.
 
 [Audience laughter]
 
@@ -134,22 +137,22 @@ But we get involved in this programming language as a world, and then,
 of course, if it is a functional language like Clojure, we get even
 more involved with, wow, this functional part, this is the good world.
 This is the world I really want to live in, and everything else is
-sort of like the ick.  You know, so I have the good world, and we want
-to minimize the ick.  And we call it I/O or something like that.
+sort of like the ick.  So I have the good world, and we want to
+minimize the ick.  And we call it I/O or something like that.
 
 And by painting it as I/O, we almost sort of like to make it somebody
-else's problem.  And like Haskell is really good at this.  You know,
-it is like there a is monad and it is like: stay out!  You know, it
-stays over there.  We do not really force that, but by convention and
-discipline, we try to do that.
+else's problem.  And Haskell is really good at this.  It is like there
+a is monad and it is like: stay out!  It stays over there.  We do not
+really force that, but by convention and discipline, we try to do
+that.
 
-But it is important to note that, you know, that is never been
-Clojure's approach to imagine that that part of your application was
-not important.  I mean the whole existence of the state model is there
-because, you know, actual programs need to do interactions with the
-world.  They need to affect the world.  If you are not affecting the
-world, I do not know why you are writing software.  So it really,
-really is important.
+But it is important to note that that has never been Clojure's
+approach: to imagine that that part of your application was not
+important.  I mean the whole existence of the state model is there
+because actual programs need to do interactions with the world.  They
+need to affect the world.  If you are not affecting the world, I do
+not know why you are writing software.  So it really, really is
+important.
 
 
 [Time 0:04:04]
@@ -164,42 +167,41 @@ language plus runtime, we get all of these facilities.  And this is in
 no particular order.  But some of the things that really matter when
 we start talking about the bigger picture as being either present, or
 missing, or the analogies either hold or do not, are things like a
-memory model.  Right?  So we have this presumption in Java.
+memory model.  So we have this presumption in Java.
 
 Maybe in Clojure you are isolated from this.  But as the author of
 Clojure, and as the author of the primitives that guard state and
 memory transitions, the existence of a memory model in Java is super
-critical.  It is a big, big promise and, you know, the fact that it is
-present, it is true for all libraries written in Clojure or not that
-run in the same runtime, that is based upon a resource management
-structure, a garbage collector that is shared, is a gigantic suite of
-facilities that is common both to your language, other things written
-in the same language, and things written in other languages.
+critical.  It is a big, big promise and the fact that it is present,
+it is true for all libraries written in Clojure or not that run in the
+same runtime, that is based upon a resource management structure, a
+garbage collector that is shared, is a gigantic suite of facilities
+that is common both to your language, other things written in the same
+language, and things written in other languages.
 
 Calling conventions, who even knows what a calling convention is any
 more?  C programmers remember calling conventions, because you had all
-these choices, right?  And maybe even in the absence of, you know, who
-is pushing what at the stack level, we still have sort of conventions
-around deciding whether we pass values or references.  Even in Java,
-though, that is sort of disappearing.  But that would be one aspect of
-it.
+these choices.  And maybe even in the absence of who is pushing what
+at the stack level, we still have sort of conventions around deciding
+whether we pass values or references.  Even in Java, though, that is
+sort of disappearing.  But that would be one aspect of it.
 
 Resource management, like I said, mostly in the memory space.  We know
-eventually the runtimes and the languages start not helping us any more
-with resources outside of memory.  There is all kinds of coordination,
-right?  We have monitors.  We have volatile and things like that to
-interact with the memory model to help us coordinate things.  And
-again, that is sort of embodied in the primitives in Clojure.  Right?
+eventually the runtimes and the languages start not helping us any
+more with resources outside of memory.  There is all kinds of
+coordination.  We have monitors.  We have volatile and things like
+that to interact with the memory model to help us coordinate things.
+And again, that is sort of embodied in the primitives in Clojure.
 Swap and things like that are coordination primitives that rely on
 coordination primitives down underneath.
 
 And, of course, probably the biggest things that we derive from
-languages, as we touch them, that are more fun - I mean, again, there
-are the primitives for control flow and whatnot - are any of the tools
-for abstraction and/or type stuff.  And of course some languages
-emphasize this more than others.  And Clojure probably does not
-emphasize it nearly as much as some others.  So that is what we talk
-about when we talk about programming language, and typically language.
+languages, as we touch them, that are more fun - again, there are the
+primitives for control flow and whatnot - are any of the tools for
+abstraction and/or type stuff.  And of course some languages emphasize
+this more than others.  And Clojure probably does not emphasize it
+nearly as much as some others.  So that is what we talk about when we
+talk about programming language, and typically language.
 
 
 [Time 0:06:22]
@@ -220,10 +222,10 @@ When we talk about system, we are talking about something bigger,
 bigger than a program.  In particular, I am talking about something
 bigger than a program.  So the definition of system is - the roots of
 it are in: stands together.  And by that I think the interpretation I
-would take is that, you know, one leg of this stool is not a
-particularly useful thing.  And a stool with two legs is dangerous,
-but when you compose enough of the pieces, you end up with something
-that performs something, a useful function.
+would take is that one leg of this stool is not a particularly useful
+thing.  And a stool with two legs is dangerous, but when you compose
+enough of the pieces, you end up with something that performs
+something, a useful function.
 
 And it is actually these systems that most of us deliver.  How many
 people have a main product of their effort that is a single program
@@ -244,18 +246,16 @@ systems, and now we tend to think of systems as compositions of
 programs that offer services to other programs, and it is an analogy
 we can draw out of what we do inside programming languages.  You can
 get libraries that give you services as you consume the library.  And
-then, you know, in the process space you have services that you can
-call, and they have certain APIs.  And you call them, and that is what
-happens.
+then in the process space you have services that you can call, and
+they have certain APIs.  And you call them, and that is what happens.
 
 But there are many things about a system that are very different.
 And, in particular, there is no global supervision any more.  A lot of
-what we get inside the language is not there.  Right?  There is no
-global resource manager.  There is nothing watching everything.  There
-is nothing that knows everything that is going on.  It could be more
-than one process in the same box.  It could be more boxes.  There is
-no, like, person in charge of the Internet making sure everything is
-okay.
+what we get inside the language is not there.  There is no global
+resource manager.  There is nothing watching everything.  There is
+nothing that knows everything that is going on.  It could be more than
+one process in the same box.  It could be more boxes.  There is no,
+like, person in charge of the Internet making sure everything is okay.
 
 And the question is: how do we connect these?  How do we connect these
 pieces?  And the premise of this talk is that there is a way to talk
@@ -282,22 +282,22 @@ slide title: Language
 ```
 
 So when we say language, what do we mean?  The root, again, is tongue.
-it is obviously about communication.  Right?  But everybody knows, you
-know, the old saw about programming is, you know, you think it is
-about talking to the machine.  And in a certain sense it is, but it is
-certainly also about talking to other programmers.  Right?  So you
-write a program.  The other programmer could be you, right, later.
-Ten years later, you look at your code, you are like, "Whoa!".
+it is obviously about communication.  But everybody knows the old saw
+about programming is: you think it is about talking to the machine.
+And in a certain sense it is, but it is certainly also about talking
+to other programmers.  So you write a program.  The other programmer
+could be you, later.  Ten years later, you look at your code, you are
+like, "Whoa!".
 
 [Audience laughter]
 
-Who said that?  But I think it does split out a little bit, right?  So
-I think, in all cases, all programming language and all the use of
+Who said that?  But I think it does split out a little bit.  So I
+think, in all cases, all programming language and all the use of
 language I am going to talk about is somehow about programs talking to
 programs - programmers talking to programmers.  But inside a
 programming language, there is also the other aspect, which is the
-programmer talking to the machine.  You know, "Machine, make this
-happen.  Do this stuff."
+programmer talking to the machine.  "Machine, make this happen.  Do
+this stuff."
 
 But that a very interesting, different characteristic of the
 communication that occurs between programs in a system is that the
@@ -336,7 +336,7 @@ is sort of all inside the program, inside the program view.
 If we look at systems, I think it is a little bit harder to sort of
 tease out what are the primitives of systems.  But certainly if you
 start with the communication side, you end up with two very evident
-pieces to the language of systems, right?
+pieces to the language of systems.
 
 One are the protocols: UDP, TCP, HTTP, Web sockets, all these things.
 Sort of the negotiated transfer primitives that we have.  And the
@@ -376,8 +376,8 @@ slide title: Say What?
 ```
 
 So the first thing we have to talk about is, "Say what?"  Again, we
-talk about protocols and formats, but formats are huge.  Right?  How
-many different ways do we have to talk over these wires?  What are we
+talk about protocols and formats, but formats are huge.  How many
+different ways do we have to talk over these wires?  What are we
 sending?  XML, JSON is probably the big winner right now, protocol
 buffers, and then, of course quite common in this room would be EDN
 and Clojure data.  But there is also Avro and Hessian and BERT.  How
@@ -385,9 +385,9 @@ many know what all of these things are?  Not too many.  How many know,
 of those people, could make a matrix as to why one is better or
 different than another?
 
-And yet, you know, this is actually pretty important, right?  This is
-what we are going to be saying from one process to another.  It is a
-huge thing.  And it is full of decision points.
+And yet this is actually pretty important.  This is what we are going
+to be saying from one process to another.  It is a huge thing.  And it
+is full of decision points.
 
 I think one of the things that is really cool about it is: all of
 these things are representations of data.  What is not up here?  What
@@ -395,13 +395,13 @@ key Java technology for things talking to other things is not here?
 
 [Audience member: RPC]
 
-Well, that is not really what --
+That is not really what --
 
 [Audience member: Serialization.]
 
-Yeah, with RMI, right?  RMI, yeah, a big winner.  How about DCOM?
-CORBA?  Anybody?  Okay.  Those are not even on this list, right?  They
-all lost.  They all lost for really good reasons.  So we are not even
+Yeah, with RMI.  RMI, yeah, a big winner.  How about DCOM?  CORBA?
+Anybody?  Okay.  Those are not even on this list, right?  They all
+lost.  They all lost for really good reasons.  So we are not even
 going to talk about that.  We have already reached the point where
 every single one of these choices is a data format.
 
@@ -413,12 +413,12 @@ on a different machine, and things like that.  We are just going to
 talk with data.
 
 So we have to talk.  We have to split out: what about the data is good
-or bad?  What are the decision points?  One is extensibility, right?
-Given this format, if I have a new thing to say to you tomorrow, is
-there a way for me to encode that?  If there is not, it is not
-extensible.  Which of these things on the list is not extensible?
-JSON!  There you go.  That is really not good.  And it leads to a
-couple problems we will get to later.
+or bad?  What are the decision points?  One is extensibility.  Given
+this format, if I have a new thing to say to you tomorrow, is there a
+way for me to encode that?  If there is not, it is not extensible.
+Which of these things on the list is not extensible?  JSON!  There you
+go.  That is really not good.  And it leads to a couple problems we
+will get to later.
 
 And there are two notions of extensibility.  One is to new types.  The
 other is to new versions.  There is a sense in which, for instance,
@@ -443,10 +443,10 @@ What does that mean: to be self-describing?  It means that if I have a
 decoder that understands the rules of the format, I can read anything
 that you send, and I do not need to know anything else out of band.  I
 do not have to get a description any other way.  That is not true of
-protocol buffers, right?  If somebody starts streaming you protocol
-buffer stuff, it is like gobbledygook if you have never seen the
-schema, and where is the schema in the protocol buffer stream?  It is
-_not_ in the stream.  It must be transmitted out of band.
+protocol buffers.  If somebody starts streaming you protocol buffer
+stuff, it is like gobbledygook if you have never seen the schema, and
+where is the schema in the protocol buffer stream?  It is _not_ in the
+stream.  It must be transmitted out of band.
 
 [Time 0:15:49]
 
@@ -456,8 +456,8 @@ that?
 
 [Audience member: XML (indiscernible).]
 
-Well, that is optional though.  But one has one that is required for
-reading them.
+That is optional though.  But one has one that is required for reading
+them.
 
 [Audience member: Protocol buffers.]
 
@@ -474,8 +474,8 @@ Of course, XML, you can definitely read it.  You may not understand it,
 but you can read it without anything.  If you have schemas, they are
 sort of optional.
 
-Why does it matter whether or not schemas are in or out of band?  I
-mean, it is on the slide.
+Why does it matter whether or not schemas are in or out of band?  It
+is on the slide.
 
 If you have schemas, what can't you have?  If you have out of band
 schemas, what can't you have?  You cannot have these things: generic
@@ -483,25 +483,25 @@ processors and intermediaries.  It is really interesting that Google
 came up with protocol buffers.
 
 Imagine if the Internet was built with protocol buffers.  How good
-would Google's search be?  It would be bad, right, because they are in
-the intermediary business.  They are taking advantage of the fact that
-any HTML processor can read any HTML.  Right?  If everything was a
-negotiated contract, it just simply would not work, so you really have
-to understand.  It is not to say that protocol buffers are bad.  I am
-not saying that.  But what I am saying is that there is a spectrum of
+would Google's search be?  It would be bad, because they are in the
+intermediary business.  They are taking advantage of the fact that any
+HTML processor can read any HTML.  If everything was a negotiated
+contract, it just simply would not work, so you really have to
+understand.  It is not to say that protocol buffers are bad.  I am not
+saying that.  But what I am saying is that there is a spectrum of
 choice and tradeoffs that is _really_ important here.
 
 It is as important as choosing a language when you pick your
 programming language.  But picking any programming language now leaves
 you with this decision when you move up to the system level.  Of
-course, a lot of times this is not your choice.  Right?  You are
-consuming a service that somebody else has made a choice.  And it
-highlights sort of the next problem in this space, which is that there
-is nobody in charge.
+course, a lot of times this is not your choice.  You are consuming a
+service that somebody else has made a choice.  And it highlights sort
+of the next problem in this space, which is that there is nobody in
+charge.
 
 When you use a programming language, the programming language kind of
-sort of says, "Well, we are all going to pass arguments like this, and
-we are going to define our types like that, and everything else."  And
+sort of says, "We are all going to pass arguments like this, and we
+are going to define our types like that, and everything else."  And
 with no one in charge, systems struggle against this set of
 independent decisions, which may or may not compose.  And the formats
 problem is the first place this comes up.  So this schema is out of
@@ -509,8 +509,8 @@ band is really tricky.
 
 [Time 0:18:13]
 
-And that is one of the things where people are like, oh, JSON.  Well,
-I could put dates in JSON.  Right?  How do you put dates in JSON?
+And that is one of the things where people are like, oh, JSON.  I
+could put dates in JSON.  How do you put dates in JSON?
 
 [Audience member: (Indiscernible)]
 
@@ -523,16 +523,16 @@ As strings.  And how do you know they are there?
 Out of band.  You go back to the napkin, right?  It is like if the key
 has the word date in it, then the string is a date.  There we go!  And
 so there is another aspect of that, which is: that is not merely out
-of band.  Right?  If you get a protocol buffer schema out of band, it
-is not a napkin, right?  It is very straightforward.
+of band.  If you get a protocol buffer schema out of band, it is not a
+napkin.  It is very straightforward.
 
 JSON is very, very -- the people's _use_ of JSON is extremely context
 dependent, and a lot of times that context is not captured anywhere
-except on a napkin.  It is like, okay, well, we have all agreed to
-send this and, like, you know this is coming.  And, therefore, you are
-going to go to the last edited field, and you happen to know that last
-edited is a string that has a date in it.  So that context sensitivity
-is really bad.
+except on a napkin.  It is like, okay, we have all agreed to send
+this, and you know this is coming.  And therefore, you are going to go
+to the last edited field, and you happen to know that last edited is a
+string that has a date in it.  So that context sensitivity is really
+bad.
 
 
 [Time 0:19:12]
@@ -557,8 +557,8 @@ So obviously in this room we do not have to talk about the value of
 values.  We like values.  And I think the only thing to do here is to
 sort of, again, think about the differences between programming
 languages and systems with values.  So we definitely have values in
-systems at least at one level: on the wire, right?  We just looked at
-all the popular formats for transmitting stuff.
+systems at least at one level: on the wire.  We just looked at all the
+popular formats for transmitting stuff.
 
 They are all data formats.  They are all values.  We are not really
 passing a reference to a guy that you are going to then call back on
@@ -567,9 +567,9 @@ communication with objects.  We just convey the data that we care
 about, so that is fine.
 
 Those are ephemeral, and they are usually nameless.  And, in
-programming languages, values are often usually nameless.  Right?  We
-have the same notion.  We can pass values.  We get our value as a
-return from a function.  We just have it.  We start processing it.
+programming languages, values are often usually nameless.  We have the
+same notion.  We can pass values.  We get our value as a return from a
+function.  We just have it.  We start processing it.
 
 Java is not a particularly strong language for values because
 everything, almost, is a reference type.  But in languages that really
@@ -619,33 +619,32 @@ slide title: Names
 ```
 
 So that brings us back to names.  And again, here, we sort of had this
-difference, right?  Inside a program, we have all these great scopes.
-I am in a local scope.  I have a let.  Just nobody knows about this.
-Now I am in a function.  I am also sort of cool.  And this function is
-in name space; that is also sort of great.  And then the name space is
-on GitHub, and then what happens?
+difference.  Inside a program, we have all these great scopes.  I am
+in a local scope.  I have a let.  Just nobody knows about this.  Now I
+am in a function.  I am also sort of cool.  And this function is in
+name space; that is also sort of great.  And then the name space is on
+GitHub, and then what happens?
 
 Then we are all fighting for names on cool names on GitHub.  We are
-going to use up all the characters and all the stars and robots and,
-you know, names of food.
+going to use up all the characters and all the stars and robots and
+names of food.
 
-And so it is really critical, once you lift up a system, right, and
-nobody is in charge any more.  What is true of most system names?
-They are global.  I mean they are potentially global.  And you really
-need to think about that.  You really need to be considerate of the
-fact that as you start building systems, as your names start escaping
-out of your processes, that they are global names, right?  And the
-really tedious things like Java's, you know, com.whatever.whatever,
-that stuff matters.  Because what is com.whatever?  Where did that
-come from?
+And so it is really critical, once you lift up a system, and nobody is
+in charge any more.  What is true of most system names?  They are
+global.  They are potentially global.  And you really need to think
+about that.  You really need to be considerate of the fact that as you
+start building systems, as your names start escaping out of your
+processes, that they are global names.  And the really tedious things
+like Java's com.whatever.whatever, that stuff matters.  Because what
+is com.whatever?  Where did that come from?
 
 [Audience member: (Indiscernible)]
 
-Somebody who is in charge, right?  There is a somebody in charge
-there.  In the absence of that, it is a free for all.  And so those
-DNS names and whatnot become critical.  And using fully qualified
-namespace names that are truly global names is an important discipline
-for doing systems.
+Somebody who is in charge.  There is a somebody in charge there.  In
+the absence of that, it is a free for all.  And so those DNS names and
+whatnot become critical.  And using fully qualified namespace names
+that are truly global names is an important discipline for doing
+systems.
 
 But it is also interesting to think about how different the names are.
 What are the things that - what are most of your names in a program,
@@ -654,7 +653,7 @@ are what?
 
 [Audience member: (Indiscernible)]
 
-They are one of two things, right?  they are either locals or what?
+They are one of two things.  They are either locals or what?
 
 [Audience member: (Indiscernible)]
 
@@ -665,14 +664,13 @@ names go.  They are mostly verbs.
 What happens in systems?  Who likes to work with a system that has a
 ton of verbs?
 
-That is really interesting.  Right?  Why is that?  There is all of
-these inversions as we get to systems, aren't there?  We have got lots
-of names of verbs, hardly any.  We have this global control.  We do
-not have global control.  And we are going to have a lot of names in
+That is really interesting.  Why is that?  There is all of these
+inversions as we get to systems, aren't there?  We have got lots of
+names of verbs, hardly any.  We have this global control.  We do not
+have global control.  And we are going to have a lot of names in
 systems, but they are going to be used for other things, probably not
 verbs: machines and things like that, storage locations.  And then
-these values, right, are going to need names, which is another
-critical thing.
+these values are going to need names, which is another critical thing.
 
 
 [Time 0:24:04]
@@ -722,24 +720,24 @@ are not important.  The numbers are not important.
 
 But a lot of systems have this shape.  It is fundamentally
 hierarchical.  It is not like everybody is calling everyone and it is
-this big, big nightmare, right?  It is generally some things call
-other things call other things, come back, come back.  And there is
-some sharing across.  There may be a couple of lines across at a
-level, and there may be one guy at the top.  You know, from your
-perspective that is you.  Ooh, I get to consume all this stuff.  And
-maybe I do not serve anybody else.  It depends on how I am situated.
+this big, big nightmare.  It is generally some things call other
+things call other things, come back, come back.  And there is some
+sharing across.  There may be a couple of lines across at a level, and
+there may be one guy at the top.  From your perspective that is you.
+Ooh, I get to consume all this stuff.  And maybe I do not serve
+anybody else.  It depends on how I am situated.
 
 But the critical thing here is that: while each of these things, in
 their bubble, might make a ton of sense, maybe they are written in
 Haskell and, like, it is proven that they are correct or something
-awesome, right?  As soon as you start drawing lines between them, what
+awesome.  As soon as you start drawing lines between them, what
 happens?  All sorts of new implications about what things mean have
 _arisen_, have _emerged_, from the connections of these things.  And
 it is different in some way from consuming libraries.
 
-You might look at this and say, well, this is not different from
-libraries.  Where I have libraries it is the same thing.  They wrote
-the library, and they did whatever.  They are now consuming it.
+You might look at this and say: this is not different from libraries.
+Where I have libraries it is the same thing.  They wrote the library,
+and they did whatever.  They are now consuming it.
 
 But what do the library and you share?  A _ton of stuff_.  All that
 runtime stuff.  You share all kinds of presumptions about memory,
@@ -768,37 +766,35 @@ slide title: The Revenge of
 ```
 
 And this is where I think we really run into trouble.  This is where
-the problem is.  Right?  What does that look like?
+the problem is.  What does that look like?
 
 [goes back to previous slide "Read Between the Lines"]
 
-It looks like object-oriented programming.  Right?  All these objects,
-they are connected, and they send stuff to each other and whatever.
-And it is possible, right?
+It looks like object-oriented programming.  All these objects, they
+are connected, and they send stuff to each other and whatever.
 
 [goes back to slide "The Revenge of Objects?]
 
 And it is possible that this system, built out of all these processes,
-is exactly like objects at scale.  Right?  Every process is like an
-object, and it is stateful, and it sends things over to other guys,
-and then they change, and the whole thing is really exciting.
+is exactly like objects at scale.  Every process is like an object,
+and it is stateful, and it sends things over to other guys, and then
+they change, and the whole thing is really exciting.
 
 [Audience laughter]	
 
 Because service is an arbitrary notion.  What does it mean to be a
-service?  You know, you send me stuff, and I do stuff.  I mean, one
-thing that is sort of telling is, there aren't a lot of verbs, which
-is kind of good.  But, you know, all the services are still nouns.
-The fact that they do not have a lot of operations is helpful about
-saying, well, maybe they are not like objects.  But there is nothing
-stopping them from being objects.
+service?  You send me stuff, and I do stuff.  One thing that is sort
+of telling is, there aren't a lot of verbs, which is kind of good.
+But all the services are still nouns.  The fact that they do not have
+a lot of operations is helpful about saying: maybe they are not like
+objects.  But there is nothing stopping them from being objects.
 
 That is crossed out, right?  Yeah, so in what way is this not object
 orientation?  How do we keep it from being object orientation in the
-large?  Because if we have, you know, spent all this time doing
-functional programming in the small only to build object-oriented
-programming in the large, then our system in the large is still going
-to have the negative attributes of object orientation.
+large?  Because if we have spent all this time doing functional
+programming in the small only to build object-oriented programming in
+the large, then our system in the large is still going to have the
+negative attributes of object orientation.
 
 
 [Time 0:27:46]
@@ -819,28 +815,28 @@ slide title: Welcome to the
 So I think one way to think about this is to think about machines and
 production lines and things like that.  What we are trying to do here
 in the next few slides is to try to think about a way ...  Obviously
-we are saying change happens, right?  We know that this is a dynamic
-system that is producing stuff.  It is affecting the world.  That is
-the _point_ of it, so we are not going to try to _deny_ that.
+we are saying change happens.  We know that this is a dynamic system
+that is producing stuff.  It is affecting the world.  That is the
+_point_ of it, so we are not going to try to _deny_ that.
 
 But what is a way to organize it such that we do not end up with
 object mess?  And one way is to think about it like this production
 line thing.  So what does a machine do?  A machine applies forces to
 accomplish work.  Now think about like a car factory.  What happens in
-a car factory?  Well, people go in there every day, and they work real
-hard, and they mutate the state of the car factory, and then they go
-home.  Right?
+a car factory?  People go in there every day, and they work real hard,
+and they mutate the state of the car factory, and then they go home.
+Right?
 
 [Audience laughter]
 
-That is like objects.  It is like an object-oriented program, right?
-Maybe, you know, some stuff - No! it is not like that.  Right?  There
-is like one end of the factory, and something comes in there.  What?
-Raw materials, parts, you know, iron, and tires, and stuff.  Right?
+That is like objects.  It is like an object-oriented program.  Maybe
+some stuff - No! it is not like that.  There is like one end of the
+factory, and something comes in there.  What?  Raw materials, parts,
+iron, and tires, and stuff.
 
 And then something comes out the other end.  What?  Hopefully cars.
-Right?  And so this notion of flow, I think, is the key to keeping
-systems sorted.
+And so this notion of flow, I think, is the key to keeping systems
+sorted.
 
 
 [Time 0:29:11]
@@ -863,17 +859,17 @@ slide title: Avoiding Objects
 
 So there are a bunch of characteristics that you can combine that will
 - even though that technically a certain percentage of them are not
-functional - accomplish something in a way that is not place oriented,
-right.  If you have heard me talk negatively about place orientation.
-That, you know, we all went into the factory and had a good time and
-went home, and the factory is now better - this place orientation.
+functional - accomplish something in a way that is not place oriented.
+If you have heard me talk negatively about place orientation.  That we
+all went into the factory and had a good time and went home, and the
+factory is now better - this place orientation.
 
 And this kind of flow orientation cures that.  So what are the things
 that we have in flow?  We have transformation.  So one of the things
-we are going to be doing is transforming values.  I am going to take,
-you know, the lugs and the whatever things go, the tire.  I am going
-to screw them together, and now I will have a wheel instead of the
-parts of a wheel.
+we are going to be doing is transforming values.  I am going to take
+the lugs and the whatever things go, the tire.  I am going to screw
+them together, and now I will have a wheel instead of the parts of a
+wheel.
 
 We are going to move things from one place to another.  We are going
 to route them.  Maybe it needs to go here or there.  We are going to
@@ -909,7 +905,7 @@ slide title: Transform
 + But sometimes work from/to storage
 ```
 
-So, transformation, this is the thing that is easiest, right?  We know
+So, transformation, this is the thing that is easiest.  We know
 transformation is just functions.  It is basically straightforward.
 The only thing here is that generally there might be some input to the
 function, which is now not just sort of a local input from a call from
@@ -917,12 +913,12 @@ a programming language, but it is coming over a wire, and there is
 output over the wire.
 
 The thing that gets a little bit trickier sometimes with functions at
-the system level is that sometimes you need to convey information out
-of, you know, off the wire.  I need to put it, you know, in a database
-so that you can see it later, and I am not going to actually put some
-huge thing over the wire to you in every message.  And, in that case,
-you now have this sort of stranger view where I need to run this
-function, and what I have is not the value but what?
+the system level is that sometimes you need to convey information off
+the wire.  I need to put it in a database so that you can see it
+later, and I am not going to actually put some huge thing over the
+wire to you in every message.  And, in that case, you now have this
+sort of stranger view where I need to run this function, and what I
+have is not the value but what?
 
 [Audience member: (Indiscernible)]
 
@@ -967,22 +963,22 @@ consumer, also in the availability.
 If I put something in a queue and the person who is supposed to
 consume it is not running, do I care?  Not usually.  There may be
 backflow and some other kind of considerations, but the availability
-of the consumer is also something that you do not care about, right?
-Again, a directly connected message: A said something to B.  If B is
-not around, that is now a problem for A.  If A puts something on a
-queue, presumably if you can make the queue more available than B, you
-get this independence, both in the identity of the consumer and the
+of the consumer is also something that you do not care about.  Again,
+a directly connected message: A said something to B.  If B is not
+around, that is now a problem for A.  If A puts something on a queue,
+presumably if you can make the queue more available than B, you get
+this independence, both in the identity of the consumer and the
 availability of the consumer, which is extremely strong.
 
 The other great thing about conveyor belts and queues is that what do
 they do?  What is their job?  Move stuff.  What is their other job?
-There is no other job.  That is all they do, right?  So it has that
+There is no other job.  That is all they do.  So it has that
 characteristic we had from before.
 
-I mean, when you get to pub/sub, you end up with routing and moving,
-and they are both on this slide, but that is really strong.  Queues
-are extremely important.  Queues are decidedly different from messages
-for those reasons.  Messages, they need an available consumer, and you
+When you get to pub/sub, you end up with routing and moving, and they
+are both on this slide, but that is really strong.  Queues are
+extremely important.  Queues are decidedly different from messages for
+those reasons.  Messages, they need an available consumer, and you
 need to know who you are talking to.  It is architecturally
 _completely_ different.
 
@@ -1010,10 +1006,10 @@ But you do not need to even use that.  The key point I want to make
 here is that the epochal time model, the one that is behind Clojure,
 it works in systems.  It works at the system level.  I am going to
 show you the picture again later.  But the basic idea is what?  We
-have reference types, right?  And we have values.  And the reference
-types only ever contain values.  They only ever just point to values,
-and they have semantics about how they transition from one value to
-the other.
+have reference types.  And we have values.  And the reference types
+only ever contain values.  They only ever just point to values, and
+they have semantics about how they transition from one value to the
+other.
 
 There is nothing about what I just said that is about Clojure, that is
 about memory, that is about locking.  There is a little bit that is
@@ -1104,11 +1100,11 @@ man atoms?  A tiny, tiny amount.  Probably the best thing about
 Clojure is showing people how little of that you actually need.  It is
 the same thing here.
 
-But the strong names, right, the globally qualified name space names
-will be the identity names.  That is really important that they be
-like that.  The value names, you want to be conflict free, tear off
-names that anyone can create without coordination, and that is what a
-UUID is about.
+But the strong names, the globally qualified name space names, will be
+the identity names.  That is really important that they be like that.
+The value names, you want to be conflict free, tear off names that
+anyone can create without coordination, and that is what a UUID is
+about.
 
 
 [Time 0:38:49]
@@ -1141,31 +1137,30 @@ In a program, are you really afraid that some object you are going to
 call is not going to be there?  No.  The whole program tends to, like,
 be around, or not, all together.  It succeeds or fails all together.
 
-We get all confused because we live in this bubble.  It is like, well,
-errors are like when I made a mistake.  That is not right.  That is
-just like programmer convenience thinking.
+We get all confused because we live in this bubble.  It is like,
+"errors are when I made a mistake."  That is not right.  That is just
+like programmer convenience thinking.
 
 In the real world, failures are all the time.  The things that you
 depend on are possibly not there all the time.  A large system is in a
-state of partial failure almost continuously, right?  The math is
-against you for having all of your 10,000 machines always work all the
-time.
+state of partial failure almost continuously.  The math is against you
+for having all of your 10,000 machines always work all the time.
 
-So parts of your system, right, when you look at the whole thing, will
-not be working.  It also means that those things that are not working
-will not be available.  Those failures are going to be uncorrelated.
-they are going to be completely independent.  You still are fine, but
+So parts of your system, when you look at the whole thing, will not be
+working.  It also means that those things that are not working will
+not be available.  Those failures are going to be uncorrelated.  they
+are going to be completely independent.  You still are fine, but
 somehow the thing you are talking to has become unresponsive or
 unreachable or whatever.
 
 And it starts to give you a whole new way of thinking about dealing
 with failure.  Because the things you are talking to are unreliable,
 you have to use timeouts.  You have to retry.  If you are going to
-retry, well, you have this open question.  I mean, I might not have
-heard back from you, but you might have heard my original request and
-done it.  So I need to know that my future requests are idempotent.
-Who is worried about that when you are working on stuff in memory
-inside your program?  You do not worry about these things at all.
+retry, you have this open question.  I might not have heard back from
+you, but you might have heard my original request and done it.  So I
+need to know that my future requests are idempotent.  Who is worried
+about that when you are working on stuff in memory inside your
+program?  You do not worry about these things at all.
 
 But the thing is, as soon as your program becomes part of a system,
 these error modes are going to go right through your program.  You are
@@ -1198,11 +1193,11 @@ slide title: Systems are Dynamic
 ```
 
 So the other things about systems is that they are dynamic, and they
-are dynamic in a whole bunch of different ways, right?  They are
-dynamic in membership where we just said some machines come and go.
-Sometimes they will come and go on purpose, not because they failed,
-but because somebody started some more machines.  They will come and
-go for capacity, right, as people are trying to scale.
+are dynamic in a whole bunch of different ways.  They are dynamic in
+membership where we just said some machines come and go.  Sometimes
+they will come and go on purpose, not because they failed, but because
+somebody started some more machines.  They will come and go for
+capacity as people are trying to scale.
 
 They will also come and go for capability.  The system will be
 running, and all of a sudden somebody wants to do something new, and
@@ -1214,11 +1209,11 @@ And so all new kinds of terminology is going to come to bear at the
 system level that you do not have inside.  You cannot scale one box.
 But you can scale a system.
 
-There are not usually the same notions of discovery, right?  Somewhat,
-you know, maybe if you are talking about injection and things like
-that.  But the true notion of discovery is a distributed thing.
-Elasticity is the same kind of thing.  So we know that systems are
-dynamic, and that has implications for the programming languages.
+There are not usually the same notions of discovery.  Somewhat.  Maybe
+if you are talking about injection and things like that.  But the true
+notion of discovery is a distributed thing.  Elasticity is the same
+kind of thing.  So we know that systems are dynamic, and that has
+implications for the programming languages.
 
 
 [Time 0:42:46]
@@ -1255,19 +1250,19 @@ already?"
 
 "It has only been a couple years."
 
-No, so there is nothing wrong with a holistic approach, right?  In
-Erlang, the fundamental units of programs are services.  They call
-them processes, but they are little services.  They have
-communications capabilities.  But they follow all the things that we
-talked about before.  In particular, it is not like RMI.  Those little
-services are not like objects.  They send what?
+No, so there is nothing wrong with a holistic approach.  In Erlang,
+the fundamental units of programs are services.  They call them
+processes, but they are little services.  They have communications
+capabilities.  But they follow all the things that we talked about
+before.  In particular, it is not like RMI.  Those little services are
+not like objects.  They send what?
 
 [Audience members: Messages.]
 
-Messages, which are data.  Right.  They are data.  It is, though,
-custom communication that they use, and there is a very specific model
-baked into the language that basically said we are going to do actors.
-We are going to do asynchronous, send only, receive asynchronously, no
+Messages, which are data.  They are data.  It is, though, custom
+communication that they use, and there is a very specific model baked
+into the language that basically said we are going to do actors.  We
+are going to do asynchronous, send only, receive asynchronously, no
 synchronous communication.  RPC you have to build out of pieces and
 things like that.  So there is a very, very specific model here, which
 I think is extremely well suited to making communications programs.
@@ -1333,12 +1328,12 @@ slide title: The Stacks
 
 And I think the third part, the thing that fills in this box, are
 things that I will call "simple services".  So a simple service is a
-service.  It is its own process, right?  It does communication using
-data.  It should have a very small surface area in terms of the API,
-right?  If the API is mostly data, it should have an extremely small
-number of verbs associated with it.  And it should do mostly one
-thing.  And you will see that a lot of the facilities of programming
-languages and runtimes are now available as services.
+service.  It is its own process.  It does communication using data.
+It should have a very small surface area in terms of the API.  If the
+API is mostly data, it should have an extremely small number of verbs
+associated with it.  And it should do mostly one thing.  And you will
+see that a lot of the facilities of programming languages and runtimes
+are now available as services.
 
 
 [Time 0:46:17]
@@ -1359,13 +1354,13 @@ slide title: _Simple_ System Services
 + More, and smaller - the best do the least
 ```
 
-So we have queues, right?  We have java.util.concurrent queue and then
-how many message queues are out there?  Tons, tons, all with different
+So we have queues.  We have java.util.concurrent queue and then how
+many message queues are out there?  Tons, tons, all with different
 characteristics, and you will make different choices.  But there are
 plenty of message queues that are dedicated to that.
 
-Now, unfortunately, this says simple and, you know, if I knew how to
-use Keynote, that would be blinking and on fire.  I saw fire was good.
+Now, unfortunately, this says simple and if I knew how to use Keynote,
+that would be blinking and on fire.  I saw fire was good.
 
 It is super important, and I think one of the challenges for this
 approach is, invariably, people would like their service to do some
@@ -1384,9 +1379,9 @@ if you treat it simply, it is a fantastic, little utility just to do
 that part of the Clojure state model or whatever - epochal state
 model.
 
-Control flow, you have things like Amazon Simple Workflow, right, and
-Storm.  We just saw an example of Storm before.  Look at Storm.  What
-is it?  It is what I have been talking about.  It is this flow model.
+Control flow, you have things like Amazon Simple Workflow and Storm.
+We just saw an example of Storm before.  Look at Storm.  What is it?
+It is what I have been talking about.  It is this flow model.
 Although, again, it sort of says this is the recipe that crosses all
 the pieces, as opposed to saying we are going to compose queues plus
 arbitrary consumers of queues and other queues.  It sort of says: I
@@ -1395,25 +1390,25 @@ coordinated game.  So again, it is less simple than it could be.  But
 as an architectural strategy, it is an example of what I am talking
 about.  It is flow oriented.
 
-We are used to memory services, right?  Memcache is a beautiful thing.
+We are used to memory services.  Memcache is a beautiful thing.
 People are like, oh, memcache, blah, blah, blah.  Most of the problems
 with memcache is people are using it to solve horrible problems with
 using place-oriented databases.  That is a sucky problem.  That is not
 a suckiness of memcache.  Memcache is brilliantly simple and it does
-exactly one thing.  You know, of course, they keep trying to make it
-do a little bit more, but it does the one thing it does really well,
-so that is shared memory.
+exactly one thing.  Of course, they keep trying to make it do a little
+bit more, but it does the one thing it does really well, so that is
+shared memory.
 
 Redis is another popular example.  Again, hopefully they will keep it
 simple.  And, to the extent they do, it is the kind of thing you can
 compose together.
 
 And, of course, storage has exploded.  S3 is global shared memory.  It
-is an awesome thing, except what?  Shared memory is dangerous, right?
-But we know how to make shared memory safe.  Clojure has shared
-memory.  It uses it.  In fact, it is quite fundamental to Clojure that
-you have shared memory, and shared memory is important.  You just have
-to be careful in using it.
+is an awesome thing, except what?  Shared memory is dangerous.  But we
+know how to make shared memory safe.  Clojure has shared memory.  It
+uses it.  In fact, it is quite fundamental to Clojure that you have
+shared memory, and shared memory is important.  You just have to be
+careful in using it.
 
 If you combine the reference to immutable objects, you can use S3 just
 as safely.  You can use a key value store just as safely, exactly the
@@ -1451,19 +1446,19 @@ abstracts away from us the details of what we are talking to.  Where
 is the interface for S3?
 
 Right, in a different audience, there would be people gripping the
-arms of the chairs.  Like, no, we have solved this, right?  We use
-WSDL, and then they use a BPL thing, and I draw these pictures, and I
-have systems.  We are just naive in here because we like to build
-things out of smaller parts, and we should be up there.
+arms of the chairs.  Like, no, we have solved this.  We use WSDL, and
+then they use a BPL thing, and I draw these pictures, and I have
+systems.  We are just naive in here because we like to build things
+out of smaller parts, and we should be up there.
 
-No, I mean there are things like that, but they do not get used.
-Amazon did not use WSDL.  Maybe they tried?  Did they try early on?
-Does anybody remember?  Were there any schemas ever?
+No.  There are things like that, but they do not get used.  Amazon did
+not use WSDL.  Maybe they tried?  Did they try early on?  Does anybody
+remember?  Were there any schemas ever?
 
 [Audience member: (Indiscernible)]
 
-There used to be, right?  Now it is just like, "Read the docs.  Try
-it!"  And when you get it right, you will not get a 404.
+There used to be.  Now it is just like, "Read the docs.  Try it!"  And
+when you get it right, you will not get a 404.
 
 [Audience laughter]
 
@@ -1477,14 +1472,13 @@ What do they have to do?
 
 They have to directly imitate the protocol of S3.  This is not a great
 place to be.  The same thing has happened with memcache.  People are
-like, well, memcache is cool.  People are like, well, I have this
-other cool, distributed, redundant memory cache.  It is like, well, I
-use memcache.
+like, memcache is cool.  People are like, I have this other cool,
+distributed, redundant memory cache.  It is like, I use memcache.
 
-But, I mean, this has more, better.  But what do they have to do?
-Mimic memcache on the wire.  This is really a bad thing.  And I do not
-know what the answer is because I do not think WSDL and things like it
-are the answer either.  But it leaves us in a difficult place.
+But this has more, better.  But what do they have to do?  Mimic
+memcache on the wire.  This is really a bad thing.  And I do not know
+what the answer is because I do not think WSDL and things like it are
+the answer either.  But it leaves us in a difficult place.
 
 This is an area that we can repair inside the programming language.
 There are all kinds of variants of: put stuff out of place, like S3.
@@ -1505,8 +1499,8 @@ you an abstraction inside the language.
 
 If we do not want to do this inside, what do we end up with?  What is
 the system version of this?  Proxy.  And that you tend not to see.
-Why?  It adds a hop, right?  It adds a hop, and it is like that.  But
-it is still tricky.  We do not have interfaces, and I think we are
+Why?  It adds a hop.  It adds a hop, and it is like that.  But it is
+still tricky.  We do not have interfaces, and I think we are
 suffering.
 
 
@@ -1554,59 +1548,55 @@ that are easier to compose.  I do think we are struggling with any
 kind of abstraction.  We know it is good, but we do not know how to do
 it at the system level.
 
-And I think the biggest thing we suffer from here is, A, well, yeah,
-how does somebody else provide a service like S3 and let you try to
-use it?  But the B side of it is, what if you are trying to be a
-service and you are trying not to build in durability into yourself?
-You would like to be playing this game well and saying I am
-componentized.
+And I think the biggest thing we suffer from here is, A, how does
+somebody else provide a service like S3 and let you try to use it?
+But the B side of it is, what if you are trying to be a service and
+you are trying not to build in durability into yourself?  You would
+like to be playing this game well and saying I am componentized.
 
-Well, in a programming language, we totally know how to do this.  You
-say: I will work with anything that implements this interface or
-anything that implements this protocol.  We now have a way to say
-that.  And the person who wants to compose you with something else has
-this recipe for doing it.
+In a programming language, we totally know how to do this.  You say: I
+will work with anything that implements this interface or anything
+that implements this protocol.  We now have a way to say that.  And
+the person who wants to compose you with something else has this
+recipe for doing it.
 
 Now what is the systems way to do that?  What is the systems way for
 saying I am parameterizable in my storage?
 
 [Audience member: (Indiscernible)]
 
-It is really difficult.  A URI is not enough, right?  I mean, you need
-to know what method to talk over.  So what ends up happening right now
-is your service needs to embed something like jclouds or an
-implementation of an abstracting thing, and you need to individually
-support what your users are going to need, or provide an extensible
-mechanism, but you are doing it inside yourself.  As opposed to sort
-of saying, at the system level, I have a way to say this is an
-interface that I use so that you can plug in the kind of storage you
-want with me.  So we are suffering there.
+It is really difficult.  A URI is not enough.  You need to know what
+method to talk over.  So what ends up happening right now is your
+service needs to embed something like jclouds or an implementation of
+an abstracting thing, and you need to individually support what your
+users are going to need, or provide an extensible mechanism, but you
+are doing it inside yourself.  As opposed to sort of saying, at the
+system level, I have a way to say this is an interface that I use so
+that you can plug in the kind of storage you want with me.  So we are
+suffering there.
 
 [Time 0:55:37]
 
-What do systems tell programs?  I do not think - you know, there is a
-great papers, great old papers that say, "Do not try to make your
-distributed system like your programming language."  And they are
-totally right, especially at the time they wrote it, which is when
-objects were hot and people were trying to do CORBA and things like
-that.  Terrible, terrible idea.
+What do systems tell programs?  There are great old papers that say,
+"Do not try to make your distributed system like your programming
+language."  And they are totally right, especially at the time they
+wrote it, which is when objects were hot and people were trying to do
+CORBA and things like that.  Terrible, terrible idea.
 
 But we should also be able to pull - so, but some things are
 important, like functional programming is important.  I think it is
-not done a lot in systems.  What can systems tell programs?  Well, the
-one thing is this machine-like thing, right?  Maybe it is easier to
-see when you have wires.  Right?  It is quite obvious the only thing I
-can send over the wire is a value in XML, so I have chosen to use
-that.
+not done a lot in systems.  What can systems tell programs?  The one
+thing is this machine-like thing.  Maybe it is easier to see when you
+have wires.  It is quite obvious the only thing I can send over the
+wire is a value in XML, so I have chosen to use that.
 
-But now, like, well, in this audience I do not have to say this, but
-in Java, people have a real question, right?  They do not tend to send
-data structures around in their interfaces the way we do.  And they
-have this real choice.  I could send a data structure or an object
-that has all these verbs and knows how to do stuff and changes and
-dances, and I might as well send that.  It is only one argument.  It
-is a lot easier, and I do not have to type.  In fact, IntelliJ will
-just type it for me.
+In this audience I do not have to say this, but in Java, people have a
+real question.  They do not tend to send data structures around in
+their interfaces the way we do.  And they have this real choice.  I
+could send a data structure or an object that has all these verbs and
+knows how to do stuff and changes and dances, and I might as well send
+that.  It is only one argument.  It is a lot easier, and I do not have
+to type.  In fact, IntelliJ will just type it for me.
 
 [Audience laughter]
 
@@ -1619,9 +1609,9 @@ makes sense in systems, and you explain to me why it does not inside
 the program, because I do not understand why it would not.
 
 The other thing is this programmatic, program-to-program interfaces
-rule.  Right?  Where do we suffer when we do not do that?  When we only
-define a human interface or we define a human interface first, where
-do we suffer?  Every single time we do it, every single, single time.
+rule.  Where do we suffer when we do not do that?  When we only define
+a human interface or we define a human interface first, where do we
+suffer?  Every single time we do it, every single, single time.
 
 Anybody ever try to write a program that manipulates any UNIX program?
 Yeah.  Is it fun?
@@ -1648,8 +1638,8 @@ We have got nothing.  We have nothing to work on.
 So build your human interface on top of a programmatic interface,
 because programmatic interfaces are all you have got in the systems
 level.  Nobody is typing into Amazon AWS services.  No one is like,
-oh, I am going to, like, use S3.  You know, they do not do that.  So
-you want to have the programmatic interface underneath.
+oh, I am going to, like, use S3.  They do not do that.  So you want to
+have the programmatic interface underneath.
 
 [Time 0:58:50]
 
@@ -1686,15 +1676,13 @@ this is a tremendous opportunity area for Clojure.  Clojure is really,
 really well suited to building these things.  And if you build these
 things, it is going to give you the inroads into your organizations.
 
-Oh, can I build this new thing in Clojure?  I do not know.  Well, I
-built this service.  Do you want to use it?  Oh, well, yeah.  What
-does it do?  It does this.  Oh, it is nice.  It is simple.  It does
-this one thing.
+Oh, can I build this new thing in Clojure?  I do not know.  I built
+this service.  Do you want to use it?  Oh, yeah.  What does it do?  It
+does this.  Oh, it is nice.  It is simple.  It does this one thing.
 
-And we are seeing some of that, like the Riemann thing, right?  Who
-even knows Clojure?  Well, you know, it is this cool logging thing.
-But it does one job.  It does it really well.  It is a service-like
-thing.
+And we are seeing some of that, like the Riemann thing.  Who even
+knows Clojure?  It is this cool logging thing.  But it does one job.
+It does it really well.  It is a service-like thing.
 
 There are tons of opportunities.  We just saw a bunch of things that
 were done, and Storm is really great and things like that, but there
@@ -1708,24 +1696,24 @@ not really need to say that.  There is a good format.  We tend to all
 like it, and we will try that first.
 
 Even though you do not necessarily have a means of expressing at the
-system level, the abstraction of your service, design it anyway.  You
-know, there is always all this stuff about premature abstraction,
-whatever.  Definitely it is a danger.  By the time you are writing a
-service, there is nothing premature about abstraction.  The thing has
-got a surface area this big.  You are going to spend time on that.
-There is no problem spending time on that.  It is never not worth it.
-It is never going to be, oh, it is overkill.  You know, you wrap this
-thing with the thing.
+system level, the abstraction of your service, design it anyway.
+There is always all this stuff about premature abstraction, whatever.
+Definitely it is a danger.  By the time you are writing a service,
+there is nothing premature about abstraction.  The thing has got a
+surface area this big.  You are going to spend time on that.  There is
+no problem spending time on that.  It is never not worth it.  It is
+never going to be, oh, it is overkill.  You wrap this thing with the
+thing.
 
-You know, down in the small in a program, you can over-abstract.  Up
-here, you cannot.  Up here, I mean, unless you start making a lot of
-new layers, but for your service you want to have some abstraction.
-Consider a second implementation of your interface.  Maybe you have
-decided, for speed, you are going to use Avro or something like that.
-But if you also design an HTTP interface, you will sort out your
-abstraction just by that exercise.  It still does not give somebody
-the ability to say: I am going to make something like it with the same
-shape.  But it will make your service better.
+Down in the small in a program, you can over-abstract.  Up here, you
+cannot.  Up here, unless you start making a lot of new layers, but for
+your service you want to have some abstraction.  Consider a second
+implementation of your interface.  Maybe you have decided, for speed,
+you are going to use Avro or something like that.  But if you also
+design an HTTP interface, you will sort out your abstraction just by
+that exercise.  It still does not give somebody the ability to say: I
+am going to make something like it with the same shape.  But it will
+make your service better.
 
 And the other thing is to design your service to be composed.  And
 again, I think this is a challenging area.  Do not keep adding stuff
@@ -1735,10 +1723,9 @@ You want to allow people to plug in.
 
 If you need to store stuff, consider using something like jclouds.
 Now you do not need to store.  Disks are terrible.  Who wants to write
-and program disks?  Ugh!  You know, it is a solved problem.  So as
-soon as you get to the "Oh, I need to put something somewhere," plug
-in something like jclouds or anything.  You can roll your own,
-whatever.
+and program disks?  Ugh!  It is a solved problem.  So as soon as you
+get to the "Oh, I need to put something somewhere," plug in something
+like jclouds or anything.  You can roll your own, whatever.
 
 It has to make sense for your thing.  But make it so that somebody
 does not say, "Oh, I am taking you on, and I am taking on the fact
