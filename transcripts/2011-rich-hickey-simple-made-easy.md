@@ -4,6 +4,10 @@
 * **Conference: [Strange Loop 2011](http://thestrangeloop.com) - Sept 2011**
 * **Video: [http://www.infoq.com/presentations/Simple-Made-Easy](http://www.infoq.com/presentations/Simple-Made-Easy)**
 
+[ This transcript has intentionally left out some "filler" words such
+as "right", "you know", "I mean", that are common in speech, but I
+prefer not to read in transcripts.  -- Andy Fingerhut ]
+
 [Time 0:00:00]
 
 ```
@@ -66,18 +70,18 @@ slide title: Word Origins
 
 I love word origins.  They are tremendous fun.  One of the reasons why
 they are fun is because words eventually come to mean whatever we all
-accept them to mean.  You know, whatever is commonly understood to be
-the meaning is what it means.  And it is often interesting to say,
-well, I wish I could; I wish we could go back to what it really means
-and use that.  And I think there is a couple of words that I am going
-to use in this talk that I would love for you to come away knowing the
+accept them to mean.  Whatever is commonly understood to be the
+meaning is what it means.  And it is often interesting to say, well, I
+wish I could; I wish we could go back to what it really means and use
+that.  And I think there is a couple of words that I am going to use
+in this talk that I would love for you to come away knowing the
 origins of and try to use more precisely, especially when talking
 about software.
 
 So the first word is "simple".  And the roots of this word are "sim"
 and "plex", and that means one fold or one braid or twist.  And that
 characteristic about being about one - literally - fold or twist ...
-Of course one twist, what is one twist look like?  No twists, right,
+Of course one twist, what is one twist look like?  No twists,
 actually.
 
 And the opposite of this word is "complex", which means braided
@@ -92,7 +96,7 @@ because it serves this talk really well, and that is from the Latin
 word that is the root of "adjacent", which means "to lie near" and "to
 be nearby".  And the opposite is "hard".  Of course, the root of
 "hard" has nothing to do with lying near.  It does not mean "lie far
-away".  It actually means like "strong", or tortuously so.
+away".  It actually means "strong", or tortuously so.
 
 
 [Time 0:03:17]
@@ -132,13 +136,13 @@ want to see it combining things.
 On the other hand, we cannot get too fixated about "one".  In
 particular, simple does not mean that there is only one of them.
 Right?  It also does not mean an interface that only has one
-operation.  So it is important to distinguish cardinality, right,
-counting things, from actual interleaving.  What matters for
-simplicity is that there is no interleaving, not that there is only
-one thing, and that is very important.
+operation.  So it is important to distinguish cardinality, counting
+things, from actual interleaving.  What matters for simplicity is that
+there is no interleaving, not that there is only one thing, and that
+is very important.
 
 Okay, the other critical thing about simple, as we have just described
-it, right, is if something is interleaved or not, that is sort of an
+it, is if something is interleaved or not, that is sort of an
 objective thing.  You can probably go and look and see.  I do not see
 any connections.  I do not see anywhere where this twists with
 something else, so simple is actually an objective notion.  That is
@@ -165,38 +169,35 @@ slide title: Easy
 
 So let us look at "easy".  I think this notion of nearness is really,
 really cool.  In particular, obviously there are many ways in which
-something can be near.  Right?  There is sort of the physical notion
-of being near.  Right?  Is something, you know, right there?  And I
-think that is where the root of the word came from.  You know, this is
-easy to obtain because it is nearby.  It is not in the next town.  I
-do not have to take a horse or whatever to go get to it.
+something can be near.  There is sort of the physical notion of being
+near.  Is something right there?  And I think that is where the root
+of the word came from.  This is easy to obtain because it is nearby.
+It is not in the next town.  I do not have to take a horse or whatever
+to go get to it.
 
 We do not have the same notion of physicality necessarily in our
-software, but we do sort of have, you know, our own hard drive or our
-own toolset, or it is sort of the ability to make things physically
-near by getting them through things like installers and stuff like
-that.
+software, but we do sort of have our own hard drive or our own
+toolset, or it is sort of the ability to make things physically near
+by getting them through things like installers and stuff like that.
 
 The second notion of nearness is something being near to our
-understanding, right, or in our current skill set.  And I do not mean
-in this case near to our understanding meaning a capability.  I mean
-literally near something that we already know.  So the word in this
-case is about being familiar.
+understanding, or in our current skill set.  And I do not mean in this
+case near to our understanding meaning a capability.  I mean literally
+near something that we already know.  So the word in this case is
+about being familiar.
 
 I think that, collectively, we are infatuated with these two notions
 of easy.  We are just so self-involved in these two aspects; it is
-hurting us tremendously.  Right?  All we care about is, you know, can
-I get this instantly and start running it in five seconds?  It could
-be this giant hairball that you got, but all you care is, you know,
-can you get it?
+hurting us tremendously.  All we care about is: can I get this
+instantly and start running it in five seconds?  It could be this
+giant hairball that you got, but all you care is: can you get it?
 
 In addition, we are fixated on, oh, I cannot; I cannot read that.  Now
 I cannot read German.  Does that mean German is unreadable?  No.  I do
-not know German.  So, you know, this sort of approach is definitely
-not helpful.  In particular, if you want everything to be familiar,
-you will never learn anything new because it cannot be significantly
-different from what you already know and not drift away from the
-familiarity.
+not know German.  So this sort of approach is definitely not helpful.
+In particular, if you want everything to be familiar, you will never
+learn anything new because it cannot be significantly different from
+what you already know and not drift away from the familiarity.
 
 There is a third aspect of being easy that I do not think we think
 enough about that is going to become critical to this discussion,
@@ -204,24 +205,23 @@ which now is being near to our capabilities.  And we do not like to
 talk about this because it makes us uncomfortable, because what kind
 of capabilities are we talking about?  If we are talking about easy in
 the case of violin playing or piano playing or mountain climbing or
-something like that, well, you know, I do not personally feel bad if I
-do not play the violin well because I do not play the violin at all.
+something like that, well, I do not personally feel bad if I do not
+play the violin well because I do not play the violin at all.
 
 But the work that we are in is conceptual work, so when we start
-talking about something being outside of our capability, well, you
-know, it really starts trampling on our egos in a big way.  And so,
-you know, due to a combination of hubris and insecurity, we never
-really talk about whether or not something is outside of our
-capabilities.  It ends up that it is not so embarrassing after all,
-because we do not have tremendously divergent abilities in that area.
+talking about something being outside of our capability, it really
+starts trampling on our egos in a big way.  And so due to a
+combination of hubris and insecurity, we never really talk about
+whether or not something is outside of our capabilities.  It ends up
+that it is not so embarrassing after all, because we do not have
+tremendously divergent abilities in that area.
 
 The last thing I want to say about "easy", and the critical thing to
-distinguish it from "simple", is that easy is relative.  Right?
-Playing the violin and reading German are really hard for me.  They
-are easy for other people, certain other people.  So unlike simple
-where we can go and look for interleavings, look for braiding, easy is
-always going to be, you know, easy for whom, or hard for whom?  It is
-a relative term.
+distinguish it from "simple", is that easy is relative.  Playing the
+violin and reading German are really hard for me.  They are easy for
+other people, certain other people.  So unlike simple where we can go
+and look for interleavings, look for braiding, easy is always going to
+be: easy for whom, or hard for whom?  It is a relative term.
 
 The fact that we throw these things around sort of casually saying,
 "Oh, I like to use that technology because it is simple," and when I
@@ -253,19 +253,19 @@ slide title: Construct vs Artifact
 
 So, what is one critical area where we have to distinguish these two
 things, and look at them from a perspective of them being easy and
-being simple?  It has to do with constructs and artifacts.  Right?  We
-program with constructs.  We have programming languages.  We use
-particular libraries, and those things, in and of themselves, when we
-look at them, like when we look at the code we write, have certain
+being simple?  It has to do with constructs and artifacts.  We program
+with constructs.  We have programming languages.  We use particular
+libraries, and those things, in and of themselves, when we look at
+them, like when we look at the code we write, have certain
 characteristics in and of themselves.
 
-But we are in a business of artifacts.  Right?  We do not ship source
-code, and the user does not look at our source code and say, "Ah, that
-is so pleasant."  Right?  No?  They run our software, and they run it
-for a long period of time.  And, over time, we keep glomming more
-stuff on our software.  All of that stuff, the running of it, the
-performance of it, the ability to change it, all is an attribute of
-the artifact, not the original construct.
+But we are in a business of artifacts.  We do not ship source code,
+and the user does not look at our source code and say, "Ah, that is so
+pleasant."  Right?  No?  They run our software, and they run it for a
+long period of time.  And, over time, we keep glomming more stuff on
+our software.  All of that stuff, the running of it, the performance
+of it, the ability to change it, all is an attribute of the artifact,
+not the original construct.
 
 But again, here we still focus so much on our experience of the use of
 the construct.  Oh, look; I only had to type 16 characters.  Wow!
@@ -274,26 +274,26 @@ of sort of programmer convenience, again, we are _infatuated_ with it,
 not to our benefit.
 
 On the flipside it gets even worse.  Our employers are also infatuated
-with it.  Right?  Those first two meanings of easy, what do they mean?
-Right?  If I can get another programmer in here, right?  And they look
-at your source code, and they think it is familiar, right?  And they
-already know the toolkit, right?  So it is near at hand.  They have
-always had the same tool in their toolkit.  They can read it.  I can
-replace you.  It is a breeze, especially if I ignore the third notion
-of easy, right, which is whether or not anybody can understand your
-code, right.  Because they do not actually care about that.  They just
-care that somebody can go sit in your seat, start typing.
+with it.  Those first two meanings of easy, what do they mean?  If I
+can get another programmer in here, and they look at your source code,
+and they think it is familiar, and they already know the toolkit?  So
+it is near at hand.  They have always had the same tool in their
+toolkit.  They can read it.  I can replace you.  It is a breeze,
+especially if I ignore the third notion of easy, which is whether or
+not anybody can understand your code.  Because they do not actually
+care about that.  They just care that somebody can go sit in your
+seat, start typing.
 
 So again, as sort of business owners, there is sort of, again, the
 same kind of focus on those first two aspects of easy because it makes
 programmers replaceable.
 
 So we are going to contrast this with the impacts of long-term use.
-Right?  What does it mean to use this long term?  And what is there?
-What is there is all the meat.  Right?  Does the software do what it
-is supposed to do?  Is it of high quality?  Can we rely on it doing
-what it is supposed to do?  Can we fix problems when they arise?  And
-if we are given a new requirement, can we change it?
+What does it mean to use this long term?  And what is there?  What is
+there is all the meat.  Does the software do what it is supposed to
+do?  Is it of high quality?  Can we rely on it doing what it is
+supposed to do?  Can we fix problems when they arise?  And if we are
+given a new requirement, can we change it?
 
 These things have nothing to do with the construct, as we typed it in,
 or very little to do with it, and have a lot to do with the attributes
@@ -330,8 +330,8 @@ Because I cannot use monads to do that.
 
 [Audience laughter] 
 
-This stuff is pretty simple logic, right?  How can we possibly make
-things that are reliable that we do not understand?  It is very, very
+This stuff is pretty simple logic.  How can we possibly make things
+that are reliable that we do not understand?  It is very, very
 difficult.  I think Professor Sussman made a great point saying there
 is going to be this tradeoff, right?  As we make things more flexible
 and extensible and dynamic in some possible futures for some kinds of
@@ -341,11 +341,11 @@ things that we want to understand and make sure are correct, we are
 going to be limited.  We are going to be limited to our understanding.
 
 And our understanding is very limited, right?  There is the whole
-notion of, you know, how many balls can you keep in the air at the
-time, or how many things can you keep in mind at a time?  It is a
-limited number, and it is a very small number, right?  So we can only
-consider a few things and, when things are intertwined together, we
-lose the ability to take them in isolation.
+notion of how many balls can you keep in the air at the time, or how
+many things can you keep in mind at a time?  It is a limited number,
+and it is a very small number.  So we can only consider a few things
+and, when things are intertwined together, we lose the ability to take
+them in isolation.
 
 So if every time I think I pull out a new part of the software I need
 to comprehend, and it is attached to another thing, I had to pull that
@@ -389,22 +389,22 @@ That is not actually a knowable thing.  That is phooey.
 
 [Audience laughter]
 
-Right?  If you are going to change software, you are going to need to
-analyze what it does and make decisions about what it ought to do.
-You know, I mean, at least you are going to have to go and say, "What
-is the impact of this potential change?"  Right?  "And what parts of
-the software do I need to go to to effect the change?"
+If you are going to change software, you are going to need to analyze
+what it does and make decisions about what it ought to do.  At least
+you are going to have to go and say, "What is the impact of this
+potential change?  And what parts of the software do I need to go to
+to effect the change?"
 
-You know, I do not care if you are using XP or Agile or anything else.
-You are not going to get around the fact that if you cannot reason
-about your program, you cannot make these decisions.  But I do want to
-make clear here because a lot of people, as soon as they hear the
-words reason about, they are like, "Oh, my God!  Are you saying that
-you have to be able to prove programs?"  I am not.  I do not believe
-in that.  I do not think that is an objective.  I am just talking
-about informal reasoning, the same kind of reasoning we use every day
-to decide what we are going to do.  We do not take out category theory
-and say, "Woo," you know.  We actually can reason without it.  Thank
+I do not care if you are using XP or Agile or anything else.  You are
+not going to get around the fact that if you cannot reason about your
+program, you cannot make these decisions.  But I do want to make clear
+here because a lot of people, as soon as they hear the words reason
+about, they are like, "Oh, my God!  Are you saying that you have to be
+able to prove programs?"  I am not.  I do not believe in that.  I do
+not think that is an objective.  I am just talking about informal
+reasoning, the same kind of reasoning we use every day to decide what
+we are going to do.  We do not take out category theory and say,
+"Woooo," you know.  We actually can reason without it.  Thank
 goodness.
 
 
@@ -425,10 +425,9 @@ slide title: Debugging
 [ Photos of guard rails next to automobile roads. ]
 ```
 
-So what about the other side?  Right?  There are two things you do
-with the future of your software.  One is, you add new capabilities.
-The other thing is you fix the ones you did not get, you know, done so
-well.
+So what about the other side?  There are two things you do with the
+future of your software.  One is, you add new capabilities.  The other
+thing is you fix the ones you did not get done so well.
 
 And I like to ask this question: what is true of every bug found in the
 field?
@@ -445,21 +444,21 @@ What else did it do?
 
 [Audience reply: (Indiscernible)]
 
-It passed all the tests.  Okay.  So now what do you do?  Right?  I
-think we are in this world I would like to call guardrail programming.
-Right?  It is really sad.  We are like: I can make change because I
-have tests.  Who does that?  Who drives their car around banging
-against the guardrail saying, "Whoa!  I am glad I have got these
-guardrails because I would never make it to the show on time."
+It passed all the tests.  Okay.  So now what do you do?  I think we
+are in this world I would like to call guardrail programming.  It is
+really sad.  We are like: I can make change because I have tests.  Who
+does that?  Who drives their car around banging against the guardrail
+saying, "Whoa!  I am glad I have got these guardrails because I would
+never make it to the show on time."
 
 [Audience laughter]
 
-Right?  And - and do the guardrails help you get to where you want to
-go?  Like, do guardrails guide you places?  No.  There are guardrails
-everywhere.  They do not point your car in any particular direction.
+Right?  And do the guardrails help you get to where you want to go?
+Do guardrails guide you places?  No.  There are guardrails everywhere.
+They do not point your car in any particular direction.
 
 So again, we are going to need to be able to think about our program.
-it is going to be critical.  All of our guardrails will have failed
+It is going to be critical.  All of our guardrails will have failed
 us.  We are going to have this problem.  We are going to need to be
 able to reason about our program.  Say, "Well, you know what?  I
 think," because maybe if it is not too complex, I will be able to say,
@@ -489,15 +488,15 @@ out low or medium, and gradually grows over time. ]
 ```
 
 Now, of course, everybody is going to start moaning, "But I have all
-this speed.  I am agile.  I am fast.  You know, this easy stuff is
-making my life good because I have a lot of speed."
+this speed.  I am agile.  I am fast.  This easy stuff is making my
+life good because I have a lot of speed."
 
 What kind of runner can run as fast as they possibly can from the very
 start of a race?
 
 [Audience reply: Sprinter]
 
-Right, only somebody who runs really short races, okay?
+Only somebody who runs really short races, okay?
 
 [Audience laughter]
 
@@ -507,15 +506,16 @@ fire the starting pistol every hundred yards and call it a new sprint.
 
 [Audience laughter and applause]
 
-I do not know why they have not figured that out, but -- right.  It is
-my contention, based on experience, that if you ignore complexity, you
-will slow down.  You will invariably slow down over the long haul.
+I do not know why they have not figured that out.
+
+It is my contention, based on experience, that if you ignore
+complexity, you will slow down.  You will invariably slow down over
+the long haul.
 
 Of course, if you are doing something that is really short term, you
-do not need any of this.  You could write it, you know, in ones and
-zeros.  And this is my really scientific graph.  You notice how none
-of the axis are -- there is no numbers on it because I just completely
-made it up.
+do not need any of this.  You could write it in ones and zeros.  And
+this is my really scientific graph.  You notice how none of the axis
+are -- there is no numbers on it because I just completely made it up.
 
 [Audience laughter]
 
@@ -529,10 +529,10 @@ in a way that will make every sprint accomplish less.  Most sprints be
 about completely redoing things you have already done.  And the net
 effect is you are not moving forward in any significant way.
 
-Now if you start by focusing on simplicity, why cannot you go as fast
-as possible right at the beginning?  Right, because some tools that
-are simple are actually as easy to use as some tools that are not.
-Why cannot you go as fast then?
+Now if you start by focusing on simplicity, why can't you go as fast
+as possible right at the beginning?  Because some tools that are
+simple are actually as easy to use as some tools that are not.  Why
+cannot you go as fast then?
 
 [Audience response: You have to think.]
 
@@ -566,36 +566,34 @@ slide title: Easy Yet Complex?
 So one of the problems I think we have is this conundrum that some
 things that are easy actually are complex.  So let us look.  There are
 a bunch of constructs that have complex artifacts that are very
-succinctly described.  Right?  Some of the things that are really
-dangerous to use are like so simple to describe.  They are incredibly
-familiar, right?  If you are coming from object-orientation, you are
-familiar with a lot of complex things.  They are very much available.
-Right?
+succinctly described.  Some of the things that are really dangerous to
+use are so simple to describe.  They are incredibly familiar.  If you
+are coming from object-orientation, you are familiar with a lot of
+complex things.  They are very much available.
 
 And they are easy to use.  In fact, by all measures, conventional
-measures, you would look at them and say, "This is easy."  Right?  But
-we do not care about that.  Right?  Again, the user is not looking at
-our software, and they do not actually care very much about how good a
-time we had when we were writing it.  Right?  What they care about is
-what the program does, and if it works well, it will be related to
-whether or not the output of those constructs were simple.  In other
-words, what complexity did they yield?
+measures, you would look at them and say, "This is easy."  But we do
+not care about that.  Again, the user is not looking at our software,
+and they do not actually care very much about how good a time we had
+when we were writing it.  What they care about is what the program
+does, and if it works well, it will be related to whether or not the
+output of those constructs were simple.  In other words, what
+complexity did they yield?
 
 When there is complexity there, we are going to call that incidental
-complexity.  Right?  It was not part of what the user asked us to do.
-We chose a tool.  It had some inherent complexity in it.  It is
+complexity.  It was not part of what the user asked us to do.  We
+chose a tool.  It had some inherent complexity in it.  It is
 incidental to the problem.  I did not put the definition in here, but
 incidental is Latin for "your fault".
 
 [Audience laughter]
 
-And it is.  And I think you really have to ask yourself, you know, are
-you programming with a loom?  You know, you are having a great time.
-You are throwing that shuttle back and forth.  And what is coming out
-the other side is this knotted, you know, mess.  I mean it may look
-pretty, but you have this problem.  Right?  What is the problem?  The
-problem is the knitted castle problem.  Right?  Do you want a knitted
-castle?
+And it is.  And I think you really have to ask yourself: are you
+programming with a loom?  You know, you are having a great time.  You
+are throwing that shuttle back and forth.  And what is coming out the
+other side is this knotted mess.  It may look pretty, but you have
+this problem.  What is the problem?  The problem is the knitted castle
+problem.  Do you want a knitted castle?
 
 
 [Time 0:21:31]
@@ -619,20 +617,19 @@ slide title: Benefits of Simplicity
 ```
 
 What benefits do we get from simplicity?  We get ease of
-understanding, right?  That is sort of definitional.  I contend we get
-ease of change and easier debugging.  Other benefits that come out of
-it, that are sort of on a secondary level, are increased flexibility.
-And when we talk more about modularity and breaking things apart, we
-will see where that falls.  Like the ability to change policies or
-move things around, right?  As we make things simpler, we get more
-independence of decisions because they are not interleaved, so I can
-make a location decision.  It is orthogonal from a performance
-decision.
+understanding.  That is sort of definitional.  I contend we get ease
+of change and easier debugging.  Other benefits that come out of it,
+that are sort of on a secondary level, are increased flexibility.  And
+when we talk more about modularity and breaking things apart, we will
+see where that falls.  Like the ability to change policies or move
+things around.  As we make things simpler, we get more independence of
+decisions because they are not interleaved, so I can make a location
+decision.  It is orthogonal from a performance decision.
 
-And I really do want to, you know, ask the question, agile-ist or
-whatever: Is having a test suite and refactoring tools going to make
-changing the knitted castle faster than changing the Lego castle?  No
-way.  Completely unrelated.
+And I really do want to ask the question, agile-ist or whatever: Is
+having a test suite and refactoring tools going to make changing the
+knitted castle faster than changing the Lego castle?  No way.
+Completely unrelated.
 
 
 [Time 0:22:34]
@@ -653,20 +650,19 @@ slide title: Making Things Easy
   + make things near by simplifying them
 ```
 
-Okay.  So how do we make things easy?  Presumably, you know, the
-objective here is not to just bemoan the software crisis, right?  So
-what can we do to make things easier?  So we will look at those parts,
-those aspects of being easy again.  There is a location aspect.
-Making something at hand, putting it in our toolkit, that is
-relatively simple.  Right?  We just install it.  Maybe it is a little
-bit harder because we have to get somebody to say it is okay to use
-it.
+Okay.  So how do we make things easy?  Presumably the objective here
+is not to just bemoan the software crisis.  So what can we do to make
+things easier?  So we will look at those parts, those aspects of being
+easy again.  There is a location aspect.  Making something at hand,
+putting it in our toolkit, that is relatively simple.  We just install
+it.  Maybe it is a little bit harder because we have to get somebody
+to say it is okay to use it.
 
-Then there is the aspect of how do I make it familiar, right?  I may
-not have ever seen this before.  That is a learning exercise.  I have
-got to go get a book, go take a tutorial, have somebody explain it to
-me.  Maybe try it out.  Right?  Both these things we are driving.  We
-are driving.  We install.  We learn.  It is totally in our hands.
+Then there is the aspect of how do I make it familiar.  I may not have
+ever seen this before.  That is a learning exercise.  I have got to go
+get a book, go take a tutorial, have somebody explain it to me.  Maybe
+try it out.  Both these things we are driving.  We are driving.  We
+install.  We learn.  It is totally in our hands.
 
 Then we have this other part though, which is the mental capability
 part.  And that is the part that is always hard to talk about, the
@@ -677,13 +673,12 @@ by simplifying them.
 
 But the truth here is not that they are these super, bright people who
 can do these amazing things and everybody else is stuck, because the
-juggling analogy is pretty close.  Right?  The average juggler can do
-three balls.  The most amazing juggler in the world can do, like, 9
-balls or 12 or something like that.  They cannot do 20 or 100.  We are
-all very limited.  Compared to the complexity we can create, we are
-all statistically at the same point in our ability to understand it,
-which is not very good.  So we are going to have to bring things
-towards us.
+juggling analogy is pretty close.  The average juggler can do three
+balls.  The most amazing juggler in the world can do 9 balls or 12 or
+something like that.  They cannot do 20 or 100.  We are all very
+limited.  Compared to the complexity we can create, we are all
+statistically at the same point in our ability to understand it, which
+is not very good.  So we are going to have to bring things towards us.
 
 And because we can only juggle so many balls, you have to make a
 decision.  How many of those balls do you want to be incidental
@@ -721,15 +716,15 @@ All right, so let us look at a fact.
 I have been on the other side of this complaint, and I like it.  We
 can look at it really quickly only because it is not -- this analysis
 has nothing to do with the usage.  This complexity analysis is just
-about the programmer experience.  So parens are hard.  Right?  They
-are not at hand for most people who have not otherwise used it.
+about the programmer experience.  So parens are hard.  They are not at
+hand for most people who have not otherwise used it.
 
-And what does that mean?  It means that, like, they do not have an
-editor that knows how to do, you know, paren matching or move stuff
-around structurally, or they have one and they have never loaded the
-mode that makes that happen.  Totally given, right?  It is not at
-hand, nor is it familiar.  I mean, everybody has seen parentheses, but
-they have not seen them on that side of the method.
+And what does that mean?  It means that they do not have an editor
+that knows how to do paren matching or move stuff around structurally,
+or they have one and they have never loaded the mode that makes that
+happen.  Totally given, right?  It is not at hand, nor is it familiar.
+I mean, everybody has seen parentheses, but they have not seen them on
+that side of the method.
 
 [Audience laughter]
 
@@ -737,32 +732,32 @@ I mean [laughter] that is just crazy!
 
 [Audience laughter]
 
-But, you know, I think this is your responsibility, right, to fix
-these two things, as a user, as a potential user.  You have got to do
-this.  But we could dig deeper.  Let us look at the third thing.  Did
-you actually give me something that was simple?  Is a language built
-all out of parens simple?  In the case I am saying, right, is it free
-of interleaving and braiding?  And the answer is no.  Right?
+But I think this is your responsibility to fix these two things, as a
+user, as a potential user.  You have got to do this.  But we could dig
+deeper.  Let us look at the third thing.  Did you actually give me
+something that was simple?  Is a language built all out of parens
+simple?  In the case I am saying, is it free of interleaving and
+braiding?  And the answer is no.
 
 Common LISP and Scheme are not simple in this sense, in their use of
 parens, because the use of parentheses in those languages is
 overloaded.  Parens wrap calls.  They wrap grouping.  They wrap data
 structures.  And that overloading is a form of complexity by the
-definition, you know, I gave you.  Right?
+definition I gave you.
 
 And so, if you actually bothered to get your editor set up and learn
 that the parenthesis goes on the other side of the verb, this was
 still a valid complaint.  Now, of course, everybody was saying easy,
 and it is hard, it is complex, and they were using these words really
-weakly.  Right?  But it was hard for a couple reasons you could solve,
-and it was not simple for a reason that was the fault of the language
+weakly.  But it was hard for a couple reasons you could solve, and it
+was not simple for a reason that was the fault of the language
 designer, which was that there was overloading there.  And we can fix
-that.  Right?  We can just add another data structure.
+that.  We can just add another data structure.
 
-It does not make LISP not LISP to have more data structures.  Right?
-it is still a language defined in terms of its own data structures.
-But having more data structures in play means that we can get rid of
-this overloading in this case, which then makes it your fault again,
+It does not make LISP not LISP to have more data structures.  It is
+still a language defined in terms of its own data structures.  But
+having more data structures in play means that we can get rid of this
+overloading in this case, which then makes it your fault again,
 because now the simplicity is back in the construct, and it is just a
 familiarity thing, which you can solve for yourself.
 
@@ -783,18 +778,18 @@ what he was talking about.  I believe it was a performance related
 thing.  That LISPers, they consed up all this memory, and they did all
 this evaluation, and it was a pig.  LISP programmers at that time were
 -- LISP programs at that time were complete pigs relative to the
-hardware.  So, you know, they knew the value of all these constructs,
-right, this dynamic nature.  These things are all great.  They are
-valuable, but there was this performance cost.
+hardware.  So they knew the value of all these constructs, this
+dynamic nature.  These things are all great.  They are valuable, but
+there was this performance cost.
 
 I would like to lift this whole phrase and apply it to all of us right
 now.  As programmers, we are looking at all kinds of things, and I
-just see it.  You know, read Hacker News or whatever.  It is like, oh,
-look; this thing has this benefit.  Oh, great.  I am going to do that.
-Oh, but this has this benefit.  Oh, that is cool.  Oh, that is
-awesome.  You know, that is shorter.  You never see in these
-discussions: was there a tradeoff?  Is there any downside?  You know,
-is there anything bad that comes along with this?  Never.  Nothing.
+just see it.  Read Hacker News or whatever.  It is like, oh, look;
+this thing has this benefit.  Oh, great.  I am going to do that.  Oh,
+but this has this benefit.  Oh, that is cool.  Oh, that is awesome.
+You know, that is shorter.  You never see in these discussions: was
+there a tradeoff?  Is there any downside?  Is there anything bad that
+comes along with this?  Never.  Nothing.
 
 It is just like we look all for benefits.  So as programmers now, I
 think we are looking all for benefits, and we are not looking
@@ -904,22 +899,22 @@ I love it.  It means to interleave or entwine or braid.  Okay?  I want
 to start talking about what we do to our software that makes it bad.
 And I do not want to say braid or entwine because it does not really
 have the good/bad connotation that complect has.  Complect is
-obviously bad.  Right?
+obviously bad.
 
 [Audience laughter]
 
 It happens to be an archaic word, but there are no rules that say you
 cannot start using them again, so I am going to use them for the rest
 of the talk.  So what do you know about complect?  It is bad.  Do not
-do it.  Right?  This is where complexity comes from: complecting.  It
-is very simple.
+do it.  This is where complexity comes from: complecting.  It is very
+simple.
 
 [Audience laughter]
 
 And in particular, it is something that you want to avoid in the first
 place.  Look at this diagram.  Look at the first one.  Look at the
-last one.  Right?  It is the same stuff in both those diagrams.  It is
-the same strips!  What happened?  They got complected.
+last one.  It is the same stuff in both those diagrams.  It is the
+same strips!  What happened?  They got complected.
 
 [Audience laughter]
 
@@ -927,9 +922,9 @@ And now it is hard to understand the bottom diagram from the top one,
 but it is the same stuff.  You are doing this all the time.  You can
 make a program a hundred different ways.  Some of them, it is just
 hanging there.  It is all straight.  You look at it.  You say, I see
-it is four lines, this program.  Right?  Then you could type in four
-lines in another language or with a different construct, and you end
-up with this knot, so we have got to take care of that.
+it is four lines, this program.  Then you could type in four lines in
+another language or with a different construct, and you end up with
+this knot, so we have got to take care of that.
 
 
 [Time 0:33:07]
@@ -949,8 +944,8 @@ So complect actually means to braid together.  And compose means to
 place together.  And we know that, right?  Everybody keeps telling us.
 What we want to do is make composable systems.  We just want to place
 things together, which is great, and I think there is no disagreement.
-Right?  Composing simple components, simple in that same respect, is
-the way we write robust software.
+Composing simple components, simple in that same respect, is the way
+we write robust software.
 
 
 [Time 0:33:34]
@@ -960,11 +955,11 @@ slide title: Modularity and Simplicity
 ```
 ![00:33:35 Modularity and Simplicity](SimpleMadeEasy/00.33.35.jpg)
 
-So it is simple, right?  All we need to do is -- everybody knows this.
-I am up here just telling you stuff you know.  We can make simple
-systems by making them modular, right?  We are done.  I am like
-halfway through my talk.  I do not even know if I am going to finish.
-It is so simple.  This is it.  This is the key.
+So it is simple.  All we need to do is -- everybody knows this.  I am
+up here just telling you stuff you know.  We can make simple systems
+by making them modular.  We are done.  I am halfway through my talk.
+I do not even know if I am going to finish.  It is so simple.  This is
+it.  This is the key.
 
 No, it is obviously not the key.  Who has seen components that have
 this kind of characteristic?  I will raise my hand twice because not
@@ -992,16 +987,15 @@ simple.
 So it is very important that you do not associate simplicity with
 partitioning and stratification.  They do not imply it.  They are
 enabled by it.  If you make simple components, you can horizontally
-separate them, and you can vertically stratify them.  Right?  But you
-can also do that with complex things, and you are going to get no
-benefits.
+separate them, and you can vertically stratify them.  But you can also
+do that with complex things, and you are going to get no benefits.
 
 And so I would encourage you to be particularly careful not to be
 fooled by code organization.  There are tons of libraries that look,
 oh, look, there is different classes; there are separate classes.
-They call each other in sort of these nice ways, right?  Then you get
-out in the field and you are like, oh, my God!  This thing presumes
-that that thing never returns the number 17.  What is that?
+They call each other in sort of these nice ways.  Then you get out in
+the field and you are like, oh, my God!  This thing presumes that that
+thing never returns the number 17.  What is that?
 
 
 [Time 0:35:37]
@@ -1024,8 +1018,8 @@ slide title: State is Never Simple
 Okay.  I am not going to get up here and tell you state is awesome.  I
 like state.  I am not a functional whatever guy, whatever.  I am going
 to say instead: I did this, and it sucked.  I did years and years:
-C++, you know, He-Man, stateful programming.  It is really not fun.
-It is not good.  It is never simple.
+C++, He-Man, stateful programming.  It is really not fun.  It is not
+good.  It is never simple.
 
 Having state in your program is never simple, because it has a
 fundamental complecting that goes on in its artifacts.  It complects
@@ -1046,11 +1040,11 @@ ask it the same question you get a different answer, you have this
 complexity and it is like poison.
 
 It is like dropping some dark liquid into a vase.  It is just going to
-end up all over the place.  The only time you can really, you know,
-get rid of it is when you put it inside something that is able to
-present a functional interface on the outside, a true functional
-interface: same input, same output.  You cannot mitigate it through
-the ordinary code organization things.
+end up all over the place.  The only time you can really get rid of it
+is when you put it inside something that is able to present a
+functional interface on the outside, a true functional interface: same
+input, same output.  You cannot mitigate it through the ordinary code
+organization things.
 
 And note in particular, I did not talk about concurrency here.  This
 is not about concurrency.  This has nothing to do with concurrency.
@@ -1144,10 +1138,10 @@ talked about.  It complects everything it touches.  Objects complect
 state, identity, and value.  They mix these three things up in a way
 that you cannot extricate the parts.
 
-Methods complect function and state, ordinarily, right?  In addition,
-in some languages, they complect namespaces.  Derive from two things
-in Java that have the same name method, and [hand gesture with sounds
-like explosion].  It does not work.
+Methods complect function and state, ordinarily.  In addition, in some
+languages, they complect namespaces.  Derive from two things in Java
+that have the same name method, and [hand gesture with sounds like
+explosion].  It does not work.
 
 Syntax, interestingly, complects meaning and order, often in a very
 unidirectional way.  Professor Sussman made the great point about data
@@ -1188,9 +1182,9 @@ Actors complect what is going to be done and who is going to do it.
 Now Professor Sussman said all these talks have acronyms, and I could
 not actually modify my slides in time, so object relational mapping
 has oh, my God complecting going on.  You cannot even begin to talk
-about how bad it is, right?  And, you know, if you are going to do,
-like, duals, what is the dual of value?  Is it co-value?  What is a
-co-value?  It is an inconsistent thing.  Who wants that?
+about how bad it is.  And if you are going to do duals, what is the
+dual of value?  Is it co-value?  What is a co-value?  It is an
+inconsistent thing.  Who wants that?
 
 And conditionals, I think, are interesting.  This is sort of more
 cutting edge area.  We have a bunch of sort of rules about what our
@@ -1245,13 +1239,12 @@ what it is supposed to do, instead of all the gook that falls out of
 the constructs you are using.
 
 So I would love to say the first step in getting a simpler life is to
-just choose simpler stuff.  Right?  So if you want values, usually you
-can get it.  Most languages have something like values.  Final or val,
-you know, lets you, like, declare something as being immutable.  You
-do want to find some persistent collections because the harder thing
-in a lot of languages is getting aggregates that are values.  You have
-got to find a good library for that, or use a language where that is
-the default.
+just choose simpler stuff.  So if you want values, usually you can get
+it.  Most languages have something like values.  Final or val lets you
+declare something as being immutable.  You do want to find some
+persistent collections because the harder thing in a lot of languages
+is getting aggregates that are values.  You have got to find a good
+library for that, or use a language where that is the default.
 
 [Audience laughter]
 
@@ -1276,11 +1269,11 @@ this stuff, and make it hard to write programs that manipulate the
 essence of the stuff.  We should just manipulate the essence of the
 stuff.  It is not hard.  It is simpler.
 
-Also, the same thing for communications.  Are we all not glad we do
-not use the Unix method of communicating on the Web?  Right?  Any
-arbitrary command string can be the argument list for your program,
-and any arbitrary set of characters can come out the other end.  Let
-us all write parsers.
+Also, the same thing for communications.  Are we all not glad we don't
+use the Unix method of communicating on the Web?  Any arbitrary
+command string can be the argument list for your program, and any
+arbitrary set of characters can come out the other end.  Let us all
+write parsers.
 
 [Audience laughter]
 
@@ -1357,14 +1350,14 @@ problems and stuff like that, they come into play.
 There are not a lot of great solutions.  You can do segmentation.  You
 can say this is your memory, this is your memory, this is your memory,
 this is your CPU and your CPU.  But there is tremendous waste in that,
-right, because you pre-allocate.  You do not use everything.  You do
-not have sort of dynamic nature.
+because you pre-allocate.  You do not use everything.  You do not have
+sort of dynamic nature.
 
 But the problem I think we are facing, and it is not one for which I
 have a solution at the moment, is that the policies around this stuff
 do not compose.  If everybody says, "I will just size my thread pool
-to be the number of," you know, of course.  How many times can you do
-that in one program?  Not a lot and have it still work out.
+to be the number of ...".  Of course.  How many times can you do that
+in one program?  Not a lot and have it still work out.
 
 So, unfortunately, a lot of things like that, splitting that stuff up
 and making it an individual decision, is not actually making things
@@ -1424,19 +1417,19 @@ I do want to distinguish this from, that sometimes people use this
 term, really grossly, to just mean "hiding stuff".  That is not what
 abstraction is, and that is not going to help you in this space.
 
-There are two -- you know, I cannot totally explain how this is done.
-It is really the job of designing, but one approach you can take is
-just to do who, what, when, where, why, and how.  If you just go
-through those things, and sort of look at everything you are deciding
-to do and say, "What is the who aspect of this?  What is the what
-aspect of it?"  This can help you take stuff apart.
+I cannot totally explain how this is done.  It is really the job of
+designing, but one approach you can take is just to do: who, what,
+when, where, why, and how?  If you just go through those things, and
+look at everything you are deciding to do and say, "What is the who
+aspect of this?  What is the what aspect of it?"  This can help you
+take stuff apart.
 
-The other thing is to maintain this approach that says, "I do not
-know; I do not want to know."  I once said that so often during a C++
-course I was teaching that one of the students made me a shirt.  It
-was a Booch diagram, because we did not have whatever it is now, the
-unified one.  And every line just said that.  That is what you want to
-do.  You really just do not want to know.
+The other thing is to maintain this approach that says, "I don't know;
+I don't want to know."  I once said that so often during a C++ course
+I was teaching that one of the students made me a shirt.  It was a
+Booch diagram, because we did not have whatever it is now, the unified
+one.  And every line just said that.  That is what you want to do.
+You really just do not want to know.
 
 
 [Time 0:50:39]
@@ -1461,10 +1454,10 @@ slide title: What
   + How
 ```
 
-All right, so what is what?  What is the operations.  What is what we
-want to accomplish.  We are going to form abstractions by taking
-functions and, more particularly, sets of functions, and giving them
-names.  In particular -- and you are going to use whatever your
+All right, so what is "what"?  "What" is the operations.  "What" is
+what we want to accomplish.  We are going to form abstractions by
+taking functions and, more particularly, sets of functions, and giving
+them names.  In particular -- and you are going to use whatever your
 language lets you use.  If you only have interfaces, you will use
 that.  If you have protocols or type classes, you will use those.  All
 those things are in the category of the things you use to make sets of
@@ -1475,17 +1468,17 @@ The point I would like to get across today is just that they should be
 really small, much smaller than what we typically see.  Java
 interfaces are huge, and the reason why they are huge is because Java
 does not have union types, so it is inconvenient to say this function
-takes, you know, something that does this and that and that.  You have
-to make a this and that and that interface, so we see these giant
-interfaces.  And the thing with those giant interfaces is that it is a
-lot harder to break up those programs, so you are going to represent
-them with your polymorphism constructs.
+takes something that does this and that and that.  You have to make a
+this and that and that interface, so we see these giant interfaces.
+And the thing with those giant interfaces is that it is a lot harder
+to break up those programs, so you are going to represent them with
+your polymorphism constructs.
 
-They are specifications, right?  They are not actually the
-implementations.  They should only use values and other abstractions
-in their definitions.  So you are going to define interfaces or
-whatever, type classes, that only take interfaces and type classes, or
-values, and return them.
+They are specifications.  They are not actually the implementations.
+They should only use values and other abstractions in their
+definitions.  So you are going to define interfaces or whatever, type
+classes, that only take interfaces and type classes, or values, and
+return them.
 
 And the biggest problem you have when you are doing this part of
 design is if you complect this with "how".  You can complect it with
@@ -1522,12 +1515,12 @@ slide title: Who
   + other entities
 ```
 
-"Who" is about, like, data or entities.  These are the things that our
+"Who" is about data or entities.  These are the things that our
 abstractions are going to be connected to eventually, depending on how
 your technology works.  You want to build components up from
-subcomponents in a sort of direct injection style.  You do not want
-to, like, hardwire what the subcomponents are.  You want to, as much
-as possible, take them as arguments because that is going to give you
+subcomponents in a sort of direct injection style.  You do not want to
+hardwire what the subcomponents are.  You want to, as much as
+possible, take them as arguments because that is going to give you
 more programmatic flexibility in how you build things.
 
 You should have probably many more subcomponents than you have.  So
@@ -1537,13 +1530,12 @@ Because usually you have none.  And then maybe you have one when you
 decide, oh, I need to farm out policy.  If you go in saying, "this is
 a job, and I have done who, what, when, where, why," and I found five
 components, do not feel bad.  That is great.  You are winning
-massively by doing that.  You know, split out policy and stuff like
-that.
+massively by doing that.  Split out policy and stuff like that.
 
-And the thing that you have to be aware of when you are building, you
-know, the definition of a thing from subcomponents is any of those
-kind of, you know, yellow thinking about blue, blue thinking about
-yellow kind of hidden detail dependencies.  So you want to avoid that.
+And the thing that you have to be aware of when you are building the
+definition of a thing from subcomponents is any of those kind of
+yellow thinking about blue, blue thinking about yellow kind of hidden
+detail dependencies.  So you want to avoid that.
 
 
 [Time 0:53:45]
@@ -1575,12 +1567,11 @@ If you use one of these systems, you have an open polymorphism policy,
 and that is really powerful, especially if it is runtime open.  But
 even if it is not, it is better than nothing.
 
-And again, beware of abstractions that dictate how in some subtle way
-because, when you do that, you are really, you are nailing the person
-down the line who has to do the implementation.  You are tying their
-hands.  So the more declarative things are, the better, the better
-things work.  And the thing that -- I mean, "how" is sort of the
-bottom, right?  Do not mix this up with anything else.  All these
+And again, beware of abstractions that dictate "how" in some subtle
+way because, when you do that, you are nailing the person down the
+line who has to do the implementation.  You are tying their hands.  So
+the more declarative things are, the better things work.  "How" is
+sort of the bottom.  Do not mix this up with anything else.  All these
 implementations should be islands as much as possible.
 
 
@@ -1603,9 +1594,9 @@ accidentally coming in, mostly when people design systems with
 directly connected objects.  So if you know your program is
 architected such that this thing deals with the input, and then this
 thing has to do the next part of the job.  Well, if thing A calls
-thing B, you just complected it.  Right?  And now you have a when and
-where thing, because now A has to know where B is in order to call B,
-and when that happens is whenever A does it.
+thing B, you just complected it.  And now you have a when and where
+thing, because now A has to know where B is in order to call B, and
+when that happens is whenever A does it.
 
 Stick a queue in there.  Queues are the way to just get rid of this
 problem.  If you are not using queues extensively, you should be.  You
@@ -1639,9 +1630,8 @@ sit with them in source code and look at it.
 Now, if you have one of these pretend testing systems that lets you
 write English strings so the customer can look at that, that is just
 silly.  You should have code that does the work that somebody can look
-at, which means to try to, you know, put this stuff some place
-outside.  Try to find a declarative system or a rule system that lets
-you do this work.
+at, which means to try to put this stuff some place outside.  Try to
+find a declarative system or a rule system that lets you do this work.
 
 
 [Time 0:56:09]
@@ -1667,13 +1657,12 @@ can possibly do with information is ruin it.
 
 [Audience laughter]
 
-Don't do it!  Right?  Don't do this stuff.  I mean, we have got
-objects.  Objects were made to, like, encapsulate IO devices, so there
-is a screen, but I cannot, like, touch the screen, so I have the
-object.  Right?  There is a mouse.  I cannot touch the mouse, so there
-is an object.  Right?  That is all they are good for.  They were never
-supposed to be applied to information.  And we apply them to
-information.  That is just wrong.  It is wrong.
+Don't do it!  Don't do this stuff.  We have got objects.  Objects were
+made to encapsulate IO devices, so there is a screen, but I cannot
+touch the screen, so I have the object.  There is a mouse.  I cannot
+touch the mouse, so there is an object.  That is all they are good
+for.  They were never supposed to be applied to information.  And we
+apply them to information.  That is just wrong.  It is wrong.
 
 But I can now say it is wrong for a reason.  It is wrong because it is
 complex.  In particular, it ruins your ability to build generic data
@@ -1716,13 +1705,13 @@ slide title: Simplifying
 [ several photos and drawings of knots ]
 ```
 
-So the final aspect, right, so we choose simple tools.  We write
-simple stuff.  And then sometimes we have to simplify other people's
-stuff.  In particular, we may have to simplify the problem space or
-some code that somebody else wrote.  This is a whole separate talk I
-am not going to get into right now.  But the job is essentially one of
-disentangling, right?  We know what is complex.  It is entangled.  So
-what do we need to do?  We need to somehow disentangle it.
+So the final aspect, so we choose simple tools.  We write simple
+stuff.  And then sometimes we have to simplify other people's stuff.
+In particular, we may have to simplify the problem space or some code
+that somebody else wrote.  This is a whole separate talk I am not
+going to get into right now.  But the job is essentially one of
+disentangling.  We know what is complex.  It is entangled.  So what do
+we need to do?  We need to somehow disentangle it.
 
 You are going to get this.  You are going to need to first sort of
 figure out where it is going.  You are going to have to follow stuff
@@ -1769,14 +1758,14 @@ here.
 
 It requires sensibilities and care.  Your sensibilities about
 simplicity being equal to ease of use are wrong.  They are just simply
-wrong.  Right?  We saw the definitions of simple and easy.  They are
+wrong.  We saw the definitions of simple and easy.  They are
 completely different things.  Easy is not simple.
 
 You have to start developing sensibilities around entanglement.  That
 is what you have to -- you have to have entanglement radar.  You want
-to look at some software and say, ugh!  You know, not that I do not
-like the names you used, or the shape of the code, or there was a
-semicolon.  That is also important, too.  But you want to start seeing
+to look at some software and say, ugh!  Not that I do not like the
+names you used, or the shape of the code, or there was a semicolon.
+That is also important, too.  But you want to start seeing
 complecting.  You want to start seeing interconnections between things
 that could be independent.  That is where you are going to get the
 most power.
@@ -1806,13 +1795,13 @@ slide title: Simplicity _Made Easy_
 + Reap the benefits!
 ```
 
-So, how do we make simplicity easy?  Right?  We are going to choose
-constructs with simpler artifacts and avoid constructs that have
-complex artifacts.  It is the artifacts.  It is not the authoring.  As
-soon as you get in an argument with somebody about, oh, we should be
-using whatever, get that sorted out because, however they feel about
-the shape of the code they type in is independent from this.  And this
-is the thing you have to live with.
+So, how do we make simplicity easy?  We are going to choose constructs
+with simpler artifacts and avoid constructs that have complex
+artifacts.  It is the artifacts.  It is not the authoring.  As soon as
+you get in an argument with somebody about, oh, we should be using
+whatever, get that sorted out because, however they feel about the
+shape of the code they type in is independent from this.  And this is
+the thing you have to live with.
 
 We are going to try to create abstractions that have simplicity as a
 basis.  We are going to spend a little time up front simplifying
