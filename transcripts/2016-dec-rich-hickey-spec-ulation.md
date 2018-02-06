@@ -292,7 +292,7 @@ problem.
 ```
 slide title: Dependency Truth (code)
 ```
-![0:10:46 Dependencies Truth (code)](images-spec-ulation/dependencies-truth-code.png)
+![0:10:46 Dependency Truth (code)](images-spec-ulation/dependency-truth-code.png)
 
 So what is the truth?  The truth is, you need better and better
 eyesight to solve this problem.  So we open it up a little bit more,
