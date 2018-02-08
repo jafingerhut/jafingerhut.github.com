@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: February 1, 2018
+Date: February 8, 2018
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -92,12 +92,12 @@ Defect
              Andy Fingerhut (0.36)
              Daniel Compton (0.28)
              Nicola Mometto (0.10)
-    4.72   5 Needs Patch  [CLJ-2079] Generator overrides for spec aliases are not respected
+    4.61   5 Needs Patch  [CLJ-2079] Generator overrides for spec aliases are not respected
              Frank Wang (1.00)
              Ian Davis (1.00)
              Russell Mull (1.00)
-             Aaron Brooks (0.86)
              Peter Jaros (0.86)
+             Aaron Brooks (0.75)
     4.61   5 Open         [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
              Sunil Abraham (1.00)
              Kei Tsuji (1.00)
@@ -138,6 +138,11 @@ Defect
              Devin Walters (0.75)
              Chas Emerick (0.66)
              David Leatherman (0.66)
+    3.46   4 Triaged      [CLJ-2284] Incorrect bytecode generated for static methods on interfaces
+             Vladimir Tsanev (1.00)
+             Zerg (1.00)
+             ewen grosjean (1.00)
+             David Bürgin (0.46)
     3.41   4 Triaged      [CLJ-1243] Cannot resolve public generic method from package-private base class
              Michal Růžička (1.00)
              Sébastien Wagener (1.00)
@@ -177,10 +182,6 @@ Defect
              John Walker (0.66)
              David Greenberg (0.41)
              Kenny Williams (0.41)
-    2.46   3 Triaged      [CLJ-2284] Incorrect bytecode generated for static methods on interfaces
-             Zerg (1.00)
-             ewen grosjean (1.00)
-             David Bürgin (0.46)
     2.38   4 Needs Patch  [CLJ-2152] clojure.spec: s/& has a broken form
              Zane Shelby (1.00)
              Colin Fleming (0.54)
@@ -267,6 +268,8 @@ Defect
              Alex Engelberg (1.00)
     1.00   1 Triaged      [CLJ-1317] clojure.zip/seq-zip returns spurious nils during traversal
              Lee Spector (1.00)
+    1.00   1 Vetted       [CLJ-2314] String array hinting in :gen-class fails spec - No other method available
+             John Conti (1.00)
     0.96   2 Backlog      [CLJ-274] cannot close over mutable fields (in deftype)
              John Hume (0.86)
              Nicola Mometto (0.10)
@@ -417,7 +420,6 @@ Defect
     0.00   0 Triaged      [CLJ-2271] "caller" information missing in explain-data during macro instrumentation failure
     0.00   0 Triaged      [CLJ-2274] Line numbers in stack trace are wrong when type hints satisfaction fails
     0.00   0 Triaged      [CLJ-2311] Spec generator override won't work on multi-spec dispatch key
-    0.00   0 Vetted       [CLJ-2314] String array hinting in :gen-class fails spec - No other method available
 
 ========================================
 Enhancement
@@ -796,15 +798,18 @@ Enhancement
     2.00   2 Backlog      [CLJ-415] smarter assert (prints locals)
              Jeff Weiss (1.00)
              Kevin Sookocheff (1.00)
+    2.00   2 Open         [CLJ-1146] Symbol name starting with digits to defn throws "Unmatched delimiter )"
+             Rohit Aggarwal (1.00)
+             Tianxiang Xiong (1.00)
     1.86   2 Triaged      [CLJ-1402] sort-by calls keyfn more times than is necessary
              Frank Schmidt (1.00)
              Tom Crayford (0.86)
     1.86   2 Triaged      [CLJ-2054] generator for `any?` occasionally generates `Double/NaN` for which equality semantics don't apply, and that is a problem for the :ret spec of many functions.
              Bogdan Bugarschi (1.00)
              Moritz Heidkamp (0.86)
-    1.72   2 Screened     [CLJ-2060] Add support for undefining a spec
-             Aaron Brooks (0.86)
+    1.61   2 Screened     [CLJ-2060] Add support for undefining a spec
              Trevor Hartman (0.86)
+             Aaron Brooks (0.75)
     1.60   3 Triaged      [CLJ-888] defprotocol should throw error when signatures include variable number of parameters
              Michael van Acken (0.75)
              Tassilo Horn (0.60)
@@ -854,8 +859,6 @@ Enhancement
              Michael Blume (0.26)
     1.00   1 Incomplete   [CLJ-1400] Error "Can't refer to qualified var that doesn't exist" should name the bad symbol
              Andy Chambers (1.00)
-    1.00   1 Open         [CLJ-1146] Symbol name starting with digits to defn throws "Unmatched delimiter )"
-             Rohit Aggarwal (1.00)
     1.00   1 Open         [CLJ-1296] locking expressions cause vars to be dereferenced, even if not executed, unless wrapped in let
              Shlomi (1.00)
     1.00   1 Open         [CLJ-1375] Remove Util.pcequiv() and stop pretending Java colls are equiv to Clojure colls
@@ -1047,11 +1050,12 @@ Enhancement
     0.00   0 Triaged      [CLJ-2309] Readable keyword validation
     0.00   0 Triaged      [CLJ-2316] Support fully qualified Symbol for clojure.main -m
     0.00   0 Triaged      [CLJ-2317] Disallow `recur` to `^:once fn*`
+    0.00   0 Triaged      [CLJ-2322] juxt should have a 0-arity
 
 ========================================
 Feature
 
-   43.38  53 Needs Patch  [CLJ-1965] clojure.spec/def should support an optional doc-string
+   44.38  54 Needs Patch  [CLJ-1965] clojure.spec/def should support an optional doc-string
              Aaron Cummings (1.00)
              Ag Ibragimov (1.00)
              Cameron Dorrat (1.00)
@@ -1063,6 +1067,7 @@ Feature
              Felix Andrews (1.00)
              JR Heard (1.00)
              James Tyler Solomon (1.00)
+             Jeremie Pelletier (1.00)
              Josh Brandoff (1.00)
              Julien Fantin (1.00)
              Kurt Smith (1.00)
@@ -1241,7 +1246,7 @@ Feature
              Ben Brinckerhoff (0.43)
              Kenny Williams (0.41)
              Nicola Mometto (0.10)
-   12.37  18 Incomplete   [CLJ-2112] Add specs for spec forms
+   13.12  19 Incomplete   [CLJ-2112] Add specs for spec forms
              James Conroy-Finn (1.00)
              Nuttanart Pornprasitsakul (1.00)
              Timothy Baldridge (1.00)
@@ -1250,6 +1255,7 @@ Feature
              Saul Shanabrook (1.00)
              Áron Szénási (1.00)
              Peter Jaros (0.86)
+             Aaron Brooks (0.75)
              Nate Smith (0.75)
              Miikka Koskinen (0.66)
              Ambrose Bonnaire-Sergeant (0.60)
@@ -1373,12 +1379,12 @@ Feature
              Bozhidar Batsov (0.31)
              Daniel Compton (0.28)
              Nicola Mometto (0.10)
-    7.35  11 Triaged      [CLJ-1305] Add optional not-found argument when invoking vectors or sets as functions
+    7.23  11 Triaged      [CLJ-1305] Add optional not-found argument when invoking vectors or sets as functions
              Luca Barozzi (1.00)
              Paul Gearon (1.00)
              jcr (1.00)
              Khalid Jebbari (1.00)
-             Aaron Brooks (0.86)
+             Aaron Brooks (0.75)
              John Wiseman (0.75)
              Aleksander Madland Stapnes (0.60)
              Dmitri Naumov (0.38)

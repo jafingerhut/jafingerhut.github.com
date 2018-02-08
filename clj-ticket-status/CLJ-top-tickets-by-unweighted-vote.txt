@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: February 1, 2018
+Date: February 8, 2018
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -48,13 +48,14 @@ Defect
    8 Open         [CLJ-1532] pr-str captures stdout from printing side-effects of lazily evaluated expressions.
    7 Needs Patch  [CLJ-1941] Instrumentation of fns with primitive type hints fails
    7 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
-   5 Needs Patch  [CLJ-2079] Generator overrides for spec aliases are not respected
    5 Open         [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
+   5 Needs Patch  [CLJ-2079] Generator overrides for spec aliases are not respected
    5 Open         [CLJ-2021] case where spec/conform -> spec/unform -> spec/conform gives invalid result
    5 Prescreened  [CLJ-2031] clojure.walk/postwalk does not preserve MapEntry type objects
    5 Prescreened  [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
    5 Open         [CLJ-1445] pprint prints some metadata when *print-meta* bound to true, but not all
    5 Incomplete   [CLJ-701] Primitive return type of loop and try is lost
+   4 Triaged      [CLJ-2284] Incorrect bytecode generated for static methods on interfaces
    4 Triaged      [CLJ-1243] Cannot resolve public generic method from package-private base class
    4 Screenable   [CLJ-2003] Nesting cat inside ? causes unform to return nested result
    4 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
@@ -65,7 +66,6 @@ Defect
    3 Triaged      [CLJ-1975] clojure.spec attempts to make `empty` records
    3 Triaged      [CLJ-1980] Unable to construct gen in indirectly recursive specs with s/every and derivations
    3 Open         [CLJ-1966] :clojure.spec/invalid is not a valid :clojure.spec/any value
-   3 Triaged      [CLJ-2284] Incorrect bytecode generated for static methods on interfaces
    3 Triaged      [CLJ-1142] Incorrect divide-by-zero error with floating point numbers
    3 Triaged      [CLJ-1649] Hash/equality inconsistency for floats & doubles
    3 Triaged      [CLJ-1911] min-key and max-key should return NaN if any of the argument is NaN
@@ -95,6 +95,7 @@ Defect
    1 Triaged      [CLJ-1317] clojure.zip/seq-zip returns spurious nils during traversal
    1 Prescreened  [CLJ-1587] PersistentArrayMap's assoc doesn't respect HASHTABLE_THRESHOLD
    1 Prescreened  [CLJ-2069] lazy seq that encounters an exception has differing behavior on repeated use
+   1 Vetted       [CLJ-2314] String array hinting in :gen-class fails spec - No other method available
    1 Open         [CLJ-1198] Apply metadata to primitive fns causes them to lose their primitive-ness
    1 Triaged      [CLJ-1682] clojure.set/intersection occasionally allows non-set arguments.
    1 Triaged      [CLJ-1978] recursion-limit not respected
@@ -193,7 +194,6 @@ Defect
    0 Triaged      [CLJ-2271] "caller" information missing in explain-data during macro instrumentation failure
    0 Triaged      [CLJ-2274] Line numbers in stack trace are wrong when type hints satisfaction fails
    0 Triaged      [CLJ-2311] Spec generator override won't work on multi-spec dispatch key
-   0 Vetted       [CLJ-2314] String array hinting in :gen-class fails spec - No other method available
 
 ========================================
 Enhancement
@@ -242,6 +242,7 @@ Enhancement
    3 Triaged      [CLJ-1613] :or defaults should refer to enclosing scope in map destructuring
    3 Open         [CLJ-1442] Tag gensym sourced symbols with metadata
    2 Backlog      [CLJ-415] smarter assert (prints locals)
+   2 Open         [CLJ-1146] Symbol name starting with digits to defn throws "Unmatched delimiter )"
    2 Triaged      [CLJ-1402] sort-by calls keyfn more times than is necessary
    2 Triaged      [CLJ-2054] generator for `any?` occasionally generates `Double/NaN` for which equality semantics don't apply, and that is a problem for the :ret spec of many functions.
    2 Screened     [CLJ-2060] Add support for undefining a spec
@@ -261,7 +262,6 @@ Enhancement
    2 Open         [CLJ-792] Refactor method resolution code out of Compiler and into Reflector
    2 Triaged      [CLJ-1676] map destructuring: prevent evaluation of values in :or when they are not used/needed
    1 Triaged      [CLJ-1044] Enable refering to ->type inside deftype
-   1 Open         [CLJ-1146] Symbol name starting with digits to defn throws "Unmatched delimiter )"
    1 Open         [CLJ-1296] locking expressions cause vars to be dereferenced, even if not executed, unless wrapped in let
    1 Open         [CLJ-1375] Remove Util.pcequiv() and stop pretending Java colls are equiv to Clojure colls
    1 Incomplete   [CLJ-1400] Error "Can't refer to qualified var that doesn't exist" should name the bad symbol
@@ -386,17 +386,18 @@ Enhancement
    0 Triaged      [CLJ-2309] Readable keyword validation
    0 Triaged      [CLJ-2316] Support fully qualified Symbol for clojure.main -m
    0 Triaged      [CLJ-2317] Disallow `recur` to `^:once fn*`
+   0 Triaged      [CLJ-2322] juxt should have a 0-arity
 
 ========================================
 Feature
 
-  53 Needs Patch  [CLJ-1965] clojure.spec/def should support an optional doc-string
+  54 Needs Patch  [CLJ-1965] clojure.spec/def should support an optional doc-string
   42 Triaged      [CLJ-1959] adding functions `map-vals` and `map-keys`
   27 Open         [CLJ-2116] Support for selective conforming with clojure.spec
   22 Triaged      [CLJ-304] clojure.repl/source does not work with deftype
   22 Prescreened  [CLJ-706] make use of deprecated namespaces/vars easier to spot
+  19 Incomplete   [CLJ-2112] Add specs for spec forms
   18 Needs Patch  [CLJ-2123] Lighter-weight aliasing for keywords
-  18 Incomplete   [CLJ-2112] Add specs for spec forms
   17 Open         [CLJ-1078] Add queue and queue? to clojure.core
   15 Triaged      [CLJ-440] java method calls cannot omit varargs
   14 Triaged      [CLJ-1063] Missing dissoc-in
