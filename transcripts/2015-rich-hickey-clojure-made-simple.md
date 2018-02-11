@@ -354,16 +354,12 @@ which is one of the most complex places ever.
 
 [Time 0:09:10]
 
-```
-slide: 
+![0:09:10](images-clojure-made-simple/benchmarksgame-chart.png)
 
-[screen shot of performance comparison from benchmarksgame web site]
+[http://benchmarksgame.alioth.debian.org/u64q/benchmark.pgp?test=all&lang=all&data=u64q](http://benchmarksgame.alioth.debian.org/u64q/benchmark.pgp?test=all&lang=all&data=u64q)
 
-http://benchmarksgame.alioth.debian.org/u64q/benchmark.pgp?test=all&lang=all&data=u64q
-```
-
-[ The URL is obsolete as of 2018-Jan-01, and probably about a year
-before that, as the Benchmarks Game web site stopped including Clojure
+[ The URL is obsolete as of 2018-Feb-10, and even about a year before
+that, as the Benchmarks Game web site stopped including Clojure
 programs in its published data. ]
 
 In terms of performance, a lot of times you might look at a dynamic
@@ -374,22 +370,18 @@ which is a benchmark and a game.  But it says we can reach that.
 
 [Time 0:09:30]
 
+![0:09:30](images-clojure-made-simple/todomvc-benchmark-chart.png)
 ```
-slide: 
-
-[ Figure showing Om performance relative to several other JavaScript
-  frameworks. ]
-
 Om (ClojureScript lib) on browser ToDoMVC Benchmark
 ```
 [http://vuejs.org/perf/](http://vuejs.org/perf/)
 
-[ That page as of 2018-Feb-10 does not show measured results any
-longer.  It has some text explaining why they took down the
-measurements.  It was not any reason that was specific to Om or any of
-the other frameworks.  They seemed to believe that the measurements
-were not as relevant to browser-user experience as they originally
-intended to compare. ]
+[ As of 2018-Feb-10 that page no longer shows measurement results.  It
+has some text explaining why they took down the measurements.  It was
+not any reason that was specific to Om or any of the other frameworks.
+They seemed to believe that the measurements were not as relevant to
+the experience that browser users saw, as they originally intended to
+measure. ]
 
 On JavaScript we have a very interesting result here.  Om is a
 ClojureScript library.  ClojureScript is Clojure on JavaScript,
@@ -2208,11 +2200,8 @@ users are happy and nice people.
 
 [Time 0:59:46]
 
-```
-slide:
+![0:59:46](images-clojure-made-simple/2014-redmonk-language-ranking-chart.png)
 
-[ Screen shot of "Popularity Rank on Github (by # of Projects) ]
-```
 [http://redmonk.com/sogrady/2014/06/13/language-rankings-6-14/](http://redmonk.com/sogrady/2014/06/13/language-rankings-6-14/)
 
 That is where Clojure is at in RedMonk's, where our language is at.
@@ -2222,12 +2211,8 @@ world?  Look at it.
 
 [Time 0:59:56]
 
-```
-slide:
+![0:59:56](images-clojure-made-simple/2014-thoughtworks-technology-radar.png)
 
-[ Screen shot of ThoughtWorks Technology Radar, showing Clojure in
-"Adopt" portion of chart. ]
-```
 [https://assets.thoughtworks.com/assets/technology-radar-jan-2014-en.pdf](https://assets.thoughtworks.com/assets/technology-radar-jan-2014-en.pdf)
 
 There it is on the tech radar.  Adopt.  It has actually gone off the
