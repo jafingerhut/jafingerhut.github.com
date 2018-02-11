@@ -45,7 +45,7 @@ slide title: Me
 
 So I am the person who made Clojure.  I currently work on a database
 called Datomic, which is kind of a functional database.  It is written
-in Clojure, and runs on the JVM architecture.  I am a co-founder of
+in Clojure.  It runs on the JVM architecture.  I am a co-founder of
 Cognitect, which builds Datomic and sponsors the development and
 stewardship of Clojure.
 
@@ -80,18 +80,18 @@ How many people are happy about that?  How many of you are actively
 unhappy about that, and looking for alternatives?  OK, great.
 
 How many people have tried Clojure at all?  Great.  How many people
-never heard of Clojure and are in the wrong room?  OK.  How many
+have never heard of Clojure and are in the wrong room?  OK.  How many
 people have tried Clojure and are trying to get to use it at work, but
 not yet?  A few.  Maybe this talk will give you some ways of talking
 about Clojure's value proposition that could help you.
 
-How many of you actively use Clojure, and somehow are accidentally at
+How many people actively use Clojure, and somehow are accidentally at
 JavaOne?  OK.  And the rest could not get into Brian Goetz's talk.  I
-should not even mention that Brian Goetz's talk right now, because we
-could have people filing.  Or maybe you are just tired of Brian Goetz
-talking about immutability, in which case you are definitely in the
-wrong room.  No, I like him.  Brian's a good friend and his talks are
-great, so I appreciate your bringing this one.
+should not even mention that Brian Goetz has talk right now, because
+we could have people filing out.  Or maybe you are just tired of Brian
+Goetz talking about immutability, in which case you are definitely in
+the wrong room.  No, I like him.  Brian's a good friend and his talks
+are great, so I appreciate your bringing this one.
 
 
 [Time 0:02:22]
@@ -109,11 +109,11 @@ slide title: Clojure
 So there were very few people who had never heard of Clojure, so I am
 not going to spend a lot of time on it.
 
-Oh, I had one more one more question.  How many people have seen my
-talk "Simple Made Easy"?  How many people have not?  OK, a few, so I
-may spend a minute describing what I mean when I say simple.
+Oh, I had one more question.  How many people have seen my talk
+"Simple Made Easy"?  How many people have not?  OK, a few, so I may
+spend a minute describing what I mean when I say simple.
 
-Clojure is a programming language.  It runs in the JVM and JavaScript
+Clojure is a programming language.  It runs in the JVM and JavaScript,
 and pretty much a substantial subset of Clojure runs on JavaScript.
 So it is a programming language with which you can target both.  But
 originally it only targeted the JVM and the CLR.  There is still a
@@ -149,7 +149,7 @@ producing ridiculously sophisticated things in a very short time and
 that programmer productivity matters.  So Adrian Cockcroft was cloud
 architect at Netflix.  Now he is at Battery Ventures.
 
-How many people think Java goes in the blank?  OK, so we know.  We
+How many people think Java goes in the blank?  OK.  So we know.  We
 know this.  There is something about Java that makes it not suitable
 for this blank.  So maybe we can tease that apart.
 
@@ -167,8 +167,8 @@ sophisticated things in a very short time.
 And that programmer productivity matters."
 
             Adrian Cockcroft -
-https://thenewstack.io/the-new-stack-makers-adrian-cockcroft-on-sun-netflix-clojure-go-docker-and-more/
 ```
+[https://thenewstack.io/the-new-stack-makers-adrian-cockcroft-on-sun-netflix-clojure-go-docker-and-more/](https://thenewstack.io/the-new-stack-makers-adrian-cockcroft-on-sun-netflix-clojure-go-docker-and-more/)
 
 Yes, of course, he was saying Clojure.  And this talk is about maybe
 why.  Like how could this be true?  What is it that makes Clojure
@@ -192,12 +192,12 @@ slide title: Programming is an
 
 So the first thing I want to talk about is that: I think we have this
 tendency in programming to think about ourselves just a ton, and our
-languages, and our tools, and our techniques, and me me me me me.
-What we are doing, whatever.
+languages, and our tools, and our techniques, and me, me, me, me, me,
+us.  What we are doing, whatever.
 
 We lose track of the fact that we are all working for somebody else
-who is, or ourselves, but for a business or an organization that is
-trying to accomplish something in the world.  And the software is
+who is, or for ourselves, but for a business or an organization that
+is trying to accomplish something in the world.  And the software is
 completely secondary to that task.  It should be measured always in
 terms of the cost-benefit ratio, the return on investment.  How
 quickly can we get a product to market?  And is what we are doing
@@ -224,9 +224,9 @@ want something good, and they want it soon.
 ```
 slide title: Something Good
 
-+ Passes all tests [strikethrough that line]  _Programmer-centric_
++ --Passes all tests-- [strikethrough]  _Programmer-centric_
 
-+ Type checks [strikethrough that line]        _means, not ends_
++ --Type checks-- [strikethrough]        _means, not ends_
 
 + Does what it is supposed to do
 
@@ -235,10 +235,10 @@ slide title: Something Good
 + Is flexible enough to accommodate change
 ```
 
-So something good.  We think know what is something good.  We know how
-to make things good, right?  We have these techniques, and things are
-good when the techniques are successful with them.  So when our types
-check and our test pass, we have something good.
+So something good.  We think we know what is something good.  We know
+how to make things good, right?  We have these techniques, and things
+are good when the techniques are successful with them.  So when our
+types check and our tests pass, we have something good.
 
 But of course we all know that with our best efforts in those things,
 which are -- I am not saying they are bad activities, by the way --
@@ -246,18 +246,18 @@ but no matter what we do there, we end up with programs that do not
 work.  We all know we have programs that type check, and tests pass,
 and they do not work.
 
-And when they do not work from the perspective of the stakeholder.  In
+And they do not work from the perspective of the stakeholder.  In
 other words, they do not do what the program was supposed to do, and
 what it is supposed to do was something that was conveyed between
 people, or through documentation, or papers, or things that are not in
 programming languages.
 
 They have to meet operational requirements.  And they have to be
-flexible.  OK, now there are some times where people just want
-something soon and they do not want something good.  There are
-actually better languages than Clojure for that.  Just give me
-something fast that I am absolutely definitely going to throw away.
-It will not grow, will not expand, will not take me further.
+flexible.  Now there are some times where people just want something
+soon, and they do not want something good.  There are actually better
+languages than Clojure for that.  Just give me something fast that I
+am absolutely definitely going to throw away.  It will not grow, will
+not expand, will not take me further.
 
 So these first two things are means, right?  They are good, but they
 are only good insofar as they help ensure the latter three things.
@@ -275,25 +275,23 @@ slide title: Does what it is
   elaborate stateful program does what it is
   supposed to do
 
-+ Very difficult to determine if _large_ or
-  _elaborate_ or _stateful_ programs do what
++ Very difficult to determine if _large_ _or_
+  _elaborate_ _or_ _stateful_ programs do what
   they are supposed to do
 ```
 
 So if we break it down, what is it supposed to do?  Again, it is a
-perspective thing.  If the stakeholder thinks assume what it is
-supposed to do, they are fine.
-
-And of course, they are going to have expressed concerns about
-software, what it is supposed to do.  It should do this when I push
-this button.
+perspective thing.  If the stakeholder thinks it is doing what it is
+supposed to do, they are fine.  And of course, they are going to have
+expressed concerns about software, what it is supposed to do.  It
+should do this when I push this button.
 
 And they are going to have unexpressed presumed things like: it should
 be secure.  It should not cause the computers to go on fire because it
 is so slow.  It should not require three new data centers.  It should
-keep running, and not stop for an hour every day.
+keep running, and not stop for an hour every day.  Those are sort of
+the unstated presumptions of something being good.
 
-Those are sort of the unstated presumptions of something being good.
 But it ends up that if you build large elaborate stateful programs it
 is _extremely_ difficult to ascertain whether or not they are going to
 do what they are supposed to do.
@@ -327,11 +325,11 @@ slide title: Meets Operational
 In terms of operational requirements, there is a boatload of things.
 There are a boatload of unstated requirements of software.  Two are:
 can I deploy it in the normal way with all my stuff, with the people
-who know how to run my machines and everything else.
+who know how to run my machines and everything else?
 
 And that is one of the targets of Clojure.  Clojure was meant to be
 hosted.  It is just a JAR.  It runs in the environment.  It is easy to
-sneak in.  Let us just add this to ... one more JAR, and then we are
+sneak in.  Let us just add this.  One more JAR.  And then we are
 running.
 
 But it is not a small thing.  If you wanted to adopt Common Lisp, say,
@@ -340,15 +338,15 @@ to start manipulating something completely alien, whose
 characteristics they do not understand.
 
 In terms of security, everything that is available from the JVM for
-security is available via Clojure.  And then are performance and other
-concerns.
+security is available via Clojure.  And there are performance and
+other concerns.
 
-A very important thing though, is that now we can also reach the
-browser.  So I think you know -- how many people write applications
-where some part of the overall system touches a browser?  Yeah.  So
-right now you use two different things.  Almost definitely, you use
-two different things.  And I think it is a strength of Clojure that we
-are delivering the same value proposition in both places, both on the
+A very important thing, though, is that now we can also reach the
+browser.  So I think -- how many people write applications where some
+part of the overall system touches a browser?  Yeah.  So right now you
+use two different things.  Almost definitely, you use two different
+things.  And I think it is a strength of Clojure that we are
+delivering the same value proposition in both places, both on the
 server and in the client.  And even if they are separate devs the
 value proposition is necessary.  And almost more so in the browser,
 which is one of the most complex places ever.
@@ -361,7 +359,12 @@ slide:
 
 [screen shot of performance comparison from benchmarksgame web site]
 
+http://benchmarksgame.alioth.debian.org/u64q/benchmark.pgp?test=all&lang=all&data=u64q
 ```
+
+[ The URL is obsolete as of 2018-Jan-01, and probably about a year
+before that, as the Benchmarks Game web site stopped including Clojure
+programs in its published data. ]
 
 In terms of performance, a lot of times you might look at a dynamic
 language and say, "how could it be ..." whatever?  But Clojure is right
@@ -374,11 +377,19 @@ which is a benchmark and a game.  But it says we can reach that.
 ```
 slide: 
 
-[figure showing Om performance relative to several other JavaScript frameworks.]
+[ Figure showing Om performance relative to several other JavaScript
+  frameworks. ]
 
 Om (ClojureScript lib) on browser ToDoMVC Benchmark
 ```
 [http://vuejs.org/perf/](http://vuejs.org/perf/)
+
+[ That page as of 2018-Feb-10 does not show measured results any
+longer.  It has some text explaining why they took down the
+measurements.  It was not any reason that was specific to Om or any of
+the other frameworks.  They seemed to believe that the measurements
+were not as relevant to browser-user experience as they originally
+intended to compare. ]
 
 On JavaScript we have a very interesting result here.  Om is a
 ClojureScript library.  ClojureScript is Clojure on JavaScript,
@@ -386,19 +397,19 @@ and Om is a library that actually wraps React, which is the new
 hotness.
 
 What is the really interesting things here?  Om wraps React, and then
-spanks it in performance.  How is that possible?  It ends up that that
-Om's use of persistent data structures, which we will talk about in a
+spanks it in performance.  How is that possible?  It ends up that Om's
+use of persistent data structures, which I will talk about in a
 minute, make it faster than React, because the big part of React is
 doing change detection.  And change detection for immutable things is
 identity comparison, so it is super fast.
 
 And in fact, they are re-architecting their whole thing to use
 persistent data structures in JavaScript now.  The React dev came up
-to me at Strange Loop and said -- shook my hand and said, "You are
-saving us a ton of money, because we are switching to that strategy."
+to me at Strange Loop, shook my hand and said, "You are saving us a
+ton of money, because we are switching to that strategy."
 
 
-[Time 0:10:30]
+[Time 0:10:29]
 
 ```
 slide title: Flexibility
@@ -409,16 +420,16 @@ slide title: Flexibility
 ```
 
 So the other part of the value proposition I said was flexibility.
-People that you know have a stake in software know that they are
-building a system now, but tomorrow things are going to change.
-Requirements are going to change.  We have to do something different.
+People that have a stake in software know that they are building a
+system now, but tomorrow things are going to change.  Requirements are
+going to change.  We are going to have to do something different.
 Change is inevitable.  So can we change the program?  Can we make it
 more flexible?
 
 And it ends up there is a lot we can learn from bigger system design,
 in the small, to make the sub components of systems more flexible.
 And of course this is the oldest thing, right?  Loose coupling.  But
-we talk and talk and talk about it, but we continue to use techniques
+we talk and talk and talk about it, and we continue to use techniques
 that thwart it.  Like, every single day, you pull out a technique.
 You do something that makes this harder.
 
@@ -443,8 +454,8 @@ the size it would be if we had written in Java."
 ```
 
 So my talk was done, and somebody said, "You know, I have this quote
-from Walmart Labs guy you might want to put it in your talk."  And it
-was like: wow, this is great!  Because he is telling my story.
+from Walmart Labs guy.  You might want to put it in your talk."  And
+it was like: wow, this is great!  Because he is telling my story.
 
 With Clojure we get to market faster and with better quality.  We
 avoid unintended interruptions in Java apps from code in one area
@@ -452,10 +463,9 @@ impacts the application in another.  Clojure shrinks our code base to
 about one-fifth the size it would have, had we written in Java.
 
 And these are the points of my talk.  This is what I want.  This is a
-stakeholder saying, "this is what we get by by choosing Clojure."
-Faster time to market, better quality.  We avoid coupling problems
-that make it difficult for us to change.  And we have a smaller code
-base.
+stakeholder saying, "this is what we get by choosing Clojure."  Faster
+time to market, better quality.  We avoid coupling problems that make
+it difficult for us to change.  And we have a smaller code base.
 
 
 [Time 0:12:05]
@@ -476,14 +486,14 @@ So how does Clojure do this?  There are many, many different
 characteristics to Clojure, but I only want to talk about sort of two
 today, and mostly one.
 
-One is, and because this is one I think that sets Clojure apart.  It
-makes it somewhat different, is that it has data orientation, through
-and through.  And the other is simplicity.
+One is, and because this is the one I think that sets Clojure apart.
+It makes it somewhat different, is that it has data orientation,
+through and through.  And the other is simplicity.
 
 So when I say simplicity, I mean the opposite of complexity.  I do not
-mean ease.  And I mean Clojure is an easy language.  That is easy only
-you know your type and everything magically happens, or some sort of
-easiness metric.
+mean ease.  I do not mean Clojure is an easy language.  That is easy,
+you type and everything magically happens, or some sort of easiness
+metric.
 
 Complex things are intertwined, and simple things are not.  They are
 more independent.  They are separate.  Even if they have as many
@@ -529,7 +539,7 @@ programming used to be called data processing.
 
 How many people actually do data processing in their programs?  You
 can raise your hands.  We all do, right?  This is what most programs
-do.  You take some information in, somebody type some stuff, somebody
+do.  You take some information in, somebody typed some stuff, somebody
 sends you a message, you put it somewhere.  Later you try to find it.
 You put it on the screen.  You send it to somebody else.
 
@@ -537,7 +547,7 @@ That is what most programs do most of the time.  Sure, there is a
 computational aspect to programs.  There is quality of implementation
 issues to this, but there is nothing wrong with saying: programs
 process data.  Because data is information.  Information systems ...
-I mean, this should be what we are doing, right?
+this should be what we are doing, right?
 
 We are the stewards of the world's information.  And information is
 just data.  It is not a complex thing.  It is not an elaborate thing.
@@ -567,9 +577,9 @@ terrible, terrible approach.
 
 But every time we have a problem, we pull out an object.  We make a
 new object.  We make a new class.  We make a new instantiation of
-something.  And and this makes our programs more about themselves
-again, and less about the information.  Programs are more increasingly
-about code, and decreasingly about data.  And I think that is a mistake.
+something.  And this makes our programs more about themselves again,
+and less about the information.  Programs are more increasingly about
+code, and decreasingly about data.  And I think that is a mistake.
 
 
 [Time 0:16:04]
@@ -605,9 +615,9 @@ means that you do not have different stuff.
 
 The majority of functions in Clojure just take data, and by data I
 mean immutable, unadorned stuff, and they return that same thing.  A
-giant library functions.  Hundreds and hundreds and hundreds of data
-manipulation functions, ready to go.  They take data.  They return
-data.
+giant library of functions.  Hundreds and hundreds and hundreds of
+data manipulation functions, ready to go.  They take data.  They
+return data.
 
 So if you have anything that is data, you can use all those functions
 on it, which tends to press you towards making everything data.
@@ -645,7 +655,7 @@ slide title: Atomic Data Types
 + Regex patterns #"a*b"
 ```
 
-So there there is a small set of data literals in Clojure.  They are
+So there is a small set of data literals in Clojure.  They are
 relatively obvious.  You can write integers in the normal way, and
 doubles the normal way, and BigDecimals with an M at the end.  There
 are ratios, and these are proper ratios that do not lose precision.
@@ -656,9 +666,9 @@ for a string.  There are literals for characters.
 
 Because we use data structures for programming, there are a couple of
 extra things we need.  But if you look at Java code, is it written all
-with quotes around every every word?  No.  So Java needs something
-besides strings in order to be a successful programming language.  It
-needs symbols.  And it needs identifiers.
+with quotes around every word?  No.  So Java needs something besides
+strings in order to be a successful programming language.  It needs
+symbols.  And it needs identifiers.
 
 So if you are going to properly represent your code as data, those
 things have to be first-class data structures, or atomic data types,
@@ -668,13 +678,13 @@ which I am not going to dive into, is that symbols are generally used
 to reference something else.  So like variables and things like that.
 They name something.
 
-And keywords name themselves.  They are like enums, if you want.  They
-are very useful as keys in maps, for instance, and that is why they
-are called that.
+And keywords name themselves.  They are more like enums, if you want.
+They are very useful as keys in maps, for instance, and that is why
+they are called that.
 
 There are true and false Boolean literals.  And there is nil, which is
 null.  And it is the same.  That is the Java null.  And those Booleans
-are Java booleans.  Those characters are Java characters, etc. etc.
+are Java Booleans.  Those characters are Java characters, etc. etc.
 And there are also literals for regex.
 
 
@@ -703,15 +713,15 @@ slide title: Data Structures
 And then we have data structures.  Some fundamental data structures.
 
 We have the singly linked list.  It is in parens.  Those are all lists
-there: list of numbers, a list of symbols, a list that has a symbol
+there: a list of numbers, a list of symbols, a list that has a symbol
 and then some numbers.  That is OK.  It can be heterogeneous.  And
-they grow at the front, and they have linked lists kind of performance
+they grow at the front, and they have linked list kind of performance
 characteristics, which means it is fast to put something at the front,
 and it is slow to find the 57000-th thing.  It is linear time to find
 stuff in the middle.
 
-Then we have vectors there in square brackets.  Again, they can be
-heterogeneous.  This happen to be one with numbers, and one with
+Then we have vectors.  They are in square brackets.  Again, they can
+be heterogeneous.  This happens to be one with numbers, and one with
 symbols, but you can intermix them.  They grow at the end in constant
 time, but they also offer fast access anywhere in the middle.  So they
 are different from linked lists, then.
@@ -729,7 +739,7 @@ And all of the stuff nests.
 
 One of the important things about this is that these maps, they scale
 and are efficient from the very small, all the way to the very large.
-So you can use them as sort of pseudo objects and the small, and have
+So you can use them as sort of pseudo objects in the small, and have
 four or five fields, if you will, or entries.  Or you can have a giant
 map that has millions, tens of millions, hundreds of millions of
 things in it.  The same data structure is used throughout that range
@@ -739,15 +749,24 @@ in Clojure.  We do not distinguish those two uses at all.
 [Time 0:21:11]
 
 ```
-slide title: 
+slide title: Persistent Data
+               Structures
 
++ Immutable
+
++ Can make new 'modified' versions while
+  keeping standard performance expectations
+
+  i.e. not copy-on-write
+
++ Key to practical functional programming
 ```
 
 So all of the data structures I showed you are immutable.  There is no
 way to change them.  Just like there is no way to change 42, there is
 no way to change a vector.  What you can do is make a new vector that
-is slightly different from the vector you started with, and you have
-both vectors.
+is slightly different from the vector you started with, and then you
+have both vectors.
 
 And there is a technique called persistent data structures, which
 makes this making of a new slightly different version efficient.  The
@@ -788,20 +807,20 @@ interesting systems out of much much simpler stuff.  And I tried it,
 and guess what?
 
 You can build exactly the same systems out of much much simpler stuff.
-And I said, well, I cannot repeat it.  But I was very unhappy.
-Basically, something to the effect of: I have been wasting my time in
+And I said -- well, I cannot repeat it.  But I was very unhappy.
+Basically, something to the effect of: I have been wasting my time and
 my career doing what I have been doing.  I need to do something.  I
 need to change what I am doing.  Because I am wasting my time.  I am
 wasting my life doing it this way.
 
 Because you can build programs, the same programs, better programs,
-that do the same things with substantially simple stuff.  In fact you
-can build them out of the data structures I just showed you, plus pure
-functions that take those things and return those things.  _Most_ of
-your program, you can build that way.
+that do the same things with substantially simpler stuff.  In fact,
+you can build them out of the data structures I just showed you, plus
+pure functions that take those things and return those things.  _Most_
+of your program, you can build that way.
 
 In little tiny bits of your program you will have state.  You will
-have communication.  You will have the other the other aspects.
+have communication.  You will have the other aspects.
 
 I like runtime polymorphism, and Clojure has it.  I will talk about it
 in a second.  But you can build programs out of this.  And you can
@@ -845,9 +864,9 @@ slide title: Syntax
 ```
 
 So the syntax of Clojure, there is no more.  You just saw it.  It is
-those data structures.  That set of data structures, and those those
+those data structures.  That set of data structures, and those
 fundamental things, are a format called edn, which stands for
-"extensible data notation", but it is just a grown up version of
+"extensible data notation".  But it is just a grown up version of
 S-expressions, which have been used in the Lisp community for years.
 Basically you build programs out of data structures, and I will show
 you some of that in a second.
@@ -895,7 +914,7 @@ of it.  I have a little bit more later.
 
 So edn, this extensible data notation.  I showed you some built-in
 things.  There is also a way to extend it to add new tags, that are
-namespaced, to allow you to describe something new, in terms of
+namespaced, that allow you to describe something new, in terms of
 anything that is already known.
 
 So you cannot make up arbitrary stuff.  You cannot say, "we will build
@@ -910,7 +929,11 @@ optional.  That is kind of critical.  Imagine if in between everything
 you said in Java you had to put a comma.  Who would like that?  That
 would be awful.  So you cannot have stuff like that.  How many people
 have ever used any system that tried to encode programming in JSON or
-XML?  Yeah, how fun is that?  Yeah.
+XML?  Yeah, how fun is that?
+
+[Audience member: It stinks.]
+
+Yeah.
 
 So this is a little bit of ...  AWS cloud formation has some functions
 in their syntax, which is normally declarative.  So this is a nested
@@ -963,12 +986,12 @@ It takes an argument called "text".  And there is the implementation.
 And so on, and so on, and so forth.
 
 So this is a port of Peter Norvig's Python code.  It is as short as
-the Python program.  And and that is not like a contest.  It is more
-about this: everything that is in here is about the problem.  All the
-words you are reading, and everything, it is all about the problem.
-There is no extra stuff.  There is no static, import, blah, type this,
-type that, yada ya, extra control stuff.  It is all about the
-problem.  100% about the problem.
+the Python program.  And that is not like a contest.  It is more about
+this: everything that is in here is about the problem.  All the words
+you are reading, and everything, it is all about the problem.  There
+is no extra stuff.  There is no static, import, blah, type this, type
+that, yada ya, extra control stuff.  It is all about the problem.
+100% about the problem.
 
 And that is what you want.  So it is short.  It is free of ceremony.
 But most important is: it is about the problem, which means it is a
@@ -983,9 +1006,9 @@ slide title: Data as HTML
              (Hiccup DSL)
 
 [:html
-   [:head
+    [:head
       [:title title]]
-   [:body
+    [:body
       [:h1 title]
       [:h2 (str "By " author)]
       (for [post posts]
@@ -1006,12 +1029,12 @@ same reader reads this.  If I call "read", which is available a la
 carte in Clojure, I get a vector that has a keyword, then a vector
 that has a keyword, a vector, blah blah blah.
 
-I get data I you know exactly what I am gonna get, the data structures
-I am going to get.  I don't have this special thing.  I don't have a
-DOM, blah blah blah.  I get data when I read this.  And that is great.
-It means it is easy for me to process this.  It is easy for me to
-write a program that produces this.  So I can produce HTML without an
-extra special different thing.
+I get data.  I know exactly what I am gonna get, the data structures I
+am going to get.  I don't have a special thing.  I don't have a DOM,
+blah blah blah.  I get data when I read this.  And that is great.  It
+means it is easy for me to process this.  It is easy for me to write a
+program that produces this.  So I can produce HTML without an extra
+special different thing.
 
 
 [Time 0:29:09]
@@ -1028,7 +1051,7 @@ slide title: Data as Config
   :profiles
   {:1.3 {:dependencies [[org.clojure/clojure "1.3.0"]]}
    :1.4 {:dependencies [[org.clojure/clojure "1.4.0"]]}
-   :1.5 {:dependencies [[org.clojure/clojure "1.5.0"]]}})
+   :1.5 {:dependencies [[org.clojure/clojure "1.5.1"]]}})
 ```
 
 Of course we would use this for our configuration files.  Why not?  We
@@ -1036,13 +1059,12 @@ can read it.  We can generate it.  We can process it.  We can
 manipulate it.  Everything we know, all those hundreds of functions we
 know how to do, we can use to do this.
 
-Now add up the stuff in Java.  How much have you got?
-
-You have syntax for which you use I do not know what.  Some parser
-thingy for that, from javac or something, to manipulate.  You have
-annotations.  You have JSON here.  You have XML there.  Maybe for
-writing your own DSL you use ANTLR or something.  It keeps adding up.
-More and more and more different things.
+Now add up the stuff in Java.  How much have you got?  You have syntax
+for which you use I do not know what.  Some parser thingy for that,
+from javac or something, to manipulate.  You have annotations.  You
+have JSON here.  You have XML there.  Maybe for writing your own DSL
+you use ANTLR or something.  It keeps adding up.  More and more and
+more different things.
 
 And if you read stuff with an API, what do you get?  Some API author's
 idea of the DOM for this kind of thing.  What do you get when you read
@@ -1071,10 +1093,10 @@ slide title: Data as Hadoop Job
 ```
 [https://github.com/Netflix/PigPen](https://github.com/Netflix/PigPen)
 
-This is a Hadoop programming.  Netflix has quite profitably used
-Clojure to build a very succinct DSL for doing Hadoop and big data
-processing.  It looks exactly like Clojure.  It is Clojure, sort of
-embedded in Clojure.
+This is Hadoop programming.  Netflix has quite profitably used Clojure
+to build a very succinct DSL for doing Hadoop and big data processing.
+It looks exactly like Clojure.  It is Clojure, sort of embedded in
+Clojure.
 
 And the thing is, you can run this locally, and then push a button,
 and it will distribute it over your Hadoop cluster and run it there.
@@ -1082,7 +1104,7 @@ Same thing.  And you can run your own Clojure functions there, too,
 and it will ship them and everything else.
 
 
-[Time 0:30:35]
+[Time 0:30:34]
 
 ```
 slide title: More via Data ...
@@ -1111,9 +1133,9 @@ And this allows you to do something that is very interesting, which is
 to write an embedded DSL.  How many people have written a DSL, and had
 more and more pressure to make it Turing complete and general-purpose?
 
-All right, you start with a DSL and it did X and Y.  And then people
-ask: could you do Z?  Could you have conditionals?  Could you have
-case?  Could you, ugh!  They always want more stuff.
+You start with a DSL and it did X and Y.  And then people ask: could
+you do Z?  Could you have conditionals?  Could you have case?  Could
+you have, ugh!  They always want more stuff.
 
 So one of the cool things about doing DSLs in a language like Clojure
 is that you can sort of co-opt all of Clojure inside your DSL.  It is
@@ -1121,7 +1143,7 @@ like, oh, you want to do arithmetic?  Well sure!  All you have to do
 is expose something that you are going to flow through to Clojure and
 let Clojure eval it.  So it is very powerful.  You keep doing this.
 
-The other big point of programs as data is that allows you to write
+The other big point of programs as data is: it allows you to write
 program-generating programs, and that takes a few forms in the small.
 There is a capability in Clojure and other Lisps called macros.  They
 are nothing like C macros from your past, maybe, depending on how old
@@ -1148,19 +1170,20 @@ contrast that with objects?
 slide title: <rant> Objects are like
                  Marionettes
 
-[stick figure drawing of a person puppet on strings]
+[ Stick figure drawing of a marionette, i.e. a person-shaped puppet on
+strings, with sticks at the top that a puppeteer would hold and use to
+control the marionette. ]
 ```
 
 This is the ranty part of the talk.  Just warning in advance.
 
 So objects are like marionettes.  Everybody has their burrito analogy,
 but I could not.  Objects are not like burritos.  Objects are like
-marionettes.  OK.
+marionettes.
 
 They have all these methods on them.  And anybody who has access to
-the object, it is like they have access to that control stick thing.
-Wikipedia says that the person who has that is called the master
-minder.
+the object, it is like they have that control stick thing.  Wikipedia
+says that the person who has that is called the master minder.
 
 I could not find anybody else who agree with them, but that is a cool
 name.  Like you can remote control the object, which you can.  If you
@@ -1169,19 +1192,19 @@ any of its methods whenever you feel like it, in whatever thread you
 want.  Just have at it.  You can do anything you want, because you can
 call those things.
 
-So whoever writes the object, that class, they have to defend against
+So whoever writes the object, the class, they have to defend against
 that.  Because what is going to happen?
 
 
-[Time 0:33:26]
+[Time 0:33:25]
 
 ```
 slide title: More Refs, More
                Uncertainty
 
-[similar stick figure drawing as previous slide, with same marionette,
-but with said face, and multiple sets of strings attached to it,
-controlled from 3 different places.]
+[ Similar stick figure drawing as previous slide, with same
+marionette, but with sad face, and multiple sets of strings attached
+to it, controlled from 3 different sets of control sticks. ]
 ```
 
 Well in a real program, you are going to start passing around
@@ -1193,10 +1216,14 @@ And anybody can call something at any time.  And what do you end up
 doing?  You end up saying, well maybe they are friends and they are
 standing next to each other, and they are like: OK, let us make the
 fancy horse dance, and I will do the front legs, and you do the back
-legs.  And that happens in puppetry, but in programming sometimes they
-just go off, and somebody is trying to make the front of the horse go
-this way, and somebody is trying to make the back of the horse go that
-way.  And it does not work.  And so you have to have all kinds of
+legs.
+
+[Audience laughter.]
+
+And that happens in puppetry, but in programming sometimes they just
+go off, and somebody is trying to make the front of the horse go this
+way, and somebody is trying to make the back of the horse go that way.
+And it does not work.  And so you have to have all kinds of
 protection.
 
 And you cannot.  You actually cannot effectively do this.  Java, and
@@ -1224,10 +1251,10 @@ slide title: Distribution?
 + Does anyone still think RMI/DCOM/
   CORBA is a good idea?
 
-[Same unhappy face marionette, now with 2 sets of strings in one box,
-probably representing one computer system, and another set of strings
-tied to control sticks in another box, representing a different
-computer system.]
+[ Same unhappy face marionette, now with 2 sets of strings in one box,
+probably representing the local computer system where the
+object/marionette is, and another set of strings tied to control
+sticks in another box, representing a different computer system. ]
 ```
 
 And then, the final problem.  How many people write a program that is
@@ -1239,8 +1266,8 @@ But that is not the real world.  How many people write programs that
 talk to other programs routinely?  Yeah, we do that all the time!
 
 How many people put objects on the wire?  Wow!  That is terrifying.
-But, just so you so you know, a long time ago we decided that was a
-bad idea.  So I don't know if you got the memo, or whatever.
+But, just so you know, a long time ago we decided that was a bad idea.
+So I don't know if you got the memo, or whatever.
 
 [Audience laughter.]
 
@@ -1270,14 +1297,14 @@ slide title: </rant>
 + Not the way successful _systems_ work
 ```
 
-So this is why I was saying before.  If your API takes an object,
+So this is what I was saying before.  If your API takes an object,
 especially via a reference to an interface, so you do not have the
 concrete class's definition to sort of make you feel better about it
 not changing, do you know if it is going to mutate?  Can your type
 system help you with this?
 
 Which is really, it is _such_ an important thing for the robustness of
-your program to control this.  The answer is: no.  You are getting no
+your program, to control this.  The answer is: no.  You are getting no
 help at all.  So your default idioms leave you completely on your own
 to deal with these problems.  And really, in a position that
 encourages you to create these problems, just by accident.
@@ -1358,9 +1385,9 @@ self-assembling to try to make something that stands up.
 
 It is independent parts that you connect together, substantially
 independent parts.  Because you do not need to cause something to
-stand that is one thing that already has three three legs.  You are
-not you are not causing it to stand up.  It is the independence of the
-things that matters.
+stand that is one thing that already has three legs.  You are not
+causing it to stand up.  It is the independence of the things that
+matters.
 
 And in general we try to build systems in a way that makes them
 independent.  Do we want to care if another server is using the same
@@ -1368,10 +1395,10 @@ programming language that we are?  Or the same runtime, the same
 version of the Java runtime?  Or the same type system?  Do we want to
 build a system like that, where we care?  No, we don't.  Why?  Because
 it is going to be brittle.  It is going to be hard to make changes.
-We have to agree with the other person.  Tomorrow, we are going to
-have this thing, and everything is going to be different.
+We are going to have to agree with the other person.  Tomorrow, we are
+going to have this thing, and everything is going to be different.
 
-You know: three, two, one.  We don't do that.  The Internet does it
+You know: three, two, one.  We don't do that.  The Internet, does it
 work that way?  No!  We do not do specific stuff.  We do general
 stuff, and we try to be as independent as possible.
 
@@ -1384,11 +1411,11 @@ most systems.
 
 And those systems are flexible.  You measure their flexibility in
 terms of how much independence they support.  Can you independently
-develop these parts of system?  Can somebody upgrade their part of the
-system and not mess up the other person?  Because Twitter is not going
-to tell your web browser when they change their home page and Safari
-do something special.  That is not how it works.  Everybody has
-independent development, independent time frames.
+develop these parts of a system?  Can somebody upgrade their part of
+the system and not mess up the other person?  Because Twitter is not
+going to tell your web browser when they change their home page and
+have Safari do something special.  That is not how it works.
+Everybody has independent development, independent time frames.
 
 Then the other thing that is critical to this, is that if somebody
 else on the other end is going to change, you have to be tolerant of
@@ -1433,24 +1460,24 @@ insides of our systems like we build the outsides of our systems.  All
 those value propositions that accrue to systems, we want them.  How
 many people want to have a meeting every time they change a class or a
 subsystem?  How people have meetings every time they change a class?
-Yeah, you have to, right?  This will break!  Stuff is going to break.
+Yeah, you have to, right?  This could break!  Stuff is going to break.
 
-So we should we should communicate using immutable data inside our
-systems, for the same reason we do outside.  It makes our systems more
-robust.  It makes them easier to change.  It makes the independent
-parts separate.  It makes it easier to move them around.  We get loose
-coupling.  We get subsystem independence.  We get flexibility.
+So we should communicate using immutable data inside our systems, for
+the same reason we do outside.  It makes our systems more robust.  It
+makes them easier to change.  It makes the independent parts separate.
+It makes it easier to move them around.  We get loose coupling.  We
+get subsystem independence.  We get flexibility.
 
 And what is the mapping?  Well there is no real mapping.  This does
 not _need_ mapping.  RPC [remote procedure call] becomes PC [procedure
-call].  We can we can call functions.  We were calling functions
-before there was R.  Then they had R.  We had PC before we had RPC.
-We can go back to PC.  We can do that.  We can pass data to functions
-and get data back.  We used to be able to do it, then we had all this
-elaborate stuff.  Now we forgot how to do it.
+call].  We can call functions.  We were calling functions before there
+was R.  Then they had R.  We had PC before we had RPC.  We can go back
+to PC.  We can do that.  We can pass data to functions and get data
+back.  We used to be able to do it, then we had all this elaborate
+stuff.  Now we forgot how to do it.
 
-And we can implement queues and flow inside our inside our programs,
-using queues or channels or things like that.
+And we can implement queues and flow inside our programs, using queues
+or channels or things like that.
 
 
 [Time 0:42:48]
@@ -1473,28 +1500,28 @@ slide title: Process and State
 ```
 
 So that is the other key idea.  Now there is going to be process and
-state.  Clojure is a practical language.  Of course you can have
-process and state, or there is no reason to run your program.  I just
-make the computer hot and you go home.  You are going to have state
-and effects.
+state.  Clojure is a practical language.  Of course you are going to
+have process and state, or there is no reason to run your program.  I
+just make the computer hot and you go home.  You are going to have
+state and effects.
 
 But this is another area where we are left just totally with nothing,
 in object-oriented languages like Java.  You have nothing here.  There
 are very fancy functional languages that have purity, where they will
 force you, through the type system, to identify and isolate all the
 parts of your program that could do IO, or have any kind of effect.
-They will either do it via purity, or via effects systems.
+They will either do it via purity, or via effect systems.
 
 And then there is the alternative to that, is nothing.  That is what
-most people have is absolutely nothing.  And then you could also have
-reified constructs that at least make a state change explicit.  And
-that is where Clojure sits.  Because in Java and C++ and C# you have
-nothing.  We just have nothing.  You have some really raw constructs
-like mutexes, and a pat on the back, and good luck, buddy, and read
-Brian's book.
+most people have is absolutely nothing.
+
+And then you could also have reified constructs that at least make a
+state change explicit.  And that is where Clojure sits.  Because in
+Java and C++ and C# you have nothing.  We just have nothing.  You have
+some really raw constructs like mutexes, and a pat on the back, and
+good luck, buddy, and read Brian's book.
 
 [ Brian's book refers to:
-
 Brian Goetz, "Java Concurrency in Practice", 2006, Addison-Wesley ]
 
 So Clojure does not have any purity to it, but it has explicit
@@ -1506,6 +1533,8 @@ function to that variable to move it from one state to another."  But
 in doing so, you can ensure it is free of conflict, and free of races,
 and it is never going to become half of a thing.
 
+[Time 0:44:27]
+
 And these variables always refer to values.  So you are always able to
 observe them, or dereference them, and get out a value.  There is
 nothing else.  There is only these reference cells that point to
@@ -1516,7 +1545,7 @@ date.  You can make that reference point to another date.  But you
 can't change a date.
 
 So you have: things you can change, which are references, and you have
-values, which are not.  You cannot change dates, any more you can
+values, which are not.  You cannot change dates, any more than you can
 change 42.  But you can change these references.  But they are atomic.
 They just point to one thing.
 
@@ -1525,10 +1554,19 @@ CAS implements a successorship model.  You say: only make this new
 thing if my presumption is still valid.
 
 So that is the tiniest version.  And Clojure has a construct that
-wraps that, so you do not have to write the write the loop, or
-anything else.  You say: here is my function, apply it to the inside
-of that, use CAS, do the loop for me.  And I know I will get a clear
-successorship there, with no race, and no conflicts.
+wraps that, so you do not have to write the loop, or anything else.
+You say: here is my function, apply it to the inside of that, use CAS,
+do the loop for me.  And I know I will get a clear successorship
+there, with no race, and no conflicts.
+
+[ These constructs are called an "atom" in Clojure, and "swap!" is the
+name of the built-in function that does what is described above.
+Atoms also have a few other similar built-in functions for updating
+atoms.
+
+The STM in Clojure can update references in Clojure things called
+"ref"s, for which the built-in macros "sync" and "dosync" can update
+one or more refs in a transactional way. ]
 
 There is also an STM in Clojure that allows for bigger transactional
 kinds of modifications to occur.  But the point is: this construct is
@@ -1569,7 +1607,7 @@ take it off the conveyor belt."
 
 And there is a big difference between those two things, because if you
 put something on a conveyor belt and then go back to it, what do you
-expect?  Nothing.  A conveyor best is moving.  That is it.  That
+expect?  Nothing.  A conveyor belt is moving, man.  That is it.  That
 flowed.  So you cannot write the logic you can write with variables,
 going back and re-examining a place to update it in place and try to
 read it again.  It flows.  And so flow is a much more robust way to
@@ -1593,7 +1631,7 @@ slide title: (Program) Size Matters
 ```
 
 So program size matters.  Smaller is better.  This is one of the few
-areas where we have research.  People have done research and said that
+areas where we have research.  People have done research and said:
 smaller programs have fewer bugs.  It is just that simple.  It does
 not matter what programming language it is.  Smaller programs have
 fewer bugs.
@@ -1609,8 +1647,8 @@ stuff is there?  And there are a lot of languages that focus on that:
 Ruby, and Python, and a lot of languages are actually very good at
 concision.
 
-But the the bigger impact on a program overall is not moving from 42
-characters to 20 characters, because only gets you 2x.  The biggest
+But the bigger impact on a program overall is not moving from 42
+characters to 20 characters.  That only gets you 2x.  The biggest
 thing is moving from more specificity, which bloats your program, to
 more generality, which shrinks it.  That is the big payoff.  That is
 the area where you are going to get a payoff much higher than 2x.
@@ -1648,9 +1686,9 @@ vocabulary.
 So you are going to have more code.  You are going to have much less
 reuse.  You are going to have more coupling.  Because essentially what
 is happening is every object has its own little language: my class, my
-interface, my own language.  This is my biggest pet peeve.  I want to
-get away from this.  When we saw it writing get this, get that, there
-is no purpose to this.  This is just life-sucking.
+interface, my own language.  This is my biggest pet peeve.  I wanted
+to get away from this.  When we saw it writing get this, get that,
+there is no purpose to this.  This is just life-sucking.
 
 
 [Time 0:49:59]
@@ -1672,17 +1710,20 @@ removeAttribute, setAttribute, setCharacterEncoding,
 startAsync, startAsync...
 getHeader, getHeaderNames, getHeaders, getIntHeader...
 
-How many maps?
+                 How many maps?
 ```
 
-So let us look at life sucking.  This is just a tiny part.  This is
-just the servlet request, and I have a little bit of
-HttpServletRequest, which really doubles the size of this thing.
+So let us look at life sucking.
+
+[Audience laughter.]
+
+This is just a tiny part.  This is just the servlet request, and I
+have a little bit of HttpServletRequest, which really doubles the size
+of this thing.
 
 But my question to you is: how many maps do you see here?  Or like,
-give a name, you get a value.
-
-I got 1.  I actually cannot do the auctioneer thing.  How many you got?
+give a name, you get a value.  I got 1.  I got 1, I got 1, ... I
+actually cannot do the auctioneer thing.  How many you got?
 
 [Audience member: It looks like there are one or two sub-maps, like
 parameter names, parameter values.]
@@ -1691,11 +1732,11 @@ Yeah.  So first of all, this game is hard, right?
 
 [Audience laughter]
 
-[The next slide is the same as previous one, but some names have been
-colorized.  I will mark them in the next slide text by surrounding
-them with _, but not trying to indicate the colors of each.]
-
 [Time 0:50:43]
+
+[ This slide is the same as previous one, but some names have been
+colorized.  I will mark them in the slide text by surrounding them
+with _, but not trying to indicate the colors of each. ]
 
 ```
 slide title: Example - HttpServletRequest
@@ -1791,15 +1832,13 @@ slide title: Specific vs General
 
 If you are going to write code that manipulates that other stuff [Java
 API version], every single line of code you write is going to be
-special.  It has to you know use whatever Java X servlet blah, and you
-are writing code explicitly to this thing.
+special.  It has to use whatever Java X servlet blah, and you are
+writing code explicitly to this thing.
 
 If there is another way to do HTTP, not that there is, so this is
 probably the only way to do HTTP.  But if there was another way to do
-HTTP, will you be able to reuse that code?
-
-No!  It is all hardwired to this person or persons idea of what an
-HTTP request is.
+HTTP, will you be able to reuse that code?  No!  It is all hardwired
+to this person or persons idea of what an HTTP request is.
 
 So yeah, there is a tiny little benefit.  Dot works in your IDE.
 Whoo!  Oh my goodness, because I could never remember that [back to
@@ -1827,14 +1866,13 @@ represent them as data.  Which they were, by the way, before we map
 them.
 
 Testing.  It is easier to test data.  Can you make a program that
-makes this? [Clojure map version] Yeah.  Can you make a program that
-makes one of these? [Java API version]
+makes this?  [Clojure map version]  Yeah.  Can you make a program that
+makes one of these?  [Java API version]
 
-Yeah.  OK.  and the other problem is your typical Java program has two
+Yeah.  OK.  And the other problem is your typical Java program has two
 to three orders of magnitude more of that.  More of this [Java API
-slide].  Right?  100 classes, to a couple hundred.  How many people
-have programs with more than a thousand classes?  Yeah.  That is a
-party!
+slide].  Right?  100 classes, a couple hundred.  How many people have
+programs with more than a thousand classes?  Yeah.  That is a party!
 
 
 [Time 0:54:03]
@@ -1994,7 +2032,7 @@ slide title: Polymorphism Made
 + Avoid the 'privileged native framework'
 ```
 
-So one other part of Clojure I would like to talk about is
+So the one other part of Clojure I would like to talk about is
 polymorphism, just because it is another example of simple.  I have
 not talked a lot about simple.  But one of the cool things about
 Clojure is that polymorphism is independent.  In other words, it does
@@ -2010,7 +2048,7 @@ is finished.  Something that Sun wrote a long time ago and is never
 going to change, and certainly is never going to implement your
 interface.
 
-You can also take stuff from two vendors.  Because what we usually
+You can also take stuff from two vendors.  Because what do we usually
 have?  We have the framework problem.  There is a privileged framework
 in Java -- the one that comes with it.  And people implement those
 interfaces, but if you have a piece of software from vendor A that has
@@ -2048,11 +2086,12 @@ programming things.  It is also about ecosystem and things like that.
 And the first thing that is great about using Clojure is that you get
 to keep connection to the ecosystem you already know.  Not only the
 runtime and the deployment environment, but those libraries.  The
-inter-op in both cases is extremely good.  All those Clojure data
-structures I showed you, they all implement the appropriate
-java.util.Map whatever.  They all implement all the Java interfaces.
-You can just take one of those things you wrote in square brackets
-that was pretty easy, and pass it to something that expects a
+inter-op in both cases is extremely good.
+
+All those Clojure data structures I showed you, they all implement the
+appropriate java.util.Map whatever.  They implement all the Java
+interfaces.  You can just take one of those things you wrote in square
+brackets that was pretty easy, and pass it to something that expects a
 java.util.List that implements random access.  Right there, works.
 Ready to go.
 
@@ -2068,9 +2107,11 @@ it is very stable.  All the programs from a long time ago still run.
 ```
 slide title: Books
 
-
-
+[ Rather than listing all of the books that appeared on the slide
+here, I would recommend looking at the official Clojure site page on
+Clojure books, at the link just below. ]
 ```
+[https://clojure.org/community/books](https://clojure.org/community/books)
 
 There are books if you wanted to get started.  There are a lot of
 books now for Clojure.
@@ -2139,7 +2180,7 @@ slide title: Libraries
 
 [ Screen shot of search results for term "clojure" in Github, with
 "We've found 12,145 repository results" circled in red for drawing
-attention. ]
+attention.  That number as of 2018-Feb-10 search is 26,144. ]
 ```
 
 There are lots of libraries.  That says 12,000 repos on Github.
@@ -2151,14 +2192,18 @@ There are lots of libraries.  That says 12,000 repos on Github.
 slide title: Users
 
 [ Screen shot of management screen for Clojure Google group, with
-"Showing 50 of 9564 members" circled for attention. ]
+"Showing 50 of 9564 members" circled for attention.  As of 2018-Feb-10
+that number is 11,252. ]
 ```
 
 There are lots of users.  The mailing list has almost 10,000 users on
-it.  And they are all happy nice people.  I promise.  No, they are.  I
-think that matters, if you have ever seen the old Lisp community.
-They were not all happy nice people.  But Clojure users are happy and
-nice people.
+it.  And they are all happy nice people.  I promise.
+
+[Audience laughter]
+
+No, they are.  I think that matters, if you have ever seen the old
+Lisp community.  They were not all happy nice people.  But Clojure
+users are happy and nice people.
 
 
 [Time 0:59:46]
@@ -2170,9 +2215,9 @@ slide:
 ```
 [http://redmonk.com/sogrady/2014/06/13/language-rankings-6-14/](http://redmonk.com/sogrady/2014/06/13/language-rankings-6-14/)
 
-That is where Clojure is at in RedMonk's, where our language is.  Like
-way up there!  This functional Lisp.  What is happening in the world?
-Look at it.
+That is where Clojure is at in RedMonk's, where our language is at.
+Like way up there!  This functional Lisp.  What is happening in the
+world?  Look at it.
 
 
 [Time 0:59:56]
@@ -2181,7 +2226,7 @@ Look at it.
 slide:
 
 [ Screen shot of ThoughtWorks Technology Radar, showing Clojure in
-  "Adopt" portion of chart. ]
+"Adopt" portion of chart. ]
 ```
 [https://assets.thoughtworks.com/assets/technology-radar-jan-2014-en.pdf](https://assets.thoughtworks.com/assets/technology-radar-jan-2014-en.pdf)
 
@@ -2213,7 +2258,11 @@ The Climate Corporation, A Monsanto Company
 Puppet labs
 DRW Trading Group
 ConsumerReports.org
+
+[ See the much longer list on the official Clojure web site, linked
+below, if you are interested. ]
 ```
+[https://clojure.org/community/companies](https://clojure.org/community/companies)
 
 And they are right.  People are using Clojure already.  A lot of
 people are already using Clojure.  Banks use Clojure.  Plenty of
