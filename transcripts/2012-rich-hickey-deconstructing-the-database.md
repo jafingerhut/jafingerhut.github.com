@@ -85,14 +85,14 @@ can you see pieces of it?  And that is a consistency question that is
 sort of orthogonal to the notion of consistency we heard about in the
 keynote this morning.
 
-```
 [ The keynote talk for QCon 2012 in San Francisco, where this talk by
 Rich Hickey was given, was this: Glenn Vanderburg, "Real Software
 Engineering"
 https://qconsf.com/sf2012/sf2012/presentation/Opening%2bKeynote_%2bReal%2bSoftware%2bEngineering.html
+
 Video: https://www.infoq.com/presentations/Software-Engineering
+
 Several instances of this talk that Glenn has given: http://vanderburg.org/speaking/#rse ]
-```
 
 Everybody can see the same set of data that does not actually satisfy
 our application's notion of what it means for the data to be
@@ -1105,12 +1105,12 @@ writing, and a different one for reads and queries.
 
 How many people saw Mike Nygard's talk this morning?
 
-```
 [ QCon 2012 page: Michael T. Nygard, "Exploiting Loopholes in CAP"
 https://qconsf.com/sf2012/sf2012/presentation/Exploiting%2bLoopholes%2bin%2bCAP.html
-Slides: https://qconsf.com/sf2012/dl/qcon-sanfran-2012/slides/MichaelT.Nygard_ExploitingLoopholesInCAP.pdf
-Video: https://www.infoq.com/presentations/cap-loopholes ]
-```
+
+Video: https://www.infoq.com/presentations/cap-loopholes
+
+Slides: https://qconsf.com/sf2012/dl/qcon-sanfran-2012/slides/MichaelT.Nygard_ExploitingLoopholesInCAP.pdf ]
 
 
 [Time 0:35:00]
