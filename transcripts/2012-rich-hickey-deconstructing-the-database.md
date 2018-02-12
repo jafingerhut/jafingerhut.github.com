@@ -85,22 +85,14 @@ can you see pieces of it?  And that is a consistency question that is
 sort of orthogonal to the notion of consistency we heard about in the
 keynote this morning.
 
-[ The keynote talk for QCon 2012 in San Francisco, where this talk by Rich Hickey was given, was this:
-
-"Real Software Engineering"
-Glenn Vanderburg
-
+```
+[ The keynote talk for QCon 2012 in San Francisco, where this talk by
+Rich Hickey was given, was this: Glenn Vanderburg, "Real Software
+Engineering"
 https://qconsf.com/sf2012/sf2012/presentation/Opening%2bKeynote_%2bReal%2bSoftware%2bEngineering.html
-
-Glenn Vanderburg has a web page with links to several instances of
-this talk that he has given at various places:
-
-http://vanderburg.org/speaking/#rse
-
-Here is the link to the QCon 2012 recording:
-
-https://www.infoq.com/presentations/Software-Engineering ]
-
+Video: https://www.infoq.com/presentations/Software-Engineering
+Several instances of this talk that Glenn has given: http://vanderburg.org/speaking/#rse ]
+```
 
 Everybody can see the same set of data that does not actually satisfy
 our application's notion of what it means for the data to be
@@ -227,15 +219,14 @@ do not like you erasing things any more.
 [Time 0:06:00]
 
 ```
-slide title: Perception and
-                Reaction
+slide title: Perception and Reaction
 
 + No polling
 + Consistent
 
-[ Simple geometric figure with a sun, and a human eye looking at
-things.  The details of the particular arrangement of things in the
-figure do not appear relevant to the talk. ]
+[ Simple figure with a sun and a human eye looking at things.  It is
+intended to remind you of human visual perception.  The details of the
+figure are not important for the talk. ]
 ```
 
 And the final premise point here is that I think we want to be careful
@@ -639,8 +630,7 @@ slide title: Database State
 + Process requires new space
 + Fundamental move away from _places_
 
-[ Background image of this slide looks like concentric rings that you
-see when cutting a cross-section of a tree trunk. ]
+[ Background image of this slide is growth rings of a tree trunk. ]
 ```
 
 So the fundamental difference here from a place-oriented database is
@@ -790,10 +780,9 @@ slide title: Deconstruction
 |    +------------+         +----------------+  |
 |    |  Indexing  |<--------|  Transactions  |  |
 |    +------------+         +----------------+  |
-|                \          /                   |
-|                 \        /                    |
-|                  \      /                     |
-|                   V    V                      |
+|                 \         /                   |
+|                  \       /                    |
+|                   V     V                     |
 | +---------+      +-------+     +--------+     |
 | |  Query  |<-----|  I/O  |<--->|  Disk  |     |
 | +---------+      +-------+     +--------+     |
@@ -907,8 +896,7 @@ together.
 [Time 0:27:10]
 
 ```
-slide title: Transactions and
-                Indexing
+slide title: Transactions and Indexing
 
 [TBD do screen capture or ASCII art for this simple figure]
 ```
@@ -1117,14 +1105,13 @@ writing, and a different one for reads and queries.
 
 How many people saw Mike Nygard's talk this morning?
 
-[ QCon 2012 page on Mike Nygard's talk:
-
-Michael T. Nygard, "Exploiting Loopholes in CAP"
+```
+[ QCon 2012 page: Michael T. Nygard, "Exploiting Loopholes in CAP"
 https://qconsf.com/sf2012/sf2012/presentation/Exploiting%2bLoopholes%2bin%2bCAP.html
+Slides: https://qconsf.com/sf2012/dl/qcon-sanfran-2012/slides/MichaelT.Nygard_ExploitingLoopholesInCAP.pdf
+Video: https://www.infoq.com/presentations/cap-loopholes ]
+```
 
-slides: https://qconsf.com/sf2012/dl/qcon-sanfran-2012/slides/MichaelT.Nygard_ExploitingLoopholesInCAP.pdf
-
-video: https://www.infoq.com/presentations/cap-loopholes ]
 
 [Time 0:35:00]
 
@@ -1298,8 +1285,7 @@ as blobs in storage.
 [Time 0:40:05]
 
 ```
-slide title: Datomic on Riak
-              + ZooKeeper
+slide title: Datomic on Riak + ZooKeeper
 
 + Riak
   redundant, distributed, highly available
@@ -1352,8 +1338,7 @@ So it looks like this.
 [Time 0:42:00]
 
 ```
-slide title: Datomic on Riak
-              + ZooKeeper
+slide title: Datomic on Riak + ZooKeeper
 
 [ TBD figure too complex for ASCII art ]
 ```
