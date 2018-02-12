@@ -18,13 +18,9 @@ whatever Rich said while presenting them is not here.  ]
 slide title: What is Datomic?
 
 + A new database
-
 + A sound model of _information_, with time
-
 + Provides _database as a value_ to applications
-
 + Bring _declarative programming_ to applications
-
 + Focus on reducing complexity
 ```
 
@@ -33,15 +29,10 @@ slide title: What is Datomic?
 slide title: DB Complexity
 
 + Stateful
-
 + Same query, different results
-
   + no basis
-
 + Over there
-
 + 'Update' poorly defined
-
   + Places
 ```
 
@@ -55,11 +46,8 @@ consider update that way.
 slide title: Update
 
 + What does update mean?
-
 + Does the new replace the old?
-
 + Granularity? new ____ replace the old ____
-
 + Visibility?
 ```
 
@@ -128,13 +116,9 @@ ourselves with.
 slide title: Manifestations
 
 + Wrong programs
-
 + Scaling problems
-
 + Round-trip fears
-
 + Fear of overloading server
-
 + Coupling, e.g. questions with reporting
 ```
 
@@ -165,11 +149,8 @@ I am not going to talk about the other point.
 slide title: Consistency and Scale
 
 + What's possible?
-
 + Distributed redundancy and consistency?
-
 + Elasticity
-
 + Inconsistency huge source of complexity
 
 [ TBD There is a small figure on this slide, but it is so small that
@@ -206,11 +187,8 @@ consistently apply those requests.
 slide title: Information and Time
 
 + Old-school memory and records
-
 + The kind you remember
-
   ... and keep
-
 + Auditing and more
 
 [ Photograph of a stone tablet with ancient writing on it. ]
@@ -253,7 +231,6 @@ slide title: Perception and
                 Reaction
 
 + No polling
-
 + Consistent
 
 [ Simple geometric figure with a sun, and a human eye looking at
@@ -365,9 +342,7 @@ past.  In fact, we always perceive the past.  That is how things work.
 slide title: Implementing Values
 
 + Persistent data structures
-
 + Trees
-
 + Structural sharing
 ```
 
@@ -513,15 +488,10 @@ complex.
 slide title: The Choices
 
 + Coordination
-
   + how much, and where?
-
   + process requires it
-
   + perception shouldn't
-
 + Immutability
-
   + sine qua non
 ```
 
@@ -560,11 +530,8 @@ benefits as we go through.
 slide title: Approach
 
 + Move to information model
-
 + Split process and perception
-
 + Immutable basis in storage
-
 + Novelty in memory
 ```
 
@@ -599,13 +566,9 @@ that I will talk about.
 slide title: Information
 
 + Inform
-
   + 'to convey knowledge via _facts_'
-
   + 'give shape to (the mind)'
-
 + Information
-
   + the facts
 ```
 
@@ -628,15 +591,10 @@ slide title: Facts
 
 + _Fact_ - 'an event or thing known to have
   happened or existed'
-
   + From: factum - 'something done'
-
   + Must include time
-
 + Remove structure (a la RDF)
-
 + Atomic _Datom_
-
   + Entity/Attribute/Value/Transaction (time)
 ```
 
@@ -676,13 +634,9 @@ provenance, or causality, or operations, or anything else like that.
 slide title: Database State
 
 + The database is an expanding _value_
-
   + An accretion of _facts_
-
   + The past doesn't change - immutable
-
 + Process requires new space
-
 + Fundamental move away from _places_
 
 [ Background image of this slide looks like concentric rings that you
@@ -728,11 +682,8 @@ one person that raises their hand.  That is crazy.
 slide title: Accretion
 
 + Root per transaction doesn't work
-
 + Latest values include past as well
-
   + The past is sub-range
-
 + Important for information model
 ```
 
@@ -805,13 +756,9 @@ order in May."
 slide title: Process
 
 + Reified
-
 + Primitive representation of novelty
-
   + Assertions and retractions of _facts_
-
   + _Minimal_
-
 + Other transformations expand into those
 ```
 
@@ -854,11 +801,8 @@ slide title: Deconstruction
 +-----------------------------------------------+
 
 + Process             + Perception/Reaction
-
   + Transactions        + Query
-
   + Indexing            + Indexes
-
   + O                   + I
 ```
 
@@ -879,15 +823,10 @@ And we have perception, which is the query side.
 slide title: State
 
 + Must be organized to support query
-
 + Sorted set of facts
-
 + Maintaining sort live in storage - bad
-
   + BigTable - mem + storage merge
-
   + occasional merge into storage
-
   + persistent trees
 ```
 
@@ -947,15 +886,10 @@ persistent tree merge to do it.
 slide title: Indexing
 
 + Maintaining sort live in storage - bad
-
 + BigTable et al:
-
   + Accumulate novelty in memory
-
   + Current view: mem + storage merge
-
   + Occasional integrate mem into storage
-
     Releases memory
 ```
 
@@ -1029,11 +963,8 @@ to storage and access to the live index, you are good.
 slide title: Components
 
 + Transactor
-
 + Peers
-
   + Your app servers, analytics machines etc
-
 + Redundant storage service
 ```
 
@@ -1132,13 +1063,9 @@ consistency model in a second.
 slide title: Transactor
 
 + Accepts transactions
-
   + Expands, applies, logs, broadcasts
-
 + Periodic indexing, in background
-
 + Indexing creates garbage
-
   + Storage GC
 ```
 
@@ -1163,15 +1090,10 @@ collection for disk.
 slide title: Peer Servers
 
 + Peers directly access storage service
-
 + Have own query engine
-
 + Have live mem index and merging
-
 + Two-tier cache
-
   + Datoms w/ object values (on heap)
-
   + Segments (memcached)
 ```
 
@@ -1210,15 +1132,10 @@ video: https://www.infoq.com/presentations/cap-loopholes ]
 slide title: Consistency and Scale
 
 + Process/writes go through transactor
-
   + traditional server scaling/availability
-
 + Immutability supports consistent reads
-
   + without transactions
-
 + Query scales with peers
-
   + Elastic/dynamic e.g. auto-scaling
 ```
 
@@ -1254,15 +1171,10 @@ and I get more or fewer as load goes up and down.
 slide title: Memory Index
 
 + Persistent sorted set
-
 + Large internal nodes
-
 + Pluggable comparators
-
 + 2 sorts always maintained
-
   + EAVT, AEVT
-
 + plus AVET, VAET
 ```
 
@@ -1287,15 +1199,10 @@ There are these Datoms, and you can sort them different ways.
 slide title: Storage
 
 + Log of tx asserts/retracts (in tree)
-
 + Various covering indexes (trees)
-
 + Storage service/server requirements
-
   + Data segment values (K->V)
-
   + atoms (consistent read)
-
   + pods (conditional put)
 ```
 
@@ -1395,17 +1302,11 @@ slide title: Datomic on Riak
               + ZooKeeper
 
 + Riak
-
   redundant, distributed, highly available
-
   durable
-
   eventually consistent
-
 + ZooKeeper
-
   redundant, durable,
-
   consistent (ordered ops + CAS)
 ```
 
@@ -1472,17 +1373,11 @@ consistent way, and viewed in a consistent way.
 slide title: Riak Usage
 
 + Everything put into Riak is immutable
-
 + N=3, W=2, DW=2
-
 + R=1, not-found-ok = false
-
   'first found' semantics
-
 + There or not
-
   no vector clocks, siblings etc
-
 + No speculative lookup
 ```
 
@@ -1570,11 +1465,8 @@ GET /data/mem/test/1000/datoms?index=aevt
 
 
 + Same query, same results
-
 + db permalinks!
-
   + communicable, recoverable
-
 + Multiple conversations about same value
 ```
 
@@ -1606,17 +1498,11 @@ So it is communicable.  You can recover it.
 slide title: DB Values
 
 + Time travel
-
   + db.asOf - past
-
   + db.since - windowed
-
   + db.with(tx) - speculative
-
 + dbs are arguments to query, not implicit
-
   + mock with datom-shaped data:
-
     [[:fred :likes "pizza"]
      [:sally :likes "Ice cream"]]
 ```
@@ -1649,17 +1535,11 @@ more than one data source, including things in memory.
 slide title: DB Simplicity Benefits
 
 + Epochal state
-
   + Coordination only for process
-
 + Transactions well defined
-
   + Functional accretion
-
 + Freedom to relocate/scale storage, query
-
 + Extensive caching
-
 + Process events
 ```
 
@@ -1684,11 +1564,8 @@ reactive systems.
 slide title: The Database as a Value
 
 + Dramatically less complex
-
 + More powerful
-
 + More scalable
-
 + Better information model
 ```
 
