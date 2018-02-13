@@ -145,8 +145,8 @@ slide title: Consistency and Scale
 + Elasticity
 + Inconsistency huge source of complexity
 
-[ TBD There is a small figure on this slide, but it is so small that
-it is not clear one is missing out by not seeing it. ]
+[ There is a small figure on this slide, but it is so small that it is
+not clear one is missing out by not seeing it. ]
 ```
 
 The other thing that Datomic tries to pursue is this question of: if I
@@ -301,11 +301,7 @@ And time is just a relative thing that may reflect some causality.
 
 [Time 0:08:30]
 
-```
-slide title: Epochal Time Model
-
-[ TBD: include figure here, which is not easy to do in ASCII art ]
-```
+![0:08:30 Epochal Time Model](DeconstructingTheDatabase/slide10.png)
 
 So that gives us a time model that looks like this.  You may have seen
 this in another talk I have given about functional programming versus
@@ -345,11 +341,7 @@ this.  But the idea being, you can represent anything.
 
 [Time 0:09:45]
 
-```
-slide title: Structural Sharing
-
-[ TBD: Get figure here, explained better in other talks. ]
-```
+![0:09:45 Structural Sharing](DeconstructingTheDatabase/slide12.png)
 
 You can represent sets and maps and vectors, all as trees.  And once
 you have represented something as a tree, then you can leave that tree
@@ -376,12 +368,7 @@ And that is how persistent data structures work.
 
 [Time 0:10:50]
 
-```
-slide title: Place Model
-
-[ TBD: Get figure here with "The Database Place" in the central box,
-although ASCII art might work, too. ]
-```
+![0:10:50 Place Model](DeconstructingTheDatabase/slide13.png)
 
 So the problem we have -- and this is _not_ just about SQL databases;
 this is a general problem with databases that work this way -- is that
@@ -403,13 +390,7 @@ And there are a lot of problems with this.
 
 [Time 0:11:45]
 
-```
-slide title: Epochal Time Model
-
-[ TBD This figure has same title as another slide, but this one has
-boxes labeled "Transactions", "DB connection", "DB Values", "Queries",
-which I think the previous one with same title had different labels. ]
-```
+![0:11:45 Epochal Time Model](DeconstructingTheDatabase/slide14.png)
 
 You will recognize: this is the same problem as objects.  They have
 the same problem.  They have conflated identity and value.  They are
@@ -439,11 +420,7 @@ shooting for.
 
 [Time 0:12:50]
 
-```
-slide title: Traditional Database
-
-[ TBD: figure that might be best as is, not as ASCII art. ]
-```
+![0:12:50 Traditional Database](DeconstructingTheDatabase/slide15.png)
 
 So this is a traditional database.  I do not know if you can read that
 text or not.  But you know what is in it.  There is this server.  It
@@ -895,11 +872,7 @@ together.
 
 [Time 0:27:10]
 
-```
-slide title: Transactions and Indexing
-
-[TBD do screen capture or ASCII art for this simple figure]
-```
+![0:27:10 Transactions and Indexing](DeconstructingTheDatabase/slide26.png)
 
 So this is what transaction processing and indexing looks like.
 Transactions take novelty as it comes in.  It immediately logs that.
@@ -915,11 +888,7 @@ structure, just like the other picture.
 
 [Time 0:27:45]
 
-```
-slide title: Perception
-
-[TBD do screen capture or ASCII art for this simple figure]
-```
+![0:27:45 Perception](DeconstructingTheDatabase/slide27.png)
 
 And then we can look at the perception side.  Now the perception side
 means: I want to ask a question and get an answer.  I want to ask
@@ -969,11 +938,7 @@ And some sort of storage service.
 
 [Time 0:29:25]
 
-```
-slide title: Datomic Architecture
-
-[TBD do screen capture for this figure -- too much for ASCII art]
-```
+![0:29:25 Datomic Architecture](DeconstructingTheDatabase/slide29.png)
 
 So that whole thing looks like this.  If we start in the bottom right,
 we see a storage service.  It is a quite interesting aspect of Datomic
@@ -1217,11 +1182,7 @@ And I will talk about that more in a context.
 
 [Time 0:38:05]
 
-```
-slide title: Structural Sharing
-
-[ TBD: repeat of previous slide diagram maybe? ]
-```
+![0:38:05 Structural Sharing](DeconstructingTheDatabase/slide12.png)
 
 So I just want to show you this picture again.  This is happening on
 disk, but not immediately each change.  This notion of trees will move
@@ -1230,11 +1191,7 @@ from one to another.
 
 [Time 0:38:15]
 
-```
-slide title: What's in a DB Value?
-
-[ TBD figure too complex for ASCII art ]
-```
+![0:38:15 What's in a DB Value?](DeconstructingTheDatabase/slide36.png)
 
 So in memory, this is what it looks like.  We have some immutable
 thing.  It is inside a box.  That box is called an atom in Clojure,
@@ -1257,11 +1214,7 @@ And I will show you that here.
 
 [Time 0:39:05]
 
-```
-slide title: Index in Storage
-
-[ TBD figure too complex for ASCII art ]
-```
+![0:39:05 Index in Storage](DeconstructingTheDatabase/slide37.png)
 
 So in storage it looks like this.  There is a cell in storage, an
 entry, which is the identity.  How do you find a database in storage
@@ -1337,11 +1290,7 @@ So it looks like this.
 
 [Time 0:42:00]
 
-```
-slide title: Datomic on Riak + ZooKeeper
-
-[ TBD figure too complex for ASCII art ]
-```
+![0:42:00 Datomic on Riak + ZooKeeper](DeconstructingTheDatabase/slide39.png)
 
 We keep the values in Riak.  Everything we put in Riak is immutable.
 It is those big chunks of index.
@@ -1425,11 +1374,7 @@ it.  That is a consistent view of the world.
 
 [Time 0:45:25]
 
-```
-slide title: Full Datomic Stack
-
-[ TBD figure too complex for ASCII art ]
-```
+![0:45:25 Full Datomic Stack](DeconstructingTheDatabase/slide41.png)
 
 The full stack for Datomic looks like this.  I am not going to have a
 lot of time to talk about this, except to show you that there is also
