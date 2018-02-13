@@ -534,7 +534,7 @@ others.  But because we are trying to do all of these things, very
 specific things will appear in our design.
 
 So we want to move to an information model.  We want to move away from
-a place oriented model to inforation.  And I am going to talk about
+a place oriented model to information.  And I am going to talk about
 that in the next slide.
 
 We want to split apart process: change acquisition; from perception:
@@ -1171,7 +1171,7 @@ on disk.  Not quite as big as the one on disk.
 
 And there are a couple of sorts.  We sort by entity, and we sort by
 attribute.  That means you get the effect of something more like a
-document store when you via the entity orientiation, and you get
+document store when you via the entity orientation, and you get
 something much more like a column store when you go by the attribute
 orientation that keeps all the values of email next to each other.  So
 you do not have to pull whole records, and there is no notion of
