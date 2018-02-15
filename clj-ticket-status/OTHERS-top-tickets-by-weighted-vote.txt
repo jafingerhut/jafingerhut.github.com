@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: February 8, 2018
+Date: February 15, 2018
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -73,12 +73,12 @@ Project ASYNC tickets
 ========================================
 Defect
 
-    4.72   5 Open         [ASYNC-144] pipeline-async docstring correction
+    4.47   5 Open         [ASYNC-144] pipeline-async docstring correction
              Moritz Heidkamp (1.00)
              Timothy Baldridge (1.00)
-             Pierre-Yves Ritschard (1.00)
              David Bürgin (0.86)
              Terje Norderhaug (0.86)
+             Pierre-Yves Ritschard (0.75)
     4.13   5 Triaged      [ASYNC-90] Pub/sub leaks memory
              Collider Writer (1.00)
              Jan Rychter (1.00)
@@ -143,6 +143,8 @@ Defect
              Terje Norderhaug (0.86)
     0.75   1 Open         [ASYNC-73] (CLJS) try-catch-finally broken inside go-blocks
              Yuri Govorushchenko (0.75)
+    0.75   1 Open         [ASYNC-204] Writing on a closed channel doesn't commit the handler
+             Pierre-Yves Ritschard (0.75)
     0.75   1 Vetted       [ASYNC-184] (CLJS) Port ASYNC-169 fixes to cljs
              Yuri Govorushchenko (0.75)
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
@@ -168,7 +170,6 @@ Defect
     0.00   0 Open         [ASYNC-199] (CLJS) A "finally" including an "if" breaks the result of the enclosing "try" if the "try" is in a "go" block
     0.00   0 Open         [ASYNC-200] (CLJS) A "finally" in a "try" in a "go" block is skipped in f a string is thrown.
     0.00   0 Open         [ASYNC-202] Channel returned by to-chan not immediately ready for taking?
-    0.00   0 Open         [ASYNC-204] Writing on a closed channel doesn't commit the handler
     0.00   0 Open         [ASYNC-205] Pausing in mix is note effective
     0.00   0 Open         [ASYNC-207] Loop in go breaks type hints
     0.00   0 Open         [ASYNC-208] alts!! completes more than one operation when reading and writing to the same channel.
@@ -176,13 +177,14 @@ Defect
     0.00   0 Open         [ASYNC-210] Puts committed on take! when buffer is full and buffer contains an expanding transducer
     0.00   0 Open         [ASYNC-211] `a/map` close out channel immediately when any one of inputs closed
     0.00   0 Open         [ASYNC-212] `go` fails to compile expressions with literal `nil` as a let value 
+    0.00   0 Open         [ASYNC-214] pending puts are never signalled when channels are closed
     0.00   0 Triaged      [ASYNC-156] (CLJS) go block containing letfn does not compile
     0.00   0 Triaged      [ASYNC-165] (CLJS) the binding macro/let binding is wrongly inlined
 
 ========================================
 Enhancement
 
-   16.53  17 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
+   16.28  17 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
              Chad Harrington (1.00)
              Colin Taylor (1.00)
              Derek Troy-West (1.00)
@@ -197,8 +199,8 @@ Enhancement
              Brandon Adams (1.00)
              Howard Lewis Ship (1.00)
              Nicola Mometto (1.00)
-             Pierre-Yves Ritschard (1.00)
              David Bürgin (0.86)
+             Pierre-Yves Ritschard (0.75)
              Daniel Compton (0.66)
     8.46   9 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
              Alexander Kiel (1.00)
@@ -254,6 +256,8 @@ Enhancement
              Vlad Bokov (1.00)
     0.86   1 Open         [ASYNC-46] Add optional default channel to 'pub'
              Terje Norderhaug (0.86)
+    0.75   1 Open         [ASYNC-213] Documentation for promise-chan should mention that close! behavior
+             Pierre-Yves Ritschard (0.75)
     0.00   0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
     0.00   0 Open         [ASYNC-131] (CLJS) go! or "go-now" for CLJS
     0.00   0 Open         [ASYNC-141] Convert project to use Reader Conditionals
@@ -265,7 +269,6 @@ Enhancement
     0.00   0 Open         [ASYNC-182] (CLJS) Support usage from bootstrapped clojurescript
     0.00   0 Open         [ASYNC-189] Tap return value not documented
     0.00   0 Open         [ASYNC-193] Opaque string representation of channels in Clojurescript core.async
-    0.00   0 Open         [ASYNC-213] Documentation for promise-chan should mention that close! behavior
     0.00   0 Triaged      [ASYNC-196] Add ability to transduce values collected via clojure.core.async/into
     0.00   0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
     0.00   0 Vetted       [ASYNC-69] How to better communicate "mix" lifecycle wrt coordination
@@ -659,7 +662,8 @@ Enhancement
 ========================================
 Task
 
-    1.00   1 Open         [INST-15] Windows installation scripts
+    2.00   2 Open         [INST-15] Windows installation scripts
+             Steffen Dienst (1.00)
              Thomas Heller (1.00)
     0.00   0 Open         [INST-9] Add --prefix cmd line option to linux-install.sh
 
@@ -1058,7 +1062,8 @@ Feature
 ========================================
 Task
 
-    0.00   0 Open         [TDEPS-41] Document classpath ordering strategy
+    1.00   1 Open         [TDEPS-41] Document classpath ordering strategy
+             A. R (1.00)
     0.00   0 Open         [TDEPS-42] Document lib-map
 
 
@@ -1143,8 +1148,9 @@ Defect
 ========================================
 Enhancement
 
-    5.00   5 Open         [TNS-45] File in invalid path will mark namespace for reload
+    6.00   6 Open         [TNS-45] File in invalid path will mark namespace for reload
              Ag Ibragimov (1.00)
+             Arne Brasseur (1.00)
              Avi Flax (1.00)
              Dieter Komendera (1.00)
              Dominic Monroe (1.00)

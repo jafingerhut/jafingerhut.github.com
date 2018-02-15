@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: February 8, 2018
+Date: February 15, 2018
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -95,6 +95,7 @@ Defect
    1 Open         [ASYNC-108] (CLJS) cljs to-chan hangs on infinite lazy sequences
    1 Open         [ASYNC-73] (CLJS) try-catch-finally broken inside go-blocks
    1 Vetted       [ASYNC-184] (CLJS) Port ASYNC-169 fixes to cljs
+   1 Open         [ASYNC-204] Writing on a closed channel doesn't commit the handler
    0 Open         [ASYNC-39] Processes spawned by mix never terminate
    0 Open         [ASYNC-51] (CLJS) Core.async memory leak in Safari and Mobile Safari
    0 Open         [ASYNC-63] (CLJS) Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
@@ -120,7 +121,6 @@ Defect
    0 Open         [ASYNC-199] (CLJS) A "finally" including an "if" breaks the result of the enclosing "try" if the "try" is in a "go" block
    0 Open         [ASYNC-200] (CLJS) A "finally" in a "try" in a "go" block is skipped in f a string is thrown.
    0 Open         [ASYNC-202] Channel returned by to-chan not immediately ready for taking?
-   0 Open         [ASYNC-204] Writing on a closed channel doesn't commit the handler
    0 Open         [ASYNC-205] Pausing in mix is note effective
    0 Open         [ASYNC-207] Loop in go breaks type hints
    0 Open         [ASYNC-208] alts!! completes more than one operation when reading and writing to the same channel.
@@ -128,6 +128,7 @@ Defect
    0 Open         [ASYNC-210] Puts committed on take! when buffer is full and buffer contains an expanding transducer
    0 Open         [ASYNC-211] `a/map` close out channel immediately when any one of inputs closed
    0 Open         [ASYNC-212] `go` fails to compile expressions with literal `nil` as a let value 
+   0 Open         [ASYNC-214] pending puts are never signalled when channels are closed
 
 ========================================
 Enhancement
@@ -146,6 +147,7 @@ Enhancement
    1 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
    1 Open         [ASYNC-71] exception behavior for thread macro is hard coded
    1 Open         [ASYNC-46] Add optional default channel to 'pub'
+   1 Open         [ASYNC-213] Documentation for promise-chan should mention that close! behavior
    0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
    0 Vetted       [ASYNC-69] How to better communicate "mix" lifecycle wrt coordination
    0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
@@ -161,7 +163,6 @@ Enhancement
    0 Open         [ASYNC-189] Tap return value not documented
    0 Open         [ASYNC-193] Opaque string representation of channels in Clojurescript core.async
    0 Triaged      [ASYNC-196] Add ability to transduce values collected via clojure.core.async/into
-   0 Open         [ASYNC-213] Documentation for promise-chan should mention that close! behavior
 
 
 Project CCACHE tickets
@@ -512,7 +513,7 @@ Enhancement
 ========================================
 Task
 
-   1 Open         [INST-15] Windows installation scripts
+   2 Open         [INST-15] Windows installation scripts
    0 Open         [INST-9] Add --prefix cmd line option to linux-install.sh
 
 
@@ -860,7 +861,7 @@ Feature
 ========================================
 Task
 
-   0 Open         [TDEPS-41] Document classpath ordering strategy
+   1 Open         [TDEPS-41] Document classpath ordering strategy
    0 Open         [TDEPS-42] Document lib-map
 
 
@@ -940,7 +941,7 @@ Defect
 ========================================
 Enhancement
 
-   5 Open         [TNS-45] File in invalid path will mark namespace for reload
+   6 Open         [TNS-45] File in invalid path will mark namespace for reload
    0 Open         [TNS-37] c.t.n.move: does not support to move .cljc files
    0 Open         [TNS-39] Single classpath argument for c.t.n.move
    0 Open         [TNS-46] Add project.clj for easier development

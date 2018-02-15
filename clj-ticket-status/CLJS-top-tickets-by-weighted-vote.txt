@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: February 8, 2018
+Date: February 15, 2018
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -41,16 +41,17 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
+    4.26   5 Open         [CLJS-1701] cljs.spec impact on :advanced builds
+             Ivan Kryvoruchko (1.00)
+             Yuri Govorushchenko (1.00)
+             Zerg (1.00)
+             Matthew Davidson (1.00)
+             Roman Liutikov (0.26)
     4.00   4 Open         [CLJS-677] cljs.reader doesn't support keywords starting with a digit
              Damon Kropf-Untucht (1.00)
              Francis Avila (1.00)
              Mike Longworth (1.00)
              Peter Taoussanis (1.00)
-    3.26   4 Open         [CLJS-1701] cljs.spec impact on :advanced builds
-             Ivan Kryvoruchko (1.00)
-             Yuri Govorushchenko (1.00)
-             Matthew Davidson (1.00)
-             Roman Liutikov (0.26)
     3.00   3 Open         [CLJS-2055] Circular dependencies with parallel build cause the compiler get stuck
              Martin Kavalar (1.00)
              Dieter Komendera (1.00)
@@ -82,8 +83,8 @@ Defect
     1.66   2 Open         [CLJS-1558] Code allowed to re-define referred var
              Chas Emerick (1.00)
              Nico Schneider (0.66)
-    1.21   2 Bad: Unkn Fi [CLJS-868] no arity warnings on recursive calls
-             A. R (0.66)
+    1.29   2 Bad: Unkn Fi [CLJS-868] no arity warnings on recursive calls
+             A. R (0.75)
              Andrew S (0.54)
     1.00   1 Bad: Unkn Fi [CLJS-1753] cljs.pprint does not print default tagged literals/elements
              Dmitri Naumov (1.00)
@@ -103,8 +104,6 @@ Defect
              Dennis Schridde (1.00)
     1.00   1 Open         [CLJS-2385] cljs.analyzer/infer-type pass infers tag with incorrect priority
              Levi R. I. Tan Ong (1.00)
-    1.00   1 Open         [CLJS-2389] Fix module processing after latest Closure changes
-             Miikka Koskinen (1.00)
     1.00   1 Open         [CLJS-2399] :foreign-libs with module conversion does not works properly (possible regression)
              Michiel Borkent (1.00)
     1.00   1 Open         [CLJS-2402] Duplicate source files passed to Closure Compiler causes ModuleLoader#resolvePaths to throw "Duplicate module path after resolving"
@@ -115,8 +114,8 @@ Defect
              J.&nbsp;S.&nbsp;Choi (0.86)
     0.86   1 Open         [CLJS-2369] Undefined nameToPath for bootstrap` when using Twitter's Bootstrap (twbs)
              Eugene Pakhomov (0.86)
-    0.66   1 Bad: Unkn Fi [CLJS-1297] defrecord does not emit IKVReduce protocol
-             A. R (0.66)
+    0.75   1 Bad: Unkn Fi [CLJS-1297] defrecord does not emit IKVReduce protocol
+             A. R (0.75)
     0.66   1 Open         [CLJS-1593] Self-host: Munged minus macro
              Yehonathan Sharvit (0.66)
     0.60   1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
@@ -129,7 +128,6 @@ Defect
              Roman Liutikov (0.26)
     0.00   0 Bad: Match n [CLJS-2167] Browser REPL leaves a socket open when it fails to connect to the browser
     0.00   0 Bad: Match n [CLJS-2168] Properly document browser-env options
-    0.00   0 Bad: Unkn Ap [CLJS-2476] recur across try should fail compilation
     0.00   0 Bad: Unkn Fi [CLJS-349] cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
     0.00   0 Bad: Unkn Fi [CLJS-375] loop doesn't seem to preserve tag information as evidenced by extra cljs.core.truth_ calls
     0.00   0 Bad: Unkn Fi [CLJS-434] ClojureScript compiler prepends "self__" to defmulti forms when metadata in form of ^:field.
@@ -154,7 +152,7 @@ Defect
 ========================================
 Enhancement
 
-    7.53   8 Open         [CLJS-2376] Add support for ES6 default imports/exports
+    7.61   8 Open         [CLJS-2376] Add support for ES6 default imports/exports
              Corin Lawson (1.00)
              Jose Luis Lafuente (1.00)
              Kurt Harriger (1.00)
@@ -162,7 +160,7 @@ Enhancement
              jiyinyiyong (1.00)
              zhaoxiaoyang (1.00)
              Eugene Pakhomov (0.86)
-             A. R (0.66)
+             A. R (0.75)
     5.60   6 Bad: Unkn Fi [CLJS-1461] Convert analyzer to conform to tools.analyzer's spec
              James Henderson (1.00)
              Michael Griffiths (1.00)
@@ -170,12 +168,12 @@ Enhancement
              Nicolas HA (1.00)
              Tienson Qin (1.00)
              Thomas Heller (0.60)
-    4.78   6 Open         [CLJS-1908] Improve error messages by using pr-str instead of str when printing objects
+    4.87   6 Open         [CLJS-1908] Improve error messages by using pr-str instead of str when printing objects
              Matthew Boston (1.00)
              Stuart Mitchell (1.00)
              Timothy Pratley (1.00)
              Aleksander Madland Stapnes (0.86)
-             A. R (0.66)
+             A. R (0.75)
              Roman Liutikov (0.26)
     3.78   5 Open         [CLJS-1628] Make instances of js/Symbol printable
              Nikolay Artamonov (1.00)
@@ -221,14 +219,10 @@ Enhancement
              Bozhidar Batsov (1.00)
     1.00   1 Bad: Unkn Fi [CLJS-2298] REPLs should automatically load user.(cljs|cljc) files at root of Java classpath
              Justin Glenn Smith (1.00)
-    1.00   1 Open         [CLJS-1076] :nashorn target
-             Andrey Antukh (1.00)
     1.00   1 Open         [CLJS-1631] The str function should handle JavaScript symbols
              Egg Syntax (1.00)
     1.00   1 Open         [CLJS-1755] Support sourcesContent in source maps
              Miloslav Nenadál (1.00)
-    1.00   1 Open         [CLJS-1777] `module` undefined when using `:module-type :commonjs`
-             Wilker Lúcio da Silva (1.00)
     1.00   1 Open         [CLJS-1990] Clojurescript programs targeting nodejs should support global installation
              Matthias Nehlsen (1.00)
     0.92   2 Bad: Unkn Ap [CLJS-2120] Optimize keyword function
@@ -247,8 +241,6 @@ Enhancement
     0.80   2 Open         [CLJS-844] Optimize js->clj by switching to transients
              Andrew S (0.54)
              Roman Liutikov (0.26)
-    0.66   1 Open         [CLJS-2487] Unroll (list ...) constructs to List ctor calls
-             A. R (0.66)
     0.60   1 Open         [CLJS-1997] Outward function type hint propagation
              Thomas Heller (0.60)
     0.54   1 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
@@ -281,14 +273,12 @@ Enhancement
     0.00   0 Bad: Unkn Fi [CLJS-1127] validate compiled file written to disk
     0.00   0 Bad: Unkn Fi [CLJS-1147] reconnect logic for browser REPLs
     0.00   0 Bad: Unkn Fi [CLJS-1174] Simple warning if a namespace with dashes not found but a file path with dashes exists
-    0.00   0 Bad: Unkn Fi [CLJS-1195] generic reusable command line argument parsing for REPLs
     0.00   0 Bad: Unkn Fi [CLJS-1207] Emit a warning if multiple resources found for a ClojureScript namespace
     0.00   0 Bad: Unkn Fi [CLJS-1373] Generalize CLJS-1324, check invokes of all IFn implementors
     0.00   0 Bad: Unkn Fi [CLJS-1402] Source Mapping Closure Error Logger
     0.00   0 Bad: Unkn Fi [CLJS-1412] Add JSDoc type information to individual IFn methods
     0.00   0 Bad: Unkn Fi [CLJS-1415] Handling JSDoc param name [x] optional syntax
     0.00   0 Bad: Unkn Fi [CLJS-1419] enhance numeric inference, if + number? test on local var should tag local var in the successful branch
-    0.00   0 Bad: Unkn Fi [CLJS-2095] Nashorn runner
     0.00   0 Bad: Unkn Fi [CLJS-2127] Add invoke* helper macro
     0.00   0 Bad: Unkn Fi [CLJS-2156] Add postamble, or some other generic way to append code to a file
     0.00   0 Bad: Unkn Fi [CLJS-2270] Support AOT compilation of macro namespaces (bootstrap)
