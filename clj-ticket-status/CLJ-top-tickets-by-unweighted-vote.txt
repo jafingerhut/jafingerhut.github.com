@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: March 1, 2018
+Date: March 8, 2018
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -44,9 +44,9 @@ Defect
   10 Triaged      [CLJ-1852] Clojure-generated class names length exceed file-system limit
   10 Incomplete   [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
    9 Needs Patch  [CLJ-2041] clojure.spec/keys requires input collections conform to clojure.core/map?
+   9 Prescreened  [CLJ-2031] clojure.walk/postwalk does not preserve MapEntry type objects
    9 Backlog      [CLJ-1372] Inconsistent hash with java collections
    8 Open         [CLJ-1532] pr-str captures stdout from printing side-effects of lazily evaluated expressions.
-   8 Prescreened  [CLJ-2031] clojure.walk/postwalk does not preserve MapEntry type objects
    7 Triaged      [CLJ-2284] Incorrect bytecode generated for static methods on interfaces
    7 Needs Patch  [CLJ-1941] Instrumentation of fns with primitive type hints fails
    7 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
@@ -197,11 +197,13 @@ Defect
    0 Triaged      [CLJ-2311] Spec generator override won't work on multi-spec dispatch key
    0 Triaged      [CLJ-2326] *compiler-options* docstring is missing :direct-linking
    0 Triaged      [CLJ-2327] regex spec seems to exhibit exponential memory consumption
+   0 Triaged      [CLJ-2330] Clojure compiler build fails with Java 10 early access
+   0 Triaged      [CLJ-2332] remove-tap docstring repetition
 
 ========================================
 Enhancement
 
-  23 Vetted       [CLJ-865] Macroexpansion discards &form metadata
+  24 Vetted       [CLJ-865] Macroexpansion discards &form metadata
   23 Backlog      [CLJ-1517] Unrolled small vectors
   19 Triaged      [CLJ-1522] Enhance multimethods metadata
   16 Triaged      [CLJ-1527] Clarify and align valid symbol and keyword rules for Clojure (and edn)
@@ -225,16 +227,17 @@ Enhancement
    6 Triaged      [CLJ-1209] clojure.test does not print ex-info in error reports
    6 Triaged      [CLJ-1117] partition docstring should be more explicit about dropped or partial trailing elements
    5 Triaged      [CLJ-1743] Avoid compile-time static initialization of classes when using inheritance
+   5 Open         [CLJ-2251] Support Coercion for clojure.spec
    5 Open         [CLJ-1820] Move rename-keys from clojure.set to clojure.core
    5 Triaged      [CLJ-1656] Unroll assoc and assoc! for small numbers of arguments
    5 Triaged      [CLJ-1473] Badly formed pre/post conditions silently passed
    5 Incomplete   [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
-   4 Open         [CLJ-2251] Support Coercion for clojure.spec
    4 Triaged      [CLJ-2224] Support printing and reading of Java 8 java.time.Instant
    4 Triaged      [CLJ-825] Protocol implementation inconsistencies when overloading arity
    4 Open         [CLJ-1218] mapcat is too eager
    4 Triaged      [CLJ-1096] Make destructuring emit direct keyword lookups
    3 Open         [CLJ-1734] Display more descriptive error message when trying to use reader conditionals in a non-cljc file
+   3 Triaged      [CLJ-2054] generator for `any?` occasionally generates `Double/NaN` for which equality semantics don't apply, and that is a problem for the :ret spec of many functions.
    3 Screened     [CLJ-2046] generate random subsets of or'd required keys in map specs
    3 Open         [CLJ-1257] Suppress warnings when clojure.core symbols are explicitly replaced with "use" or "refer"
    3 Backlog      [CLJ-445] Method/Constructor resolution does not factor in widening conversion of primitive args
@@ -247,7 +250,6 @@ Enhancement
    2 Backlog      [CLJ-415] smarter assert (prints locals)
    2 Open         [CLJ-1146] Symbol name starting with digits to defn throws "Unmatched delimiter )"
    2 Triaged      [CLJ-1402] sort-by calls keyfn more times than is necessary
-   2 Triaged      [CLJ-2054] generator for `any?` occasionally generates `Double/NaN` for which equality semantics don't apply, and that is a problem for the :ret spec of many functions.
    2 Screened     [CLJ-2060] Add support for undefining a spec
    2 Triaged      [CLJ-2213] Allow multiple bindings for if-let, when-let, if-some, and when-some
    2 Triaged      [CLJ-1950] cl-format is too slow for production use
@@ -391,17 +393,20 @@ Enhancement
    0 Triaged      [CLJ-2317] Disallow `recur` to `^:once fn*`
    0 Triaged      [CLJ-2322] juxt should have a 0-arity
    0 Triaged      [CLJ-2323] clojure.lang.ExceptionInfo should not pass null cause in its two-arg constructor
+   0 Triaged      [CLJ-2328] There's no way to enable warn-on-reflection from the command-line when running clojure.main
+   0 Triaged      [CLJ-2329] partition-all docstring should mention it returns vectors in transducer case
+   0 Triaged      [CLJ-2333] Support java.nio.file.Path in clojure.java.io
 
 ========================================
 Feature
 
-  54 Needs Patch  [CLJ-1965] clojure.spec/def should support an optional doc-string
+  55 Needs Patch  [CLJ-1965] clojure.spec/def should support an optional doc-string
   42 Triaged      [CLJ-1959] adding functions `map-vals` and `map-keys`
-  27 Open         [CLJ-2116] Support for selective conforming with clojure.spec
+  28 Open         [CLJ-2116] Support for selective conforming with clojure.spec
   22 Triaged      [CLJ-304] clojure.repl/source does not work with deftype
   22 Prescreened  [CLJ-706] make use of deprecated namespaces/vars easier to spot
+  19 Needs Patch  [CLJ-2123] Lighter-weight aliasing for keywords
   19 Incomplete   [CLJ-2112] Add specs for spec forms
-  18 Needs Patch  [CLJ-2123] Lighter-weight aliasing for keywords
   17 Open         [CLJ-1078] Add queue and queue? to clojure.core
   15 Triaged      [CLJ-440] java method calls cannot omit varargs
   14 Triaged      [CLJ-1063] Missing dissoc-in
