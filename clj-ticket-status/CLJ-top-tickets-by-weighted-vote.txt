@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: March 8, 2018
+Date: March 15, 2018
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -168,6 +168,11 @@ Defect
              Tim McCormack (0.75)
              Reid McKenzie (0.34)
              Nicola Mometto (0.10)
+    3.09   4 Incomplete   [CLJ-2066] Reflection on internal classes fails under Java 9
+             Ning Sun (1.00)
+             Paul Bauer (1.00)
+             Herwig Hochleitner (0.54)
+             Ivan Kryvoruchko (0.54)
     3.03   5 Incomplete   [CLJ-701] Primitive return type of loop and try is lost
              Kevin Downey (0.86)
              Steven Yi (0.86)
@@ -218,10 +223,6 @@ Defect
              Nicholas Antonov (1.00)
              Trevor Miranda (1.00)
              Nicola Mometto (0.10)
-    2.09   3 Incomplete   [CLJ-2066] Reflection on internal classes fails under Java 9
-             Paul Bauer (1.00)
-             Herwig Hochleitner (0.54)
-             Ivan Kryvoruchko (0.54)
     2.00   4 Triaged      [CLJ-1279] Fix confusing macroexpand1 ArityException handling
              César Bolaños (0.86)
              Ivan Kryvoruchko (0.54)
@@ -246,6 +247,9 @@ Defect
     1.50   2 Open         [CLJ-1286] Fix reader spec and regex to match code for keywords starting with digits
              Francis Avila (0.75)
              Michael Patrick O'Keefe (0.75)
+    1.43   2 Screenable   [CLJ-2168] clojure.spec: :pred in explain for coll-of should have resolved symbols
+             Marco Molteni (1.00)
+             Ben Brinckerhoff (0.43)
     1.43   2 Vetted       [CLJ-2105] incorrect spec conform when an optional (?) is inside of a one or more (+) 
              Khalid Jebbari (1.00)
              David Bürgin (0.43)
@@ -320,8 +324,6 @@ Defect
     0.46   1 Open         [CLJ-2248] Collections' toString implementations are affected by *print-readably*
              Jan Rychter (0.46)
     0.43   1 Needs Patch  [CLJ-2143] The result of s/form for s/keys* is different from the original form
-             Ben Brinckerhoff (0.43)
-    0.43   1 Screenable   [CLJ-2168] clojure.spec: :pred in explain for coll-of should have resolved symbols
              Ben Brinckerhoff (0.43)
     0.43   1 Screened     [CLJ-2178] s/& explain-data :pred problem
              Ben Brinckerhoff (0.43)
@@ -410,6 +412,7 @@ Defect
     0.00   0 Triaged      [CLJ-2002] StackOverflowError in clojure.spec
     0.00   0 Triaged      [CLJ-2005] Type hint fails with direct linking disabled
     0.00   0 Triaged      [CLJ-2065] reduce-kv fails on subvec
+    0.00   0 Triaged      [CLJ-2073] AOT compilation can result in spurious ClassCastException during compile
     0.00   0 Triaged      [CLJ-2092] deftype instances with mutable fields cannot be compiled 
     0.00   0 Triaged      [CLJ-2126] Can set! to fields of a defrecord
     0.00   0 Triaged      [CLJ-2154] Spec macros keys and keys* silently ignores non-keywords given in the vectors for named arguments :req and :req-un
@@ -611,6 +614,20 @@ Enhancement
              Gary Fredericks (0.66)
              Mike Anderson (0.54)
              Stephen C. Gilardi (0.54)
+    8.52  13 Open         [CLJ-2194] Spec metadata support
+             Egg Syntax (1.00)
+             Felix Andrews (1.00)
+             Pierre-Yves Ritschard (1.00)
+             Marcelo Yuji Nomoto (0.86)
+             Rick Moynihan (0.86)
+             Radford Smith (0.75)
+             Joshua Tilles (0.66)
+             Chris Blom (0.60)
+             Vitalie Spinu (0.43)
+             Simon Belak (0.41)
+             Tommi Reiman (0.36)
+             Bozhidar Batsov (0.31)
+             Daniel Compton (0.28)
     8.21   9 Triaged      [CLJ-1490] Exception on protocol implementation after protocol reloaded could be improved
              Alan Crowley (1.00)
              Jeremy Heiler (1.00)
@@ -677,18 +694,6 @@ Enhancement
              Stuart Halloway (0.86)
              Odin Standal (0.75)
              Ben Brinckerhoff (0.43)
-    6.52  11 Open         [CLJ-2194] Spec metadata support
-             Pierre-Yves Ritschard (1.00)
-             Marcelo Yuji Nomoto (0.86)
-             Rick Moynihan (0.86)
-             Radford Smith (0.75)
-             Joshua Tilles (0.66)
-             Chris Blom (0.60)
-             Vitalie Spinu (0.43)
-             Simon Belak (0.41)
-             Tommi Reiman (0.36)
-             Bozhidar Batsov (0.31)
-             Daniel Compton (0.28)
     5.21   6 Triaged      [CLJ-735] Improve error message when a protocol method is not found
              Alan Moore (1.00)
              Antonio Terreno (1.00)
@@ -1078,7 +1083,7 @@ Enhancement
 ========================================
 Feature
 
-   45.35  55 Needs Patch  [CLJ-1965] clojure.spec/def should support an optional doc-string
+   46.35  56 Needs Patch  [CLJ-1965] clojure.spec/def should support an optional doc-string
              Aaron Cummings (1.00)
              Ag Ibragimov (1.00)
              Alex Hammel (1.00)
@@ -1087,8 +1092,6 @@ Feature
              Daniel Brammer Klokmose (1.00)
              Dave Tenny (1.00)
              Edwin Park (1.00)
-             Egg Syntax (1.00)
-             Felix Andrews (1.00)
              JR Heard (1.00)
              James Tyler Solomon (1.00)
              Jeremie Pelletier (1.00)
@@ -1096,6 +1099,7 @@ Feature
              Julien Fantin (1.00)
              Kurt Smith (1.00)
              Maik Schünemann (1.00)
+             Martino Visintin (1.00)
              Matt Huebert (1.00)
              Mohammad Sadegh Khoeini (1.00)
              Oleksandr Manenko (1.00)
@@ -1106,6 +1110,8 @@ Feature
              Carlo Sciolla (1.00)
              Didier A. (1.00)
              Donald Ball (1.00)
+             Egg Syntax (1.00)
+             Felix Andrews (1.00)
              Liam F (1.00)
              Sergiy Nechyporchuk (1.00)
              Stathis Sideris (1.00)
