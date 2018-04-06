@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: March 30, 2018
+Date: April 5, 2018
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -153,10 +153,10 @@ Defect
              Kei Tsuji (1.00)
              Ryan Neufeld (1.00)
              Trevor Hartman (0.86)
-    3.63   6 Needs Patch  [CLJ-1941] Instrumentation of fns with primitive type hints fails
+    3.56   6 Needs Patch  [CLJ-1941] Instrumentation of fns with primitive type hints fails
              James Carragher (1.00)
              Mark Erickson (1.00)
-             John Schmidt (0.66)
+             John Schmidt (0.60)
              quan (0.60)
              Daniel Compton (0.27)
              Nicola Mometto (0.10)
@@ -214,6 +214,10 @@ Defect
              Jeff Stokes (1.00)
              Gary Fredericks (0.66)
              Atamert Ölçgen (0.60)
+    2.13   3 Triaged      [CLJ-2271] "caller" information missing in explain-data during macro instrumentation failure
+             Camilo Roca (1.00)
+             Erik Assum (0.86)
+             Daniel Compton (0.27)
     2.12   4 Vetted       [CLJ-1879] reduce-kv on a PHMs doesn't consistently execute the intended fastpath
              Jarppe Lansio (0.75)
              Miikka Koskinen (0.66)
@@ -272,9 +276,6 @@ Defect
     1.18   2 Screened     [CLJ-2068] s/explain of evaluated predicate yields :s/unknown
              Odin Standal (0.75)
              Ben Brinckerhoff (0.43)
-    1.13   2 Triaged      [CLJ-2271] "caller" information missing in explain-data during macro instrumentation failure
-             Erik Assum (0.86)
-             Daniel Compton (0.27)
     1.10   2 Triaged      [CLJ-1138] data-reader returning nil causes exception
              Malcolm Sparks (1.00)
              Nicola Mometto (0.10)
@@ -306,21 +307,21 @@ Defect
              Sean Corfield (0.86)
     0.86   1 Triaged      [CLJ-2164] case fails when a single single clause with an empty test seq is used
              Jeroen van Dijk (0.86)
-    0.86   1 Triaged      [CLJ-2297] PersistentHashMap leaks memory when keys are removed with `without`
-             Alex Miller (0.86)
     0.76   2 Open         [CLJ-1548] primitive type hints on protocol methods break call sites
              Daniel Balke (0.66)
              Nicola Mometto (0.10)
     0.75   1 Open         [CLJ-1954] clojure.set/intersection mishandles vectors
              Simon Stelling (0.75)
-    0.66   1 Triaged      [CLJ-1978] recursion-limit not respected
-             John Schmidt (0.66)
+    0.75   1 Triaged      [CLJ-2297] PersistentHashMap leaks memory when keys are removed with `without`
+             Alex Miller (0.75)
     0.64   2 Triaged      [CLJ-1253] Incorrect long division involving Long/MIN_VALUE
              Colin Jones (0.54)
              Nicola Mometto (0.10)
     0.64   2 Triaged      [CLJ-1955] .hashCode throws ClassCastException when called on some functions
              Jozef Wagner (0.54)
              Nicola Mometto (0.10)
+    0.60   1 Triaged      [CLJ-1978] recursion-limit not respected
+             John Schmidt (0.60)
     0.54   1 Prescreened  [CLJ-1403] ns-resolve might throw ClassNotFoundException but should return nil
              Mike Rodriguez (0.54)
     0.54   1 Triaged      [CLJ-1254] Incorrect long quot result involving Long/MIN_VALUE
@@ -693,11 +694,11 @@ Enhancement
              Stuart Halloway (0.86)
              Odin Standal (0.75)
              Ben Brinckerhoff (0.43)
-    7.02  11 Vetted       [CLJ-1814] Make `satisfies?` as fast as a protocol method call
+    6.91  11 Vetted       [CLJ-1814] Make `satisfies?` as fast as a protocol method call
              James Henderson (1.00)
              Pierre-Yves Ritschard (1.00)
-             Alex Miller (0.86)
              Vadim Platonov (0.86)
+             Alex Miller (0.75)
              Michael Griffiths (0.66)
              Miikka Koskinen (0.66)
              J.&nbsp;S.&nbsp;Choi (0.60)
@@ -854,9 +855,9 @@ Enhancement
     1.60   2 Triaged      [CLJ-2213] Allow multiple bindings for if-let, when-let, if-some, and when-some
              Rune Juhl Jacobsen (1.00)
              quan (0.60)
-    1.53   2 Open         [CLJ-2282] Avoid boxing in set! primitive expressions
+    1.46   2 Open         [CLJ-2282] Avoid boxing in set! primitive expressions
              Léo NOEL (0.86)
-             John Schmidt (0.66)
+             John Schmidt (0.60)
     1.41   2 Triaged      [CLJ-1950] cl-format is too slow for production use
              Richard Cordova (1.00)
              Andrey Antukh (0.41)
@@ -949,14 +950,14 @@ Enhancement
              Alexander Yakushev (0.66)
     0.66   1 Triaged      [CLJ-2038] Clojure.spec/exercise-fn should accept custom generator map
              Laszlo Török (0.66)
-    0.66   1 Triaged      [CLJ-2343] define and load classes in memory with gen-class
-             John Schmidt (0.66)
     0.66   1 Vetted       [CLJ-1099] better error message when passing non-seq to seq
              John Walker (0.66)
     0.60   1 Backlog      [CLJ-69] GC Issue 66: Add "keyset" to Clojure; make .keySet for APersistentMap return IPersistentSet
              Atamert Ölçgen (0.60)
     0.60   1 Triaged      [CLJ-1762] Implement IKVReduce for java.util.map
              Gary Trakhman (0.60)
+    0.60   1 Triaged      [CLJ-2343] define and load classes in memory with gen-class
+             John Schmidt (0.60)
     0.54   1 Open         [CLJ-1231] fn and letfn don't support hinting the function's return type
              Mike Anderson (0.54)
     0.50   2 Prescreened  [CLJ-1905] loop should retain primitive int or float without widening
@@ -1106,7 +1107,7 @@ Enhancement
 ========================================
 Feature
 
-   46.25  56 Needs Patch  [CLJ-1965] clojure.spec/def should support an optional doc-string
+   47.25  57 Needs Patch  [CLJ-1965] clojure.spec/def should support an optional doc-string
              Aaron Cummings (1.00)
              Ag Ibragimov (1.00)
              Alex Hammel (1.00)
@@ -1136,6 +1137,7 @@ Feature
              Egg Syntax (1.00)
              Felix Andrews (1.00)
              Liam F (1.00)
+             Robert Stuttaford (1.00)
              Sergiy Nechyporchuk (1.00)
              Stathis Sideris (1.00)
              Zane Shelby (1.00)
@@ -1163,8 +1165,9 @@ Feature
              Bozhidar Batsov (0.31)
              Daniel Compton (0.27)
              Nicola Mometto (0.10)
-   33.99  43 Triaged      [CLJ-1959] adding functions `map-vals` and `map-keys`
+   34.88  44 Triaged      [CLJ-1959] adding functions `map-vals` and `map-keys`
              AJ Taylor (1.00)
+             Alex Dixon (1.00)
              Andrea Richiardi (1.00)
              Antoine Chesnais (1.00)
              Avi Flax (1.00)
@@ -1183,7 +1186,6 @@ Feature
              Mike Fikes (1.00)
              Nikita Prokopov (1.00)
              Nikolay Artamonov (1.00)
-             Alex Miller (0.86)
              Arne Brasseur (0.86)
              Eugene Pakhomov (0.86)
              Juraj Martinka (0.86)
@@ -1191,6 +1193,7 @@ Feature
              Paulus Esterhazy (0.86)
              Renzo Borgatti (0.86)
              jcr (0.86)
+             Alex Miller (0.75)
              Michiel Borkent (0.75)
              Nate Smith (0.75)
              Odin Standal (0.75)
@@ -1240,11 +1243,11 @@ Feature
    15.61  20 Needs Patch  [CLJ-2123] Lighter-weight aliasing for keywords
              Andre Richards (1.00)
              Chris Farber (1.00)
-             Robert Stuttaford (1.00)
              Gert (1.00)
              Gilles Philippart (1.00)
              Imre Kószó (1.00)
              Nuttanart Pornprasitsakul (1.00)
+             Robert Stuttaford (1.00)
              Stathis Sideris (1.00)
              Thomas Heller (1.00)
              Justin Tirrell (0.86)
@@ -1359,6 +1362,22 @@ Feature
              David Greenberg (0.41)
              Reid McKenzie (0.34)
              A. R (0.26)
+   10.44  15 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
+             Andreas Steffan (1.00)
+             Tom Coupland (1.00)
+             Tomoharu Fujita (1.00)
+             Sanel Zukan (1.00)
+             Alex Fowler (0.86)
+             Léo NOEL (0.86)
+             Vadim Platonov (0.86)
+             Alex Miller (0.75)
+             Rick Moynihan (0.75)
+             Greg Chapman (0.66)
+             John Schmidt (0.60)
+             Marc O'Morain (0.38)
+             Max Penet (0.36)
+             A. R (0.26)
+             Nicola Mometto (0.10)
    10.03  11 Open         [CLJ-1553] Parallel transduce
              Darrick Wiebe (1.00)
              Rafik NACCACHE (1.00)
@@ -1399,20 +1418,6 @@ Feature
              Stephen C. Gilardi (0.54)
              Jan Rychter (0.46)
              Tommi Reiman (0.36)
-    9.10  13 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
-             Andreas Steffan (1.00)
-             Tom Coupland (1.00)
-             Tomoharu Fujita (1.00)
-             Sanel Zukan (1.00)
-             Alex Fowler (0.86)
-             Léo NOEL (0.86)
-             Vadim Platonov (0.86)
-             Rick Moynihan (0.75)
-             Greg Chapman (0.66)
-             Marc O'Morain (0.38)
-             Max Penet (0.36)
-             A. R (0.26)
-             Nicola Mometto (0.10)
     8.87  15 Triaged      [CLJ-1293] Support (try .. (catch :default _ ..)) for portable "catch-all"
              Julien Eluard (1.00)
              Wilker Lúcio da Silva (1.00)
@@ -1453,13 +1458,13 @@ Feature
              Bozhidar Batsov (0.31)
              A. R (0.26)
              Nicola Mometto (0.10)
-    6.75  10 Triaged      [CLJ-1451] Add take-until
+    6.68  10 Triaged      [CLJ-1451] Add take-until
              Stefan Keller (1.00)
              Jan-Paul Bultmann (1.00)
              Jenan Wise (0.86)
              Matthew O. Smith (0.75)
              Michiel Borkent (0.75)
-             John Schmidt (0.66)
+             John Schmidt (0.60)
              Lars Andersen (0.60)
              David Bürgin (0.41)
              Simon Belak (0.41)
