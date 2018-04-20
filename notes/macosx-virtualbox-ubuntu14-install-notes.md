@@ -4,45 +4,37 @@
 installed VirtualBox 5.1.18 r114002,
 and created new Ubuntu 14.04.1 64-bit VM
 
-Also an update from 2017-Nov-07:
+Update from 2017-Nov-07:
 On macOS Sierra 10.12.6 system,
 installed VirtualBox 5.1.30 r118389,
 and created Ubuntu 16.04.3 64-bit desktop VM
 
-Removed several icons from Launcher that I didn't want
-(e.g. LibreOffice), by right-clicking on them and choosing the popup
-menu item to unlock them from the launcher.
-
-Click on the top icon on the Launcher, which creates a text box.
-Enter "terminal" to search for that program.  Click "Terminal" icon to
-start that program.  Right-click on Terminal icon in Launcher and
-select "Lock to Launcher" so it will always be there.
-
-```bash
-# Do this only if you want Andy Fingerhut's personalized dot
-# files.  You probably want your own instead.  WARNING: Do not
-# skip the export command.  Shell scripts executed in the step
-# after that need it to be set, or else by default they will get
-# files from a different Github repo belonging to someone else.
-
-% sudo apt-get install curl
-% export github_user=jafingerhut
-% bash -c "$(curl -fsSL https://raw.github.com/$github_user/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
-
-# (optional) Save some disk space by removing large programs I won't use
-% sudo apt-get purge thunderbird libreoffice-*
-
-# Useful packages I like to have, not installed by default.
-% sudo apt-get install python-pip python3-pip
-```
+Update from 2018-Apr-20:
+On macOS Sierra 10.12.6 system,
+installed VirtualBox 5.2.8 r121009,
+and created Ubuntu 16.04.4 64-bit desktop VM
 
 
-# Getting copy/paste working between host and guest OS
+# Resizing guest OS window
 
-The older approach I used for Ubuntu 14.04 is described later below,
-involving installing virtualbox-guest-dkms and virtualbox-guest-x11
-packages.  Search for "Approach installing virtualbox-guest-*
-packages"
+I found this to work with VirtualBox and Ubuntu guest OS even while
+installing the Ubuntu guest OS.  That is, it does not require first
+installing the guest additions kernel module.  That is a very good
+thing, because while installing the Ubuntu desktop guest OS, one of
+the GUI windows for selecting your type of keyboard is so wide it does
+not fit in the default window width, and it is diffulct to click on
+the "OK" button to proceed unless you first make the window wider.
+
+
+# Installing guest additions kernel module
+
+This is needed in order either to get copy/paste between host and
+guest OS working, or to get shared folders working.  You can skip this
+if you do not want those features.
+
+The older approach I used for Ubuntu 14.04 is described in its own
+subsection later below, involving installing virtualbox-guest-dkms and
+virtualbox-guest-x11 packages.
 
 
 ## Approach installing Guest Additions via VirtualBox CD image
@@ -93,34 +85,31 @@ Way more details than one probably would like on this issue:
 
     http://askubuntu.com/questions/451805/screen-resolution-problem-with-ubuntu-14-04-and-virtualbox/595192#595192
 
-
 With Ubuntu 14.04 I could get copy and paste between guest and Mac OS
-X to work.  With Ubuntu 16.04.2 I could not.  It was failing to
-install package virtualbox-guest-x11.  Some more details in this
-askubuntu.com question, but I haven't tried the suggestion of removing
-the package libcheese-gtk23 yet, because when I try to do that via
-synaptic, it warns that many other packages need to be removed, also,
-and some of them like ubuntu-desktop look like things I want to keep.
-
-    https://askubuntu.com/questions/526995/installing-guest-additions-causing-problems
-
-Shut down guest Ubuntu OS.
+X to work.  With Ubuntu 16.04.2 I could not using this approach.
+Fortunately the approach using the guest additions CD image described
+in the previous section does work for Ubuntu 16.04.
 
 
-# Solving screen flicker issue with Ubuntu 17.10 guest VM in VirtualBox
+# Getting copy/paste working between host and guest OS
 
-Found this solution here: https://forums.virtualbox.org/viewtopic.php?f=8&t=85110
+Prerequisite: You have successfully installed guest additions kernel
+module, and shut down the VM afterwards.
 
-This is the comment that I found helped:
-
-    I found this to be a bug with the new Ubuntu 17.10 in Sierra and
-    VBox 5.2.0 and fixed it by selecting Xorg instead of default
-    Wheland window system. You will find this option in the Ubuntu
-    login dialog under the gear.
++ While the VM is shut down, select the VM in "Oracle VM VirtualBox
+  Manager" window.
++ Click "Settings" near top left of window.
++ In new window that appears, click "General" icon near top left.
++ In row of tabs below that, click "Advanced"
++ In popup menu next to "Shared Clipboard", select "Bidirectional"
++ Click "OK" button to close Settings window and save them.
 
 
 
 # Set up shared folders between Ubuntu guest OS and host macOS
+
+Prerequisite: You have successfully installed guest additions kernel
+module, and shut down the VM afterwards.
 
 I was able to get shared folders working for both Ubuntu 14.04 and
 Ubuntu 16.04 guest OS's using these instructions.
@@ -175,6 +164,48 @@ your home directory, e.g.:
 ```bash
 % ln -s /media/sf_p4-docs/ ~/p4-docs
 ```
+
+
+# Customizations that I personally like to make on some Ubuntu VMs
+
+Removed several icons from Launcher that I usually do not use
+(e.g. LibreOffice), by right-clicking on them and choosing the popup
+menu item to unlock them from the launcher.
+
+Click on the top icon on the Launcher, which creates a text box.
+Enter "terminal" to search for that program.  Click "Terminal" icon to
+start that program.  Right-click on Terminal icon in Launcher and
+select "Lock to Launcher" so it will always be there.
+
+```bash
+# Do this only if you want Andy Fingerhut's personalized dot
+# files.  You probably want your own instead.  WARNING: Do not
+# skip the export command.  Shell scripts executed in the step
+# after that need it to be set, or else by default they will get
+# files from a different Github repo belonging to someone else.
+
+% sudo apt-get install curl
+% export github_user=jafingerhut
+% bash -c "$(curl -fsSL https://raw.github.com/$github_user/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
+
+# (optional) Save some disk space by removing large programs I won't use
+% sudo apt-get purge thunderbird libreoffice-*
+
+# Useful packages I like to have, not installed by default.
+% sudo apt-get install python-pip python3-pip
+```
+
+
+# Solving screen flicker issue with Ubuntu 17.10 guest VM in VirtualBox
+
+Found this solution here: https://forums.virtualbox.org/viewtopic.php?f=8&t=85110
+
+This is the comment that I found helped:
+
+    I found this to be a bug with the new Ubuntu 17.10 in Sierra and
+    VBox 5.2.0 and fixed it by selecting Xorg instead of default
+    Wheland window system. You will find this option in the Ubuntu
+    login dialog under the gear.
 
 
 # Shrinking a guest OS disk image
