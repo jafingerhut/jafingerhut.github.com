@@ -52,9 +52,10 @@ last item will be "Install Guest Additions CD image...".  Select it.
 In the VM, a CD will appear in the dock and a dialog should pop up
 asking if you want to allow the software on the CD to autorun.  Let it
 run.  A second dialog will ask you to authenticate (sudo) to install
-the software.  Once it is done, shutdown and reboot the VM.  When the
-VM comes back up and the bidirectional clipboard is enabled, copy and
-paste should work as expected.
+the software.  Once it is done, shut down the VM.
+
+See later sections below for how to enable copy/paste and shared
+folders between host and guest OS.
 
 The Guest additions change with every version of VirtualBox.  Be
 prepared to re-install them whenever you upgrade VirtualBox.
@@ -74,7 +75,7 @@ Ubuntu 16.04 guest OS.
 
     # This might be necessary to get copy/paste to work between guest
     # and host OS
-    sudo apt-get install virtualbox-guest-dkms
+    sudo apt install virtualbox-guest-dkms
 
 Reboot system for newly installed kernel modules (installed by
 virtualbox-guest-dkms package) to take effect.  Larger display size
@@ -188,15 +189,16 @@ select "Lock to Launcher" so it will always be there.
 # after that need it to be set, or else by default they will get
 # files from a different Github repo belonging to someone else.
 
-% sudo apt-get install curl
+% sudo apt install curl
 % export github_user=jafingerhut
 % bash -c "$(curl -fsSL https://raw.github.com/$github_user/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
 
 # (optional) Save some disk space by removing large programs I won't use
-% sudo apt-get purge thunderbird libreoffice-*
+% sudo apt purge thunderbird libreoffice-*
+% sudo apt clean
 
 # Useful packages I like to have, not installed by default.
-% sudo apt-get install python-pip python3-pip
+% sudo apt install python-pip python3-pip
 ```
 
 
@@ -269,6 +271,11 @@ IP address on the host or the guest.
 
 
 # Create host-only adapter network between guest and host OS
+
+Note: I never got this approach working to my satisfaction.  Once I
+was able to get shared folders working between guest and host OS, that
+gave me all I really wanted in terms of sharing files between guest
+and host OS.
 
 Create host-only adapter network between guest Ubuntu VM and host Mac
 OS X, so that host OS will have consistent IPv4 address that guest
@@ -386,9 +393,12 @@ Fusion are supported on which versions of Mac OSX, and found that
 VMware Fusion 5 is the latest one supported, and perhaps only for OSX
 10.6.8 (i.e., no earlier versions of OSX 10.6.x supported).
 
-I will soon try installing that version of VMware Fusion to see if it
-allows me to run the latest versions of Ubuntu 16.04, with GUI, and
-relatively large guest OS memory (e.g. 8 GB or maybe even more).
+I would have tried that version of VMware Fusion on that old Mac to
+see if it allows me to run the latest versions of Ubuntu 16.04, with
+GUI, and relatively large guest OS memory (e.g. 8 GB or maybe even
+more), but I do not own a copy, and I don't think it is easy in 2017
+to get a free trial copy (and maybe not even to buy one, since it is
+fairly old).
 
 
 Of course I can also just run Ubuntu as the host OS, too.
