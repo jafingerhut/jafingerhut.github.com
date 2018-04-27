@@ -13,6 +13,8 @@ Update from 2018-Apr-20:
 On macOS Sierra 10.12.6 system,
 installed VirtualBox 5.2.8 r121009,
 and created Ubuntu 16.04.4 64-bit desktop VM
+and also an Ubuntu 14.04.5 64-bit desktop VM (using VirtualBox CD
+image to add guest additions)
 
 
 # Resizing guest OS window
