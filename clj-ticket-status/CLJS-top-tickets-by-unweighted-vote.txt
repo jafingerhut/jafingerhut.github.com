@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: April 19, 2018
+Date: April 26, 2018
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -41,17 +41,20 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
-   6 Open         [CLJS-1701] cljs.spec impact on :advanced builds
+   7 Open         [CLJS-1701] cljs.spec impact on :advanced builds
+   7 Open         [CLJS-2724] Native Node modules Node (like "fs") cannot be required
    4 Open         [CLJS-677] cljs.reader doesn't support keywords starting with a digit
    3 Open         [CLJS-2440] Re-running watch on CLJS source using native modules results in JS error
    3 Open         [CLJS-1677] Requiring [goog] breaks an :advanced build, but the compiler exits successfully
+   3 Open         [CLJS-1864] timestamped source maps broken with Node
    3 Bad: Unkn Fi [CLJS-871] .-default property access returns nil
    2 Bad: Unkn Fi [CLJS-968] Metadata on function literal inside of a let produces invalid Javascript
+   2 Open         [CLJS-1965] letfn collisions across namespaces
+   2 Open         [CLJS-2433] HTTP server in cljs.browser.repl doesn't serve files with extensions other than specified in ext->mime-type
    2 Open         [CLJS-1806] build api fails to generate inline code for :target :nodejs
-   2 Open         [CLJS-1864] timestamped source maps broken with Node
+   2 Open         [CLJS-2738] Can't use aws-amplify or aws-sdk with npm-deps
    2 Open         [CLJS-890] Incorrect behaviour of (str obj) when obj has valueOf method
    2 Open         [CLJS-1558] Code allowed to re-define referred var
-   2 Open         [CLJS-2724] Native Node modules Node (like "fs") cannot be required
    2 Bad: Unkn Fi [CLJS-868] no arity warnings on recursive calls
    2 Open         [CLJS-2369] Undefined nameToPath for bootstrap` when using Twitter's Bootstrap (twbs)
    1 Open         [CLJS-1444] Node.js shim requires `node` invocation to be in the same directory as shim script
@@ -59,21 +62,24 @@ Defect
    1 Bad: Unkn Fi [CLJS-1753] cljs.pprint does not print default tagged literals/elements
    1 Open         [CLJS-1889] A lone ampersand `&` can be used to name a var, but throws when invoked. `(&)`
    1 Open         [CLJS-1899] Local bindings conflict with global JS namespace
-   1 Open         [CLJS-1965] letfn collisions across namespaces
    1 Bad: Unkn Fi [CLJS-2002] Don't throw when no *print-fn* is set
+   1 Open         [CLJS-2155] building fileUrl on windows in repl.cljc results with java.net.UnknownHostException
    1 Open         [CLJS-2292] Var being replaced warnings with :refer-clojure :rename
    1 Vetted       [CLJS-2351] Setting :arglists metadata when vararg is present
    1 Open         [CLJS-2399] :foreign-libs with module conversion does not works properly (possible regression)
-   1 Open         [CLJS-2433] HTTP server in cljs.browser.repl doesn't serve files with extensions other than specified in ext->mime-type
+   1 Open         [CLJS-2408] js->clj does not work on objects with null prototype
    1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
+   1 Open         [CLJS-776] re-matches is incorrect
+   1 Open         [CLJS-2236] Defrecord does not escape field names matching JS keywords (with/in/...)
    1 Open         [CLJS-2454] Inconsistent macro require behaviour
    1 Open         [CLJS-2694] Remove direct references to Closure DiagnosticsGroups
+   1 Open         [CLJS-2736] Elements returned from sets as functions are not the actual elements in the set.
    1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
+   1 Bad: Unkn Fi [CLJS-1297] defrecord does not emit IKVReduce protocol
    1 Open         [CLJS-1593] Self-host: Munged minus macro
    1 Open         [CLJS-2070] Dotted interop forms can leak invalid JS into output
-   1 Bad: Unkn Fi [CLJS-1297] defrecord does not emit IKVReduce protocol
-   1 Open         [CLJS-2402] Duplicate source files passed to Closure Compiler causes ModuleLoader#resolvePaths to throw "Duplicate module path after resolving"
    1 Vetted       [CLJS-2633] Regression on scoped npm-modules 
+   1 Open         [CLJS-2402] Duplicate source files passed to Closure Compiler causes ModuleLoader#resolvePaths to throw "Duplicate module path after resolving"
    1 Open         [CLJS-1587] Duplicate keys via quoting
    1 Bad: Unkn Fi [CLJS-2138] Remove redundant checks in ChunkedSeq.-rest and ChunkedSeq.-next 
    0 Bad: Unkn Fi [CLJS-349] cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
@@ -101,35 +107,36 @@ Defect
 ========================================
 Enhancement
 
-  10 Open         [CLJS-2376] Add support for ES6 default imports/exports
+  11 Open         [CLJS-2376] Add support for ES6 default imports/exports
    7 Bad: Unkn Fi [CLJS-1461] Convert analyzer to conform to tools.analyzer's spec
    6 Open         [CLJS-1908] Improve error messages by using pr-str instead of str when printing objects
-   5 Open         [CLJS-1628] Make instances of js/Symbol printable
+   6 Open         [CLJS-1628] Make instances of js/Symbol printable
+   5 Open         [CLJS-555] CLONE - Implement ratios
    5 Open         [CLJS-1871] A declare with :arglists should generate static function calls
    5 Open         [CLJS-2341] Speed up js->clj on objs using forEach and transient volatile
-   5 Open         [CLJS-1712] Make PersistentHashSet implement IReduce
-   4 Open         [CLJS-555] CLONE - Implement ratios
+   4 Bad: Unkn Fi [CLJS-2298] REPLs should automatically load user.(cljs|cljc) files at root of Java classpath
    4 Open         [CLJS-1902] Add support for compiler option :inline-source-maps
    4 Bad: Unkn Ap [CLJS-2120] Optimize keyword function
+   4 Open         [CLJS-1712] Make PersistentHashSet implement IReduce
    3 Open         [CLJS-1410] Support source maps in deps.cljs
+   3 Open         [CLJS-2739] Optimize node_modules indexing
    3 Open         [CLJS-1009] Allow deps.cljs to declare a foreign lib as remote
    3 Open         [CLJS-2424] Improve compiler munge performance Nr 2
    3 Open         [CLJS-2467] Small PVs are never chunked
    3 Open         [CLJS-2472] ES6 Iterators should use IIterable if possible
+   2 Open         [CLJS-1755] Support sourcesContent in source maps
    2 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
+   2 Bad: Unkn Fi [CLJS-1047] externs checking for js/foo
    2 Open         [CLJS-2466] Faster reduce for lazy-seqs
    2 Open         [CLJS-1601] Optimize cljs.core dump 
    2 Open         [CLJS-844] Optimize js->clj by switching to transients
    2 Open         [CLJS-1866] RangedIterator performance tweaks
    2 Open         [CLJS-2132] Optimize transient vector creation
-   1 Bad: Unkn Fi [CLJS-1047] externs checking for js/foo
-   1 Open         [CLJS-1631] The str function should handle JavaScript symbols
-   1 Open         [CLJS-1755] Support sourcesContent in source maps
    1 Open         [CLJS-1990] Clojurescript programs targeting nodejs should support global installation
-   1 Bad: Unkn Fi [CLJS-2298] REPLs should automatically load user.(cljs|cljc) files at root of Java classpath
+   1 Open         [CLJS-2301] Avoid use of deprecated goog.string/isEmptySafe in clojure.string/blank?
    1 Bad: Unkn Fi [CLJS-1328] Support defrecord reader tags
+   1 Open         [CLJS-1631] The str function should handle JavaScript symbols
    1 Open         [CLJS-2051] Add end-line and end-column to analyzer AST
-   1 Open         [CLJS-2739] Optimize node_modules indexing
    1 Open         [CLJS-1997] Outward function type hint propagation
    1 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
    1 Open         [CLJS-1474] Error if reserved symbol is defined
