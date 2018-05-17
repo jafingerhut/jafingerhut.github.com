@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: May 10, 2018
+Date: May 17, 2018
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -181,6 +181,7 @@ Defect
     0.00   0 Open         [ASYNC-211] `a/map` close out channel immediately when any one of inputs closed
     0.00   0 Open         [ASYNC-212] `go` fails to compile expressions with literal `nil` as a let value 
     0.00   0 Open         [ASYNC-215] (CLJS) Cannot use (js-debugger) in go block
+    0.00   0 Open         [ASYNC-216] Cannot build GraalVM native image due to timeout thread starting during image creation
     0.00   0 Triaged      [ASYNC-156] (CLJS) go block containing letfn does not compile
     0.00   0 Triaged      [ASYNC-165] (CLJS) the binding macro/let binding is wrongly inlined
 
@@ -589,7 +590,6 @@ Defect
     0.00   0 Open         [DXML-53] Java 9 changes indented xml output (adds newlines)
     0.00   0 Open         [DXML-54] can't parse comments using parse-str in cljs
     0.00   0 Open         [DXML-55] Cannot customise prefixes when aggregating namespaces
-    0.00   0 Open         [DXML-56] element* export failure
 
 ========================================
 Enhancement
@@ -923,7 +923,6 @@ Defect
     0.00   0 Open         [TCHECK-111] The latest recursive-gen algorithm seems to exhibit a peculiar lack of variety in depths
     0.00   0 Open         [TCHECK-112] bind doesn't shrink very well
     0.00   0 Open         [TCHECK-120] size of args is conflated with depth in shrink tree
-    0.00   0 Open         [TCHECK-141] The Result protocol should probably be in the .check namespace
     0.00   0 Open         [TCHECK-142] Consider whether the tweaked semantics of the :result key should be reserved for quick-check-2
     0.00   0 Open         [TCHECK-150] non-Error truthy exceptions are treated as passes in cljs
 
@@ -996,9 +995,11 @@ Project TDEPS tickets
 Defect
 
     4.00   4 Open         [TDEPS-12] Depending on same artifact, multiple different classifiers
+             Arne Brasseur (1.00)
              Martin Harrigan (1.00)
              Martin Kavalar (1.00)
-             Arne Brasseur (1.00)
+             Dieter Komendera (1.00)
+    1.00   1 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
              Dieter Komendera (1.00)
     1.00   1 Open         [TDEPS-66] GitHub repo name is confusing
              Elana Hashman (1.00)
@@ -1006,7 +1007,6 @@ Defect
     0.00   0 Open         [TDEPS-29] Updates to pom continually adds superfluous newlines under Java 9
     0.00   0 Open         [TDEPS-31] ssh git repository doesn't work with some SSH host key algorithms
     0.00   0 Open         [TDEPS-49] Jsch public key problems
-    0.00   0 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
     0.00   0 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
     0.00   0 Open         [TDEPS-56] Main opts with space broken apart
     0.00   0 Open         [TDEPS-58] Dependency resolution depends on order in map
@@ -1015,16 +1015,6 @@ Defect
 ========================================
 Enhancement
 
-    9.00   9 Open         [TDEPS-9] Authentication on Maven repositories
-             Masaru Itoh (1.00)
-             Max Penet (1.00)
-             Nate Smith (1.00)
-             Robert Stuttaford (1.00)
-             Terje Sten Bjerkseth (1.00)
-             Tim Gilbert (1.00)
-             Arne Brasseur (1.00)
-             Dieter Komendera (1.00)
-             Dominic Monroe (1.00)
     4.00   4 Open         [TDEPS-20] Cannot resolve Maven artifacts through proxy
              Joshua Tilles (1.00)
              Matthew Davidson (1.00)
@@ -1041,7 +1031,6 @@ Enhancement
     0.00   0 Open         [TDEPS-69] Authenticate deployed artifacts
     0.00   0 Open         [TDEPS-70] scripts don't detect or warn if file referred to in cached classpath has been deleted
     0.00   0 Open         [TDEPS-72] Add main opts to -Sdescribe output
-    0.00   0 Open         [TDEPS-76] Do not keep bash running when JRE is executed
 
 ========================================
 Feature
