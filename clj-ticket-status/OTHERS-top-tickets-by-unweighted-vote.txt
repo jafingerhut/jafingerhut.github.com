@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: May 17, 2018
+Date: May 24, 2018
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -90,6 +90,7 @@ Defect
    1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
    1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
    1 Open         [ASYNC-128] (CLJS) or evaluation not stopped when exp nests take
+   1 Open         [ASYNC-163] Off-by-two in pipeline-async parallelism
    1 Triaged      [ASYNC-170] binding in go block causes thread binding error: "Pop without matching push"
    1 Open         [ASYNC-198] core.async exception rewriting can result in an incorrect return value
    1 Open         [ASYNC-108] (CLJS) cljs to-chan hangs on infinite lazy sequences
@@ -109,7 +110,6 @@ Defect
    0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
    0 Triaged      [ASYNC-156] (CLJS) go block containing letfn does not compile
    0 Open         [ASYNC-161] `<!` inside nested `let` inside `go` block erroneously yields "<! not used inside go block" error
-   0 Open         [ASYNC-163] Off-by-two in pipeline-async parallelism
    0 Triaged      [ASYNC-165] (CLJS) the binding macro/let binding is wrongly inlined
    0 Open         [ASYNC-172] (CLJS) ClojureScript `catch :default` in `go` fails with non-`js/Error` classes
    0 Open         [ASYNC-175] (CLJS) excluded bounded-count in use in cljs.core.async
@@ -130,6 +130,7 @@ Defect
    0 Open         [ASYNC-212] `go` fails to compile expressions with literal `nil` as a let value 
    0 Open         [ASYNC-215] (CLJS) Cannot use (js-debugger) in go block
    0 Open         [ASYNC-216] Cannot build GraalVM native image due to timeout thread starting during image creation
+   0 Triaged      [ASYNC-217] pipeline does not stop consuming from when to is closed
 
 ========================================
 Enhancement
@@ -256,7 +257,7 @@ Project CRRBV tickets
 ========================================
 Defect
 
-   3 Open         [CRRBV-15] rrb-vector won't compile with clojurescript: clojure.lang.ArityException: Wrong number of args (1) passed to: nodes/ranges
+   5 Open         [CRRBV-15] rrb-vector won't compile with clojurescript: clojure.lang.ArityException: Wrong number of args (1) passed to: nodes/ranges
    0 Open         [CRRBV-9] Repeated subvec and catvec fails
    0 Open         [CRRBV-10] Calling empty in CLJS results in a PersistentVector
    0 Open         [CRRBV-11] Issue with Clojure 1.8.0-alpha2 Tuples
@@ -469,6 +470,7 @@ Enhancement
    0 Open         [DXML-41] README - applicability of xml-seq, xml-zip?
    0 Open         [DXML-50] Indenting writer
    0 Open         [DXML-52] Transforming fragments of non-namespaced xml into default xmlns
+   0 Open         [DXML-57] Support printing element metadata with *print-meta*
 
 ========================================
 Task
@@ -756,8 +758,6 @@ Defect
    0 Open         [TCHECK-111] The latest recursive-gen algorithm seems to exhibit a peculiar lack of variety in depths
    0 Open         [TCHECK-112] bind doesn't shrink very well
    0 Open         [TCHECK-120] size of args is conflated with depth in shrink tree
-   0 Open         [TCHECK-142] Consider whether the tweaked semantics of the :result key should be reserved for quick-check-2
-   0 Open         [TCHECK-150] non-Error truthy exceptions are treated as passes in cljs
 
 ========================================
 Enhancement
@@ -804,11 +804,6 @@ Feature
    0 Open         [TCHECK-148] Add a bigint generator
    0 Open         [TCHECK-149] Better distribution for the ratio generator
 
-========================================
-Task
-
-   0 Open         [TCHECK-151] Make sure exceptions aren't printed twice by defspec
-
 
 Project TCLI tickets
 
@@ -817,8 +812,8 @@ Project TDEPS tickets
 Defect
 
    4 Open         [TDEPS-12] Depending on same artifact, multiple different classifiers
-   1 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
    1 Open         [TDEPS-66] GitHub repo name is confusing
+   1 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
    0 Open         [TDEPS-8] tools.deps does not handle maven relocations
    0 Open         [TDEPS-29] Updates to pom continually adds superfluous newlines under Java 9
    0 Open         [TDEPS-31] ssh git repository doesn't work with some SSH host key algorithms
@@ -833,10 +828,10 @@ Enhancement
 
    4 Open         [TDEPS-20] Cannot resolve Maven artifacts through proxy
    1 Open         [TDEPS-17] Consider lib overrides
+   1 Open         [TDEPS-48] First class options for Socket REPL
    0 Open         [TDEPS-21] No diagnostic information when building classpath fails
    0 Open         [TDEPS-33] Consider https git authentication
    0 Open         [TDEPS-46] Include custom repos in dependency pom.xml
-   0 Open         [TDEPS-48] First class options for Socket REPL
    0 Open         [TDEPS-62] Make Maven update policy configurable
    0 Open         [TDEPS-63] Support default jvm-opts
    0 Open         [TDEPS-69] Authenticate deployed artifacts
@@ -891,15 +886,9 @@ Enhancement
 
 Project TLOG tickets
 ========================================
-Defect
-
-   1 Open         [TLOG-20] log/info removes quotes from strings making debugging harder than it needs to be.
-
-========================================
 Enhancement
 
-   0 Open         [TLOG-14] Logging backend (factory) for Android
-   0 Open         [TLOG-16] Add ClojureScript support?
+   1 Open         [TLOG-20] log/info removes quotes from strings making debugging harder than it needs to be.
 
 
 Project TMACRO tickets
@@ -928,6 +917,7 @@ Defect
    0 Open         [TNS-24] Broken tracker after mis-named namespace
    0 Open         [TNS-42] scan-dirs / scan-all can return incorrect dependencies when both clj and cljc files define same namespace
    0 Open         [TNS-43] ns-decl? treats (ns) as valid
+   0 Open         [TNS-50] `require :reload` fails where `load-file` succeeds
 
 ========================================
 Enhancement

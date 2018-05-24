@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: May 17, 2018
+Date: May 24, 2018
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -132,6 +132,8 @@ Defect
              Daniel Compton (0.66)
     1.00   1 Open         [ASYNC-128] (CLJS) or evaluation not stopped when exp nests take
              Christian Weilbach (1.00)
+    1.00   1 Open         [ASYNC-163] Off-by-two in pipeline-async parallelism
+             Leon Grapenthin (1.00)
     1.00   1 Open         [ASYNC-198] core.async exception rewriting can result in an incorrect return value
              Kurt Harriger (1.00)
     1.00   1 Triaged      [ASYNC-64] Race condition when closing mults
@@ -162,7 +164,6 @@ Defect
     0.00   0 Open         [ASYNC-132] (CLJS) Can't close over locals in #js in go
     0.00   0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
     0.00   0 Open         [ASYNC-161] `<!` inside nested `let` inside `go` block erroneously yields "<! not used inside go block" error
-    0.00   0 Open         [ASYNC-163] Off-by-two in pipeline-async parallelism
     0.00   0 Open         [ASYNC-172] (CLJS) ClojureScript `catch :default` in `go` fails with non-`js/Error` classes
     0.00   0 Open         [ASYNC-175] (CLJS) excluded bounded-count in use in cljs.core.async
     0.00   0 Open         [ASYNC-176] (CLJS) A local named `new` breaks go macro in cljs (not in clj)
@@ -184,6 +185,7 @@ Defect
     0.00   0 Open         [ASYNC-216] Cannot build GraalVM native image due to timeout thread starting during image creation
     0.00   0 Triaged      [ASYNC-156] (CLJS) go block containing letfn does not compile
     0.00   0 Triaged      [ASYNC-165] (CLJS) the binding macro/let binding is wrongly inlined
+    0.00   0 Triaged      [ASYNC-217] pipeline does not stop consuming from when to is closed
 
 ========================================
 Enhancement
@@ -371,7 +373,9 @@ Project CRRBV tickets
 ========================================
 Defect
 
-    3.00   3 Open         [CRRBV-15] rrb-vector won't compile with clojurescript: clojure.lang.ArityException: Wrong number of args (1) passed to: nodes/ranges
+    5.00   5 Open         [CRRBV-15] rrb-vector won't compile with clojurescript: clojure.lang.ArityException: Wrong number of args (1) passed to: nodes/ranges
+             Dan Boykis (1.00)
+             Dmitri Sotnikov (1.00)
              François Rey (1.00)
              Huahai Yang (1.00)
              Stuart Sierra (1.00)
@@ -599,6 +603,7 @@ Enhancement
     0.00   0 Open         [DXML-41] README - applicability of xml-seq, xml-zip?
     0.00   0 Open         [DXML-50] Indenting writer
     0.00   0 Open         [DXML-52] Transforming fragments of non-namespaced xml into default xmlns
+    0.00   0 Open         [DXML-57] Support printing element metadata with *print-meta*
 
 ========================================
 Task
@@ -786,7 +791,7 @@ Enhancement
              Andrea Russo (1.00)
              Andreas Thoelke (1.00)
              Brian Dawn (1.00)
-             Dmitr Sotnikov (1.00)
+             Dmitri Sotnikov (1.00)
              Gary Trakhman (1.00)
              Ivan Mikushin (1.00)
              JF Rompre (1.00)
@@ -923,8 +928,6 @@ Defect
     0.00   0 Open         [TCHECK-111] The latest recursive-gen algorithm seems to exhibit a peculiar lack of variety in depths
     0.00   0 Open         [TCHECK-112] bind doesn't shrink very well
     0.00   0 Open         [TCHECK-120] size of args is conflated with depth in shrink tree
-    0.00   0 Open         [TCHECK-142] Consider whether the tweaked semantics of the :result key should be reserved for quick-check-2
-    0.00   0 Open         [TCHECK-150] non-Error truthy exceptions are treated as passes in cljs
 
 ========================================
 Enhancement
@@ -982,11 +985,6 @@ Feature
     0.00   0 Open         [TCHECK-148] Add a bigint generator
     0.00   0 Open         [TCHECK-149] Better distribution for the ratio generator
 
-========================================
-Task
-
-    0.00   0 Open         [TCHECK-151] Make sure exceptions aren't printed twice by defspec
-
 
 Project TCLI tickets
 
@@ -994,15 +992,15 @@ Project TDEPS tickets
 ========================================
 Defect
 
-    4.00   4 Open         [TDEPS-12] Depending on same artifact, multiple different classifiers
+    3.86   4 Open         [TDEPS-12] Depending on same artifact, multiple different classifiers
              Arne Brasseur (1.00)
              Martin Harrigan (1.00)
              Martin Kavalar (1.00)
-             Dieter Komendera (1.00)
-    1.00   1 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
-             Dieter Komendera (1.00)
+             Dieter Komendera (0.86)
     1.00   1 Open         [TDEPS-66] GitHub repo name is confusing
              Elana Hashman (1.00)
+    0.86   1 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
+             Dieter Komendera (0.86)
     0.00   0 Open         [TDEPS-8] tools.deps does not handle maven relocations
     0.00   0 Open         [TDEPS-29] Updates to pom continually adds superfluous newlines under Java 9
     0.00   0 Open         [TDEPS-31] ssh git repository doesn't work with some SSH host key algorithms
@@ -1022,10 +1020,11 @@ Enhancement
              Umesh Telang (1.00)
     1.00   1 Open         [TDEPS-17] Consider lib overrides
              Dominic Monroe (1.00)
+    0.86   1 Open         [TDEPS-48] First class options for Socket REPL
+             Dieter Komendera (0.86)
     0.00   0 Open         [TDEPS-21] No diagnostic information when building classpath fails
     0.00   0 Open         [TDEPS-33] Consider https git authentication
     0.00   0 Open         [TDEPS-46] Include custom repos in dependency pom.xml
-    0.00   0 Open         [TDEPS-48] First class options for Socket REPL
     0.00   0 Open         [TDEPS-62] Make Maven update policy configurable
     0.00   0 Open         [TDEPS-63] Support default jvm-opts
     0.00   0 Open         [TDEPS-69] Authenticate deployed artifacts
@@ -1083,16 +1082,10 @@ Enhancement
 
 Project TLOG tickets
 ========================================
-Defect
+Enhancement
 
     1.00   1 Open         [TLOG-20] log/info removes quotes from strings making debugging harder than it needs to be.
              Juan A. Ruz (1.00)
-
-========================================
-Enhancement
-
-    0.00   0 Open         [TLOG-14] Logging backend (factory) for Android
-    0.00   0 Open         [TLOG-16] Add ClojureScript support?
 
 
 Project TMACRO tickets
@@ -1125,6 +1118,7 @@ Defect
     0.00   0 Open         [TNS-24] Broken tracker after mis-named namespace
     0.00   0 Open         [TNS-42] scan-dirs / scan-all can return incorrect dependencies when both clj and cljc files define same namespace
     0.00   0 Open         [TNS-43] ns-decl? treats (ns) as valid
+    0.00   0 Open         [TNS-50] `require :reload` fails where `load-file` succeeds
 
 ========================================
 Enhancement
