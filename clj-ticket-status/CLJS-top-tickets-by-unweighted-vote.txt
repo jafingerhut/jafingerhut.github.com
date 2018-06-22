@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: June 7, 2018
+Date: June 21, 2018
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -47,36 +47,37 @@ Defect
    5 Bad: Unkn Fi [CLJS-868] no arity warnings on recursive calls
    3 Open         [CLJS-2440] Re-running watch on CLJS source using native modules results in JS error
    3 Open         [CLJS-1864] timestamped source maps broken with Node
-   3 Open         [CLJS-2738] Can't use aws-amplify or aws-sdk with npm-deps
    3 Open         [CLJS-1965] letfn collisions across namespaces
+   3 Open         [CLJS-2738] Can't use aws-amplify or aws-sdk with npm-deps
    3 Bad: Unkn Fi [CLJS-871] .-default property access returns nil
    3 Open         [CLJS-2433] HTTP server in cljs.browser.repl doesn't serve files with extensions other than specified in ext->mime-type
+   3 Open         [CLJS-1913] Investigate slow reading / compilation of CLJC files
+   2 Bad: Unkn Fi [CLJS-1753] cljs.pprint does not print default tagged literals/elements
    2 Open         [CLJS-2720] Cannot import node_modules into ES6 classpath lib
    2 Bad: Unkn Fi [CLJS-968] Metadata on function literal inside of a let produces invalid Javascript
    2 Open         [CLJS-1806] build api fails to generate inline code for :target :nodejs
+   2 Bad: Unkn Fi [CLJS-2002] Don't throw when no *print-fn* is set
    2 Open         [CLJS-890] Incorrect behaviour of (str obj) when obj has valueOf method
    2 Open         [CLJS-1558] Code allowed to re-define referred var
-   2 Bad: Unkn Fi [CLJS-2002] Don't throw when no *print-fn* is set
    2 Vetted       [CLJS-2633] Regression on scoped npm-modules 
    2 Open         [CLJS-2461] Minor shadowing intricacies
+   2 Open         [CLJS-2709] JS Module can't add new Cljs namespaces to build
+   1 Open         [CLJS-776] re-matches is incorrect
    1 Open         [CLJS-1444] Node.js shim requires `node` invocation to be in the same directory as shim script
    1 Open         [CLJS-1559] Closure :libs ignored
-   1 Bad: Unkn Fi [CLJS-1753] cljs.pprint does not print default tagged literals/elements
    1 Open         [CLJS-1889] A lone ampersand `&` can be used to name a var, but throws when invoked. `(&)`
    1 Open         [CLJS-1899] Local bindings conflict with global JS namespace
    1 Open         [CLJS-2155] building fileUrl on windows in repl.cljc results with java.net.UnknownHostException
+   1 Open         [CLJS-2236] Defrecord does not escape field names matching JS keywords (with/in/...)
    1 Open         [CLJS-2292] Var being replaced warnings with :refer-clojure :rename
    1 Vetted       [CLJS-2351] Setting :arglists metadata when vararg is present
    1 Open         [CLJS-2399] :foreign-libs with module conversion does not works properly (possible regression)
    1 Open         [CLJS-2408] js->clj does not work on objects with null prototype
    1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
-   1 Open         [CLJS-776] re-matches is incorrect
-   1 Open         [CLJS-2236] Defrecord does not escape field names matching JS keywords (with/in/...)
    1 Open         [CLJS-2382] circular dependency in node_modules prevents compilation
    1 Open         [CLJS-2454] Inconsistent macro require behaviour
    1 Open         [CLJS-2694] Remove direct references to Closure DiagnosticsGroups
    1 Open         [CLJS-2719] Should not compile ES6 or CommonJS libs when under :nodejs target
-   1 Open         [CLJS-2736] Elements returned from sets as functions are not the actual elements in the set.
    1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
    1 Open         [CLJS-1593] Self-host: Munged minus macro
    1 Open         [CLJS-2070] Dotted interop forms can leak invalid JS into output
@@ -84,18 +85,18 @@ Defect
    1 Open         [CLJS-2402] Duplicate source files passed to Closure Compiler causes ModuleLoader#resolvePaths to throw "Duplicate module path after resolving"
    1 Bad: Unkn Fi [CLJS-1297] defrecord does not emit IKVReduce protocol
    1 Open         [CLJS-1587] Duplicate keys via quoting
+   1 Bad: Unkn Fi [CLJS-2419] Self-host: `find-ns-obj` still broken for namespaces with 'a' as the first segment
+   1 Open         [CLJS-2666] Node modules not usable from REPL without output-dir
    1 Open         [CLJS-1104] Compute SHA for ClojureScript compiled file
    1 Open         [CLJS-1266] Node: Rename .cljs to .cljc -> old filenames in stacktrace
    1 Open         [CLJS-1832] destructuring with #js at :or breaks the compilation when transit is part of the project
    1 Open         [CLJS-1843] EDN analysis cache may write unusable data
    1 Open         [CLJS-1863] :reload/:reload-all issue with .cljc runtime/macro nses
    1 Bad: Unkn Fi [CLJS-1896] Externs file validation
-   1 Open         [CLJS-1913] Investigate slow reading / compilation of CLJC files
    1 Open         [CLJS-1676] Unused local in ObjMap / IKVReduce
    1 Open         [CLJS-2543] IndexingPushbackReader error when compiling :reload-all with cljs.spec.alpha
-   1 Open         [CLJS-2709] JS Module can't add new Cljs namespaces to build
-   1 Open         [CLJS-2746] Missing/Incorrect provides for node module required from ES6 module
    1 Bad: Unkn Fi [CLJS-2138] Remove redundant checks in ChunkedSeq.-rest and ChunkedSeq.-next 
+   1 Open         [CLJS-2774] cljs.main: load file fails if NPM deps involved
    0 Bad: Unkn Fi [CLJS-349] cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
    0 Bad: Unkn Fi [CLJS-375] loop doesn't seem to preserve tag information as evidenced by extra cljs.core.truth_ calls
    0 Bad: Unkn Fi [CLJS-434] ClojureScript compiler prepends "self__" to defmulti forms when metadata in form of ^:field.
@@ -115,9 +116,9 @@ Defect
    0 Bad: Unkn Fi [CLJS-1702] Warning when using private vars
    0 Bad: Match n [CLJS-2168] Properly document browser-env options
    0 Vetted       [CLJS-2343] Double require guard bypassed if :refer-macros
-   0 Bad: Unkn Fi [CLJS-2419] Self-host: `find-ns-obj` still broken for namespaces with 'a' as the first segment
    0 Bad: Unkn Ap [CLJS-2761] Warn if fn has more than 20 fixed arguments
    0 Vetted       [CLJS-2762] Insufficient hooks to build tooling around test termination
+   0 Bad: Match n [CLJS-2770] Problem with namespaces starting with com in Rhino
 
 ========================================
 Enhancement
@@ -129,22 +130,22 @@ Enhancement
    9 Open         [CLJS-2341] Speed up js->clj on objs using forEach and transient volatile
    6 Open         [CLJS-2467] Small PVs are never chunked
    5 Open         [CLJS-555] CLONE - Implement ratios
+   5 Open         [CLJS-2466] Faster reduce for lazy-seqs
    5 Open         [CLJS-1902] Add support for compiler option :inline-source-maps
    5 Open         [CLJS-1712] Make PersistentHashSet implement IReduce
    4 Open         [CLJS-1410] Support source maps in deps.cljs
-   4 Open         [CLJS-2466] Faster reduce for lazy-seqs
    4 Open         [CLJS-844] Optimize js->clj by switching to transients
-   4 Bad: Unkn Fi [CLJS-2298] REPLs should automatically load user.(cljs|cljc) files at root of Java classpath
    4 Bad: Unkn Ap [CLJS-2120] Optimize keyword function
    4 Open         [CLJS-2424] Improve compiler munge performance Nr 2
+   4 Open         [CLJS-2748] Enable *warn-on-reflection*
    3 Bad: Unkn Fi [CLJS-1047] externs checking for js/foo
    3 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
    3 Open         [CLJS-1755] Support sourcesContent in source maps
    3 Open         [CLJS-1009] Allow deps.cljs to declare a foreign lib as remote
-   3 Open         [CLJS-2472] ES6 Iterators should use IIterable if possible
    3 Open         [CLJS-2442] `set` and `vec` performance enhancements
-   3 Open         [CLJS-2748] Enable *warn-on-reflection*
+   3 Open         [CLJS-2472] ES6 Iterators should use IIterable if possible
    3 Open         [CLJS-2132] Optimize transient vector creation
+   3 Open         [CLJS-2693] Have Range implement IChunkedSeq
    2 Open         [CLJS-1769] Use reduce pathway for arrays in js->clj
    2 Open         [CLJS-2260] Convert :constant AST node to tools.analyzer format
    2 Open         [CLJS-1601] Optimize cljs.core dump 
@@ -155,14 +156,13 @@ Enhancement
    1 Open         [CLJS-2409] Eliminate cljs.core/divide
    1 Bad: Unkn Fi [CLJS-1328] Support defrecord reader tags
    1 Open         [CLJS-2051] Add end-line and end-column to analyzer AST
-   1 Open         [CLJS-1997] Outward function type hint propagation
    1 Open         [CLJS-1631] The str function should handle JavaScript symbols
+   1 Open         [CLJS-1997] Outward function type hint propagation
    1 Open         [CLJS-2725] Doc on spec keywords
    1 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
    1 Open         [CLJS-1474] Error if reserved symbol is defined
    1 Open         [CLJS-650] Optimize all protocols
    1 Bad: Unkn Fi [CLJS-1127] validate compiled file written to disk
-   1 Open         [CLJS-2693] Have Range implement IChunkedSeq
    1 Vetted       [CLJS-2459] Compiler should emit warning about namespace and/or non-existent var
    1 Bad: Unkn Fi [CLJS-1141] memoization of js-dependency-index and get-upstream-deps needs knobs
    1 Open         [CLJS-1776] Add fixed arities for mapcat
