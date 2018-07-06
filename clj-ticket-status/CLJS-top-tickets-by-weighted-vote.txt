@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: June 28, 2018
+Date: July 6, 2018
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -41,16 +41,16 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
-    7.58  11 Open         [CLJS-1701] cljs.spec impact on :advanced builds
+    7.42  11 Open         [CLJS-1701] cljs.spec impact on :advanced builds
              Ivan Kryvoruchko (1.00)
              Matthew Davidson (1.00)
              Zerg (1.00)
              Yuri Govorushchenko (1.00)
-             jcr (1.00)
+             jcr (0.86)
              JF Rompre (0.75)
              Martin Kavalar (0.50)
-             Andrea Richiardi (0.46)
              Arne Brasseur (0.46)
+             Andrea Richiardi (0.43)
              Dieter Komendera (0.23)
              Roman Liutikov (0.18)
     4.75   5 Open         [CLJS-677] cljs.reader doesn't support keywords starting with a digit
@@ -63,25 +63,29 @@ Defect
              Andy Parsons (1.00)
              Brian Ballantine (1.00)
              Jorge Colindres (1.00)
+    2.86   3 Open         [CLJS-1926] Changes to namespace metadata are not properly transferred to *ns* dynamic var
+             George Lipov (1.00)
+             Martin Clausen (1.00)
+             jcr (0.86)
+    2.40   5 Bad: Unkn Fi [CLJS-868] no arity warnings on recursive calls
+             HF (0.66)
+             A. R (0.54)
+             Martin Kavalar (0.50)
+             Arne Brasseur (0.46)
+             Dieter Komendera (0.23)
     2.37   5 Open         [CLJS-2757] Failure to load is-plain-object transitive npm dep
              Philipp Markovics (1.00)
              Martin Kavalar (0.50)
              Arne Brasseur (0.46)
              Dieter Komendera (0.23)
              Roman Liutikov (0.18)
-    2.32   3 Open         [CLJS-1864] timestamped source maps broken with Node
+    2.29   3 Open         [CLJS-1864] timestamped source maps broken with Node
              Alexey Naumov (1.00)
              Alex Dixon (0.86)
-             Andrea Richiardi (0.46)
-    2.28   5 Bad: Unkn Fi [CLJS-868] no arity warnings on recursive calls
-             A. R (0.54)
-             HF (0.54)
-             Martin Kavalar (0.50)
-             Arne Brasseur (0.46)
-             Dieter Komendera (0.23)
+             Andrea Richiardi (0.43)
     2.23   3 Open         [CLJS-1965] letfn collisions across namespaces
-             George Lipov (1.00)
              daniel sutton (1.00)
+             George Lipov (1.00)
              Dieter Komendera (0.23)
     2.23   3 Open         [CLJS-2738] Can't use aws-amplify or aws-sdk with npm-deps
              Jeffrey Stanton (1.00)
@@ -119,6 +123,9 @@ Defect
     1.54   2 Vetted       [CLJS-2633] Regression on scoped npm-modules 
              Jonathan Boston (1.00)
              A. R (0.54)
+    1.04   2 Open         [CLJS-2454] Inconsistent macro require behaviour
+             Matt Huebert (0.86)
+             Roman Liutikov (0.18)
     1.00   1 Open         [CLJS-776] re-matches is incorrect
              Phill Wolf (1.00)
     1.00   1 Open         [CLJS-1444] Node.js shim requires `node` invocation to be in the same directory as shim script
@@ -144,41 +151,39 @@ Defect
     0.96   2 Open         [CLJS-2461] Minor shadowing intricacies
              Martin Kavalar (0.50)
              Arne Brasseur (0.46)
-    0.94   3 Open         [CLJS-1913] Investigate slow reading / compilation of CLJC files
-             Andrea Richiardi (0.46)
+    0.91   3 Open         [CLJS-1913] Investigate slow reading / compilation of CLJC files
+             Andrea Richiardi (0.43)
              Petter Eriksson (0.30)
              Roman Liutikov (0.18)
     0.86   1 Bad: Unkn Fi [CLJS-719] this-as behaves incorrectly in "scoping function"
              J.&nbsp;S.&nbsp;Choi (0.86)
+    0.86   1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
+             Thomas Heller (0.86)
+    0.86   1 Open         [CLJS-2070] Dotted interop forms can leak invalid JS into output
+             Thomas Heller (0.86)
     0.86   1 Open         [CLJS-2382] circular dependency in node_modules prevents compilation
              jiyinyiyong (0.86)
-    0.86   1 Open         [CLJS-2454] Inconsistent macro require behaviour
-             Matt Huebert (0.86)
     0.86   1 Open         [CLJS-2694] Remove direct references to Closure DiagnosticsGroups
              Matt Huebert (0.86)
     0.86   1 Open         [CLJS-2719] Should not compile ES6 or CommonJS libs when under :nodejs target
              jiyinyiyong (0.86)
-    0.75   1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
-             Thomas Heller (0.75)
     0.75   1 Open         [CLJS-1593] Self-host: Munged minus macro
              Yehonathan Sharvit (0.75)
-    0.75   1 Open         [CLJS-2070] Dotted interop forms can leak invalid JS into output
-             Thomas Heller (0.75)
-    0.70   2 Open         [CLJS-2709] JS Module can't add new Cljs namespaces to build
-             Andrea Richiardi (0.46)
+    0.66   2 Open         [CLJS-2709] JS Module can't add new Cljs namespaces to build
+             Andrea Richiardi (0.43)
              Dieter Komendera (0.23)
     0.66   1 Bad: Match n [CLJS-2765] Git caching creates cljs_deps.js file with relative paths to cache directory on the first try
              Mike Fikes (0.66)
+    0.66   1 Open         [CLJS-1587] Duplicate keys via quoting
+             HF (0.66)
     0.60   1 Open         [CLJS-2402] Duplicate source files passed to Closure Compiler causes ModuleLoader#resolvePaths to throw "Duplicate module path after resolving"
              Dmitri Sotnikov (0.60)
     0.54   1 Bad: Unkn Fi [CLJS-1297] defrecord does not emit IKVReduce protocol
              A. R (0.54)
-    0.54   1 Open         [CLJS-1587] Duplicate keys via quoting
-             HF (0.54)
-    0.46   1 Bad: Unkn Fi [CLJS-2419] Self-host: `find-ns-obj` still broken for namespaces with 'a' as the first segment
-             Andrea Richiardi (0.46)
-    0.46   1 Open         [CLJS-2666] Node modules not usable from REPL without output-dir
-             Andrea Richiardi (0.46)
+    0.43   1 Bad: Unkn Fi [CLJS-2419] Self-host: `find-ns-obj` still broken for namespaces with 'a' as the first segment
+             Andrea Richiardi (0.43)
+    0.43   1 Open         [CLJS-2666] Node modules not usable from REPL without output-dir
+             Andrea Richiardi (0.43)
     0.30   1 Bad: Unkn Fi [CLJS-1896] Externs file validation
              Petter Eriksson (0.30)
     0.30   1 Open         [CLJS-1104] Compute SHA for ClojureScript compiled file
@@ -218,25 +223,36 @@ Defect
     0.00   0 Bad: Unkn Fi [CLJS-1485] Error when requiring `goog` namespace in a ns declaration 
     0.00   0 Bad: Unkn Fi [CLJS-1544] cljs.test REPL reload support
     0.00   0 Bad: Unkn Fi [CLJS-1678] variadic defn can be called for missing fixed arities, overlapping arity
-    0.00   0 Bad: Unkn Fi [CLJS-1702] Warning when using private vars
     0.00   0 Vetted       [CLJS-2343] Double require guard bypassed if :refer-macros
     0.00   0 Vetted       [CLJS-2762] Insufficient hooks to build tooling around test termination
 
 ========================================
 Enhancement
 
-   10.27  11 Open         [CLJS-2376] Add support for ES6 default imports/exports
+   10.70  12 Open         [CLJS-2376] Add support for ES6 default imports/exports
              Corin Lawson (1.00)
              Jose Luis Lafuente (1.00)
              Kurt Harriger (1.00)
              Quang Van (1.00)
              Will Cohen (1.00)
              zhaoxiaoyang (1.00)
+             Chad Harrington (1.00)
              Eugene Pakhomov (1.00)
-             jcr (1.00)
-             Chad Harrington (0.86)
              Matt Huebert (0.86)
+             jcr (0.86)
              A. R (0.54)
+             Andrea Richiardi (0.43)
+    8.71  10 Bad: Unkn Fi [CLJS-1461] Convert analyzer to conform to tools.analyzer's spec
+             Alistair Roche (1.00)
+             James Henderson (1.00)
+             Michael Griffiths (1.00)
+             Nicola Mometto (1.00)
+             Nicolas HA (1.00)
+             Tienson Qin (1.00)
+             Alex Dixon (0.86)
+             Thomas Heller (0.86)
+             JF Rompre (0.75)
+             Dieter Komendera (0.23)
     8.65  12 Open         [CLJS-1628] Make instances of js/Symbol printable
              Jakub Dušek (1.00)
              Nikita Prokopov (1.00)
@@ -250,17 +266,6 @@ Enhancement
              Arne Brasseur (0.46)
              Dieter Komendera (0.23)
              Roman Liutikov (0.18)
-    8.59  10 Bad: Unkn Fi [CLJS-1461] Convert analyzer to conform to tools.analyzer's spec
-             Alistair Roche (1.00)
-             James Henderson (1.00)
-             Michael Griffiths (1.00)
-             Nicola Mometto (1.00)
-             Nicolas HA (1.00)
-             Tienson Qin (1.00)
-             Alex Dixon (0.86)
-             JF Rompre (0.75)
-             Thomas Heller (0.75)
-             Dieter Komendera (0.23)
     5.92   9 Open         [CLJS-1908] Improve error messages by using pr-str instead of str when printing objects
              Matthew Boston (1.00)
              Stuart Mitchell (1.00)
@@ -271,51 +276,52 @@ Enhancement
              Arne Brasseur (0.46)
              Dieter Komendera (0.23)
              Roman Liutikov (0.18)
-    5.22   9 Open         [CLJS-2341] Speed up js->clj on objs using forEach and transient volatile
+    5.47   9 Open         [CLJS-2341] Speed up js->clj on objs using forEach and transient volatile
+             Alexander Solovyov (1.00)
              David Whittington (1.00)
              Thomas Mulvaney (1.00)
-             Alexander Solovyov (0.75)
              Nico Schneider (0.66)
              Dmitri Sotnikov (0.60)
              Martin Kavalar (0.50)
              Petter Eriksson (0.30)
              Dieter Komendera (0.23)
              Roman Liutikov (0.18)
-    4.13   5 Open         [CLJS-555] CLONE - Implement ratios
+    4.10   5 Open         [CLJS-555] CLONE - Implement ratios
              Marcus H (1.00)
              Vlad Bokov (1.00)
              Aleksander Madland Stapnes (1.00)
              Mike Fikes (0.66)
-             Andrea Richiardi (0.46)
-    3.72   4 Open         [CLJS-1410] Support source maps in deps.cljs
+             Andrea Richiardi (0.43)
+    3.86   4 Open         [CLJS-1410] Support source maps in deps.cljs
              Daniel Compton (1.00)
              Oliver George (1.00)
-             Chad Harrington (0.86)
+             Chad Harrington (1.00)
              J.&nbsp;S.&nbsp;Choi (0.86)
-    3.45   5 Open         [CLJS-2466] Faster reduce for lazy-seqs
+    3.70   5 Open         [CLJS-2466] Faster reduce for lazy-seqs
+             Alexander Solovyov (1.00)
              Thomas Mulvaney (1.00)
              jiyinyiyong (0.86)
-             Alexander Solovyov (0.75)
              Mike Fikes (0.66)
              Roman Liutikov (0.18)
-    2.87   5 Open         [CLJS-1902] Add support for compiler option :inline-source-maps
+    2.84   5 Open         [CLJS-1902] Add support for compiler option :inline-source-maps
              Chas Emerick (1.00)
              Dusan Maliarik (1.00)
-             Andrea Richiardi (0.46)
+             Andrea Richiardi (0.43)
              Dieter Komendera (0.23)
              Roman Liutikov (0.18)
-    2.46   3 Bad: Unkn Fi [CLJS-1047] externs checking for js/foo
+    2.43   3 Bad: Unkn Fi [CLJS-1047] externs checking for js/foo
              Bozhidar Batsov (1.00)
              Dennis Heihoff (1.00)
-             Andrea Richiardi (0.46)
+             Andrea Richiardi (0.43)
     2.41   3 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
              Eugene Pakhomov (1.00)
              Patrick Killean (0.86)
              A. R (0.54)
-    2.33   4 Open         [CLJS-844] Optimize js->clj by switching to transients
-             Chad Harrington (0.86)
-             Alexander Solovyov (0.75)
-             HF (0.54)
+    2.28   5 Open         [CLJS-1712] Make PersistentHashSet implement IReduce
+             HF (0.66)
+             Dmitri Sotnikov (0.60)
+             A. R (0.54)
+             Petter Eriksson (0.30)
              Roman Liutikov (0.18)
     2.27   6 Open         [CLJS-2467] Small PVs are never chunked
              Dmitri Sotnikov (0.60)
@@ -332,12 +338,6 @@ Enhancement
              Nathan Dao (1.00)
              Ruslan Prokopchuk (1.00)
              Roman Liutikov (0.18)
-    2.16   5 Open         [CLJS-1712] Make PersistentHashSet implement IReduce
-             Dmitri Sotnikov (0.60)
-             A. R (0.54)
-             HF (0.54)
-             Petter Eriksson (0.30)
-             Roman Liutikov (0.18)
     1.74   4 Bad: Unkn Ap [CLJS-2120] Optimize keyword function
              Nico Schneider (0.66)
              Dmitri Sotnikov (0.60)
@@ -353,9 +353,6 @@ Enhancement
              Arne Brasseur (0.46)
              Dieter Komendera (0.23)
              Roman Liutikov (0.18)
-    1.29   2 Open         [CLJS-1769] Use reduce pathway for arrays in js->clj
-             Alexander Solovyov (0.75)
-             HF (0.54)
     1.07   3 Open         [CLJS-2472] ES6 Iterators should use IIterable if possible
              Dmitri Sotnikov (0.60)
              Petter Eriksson (0.30)
@@ -375,8 +372,6 @@ Enhancement
              Alex Dixon (0.86)
     0.75   1 Open         [CLJS-1631] The str function should handle JavaScript symbols
              Egg Syntax (0.75)
-    0.75   1 Open         [CLJS-1997] Outward function type hint propagation
-             Thomas Heller (0.75)
     0.75   1 Open         [CLJS-2725] Doc on spec keywords
              Egg Syntax (0.75)
     0.71   3 Open         [CLJS-2132] Optimize transient vector creation
@@ -387,10 +382,10 @@ Enhancement
              Petter Eriksson (0.30)
              Dieter Komendera (0.23)
              Roman Liutikov (0.18)
-    0.54   1 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
-             HF (0.54)
-    0.54   1 Open         [CLJS-1474] Error if reserved symbol is defined
-             HF (0.54)
+    0.66   1 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
+             HF (0.66)
+    0.66   1 Open         [CLJS-1474] Error if reserved symbol is defined
+             HF (0.66)
     0.47   2 Open         [CLJS-1866] RangedIterator performance tweaks
              Petter Eriksson (0.30)
              Roman Liutikov (0.18)
