@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: August 2, 2018
+Date: August 9, 2018
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -118,10 +118,10 @@ Defect
    1 Open         [CLJ-1308] extend-type doesn't type-hint correctly as promised by the doc when the class is determined at run-time
    1 Screenable   [CLJ-1364] Primitive VecSeq does not implement equals or hashing methods
    1 Open         [CLJ-1582] Overriding in-ns and ns is problematic 
-   1 Triaged      [CLJ-2181] try accepts multiple catch blocks for the same class
    1 Triaged      [CLJ-2002] [spec] StackOverflowError in clojure.spec
    1 Needs Patch  [CLJ-2067] [spec] (s/def ::a ::b) throws unable to resolve error if ::b is not defined
    1 Triaged      [CLJ-2169] conj has out-of-date :arglists
+   1 Triaged      [CLJ-2181] try accepts multiple catch blocks for the same class
    1 Screened     [CLJ-1832] unchecked-* functions have different behavior on primitive longs vs boxed Longs
    1 Triaged      [CLJ-2255] [spec] When fspec spec fails due to return value, explain-data should contain args
    1 Open         [CLJ-2325] = on sorted collections with different key types still incorrectly throws
@@ -201,6 +201,7 @@ Defect
    0 Needs Patch  [CLJ-2374] Clojure master fails on JDK 11 EA builds due to overloaded toArray in gvec.clj
    0 Triaged      [CLJ-2377] [spec] StackOverflowError in gen of recursive spec
    0 Triaged      [CLJ-2379] `proxy` fails with redefined interfaces
+   0 Triaged      [CLJ-2381] [spec] ::defn-args spec does not capture type hint on return value
 
 ========================================
 Enhancement
@@ -225,11 +226,11 @@ Enhancement
    9 Triaged      [CLJ-1278] State function's unmunged full name in compiled function's toString()
    9 Triaged      [CLJ-1458] Enhance the performance of map merges
    8 Needs Patch  [CLJ-2365] Consider integration with java.util.function interfaces
+   8 Screened     [CLJ-1209] clojure.test does not print ex-info in error reports
    8 Triaged      [CLJ-1218] mapcat is too eager
    8 Triaged      [CLJ-1239] faster, more flexible dispatch for clojure.walk
    8 Needs Patch  [CLJ-1381] Improve support for extending protocols to primitive arrays
    7 Triaged      [CLJ-735] Improve error message when a protocol method is not found
-   7 Screened     [CLJ-1209] clojure.test does not print ex-info in error reports
    6 Triaged      [CLJ-1117] partition docstring should be more explicit about dropped or partial trailing elements
    6 Triaged      [CLJ-2037] [spec] specs in registry lack :file metadata despite having :line, :column
    5 Triaged      [CLJ-1743] Avoid compile-time static initialization of classes when using inheritance
@@ -261,8 +262,8 @@ Enhancement
    2 Triaged      [CLJ-1950] cl-format is too slow for production use
    2 Triaged      [CLJ-2025] [spec] When a generator fails to gen, state which spec/pred failed
    2 Open         [CLJ-1162] Error Message when calling deref on a non-IDeref is unhelpful
-   2 Open         [CLJ-1791] Issue defining a defrecord protocol method named "clear"
    2 Open         [CLJ-978] bean unable to handle non-public classes
+   2 Open         [CLJ-1791] Issue defining a defrecord protocol method named "clear"
    2 Triaged      [CLJ-1665] take-nth transducer could be faster without rem
    2 Open         [CLJ-1625] Cannot implement protocol methods of the same name inline
    2 Open         [CLJ-2237] Provide a type predicate for ex-info? 
@@ -312,8 +313,8 @@ Enhancement
    1 Triaged      [CLJ-1289] aset-* and aget perform poorly on multi-dimensional arrays even with type hints. 
    1 Open         [CLJ-1326] Inconsistent reflection warnings when target is a literal
    1 Open         [CLJ-1455] Postcondition in defrecord: Compiler unable to resolve symbol %
-   1 Triaged      [CLJ-2214] Add binding conveyance to reducers.
    1 Incomplete   [CLJ-2179] [spec] s/inst-in and s/int-in generators should have uniform distribution not biased towards min value
+   1 Triaged      [CLJ-2214] Add binding conveyance to reducers.
    1 Prescreened  [CLJ-2228] Unroll constantly to improve performance of multi-arity calls
    1 Triaged      [CLJ-2339] map-entry constructor function
    1 Triaged      [CLJ-2340] Add inline arities to clojure.core/not=
@@ -406,6 +407,7 @@ Enhancement
    0 Triaged      [CLJ-2328] There's no way to enable warn-on-reflection from the command-line when running clojure.main
    0 Triaged      [CLJ-2329] partition-all docstring should mention it returns vectors in transducer case
    0 Screenable   [CLJ-2375] Address JDK API deprecations
+   0 Triaged      [CLJ-2383] Add classes that were introduced to java.lang in Java 7/8 into DEFAULT_IMPORTS
 
 ========================================
 Feature
