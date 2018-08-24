@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: August 16, 2018
+Date: August 23, 2018
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -46,13 +46,13 @@ Defect
   10 Needs Patch  [CLJ-2041] [spec] clojure.spec/keys requires input collections conform to clojure.core/map?
   10 Incomplete   [CLJ-1152] PermGen leak in multimethods and protocol fns when evaled
    9 Backlog      [CLJ-1372] Inconsistent hash with java collections
+   8 Needs Patch  [CLJ-2079] [spec] Generator overrides for spec aliases are not respected
    8 Open         [CLJ-1532] pr-str captures stdout from printing side-effects of lazily evaluated expressions.
    8 Triaged      [CLJ-2021] [core.specs] defn spec does not unform arg list vectors
    8 Triaged      [CLJ-2271] [spec] "caller" information missing in explain-data during macro instrumentation failure
    7 Incomplete   [CLJ-1322] doseq with several bindings causes "ClassFormatError: Invalid Method Code length"
    7 Screenable   [CLJ-2003] [spec] Nesting cat inside ? causes unform to return nested result
    7 Needs Patch  [CLJ-1941] [spec] Instrumentation of fns with primitive type hints fails
-   6 Needs Patch  [CLJ-2079] [spec] Generator overrides for spec aliases are not respected
    6 Incomplete   [CLJ-2066] Reflection on internal classes fails under Java 9
    6 Open         [CLJ-1966] [spec] :clojure.spec/invalid is not a valid :clojure.spec/any value
    6 Incomplete   [CLJ-701] Primitive return type of loop and try is lost
@@ -65,7 +65,7 @@ Defect
    4 Incomplete   [CLJ-787] transient blows up when passed a vector created by subvec
    4 Screenable   [CLJ-2168] [spec] clojure.spec: :pred in explain for coll-of should have resolved symbols
    4 Vetted       [CLJ-1879] reduce-kv on a PHMs doesn't consistently execute the intended fastpath
-   4 Triaged      [CLJ-1279] Fix confusing macroexpand1 ArityException handling
+   4 Screenable   [CLJ-1279] Fix confusing macroexpand1 ArityException handling
    3 Triaged      [CLJ-1975] [spec] clojure.spec attempts to make `empty` records
    3 Triaged      [CLJ-1980] [spec] Unable to construct gen in indirectly recursive specs with s/every and derivations
    3 Triaged      [CLJ-1142] Incorrect divide-by-zero error with floating point numbers
@@ -203,13 +203,15 @@ Defect
    0 Triaged      [CLJ-2377] [spec] StackOverflowError in gen of recursive spec
    0 Triaged      [CLJ-2379] `proxy` fails with redefined interfaces
    0 Triaged      [CLJ-2381] [spec] ::defn-args spec does not capture type hint on return value
+   0 Prescreened  [CLJ-2387] Port 65535 incorrectly excluded
+   0 Triaged      [CLJ-2388] [spec] s/merge causes failure to roundtrip conform then unform
 
 ========================================
 Enhancement
 
   25 Backlog      [CLJ-1517] Unrolled small vectors
   25 Vetted       [CLJ-865] Macroexpansion discards &form metadata
-  21 Screenable   [CLJ-2373] improvements to exception messages and printing
+  21 Screened     [CLJ-2373] improvements to exception messages and printing
   21 Triaged      [CLJ-1522] Enhance multimethods metadata
   19 Triaged      [CLJ-1527] Clarify and align valid symbol and keyword rules for Clojure (and edn)
   17 Open         [CLJ-2194] [spec] Spec metadata support
@@ -325,7 +327,7 @@ Enhancement
    1 Open         [CLJ-2277] [spec] Add fully-qualified specs to explain-data when map fails to contain required keys
    1 Open         [CLJ-2308] Reduce based some
    1 Incomplete   [CLJ-2350] Improve error message when calling a keyword with the wrong number of arguments
-   1 Prescreened  [CLJ-2376] [core.specs] Check early if let binding vector is even
+   1 Screenable   [CLJ-2376] [core.specs] Check early if let binding vector is even
    1 Open         [CLJ-140] Single :tag for type hints conflates value's type with type of return value from an invoke
    1 Open         [CLJ-666] Add support for Big* numeric types to Reflector
    1 Open         [CLJ-864] defrecord positional arity factory fn should have an inline version that calls the record constructor
@@ -409,22 +411,24 @@ Enhancement
    0 Triaged      [CLJ-2329] partition-all docstring should mention it returns vectors in transducer case
    0 Screenable   [CLJ-2375] Address JDK API deprecations
    0 Triaged      [CLJ-2383] Add classes that were introduced to java.lang in Java 7/8 into DEFAULT_IMPORTS
-   0 Prescreened  [CLJ-2386] In ex-info, avoid recording stack frames of ex-info itself
+   0 Screened     [CLJ-2386] In ex-info, avoid recording stack frames of ex-info itself
+   0 Triaged      [CLJ-2389] [spec] Expose size parameter in clojure.spec.gen.alpha/generate
+   0 Screenable   [CLJ-2391] [spec] Printing of spec problems buries the failing predicate which should be more prominent
 
 ========================================
 Feature
 
   60 Needs Patch  [CLJ-1965] [spec] clojure.spec/def should support an optional doc-string
   47 Triaged      [CLJ-1959] adding functions `map-vals` and `map-keys`
-  35 Open         [CLJ-2116] [spec] Support for selective conforming with clojure.spec
+  36 Open         [CLJ-2116] [spec] Support for selective conforming with clojure.spec
   24 Prescreened  [CLJ-706] make use of deprecated namespaces/vars easier to spot
   23 Needs Patch  [CLJ-2123] Lighter-weight aliasing for keywords
   23 Incomplete   [CLJ-2112] [spec] Add specs for spec forms
   22 Triaged      [CLJ-304] clojure.repl/source does not work with deftype
   22 Prescreened  [CLJ-1078] Add queue and queue? to clojure.core
+  16 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
   16 Triaged      [CLJ-440] java method calls cannot omit varargs
   16 Triaged      [CLJ-1293] Support (try .. (catch :default _ ..)) for portable "catch-all"
-  15 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
   15 Triaged      [CLJ-1305] Add optional not-found argument when invoking vectors or sets as functions
   14 Triaged      [CLJ-1063] Missing dissoc-in
   12 Triaged      [CLJ-1611] clojure.java.io/pushback-reader
@@ -489,12 +493,12 @@ Feature
    1 Open         [CLJ-1806] group-by as reducer / reduction fn
    1 Triaged      [CLJ-1843] Add =to function exposing Util/equivPred 
    1 Open         [CLJ-1925] Add uuid and random-uuid functions
-   1 Triaged      [CLJ-2129] Enhance CompilerException to optionally return the invalid form
    1 Triaged      [CLJ-1073] Make print-sequential interruptible
    1 Open         [CLJ-1266] Better primitive support for floats
    1 Open         [CLJ-1729] Make Counted and count() return long instead of integer
    1 Needs Patch  [CLJ-2165] #clojure/var tag for transmitting var identity
    1 Open         [CLJ-1989] [spec] `let` ported from `test.check/let` to `clojure.spec.gen`
+   1 Triaged      [CLJ-2390] [spec] Customize printer for clojure.spec.test/check
    1 Open         [CLJ-993] `range` reducer
    1 Open         [CLJ-252] Support typed non-primitive fields in deftype
    1 Needs Patch  [CLJ-1952] include var->sym in clojure.core

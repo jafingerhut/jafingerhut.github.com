@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: August 16, 2018
+Date: August 23, 2018
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -67,6 +67,15 @@ Defect
              Juho Teperi (0.34)
              Andy Fingerhut (0.33)
              Nicola Mometto (0.09)
+    7.58   8 Needs Patch  [CLJ-2079] [spec] Generator overrides for spec aliases are not respected
+             Chris Shellenbarger (1.00)
+             Frank Wang (1.00)
+             Ian Davis (1.00)
+             Robert Hambrock (1.00)
+             Russell Mull (1.00)
+             Aaron Brooks (0.86)
+             Joe R. Smith (0.86)
+             Peter Jaros (0.86)
     7.38  10 Needs Patch  [CLJ-2041] [spec] clojure.spec/keys requires input collections conform to clojure.core/map?
              Anders Furseth (1.00)
              Brendan Jan van der Es (1.00)
@@ -107,13 +116,6 @@ Defect
              Laszlo Török (0.66)
              Marco Molteni (0.46)
              jcr (0.12)
-    5.72   6 Needs Patch  [CLJ-2079] [spec] Generator overrides for spec aliases are not respected
-             Frank Wang (1.00)
-             Ian Davis (1.00)
-             Robert Hambrock (1.00)
-             Russell Mull (1.00)
-             Aaron Brooks (0.86)
-             Peter Jaros (0.86)
     5.44   9 Backlog      [CLJ-1372] Inconsistent hash with java collections
              Bruce Adams (1.00)
              Jay Fields (1.00)
@@ -247,7 +249,7 @@ Defect
              Miikka Koskinen (0.66)
              Juho Teperi (0.34)
              Tommi Reiman (0.34)
-    1.89   4 Triaged      [CLJ-1279] Fix confusing macroexpand1 ArityException handling
+    1.89   4 Screenable   [CLJ-1279] Fix confusing macroexpand1 ArityException handling
              César Bolaños (0.86)
              Justin Glenn Smith (0.50)
              Ivan Kryvoruchko (0.43)
@@ -427,6 +429,7 @@ Defect
     0.00   0 Needs Patch  [CLJ-2036] [spec] Generators for some? and any? only return collections or nil
     0.00   0 Needs Patch  [CLJ-2371] [spec] alt with an empty cat breaks explain
     0.00   0 Needs Patch  [CLJ-2374] Clojure master fails on JDK 11 EA builds due to overloaded toArray in gvec.clj
+    0.00   0 Prescreened  [CLJ-2387] Port 65535 incorrectly excluded
     0.00   0 Screenable   [CLJ-1180] defprotocol doesn't resolve tag classnames
     0.00   0 Screenable   [CLJ-1759] macroexpand throws runtime exception on symbol bound to a class
     0.00   0 Screenable   [CLJ-2199] [spec] Error attempting to unform unconformed keys (no :conform-keys opt)
@@ -482,11 +485,12 @@ Defect
     0.00   0 Triaged      [CLJ-2377] [spec] StackOverflowError in gen of recursive spec
     0.00   0 Triaged      [CLJ-2379] `proxy` fails with redefined interfaces
     0.00   0 Triaged      [CLJ-2381] [spec] ::defn-args spec does not capture type hint on return value
+    0.00   0 Triaged      [CLJ-2388] [spec] s/merge causes failure to roundtrip conform then unform
 
 ========================================
 Enhancement
 
-   17.18  21 Screenable   [CLJ-2373] improvements to exception messages and printing
+   17.07  21 Screened     [CLJ-2373] improvements to exception messages and printing
              Aleksander S (1.00)
              Ayato Nishimura (1.00)
              Dennis Schridde (1.00)
@@ -497,10 +501,10 @@ Enhancement
              Shogo Ohta (1.00)
              Carmen La (1.00)
              Kimmo Koskinen (1.00)
-             Alex Zuckermann (0.86)
              Dieter Komendera (0.86)
              Tsutomu Yano (0.86)
              Wes Morgan (0.86)
+             Alex Zuckermann (0.75)
              Enzzo Cavallo (0.75)
              Egg Syntax (0.66)
              Alexander Yakushev (0.60)
@@ -511,10 +515,10 @@ Enhancement
    16.96  25 Backlog      [CLJ-1517] Unrolled small vectors
              David Dossot (1.00)
              Deepak Giridharagopal (1.00)
-             Steffen Dienst (1.00)
              Yuriy Melnyk (1.00)
              Michał Marczyk (1.00)
              Richard Davies (1.00)
+             Steffen Dienst (1.00)
              Tom Hickey (1.00)
              Jean Fabio Baro (0.86)
              Chris McDevitt (0.75)
@@ -698,14 +702,14 @@ Enhancement
              Max Penet (0.36)
              Marc O'Morain (0.28)
              Nicola Mometto (0.09)
-    8.75  10 Screened     [CLJ-1435] 'numerator and 'denominator fail to handle integral values (i.e. N/1)
+    8.61  10 Screened     [CLJ-1435] 'numerator and 'denominator fail to handle integral values (i.e. N/1)
              David Cravey (1.00)
              Eduard Bondarenko (1.00)
              Felipe Micaroni Lalli (1.00)
              James Elliott (1.00)
              Radek Slupik (1.00)
              Jan-Paul Bultmann (1.00)
-             Joe R. Smith (1.00)
+             Joe R. Smith (0.86)
              Gary Fredericks (0.66)
              Mike Anderson (0.54)
              Stephen C. Gilardi (0.54)
@@ -747,17 +751,6 @@ Enhancement
              Juho Teperi (0.34)
              Tommi Reiman (0.34)
              Michael Blume (0.27)
-    7.89  10 Triaged      [CLJ-2213] Allow multiple bindings for if-let, when-let, if-some, and when-some
-             Justin Lee (1.00)
-             Leon Mergen (1.00)
-             Rune Juhl Jacobsen (1.00)
-             Łukasz Korecki (1.00)
-             Alex Zuckermann (0.86)
-             George Lipov (0.86)
-             Juraj Martinka (0.60)
-             Michiel Borkent (0.60)
-             quan (0.54)
-             Colin Taylor (0.43)
     7.84  11 Triaged      [CLJ-2075] Add three-arities to < <= > >= = == not=
              Igor Bondarenko (1.00)
              Markus Graf (1.00)
@@ -770,6 +763,17 @@ Enhancement
              Juho Teperi (0.34)
              Tommi Reiman (0.34)
              A. R (0.25)
+    7.78  10 Triaged      [CLJ-2213] Allow multiple bindings for if-let, when-let, if-some, and when-some
+             Justin Lee (1.00)
+             Leon Mergen (1.00)
+             Rune Juhl Jacobsen (1.00)
+             Łukasz Korecki (1.00)
+             George Lipov (0.86)
+             Alex Zuckermann (0.75)
+             Juraj Martinka (0.60)
+             Michiel Borkent (0.60)
+             quan (0.54)
+             Colin Taylor (0.43)
     7.25   9 Triaged      [CLJ-1278] State function's unmunged full name in compiled function's toString()
              Dave Kincaid (1.00)
              Dom Kiva-Meyer (1.00)
@@ -1121,7 +1125,7 @@ Enhancement
              jcr (0.12)
     0.12   1 Open         [CLJ-2308] Reduce based some
              jcr (0.12)
-    0.12   1 Prescreened  [CLJ-2376] [core.specs] Check early if let binding vector is even
+    0.12   1 Screenable   [CLJ-2376] [core.specs] Check early if let binding vector is even
              jcr (0.12)
     0.12   1 Triaged      [CLJ-2159] Disambiguate behavior of def with doc-string
              jcr (0.12)
@@ -1152,7 +1156,6 @@ Enhancement
     0.00   0 Backlog      [CLJ-771] Move unchecked-prim casts to clojure.unchecked
     0.00   0 Backlog      [CLJ-1104] Concurrent with-redefs do not unwind properly, leaving a var permanently changed
     0.00   0 Backlog      [CLJ-1420] ThreadLocalRandom instead of Math/random
-    0.00   0 Prescreened  [CLJ-2386] In ex-info, avoid recording stack frames of ex-info itself
     0.00   0 Screenable   [CLJ-1808] map-invert should use transients and reduce-kv instead of reduce
     0.00   0 Screenable   [CLJ-1888] AReference#meta() is synchronized
     0.00   0 Screenable   [CLJ-1895] Remove loading of clojure.string in clojure.java.io
@@ -1160,6 +1163,7 @@ Enhancement
     0.00   0 Screenable   [CLJ-2190] [spec] clojure.spec.alpha/exercise-fn should emit a bettor error message when no implementation is found for a symbol
     0.00   0 Screenable   [CLJ-2286] Update `clj` REPL with hint: (use Crtl-D to exit)
     0.00   0 Screenable   [CLJ-2375] Address JDK API deprecations
+    0.00   0 Screenable   [CLJ-2391] [spec] Printing of spec problems buries the failing predicate which should be more prominent
     0.00   0 Screened     [CLJ-1366] The empty map literal is read as a different map each time
     0.00   0 Screened     [CLJ-1654] Reuse seq in some
     0.00   0 Screened     [CLJ-2044] Four functions in clojure.instant have incomplete documentation
@@ -1167,6 +1171,7 @@ Enhancement
     0.00   0 Screened     [CLJ-2122] flatten docstring does not describe lazy result
     0.00   0 Screened     [CLJ-2249] Document behavior of clojure.core/get on strings and Java arrays
     0.00   0 Screened     [CLJ-2306] Remove unused Var.rev
+    0.00   0 Screened     [CLJ-2386] In ex-info, avoid recording stack frames of ex-info itself
     0.00   0 Triaged      [CLJ-5] Sequential destructuring of map gives confusing error message
     0.00   0 Triaged      [CLJ-405] better error messages for bad defrecord calls
     0.00   0 Triaged      [CLJ-704] range function has missing documentation
@@ -1220,6 +1225,7 @@ Enhancement
     0.00   0 Triaged      [CLJ-2328] There's no way to enable warn-on-reflection from the command-line when running clojure.main
     0.00   0 Triaged      [CLJ-2329] partition-all docstring should mention it returns vectors in transducer case
     0.00   0 Triaged      [CLJ-2383] Add classes that were introduced to java.lang in Java 7/8 into DEFAULT_IMPORTS
+    0.00   0 Triaged      [CLJ-2389] [spec] Expose size parameter in clojure.spec.gen.alpha/generate
 
 ========================================
 Feature
@@ -1333,7 +1339,7 @@ Feature
              Daniel Compton (0.25)
              jcr (0.12)
              Nicola Mometto (0.09)
-   27.86  35 Open         [CLJ-2116] [spec] Support for selective conforming with clojure.spec
+   28.75  36 Open         [CLJ-2116] [spec] Support for selective conforming with clojure.spec
              Ben Mabey (1.00)
              Dan Pomohaci (1.00)
              Kanwei Li (1.00)
@@ -1341,6 +1347,7 @@ Feature
              Markus Penttilä (1.00)
              Matias Bjarland (1.00)
              Matthew Newton (1.00)
+             Miloslav Nenadál (1.00)
              Pablo Botelho (1.00)
              Robert J. Berger (1.00)
              Vincent DM (1.00)
@@ -1349,12 +1356,12 @@ Feature
              Imre Kószó (1.00)
              Mark Stuart (1.00)
              Rune Juhl Jacobsen (1.00)
-             Alex Zuckermann (0.86)
              Dan Boykis (0.86)
              Jeaye Wilkerson (0.86)
              Justin Tirrell (0.86)
              Sean Corfield (0.86)
              Stathis Sideris (0.86)
+             Alex Zuckermann (0.75)
              Dmitri Sotnikov (0.75)
              Marc Limotte (0.75)
              Marcelo Yuji Nomoto (0.75)
@@ -1373,11 +1380,11 @@ Feature
              Andre Richards (1.00)
              Andreas Liljeqvist (1.00)
              Chris Farber (1.00)
+             Thomas Heller (1.00)
              Gilles Philippart (1.00)
              Imre Kószó (1.00)
              Nuttanart Pornprasitsakul (1.00)
              Robert Stuttaford (1.00)
-             Thomas Heller (1.00)
              Wilker Lúcio da Silva (1.00)
              Gert (0.86)
              Justin Tirrell (0.86)
@@ -1488,6 +1495,23 @@ Feature
              A. R (0.25)
              jcr (0.12)
              Nicola Mometto (0.09)
+   11.33  16 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
+             Andreas Steffan (1.00)
+             Tom Coupland (1.00)
+             Tomoharu Fujita (1.00)
+             Sanel Zukan (1.00)
+             Steffen Dienst (1.00)
+             Alex Fowler (0.86)
+             Léo NOEL (0.86)
+             Vadim Platonov (0.86)
+             Alex Miller (0.75)
+             Rick Moynihan (0.75)
+             Greg Chapman (0.66)
+             John Schmidt (0.60)
+             Max Penet (0.36)
+             Marc O'Morain (0.28)
+             A. R (0.25)
+             Nicola Mometto (0.09)
    10.91  16 Triaged      [CLJ-440] java method calls cannot omit varargs
              Konstantin Shabanov (1.00)
              Logan Woodbury (1.00)
@@ -1505,22 +1529,6 @@ Feature
              Reid McKenzie (0.33)
              David Bürgin (0.27)
              A. R (0.25)
-   10.33  15 Triaged      [CLJ-1255] Support Abstract Base Classes with Java-only variant of "reify"
-             Andreas Steffan (1.00)
-             Tom Coupland (1.00)
-             Tomoharu Fujita (1.00)
-             Sanel Zukan (1.00)
-             Alex Fowler (0.86)
-             Léo NOEL (0.86)
-             Vadim Platonov (0.86)
-             Alex Miller (0.75)
-             Rick Moynihan (0.75)
-             Greg Chapman (0.66)
-             John Schmidt (0.60)
-             Max Penet (0.36)
-             Marc O'Morain (0.28)
-             A. R (0.25)
-             Nicola Mometto (0.09)
     9.83  11 Open         [CLJ-1553] Parallel transduce
              Darrick Wiebe (1.00)
              Rafik NACCACHE (1.00)
@@ -1752,11 +1760,6 @@ Feature
              Tommi Reiman (0.34)
              Michael Blume (0.27)
              jcr (0.12)
-    3.19   4 Open         [CLJ-1141] Allow pre and post-conditions in defprotocol and deftype macros
-             Vjeran Marcinko (1.00)
-             Joe R. Smith (1.00)
-             Atamert Ölçgen (0.60)
-             J.&nbsp;S.&nbsp;Choi (0.60)
     3.16   6 Open         [CLJ-1906] Clojure should make representing iterated api calls easier
              Ghadi Shayban (0.86)
              Piotr Bzdyl (0.86)
@@ -1764,6 +1767,11 @@ Feature
              Aleksander Madland Stapnes (0.43)
              Simon Belak (0.41)
              Nicola Mometto (0.09)
+    3.06   4 Open         [CLJ-1141] Allow pre and post-conditions in defprotocol and deftype macros
+             Vjeran Marcinko (1.00)
+             Joe R. Smith (0.86)
+             Atamert Ölçgen (0.60)
+             J.&nbsp;S.&nbsp;Choi (0.60)
     2.95   5 Open         [CLJ-428] subseq, rsubseq enhancements to support priority maps?
              Brian James Rubinton (1.00)
              Mark Engelberg (0.66)
@@ -1886,8 +1894,6 @@ Feature
              Michael du Breuil (1.00)
     1.00   1 Triaged      [CLJ-1843] Add =to function exposing Util/equivPred 
              Alan Malloy (1.00)
-    1.00   1 Triaged      [CLJ-2129] Enhance CompilerException to optionally return the invalid form
-             Thomas Heller (1.00)
     0.86   1 Needs Patch  [CLJ-2165] #clojure/var tag for transmitting var identity
              Steven Yi (0.86)
     0.86   1 Open         [CLJ-1266] Better primitive support for floats
@@ -1901,6 +1907,8 @@ Feature
              A. R (0.25)
     0.75   1 Open         [CLJ-1989] [spec] `let` ported from `test.check/let` to `clojure.spec.gen`
              Rick Moynihan (0.75)
+    0.75   1 Triaged      [CLJ-2390] [spec] Customize printer for clojure.spec.test/check
+             Alex Zuckermann (0.75)
     0.72   2 Triaged      [CLJ-2223] [spec] Add extra map argument to clojure.core/assert and clojure.spec/assert (like with ex-info)
              Ben Brinckerhoff (0.60)
              jcr (0.12)
