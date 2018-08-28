@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Clojure Cheat Sheet (Clojure 1.6 - 1.9, sheet v44)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.6 - 1.9, sheet v45)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -291,7 +291,7 @@ tr.even {
               </tr>
               <tr class="even">
                 <td>Examine</td>
-                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/first/">first</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/nth/">nth</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/peek/">peek</a> <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html#indexOf-java.lang.Object-">.indexOf</a> <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html#lastIndexOf-java.lang.Object-">.lastIndexOf</a></code></td>
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/first/">first</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/nth/">nth</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/peek/">peek</a> <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html#indexOf-java.lang.Object-">.indexOf</a> <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html#lastIndexOf-java.lang.Object-">.lastIndexOf</a></code></td>
               </tr>
               <tr class="odd">
                 <td>'Change'</td>
@@ -308,7 +308,7 @@ tr.even {
               </tr>
               <tr class="even">
                 <td>Examine</td>
-                <td><code><code>(my-vec idx)</code> &rarr; <code>( <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/nth/">nth</a>  my-vec idx)</code> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/get/">get</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/peek/">peek</a> <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html#indexOf-java.lang.Object-">.indexOf</a> <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html#lastIndexOf-java.lang.Object-">.lastIndexOf</a></code></td>
+                <td><code><code>(my-vec idx)</code> &rarr; <code>( <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/nth/">nth</a>  my-vec idx)</code> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/get/">get</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/peek/">peek</a> <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html#indexOf-java.lang.Object-">.indexOf</a> <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html#lastIndexOf-java.lang.Object-">.lastIndexOf</a></code></td>
               </tr>
               <tr class="odd">
                 <td>'Change'</td>
@@ -951,6 +951,14 @@ tr.even {
               <tr class="odd">
                 <td><code>#foo</code></td>
                 <td><code><a href="https://clojure.org/reference/reader#tagged_literals">tagged literal</a> e.g. <code>#inst</code> <code>#uuid</code></code></td>
+              </tr>
+              <tr class="even">
+                <td><code>#:</code></td>
+                <td><code><a href="https://clojure.org/reference/reader#map_namespace_syntax">map namespace syntax</a> e.g. <code>#:foo{:a 1}</code> is equal to <code>{:foo/a 1}</code></code></td>
+              </tr>
+              <tr class="odd">
+                <td><code>##</code></td>
+                <td><code>(1.9) symbolic values: <code>##Inf ##-Inf ##NaN<code></code></td>
               </tr>
               <tr class="even">
                 <td><code>$</code></td>

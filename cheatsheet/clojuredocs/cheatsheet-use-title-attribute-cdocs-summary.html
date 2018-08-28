@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Clojure Cheat Sheet (Clojure 1.6 - 1.9, sheet v44)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.6 - 1.9, sheet v45)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -1224,7 +1224,7 @@ See also: first, second, nthnext, get">nth</a> <a href="https://clojuredocs.org/
   more efficient than, last. If the collection is empty, returns nil.
 
 2 examples totaling 12 lines, 1 comment on Fri Aug 29 2014
-See also: first, pop, conj">peek</a> <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html#indexOf-java.lang.Object-">.indexOf</a> <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html#lastIndexOf-java.lang.Object-">.lastIndexOf</a></code></td>
+See also: first, pop, conj">peek</a> <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html#indexOf-java.lang.Object-">.indexOf</a> <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html#lastIndexOf-java.lang.Object-">.lastIndexOf</a></code></td>
               </tr>
               <tr class="odd">
                 <td>'Change'</td>
@@ -1330,7 +1330,7 @@ See also: map-indexed, get-in, find">get</a> <a href="https://clojuredocs.org/cl
   more efficient than, last. If the collection is empty, returns nil.
 
 2 examples totaling 12 lines, 1 comment on Fri Aug 29 2014
-See also: first, pop, conj">peek</a> <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html#indexOf-java.lang.Object-">.indexOf</a> <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html#lastIndexOf-java.lang.Object-">.lastIndexOf</a></code></td>
+See also: first, pop, conj">peek</a> <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html#indexOf-java.lang.Object-">.indexOf</a> <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html#lastIndexOf-java.lang.Object-">.lastIndexOf</a></code></td>
               </tr>
               <tr class="odd">
                 <td>'Change'</td>
@@ -5497,6 +5497,14 @@ with-redefs-fn, set!, var-set, var-get, with-local-vars">var</a> <code><var>x</v
               <tr class="odd">
                 <td><code>#foo</code></td>
                 <td><code><a href="https://clojure.org/reference/reader#tagged_literals">tagged literal</a> e.g. <code>#inst</code> <code>#uuid</code></code></td>
+              </tr>
+              <tr class="even">
+                <td><code>#:</code></td>
+                <td><code><a href="https://clojure.org/reference/reader#map_namespace_syntax">map namespace syntax</a> e.g. <code>#:foo{:a 1}</code> is equal to <code>{:foo/a 1}</code></code></td>
+              </tr>
+              <tr class="odd">
+                <td><code>##</code></td>
+                <td><code>(1.9) symbolic values: <code>##Inf ##-Inf ##NaN<code></code></td>
               </tr>
               <tr class="even">
                 <td><code>$</code></td>
