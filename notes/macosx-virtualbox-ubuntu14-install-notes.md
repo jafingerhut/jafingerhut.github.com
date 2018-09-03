@@ -404,3 +404,46 @@ fairly old).
 
 
 Of course I can also just run Ubuntu as the host OS, too.
+
+
+# Mounting a VirtualBox VDI file containing an Ubuntu disk image on a newer Ubuntu VM
+
+I had a VirtualBox VM with an installation of Ubuntu 16.04 that after
+months of perfectly good use, one day it would not boot.  There were
+some files that I wanted to retrieve from the disk image.  I searched
+for a way to mount this non-working VM's disk image on a fresh new
+working Ubuntu 16.04 VM, and found this way that worked for me:
+
+Source: https://askubuntu.com/questions/19430/mount-a-virtualbox-drive-image-vdi
+
+The answer by use "Maxime R."
+
+Use qemu-nbd, the process is explained on serverfault and in this blog.
+
+    'serverfault' link: https://serverfault.com/questions/210684/how-do-you-mount-a-vdi-image-on-linux/210685#210685
+    'this blog' link: https://bethesignal.org/blog/2011/01/05/how-to-mount-virtualbox-vdi-image/
+    Both of those links gave an error when I tried to access them on
+    2018-Sep-03.
+
+Basically, you'll have to install `qemu` if needed:
+
+    sudo apt-get install qemu
+
+Then you'll need to load the _network block device_ module:
+
+    sudo rmmod nbd
+    sudo modprobe nbd max_part=16
+
+Attach the .vdi image to one of the nbd you just created:
+
+    sudo qemu-nbd -c /dev/nbd0 drive.vdi
+
+Now you will get a /dev/nbd0 block device, along with several
+/dev/nbd0p* partition device nodes.
+
+    sudo mount /dev/nbd0p1 /mnt
+
+Once you are done, unmount everything and disconnect the device:
+
+    sudo umount /dev/nbd0
+    sudo qemu-nbd -d /dev/nbd0
