@@ -17,6 +17,34 @@ and also an Ubuntu 14.04.5 64-bit desktop VM (using VirtualBox CD
 image to add guest additions)
 
 
+# General notes on VM settings
+
+System -> Motherboard -> Base Memory: While there might be uses for a
+Linux guest VM with only 1 GByte of RAM, I typically change that to 4
+Gbyte when creating new VMs.
+
+Disk space that is dynamically allocated is nice for having a smaller
+host OS disk footprint, while the guest VM is using only a small
+amount of disk space, and then it can grow over time as needed up to
+the max size you pick when creating it.  I haven't measured the
+performance penalty for dynamic vs. fixed, but it I haven't noticed a
+big difference without measuring it.
+
+System -> Processor -> Processor(s): If the host has multiple CPU
+cores, I typically change this setting to 2 or 4 instead of the
+default of 1.  The guest seems to definitely get benefits from having
+at least 2 in many common use scenarios.
+
+Display -> Screen -> Video Memory: The default size is 16 MB.  I plan
+to consistently change that to 32 MB going forward.  I have often
+experienced issues where an Ubuntu Linux guest VM has the screen
+remain black after booting is nearly complete, but before showing the
+desktop GUI.  Several VMs that had that issue worked normally after I
+changed their Video Memory to 32 MB.  If that is the root cause and
+fix for that issue, then good to make that change when creating a new
+guest VM.
+
+
 # Resizing guest OS window
 
 I found this to work with VirtualBox and Ubuntu 16.04 guest OS even
