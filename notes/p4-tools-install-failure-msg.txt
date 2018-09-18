@@ -1,0 +1,19 @@
+It is very easy to miss one or more steps in the README of these
+tools. Also, if you attempt installing them on a machine that already
+has many other packages installed, a few packages will hinder the
+building of P4 tools (I don't have a list of these handy, sorry, but
+have seen one or two mentioned in other issues).
+
+If you are able to create a fresh Ubuntu 16.04 Linux installation on a
+bare machine, or a new virtual machine, these steps have worked for me
+repeatedly:
+
+```
+sudo apt install git
+git clone https://github.com/jafingerhut/p4-guide
+./p4-guide/bin/install-p4dev.sh
+```
+
+then provide your password when prompted. That shell script has about
+30 commands in it, all of which are obtained from the READMEs of the
+behavioral-model and p4c repositories, both of which are installed.
