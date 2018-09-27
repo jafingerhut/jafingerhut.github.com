@@ -75,10 +75,16 @@ virtualbox-guest-x11 packages.
 
 [Thanks to Sean Adams for these working instructions.]
 
+In a Terminal window, type this command to install essential packages
+needed for compiling C programs, including the kernel extensions that
+the Guest Additions contain:
+
+    sudo apt install build-essential
+
 Start VirtualBox and boot the Ubuntu VM without a CD/DVD in the
 "drive".  Log in to the desktop (assuming you're using the desktop
 edition).  Now on the Mac go to the Devices menu of VirtualBox.  The
-last item will be "Install Guest Additions CD image...".  Select it.
+last item will be "Insert Guest Additions CD image...".  Select it.
 In the VM, a CD will appear in the dock and a dialog should pop up
 asking if you want to allow the software on the CD to autorun.  Let it
 run.  A second dialog will ask you to authenticate (sudo) to install
