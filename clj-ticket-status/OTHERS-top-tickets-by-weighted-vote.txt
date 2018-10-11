@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: October 4, 2018
+Date: October 11, 2018
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -125,6 +125,8 @@ Defect
              Daniel Compton (0.66)
     1.00   1 Open         [ASYNC-128] (CLJS) or evaluation not stopped when exp nests take
              Christian Weilbach (1.00)
+    1.00   1 Open         [ASYNC-132] (CLJS) Can't close over locals in #js in go
+             Thomas Heller (1.00)
     1.00   1 Open         [ASYNC-163] Off-by-two in pipeline-async parallelism
              Leon Grapenthin (1.00)
     1.00   1 Open         [ASYNC-198] core.async exception rewriting can result in an incorrect return value
@@ -154,7 +156,6 @@ Defect
     0.00   0 Open         [ASYNC-118] (CLJS) A let-binding named 'arguments' not bound in go block on nodejs 
     0.00   0 Open         [ASYNC-121] (CLJS) compilation warning when calling 'satisfies?' inside a go block
     0.00   0 Open         [ASYNC-129] Channels with transducer using reduced don't work as intended
-    0.00   0 Open         [ASYNC-132] (CLJS) Can't close over locals in #js in go
     0.00   0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
     0.00   0 Open         [ASYNC-161] `<!` inside nested `let` inside `go` block erroneously yields "<! not used inside go block" error
     0.00   0 Open         [ASYNC-172] (CLJS) ClojureScript `catch :default` in `go` fails with non-`js/Error` classes
@@ -215,9 +216,9 @@ Enhancement
              Mathias De Wachter (1.00)
              Nahuel Greco (1.00)
              Reid McKenzie (1.00)
-             Thomas Heller (1.00)
              Brandon Adams (1.00)
              Masaru Itoh (1.00)
+             Thomas Heller (1.00)
              Marco Molteni (0.86)
              jcr (0.46)
     4.99   6 Triaged      [ASYNC-126] Add public channel "closed?" predicate
@@ -915,6 +916,7 @@ Project TANAL tickets
 Defect
 
     0.00   0 Open         [TANAL-100] Fix method matcher
+    0.00   0 Open         [TANAL-126] tools.analyzer.jvm eval's arglists metadata differently in emitted Clojure code?
 
 ========================================
 Enhancement
@@ -1030,22 +1032,24 @@ Defect
     2.00   2 Open         [TDEPS-66] GitHub repo name is confusing
              Elana Hashman (1.00)
              Martin Klepsch (1.00)
+    1.86   2 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
+             Reid McKenzie (1.00)
+             Kenny Williams (0.86)
     1.00   1 Open         [TDEPS-8] tools.deps does not handle maven relocations
              Felix Andrews (1.00)
     1.00   1 Open         [TDEPS-56] Main opts with space broken apart
              Michael Nygard (1.00)
+    1.00   1 Open         [TDEPS-79] Cyclic dependency locks up clojure command line tool
+             Reid McKenzie (1.00)
     1.00   1 Open         [TDEPS-83] Classpath caching does not invalidate when local root manifests are changed.
              Wilker Lúcio da Silva (1.00)
     1.00   1 Open         [TDEPS-98] Not possible to retrieve Maven libraries with just a pom and no jar
              Martin Klepsch (1.00)
-    0.86   1 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
-             Kenny Williams (0.86)
     0.00   0 Open         [TDEPS-29] Updates to pom continually adds superfluous newlines under Java 9
     0.00   0 Open         [TDEPS-31] ssh git repository doesn't work with some SSH host key algorithms
     0.00   0 Open         [TDEPS-49] Jsch public key problems
     0.00   0 Open         [TDEPS-50] pom dependencies with classifier don't get added to classpath
     0.00   0 Open         [TDEPS-58] Dependency resolution depends on order in map
-    0.00   0 Open         [TDEPS-79] Cyclic dependency locks up clojure command line tool
     0.00   0 Open         [TDEPS-82] Ensure -Sdescribe doesn't trigger resolution
     0.00   0 Open         [TDEPS-96] Resolving paths from pom project produces wrong result
 
@@ -1079,6 +1083,7 @@ Enhancement
     0.00   0 Open         [TDEPS-93] Add support for local git repository deps on the file system
     0.00   0 Open         [TDEPS-94] git dependencies don't work with relative paths
     0.00   0 Open         [TDEPS-97] Unwanted "Downloading ...maven-metadata.xml from s3p://..." messages
+    0.00   0 Open         [TDEPS-99] Allow user to specify the path to Maven settings (or provide repo credentials directly)
 
 ========================================
 Feature
@@ -1092,8 +1097,9 @@ Feature
 ========================================
 Task
 
-    4.00   4 Open         [TDEPS-67] Windows installation scripts
+    5.00   5 Open         [TDEPS-67] Windows installation scripts
              Adrian A. (1.00)
+             Henry Widd (1.00)
              Steffen Dienst (1.00)
              Yehonathan Sharvit (1.00)
              Thomas Heller (1.00)

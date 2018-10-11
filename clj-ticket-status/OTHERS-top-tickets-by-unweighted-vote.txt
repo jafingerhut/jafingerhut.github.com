@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: October 4, 2018
+Date: October 11, 2018
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -81,6 +81,7 @@ Defect
    1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
    1 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
    1 Open         [ASYNC-128] (CLJS) or evaluation not stopped when exp nests take
+   1 Open         [ASYNC-132] (CLJS) Can't close over locals in #js in go
    1 Open         [ASYNC-163] Off-by-two in pipeline-async parallelism
    1 Triaged      [ASYNC-170] binding in go block causes thread binding error: "Pop without matching push"
    1 Open         [ASYNC-198] core.async exception rewriting can result in an incorrect return value
@@ -97,7 +98,6 @@ Defect
    0 Open         [ASYNC-118] (CLJS) A let-binding named 'arguments' not bound in go block on nodejs 
    0 Open         [ASYNC-121] (CLJS) compilation warning when calling 'satisfies?' inside a go block
    0 Open         [ASYNC-129] Channels with transducer using reduced don't work as intended
-   0 Open         [ASYNC-132] (CLJS) Can't close over locals in #js in go
    0 Open         [ASYNC-145] mix throws assertion error when many channels are added to a mix.
    0 Triaged      [ASYNC-156] (CLJS) go block containing letfn does not compile
    0 Open         [ASYNC-161] `<!` inside nested `let` inside `go` block erroneously yields "<! not used inside go block" error
@@ -733,6 +733,7 @@ Project TANAL tickets
 Defect
 
    0 Open         [TANAL-100] Fix method matcher
+   0 Open         [TANAL-126] tools.analyzer.jvm eval's arglists metadata differently in emitted Clojure code?
 
 ========================================
 Enhancement
@@ -822,17 +823,17 @@ Defect
    7 Open         [TDEPS-74] Problem with local deps with local deps
    3 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
    2 Open         [TDEPS-66] GitHub repo name is confusing
+   2 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
    1 Open         [TDEPS-8] tools.deps does not handle maven relocations
    1 Open         [TDEPS-56] Main opts with space broken apart
+   1 Open         [TDEPS-79] Cyclic dependency locks up clojure command line tool
    1 Open         [TDEPS-83] Classpath caching does not invalidate when local root manifests are changed.
    1 Open         [TDEPS-98] Not possible to retrieve Maven libraries with just a pom and no jar
-   1 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
    0 Open         [TDEPS-29] Updates to pom continually adds superfluous newlines under Java 9
    0 Open         [TDEPS-31] ssh git repository doesn't work with some SSH host key algorithms
    0 Open         [TDEPS-49] Jsch public key problems
    0 Open         [TDEPS-50] pom dependencies with classifier don't get added to classpath
    0 Open         [TDEPS-58] Dependency resolution depends on order in map
-   0 Open         [TDEPS-79] Cyclic dependency locks up clojure command line tool
    0 Open         [TDEPS-82] Ensure -Sdescribe doesn't trigger resolution
    0 Open         [TDEPS-96] Resolving paths from pom project produces wrong result
 
@@ -857,6 +858,7 @@ Enhancement
    0 Open         [TDEPS-93] Add support for local git repository deps on the file system
    0 Open         [TDEPS-94] git dependencies don't work with relative paths
    0 Open         [TDEPS-97] Unwanted "Downloading ...maven-metadata.xml from s3p://..." messages
+   0 Open         [TDEPS-99] Allow user to specify the path to Maven settings (or provide repo credentials directly)
 
 ========================================
 Feature
@@ -868,7 +870,7 @@ Feature
 ========================================
 Task
 
-   4 Open         [TDEPS-67] Windows installation scripts
+   5 Open         [TDEPS-67] Windows installation scripts
    2 Open         [TDEPS-41] Document classpath ordering strategy
    0 Open         [TDEPS-42] Document lib-map
 
