@@ -1503,7 +1503,7 @@ supplied colls.">concat</a> <a href="https://clojuredocs.org/clojure_core/clojur
   Returns a stateful transducer when no collection is provided.">distinct</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/flatten" title="clojure.core/flatten
 ([x])
   Takes any nested combination of sequential things (lists, vectors,
-  etc.) and returns their contents as a single, flat sequence.
+  etc.) and returns their contents as a single, flat lazy sequence.
   (flatten nil) returns an empty sequence.">flatten</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/group-by" title="clojure.core/group-by
 ([f coll])
   Returns a map of the elements of coll keyed by the result of
@@ -2028,7 +2028,8 @@ conform over them,
 Macro
   Given a namespace-qualified keyword or resolvable symbol k, and a
   spec, spec-name, predicate or regex-op makes an entry in the
-  registry mapping k to the spec">def</a> <a href="https://clojuredocs.org/clojure_core/clojure.spec.alpha/fdef" title="clojure.spec.alpha/fdef
+  registry mapping k to the spec. Use nil to remove an entry in
+  the registry for k.">def</a> <a href="https://clojuredocs.org/clojure_core/clojure.spec.alpha/fdef" title="clojure.spec.alpha/fdef
 ([fn-sym &amp; specs])
 Macro
   Takes a symbol naming a function, and one or more of the following:
@@ -2139,7 +2140,7 @@ Macro
 
   Takes several kwargs options that further constrain the collection:
 
-  :kind - a pred/spec that the collection type must satisfy, e.g. vector?
+  :kind - a pred that the collection type must satisfy, e.g. vector?
         (default nil) Note that if :kind is specified and :into is
         not, this pred must generate in order for every to generate.
   :count - specifies coll has exactly this count (default nil)
@@ -2801,9 +2802,9 @@ Special Form
 
   Defines a function
 Spec
-  args: (cat :name (? simple-symbol?) :bs (alt :arity-1
-:clojure.core.specs.alpha/args+body :arity-n (+ (spec
-:clojure.core.specs.alpha/args+body))))
+  args: (cat :fn-name (? simple-symbol?) :fn-tail (alt :arity-1
+:clojure.core.specs.alpha/params+body :arity-n (+ (spec
+:clojure.core.specs.alpha/params+body))))
   ret: any?">fn</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/defn" title="clojure.core/defn
 ([name doc-string? attr-map? [params*] prepost-map? body] [name doc-string?
 attr-map? ([params*] prepost-map? body) + attr-map?])
@@ -2813,17 +2814,17 @@ Macro
     to the var metadata. prepost-map defines a map with optional keys
     :pre and :post that contain collections of pre or post conditions.
 Spec
-  args: (cat :name simple-symbol? :docstring (? string?) :meta (? map?) :bs (alt
-:arity-1 :clojure.core.specs.alpha/args+body :arity-n (cat :bodies (+ (spec
-:clojure.core.specs.alpha/args+body)) :attr (? map?))))
+  args: (cat :fn-name simple-symbol? :docstring (? string?) :meta (? map?)
+:fn-tail (alt :arity-1 :clojure.core.specs.alpha/params+body :arity-n (cat
+:bodies (+ (spec :clojure.core.specs.alpha/params+body)) :attr-map (? map?))))
   ret: any?">defn</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/defn-" title="clojure.core/defn-
 ([name &amp; decls])
 Macro
   same as defn, yielding non-public def
 Spec
-  args: (cat :name simple-symbol? :docstring (? string?) :meta (? map?) :bs (alt
-:arity-1 :clojure.core.specs.alpha/args+body :arity-n (cat :bodies (+ (spec
-:clojure.core.specs.alpha/args+body)) :attr (? map?))))
+  args: (cat :fn-name simple-symbol? :docstring (? string?) :meta (? map?)
+:fn-tail (alt :arity-1 :clojure.core.specs.alpha/params+body :arity-n (cat
+:bodies (+ (spec :clojure.core.specs.alpha/params+body)) :attr-map (? map?))))
   ret: any?">defn-</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/definline" title="clojure.core/definline
 ([name &amp; decl])
 Macro
@@ -4095,9 +4096,9 @@ Special Form
 
   Defines a function
 Spec
-  args: (cat :name (? simple-symbol?) :bs (alt :arity-1
-:clojure.core.specs.alpha/args+body :arity-n (+ (spec
-:clojure.core.specs.alpha/args+body))))
+  args: (cat :fn-name (? simple-symbol?) :fn-tail (alt :arity-1
+:clojure.core.specs.alpha/params+body :arity-n (+ (spec
+:clojure.core.specs.alpha/params+body))))
   ret: any?">fn</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/loop" title="clojure.core/loop
   (loop [bindings*] exprs*)
 ([bindings &amp; body])
@@ -4209,9 +4210,9 @@ Special Form
 
   Defines a function
 Spec
-  args: (cat :name (? simple-symbol?) :bs (alt :arity-1
-:clojure.core.specs.alpha/args+body :arity-n (+ (spec
-:clojure.core.specs.alpha/args+body))))
+  args: (cat :fn-name (? simple-symbol?) :fn-tail (alt :arity-1
+:clojure.core.specs.alpha/params+body :arity-n (+ (spec
+:clojure.core.specs.alpha/params+body))))
   ret: any?">fn</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/defn" title="clojure.core/defn
 ([name doc-string? attr-map? [params*] prepost-map? body] [name doc-string?
 attr-map? ([params*] prepost-map? body) + attr-map?])
@@ -4221,9 +4222,9 @@ Macro
     to the var metadata. prepost-map defines a map with optional keys
     :pre and :post that contain collections of pre or post conditions.
 Spec
-  args: (cat :name simple-symbol? :docstring (? string?) :meta (? map?) :bs (alt
-:arity-1 :clojure.core.specs.alpha/args+body :arity-n (cat :bodies (+ (spec
-:clojure.core.specs.alpha/args+body)) :attr (? map?))))
+  args: (cat :fn-name simple-symbol? :docstring (? string?) :meta (? map?)
+:fn-tail (alt :arity-1 :clojure.core.specs.alpha/params+body :arity-n (cat
+:bodies (+ (spec :clojure.core.specs.alpha/params+body)) :attr-map (? map?))))
   ret: any?">defn</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/defmacro" title="clojure.core/defmacro
 ([name doc-string? attr-map? [params*] body] [name doc-string? attr-map?
 ([params*] body) + attr-map?])
@@ -4322,17 +4323,17 @@ Macro
     to the var metadata. prepost-map defines a map with optional keys
     :pre and :post that contain collections of pre or post conditions.
 Spec
-  args: (cat :name simple-symbol? :docstring (? string?) :meta (? map?) :bs (alt
-:arity-1 :clojure.core.specs.alpha/args+body :arity-n (cat :bodies (+ (spec
-:clojure.core.specs.alpha/args+body)) :attr (? map?))))
+  args: (cat :fn-name simple-symbol? :docstring (? string?) :meta (? map?)
+:fn-tail (alt :arity-1 :clojure.core.specs.alpha/params+body :arity-n (cat
+:bodies (+ (spec :clojure.core.specs.alpha/params+body)) :attr-map (? map?))))
   ret: any?">defn</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/defn-" title="clojure.core/defn-
 ([name &amp; decls])
 Macro
   same as defn, yielding non-public def
 Spec
-  args: (cat :name simple-symbol? :docstring (? string?) :meta (? map?) :bs (alt
-:arity-1 :clojure.core.specs.alpha/args+body :arity-n (cat :bodies (+ (spec
-:clojure.core.specs.alpha/args+body)) :attr (? map?))))
+  args: (cat :fn-name simple-symbol? :docstring (? string?) :meta (? map?)
+:fn-tail (alt :arity-1 :clojure.core.specs.alpha/params+body :arity-n (cat
+:bodies (+ (spec :clojure.core.specs.alpha/params+body)) :attr-map (? map?))))
   ret: any?">defn-</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/definline" title="clojure.core/definline
 ([name &amp; decl])
 Macro
@@ -4522,7 +4523,7 @@ Macro
     (:import (java.util Date Timer Random)
              (java.sql Connection Statement)))
 Spec
-  args: (cat :name simple-symbol? :docstring (? string?) :attr-map (? map?)
+  args: (cat :ns-name simple-symbol? :docstring (? string?) :attr-map (? map?)
 
 [ documentation truncated.  Click link for the rest. ]">ns</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/in-ns" title="clojure.core/in-ns
 ([name])
@@ -5574,7 +5575,7 @@ Macro
   defaults to Object.
 
   The interfaces names must be valid interface types. If a method fn
-  is not provided for a class method, the superclass methd will be
+  is not provided for a class method, the superclass method will be
   called. If a method fn is not provided for an interface method, an
   UnsupportedOperationException will be thrown should it be
   called. Method fns are closures and can capture the environment in
