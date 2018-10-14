@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Clojure Cheat Sheet (Clojure 1.6 - 1.9, sheet v45)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.6 - 1.9, sheet v46)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -1387,7 +1387,12 @@ See also: cons, into, peek, pop</pre>">conj</a> <a href="https://conj.io/store/v
   can be a vector or sorted-map), in reverse order. If rev is empty returns nil
 
 1 example with 5 lines on Fri Aug 29 2014
-See also: reverse</pre>">rseq</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/update-in/" class="tooltip" title="<pre>clojure.core/update-in
+See also: reverse</pre>">rseq</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/update/" class="tooltip" title="<pre>clojure.core/update
+([m k f] [m k f x] [m k f x y] [m k f x y z] [m k f x y z &amp; more])
+  'Updates' a value in an associative structure, where k is a
+  key and f is a function that will take the old value
+  and any supplied args and return the new value, and returns a new
+  structure.  If the key does not exist, nil is passed as the old value.</pre>">update</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/update-in/" class="tooltip" title="<pre>clojure.core/update-in
 ([m ks f &amp; args])
   'Updates' a value in a nested associative structure, where ks is a
   sequence of keys and f is a function that will take the old value
@@ -1396,12 +1401,7 @@ See also: reverse</pre>">rseq</a> <a href="https://conj.io/store/v0/org.clojure/
   created.
 
 4 examples totaling 26 lines on Fri Aug 29 2014
-See also: assoc-in, get-in, fnil</pre>">update-in</a> (1.7) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/update/" class="tooltip" title="<pre>clojure.core/update
-([m k f] [m k f x] [m k f x y] [m k f x y z] [m k f x y z &amp; more])
-  'Updates' a value in an associative structure, where k is a
-  key and f is a function that will take the old value
-  and any supplied args and return the new value, and returns a new
-  structure.  If the key does not exist, nil is passed as the old value.</pre>">update</a></code></td>
+See also: assoc-in, get-in, fnil</pre>">update-in</a></code></td>
               </tr>
               <tr class="even">
                 <td>Ops</td>
@@ -1754,7 +1754,12 @@ See also: merge</pre>">merge-with</a> <a href="https://conj.io/store/v0/org.cloj
 ([map keyseq])
   Returns a map containing only those entries in map whose key is in keys
 
-1 example with 4 lines on Fri Aug 29 2014</pre>">select-keys</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/update-in/" class="tooltip" title="<pre>clojure.core/update-in
+1 example with 4 lines on Fri Aug 29 2014</pre>">select-keys</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/update/" class="tooltip" title="<pre>clojure.core/update
+([m k f] [m k f x] [m k f x y] [m k f x y z] [m k f x y z &amp; more])
+  'Updates' a value in an associative structure, where k is a
+  key and f is a function that will take the old value
+  and any supplied args and return the new value, and returns a new
+  structure.  If the key does not exist, nil is passed as the old value.</pre>">update</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/update-in/" class="tooltip" title="<pre>clojure.core/update-in
 ([m ks f &amp; args])
   'Updates' a value in a nested associative structure, where ks is a
   sequence of keys and f is a function that will take the old value
@@ -1763,12 +1768,7 @@ See also: merge</pre>">merge-with</a> <a href="https://conj.io/store/v0/org.cloj
   created.
 
 4 examples totaling 26 lines on Fri Aug 29 2014
-See also: assoc-in, get-in, fnil</pre>">update-in</a> (1.7) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/update/" class="tooltip" title="<pre>clojure.core/update
-([m k f] [m k f x] [m k f x y] [m k f x y z] [m k f x y z &amp; more])
-  'Updates' a value in an associative structure, where k is a
-  key and f is a function that will take the old value
-  and any supplied args and return the new value, and returns a new
-  structure.  If the key does not exist, nil is passed as the old value.</pre>">update</a> (clojure.set/) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/rename-keys/" class="tooltip" title="<pre>clojure.set/rename-keys
+See also: assoc-in, get-in, fnil</pre>">update-in</a> (clojure.set/) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.set/rename-keys/" class="tooltip" title="<pre>clojure.set/rename-keys
 ([map kmap])
   Returns the map with the keys in kmap renamed to the vals in kmap
 
@@ -2283,7 +2283,7 @@ Macro
   (take 100 (for [x (range 100000000) y (range 1000000) :while (&lt; y x)] [x y]))
 
 11 examples totaling 144 lines, 6 comments on Fri Aug 29 2014
-See also: doseq, doall, recur</pre>">for</a> (1.7) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/dedupe/" class="tooltip" title="<pre>clojure.core/dedupe
+See also: doseq, doall, recur</pre>">for</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/dedupe/" class="tooltip" title="<pre>clojure.core/dedupe
 ([] [coll])
   Returns a lazy sequence removing consecutive duplicates in coll.
   Returns a transducer when no collection is provided.</pre>">dedupe</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/random-sample/" class="tooltip" title="<pre>clojure.core/random-sample
@@ -2883,7 +2883,7 @@ See also: doall</pre>">dorun</a> <a href="https://conj.io/store/v0/org.clojure/c
   seq to reside in memory at one time.
 
 1 example with 17 lines, 2 comments on Fri Aug 29 2014
-See also: dorun, doseq</pre>">doall</a> (1.7) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/run%21/" class="tooltip" title="<pre>clojure.core/run!
+See also: dorun, doseq</pre>">doall</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/run%21/" class="tooltip" title="<pre>clojure.core/run!
 ([proc coll])
   Runs the supplied procedure (via reduce), for purposes of side
   effects, on successive items in the collection. Returns nil</pre>">run!</a></code></td>
@@ -3028,7 +3028,7 @@ See also: distinct?</pre>">distinct</a> <a href="https://conj.io/store/v0/org.cl
   Returns a stateful transducer when no collection is provided.
 
 2 examples totaling 31 lines on Fri Aug 29 2014
-See also: interleave, join</pre>">interpose</a> (1.7) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/cat/" class="tooltip" title="<pre>clojure.core/cat
+See also: interleave, join</pre>">interpose</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/cat/" class="tooltip" title="<pre>clojure.core/cat
 ([rf])
   A transducer which concatenates the contents of each input, which must be a
   collection, into the reduction.</pre>">cat</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/dedupe/" class="tooltip" title="<pre>clojure.core/dedupe
@@ -3050,7 +3050,7 @@ See also: interleave, join</pre>">interpose</a> (1.7) <a href="https://conj.io/s
               </tr>
               <tr class="even">
                 <td>Create your own</td>
-                <td><code>(1.7) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/completing/" class="tooltip" title="<pre>clojure.core/completing
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/completing/" class="tooltip" title="<pre>clojure.core/completing
 ([f] [f cf])
   Takes a reducing function f of 2 args and returns a fn suitable for
   transduce by adding an arity-1 signature that calls cf (default -
@@ -3080,7 +3080,7 @@ See also: conj</pre>">into</a> <a href="https://conj.io/store/v0/org.clojure/clo
   number-of-colls arguments
 
 1 example with 6 lines on Fri Aug 29 2014
-See also: seq</pre>">sequence</a> (1.7) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/transduce/" class="tooltip" title="<pre>clojure.core/transduce
+See also: seq</pre>">sequence</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/transduce/" class="tooltip" title="<pre>clojure.core/transduce
 ([xform f coll] [xform f init coll])
   reduce with a transformation of f (xf). If init is not
   supplied, (f) will be called to produce it. f should be a reducing
@@ -5489,11 +5489,11 @@ with-redefs-fn, set!, var-set, var-get, with-local-vars</pre>">var</a> <code><va
               </tr>
               <tr class="odd">
                 <td><code>#?</code></td>
-                <td><code>(1.7) <a href="https://clojure.org/reference/reader#_reader_conditionals">Reader conditional</a>: <code>#?(:clj x :cljs y)</code> reads as <code>x</code> on JVM, <code>y</code> in ClojureScript, nothing elsewhere.  Other keys: <code>:cljr :default</code></code></td>
+                <td><code><a href="https://clojure.org/reference/reader#_reader_conditionals">Reader conditional</a>: <code>#?(:clj x :cljs y)</code> reads as <code>x</code> on JVM, <code>y</code> in ClojureScript, nothing elsewhere.  Other keys: <code>:cljr :default</code></code></td>
               </tr>
               <tr class="even">
                 <td><code>#?@</code></td>
-                <td><code>(1.7) <a href="https://clojure.org/reference/reader#_reader_conditionals">Splicing reader conditional</a>: <code>[1 #?@(:clj [x y] :cljs [w z]) 3]</code> reads as <code>[1 x y 3]</code> on JVM, <code>[1 w z 3]</code> in ClojureScript, <code>[1 3]</code> elsewhere.</code></td>
+                <td><code><a href="https://clojure.org/reference/reader#_reader_conditionals">Splicing reader conditional</a>: <code>[1 #?@(:clj [x y] :cljs [w z]) 3]</code> reads as <code>[1 x y 3]</code> on JVM, <code>[1 w z 3]</code> in ClojureScript, <code>[1 3]</code> elsewhere.</code></td>
               </tr>
               <tr class="odd">
                 <td><code>#foo</code></td>
@@ -6787,7 +6787,7 @@ See also: bound-fn, bound-fn*</pre>">thread-bound?</a></code></td>
               </tr>
               <tr class="even">
                 <td>Volatiles</td>
-                <td><code>(1.7) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/volatile%21/" class="tooltip" title="<pre>clojure.core/volatile!
+                <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/volatile%21/" class="tooltip" title="<pre>clojure.core/volatile!
 ([val])
   Creates and returns a Volatile with an initial value of val.</pre>">volatile!</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/vreset%21/" class="tooltip" title="<pre>clojure.core/vreset!
 ([vol newval])
@@ -7586,7 +7586,17 @@ See also: *e</pre>">pst</a> <a href="https://conj.io/store/v0/org.clojure/clojur
   Returns exception data (a map) if ex is an IExceptionInfo.
    Otherwise returns nil.</pre>">ex-data</a> (1.9) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/StackTraceElement-%3Evec/" class="tooltip" title="<pre>clojure.core/StackTraceElement-&gt;vec
 ([o])
-  Constructs a data representation for a StackTraceElement</pre>">StackTraceElement-&gt;vec</a></code></td>
+  Constructs a data representation for a StackTraceElement</pre>">StackTraceElement-&gt;vec</a> (1.10) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/ex-cause/" class="tooltip" title="<pre>clojure.core/ex-cause
+([ex])
+  Returns the cause of ex if ex is a Throwable.
+  Otherwise returns nil.</pre>">ex-cause</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/ex-message/" class="tooltip" title="<pre>clojure.core/ex-message
+([ex])
+  Returns the message attached to ex if ex is a Throwable.
+  Otherwise returns nil.</pre>">ex-message</a> (clojure.main/) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.main/ex-str/" class="tooltip" title="<pre>clojure.main/ex-str
+([e])
+  Returns a string from an exception for printing at the repl.
+  The first line summarizes data from the exception instance: phase, location,
+  cause message, etc. The subsequent lines contain ex-data info if available.</pre>">clojure.main/ex-str</a></code></td>
               </tr>
             </tbody>
           </table>
