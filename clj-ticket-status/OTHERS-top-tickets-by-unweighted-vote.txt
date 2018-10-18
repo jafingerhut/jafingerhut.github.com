@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: October 11, 2018
+Date: October 18, 2018
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -75,6 +75,7 @@ Defect
    3 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
    3 Open         [ASYNC-79] (CLJS) go macro not correctly transforming (case) within a macro
    2 Open         [ASYNC-203] "dynamic binding + parking" removes top values of dynamic bindings outside
+   2 Open         [ASYNC-221] go ignores async code in letfn body
    2 Triaged      [ASYNC-217] pipeline does not stop consuming from when to is closed
    2 Open         [ASYNC-117] (CLJS) let-bindings unavailable in #js literals in go-blocks
    1 Triaged      [ASYNC-64] Race condition when closing mults
@@ -450,13 +451,13 @@ Project DXML tickets
 ========================================
 Defect
 
+   1 Open         [DXML-59] Typo in throw in clojure.data.xml.js.dom
    0 Open         [DXML-43] Emitting XML element with :xmlns attribute doesn't work as expected
    0 Open         [DXML-47] Failed to emit CDATA in ClojureScript
    0 Open         [DXML-51] aggregate-xmlns overwrites metadata
    0 Open         [DXML-53] Java 9 changes indented xml output (adds newlines)
    0 Open         [DXML-54] can't parse comments using parse-str in cljs
    0 Open         [DXML-55] Cannot customise prefixes when aggregating namespaces
-   0 Open         [DXML-59] Typo in throw in clojure.data.xml.js.dom
 
 ========================================
 Enhancement
@@ -468,6 +469,7 @@ Enhancement
    0 Open         [DXML-52] Transforming fragments of non-namespaced xml into default xmlns
    0 Open         [DXML-57] Support printing element metadata with *print-meta*
    0 Open         [DXML-58] Please add a method to to specify xml-stylesheet processing instruction
+   0 Open         [DXML-60] NodeJS support for ClojureScript
 
 ========================================
 Task
@@ -823,12 +825,11 @@ Defect
    7 Open         [TDEPS-74] Problem with local deps with local deps
    3 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
    2 Open         [TDEPS-66] GitHub repo name is confusing
+   2 Open         [TDEPS-79] Cyclic dependency locks up clojure command line tool
    2 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
    1 Open         [TDEPS-8] tools.deps does not handle maven relocations
-   1 Open         [TDEPS-56] Main opts with space broken apart
-   1 Open         [TDEPS-79] Cyclic dependency locks up clojure command line tool
    1 Open         [TDEPS-83] Classpath caching does not invalidate when local root manifests are changed.
-   1 Open         [TDEPS-98] Not possible to retrieve Maven libraries with just a pom and no jar
+   1 Open         [TDEPS-56] Main opts with space broken apart
    0 Open         [TDEPS-29] Updates to pom continually adds superfluous newlines under Java 9
    0 Open         [TDEPS-31] ssh git repository doesn't work with some SSH host key algorithms
    0 Open         [TDEPS-49] Jsch public key problems
@@ -836,6 +837,7 @@ Defect
    0 Open         [TDEPS-58] Dependency resolution depends on order in map
    0 Open         [TDEPS-82] Ensure -Sdescribe doesn't trigger resolution
    0 Open         [TDEPS-96] Resolving paths from pom project produces wrong result
+   0 Open         [TDEPS-100] -A / -M alias ordering is not respected for :main-opts
 
 ========================================
 Enhancement
@@ -857,8 +859,8 @@ Enhancement
    0 Open         [TDEPS-91] Shell out to Git instead of JGit
    0 Open         [TDEPS-93] Add support for local git repository deps on the file system
    0 Open         [TDEPS-94] git dependencies don't work with relative paths
-   0 Open         [TDEPS-97] Unwanted "Downloading ...maven-metadata.xml from s3p://..." messages
    0 Open         [TDEPS-99] Allow user to specify the path to Maven settings (or provide repo credentials directly)
+   0 Open         [TDEPS-101] :mvn/repos map in deps.edn should have a way to configure <repositories> tag in generated pom.xml
 
 ========================================
 Feature
@@ -870,7 +872,7 @@ Feature
 ========================================
 Task
 
-   5 Open         [TDEPS-67] Windows installation scripts
+   6 Open         [TDEPS-67] Windows installation scripts
    2 Open         [TDEPS-41] Document classpath ordering strategy
    0 Open         [TDEPS-42] Document lib-map
 
@@ -948,12 +950,13 @@ Defect
    0 Open         [TNS-43] ns-decl? treats (ns) as valid
    0 Open         [TNS-50] `require :reload` fails where `load-file` succeeds
    0 Open         [TNS-51] Support namespaces as strings in require statements
+   0 Open         [TNS-53] Breakage with tools.reader 1.3.0
 
 ========================================
 Enhancement
 
    6 Open         [TNS-45] File in invalid path will mark namespace for reload
-   1 Open         [TNS-48] Ability to track files that are not namespaces
+   2 Open         [TNS-48] Ability to track files that are not namespaces
    0 Open         [TNS-37] c.t.n.move: does not support to move .cljc files
    0 Open         [TNS-39] Single classpath argument for c.t.n.move
    0 Open         [TNS-46] Add project.clj for easier development
@@ -977,7 +980,6 @@ Enhancement
 Task
 
    0 Open         [TRDR-29] Simple benchmarking bash script to test before & after applying a batch
-   0 Open         [TRDR-53] Updated README and CHANGELOG
 
 
 Project TTRACE tickets

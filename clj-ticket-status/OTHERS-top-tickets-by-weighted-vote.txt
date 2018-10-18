@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: October 11, 2018
+Date: October 18, 2018
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -117,6 +117,9 @@ Defect
     2.00   2 Open         [ASYNC-203] "dynamic binding + parking" removes top values of dynamic bindings outside
              Alexey Aristov (1.00)
              Ilya Shinkarenko (1.00)
+    2.00   2 Open         [ASYNC-221] go ignores async code in letfn body
+             Mark Mathis (1.00)
+             Dan Boykis (1.00)
     1.86   2 Triaged      [ASYNC-217] pipeline does not stop consuming from when to is closed
              Paul Rutledge (1.00)
              Marco Molteni (0.86)
@@ -189,7 +192,6 @@ Enhancement
              Arnaud Bos (1.00)
              Chad Harrington (1.00)
              Colin Taylor (1.00)
-             Dan Boykis (1.00)
              Derek Troy-West (1.00)
              Michael Drogalis (1.00)
              Nicolas HA (1.00)
@@ -201,6 +203,7 @@ Enhancement
              Timothy Pote (1.00)
              zhihong zhang (1.00)
              Brandon Adams (1.00)
+             Dan Boykis (1.00)
              Howard Lewis Ship (1.00)
              Masaru Itoh (1.00)
              Nicola Mometto (1.00)
@@ -596,13 +599,14 @@ Project DXML tickets
 ========================================
 Defect
 
+    1.00   1 Open         [DXML-59] Typo in throw in clojure.data.xml.js.dom
+             Alex C (1.00)
     0.00   0 Open         [DXML-43] Emitting XML element with :xmlns attribute doesn't work as expected
     0.00   0 Open         [DXML-47] Failed to emit CDATA in ClojureScript
     0.00   0 Open         [DXML-51] aggregate-xmlns overwrites metadata
     0.00   0 Open         [DXML-53] Java 9 changes indented xml output (adds newlines)
     0.00   0 Open         [DXML-54] can't parse comments using parse-str in cljs
     0.00   0 Open         [DXML-55] Cannot customise prefixes when aggregating namespaces
-    0.00   0 Open         [DXML-59] Typo in throw in clojure.data.xml.js.dom
 
 ========================================
 Enhancement
@@ -614,6 +618,7 @@ Enhancement
     0.00   0 Open         [DXML-52] Transforming fragments of non-namespaced xml into default xmlns
     0.00   0 Open         [DXML-57] Support printing element metadata with *print-meta*
     0.00   0 Open         [DXML-58] Please add a method to to specify xml-stylesheet processing instruction
+    0.00   0 Open         [DXML-60] NodeJS support for ClojureScript
 
 ========================================
 Task
@@ -1032,19 +1037,18 @@ Defect
     2.00   2 Open         [TDEPS-66] GitHub repo name is confusing
              Elana Hashman (1.00)
              Martin Klepsch (1.00)
+    2.00   2 Open         [TDEPS-79] Cyclic dependency locks up clojure command line tool
+             Max Penet (1.00)
+             Reid McKenzie (1.00)
     1.86   2 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
              Reid McKenzie (1.00)
              Kenny Williams (0.86)
     1.00   1 Open         [TDEPS-8] tools.deps does not handle maven relocations
              Felix Andrews (1.00)
-    1.00   1 Open         [TDEPS-56] Main opts with space broken apart
-             Michael Nygard (1.00)
-    1.00   1 Open         [TDEPS-79] Cyclic dependency locks up clojure command line tool
-             Reid McKenzie (1.00)
     1.00   1 Open         [TDEPS-83] Classpath caching does not invalidate when local root manifests are changed.
              Wilker Lúcio da Silva (1.00)
-    1.00   1 Open         [TDEPS-98] Not possible to retrieve Maven libraries with just a pom and no jar
-             Martin Klepsch (1.00)
+    0.86   1 Open         [TDEPS-56] Main opts with space broken apart
+             Michael Nygard (0.86)
     0.00   0 Open         [TDEPS-29] Updates to pom continually adds superfluous newlines under Java 9
     0.00   0 Open         [TDEPS-31] ssh git repository doesn't work with some SSH host key algorithms
     0.00   0 Open         [TDEPS-49] Jsch public key problems
@@ -1052,6 +1056,7 @@ Defect
     0.00   0 Open         [TDEPS-58] Dependency resolution depends on order in map
     0.00   0 Open         [TDEPS-82] Ensure -Sdescribe doesn't trigger resolution
     0.00   0 Open         [TDEPS-96] Resolving paths from pom project produces wrong result
+    0.00   0 Open         [TDEPS-100] -A / -M alias ordering is not respected for :main-opts
 
 ========================================
 Enhancement
@@ -1082,27 +1087,28 @@ Enhancement
     0.00   0 Open         [TDEPS-91] Shell out to Git instead of JGit
     0.00   0 Open         [TDEPS-93] Add support for local git repository deps on the file system
     0.00   0 Open         [TDEPS-94] git dependencies don't work with relative paths
-    0.00   0 Open         [TDEPS-97] Unwanted "Downloading ...maven-metadata.xml from s3p://..." messages
     0.00   0 Open         [TDEPS-99] Allow user to specify the path to Maven settings (or provide repo credentials directly)
+    0.00   0 Open         [TDEPS-101] :mvn/repos map in deps.edn should have a way to configure <repositories> tag in generated pom.xml
 
 ========================================
 Feature
 
     1.00   1 Open         [TDEPS-57] Give names to `:config-files`
              Rick Moynihan (1.00)
-    1.00   1 Open         [TDEPS-84] Add Chocolatey Package
-             Michael Nygard (1.00)
+    0.86   1 Open         [TDEPS-84] Add Chocolatey Package
+             Michael Nygard (0.86)
     0.00   0 Open         [TDEPS-88] Finalize meaning of -Srepro
 
 ========================================
 Task
 
-    5.00   5 Open         [TDEPS-67] Windows installation scripts
+    5.86   6 Open         [TDEPS-67] Windows installation scripts
              Adrian A. (1.00)
              Henry Widd (1.00)
              Steffen Dienst (1.00)
              Yehonathan Sharvit (1.00)
              Thomas Heller (1.00)
+             Michael Nygard (0.86)
     2.00   2 Open         [TDEPS-41] Document classpath ordering strategy
              A. R (1.00)
              Thomas Heller (1.00)
@@ -1187,6 +1193,7 @@ Defect
     0.00   0 Open         [TNS-43] ns-decl? treats (ns) as valid
     0.00   0 Open         [TNS-50] `require :reload` fails where `load-file` succeeds
     0.00   0 Open         [TNS-51] Support namespaces as strings in require statements
+    0.00   0 Open         [TNS-53] Breakage with tools.reader 1.3.0
 
 ========================================
 Enhancement
@@ -1198,7 +1205,8 @@ Enhancement
              Dieter Komendera (1.00)
              Dominic Monroe (1.00)
              Tianxiang Xiong (1.00)
-    1.00   1 Open         [TNS-48] Ability to track files that are not namespaces
+    2.00   2 Open         [TNS-48] Ability to track files that are not namespaces
+             Miikka Koskinen (1.00)
              Daniel Compton (1.00)
     0.00   0 Open         [TNS-37] c.t.n.move: does not support to move .cljc files
     0.00   0 Open         [TNS-39] Single classpath argument for c.t.n.move
@@ -1223,7 +1231,6 @@ Enhancement
 Task
 
     0.00   0 Open         [TRDR-29] Simple benchmarking bash script to test before & after applying a batch
-    0.00   0 Open         [TRDR-53] Updated README and CHANGELOG
 
 
 Project TTRACE tickets
