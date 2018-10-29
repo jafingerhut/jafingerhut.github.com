@@ -1,22 +1,25 @@
-= Introduction
+# Introduction
 
 I will try to keep these links valid, but of course Internet searches
-for the title and authors, and/or the Internet Archive Wayback
-Machine, may help you find results if that happens, too.
+for the title and authors, and/or the [Internet Archive Wayback
+Machine](https://archive.org/), may help you find results if they
+become stale.
 
-This is a list of articles (or longer) attempting to explain benefits
-of functional programming, meaning using a programming language that
-encourages using immutable data and pure functions (e.g. except for a
-few unsafe corners, Haskell restricts you to this, whereas Clojure
-makes it straightforward to write most of your code in this way, while
-mixing in bits of mutability and side effects where you find it
-uesful).
+This is a list of articles (or longer works) attempting to explain the
+benefits of functional programming, meaning: using a programming
+language that encourages or requires immutable data and pure
+functions.  For example, Haskell nearly restricts you to these things,
+whereas Clojure makes it straightforward and idiomatic to write most
+of your code in this way, while mixing in bits of mutability and side
+effects where you find it uesful.
 
-TBD: Add notes of page/word count for these, or durations of
-recordings, so people wanting a quick read can have an idea of what
-they are getting into.  Also add a few notes of the background
-knowledge expected by each.
+Nice to do some time: Add notes of page/word count for these, or
+durations of recordings, so people wanting a quick read can have an
+idea of what they are getting into.  Also add a few notes of the
+background knowledge expected by each.
 
+
+## Why use functional programming?
 
 + Kris Jenkins, "What is Functional Programming?", 2015
 
@@ -25,11 +28,6 @@ http://blog.jenkster.com/2015/12/what-is-functional-programming.html
 Author's note: "This is my take on what functional programming really
 is, in a way that will make sense to a jobbing programmer just trying
 to Get Stuff Done."
-
-
-+ Philip Nilsson, "Git is a purely functional data structure", 2013
-
-https://blog.jayway.com/2013/03/03/git-is-a-purely-functional-data-structure/
 
 
 + Mary Rose Cook, "A practical introduction to functional programming", 2014 (?)
@@ -64,18 +62,23 @@ https://www.thocp.net/biographies/papers/backus_turingaward_lecture.pdf
 This is an article version of John Backus's Turing Award lecture.
 
 
++ Philip Nilsson, "Git is a purely functional data structure", 2013
+
+https://blog.jayway.com/2013/03/03/git-is-a-purely-functional-data-structure/
 
 
-TBD: Consider these for inclusion.  I haven't read them yet:
+
+## Other related works
+
+TBD: Consider these for inclusion in the list above.  I haven't read
+them yet.
 
 http://www.haskellforall.com/2012/08/the-category-design-pattern.html
 
 
-Critiques of functional programming:
+Critique of functional programming: Erik Meijer, "The Curse of the
+Excluded Middle", 2014 https://queue.acm.org/detail.cfm?id=2611829
 
-Erik Meijer, "The Curse of the Excluded Middle", 2014
-
-https://queue.acm.org/detail.cfm?id=2611829
 
 James Hague, "Programming in the twenty-first century", series of blog articles
 https://prog21.dadgum.com/
