@@ -22,8 +22,7 @@ background knowledge expected by each.
 ## Why use functional programming?
 
 + Kris Jenkins, "What is Functional Programming?", 2015
-
-http://blog.jenkster.com/2015/12/what-is-functional-programming.html
+  http://blog.jenkster.com/2015/12/what-is-functional-programming.html
 
 Author's note: "This is my take on what functional programming really
 is, in a way that will make sense to a jobbing programmer just trying
@@ -31,40 +30,34 @@ to Get Stuff Done."
 
 
 + Mary Rose Cook, "A practical introduction to functional programming", 2014 (?)
-
-https://maryrosecook.com/blog/post/a-practical-introduction-to-functional-programming
+  https://maryrosecook.com/blog/post/a-practical-introduction-to-functional-programming
 
 
 + Ben Moseley, Peter Marks, "Out of the Tar Pit", 2006
-
-http://curtclifton.net/papers/MoseleyMarks06a.pdf
+  http://curtclifton.net/papers/MoseleyMarks06a.pdf
 
 
 + Audio recording of interview: "John Hughes on Why Functional
-Programming Matters!", 2010
-
-https://www.infoq.com/interviews/john-hughes-fp
+  Programming Matters!", 2010
+  https://www.infoq.com/interviews/john-hughes-fp
 
 
 + John Hughes, "Why Functional Programming Matters", 1989
-
-https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf
+  https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf
 
 ACM Digital library link (not a link to the paper unless you pay, or are an ACM member): https://dl.acm.org/citation.cfm?id=63411
 
 
 
 + John Backus, "Can Programming Be Liberated from the von Neumann Style?
-A Functional Style and Its Algebra of Programs", 1978
-
-https://www.thocp.net/biographies/papers/backus_turingaward_lecture.pdf
+  A Functional Style and Its Algebra of Programs", 1978
+  https://www.thocp.net/biographies/papers/backus_turingaward_lecture.pdf
 
 This is an article version of John Backus's Turing Award lecture.
 
 
 + Philip Nilsson, "Git is a purely functional data structure", 2013
-
-https://blog.jayway.com/2013/03/03/git-is-a-purely-functional-data-structure/
+  https://blog.jayway.com/2013/03/03/git-is-a-purely-functional-data-structure/
 
 
 
