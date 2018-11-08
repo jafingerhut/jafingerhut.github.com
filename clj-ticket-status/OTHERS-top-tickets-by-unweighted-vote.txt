@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: November 1, 2018
+Date: November 8, 2018
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -124,11 +124,12 @@ Defect
    0 Open         [ASYNC-216] Cannot build GraalVM native image due to timeout thread starting during image creation
    0 Open         [ASYNC-219] some locals are not cleared in go blocks
    0 Open         [ASYNC-220] an exception caught in a finally block swallows the exception of the outer try
+   0 Open         [ASYNC-222] can't assign instance fields in go blocks
 
 ========================================
 Enhancement
 
-  21 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
+  22 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
   13 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
    6 Triaged      [ASYNC-126] Add public channel "closed?" predicate
    5 Open         [ASYNC-137] (CLJS) Make (<! (timeout 0)) be closer to 0
@@ -260,6 +261,7 @@ Defect
 
    6 Open         [CRRBV-15] rrb-vector won't compile with clojurescript: clojure.lang.ArityException: Wrong number of args (1) passed to: nodes/ranges
    1 Open         [CRRBV-18] core.rrb-vector fails on JDK 11 EA builds
+   1 Open         [CRRBV-19] Compilation under CLJS fails under certain conditions
    0 Open         [CRRBV-9] Repeated subvec and catvec fails
    0 Open         [CRRBV-10] Calling empty in CLJS results in a PersistentVector
    0 Open         [CRRBV-11] Issue with Clojure 1.8.0-alpha2 Tuples
@@ -267,7 +269,7 @@ Defect
    0 Open         [CRRBV-13] Throws ClassCastException on assoc
    0 Open         [CRRBV-14] nth fails with ArrayIndexOutOfBoundsException 33 clojure.core.rrb-vector.rrbt.Vector/fn--19277 (rrbt.clj:373)
    0 Open         [CRRBV-17] StackOverflowError when building rrb-vector by concatenation at the beginning
-   0 Open         [CRRBV-19] Compilation under CLJS fails under certain conditions
+   0 Open         [CRRBV-20] Probably a core.rrb-vector bug, exercised via fipp library
 
 ========================================
 Enhancement
@@ -451,14 +453,10 @@ Project DXML tickets
 ========================================
 Defect
 
-   1 Open         [DXML-59] Typo in throw in clojure.data.xml.js.dom
    0 Open         [DXML-43] Emitting XML element with :xmlns attribute doesn't work as expected
-   0 Open         [DXML-47] Failed to emit CDATA in ClojureScript
    0 Open         [DXML-51] aggregate-xmlns overwrites metadata
    0 Open         [DXML-53] Java 9 changes indented xml output (adds newlines)
-   0 Open         [DXML-54] can't parse comments using parse-str in cljs
    0 Open         [DXML-55] Cannot customise prefixes when aggregating namespaces
-   0 Open         [DXML-61] Error when attempting to parse xml with content, ClojureScript on NodeJS
 
 ========================================
 Enhancement
@@ -583,6 +581,7 @@ Defect
    0 Open         [LOGIC-185] finite domain uncomplete results
    0 Bad: Match n [LOGIC-186] spurious disequality constraints
    0 Open         [LOGIC-187] *locals* is unbound in some calls to `p->term`
+   0 Open         [LOGIC-188] EQ conditions which match against a negative result fail to find any results.
 
 ========================================
 Enhancement
@@ -645,7 +644,7 @@ Defect
 ========================================
 Enhancement
 
-  13 Open         [MATCH-116] core.match clojurescript should be self-host compatible
+  14 Open         [MATCH-116] core.match clojurescript should be self-host compatible
    1 Open         [MATCH-4] Optimized pattern matching on deftype/record, POJOs
    0 Open         [MATCH-2] Matching Diagnostics
    0 Open         [MATCH-8] Implement (p|q)ba heuristics
@@ -781,6 +780,7 @@ Enhancement
    2 Open         [TCHECK-123] Interactive documentation
    1 Open         [TCHECK-8] Bound tests and shrinks in time
    1 Open         [TCHECK-97] Support Unicode chararacters for char based generators
+   1 Open         [TCHECK-128] test.check doesn't seem to have a macro for asynchronous tests
    0 Open         [TCHECK-4] Handle sigint
    0 Open         [TCHECK-14] re-organize README and doc/
    0 Open         [TCHECK-19] Permit a data-structure containing generators to be used as a generator
@@ -805,15 +805,14 @@ Enhancement
    0 Open         [TCHECK-115] run tests in parallel on the jvm
    0 Open         [TCHECK-119] Checking of interesting edge cases is not very creative
    0 Open         [TCHECK-126] Refactor c.t.c/quick-check as a state machine to provide more extension points
-   0 Open         [TCHECK-128] test.check doesn't seem to have a macro for asynchronous tests
    0 Open         [TCHECK-144] Add performance regression checks
 
 ========================================
 Feature
 
+   1 Open         [TCHECK-148] Add a bigint generator
    0 Open         [TCHECK-146] Consider adding for-all-2 to address a couple issues
    0 Open         [TCHECK-147] Variant of gen/any without NaNs?
-   0 Open         [TCHECK-148] Add a bigint generator
    0 Open         [TCHECK-149] Better distribution for the ratio generator
 
 
@@ -825,44 +824,45 @@ Defect
 
    7 Open         [TDEPS-74] Problem with local deps with local deps
    3 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
-   2 Open         [TDEPS-66] GitHub repo name is confusing
+   3 Open         [TDEPS-66] GitHub repo name is confusing
    2 Open         [TDEPS-79] Cyclic dependency locks up clojure command line tool
    2 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
    1 Open         [TDEPS-8] tools.deps does not handle maven relocations
    1 Open         [TDEPS-29] Updates to pom continually adds superfluous newlines under Java 9
    1 Open         [TDEPS-83] Classpath caching does not invalidate when local root manifests are changed.
    1 Open         [TDEPS-56] Main opts with space broken apart
+   1 Open         [TDEPS-58] Dependency resolution depends on order in map
    0 Open         [TDEPS-31] ssh git repository doesn't work with some SSH host key algorithms
    0 Open         [TDEPS-49] Jsch public key problems
    0 Open         [TDEPS-50] pom dependencies with classifier don't get added to classpath
-   0 Open         [TDEPS-58] Dependency resolution depends on order in map
    0 Open         [TDEPS-82] Ensure -Sdescribe doesn't trigger resolution
    0 Open         [TDEPS-96] Resolving paths from pom project produces wrong result
    0 Open         [TDEPS-100] -A / -M alias ordering is not respected for :main-opts
+   0 Open         [TDEPS-104] UnknownHostKey: XXXX. RSA key fingerprint is YYYYY
 
 ========================================
 Enhancement
 
-   7 Open         [TDEPS-20] Cannot resolve Maven artifacts through proxy
+   8 Open         [TDEPS-20] Cannot resolve Maven artifacts through proxy
    1 Open         [TDEPS-17] Consider lib overrides
    1 Open         [TDEPS-48] First class options for Socket REPL
+   1 Open         [TDEPS-69] Authenticate deployed artifacts
    1 Open         [TDEPS-102] Certain kinds of errors during startup leaves developer with no clues as to what is wrong
+   1 Open         [TDEPS-81] Add support for a download progress callback to the tools.deps.alpha API
+   1 Open         [TDEPS-101] :mvn/repos map in deps.edn should have a way to configure <repositories> tag in generated pom.xml
    0 Open         [TDEPS-21] No diagnostic information when building classpath fails
    0 Open         [TDEPS-33] Consider https git authentication
    0 Open         [TDEPS-46] Include custom repos in dependency pom.xml
    0 Open         [TDEPS-62] Make Maven update policy configurable
    0 Open         [TDEPS-63] Support default jvm-opts
-   0 Open         [TDEPS-69] Authenticate deployed artifacts
    0 Open         [TDEPS-70] scripts don't detect or warn if file referred to in cached classpath has been deleted
    0 Open         [TDEPS-72] Add main opts to -Sdescribe output
    0 Open         [TDEPS-78] Preload rlwrap completion list with clojure.core symbols
    0 Open         [TDEPS-80] Provide a means to create a classpath with the installed version of tools.deps.alpha
-   0 Open         [TDEPS-81] Add support for a download progress callback to the tools.deps.alpha API
    0 Open         [TDEPS-91] Shell out to Git instead of JGit
    0 Open         [TDEPS-93] Add support for local git repository deps on the file system
    0 Open         [TDEPS-94] git dependencies don't work with relative paths
    0 Open         [TDEPS-99] Allow user to specify the path to Maven settings (or provide repo credentials directly)
-   0 Open         [TDEPS-101] :mvn/repos map in deps.edn should have a way to configure <repositories> tag in generated pom.xml
    0 Open         [TDEPS-103] Native library support for tools.deps
 
 ========================================
