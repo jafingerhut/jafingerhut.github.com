@@ -21,8 +21,13 @@ background knowledge expected by each.
 
 ## Why use functional programming?
 
-+ Kris Jenkins, "What is Functional Programming?", 2015
++ Part 1: Kris Jenkins, "What is Functional Programming?", 2015
   http://blog.jenkster.com/2015/12/what-is-functional-programming.html
+  1900 words
+
++ Part 2: Kris Jenkins "Which Programming Languages Are Functional?", 2015
+  http://blog.jenkster.com/2015/12/which-programming-languages-are-functional.html
+  2300 words
 
 Author's note: "This is my take on what functional programming really
 is, in a way that will make sense to a jobbing programmer just trying
@@ -30,7 +35,7 @@ to Get Stuff Done."
 
 
 + Mary Rose Cook, "A practical introduction to functional programming", 2014 (?)
-  https://maryrosecook.com/blog/post/a-practical-introduction-to-functional-programming
+  https://maryrosecook.com/blog/post/a-practical-introduction-to-functional-programming 3600 words
 
 
 + Ben Moseley, Peter Marks, "Out of the Tar Pit", 2006
@@ -39,7 +44,7 @@ to Get Stuff Done."
 
 + Audio recording of interview: "John Hughes on Why Functional
   Programming Matters!", 2010
-  https://www.infoq.com/interviews/john-hughes-fp
+  https://www.infoq.com/interviews/john-hughes-fp 38 minutes
 
 
 + John Hughes, "Why Functional Programming Matters", 1989
@@ -68,6 +73,7 @@ them yet.
 
 http://www.haskellforall.com/2012/08/the-category-design-pattern.html
 
+https://www.business2community.com/brandviews/upwork/functional-programming-what-is-it-and-why-does-it-matter-02131733
 
 Critique of functional programming: Erik Meijer, "The Curse of the
 Excluded Middle", 2014 https://queue.acm.org/detail.cfm?id=2611829
