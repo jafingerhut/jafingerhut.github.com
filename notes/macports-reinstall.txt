@@ -1,7 +1,16 @@
+Make a list of currently installed ports, before removing them:
+
+```bash
+% port -qv installed > myports.txt
+% port echo requested | cut -d ' ' -f 1 > requested.txt
+```
+
 Get rid of a couple of directories where most MacPorts things are
 installed:
 
-sudo rm -fr /opt/local /Applications/MacPorts
+```bash
+% sudo rm -fr /opt/local /Applications/MacPorts
+```
 
 (leave /opt/X11 and other directories that might be inside /opt alone)
 
@@ -31,15 +40,32 @@ unnecessary as long as you left /opt/X11 directory alone when removing
 
 Install software packages I use frequently:
 
-sudo port install rlwrap maven3 apache-ant git emacs@+gtk+x11 graphviz
+```bash
+% sudo port install rlwrap maven3 apache-ant git emacs@+gtk+x11 graphviz the_silver_searcher
+% du -sh /opt/local
+3.4G
+```
 
 Not as frequent, but small and sometimes useful:
 
-sudo port install aspell aspell-dict-en bsdiff enscript p5-xml-libxml p5-net-ipv4addr p5-net-ipv6addr p7zip tcpdump tcpreplay gnupg pstree cscope swig-perl p5-parse-yapp
+```bash
+% sudo port install aspell aspell-dict-en bsdiff enscript p7zip tcpdump tcpreplay gnupg2 pstree cscope xdiskusage ps2eps psutils
+```
 
 Install less frequently used packages:
 
-sudo port install gnuplot ipe LyX scapy texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra texlive-plain-generic wireshark
+```bash
+% sudo port install gnuplot scapy wireshark
+% df -h .
+3.9G
+```
+
+These are much larger packages, and I think I may prefer installing
+them in a Linux VM instead of on my Mac OS X system.
+
+```bash
+% sudo port install ipe LyX texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra texlive-plain-generic
+```
 
 (Note: Some time around June 2017 the name of texlive-generic-extra
 changed to texlive-plain-generic)
@@ -47,6 +73,11 @@ changed to texlive-plain-generic)
 The following are useful for parts of clojure-benchmarks:
 * p5-xml-libxml
 * gnuplot
+
+Why did I have these installed before?  Leave them out for now,
+until and unless I find I need them later:
+* p5-net-ipv4addr
+* p5-net-ipv6addr
 
 The following are useful for parts of clojure-cheatsheets:
 * texlive-latex-recommended (needed for scrreprt.cls)
@@ -75,7 +106,6 @@ sbcl
 ghc
 ghostscript
 ImageMagick
-libpcap
 
 ----------------------------------------------------------------------
 
@@ -181,3 +211,117 @@ suffix, e.g. 'cython', run:
 
 port select --set cython cython27
 
+
+----------------------------------------------------------------------
+When running this command on a Mac OS X 10.13.6 system on 2018-Nov-21:
+
+```bash
+sudo port install rlwrap maven3 apache-ant git emacs@+gtk+x11 graphviz
+```
+
+I saw these notes at the end:
+
+```
+  dbus has the following notes:
+    Startup items (named 'dbus-system, dbus-session') have been generated that
+    will aid in starting dbus with launchd. They are disabled by default.
+    Execute the following command to start them, and to cause them to launch at
+    startup:
+    
+        sudo port load dbus
+  libidn has the following notes:
+    Please be aware that GNU libidn2 is the successor of GNU libidn. It comes
+    with IDNA 2008  
+    and TR46 implementations and also provides a compatibility layer for GNU
+    libidn.
+  libpsl has the following notes:
+    libpsl API documentation is provided by the port 'libpsl-docs'.
+  maven3 has the following notes:
+    To make maven 3.6.0 the default, please run
+    	sudo port select --set maven maven3
+  p5.26-libwww-perl has the following notes:
+    As of version 6.00, libwww-perl has been split into multiple packages. If
+    you were using p5.26-libwww-perl for just one or two of its modules before,
+    you may be able to pare down your installation to just those modules now.
+    Other important changes have been made that may affect your code; for
+    details, please see: /opt/local/share/doc/p5.26-libwww-perl/Changes
+  py36-pygments has the following notes:
+    To make the Python 3.6 version of Pygments the one that is run when you
+    execute the commands without a version suffix, e.g. 'pygmentize', run:
+    
+    port select --set pygments py36-pygments
+  python27 has the following notes:
+    To make this the default Python or Python 2 (i.e., the version run by the
+    'python' or 'python2' commands), run one or both of:
+    
+        sudo port select --set python python27
+        sudo port select --set python2 python27
+  python36 has the following notes:
+    To make this the default Python or Python 3 (i.e., the version run by the
+    'python' or 'python3' commands), run one or both of:
+    
+        sudo port select --set python python36
+        sudo port select --set python3 python36
+  rsync has the following notes:
+    To use the rsyncd server you must copy /opt/local/etc/rsyncd.conf.example to
+    rsyncd.conf and add your modules there. See 'man rsyncd.conf' for more
+    information.
+
+    A startup item has been generated that will aid in starting rsync with
+    launchd. It is disabled by default. Execute the following command to start
+    it, and to cause it to launch at startup:
+    
+        sudo port load rsync
+```
+
+```
+  openldap has the following notes:
+    A startup item has been generated that will aid in starting openldap with
+    launchd. It is disabled by default. Execute the following command to start
+    it, and to cause it to launch at startup:
+    
+        sudo port load openldap
+  pinentry-mac has the following notes:
+    If you previously didn't have pinentry or gpg-agent installed  and
+    pinentry-mac has been installed as a dependency of gpg-agent,  you don't
+    need to do anything to use pinentry-mac.
+    
+    If you want to switch to the GTK2, ncurses or Qt4 based pinentry  program,
+    please install pinentry with the correct use flags and  follow the
+    instructions below substituting the pinentry-mac program  path with
+    /opt/local/bin/pinentry.
+    
+    
+    If you previously had pinentry and gpg-agent installed and would  like to
+    switch to pinentry-mac, you will have to set  it as your pinentry program in
+    $HOME/.gnupg/gpg-agent.conf.
+    
+    Add the following line to the mentioned file:
+    pinentry-program
+    /Applications/MacPorts/pinentry-mac.app/Contents/MacOS/pinentry-mac
+    
+    
+    Be sure to comment previous "pinentry-program" lines, for example:
+    
+    pinentry-program SAMPLE
+    
+    becomes
+    
+    #pinentry-program SAMPLE
+    
+    
+    Afterwards, run
+    killall -HUP gpg-agent
+    
+    or simply log out and back in again.
+```
+
+I ran these commands after reinstalling MacPorts on a Mac OS X 10.3.6
+system in Nov 2018:
+
+```bash
+sudo port select --set maven maven3
+sudo port select --set python python27
+sudo port select --set python2 python27
+sudo port select --set python3 python36
+```
