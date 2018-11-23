@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: November 15, 2018
+Date: November 22, 2018
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -88,9 +88,9 @@ Defect
    1 Open         [ASYNC-198] core.async exception rewriting can result in an incorrect return value
    1 Open         [ASYNC-223] let in go block leaks memory
    1 Open         [ASYNC-108] (CLJS) cljs to-chan hangs on infinite lazy sequences
+   1 Open         [ASYNC-204] Writing on a closed channel doesn't commit the handler
    1 Open         [ASYNC-73] (CLJS) try-catch-finally broken inside go-blocks
    1 Vetted       [ASYNC-184] (CLJS) Port ASYNC-169 fixes to cljs
-   1 Open         [ASYNC-204] Writing on a closed channel doesn't commit the handler
    0 Open         [ASYNC-39] Processes spawned by mix never terminate
    0 Open         [ASYNC-51] (CLJS) Core.async memory leak in Safari and Mobile Safari
    0 Open         [ASYNC-63] (CLJS) Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
@@ -122,10 +122,10 @@ Defect
    0 Open         [ASYNC-211] `a/map` close out channel immediately when any one of inputs closed
    0 Open         [ASYNC-212] `go` fails to compile expressions with literal `nil` as a let value 
    0 Open         [ASYNC-215] (CLJS) Cannot use (js-debugger) in go block
-   0 Open         [ASYNC-216] Cannot build GraalVM native image due to timeout thread starting during image creation
    0 Open         [ASYNC-219] some locals are not cleared in go blocks
    0 Open         [ASYNC-220] an exception caught in a finally block swallows the exception of the outer try
    0 Open         [ASYNC-222] can't assign instance fields in go blocks
+   0 Open         [ASYNC-224] bug in method abort of clojure.core.async.impl.channels
 
 ========================================
 Enhancement
@@ -144,7 +144,6 @@ Enhancement
    1 Open         [ASYNC-55] Notification of items dropped from sliding/dropping buffers
    1 Open         [ASYNC-71] exception behavior for thread macro is hard coded
    1 Open         [ASYNC-46] Add optional default channel to 'pub'
-   1 Open         [ASYNC-213] Documentation for promise-chan should mention that close! behavior
    0 Vetted       [ASYNC-65] Change chan returned from pipe to internal go block out channel
    0 Vetted       [ASYNC-69] How to better communicate "mix" lifecycle wrt coordination
    0 Open         [ASYNC-98] Less hostile message for #'go stopping at (fn [] ) boundaries 
@@ -157,7 +156,6 @@ Enhancement
    0 Open         [ASYNC-166] Clarify clojure.core.async/chan docstring
    0 Open         [ASYNC-174] Executor service cannot be shutdown
    0 Open         [ASYNC-182] (CLJS) Support usage from bootstrapped clojurescript
-   0 Open         [ASYNC-189] Tap return value not documented
    0 Open         [ASYNC-193] Opaque string representation of channels in Clojurescript core.async
    0 Triaged      [ASYNC-196] Add ability to transduce values collected via clojure.core.async/into
 
@@ -261,7 +259,7 @@ Project CRRBV tickets
 Defect
 
    6 Open         [CRRBV-15] rrb-vector won't compile with clojurescript: clojure.lang.ArityException: Wrong number of args (1) passed to: nodes/ranges
-   2 Open         [CRRBV-18] core.rrb-vector fails on JDK 11 EA builds
+   3 Open         [CRRBV-18] core.rrb-vector fails on JDK 11 EA builds
    1 Open         [CRRBV-19] Compilation under CLJS fails under certain conditions
    0 Open         [CRRBV-9] Repeated subvec and catvec fails
    0 Open         [CRRBV-10] Calling empty in CLJS results in a PersistentVector
@@ -819,6 +817,11 @@ Feature
 
 
 Project TCLI tickets
+========================================
+Task
+
+   0 Open         [TCLI-92] Review cli-matic for inspiration for enhancing tools.cli
+
 
 Project TDEPS tickets
 ========================================
@@ -833,6 +836,7 @@ Defect
    2 Open         [TDEPS-106] tools.deps.alpha cannot be used as a library from a process which does not have the CWD set to the directory containing the deps.edn file
    1 Open         [TDEPS-8] tools.deps does not handle maven relocations
    1 Open         [TDEPS-29] Updates to pom continually adds superfluous newlines under Java 9
+   1 Open         [TDEPS-104] UnknownHostKey: XXXX. RSA key fingerprint is YYYYY
    1 Open         [TDEPS-83] Classpath caching does not invalidate when local root manifests are changed.
    1 Open         [TDEPS-58] Dependency resolution depends on order in map
    0 Open         [TDEPS-31] ssh git repository doesn't work with some SSH host key algorithms
@@ -841,13 +845,13 @@ Defect
    0 Open         [TDEPS-82] Ensure -Sdescribe doesn't trigger resolution
    0 Open         [TDEPS-96] Resolving paths from pom project produces wrong result
    0 Open         [TDEPS-100] -A / -M alias ordering is not respected for :main-opts
-   0 Open         [TDEPS-104] UnknownHostKey: XXXX. RSA key fingerprint is YYYYY
 
 ========================================
 Enhancement
 
    9 Open         [TDEPS-20] Cannot resolve Maven artifacts through proxy
    1 Open         [TDEPS-17] Consider lib overrides
+   1 Open         [TDEPS-46] Repositories from dependencies' pom.xml are not used
    1 Open         [TDEPS-48] First class options for Socket REPL
    1 Open         [TDEPS-69] Authenticate deployed artifacts
    1 Open         [TDEPS-102] Certain kinds of errors during startup leaves developer with no clues as to what is wrong
@@ -855,7 +859,6 @@ Enhancement
    1 Open         [TDEPS-101] :mvn/repos map in deps.edn should have a way to configure <repositories> tag in generated pom.xml
    0 Open         [TDEPS-21] No diagnostic information when building classpath fails
    0 Open         [TDEPS-33] Consider https git authentication
-   0 Open         [TDEPS-46] Include custom repos in dependency pom.xml
    0 Open         [TDEPS-62] Make Maven update policy configurable
    0 Open         [TDEPS-63] Support default jvm-opts
    0 Open         [TDEPS-70] scripts don't detect or warn if file referred to in cached classpath has been deleted
