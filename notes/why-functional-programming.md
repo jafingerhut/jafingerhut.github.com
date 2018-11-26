@@ -71,6 +71,8 @@ This is an article version of John Backus's Turing Award lecture.
 TBD: Consider these for inclusion in the list above.  I haven't read
 them yet.
 
+https://hackernoon.com/why-functional-programming-matters-c647f56a7691
+
 http://www.haskellforall.com/2012/08/the-category-design-pattern.html
 
 https://www.business2community.com/brandviews/upwork/functional-programming-what-is-it-and-why-does-it-matter-02131733
