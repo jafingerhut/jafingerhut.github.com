@@ -77,6 +77,8 @@ http://www.haskellforall.com/2012/08/the-category-design-pattern.html
 
 https://www.business2community.com/brandviews/upwork/functional-programming-what-is-it-and-why-does-it-matter-02131733
 
+https://dev.to/leandrotk_/functional-programming-principles-in-javascript-26g7
+
 Critique of functional programming: Erik Meijer, "The Curse of the
 Excluded Middle", 2014 https://queue.acm.org/detail.cfm?id=2611829
 
