@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: November 30, 2018
+Date: December 2, 2018
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -61,7 +61,7 @@ Defect
    5 Open         [CLJ-1591] Symbol not being bound in namespace when name clashes with clojure.core
    5 Prescreened  [CLJ-1077] thread-bound? returns true (implying set! should succeed) even for non-binding thread
    5 Open         [CLJ-1445] pprint prints some metadata when *print-meta* bound to true, but not all
-   5 Backlog      [CLJ-1472] The locking macro fails bytecode verification on ART runtime
+   5 Vetted       [CLJ-1472] The locking macro fails bytecode verification on ART runtime
    5 Backlog      [CLJ-1647] infinite loop in 'partition' and 'partition-all' when 'step' or 'n' is not positive
    5 Vetted       [CLJ-1879] reduce-kv on hash-maps or array-maps don't consistently execute the intended fastpath
    4 Triaged      [CLJ-1975] [spec] clojure.spec attempts to make `empty` records
@@ -71,8 +71,8 @@ Defect
    4 Triaged      [CLJ-2283] doseq should return nil with no collections
    4 Open         [CLJ-1059] PersistentQueue doesn't implement java.util.List, causing nontransitive equality
    4 Triaged      [CLJ-1955] .hashCode throws ClassCastException when called on some functions
-   3 Triaged      [CLJ-1649] Hash/equality inconsistency for floats & doubles
    3 Triaged      [CLJ-1911] min-key and max-key should return NaN if any of the argument is NaN
+   3 Triaged      [CLJ-1649] Hash/equality inconsistency for floats & doubles
    3 Triaged      [CLJ-2109] [spec] Protocol methods not instrumented
    3 Open         [CLJ-750] clojure.lang.MapEntry violates .equals and .hashCode contracts of HashMap.Entry; leads to non-reflexive .equals, etc.
    3 Open         [CLJ-1953] clojure.set should check or throw on non-set inputs
@@ -207,6 +207,7 @@ Defect
    0 Triaged      [CLJ-2431] clojure.java.io/resource NPEs when the context ClassLoader is null
    0 Triaged      [CLJ-2439] The 'do symbol is skipped in some contexts where it shouldn't be
    0 Triaged      [CLJ-2443] [spec] Spec'ed fn doesn't throw when called lazily
+   0 Screenable   [CLJ-2447] Docstring for clojure.datafy doesn't appear with doc
 
 ========================================
 Enhancement
@@ -241,11 +242,11 @@ Enhancement
    6 Triaged      [CLJ-1117] partition docstring should be more explicit about dropped or partial trailing elements
    6 Open         [CLJ-1820] Move rename-keys from clojure.set to clojure.core
    6 Triaged      [CLJ-2037] [spec] specs in registry lack :file metadata despite having :line, :column
+   5 Triaged      [CLJ-2316] Support fully qualified Symbol for clojure.main -m
    5 Triaged      [CLJ-1656] Unroll assoc and assoc! for small numbers of arguments
    5 Triaged      [CLJ-1473] Badly formed pre/post conditions silently passed
    5 Backlog      [CLJ-1385] Docstrings for `conj!` and `assoc!` should suggest using the return value; effect not always in-place
    4 Open         [CLJ-1734] Display more descriptive error message when trying to use reader conditionals in a non-cljc file
-   4 Triaged      [CLJ-2316] Support fully qualified Symbol for clojure.main -m
    4 Triaged      [CLJ-2208] [spec] Provide a means to ask a spec for its "child" specs
    4 Triaged      [CLJ-1096] Make destructuring emit direct keyword lookups
    3 Triaged      [CLJ-2054] [spec] generator for `any?` occasionally generates `Double/NaN` for which equality semantics don't apply, and that is a problem for the :ret spec of many functions.
@@ -307,7 +308,7 @@ Enhancement
    1 Open         [CLJ-1231] fn and letfn don't support hinting the function's return type
    1 Open         [CLJ-2097] [spec] Improve generation failure exception
    1 Open         [CLJ-2218] [spec] Improving consistency of explain-data for instrument/macroexpand-check
-   1 Triaged      [CLJ-2433] Make set functions in clojure.set coerce its arguments to set
+   1 Triaged      [CLJ-2433] Invalid calls to clojure.set functions return an incorrect answer rather than error
    1 Open         [CLJ-112] GC Issue 108: All Clojure interfaces should specify CharSequence instead of String when possible
    1 Triaged      [CLJ-1607] docstring for clojure.core/counted? should be more specific
    1 Open         [CLJ-889] Specifically allow '.' inside keywords
