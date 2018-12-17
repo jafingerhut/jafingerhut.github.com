@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Clojure Cheat Sheet (Clojure 1.6 - 1.9, sheet v46)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.7 - 1.10, sheet v47)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -673,7 +673,8 @@ format
                 <td>Symbols</td>
                 <td><code><a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/symbol/" class="tooltip" title="<pre>clojure.core/symbol
 ([name] [ns name])
-  Returns a Symbol with the given namespace and name.</pre>">symbol</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/symbol%3F/" class="tooltip" title="<pre>clojure.core/symbol?
+  Returns a Symbol with the given namespace and name. Arity-1 works
+  on strings, keywords, and vars.</pre>">symbol</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/symbol%3F/" class="tooltip" title="<pre>clojure.core/symbol?
 ([x])
   Return true if x is a Symbol</pre>">symbol?</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/gensym/" class="tooltip" title="<pre>clojure.core/gensym
 ([] [prefix-string])
@@ -3117,6 +3118,9 @@ Macro
     ;optional doc string
     &quot;A doc string for AProtocol abstraction&quot;
 
+   ;options
+   :extend-via-metadata true
+
   ;method signatures
     (bar [this a b] &quot;bar docs&quot;)
     (baz [this a] [this a b] [this a b c] &quot;baz docs&quot;))
@@ -3130,9 +3134,6 @@ Macro
   Java parlance). defprotocol is dynamic, has no special compile-time
   effect, and defines no new types or classes. Implementations of
   the protocol methods can be provided using extend.
-
-  defprotocol will automatically generate a corresponding interface,
-  with the same name as the protocol, i.e. given a protocol:
 
 [ documentation truncated.  Click link for the rest. ]</pre>">defprotocol</a> <code>Slicey (slice [at]))</code></code></td>
               </tr>
@@ -4777,7 +4778,10 @@ Spec
 ([x])
   If passed a namespace, returns it. Else, when passed a symbol,
   returns the namespace named by it, throwing an exception if not
-  found.</pre>">the-ns</a></code></td>
+  found.</pre>">the-ns</a> (1.10) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/requiring-resolve/" class="tooltip" title="<pre>clojure.core/requiring-resolve
+([sym])
+  Resolves namespace-qualified sym per 'resolve'. If initial resolve
+fails, attempts to require sym's namespace and retries.</pre>">requiring-resolve</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Remove</td>
@@ -5588,17 +5592,36 @@ supplied, uses the root cause of the
   Returns exception data (a map) if ex is an IExceptionInfo.
    Otherwise returns nil.</pre>">ex-data</a> (1.9) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/StackTraceElement-%3Evec/" class="tooltip" title="<pre>clojure.core/StackTraceElement-&gt;vec
 ([o])
-  Constructs a data representation for a StackTraceElement</pre>">StackTraceElement-&gt;vec</a> (1.10) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/ex-cause/" class="tooltip" title="<pre>clojure.core/ex-cause
+  Constructs a data representation for a StackTraceElement: [class method file
+line]</pre>">StackTraceElement-&gt;vec</a> (1.10) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/ex-cause/" class="tooltip" title="<pre>clojure.core/ex-cause
 ([ex])
   Returns the cause of ex if ex is a Throwable.
   Otherwise returns nil.</pre>">ex-cause</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.core/ex-message/" class="tooltip" title="<pre>clojure.core/ex-message
 ([ex])
   Returns the message attached to ex if ex is a Throwable.
   Otherwise returns nil.</pre>">ex-message</a> (clojure.main/) <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.main/ex-str/" class="tooltip" title="<pre>clojure.main/ex-str
-([e])
-  Returns a string from an exception for printing at the repl.
-  The first line summarizes data from the exception instance: phase, location,
-  cause message, etc. The subsequent lines contain ex-data info if available.</pre>">clojure.main/ex-str</a></code></td>
+([{:clojure.error/keys [phase source line column symbol class cause spec], :as
+triage-data}])
+  Returns a string from exception data, as produced by ex-triage.
+  The first line summarizes the exception phase and location.
+  The subsequent lines describe the cause.</pre>">clojure.main/ex-str</a> <a href="https://conj.io/store/v0/org.clojure/clojure/latest/clj/clojure.main/ex-triage/" class="tooltip" title="<pre>clojure.main/ex-triage
+([datafied-throwable])
+  Returns an analysis of the phase, error, cause, and location of an error that
+occurred
+  based on Throwable data, as returned by Throwable-&gt;map. All attributes other
+than phase
+  are optional:
+    :clojure.error/phase - keyword phase indicator, one of:
+      :read-source :compile-syntax-check :compilation :macro-syntax-check
+:macroexpansion
+      :execution :read-eval-result :print-eval-result
+    :clojure.error/source - file name (no path)
+    :clojure.error/line - integer line number
+    :clojure.error/column - integer column number
+    :clojure.error/symbol - symbol being expanded/compiled/invoked
+    :clojure.error/class - cause exception class symbol
+    :clojure.error/cause - cause exception message
+    :clojure.error/spec - explain-data for spec error</pre>">clojure.main/ex-triage</a></code></td>
               </tr>
             </tbody>
           </table>
