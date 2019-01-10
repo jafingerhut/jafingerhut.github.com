@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: January 3, 2019
+Date: January 10, 2019
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -83,6 +83,7 @@ Defect
    2 Open         [ASYNC-203] "dynamic binding + parking" removes top values of dynamic bindings outside
    2 Open         [ASYNC-221] go ignores async code in letfn body
    2 Triaged      [ASYNC-217] pipeline does not stop consuming from when to is closed
+   2 Vetted       [ASYNC-184] (CLJS) Port ASYNC-169 fixes to cljs
    2 Open         [ASYNC-117] (CLJS) let-bindings unavailable in #js literals in go-blocks
    1 Triaged      [ASYNC-64] Race condition when closing mults
    1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
@@ -96,7 +97,6 @@ Defect
    1 Open         [ASYNC-108] (CLJS) cljs to-chan hangs on infinite lazy sequences
    1 Open         [ASYNC-204] Writing on a closed channel doesn't commit the handler
    1 Open         [ASYNC-73] (CLJS) try-catch-finally broken inside go-blocks
-   1 Vetted       [ASYNC-184] (CLJS) Port ASYNC-169 fixes to cljs
    0 Open         [ASYNC-39] Processes spawned by mix never terminate
    0 Open         [ASYNC-51] (CLJS) Core.async memory leak in Safari and Mobile Safari
    0 Open         [ASYNC-63] (CLJS) Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
@@ -171,7 +171,6 @@ Project CCACHE tickets
 ========================================
 Defect
 
-   1 Open         [CCACHE-52] SoftCache can cause an NPE if reference has been queued before eviction
    0 Open         [CCACHE-32] LIRSCache defect allows it's memory use to grow without bound
    0 Open         [CCACHE-50] Suggested usage subject to Cache Stampede 
 
@@ -179,7 +178,6 @@ Defect
 Enhancement
 
    1 Open         [CCACHE-35] Add weak-cache
-   1 Open         [CCACHE-53] Unnecessary get during SoftCache lookup
    0 Open         [CCACHE-17] Create function backed cache
    0 Open         [CCACHE-36] Allow ttl to be set for a key on cache miss
    0 Open         [CCACHE-38] Add ARC or CAR algorithm
@@ -240,6 +238,7 @@ Defect
    0 Open         [CLJCLR-88] ClojureClr assembly loading from referenced dll
    0 Open         [CLJCLR-96] clojure/test-clojure/reducers seems to take a very long time to run
    0 Open         [CLJCLR-98] "set-validator" name missing a trailing exclamation point?
+   0 Open         [CLJCLR-99] sort-by with comparator fails
 
 ========================================
 Enhancement
@@ -843,14 +842,14 @@ Project TDEPS tickets
 ========================================
 Defect
 
-   9 Open         [TDEPS-74] Problem with local deps with local deps
+  12 Open         [TDEPS-74] Problem with local deps with local deps
    4 Open         [TDEPS-66] GitHub repo name is confusing
+   3 Open         [TDEPS-104] UnknownHostKey: XXXX. RSA key fingerprint is YYYYY
    3 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
    3 Open         [TDEPS-56] Main opts with space broken apart
+   2 Open         [TDEPS-8] tools.deps does not handle maven relocations
    2 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
-   2 Open         [TDEPS-104] UnknownHostKey: XXXX. RSA key fingerprint is YYYYY
    2 Open         [TDEPS-106] tools.deps.alpha cannot be used as a library from a process which does not have the CWD set to the directory containing the deps.edn file
-   1 Open         [TDEPS-8] tools.deps does not handle maven relocations
    1 Open         [TDEPS-29] Updates to pom continually adds superfluous newlines under Java 9
    1 Open         [TDEPS-83] Classpath caching does not invalidate when local root manifests are changed.
    1 Open         [TDEPS-58] Dependency resolution depends on order in map
@@ -886,6 +885,7 @@ Enhancement
 ========================================
 Feature
 
+   2 Open         [TDEPS-111] Access to full dependency graph including conflicts
    1 Open         [TDEPS-57] Give names to `:config-files`
    1 Open         [TDEPS-84] Add Chocolatey Package
    0 Open         [TDEPS-88] Finalize meaning of -Srepro
@@ -977,7 +977,7 @@ Defect
 ========================================
 Enhancement
 
-   7 Open         [TNS-45] File in invalid path will mark namespace for reload
+   8 Open         [TNS-45] File in invalid path will mark namespace for reload
    2 Open         [TNS-48] Ability to track files that are not namespaces
    0 Open         [TNS-37] c.t.n.move: does not support to move .cljc files
    0 Open         [TNS-39] Single classpath argument for c.t.n.move

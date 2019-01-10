@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: January 3, 2019
+Date: January 10, 2019
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -129,6 +129,9 @@ Defect
     1.86   2 Triaged      [ASYNC-217] pipeline does not stop consuming from when to is closed
              Paul Rutledge (1.00)
              Marco Molteni (0.86)
+    1.75   2 Vetted       [ASYNC-184] (CLJS) Port ASYNC-169 fixes to cljs
+             Kevin Downey (1.00)
+             Yuri Govorushchenko (0.75)
     1.66   2 Open         [ASYNC-117] (CLJS) let-bindings unavailable in #js literals in go-blocks
              Thomas Down (1.00)
              Daniel Compton (0.66)
@@ -155,8 +158,6 @@ Defect
     0.86   1 Open         [ASYNC-204] Writing on a closed channel doesn't commit the handler
              Pierre-Yves Ritschard (0.86)
     0.75   1 Open         [ASYNC-73] (CLJS) try-catch-finally broken inside go-blocks
-             Yuri Govorushchenko (0.75)
-    0.75   1 Vetted       [ASYNC-184] (CLJS) Port ASYNC-169 fixes to cljs
              Yuri Govorushchenko (0.75)
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
     0.00   0 Open         [ASYNC-51] (CLJS) Core.async memory leak in Safari and Mobile Safari
@@ -301,18 +302,14 @@ Project CCACHE tickets
 ========================================
 Defect
 
-    0.75   1 Open         [CCACHE-52] SoftCache can cause an NPE if reference has been queued before eviction
-             James Carnegie (0.75)
     0.00   0 Open         [CCACHE-32] LIRSCache defect allows it's memory use to grow without bound
     0.00   0 Open         [CCACHE-50] Suggested usage subject to Cache Stampede 
 
 ========================================
 Enhancement
 
-    0.75   1 Open         [CCACHE-35] Add weak-cache
-             James Carnegie (0.75)
-    0.75   1 Open         [CCACHE-53] Unnecessary get during SoftCache lookup
-             James Carnegie (0.75)
+    1.00   1 Open         [CCACHE-35] Add weak-cache
+             James Carnegie (1.00)
     0.00   0 Open         [CCACHE-17] Create function backed cache
     0.00   0 Open         [CCACHE-36] Allow ttl to be set for a key on cache miss
     0.00   0 Open         [CCACHE-38] Add ARC or CAR algorithm
@@ -321,8 +318,8 @@ Enhancement
 ========================================
 Task
 
-    0.75   1 Open         [CCACHE-11] Add eviction implementation to LIRSCache
-             James Carnegie (0.75)
+    1.00   1 Open         [CCACHE-11] Add eviction implementation to LIRSCache
+             James Carnegie (1.00)
     0.00   0 Open         [CCACHE-16] Benchmark v0.5.x against Google Guava
 
 
@@ -374,6 +371,7 @@ Defect
     0.00   0 Open         [CLJCLR-88] ClojureClr assembly loading from referenced dll
     0.00   0 Open         [CLJCLR-96] clojure/test-clojure/reducers seems to take a very long time to run
     0.00   0 Open         [CLJCLR-98] "set-validator" name missing a trailing exclamation point?
+    0.00   0 Open         [CLJCLR-99] sort-by with comparator fails
 
 ========================================
 Enhancement
@@ -1059,11 +1057,14 @@ Project TDEPS tickets
 ========================================
 Defect
 
-    8.38   9 Open         [TDEPS-74] Problem with local deps with local deps
+   11.38  12 Open         [TDEPS-74] Problem with local deps with local deps
              Ambrose Bonnaire-Sergeant (1.00)
+             Andrea Crotti (1.00)
              Ben Brinckerhoff (1.00)
              Colin Fleming (1.00)
+             David Martin (1.00)
              Gert (1.00)
+             Gilles Philippart (1.00)
              Luke Burton (1.00)
              Matthias Margush (1.00)
              Sean Corfield (1.00)
@@ -1074,6 +1075,10 @@ Defect
              Martin Klepsch (1.00)
              Vladimir Tsanev (0.75)
              Kenny Williams (0.38)
+    2.38   3 Open         [TDEPS-104] UnknownHostKey: XXXX. RSA key fingerprint is YYYYY
+             Jesse Wertheim (1.00)
+             Moritz Heidkamp (1.00)
+             Kenny Williams (0.38)
     2.24   3 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
              Dieter Komendera (1.00)
              Wilker Lúcio da Silva (0.86)
@@ -1082,17 +1087,15 @@ Defect
              Phill Wolf (1.00)
              Michael Nygard (0.86)
              Kenny Williams (0.38)
+    2.00   2 Open         [TDEPS-8] tools.deps does not handle maven relocations
+             Felix Andrews (1.00)
+             Roman Liutikov (1.00)
     1.38   2 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
              Reid McKenzie (1.00)
-             Kenny Williams (0.38)
-    1.38   2 Open         [TDEPS-104] UnknownHostKey: XXXX. RSA key fingerprint is YYYYY
-             Jesse Wertheim (1.00)
              Kenny Williams (0.38)
     1.24   2 Open         [TDEPS-106] tools.deps.alpha cannot be used as a library from a process which does not have the CWD set to the directory containing the deps.edn file
              Wilker Lúcio da Silva (0.86)
              Kenny Williams (0.38)
-    1.00   1 Open         [TDEPS-8] tools.deps does not handle maven relocations
-             Felix Andrews (1.00)
     1.00   1 Open         [TDEPS-29] Updates to pom continually adds superfluous newlines under Java 9
              Arne Brasseur (1.00)
     0.86   1 Open         [TDEPS-83] Classpath caching does not invalidate when local root manifests are changed.
@@ -1154,6 +1157,9 @@ Enhancement
 ========================================
 Feature
 
+    2.00   2 Open         [TDEPS-111] Access to full dependency graph including conflicts
+             Masaru Itoh (1.00)
+             Paul Dumais (1.00)
     1.00   1 Open         [TDEPS-57] Give names to `:config-files`
              Rick Moynihan (1.00)
     0.86   1 Open         [TDEPS-84] Add Chocolatey Package
@@ -1261,13 +1267,14 @@ Defect
 ========================================
 Enhancement
 
-    7.00   7 Open         [TNS-45] File in invalid path will mark namespace for reload
+    8.00   8 Open         [TNS-45] File in invalid path will mark namespace for reload
              Ag Ibragimov (1.00)
              Arne Brasseur (1.00)
              Avi Flax (1.00)
              Dennis Schridde (1.00)
              Dieter Komendera (1.00)
              Dominic Monroe (1.00)
+             Krisztian Szabo (1.00)
              Tianxiang Xiong (1.00)
     2.00   2 Open         [TNS-48] Ability to track files that are not namespaces
              Miikka Koskinen (1.00)
