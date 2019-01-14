@@ -54,6 +54,15 @@ There are more recorded talks by John Hughes, and others that work at
 page](http://www.quviq.com/services/seminars).
 
 
+# Books
+
+This is the only book I am aware of on this topic:
+
+Fred Hebert, "Property-Based Testing with PropEr, Erlang, and Elixir:
+Find Bugs Before Your Users Do", 2019,
+https://pragprog.com/book/fhproper/property-based-testing-with-proper-erlang-and-elixir
+
+
 # Research papers
 
 Koen Claessen, John Hughes, "QuickCheck: A Lightweight Tool for Random
