@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: January 10, 2019
+Date: January 17, 2019
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -93,6 +93,7 @@ Defect
    2 Triaged      [CLJ-2164] case fails when a single single clause with an empty test seq is used
    2 Triaged      [CLJ-1898] Inconsistent duplicate check in set/map literals with quoted/unquoted equal constants
    2 Prescreened  [CLJ-2169] conj has out-of-date :arglists
+   2 Open         [CLJ-2192] [spec] When data fails to conform to `map-of` spec, `:in` path does not point to the invalid (inner) value
    2 Triaged      [CLJ-1253] Incorrect long division involving Long/MIN_VALUE
    2 Backlog      [CLJ-1741] deftype class literals and instances loaded from different classloaders when recompiling namespace
    2 Triaged      [CLJ-2290] into docstring doesn't mention 0- and 1-arity versions
@@ -120,7 +121,6 @@ Defect
    1 Backlog      [CLJ-2080] [spec] clojure.spec/every-kv does not work on vectors - improve docs/errors
    1 Triaged      [CLJ-2450] [spec] defining new multimethod for a speced multi method fails under instrumentation
    1 Triaged      [CLJ-1254] Incorrect long quot result involving Long/MIN_VALUE
-   1 Open         [CLJ-2192] [spec] When data fails to conform to `map-of` spec, `:in` path does not point to the invalid (inner) value
    1 Triaged      [CLJ-2269] definterface seems not to resolve imported classes in type hints
    1 Triaged      [CLJ-2074] [core.specs] ::keys spec conflicts with destructuring spec
    1 Triaged      [CLJ-1978] [spec] recursion-limit not respected
@@ -215,6 +215,7 @@ Defect
    0 Backlog      [CLJ-2459] ExceptionInInitializerError if jars executed with java -jar
    0 Triaged      [CLJ-2461] [core.specs] refer-clojure and import specs are too limited in quote support
    0 Triaged      [CLJ-2464] peek does not support transient vectors
+   0 Triaged      [CLJ-2467] ^:const no-field record reports generic class
 
 ========================================
 Enhancement
@@ -473,6 +474,7 @@ Feature
    4 Triaged      [CLJ-2342] Add `invoke` function 
    4 Open         [CLJ-1777] Add function version of vswap!
    3 Triaged      [CLJ-840] Add a way to access the current test var in :each fixtures for clojure.test
+   3 Triaged      [CLJ-1496] Added a new arity to 'ex-info' that only accepts a message. 
    3 Open         [CLJ-891] make (symbol foo "bar") work with foo being a namespace
    3 Open         [CLJ-1256] Support type-hinted overrides of function parameters
    3 Open         [CLJ-1412] Add 2-arity version of `cycle` that takes the numer of times to "repeat" the coll
@@ -481,7 +483,6 @@ Feature
    3 Backlog      [CLJ-1908] Add clojure.test api to run single test with fixtures and report
    2 Triaged      [CLJ-970] extend/implement parameterized types (generics)
    2 Open         [CLJ-1367] Allow case statement to compare java constants
-   2 Triaged      [CLJ-1496] Added a new arity to 'ex-info' that only accepts a message. 
    2 Triaged      [CLJ-1990] Add an async macro that behaves the same as ClojureScript's
    2 Bad: Match > [CLJ-2] Scopes
    2 Open         [CLJ-1925] Add uuid and random-uuid functions
