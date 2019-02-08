@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: January 24, 2019
+Date: February 7, 2019
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -81,9 +81,11 @@ Defect
    3 Triaged      [ASYNC-92] go macro removes binding forms that are intialized with logical false value
    3 Open         [ASYNC-79] (CLJS) go macro not correctly transforming (case) within a macro
    2 Triaged      [ASYNC-127] mult distribution behavior doesn't work as intended
+   2 Open         [ASYNC-198] core.async exception rewriting can result in an incorrect return value
    2 Open         [ASYNC-203] "dynamic binding + parking" removes top values of dynamic bindings outside
    2 Open         [ASYNC-221] go ignores async code in letfn body
    2 Triaged      [ASYNC-217] pipeline does not stop consuming from when to is closed
+   2 Open         [ASYNC-73] (CLJS) try-catch-finally broken inside go-blocks
    2 Vetted       [ASYNC-184] (CLJS) Port ASYNC-169 fixes to cljs
    2 Open         [ASYNC-117] (CLJS) let-bindings unavailable in #js literals in go-blocks
    1 Triaged      [ASYNC-64] Race condition when closing mults
@@ -92,11 +94,9 @@ Defect
    1 Open         [ASYNC-132] (CLJS) Can't close over locals in #js in go
    1 Open         [ASYNC-163] Off-by-two in pipeline-async parallelism
    1 Triaged      [ASYNC-170] binding in go block causes thread binding error: "Pop without matching push"
-   1 Open         [ASYNC-198] core.async exception rewriting can result in an incorrect return value
    1 Open         [ASYNC-223] let in go block leaks memory
    1 Open         [ASYNC-108] (CLJS) cljs to-chan hangs on infinite lazy sequences
    1 Open         [ASYNC-204] Writing on a closed channel doesn't commit the handler
-   1 Open         [ASYNC-73] (CLJS) try-catch-finally broken inside go-blocks
    0 Open         [ASYNC-39] Processes spawned by mix never terminate
    0 Open         [ASYNC-51] (CLJS) Core.async memory leak in Safari and Mobile Safari
    0 Open         [ASYNC-63] (CLJS) Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
@@ -239,6 +239,8 @@ Defect
    0 Open         [CLJCLR-96] clojure/test-clojure/reducers seems to take a very long time to run
    0 Open         [CLJCLR-98] "set-validator" name missing a trailing exclamation point?
    0 Open         [CLJCLR-99] sort-by with comparator fails
+   0 Open         [CLJCLR-101] Correct handling of .Net deccimal type in Numbers operations.
+   0 Open         [CLJCLR-102] Cannot find spec DLLs unless in working directory
 
 ========================================
 Enhancement
@@ -247,6 +249,7 @@ Enhancement
    0 Open         [CLJCLR-69] Make more fields public in AST nodes
    0 Open         [CLJCLR-75] AST nodes need to record the context in which it was parsed (RHC).
    0 Open         [CLJCLR-94] Upgrading to .NET Core 2.0
+   0 Open         [CLJCLR-100] Add build targeting .Net 4.5 or 4.7
 
 
 Project CMEMOIZE tickets
@@ -266,9 +269,7 @@ Project CRRBV tickets
 ========================================
 Defect
 
-   6 Open         [CRRBV-15] rrb-vector won't compile with clojurescript: clojure.lang.ArityException: Wrong number of args (1) passed to: nodes/ranges
    4 Open         [CRRBV-18] core.rrb-vector fails on JDK 11 EA builds
-   1 Open         [CRRBV-19] Compilation under CLJS fails under certain conditions
    0 Open         [CRRBV-9] Repeated subvec and catvec fails
    0 Open         [CRRBV-10] Calling empty in CLJS results in a PersistentVector
    0 Open         [CRRBV-11] Issue with Clojure 1.8.0-alpha2 Tuples
@@ -334,13 +335,13 @@ Defect
 
    1 Open         [DAVL-11] Update cljs data.avl maps to return MapEntries instead of 2-elem vectors to comply with clj 1.9 and cljs 1.9.293 and later
    0 Open         [DAVL-10] data.avl ordered sets are not = to java.util.Set's with same members
+   0 Open         [DAVL-12] JDK 11 Compatibility
 
 
 Project DCODEC tickets
 ========================================
 Defect
 
-   0 Open         [DCODEC-4] Cannot roundtrip an empty array
    0 Open         [DCODEC-5] Invalid input turns into null bytes
 
 ========================================
@@ -534,7 +535,7 @@ Enhancement
 Task
 
    0 Open         [JDBC-157] Review specs for efficiency
-   0 Open         [JDBC-174] PostgreSQL needs :reWriteBatchedInserts true to do proper insert-multi! with columns
+   0 Open         [JDBC-174] PostgreSQL/MySQL need extra options to do insert-multi! with columns as a single operation
 
 
 Project JMX tickets
@@ -660,7 +661,7 @@ Defect
 ========================================
 Enhancement
 
-  14 Open         [MATCH-116] core.match clojurescript should be self-host compatible
+  15 Open         [MATCH-116] core.match clojurescript should be self-host compatible
    1 Open         [MATCH-4] Optimized pattern matching on deftype/record, POJOs
    0 Open         [MATCH-2] Matching Diagnostics
    0 Open         [MATCH-8] Implement (p|q)ba heuristics
@@ -822,6 +823,7 @@ Enhancement
    0 Open         [TCHECK-119] Checking of interesting edge cases is not very creative
    0 Open         [TCHECK-126] Refactor c.t.c/quick-check as a state machine to provide more extension points
    0 Open         [TCHECK-144] Add performance regression checks
+   0 Open         [TCHECK-153] Metadata for tuning on generated values
 
 ========================================
 Feature
@@ -844,15 +846,15 @@ Project TDEPS tickets
 Defect
 
   12 Open         [TDEPS-74] Problem with local deps with local deps
+   4 Open         [TDEPS-56] Main opts with space broken apart
    4 Open         [TDEPS-66] GitHub repo name is confusing
+   3 Open         [TDEPS-83] Classpath caching does not invalidate when local root manifests are changed.
    3 Open         [TDEPS-104] UnknownHostKey: XXXX. RSA key fingerprint is YYYYY
    3 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
-   3 Open         [TDEPS-56] Main opts with space broken apart
    2 Open         [TDEPS-8] tools.deps does not handle maven relocations
    2 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
    2 Open         [TDEPS-106] tools.deps.alpha cannot be used as a library from a process which does not have the CWD set to the directory containing the deps.edn file
    1 Open         [TDEPS-29] Updates to pom continually adds superfluous newlines under Java 9
-   1 Open         [TDEPS-83] Classpath caching does not invalidate when local root manifests are changed.
    1 Open         [TDEPS-58] Dependency resolution depends on order in map
    1 Open         [TDEPS-108] Causes logback.xml conflicts
    0 Open         [TDEPS-31] ssh git repository doesn't work with some SSH host key algorithms
@@ -865,8 +867,8 @@ Enhancement
 
   11 Open         [TDEPS-20] Cannot resolve Maven artifacts through proxy
    2 Open         [TDEPS-48] First class options for Socket REPL
-   2 Open         [TDEPS-17] Consider lib overrides
    2 Open         [TDEPS-63] Support default jvm-opts
+   2 Open         [TDEPS-17] Consider lib overrides
    2 Open         [TDEPS-81] Add support for a download progress callback to the tools.deps.alpha API
    1 Open         [TDEPS-46] Repositories from dependencies' pom.xml are not used
    1 Open         [TDEPS-69] Authenticate deployed artifacts
@@ -882,6 +884,7 @@ Enhancement
    0 Open         [TDEPS-93] Add support for local git repository deps on the file system
    0 Open         [TDEPS-94] git dependencies don't work with relative paths
    0 Open         [TDEPS-99] Allow user to specify the path to Maven settings (or provide repo credentials directly)
+   0 Open         [TDEPS-115] Unable to specify context-specific deps in files other than ~/.clojure/deps.edn or ./deps.edn
 
 ========================================
 Feature
@@ -896,7 +899,7 @@ Feature
 ========================================
 Task
 
-   7 Open         [TDEPS-67] Windows installation scripts
+   8 Open         [TDEPS-67] Windows installation scripts
    2 Open         [TDEPS-41] Document classpath ordering strategy
    0 Open         [TDEPS-42] Document lib-map
 
