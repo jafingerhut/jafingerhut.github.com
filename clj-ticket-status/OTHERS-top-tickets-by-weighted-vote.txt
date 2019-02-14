@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: February 7, 2019
+Date: February 14, 2019
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -91,10 +91,10 @@ Defect
              Wang Xing (1.00)
              Jan Rychter (1.00)
              Yehonathan Sharvit (0.86)
-    3.21   4 Open         [ASYNC-42] (CLJS) (try (catch :default)) inside a cljs go block raises an exception
+    3.13   4 Open         [ASYNC-42] (CLJS) (try (catch :default)) inside a cljs go block raises an exception
              Kevin Neaton (1.00)
              Willy Blandin (1.00)
-             Yuri Govorushchenko (0.75)
+             Yuri Govorushchenko (0.66)
              jcr (0.46)
     3.00   3 Open         [ASYNC-27] Compilation errors inside go block always reported as first line of block
              Hugo Duncan (1.00)
@@ -135,15 +135,15 @@ Defect
     1.86   2 Triaged      [ASYNC-217] pipeline does not stop consuming from when to is closed
              Paul Rutledge (1.00)
              Marco Molteni (0.86)
-    1.75   2 Open         [ASYNC-73] (CLJS) try-catch-finally broken inside go-blocks
+    1.66   2 Open         [ASYNC-73] (CLJS) try-catch-finally broken inside go-blocks
              Dieter Komendera (1.00)
-             Yuri Govorushchenko (0.75)
-    1.75   2 Vetted       [ASYNC-184] (CLJS) Port ASYNC-169 fixes to cljs
-             Kevin Downey (1.00)
-             Yuri Govorushchenko (0.75)
+             Yuri Govorushchenko (0.66)
     1.66   2 Open         [ASYNC-117] (CLJS) let-bindings unavailable in #js literals in go-blocks
              Thomas Down (1.00)
              Daniel Compton (0.66)
+    1.66   2 Vetted       [ASYNC-184] (CLJS) Port ASYNC-169 fixes to cljs
+             Kevin Downey (1.00)
+             Yuri Govorushchenko (0.66)
     1.00   1 Open         [ASYNC-128] (CLJS) or evaluation not stopped when exp nests take
              Christian Weilbach (1.00)
     1.00   1 Open         [ASYNC-132] (CLJS) Can't close over locals in #js in go
@@ -162,6 +162,8 @@ Defect
              Terje Norderhaug (0.86)
     0.86   1 Open         [ASYNC-204] Writing on a closed channel doesn't commit the handler
              Pierre-Yves Ritschard (0.86)
+    0.66   1 Open         [ASYNC-220] an exception caught in a finally block swallows the exception of the outer try
+             Yuri Govorushchenko (0.66)
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
     0.00   0 Open         [ASYNC-51] (CLJS) Core.async memory leak in Safari and Mobile Safari
     0.00   0 Open         [ASYNC-63] (CLJS) Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
@@ -192,7 +194,6 @@ Defect
     0.00   0 Open         [ASYNC-212] `go` fails to compile expressions with literal `nil` as a let value 
     0.00   0 Open         [ASYNC-215] (CLJS) Cannot use (js-debugger) in go block
     0.00   0 Open         [ASYNC-219] some locals are not cleared in go blocks
-    0.00   0 Open         [ASYNC-220] an exception caught in a finally block swallows the exception of the outer try
     0.00   0 Open         [ASYNC-222] can't assign instance fields in go blocks
     0.00   0 Open         [ASYNC-224] bug in method abort of clojure.core.async.impl.channels
     0.00   0 Open         [ASYNC-225] Add a closable-timeout function that always return a fresh channel
@@ -267,10 +268,10 @@ Enhancement
              Adam Clements (1.00)
              Jan-Paul Bultmann (1.00)
              David Bürgin (0.86)
-    2.61   3 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
+    2.53   3 Open         [ASYNC-40] do not transform forms that have :no-transform metadata attached
              Dennis Schridde (1.00)
              Eduard Bondarenko (0.86)
-             Yuri Govorushchenko (0.75)
+             Yuri Govorushchenko (0.66)
     2.00   2 Open         [ASYNC-114] Allow a second arity on channel ex-handler which takes val as well as throwable
              Nivedita Priyadarshini (1.00)
              Max Penet (1.00)
@@ -1051,6 +1052,11 @@ Feature
 
 Project TCLI tickets
 ========================================
+Defect
+
+    0.00   0 Open         [TCLI-94] ClojureScript Bug: Undeclared vars clojure.tools.cli/Exception and clojure.tools.cli/*err*
+
+========================================
 Task
 
     0.00   0 Open         [TCLI-92] Review cli-matic for inspiration for enhancing tools.cli
@@ -1091,16 +1097,17 @@ Defect
              Jesse Wertheim (1.00)
              Moritz Heidkamp (1.00)
              Kenny Williams (0.38)
-    2.24   3 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
-             Dieter Komendera (1.00)
+    2.24   3 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
+             Reid McKenzie (1.00)
+             Dieter Komendera (0.86)
+             Kenny Williams (0.38)
+    2.11   3 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
+             Dieter Komendera (0.86)
              Wilker Lúcio da Silva (0.86)
              Kenny Williams (0.38)
     2.00   2 Open         [TDEPS-8] tools.deps does not handle maven relocations
              Felix Andrews (1.00)
              Roman Liutikov (1.00)
-    1.38   2 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
-             Reid McKenzie (1.00)
-             Kenny Williams (0.38)
     1.24   2 Open         [TDEPS-106] tools.deps.alpha cannot be used as a library from a process which does not have the CWD set to the directory containing the deps.edn file
              Wilker Lúcio da Silva (0.86)
              Kenny Williams (0.38)
@@ -1130,9 +1137,9 @@ Enhancement
              Scott Olsen (1.00)
              Umesh Telang (1.00)
              Vladimir Tsanev (0.75)
-    2.00   2 Open         [TDEPS-48] First class options for Socket REPL
+    1.86   2 Open         [TDEPS-48] First class options for Socket REPL
              Oliver Caldwell (1.00)
-             Dieter Komendera (1.00)
+             Dieter Komendera (0.86)
     1.38   2 Open         [TDEPS-63] Support default jvm-opts
              Adam Frey (1.00)
              Kenny Williams (0.38)
@@ -1148,6 +1155,8 @@ Enhancement
              Jason Whitlark (1.00)
     1.00   1 Open         [TDEPS-91] Shell out to Git instead of JGit
              Mike Fikes (1.00)
+    1.00   1 Open         [TDEPS-116] Allow specifying aliases in coordinates that point to deps.edn projects
+             Michiel Borkent (1.00)
     0.75   1 Open         [TDEPS-101] :mvn/repos map in deps.edn should have a way to configure <repositories> tag in generated pom.xml
              Vladimir Tsanev (0.75)
     0.00   0 Open         [TDEPS-21] No diagnostic information when building classpath fails
@@ -1179,9 +1188,10 @@ Feature
 ========================================
 Task
 
-    7.86   8 Open         [TDEPS-67] Windows installation scripts
+    8.86   9 Open         [TDEPS-67] Windows installation scripts
              Adrian A. (1.00)
              Henry Widd (1.00)
+             Jason Chen (1.00)
              Jeff Terrell (1.00)
              Steffen Dienst (1.00)
              Tim Gilbert (1.00)

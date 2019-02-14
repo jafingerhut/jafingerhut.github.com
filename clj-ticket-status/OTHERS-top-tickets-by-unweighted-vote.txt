@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: February 7, 2019
+Date: February 14, 2019
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -86,8 +86,8 @@ Defect
    2 Open         [ASYNC-221] go ignores async code in letfn body
    2 Triaged      [ASYNC-217] pipeline does not stop consuming from when to is closed
    2 Open         [ASYNC-73] (CLJS) try-catch-finally broken inside go-blocks
-   2 Vetted       [ASYNC-184] (CLJS) Port ASYNC-169 fixes to cljs
    2 Open         [ASYNC-117] (CLJS) let-bindings unavailable in #js literals in go-blocks
+   2 Vetted       [ASYNC-184] (CLJS) Port ASYNC-169 fixes to cljs
    1 Triaged      [ASYNC-64] Race condition when closing mults
    1 Triaged      [ASYNC-125] Closing a tap with a pending item blocks the mult input channel
    1 Open         [ASYNC-128] (CLJS) or evaluation not stopped when exp nests take
@@ -97,6 +97,7 @@ Defect
    1 Open         [ASYNC-223] let in go block leaks memory
    1 Open         [ASYNC-108] (CLJS) cljs to-chan hangs on infinite lazy sequences
    1 Open         [ASYNC-204] Writing on a closed channel doesn't commit the handler
+   1 Open         [ASYNC-220] an exception caught in a finally block swallows the exception of the outer try
    0 Open         [ASYNC-39] Processes spawned by mix never terminate
    0 Open         [ASYNC-51] (CLJS) Core.async memory leak in Safari and Mobile Safari
    0 Open         [ASYNC-63] (CLJS) Variable called 'new' in vector in go block in CLJS causes "Object has no method 'call'" error
@@ -129,7 +130,6 @@ Defect
    0 Open         [ASYNC-212] `go` fails to compile expressions with literal `nil` as a let value 
    0 Open         [ASYNC-215] (CLJS) Cannot use (js-debugger) in go block
    0 Open         [ASYNC-219] some locals are not cleared in go blocks
-   0 Open         [ASYNC-220] an exception caught in a finally block swallows the exception of the outer try
    0 Open         [ASYNC-222] can't assign instance fields in go blocks
    0 Open         [ASYNC-224] bug in method abort of clojure.core.async.impl.channels
    0 Open         [ASYNC-225] Add a closable-timeout function that always return a fresh channel
@@ -836,6 +836,11 @@ Feature
 
 Project TCLI tickets
 ========================================
+Defect
+
+   0 Open         [TCLI-94] ClojureScript Bug: Undeclared vars clojure.tools.cli/Exception and clojure.tools.cli/*err*
+
+========================================
 Task
 
    0 Open         [TCLI-92] Review cli-matic for inspiration for enhancing tools.cli
@@ -850,9 +855,9 @@ Defect
    4 Open         [TDEPS-66] GitHub repo name is confusing
    3 Open         [TDEPS-83] Classpath caching does not invalidate when local root manifests are changed.
    3 Open         [TDEPS-104] UnknownHostKey: XXXX. RSA key fingerprint is YYYYY
+   3 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
    3 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
    2 Open         [TDEPS-8] tools.deps does not handle maven relocations
-   2 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
    2 Open         [TDEPS-106] tools.deps.alpha cannot be used as a library from a process which does not have the CWD set to the directory containing the deps.edn file
    1 Open         [TDEPS-29] Updates to pom continually adds superfluous newlines under Java 9
    1 Open         [TDEPS-58] Dependency resolution depends on order in map
@@ -873,6 +878,7 @@ Enhancement
    1 Open         [TDEPS-46] Repositories from dependencies' pom.xml are not used
    1 Open         [TDEPS-69] Authenticate deployed artifacts
    1 Open         [TDEPS-91] Shell out to Git instead of JGit
+   1 Open         [TDEPS-116] Allow specifying aliases in coordinates that point to deps.edn projects
    1 Open         [TDEPS-101] :mvn/repos map in deps.edn should have a way to configure <repositories> tag in generated pom.xml
    0 Open         [TDEPS-21] No diagnostic information when building classpath fails
    0 Open         [TDEPS-33] Consider https git authentication
@@ -899,7 +905,7 @@ Feature
 ========================================
 Task
 
-   8 Open         [TDEPS-67] Windows installation scripts
+   9 Open         [TDEPS-67] Windows installation scripts
    2 Open         [TDEPS-41] Document classpath ordering strategy
    0 Open         [TDEPS-42] Document lib-map
 
