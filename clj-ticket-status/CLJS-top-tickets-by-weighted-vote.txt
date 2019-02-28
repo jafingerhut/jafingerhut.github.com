@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: February 21, 2019
+Date: February 28, 2019
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -41,7 +41,7 @@ release is 1.7, but the ticket is marked for fix in release 1.8).
 ========================================
 Defect
 
-   12.32  17 Open         [CLJS-1701] cljs.spec impact on :advanced builds
+   12.25  17 Open         [CLJS-1701] cljs.spec impact on :advanced builds
              Ivan Kryvoruchko (1.00)
              Mark Hayes (1.00)
              Martin Klepsch (1.00)
@@ -52,8 +52,8 @@ Defect
              jcr (0.86)
              JF Rompre (0.75)
              Matt Huebert (0.75)
-             Enzzo Cavallo (0.66)
              Kenny Williams (0.66)
+             Enzzo Cavallo (0.60)
              Martin Kavalar (0.50)
              Arne Brasseur (0.46)
              Andrea Richiardi (0.41)
@@ -89,10 +89,10 @@ Defect
              Dmitri Naumov (1.00)
              Yuri Govorushchenko (1.00)
              Michael Griffiths (0.75)
-    2.61   4 Bad: Unkn Fi [CLJS-712] resolve-var for symbol with dot still wrong
+    2.50   4 Bad: Unkn Fi [CLJS-712] resolve-var for symbol with dot still wrong
              Luben Manolov (1.00)
-             Enzzo Cavallo (0.66)
-             Thomas Heller (0.54)
+             Enzzo Cavallo (0.60)
+             Thomas Heller (0.50)
              Andrea Richiardi (0.41)
     2.45   5 Bad: Unkn Fi [CLJS-868] no arity warnings on recursive calls
              HF (0.66)
@@ -200,17 +200,19 @@ Defect
              HF (0.66)
     0.66   1 Open         [CLJS-1593] Self-host: Munged minus macro
              Yehonathan Sharvit (0.66)
-    0.66   1 Open         [CLJS-2469] ChunkedCons chunk-next returns empty seq instead of nil
-             Enzzo Cavallo (0.66)
     0.63   2 Open         [CLJS-2709] JS Module can't add new Cljs namespaces to build
              Andrea Richiardi (0.41)
              Dieter Komendera (0.23)
     0.60   1 Open         [CLJS-2402] Duplicate source files passed to Closure Compiler causes ModuleLoader#resolvePaths to throw "Duplicate module path after resolving"
              Dmitri Sotnikov (0.60)
-    0.54   1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
-             Thomas Heller (0.54)
-    0.54   1 Open         [CLJS-2070] Dotted interop forms can leak invalid JS into output
-             Thomas Heller (0.54)
+    0.60   1 Open         [CLJS-2469] ChunkedCons chunk-next returns empty seq instead of nil
+             Enzzo Cavallo (0.60)
+    0.50   1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
+             Thomas Heller (0.50)
+    0.50   1 Open         [CLJS-2070] Dotted interop forms can leak invalid JS into output
+             Thomas Heller (0.50)
+    0.50   1 Open         [CLJS-3056] runtime namespace load order is independent from ordering in ns macro :require form
+             Thomas Heller (0.50)
     0.41   1 Bad: Unkn Fi [CLJS-2419] Self-host: `find-ns-obj` still broken for namespaces with 'a' as the first segment
              Andrea Richiardi (0.41)
     0.41   1 Open         [CLJS-2666] Node modules not usable from REPL without output-dir
@@ -290,7 +292,7 @@ Enhancement
              Arne Brasseur (0.46)
              Dieter Komendera (0.23)
              Roman Liutikov (0.17)
-    8.48  11 Open         [CLJS-2466] Faster reduce for lazy-seqs
+    8.41  11 Open         [CLJS-2466] Faster reduce for lazy-seqs
              Claudiu Apetrei (1.00)
              Jan Rychter (1.00)
              Justin Tirrell (1.00)
@@ -298,11 +300,11 @@ Enhancement
              Nikita Prokopov (1.00)
              Thomas Mulvaney (1.00)
              jiyinyiyong (0.75)
-             Enzzo Cavallo (0.66)
              Mike Fikes (0.66)
+             Enzzo Cavallo (0.60)
              Dieter Komendera (0.23)
              Roman Liutikov (0.17)
-    8.13  10 Bad: Unkn Fi [CLJS-1461] Convert analyzer to conform to tools.analyzer's spec
+    8.09  10 Bad: Unkn Fi [CLJS-1461] Convert analyzer to conform to tools.analyzer's spec
              Alistair Roche (1.00)
              James Henderson (1.00)
              Nicola Mometto (1.00)
@@ -311,7 +313,7 @@ Enhancement
              Alex Dixon (0.86)
              JF Rompre (0.75)
              Michael Griffiths (0.75)
-             Thomas Heller (0.54)
+             Thomas Heller (0.50)
              Dieter Komendera (0.23)
     6.62  10 Open         [CLJS-1908] Improve error messages by using pr-str instead of str when printing objects
              Matthew Boston (1.00)
@@ -346,11 +348,11 @@ Enhancement
              Oliver George (1.00)
              Chad Harrington (0.86)
              J.&nbsp;S.&nbsp;Choi (0.86)
-    3.21   4 Open         [CLJS-2885] DCE-friendly cljs.pprint
+    3.16   4 Open         [CLJS-2885] DCE-friendly cljs.pprint
              Jan Krajicek (1.00)
              Juho Teperi (1.00)
              Kenny Williams (0.66)
-             Thomas Heller (0.54)
+             Thomas Heller (0.50)
     3.16   4 Bad: Unkn Fi [CLJS-1047] externs checking for js/foo
              Bozhidar Batsov (1.00)
              Dennis Heihoff (1.00)
@@ -430,23 +432,25 @@ Enhancement
     0.84   2 Open         [CLJS-1601] Optimize cljs.core dump 
              Yehonathan Sharvit (0.66)
              Roman Liutikov (0.17)
-    0.77   2 Open         [CLJS-2895] Cull source maps
-             Thomas Heller (0.54)
+    0.73   2 Open         [CLJS-2895] Cull source maps
+             Thomas Heller (0.50)
              Dieter Komendera (0.23)
     0.71   3 Open         [CLJS-2132] Optimize transient vector creation
              Petter Eriksson (0.31)
              Dieter Komendera (0.23)
              Roman Liutikov (0.17)
-    0.66   1 Bad: Match > [CLJS-2331] Extend :global-exports to auto-alias and rewrite occurrences of declared globals
-             Enzzo Cavallo (0.66)
     0.66   1 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
              HF (0.66)
     0.66   1 Open         [CLJS-1726] demunge is too agreesive and incorrect in some cases
              Patrick Killean (0.66)
     0.66   1 Open         [CLJS-3016] Enable cljs.core.specs.alpha
              Yehonathan Sharvit (0.66)
-    0.54   1 Open         [CLJS-2826] Add arglist annotations in cljs.core
-             Thomas Heller (0.54)
+    0.60   1 Bad: Match > [CLJS-2331] Extend :global-exports to auto-alias and rewrite occurrences of declared globals
+             Enzzo Cavallo (0.60)
+    0.60   1 Triaged      [CLJS-3054] Align behavior of set/union and into with Clojure
+             Enzzo Cavallo (0.60)
+    0.50   1 Open         [CLJS-2826] Add arglist annotations in cljs.core
+             Thomas Heller (0.50)
     0.48   2 Open         [CLJS-1866] RangedIterator performance tweaks
              Petter Eriksson (0.31)
              Roman Liutikov (0.17)

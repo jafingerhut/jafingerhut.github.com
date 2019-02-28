@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: February 21, 2019
+Date: February 28, 2019
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -97,6 +97,7 @@ Defect
    1 Open         [ASYNC-223] let in go block leaks memory
    1 Open         [ASYNC-108] (CLJS) cljs to-chan hangs on infinite lazy sequences
    1 Open         [ASYNC-204] Writing on a closed channel doesn't commit the handler
+   1 Open         [ASYNC-183] Completion arity of transducer is called twice
    1 Open         [ASYNC-220] an exception caught in a finally block swallows the exception of the outer try
    0 Open         [ASYNC-39] Processes spawned by mix never terminate
    0 Open         [ASYNC-51] (CLJS) Core.async memory leak in Safari and Mobile Safari
@@ -114,7 +115,6 @@ Defect
    0 Open         [ASYNC-172] (CLJS) ClojureScript `catch :default` in `go` fails with non-`js/Error` classes
    0 Open         [ASYNC-175] (CLJS) excluded bounded-count in use in cljs.core.async
    0 Open         [ASYNC-176] (CLJS) A local named `new` breaks go macro in cljs (not in clj)
-   0 Open         [ASYNC-183] Completion arity of transducer is called twice
    0 Open         [ASYNC-190] (CLJS) Some non-tail-recursive loops compile without error
    0 Open         [ASYNC-192] Metadata does not persist across go-block boundaries in Clojurescript core.async
    0 Open         [ASYNC-197] `async/map` output channel not close, when has some input channel not closed, even if I closed one channel of inputs.
@@ -138,7 +138,7 @@ Defect
 Enhancement
 
   22 Triaged      [ASYNC-94] Allow user supplied executor/thread-pool (and potentially other options) to be used in go, thread macros and chan
-  15 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
+  16 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
    6 Triaged      [ASYNC-126] Add public channel "closed?" predicate
    5 Open         [ASYNC-137] (CLJS) Make (<! (timeout 0)) be closer to 0
    4 Open         [ASYNC-107] Improved docstring for alt!
@@ -237,10 +237,7 @@ Defect
    0 Open         [CLJCLR-81] Compute RT.DEFAULT_IMPORTS at startup
    0 Open         [CLJCLR-88] ClojureClr assembly loading from referenced dll
    0 Open         [CLJCLR-96] clojure/test-clojure/reducers seems to take a very long time to run
-   0 Open         [CLJCLR-98] "set-validator" name missing a trailing exclamation point?
-   0 Open         [CLJCLR-99] sort-by with comparator fails
-   0 Open         [CLJCLR-101] Correct handling of .Net deccimal type in Numbers operations.
-   0 Open         [CLJCLR-102] Cannot find spec DLLs unless in working directory
+   0 Open         [CLJCLR-101] Correct handling of .Net deccimal type in Numbers operation
 
 ========================================
 Enhancement
@@ -535,7 +532,6 @@ Enhancement
 Task
 
    0 Open         [JDBC-157] Review specs for efficiency
-   0 Open         [JDBC-174] PostgreSQL/MySQL need extra options to do insert-multi! with columns as a single operation
 
 
 Project JMX tickets
@@ -787,7 +783,6 @@ Defect
    0 Open         [TCHECK-111] The latest recursive-gen algorithm seems to exhibit a peculiar lack of variety in depths
    0 Open         [TCHECK-112] bind doesn't shrink very well
    0 Open         [TCHECK-120] size of args is conflated with depth in shrink tree
-   0 Open         [TCHECK-154] let macro doesn't work in CLJS
 
 ========================================
 Enhancement
@@ -825,6 +820,7 @@ Enhancement
    0 Open         [TCHECK-126] Refactor c.t.c/quick-check as a state machine to provide more extension points
    0 Open         [TCHECK-144] Add performance regression checks
    0 Open         [TCHECK-153] Metadata for tuning on generated values
+   0 Open         [TCHECK-154] Add CLJS self-require for macros
 
 ========================================
 Feature
@@ -853,10 +849,10 @@ Defect
 
   12 Open         [TDEPS-74] Problem with local deps with local deps
    4 Open         [TDEPS-104] UnknownHostKey: XXXX. RSA key fingerprint is YYYYY
+   4 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
    4 Open         [TDEPS-56] Main opts with space broken apart
    4 Open         [TDEPS-66] GitHub repo name is confusing
    3 Open         [TDEPS-83] Classpath caching does not invalidate when local root manifests are changed.
-   3 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
    3 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
    2 Open         [TDEPS-8] tools.deps does not handle maven relocations
    2 Open         [TDEPS-106] tools.deps.alpha cannot be used as a library from a process which does not have the CWD set to the directory containing the deps.edn file
@@ -893,6 +889,7 @@ Enhancement
    0 Open         [TDEPS-99] Allow user to specify the path to Maven settings (or provide repo credentials directly)
    0 Open         [TDEPS-115] Unable to specify context-specific deps in files other than ~/.clojure/deps.edn or ./deps.edn
    0 Open         [TDEPS-117] linux installer doesn't respect respect http proxies
+   0 Open         [TDEPS-119] Unable to start deps.edn project in write protected directory
 
 ========================================
 Feature
@@ -907,7 +904,7 @@ Feature
 ========================================
 Task
 
-   9 Open         [TDEPS-67] Windows installation scripts
+  11 Open         [TDEPS-67] Windows installation scripts
    2 Open         [TDEPS-41] Document classpath ordering strategy
    0 Open         [TDEPS-42] Document lib-map
 

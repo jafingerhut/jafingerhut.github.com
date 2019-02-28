@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: February 21, 2019
+Date: February 28, 2019
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -75,22 +75,22 @@ Defect
              David Bürgin (0.86)
              Pierre-Yves Ritschard (0.86)
              Terje Norderhaug (0.86)
-    4.13   5 Triaged      [ASYNC-90] Pub/sub leaks memory
-             Collider Writer (1.00)
-             Jan Rychter (1.00)
-             Jonas Enlund (1.00)
-             Daniel Compton (0.66)
-             jcr (0.46)
     4.00   4 Open         [ASYNC-109] Clarify timeout doc to mention that close! should not be called on a timeout channel
              Ryan Sundberg (1.00)
              Antonin Hildebrand (1.00)
              Howard Lewis Ship (1.00)
              Simon Skorokhodov (1.00)
-    3.86   4 Open         [ASYNC-158] (CLJS) and with multiple <! does not short-circuit in go
+    3.88   5 Triaged      [ASYNC-90] Pub/sub leaks memory
+             Collider Writer (1.00)
+             Jonas Enlund (1.00)
+             Jan Rychter (0.75)
+             Daniel Compton (0.66)
+             jcr (0.46)
+    3.61   4 Open         [ASYNC-158] (CLJS) and with multiple <! does not short-circuit in go
              Jacek Tomaszewski (1.00)
              Wang Xing (1.00)
-             Jan Rychter (1.00)
              Yehonathan Sharvit (0.86)
+             Jan Rychter (0.75)
     3.13   4 Open         [ASYNC-42] (CLJS) (try (catch :default)) inside a cljs go block raises an exception
              Kevin Neaton (1.00)
              Willy Blandin (1.00)
@@ -162,6 +162,8 @@ Defect
              Terje Norderhaug (0.86)
     0.86   1 Open         [ASYNC-204] Writing on a closed channel doesn't commit the handler
              Pierre-Yves Ritschard (0.86)
+    0.75   1 Open         [ASYNC-183] Completion arity of transducer is called twice
+             Jan Rychter (0.75)
     0.66   1 Open         [ASYNC-220] an exception caught in a finally block swallows the exception of the outer try
              Yuri Govorushchenko (0.66)
     0.00   0 Open         [ASYNC-39] Processes spawned by mix never terminate
@@ -178,7 +180,6 @@ Defect
     0.00   0 Open         [ASYNC-172] (CLJS) ClojureScript `catch :default` in `go` fails with non-`js/Error` classes
     0.00   0 Open         [ASYNC-175] (CLJS) excluded bounded-count in use in cljs.core.async
     0.00   0 Open         [ASYNC-176] (CLJS) A local named `new` breaks go macro in cljs (not in clj)
-    0.00   0 Open         [ASYNC-183] Completion arity of transducer is called twice
     0.00   0 Open         [ASYNC-190] (CLJS) Some non-tail-recursive loops compile without error
     0.00   0 Open         [ASYNC-192] Metadata does not persist across go-block boundaries in Clojurescript core.async
     0.00   0 Open         [ASYNC-197] `async/map` output channel not close, when has some input channel not closed, even if I closed one channel of inputs.
@@ -226,7 +227,7 @@ Enhancement
              David Bürgin (0.86)
              Pierre-Yves Ritschard (0.86)
              Daniel Compton (0.66)
-   14.32  15 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
+   15.07  16 Open         [ASYNC-74] Provide a chan? function to determine if a given var is a channel
              Alexander Kiel (1.00)
              Casey Marshall (1.00)
              Erik Assum (1.00)
@@ -241,6 +242,7 @@ Enhancement
              Masaru Itoh (1.00)
              Thomas Heller (1.00)
              Marco Molteni (0.86)
+             Jan Rychter (0.75)
              jcr (0.46)
     4.99   6 Triaged      [ASYNC-126] Add public channel "closed?" predicate
              Baptiste Dupuch (1.00)
@@ -376,10 +378,7 @@ Defect
     0.00   0 Open         [CLJCLR-81] Compute RT.DEFAULT_IMPORTS at startup
     0.00   0 Open         [CLJCLR-88] ClojureClr assembly loading from referenced dll
     0.00   0 Open         [CLJCLR-96] clojure/test-clojure/reducers seems to take a very long time to run
-    0.00   0 Open         [CLJCLR-98] "set-validator" name missing a trailing exclamation point?
-    0.00   0 Open         [CLJCLR-99] sort-by with comparator fails
-    0.00   0 Open         [CLJCLR-101] Correct handling of .Net deccimal type in Numbers operations.
-    0.00   0 Open         [CLJCLR-102] Cannot find spec DLLs unless in working directory
+    0.00   0 Open         [CLJCLR-101] Correct handling of .Net deccimal type in Numbers operation
 
 ========================================
 Enhancement
@@ -704,7 +703,6 @@ Enhancement
 Task
 
     0.00   0 Open         [JDBC-157] Review specs for efficiency
-    0.00   0 Open         [JDBC-174] PostgreSQL/MySQL need extra options to do insert-multi! with columns as a single operation
 
 
 Project JMX tickets
@@ -988,7 +986,6 @@ Defect
     0.00   0 Open         [TCHECK-111] The latest recursive-gen algorithm seems to exhibit a peculiar lack of variety in depths
     0.00   0 Open         [TCHECK-112] bind doesn't shrink very well
     0.00   0 Open         [TCHECK-120] size of args is conflated with depth in shrink tree
-    0.00   0 Open         [TCHECK-154] let macro doesn't work in CLJS
 
 ========================================
 Enhancement
@@ -1041,6 +1038,7 @@ Enhancement
     0.00   0 Open         [TCHECK-126] Refactor c.t.c/quick-check as a state machine to provide more extension points
     0.00   0 Open         [TCHECK-144] Add performance regression checks
     0.00   0 Open         [TCHECK-153] Metadata for tuning on generated values
+    0.00   0 Open         [TCHECK-154] Add CLJS self-require for macros
 
 ========================================
 Feature
@@ -1087,6 +1085,11 @@ Defect
              Moritz Heidkamp (1.00)
              Won Seob Seo (1.00)
              Kenny Williams (0.38)
+    3.24   4 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
+             Reid McKenzie (1.00)
+             Avi Flax (1.00)
+             Dieter Komendera (0.86)
+             Kenny Williams (0.38)
     3.24   4 Open         [TDEPS-56] Main opts with space broken apart
              Nuttanart Pornprasitsakul (1.00)
              Phill Wolf (1.00)
@@ -1101,10 +1104,6 @@ Defect
              Lucio D'Alessandro (1.00)
              Dominic Monroe (0.86)
              Wilker Lúcio da Silva (0.86)
-    2.24   3 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
-             Reid McKenzie (1.00)
-             Dieter Komendera (0.86)
-             Kenny Williams (0.38)
     2.11   3 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
              Dieter Komendera (0.86)
              Wilker Lúcio da Silva (0.86)
@@ -1132,7 +1131,6 @@ Enhancement
    10.75  11 Open         [TDEPS-20] Cannot resolve Maven artifacts through proxy
              Andrea Richiardi (1.00)
              Antonin Hildebrand (1.00)
-             Avi Flax (1.00)
              Eugene Aksenov (1.00)
              Joshua Tilles (1.00)
              Matthew Davidson (1.00)
@@ -1140,6 +1138,7 @@ Enhancement
              Nolan (1.00)
              Scott Olsen (1.00)
              Umesh Telang (1.00)
+             Avi Flax (1.00)
              Vladimir Tsanev (0.75)
     1.86   2 Open         [TDEPS-48] First class options for Socket REPL
              Oliver Caldwell (1.00)
@@ -1175,6 +1174,7 @@ Enhancement
     0.00   0 Open         [TDEPS-99] Allow user to specify the path to Maven settings (or provide repo credentials directly)
     0.00   0 Open         [TDEPS-115] Unable to specify context-specific deps in files other than ~/.clojure/deps.edn or ./deps.edn
     0.00   0 Open         [TDEPS-117] linux installer doesn't respect respect http proxies
+    0.00   0 Open         [TDEPS-119] Unable to start deps.edn project in write protected directory
 
 ========================================
 Feature
@@ -1193,11 +1193,13 @@ Feature
 ========================================
 Task
 
-    8.86   9 Open         [TDEPS-67] Windows installation scripts
+   10.86  11 Open         [TDEPS-67] Windows installation scripts
              Adrian A. (1.00)
+             Andrew Oberstar (1.00)
              Henry Widd (1.00)
              Jason Chen (1.00)
              Jeff Terrell (1.00)
+             Scott Suler (1.00)
              Steffen Dienst (1.00)
              Tim Gilbert (1.00)
              Yehonathan Sharvit (1.00)
