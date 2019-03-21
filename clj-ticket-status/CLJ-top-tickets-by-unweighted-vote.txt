@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: March 14, 2019
+Date: March 21, 2019
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -69,6 +69,7 @@ Defect
    5 Triaged      [CLJ-2283] doseq should return nil with no collections
    4 Triaged      [CLJ-1975] [spec] clojure.spec attempts to make `empty` records
    4 Triaged      [CLJ-1980] [spec] Unable to construct gen in indirectly recursive specs with s/every and derivations
+   4 Triaged      [CLJ-2426] satisfies? doesn't work with the new instance-based protocol polymorphism
    4 Open         [CLJ-1548] primitive type hints on protocol methods break call sites
    4 Backlog      [CLJ-2168] [spec] clojure.spec: :pred in explain for coll-of should have resolved symbols
    4 Open         [CLJ-1059] PersistentQueue doesn't implement java.util.List, causing nontransitive equality
@@ -79,7 +80,6 @@ Defect
    3 Open         [CLJ-750] clojure.lang.MapEntry violates .equals and .hashCode contracts of HashMap.Entry; leads to non-reflexive .equals, etc.
    3 Open         [CLJ-1953] clojure.set should check or throw on non-set inputs
    3 Backlog      [CLJ-1187] Clojure loses quoted metadata on empty literals
-   3 Triaged      [CLJ-2426] satisfies? doesn't work with the new instance-based protocol polymorphism
    3 Backlog      [CLJ-1620] Constants are leaked in case of a reentrant eval
    3 Triaged      [CLJ-2274] Line numbers in stack trace are wrong when type hints satisfaction fails
    3 Open         [CLJ-911] 'proxy' prevents overriding Object.finalize (and doesn't document it)
@@ -223,6 +223,7 @@ Defect
    0 Triaged      [CLJ-2469] pr botches structmaps containing namespaced keys when *print-namespace-maps*
    0 Triaged      [CLJ-2481] [spec] every-impl breaks when passed records
    0 Triaged      [CLJ-2485] BigDecimal loses M suffix when converted to string using (str)
+   0 Bad: Unkn Fi [CLJ-2491] Some java interop tests are fragile, fail under Java 12
 
 ========================================
 Enhancement
@@ -442,11 +443,12 @@ Enhancement
    0 Prescreened  [CLJ-2476] Improve doc clarity regarding binding conveyance
    0 Prescreened  [CLJ-2480] Document that a promise can be invoked to deliver
    0 Backlog      [CLJ-2488] Improve docstring for reify
+   0 Backlog      [CLJ-2492] Uses of deprecated Class.newInstance() method
 
 ========================================
 Feature
 
-  67 Backlog      [CLJ-1965] [spec] clojure.spec/def should support an optional doc-string
+  68 Backlog      [CLJ-1965] [spec] clojure.spec/def should support an optional doc-string
   49 Triaged      [CLJ-1959] adding functions `map-vals` and `map-keys`
   42 Open         [CLJ-2116] [spec] Support for selective conforming with clojure.spec
   32 Backlog      [CLJ-2123] Lighter-weight aliasing for keywords
@@ -462,9 +464,9 @@ Feature
   16 Triaged      [CLJ-1305] Add optional not-found argument when invoking vectors or sets as functions
   16 Triaged      [CLJ-1063] Missing dissoc-in
   14 Triaged      [CLJ-1611] clojure.java.io/pushback-reader
+  13 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
   12 Backlog      [CLJ-1771] Support for multiple key(s)-value pairs in assoc-in
   12 Triaged      [CLJ-2124] Catch multiple exceptions in a single catch block
-  12 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
   11 Open         [CLJ-1553] Parallel transduce
   11 Open         [CLJ-1201] There should also be writing in clojure.edn
   11 Open         [CLJ-1610] Unrolled small maps
@@ -549,3 +551,4 @@ Feature
    0 Backlog      [CLJ-1551] Consider transducer support for primitives
    0 Triaged      [CLJ-1836] Expose clojure.repl/doc as a function call
    0 Triaged      [CLJ-1889] Add optional predicate to string trim functions that determines if a character should be trimmed
+   0 Bad: Match > [CLJ-2490] Add symbol literal syntax with the same alias resolving behavior as auto-resolved keywords

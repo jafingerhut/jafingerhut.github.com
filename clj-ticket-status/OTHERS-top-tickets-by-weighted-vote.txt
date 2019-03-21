@@ -1,6 +1,6 @@
 Top OTHERS tickets by weighted vote
 
-Date: March 14, 2019
+Date: March 21, 2019
  
 Open OTHERS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -322,6 +322,7 @@ Enhancement
     0.00   0 Open         [CCACHE-36] Allow ttl to be set for a key on cache miss
     0.00   0 Open         [CCACHE-38] Add ARC or CAR algorithm
     0.00   0 Open         [CCACHE-51] Stats for cache
+    0.00   0 Open         [CCACHE-55] Split protocols from implementations
 
 ========================================
 Task
@@ -370,6 +371,7 @@ Defect
 
     0.00   0 Open         [CLJCLR-32] RT.load does not correctly map namespace to source file or dll name
     0.00   0 Open         [CLJCLR-33] REPL input broken
+    0.00   0 Open         [CLJCLR-37] spit does not truncate, leaves tail of original file if output is shorter length.
     0.00   0 Open         [CLJCLR-38] Use Type.AssemblyQualifiedName in ObjExpr.EmitValue when generating code for types
     0.00   0 Open         [CLJCLR-48] Error when starting Clojure.Main.exe
     0.00   0 Open         [CLJCLR-67] Cannot call new/hidden interface method
@@ -378,7 +380,6 @@ Defect
     0.00   0 Open         [CLJCLR-81] Compute RT.DEFAULT_IMPORTS at startup
     0.00   0 Open         [CLJCLR-88] ClojureClr assembly loading from referenced dll
     0.00   0 Open         [CLJCLR-96] clojure/test-clojure/reducers seems to take a very long time to run
-    0.00   0 Open         [CLJCLR-101] Correct handling of .Net deccimal type in Numbers operation
 
 ========================================
 Enhancement
@@ -389,6 +390,7 @@ Enhancement
     0.00   0 Open         [CLJCLR-75] AST nodes need to record the context in which it was parsed (RHC).
     0.00   0 Open         [CLJCLR-94] Upgrading to .NET Core 2.0
     0.00   0 Open         [CLJCLR-100] Add build targeting .Net 4.5 or 4.7
+    0.00   0 Open         [CLJCLR-103] Add gitter.im and slack links to README
 
 
 Project CMEMOIZE tickets
@@ -1067,20 +1069,10 @@ Project TDEPS tickets
 ========================================
 Defect
 
-   13.24  14 Open         [TDEPS-74] Problem with local deps with local deps
-             Ambrose Bonnaire-Sergeant (1.00)
-             Andrea Crotti (1.00)
-             Ben Brinckerhoff (1.00)
-             Colin Fleming (1.00)
-             David Martin (1.00)
-             Gert (1.00)
-             Gilles Philippart (1.00)
-             Jorin Vogel (1.00)
-             Luke Burton (1.00)
-             Matt Huebert (1.00)
-             Matthias Margush (1.00)
-             Sean Corfield (1.00)
-             Dominic Monroe (0.86)
+    3.38   4 Open         [TDEPS-83] Classpath caching does not invalidate when local root manifests are changed.
+             Lucio D'Alessandro (1.00)
+             Dominic Monroe (1.00)
+             Wilker Lúcio da Silva (1.00)
              Kenny Williams (0.38)
     3.38   4 Open         [TDEPS-104] UnknownHostKey: XXXX. RSA key fingerprint is YYYYY
              Jesse Wertheim (1.00)
@@ -1088,8 +1080,8 @@ Defect
              Won Seob Seo (1.00)
              Kenny Williams (0.38)
     3.24   4 Open         [TDEPS-52] transitive deps pick up :paths from current project when :paths unspecified in transitive dep
-             Reid McKenzie (1.00)
              Avi Flax (1.00)
+             Reid McKenzie (1.00)
              Dieter Komendera (0.86)
              Kenny Williams (0.38)
     3.24   4 Open         [TDEPS-56] Main opts with space broken apart
@@ -1097,25 +1089,18 @@ Defect
              Phill Wolf (1.00)
              Michael Nygard (0.86)
              Kenny Williams (0.38)
-    3.13   4 Open         [TDEPS-66] GitHub repo name is confusing
+    3.24   4 Open         [TDEPS-66] GitHub repo name is confusing
              Elana Hashman (1.00)
              Martin Klepsch (1.00)
-             Vladimir Tsanev (0.75)
+             Vladimir Tsanev (0.86)
              Kenny Williams (0.38)
-    2.72   3 Open         [TDEPS-83] Classpath caching does not invalidate when local root manifests are changed.
-             Lucio D'Alessandro (1.00)
-             Dominic Monroe (0.86)
-             Wilker Lúcio da Silva (0.86)
-    2.11   3 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
+    2.24   3 Open         [TDEPS-51] Attempting to override a Maven version coord with a Git or Local dependency does not work and is silent about the issue
+             Wilker Lúcio da Silva (1.00)
              Dieter Komendera (0.86)
-             Wilker Lúcio da Silva (0.86)
              Kenny Williams (0.38)
     2.00   2 Open         [TDEPS-8] tools.deps does not handle maven relocations
              Felix Andrews (1.00)
              Roman Liutikov (1.00)
-    1.24   2 Open         [TDEPS-106] tools.deps.alpha cannot be used as a library from a process which does not have the CWD set to the directory containing the deps.edn file
-             Wilker Lúcio da Silva (0.86)
-             Kenny Williams (0.38)
     1.00   1 Open         [TDEPS-29] Updates to pom continually adds superfluous newlines under Java 9
              Arne Brasseur (1.00)
     1.00   1 Open         [TDEPS-121] Windows clj does not handle quoted strings in -Sdeps argument correctly
@@ -1130,33 +1115,22 @@ Defect
     0.00   0 Open         [TDEPS-100] -A / -M alias ordering is not respected for :main-opts
     0.00   0 Open         [TDEPS-119] Unable to start deps.edn project in write protected directory
     0.00   0 Open         [TDEPS-120] Windows version of tools.deps fails to launch Java if classpath is too long
+    0.00   0 Open         [TDEPS-124] Cannot resolve Git deps through proxy
 
 ========================================
 Enhancement
 
-   10.75  11 Open         [TDEPS-20] Cannot resolve Maven artifacts through proxy
-             Andrea Richiardi (1.00)
-             Antonin Hildebrand (1.00)
-             Eugene Aksenov (1.00)
-             Joshua Tilles (1.00)
-             Matthew Davidson (1.00)
-             Nathan Lloyd (1.00)
-             Nolan (1.00)
-             Scott Olsen (1.00)
-             Umesh Telang (1.00)
-             Avi Flax (1.00)
-             Vladimir Tsanev (0.75)
     1.86   2 Open         [TDEPS-48] First class options for Socket REPL
              Oliver Caldwell (1.00)
              Dieter Komendera (0.86)
+    1.38   2 Open         [TDEPS-17] Consider lib overrides
+             Dominic Monroe (1.00)
+             Kenny Williams (0.38)
     1.38   2 Open         [TDEPS-63] Support default jvm-opts
              Adam Frey (1.00)
              Kenny Williams (0.38)
-    1.24   2 Open         [TDEPS-17] Consider lib overrides
-             Dominic Monroe (0.86)
-             Kenny Williams (0.38)
-    1.13   2 Open         [TDEPS-81] Add support for a download progress callback to the tools.deps.alpha API
-             Vladimir Tsanev (0.75)
+    1.24   2 Open         [TDEPS-81] Add support for a download progress callback to the tools.deps.alpha API
+             Vladimir Tsanev (0.86)
              Kenny Williams (0.38)
     1.00   1 Open         [TDEPS-46] Repositories from dependencies' pom.xml are not used
              Martin Klepsch (1.00)
@@ -1166,8 +1140,8 @@ Enhancement
              Mike Fikes (1.00)
     1.00   1 Open         [TDEPS-116] Allow specifying aliases in coordinates that point to deps.edn projects
              Michiel Borkent (1.00)
-    0.75   1 Open         [TDEPS-101] :mvn/repos map in deps.edn should have a way to configure <repositories> tag in generated pom.xml
-             Vladimir Tsanev (0.75)
+    0.86   1 Open         [TDEPS-101] :mvn/repos map in deps.edn should have a way to configure <repositories> tag in generated pom.xml
+             Vladimir Tsanev (0.86)
     0.00   0 Open         [TDEPS-21] No diagnostic information when building classpath fails
     0.00   0 Open         [TDEPS-33] Consider https git authentication
     0.00   0 Open         [TDEPS-62] Make Maven update policy configurable
@@ -1179,14 +1153,14 @@ Enhancement
     0.00   0 Open         [TDEPS-94] git dependencies don't work with relative paths
     0.00   0 Open         [TDEPS-99] Allow user to specify the path to Maven settings (or provide repo credentials directly)
     0.00   0 Open         [TDEPS-115] Unable to specify context-specific deps in files other than ~/.clojure/deps.edn or ./deps.edn
-    0.00   0 Open         [TDEPS-117] linux installer doesn't respect respect http proxies
 
 ========================================
 Feature
 
-    2.00   2 Open         [TDEPS-111] Access to full dependency graph including conflicts
+    2.38   3 Open         [TDEPS-111] Access to full dependency graph including conflicts
              Masaru Itoh (1.00)
              Paul Dumais (1.00)
+             Kenny Williams (0.38)
     1.00   1 Open         [TDEPS-57] Give names to `:config-files`
              Rick Moynihan (1.00)
     0.86   1 Open         [TDEPS-84] Add Chocolatey Package

@@ -1,6 +1,6 @@
 Top CLJ tickets by weighted vote
 
-Date: March 14, 2019
+Date: March 21, 2019
  
 Open CLJ tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -259,6 +259,11 @@ Defect
              Kenny Williams (0.26)
              Oleksii Kachaiev (0.24)
              Ivan Kryvoruchko (0.18)
+    2.39   4 Triaged      [CLJ-2426] satisfies? doesn't work with the new instance-based protocol polymorphism
+             Logan Girard (1.00)
+             Moritz Heidkamp (0.75)
+             Joshua Tilles (0.46)
+             Ivan Kryvoruchko (0.18)
     2.23   5 Backlog      [CLJ-1647] infinite loop in 'partition' and 'partition-all' when 'step' or 'n' is not positive
              Michael Nygard (1.00)
              David Liepmann (0.54)
@@ -316,10 +321,6 @@ Defect
              Ikuru Kanuma (1.00)
              Phill Wolf (0.41)
              Andy Fingerhut (0.26)
-    1.64   3 Triaged      [CLJ-2426] satisfies? doesn't work with the new instance-based protocol polymorphism
-             Logan Girard (1.00)
-             Joshua Tilles (0.46)
-             Ivan Kryvoruchko (0.18)
     1.64   3 Backlog      [CLJ-1620] Constants are leaked in case of a reentrant eval
              Laurent Petit (1.00)
              Colin Fleming (0.54)
@@ -543,6 +544,7 @@ Defect
     0.00   0 Backlog      [CLJ-2368] [spec] describe* of spec-impl returns nil :args and :fn
     0.00   0 Backlog      [CLJ-2371] [spec] alt with an empty cat breaks explain
     0.00   0 Backlog      [CLJ-2459] ExceptionInInitializerError if jars executed with java -jar
+    0.00   0 Bad: Unkn Fi [CLJ-2491] Some java interop tests are fragile, fail under Java 12
     0.00   0 Prescreened  [CLJ-1509] Some clojure namespaces not AOT-compiled and included in the clojure jar
     0.00   0 Prescreened  [CLJ-2295] clojure.repl/doc repeats doc string in output for special forms in Clojure 1.9.0
     0.00   0 Prescreened  [CLJ-2326] *compiler-options* docstring is missing :direct-linking
@@ -1016,10 +1018,10 @@ Enhancement
              Arne Brasseur (0.60)
              David Liepmann (0.54)
              Dieter Komendera (0.46)
-    2.86   3 Triaged      [CLJ-2054] [spec] generator for `any?` occasionally generates `Double/NaN` for which equality semantics don't apply, and that is a problem for the :ret spec of many functions.
+    2.75   3 Triaged      [CLJ-2054] [spec] generator for `any?` occasionally generates `Double/NaN` for which equality semantics don't apply, and that is a problem for the :ret spec of many functions.
              Bogdan Bugarschi (1.00)
              Wes Morgan (1.00)
-             Moritz Heidkamp (0.86)
+             Moritz Heidkamp (0.75)
     2.46   4 Triaged      [CLJ-1096] Make destructuring emit direct keyword lookups
              Ghadi Shayban (0.86)
              John Hume (0.86)
@@ -1326,6 +1328,7 @@ Enhancement
     0.00   0 Backlog      [CLJ-2453] Allow reader conditionals in prepl
     0.00   0 Backlog      [CLJ-2457] Document return value of Throwable->map
     0.00   0 Backlog      [CLJ-2488] Improve docstring for reify
+    0.00   0 Backlog      [CLJ-2492] Uses of deprecated Class.newInstance() method
     0.00   0 Prescreened  [CLJ-704] range function has missing documentation
     0.00   0 Prescreened  [CLJ-2383] Add classes that were introduced to java.lang in Java 7/8 into DEFAULT_IMPORTS
     0.00   0 Prescreened  [CLJ-2402] Omit "null" Exception message from error output
@@ -1388,7 +1391,7 @@ Enhancement
 ========================================
 Feature
 
-   52.86  67 Backlog      [CLJ-1965] [spec] clojure.spec/def should support an optional doc-string
+   53.75  68 Backlog      [CLJ-1965] [spec] clojure.spec/def should support an optional doc-string
              Aaron Cummings (1.00)
              Ag Ibragimov (1.00)
              Alex Hammel (1.00)
@@ -1414,6 +1417,7 @@ Feature
              Stephane Raux (1.00)
              Timothy Pote (1.00)
              udit (1.00)
+             xingzhe (1.00)
              Arnaud Bos (1.00)
              Donald Ball (1.00)
              Egg Syntax (1.00)
@@ -1427,13 +1431,13 @@ Feature
              Gunnar Völkel (0.86)
              James Reeves (0.86)
              K Jaihindh Reddy (0.86)
-             Moritz Heidkamp (0.86)
              Sean Corfield (0.86)
              Stathis Sideris (0.86)
              Vadim Platonov (0.86)
              Chris Sims (0.75)
              Dom Kiva-Meyer (0.75)
              Jeroen van Dijk (0.75)
+             Moritz Heidkamp (0.75)
              Nate Smith (0.75)
              Radford Smith (0.75)
              Simon Stelling (0.75)
@@ -1863,6 +1867,20 @@ Feature
              Jeroen van Dijk (0.75)
              Chris Blom (0.33)
              Nicola Mometto (0.10)
+    7.68  13 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
+             Dorab Patel (1.00)
+             Matt Earnshaw (1.00)
+             Adrian Medina (0.86)
+             Steve Miner (0.86)
+             Tim McCormack (0.75)
+             Matthew Davidson (0.66)
+             Juraj Martinka (0.50)
+             Brandon Bloom (0.43)
+             Vitalie Spinu (0.43)
+             Simon Belak (0.41)
+             Michael Blume (0.27)
+             Kenny Williams (0.26)
+             A. R (0.25)
     6.85  12 Triaged      [CLJ-2124] Catch multiple exceptions in a single catch block
              Grigory Glushko (1.00)
              Eugene Aksenov (1.00)
@@ -1876,19 +1894,6 @@ Feature
              Kenny Williams (0.26)
              Marc O'Morain (0.23)
              Ivan Kryvoruchko (0.18)
-    6.68  12 Triaged      [CLJ-1452] clojure.core/*rand* for seedable randomness
-             Matt Earnshaw (1.00)
-             Adrian Medina (0.86)
-             Steve Miner (0.86)
-             Tim McCormack (0.75)
-             Matthew Davidson (0.66)
-             Juraj Martinka (0.50)
-             Brandon Bloom (0.43)
-             Vitalie Spinu (0.43)
-             Simon Belak (0.41)
-             Michael Blume (0.27)
-             Kenny Williams (0.26)
-             A. R (0.25)
     6.37  10 Triaged      [CLJ-1103] Make conj assoc dissoc and transient versions handle args similarly
              Brian Kim (1.00)
              Paul Bauer (1.00)
@@ -2120,12 +2125,12 @@ Feature
     1.36   2 Backlog      [CLJ-2165] #clojure/var tag for transmitting var identity
              Steven Yi (0.86)
              Enzzo Cavallo (0.50)
-    1.29   2 Backlog      [CLJ-1951] bigint? predicate and generator
-             Moritz Heidkamp (0.86)
-             Andrey Antukh (0.43)
     1.29   2 Triaged      [CLJ-1416] Support transients in gvec
              Ragnar Dahlen (0.86)
              Brandon Bloom (0.43)
+    1.18   2 Backlog      [CLJ-1951] bigint? predicate and generator
+             Moritz Heidkamp (0.75)
+             Andrey Antukh (0.43)
     1.13   2 Triaged      [CLJ-2015] [spec] with-instrument
              Daniel Solano Gómez (1.00)
              jcr (0.13)
@@ -2209,6 +2214,7 @@ Feature
     0.00   0 Backlog      [CLJ-1551] Consider transducer support for primitives
     0.00   0 Bad: Match > [CLJ-115] GC Issue 111: Enable naming an array parameter for areduce
     0.00   0 Bad: Match > [CLJ-213] Invariants and the STM
+    0.00   0 Bad: Match > [CLJ-2490] Add symbol literal syntax with the same alias resolving behavior as auto-resolved keywords
     0.00   0 Triaged      [CLJ-1836] Expose clojure.repl/doc as a function call
     0.00   0 Triaged      [CLJ-1889] Add optional predicate to string trim functions that determines if a character should be trimmed
     0.00   0 Vetted       [CLJ-992] `iterate` reducer
