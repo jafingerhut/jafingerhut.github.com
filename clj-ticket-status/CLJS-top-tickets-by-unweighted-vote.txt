@@ -1,6 +1,6 @@
 Top CLJS tickets by weighted vote
 
-Date: March 28, 2019
+Date: April 18, 2019
  
 Open CLJS tickets with at least one vote, sorted in descending order of
 their "weighted vote".  At the end of the CLJ and CLJS lists are
@@ -65,6 +65,7 @@ Defect
    2 Open         [CLJS-890] Incorrect behaviour of (str obj) when obj has valueOf method
    2 Open         [CLJS-1558] Code allowed to re-define referred var
    2 Open         [CLJS-1806] build api fails to generate inline code for :target :nodejs
+   2 Open         [CLJS-3068] Compiler error with if and emit-var
    2 Open         [CLJS-2461] Minor shadowing intricacies
    2 Open         [CLJS-2709] JS Module can't add new Cljs namespaces to build
    1 Open         [CLJS-776] re-matches is incorrect
@@ -88,9 +89,10 @@ Defect
    1 Open         [CLJS-2719] Should not compile ES6 or CommonJS libs when under :nodejs target
    1 Open         [CLJS-1587] Duplicate keys via quoting
    1 Open         [CLJS-1593] Self-host: Munged minus macro
+   1 Open         [CLJS-2469] ChunkedCons chunk-next returns empty seq instead of nil
    1 Bad: Match n [CLJS-2765] Git caching creates cljs_deps.js file with relative paths to cache directory on the first try
    1 Open         [CLJS-2402] Duplicate source files passed to Closure Compiler causes ModuleLoader#resolvePaths to throw "Duplicate module path after resolving"
-   1 Open         [CLJS-2469] ChunkedCons chunk-next returns empty seq instead of nil
+   1 Open         [CLJS-3070] Bad error message for deftype with method with no parameters
    1 Bad: Unkn Fi [CLJS-1159] compiled files with warnings that otherwise don't need recompilation will not emit warnings on the next compile
    1 Open         [CLJS-2070] Dotted interop forms can leak invalid JS into output
    1 Open         [CLJS-3056] runtime namespace load order is independent from ordering in ns macro :require form
@@ -105,6 +107,8 @@ Defect
    1 Bad: Unkn Fi [CLJS-1896] Externs file validation
    1 Open         [CLJS-1676] Unused local in ObjMap / IKVReduce
    1 Open         [CLJS-2543] IndexingPushbackReader error when compiling :reload-all with cljs.spec.alpha
+   1 Open         [CLJS-2957] Externs Inference Regression
+   1 Open         [CLJS-3067] Requiring cljs.loader with npm-deps breaks for nodejs target
    1 Bad: Unkn Fi [CLJS-2138] Remove redundant checks in ChunkedSeq.-rest and ChunkedSeq.-next 
    1 Open         [CLJS-2774] cljs.main: load file fails if NPM deps involved
    0 Bad: Unkn Fi [CLJS-349] cljs.compiler: No defmethod for emit-constant clojure.lang.LazySeq
@@ -132,7 +136,7 @@ Defect
 ========================================
 Enhancement
 
-  16 Open         [CLJS-2376] Add support for ES6 default imports/exports
+  17 Open         [CLJS-2376] Add support for ES6 default imports/exports
   12 Open         [CLJS-1628] Make instances of js/Symbol printable
   11 Open         [CLJS-2466] Faster reduce for lazy-seqs
   10 Bad: Unkn Fi [CLJS-1461] Convert analyzer to conform to tools.analyzer's spec
@@ -152,9 +156,9 @@ Enhancement
    3 Open         [CLJS-1009] Allow deps.cljs to declare a foreign lib as remote
    3 Open         [CLJS-1153] Typed Array backed PersistentVector based on clojure.core/Vec
    3 Open         [CLJS-1755] Support sourcesContent in source maps
+   3 Open         [CLJS-2051] Add end-line and end-column to analyzer AST
+   3 Open         [CLJS-2928] Externs inference: Consider inheritance
    3 Open         [CLJS-2132] Optimize transient vector creation
-   2 Open         [CLJS-2051] Add end-line and end-column to analyzer AST
-   2 Open         [CLJS-2928] Externs inference: Consider inheritance
    2 Open         [CLJS-1474] Error if reserved symbol is defined
    2 Open         [CLJS-1601] Optimize cljs.core dump 
    2 Open         [CLJS-2895] Cull source maps
@@ -169,9 +173,8 @@ Enhancement
    1 Open         [CLJS-1631] The str function should handle JavaScript symbols
    1 Bad: Unkn Fi [CLJS-994] print a warning when :externs file paths can't be found.
    1 Open         [CLJS-1726] demunge is too agreesive and incorrect in some cases
-   1 Open         [CLJS-3016] Enable cljs.core.specs.alpha
    1 Bad: Match > [CLJS-2331] Extend :global-exports to auto-alias and rewrite occurrences of declared globals
-   1 Triaged      [CLJS-3054] Align behavior of set/union and into with Clojure
+   1 Open         [CLJS-3016] Enable cljs.core.specs.alpha
    1 Open         [CLJS-2826] Add arglist annotations in cljs.core
    1 Open         [CLJS-650] Optimize all protocols
    1 Bad: Unkn Fi [CLJS-1127] validate compiled file written to disk
@@ -187,7 +190,7 @@ Enhancement
    1 Open         [CLJS-2383] Improve perf of select-keys by using keyword-identical?
    1 Open         [CLJS-2471] ChunkedSeq should implemented ICounted
    1 Open         [CLJS-2786] implement cljs.core/extend, same as clojure.core/extend
-   1 Open         [CLJS-2868] Add ^string hints
+   1 Open         [CLJS-2886] count specializations for string and array
    0 Bad: Unkn Fi [CLJS-773] Use unchecked-*-int functions for real 32-bit math
    0 Bad: Unkn Fi [CLJS-1125] Simple corrupted compiled file detection
    0 Bad: Unkn Fi [CLJS-1147] reconnect logic for browser REPLs
