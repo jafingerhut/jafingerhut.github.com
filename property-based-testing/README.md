@@ -62,6 +62,8 @@ Fred Hebert, "Property-Based Testing with PropEr, Erlang, and Elixir:
 Find Bugs Before Your Users Do", 2019,
 https://pragprog.com/book/fhproper/property-based-testing-with-proper-erlang-and-elixir
 
+Review of that book: https://medium.com/erlang-battleground/property-based-testing-erlang-elixir-de72ad24966b
+
 
 # Research papers
 
