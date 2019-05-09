@@ -45,6 +45,28 @@ fix for that issue, then good to make that change when creating a new
 guest VM.
 
 
+# Ubuntu Linux Desktop settings I like
+
+## Ubuntu 16.04 Desktop Linux
+
+Settings -> Appearance -> Launcher icon size: reduce from default 48
+to 24 pixels
+
+Settings -> Security & Privacy -> uncheck "Waking from suspend" and
+"Returning from blank screen".  My host OS has security settings that
+require me to enter a password.  I do not need the annoyance of a
+separate layer of password entering for the guest OS's, too.
+
+
+## Ubuntu 18.04 Desktop Linux
+
+Settings -> Dock -> Icon size: reduce from default 48 to 24 pixels
+
+Settings -> Privacy -> Screen Lock -> Automatic Screen Lock: change to
+Off.  Same reason as for "Security & Privacy" settings for Ubuntu
+16.04, but it has been moved to a different "place" in Ubuntu 18.04.
+
+
 # Resizing guest OS window
 
 I found this to work with VirtualBox and Ubuntu 16.04 guest OS even
