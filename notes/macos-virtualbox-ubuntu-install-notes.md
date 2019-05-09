@@ -69,17 +69,28 @@ Off.  Same reason as for "Security & Privacy" settings for Ubuntu
 
 # Resizing guest OS window
 
-I found this to work with VirtualBox and Ubuntu 16.04 guest OS even
-while installing the Ubuntu guest OS.  That is, it does not require
-first installing the guest additions kernel module.  That is a very
-good thing, because while installing the Ubuntu desktop guest OS, one
-of the GUI windows for selecting your type of keyboard is so wide it
-does not fit in the default window width, and it is difficult to click
-on the "OK" button to proceed unless you first make the window wider.
+I have found combinations of versions of VirtualBox and Ubuntu guest
+OS where this worked even while installing the Ubuntu guest OS,
+without having to install the guest additions CD software (see next
+section).  Just click and drag the bottom right corner of the
+VirtualBox window containing the guest OS GUI to resize it, then wait
+several seconds until the guest Ubuntu desktop changes to match it.
 
-Just click and drag the bottom right corner of the VirtualBox window
-containing the guest OS GUI to resize it, then wait several seconds
-until the guest Ubuntu desktop changes to match it.
+However, I have also found combinations of versions where resizing the
+VirtualBox window to a larger size makes that window larger, but it
+does not make the Ubuntu guest OS desktop any larger.  It simply
+leaves a black background around the still-same-size desktop.
+Choosing "Inserting Guest Additions CD image" from the VirtualBox
+"Devices" menu seemed to trigger VirtualBox to resize the Ubuntu
+desktop, even without installing the guest additions, at least once
+Ubuntu was completely installed.  I am guessing that menu item somehow
+causes VirtualBox to communicate with the Ubuntu desktop in a way that
+causes it to resize its desktop.  There are likely other ways.
+
+If the resizing does not work, note that there are times with the
+default desktop resolution, during installation of the Ubuntu guest
+OS, where clicking a button to proceed requires dragging that window
+around a bit.  Inconvenient, but possible.
 
 
 # Installing guest additions kernel module
