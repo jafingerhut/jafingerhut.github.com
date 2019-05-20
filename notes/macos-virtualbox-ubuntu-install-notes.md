@@ -290,6 +290,16 @@ system:
 
     https://superuser.com/questions/529149/how-to-compact-virtualboxs-vdi-file-size
 
+The `dd` command will eventually fill up the disk with a file
+containing nothing but 0 bytes.  Then delete it.
+
+    dd if=/dev/zero of=/var/tmp/bigemptyfile bs=4096k
+    rm /var/tmp/bigemptyfile
+
+After shutting down the VM, run this command on the Mac OS host:
+
+    VBoxManage modifymedium --compact /path/to/thedisk.vdi
+
 
 # Sample sshfs commands
 
