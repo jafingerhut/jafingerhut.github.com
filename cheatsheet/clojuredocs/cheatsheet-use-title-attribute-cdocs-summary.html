@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Clojure Cheat Sheet (Clojure 1.7 - 1.10, sheet v47)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.7 - 1.10, sheet v48)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -3842,7 +3842,24 @@ See also: println, print-str">println-str</a></code></td>
 ([])
   Reads the next line from stream that is the current value of *in* .
 
-1 example with 3 lines on Fri Aug 29 2014">read-line</a> (clojure.tools.reader.edn/) <a href="https://github.com/clojure/tools.reader" title="clojure.tools.reader.edn/read
+1 example with 3 lines on Fri Aug 29 2014">read-line</a> (clojure.edn/) <a href="https://clojuredocs.org/clojure_core/clojure.edn/read" title="clojure.edn/read
+([] [stream] [opts stream])
+  Reads the next object from stream, which must be an instance of
+  java.io.PushbackReader or some derivee.  stream defaults to the
+  current value of *in*.
+
+  Reads data in the edn format (subset of Clojure data):
+  http://edn-format.org
+
+  opts is a map that can include the following keys:
+  :eof - value to return on end-of-file. When not supplied, eof throws an
+exception.
+  :readers  - a map of tag symbols to data-reader functions to be considered
+before default-data-readers.
+              When not supplied, only the default-data-readers will be used.
+  :default - A function of two args, that will, if present and no reader is
+found for a tag,
+             be called with the tag and the value.">read</a> (clojure.tools.reader.edn/) <a href="https://github.com/clojure/tools.reader" title="clojure.tools.reader.edn/read
 ([] [reader] [{:keys [eof], :as opts} reader] [reader eof-error? eof opts])
   Reads the first object from an IPushbackReader or a java.io.PushbackReader.
    Returns the object read. If EOF, throws if eof-error? is true otherwise
@@ -3873,7 +3890,24 @@ found for a tag,
   Returns the lines of text from rdr as a lazy sequence of strings.
   rdr must implement java.io.BufferedReader.
 
-2 examples totaling 12 lines on Fri Aug 29 2014">line-seq</a> (clojure.tools.reader.edn/) <a href="https://github.com/clojure/tools.reader" title="clojure.tools.reader.edn/read
+2 examples totaling 12 lines on Fri Aug 29 2014">line-seq</a> (clojure.edn/) <a href="https://clojuredocs.org/clojure_core/clojure.edn/read" title="clojure.edn/read
+([] [stream] [opts stream])
+  Reads the next object from stream, which must be an instance of
+  java.io.PushbackReader or some derivee.  stream defaults to the
+  current value of *in*.
+
+  Reads data in the edn format (subset of Clojure data):
+  http://edn-format.org
+
+  opts is a map that can include the following keys:
+  :eof - value to return on end-of-file. When not supplied, eof throws an
+exception.
+  :readers  - a map of tag symbols to data-reader functions to be considered
+before default-data-readers.
+              When not supplied, only the default-data-readers will be used.
+  :default - A function of two args, that will, if present and no reader is
+found for a tag,
+             be called with the tag and the value.">read</a> (clojure.tools.reader.edn/) <a href="https://github.com/clojure/tools.reader" title="clojure.tools.reader.edn/read
 ([] [reader] [{:keys [eof], :as opts} reader] [reader eof-error? eof opts])
   Reads the first object from an IPushbackReader or a java.io.PushbackReader.
    Returns the object read. If EOF, throws if eof-error? is true otherwise
@@ -3906,7 +3940,14 @@ Macro
   StringReader initialized with the string s.
 
 1 example with 15 lines on Fri Aug 29 2014
-See also: with-out-str">with-in-str</a> (clojure.tools.reader.edn/) <a href="https://github.com/clojure/tools.reader" title="clojure.tools.reader.edn/read-string
+See also: with-out-str">with-in-str</a> (clojure.edn/) <a href="https://clojuredocs.org/clojure_core/clojure.edn/read-string" title="clojure.edn/read-string
+([s] [opts s])
+  Reads one object from the string s. Returns nil when s is nil or empty.
+
+  Reads data in the edn format (subset of Clojure data):
+  http://edn-format.org
+
+  opts is a map as per clojure.edn/read">read-string</a> (clojure.tools.reader.edn/) <a href="https://github.com/clojure/tools.reader" title="clojure.tools.reader.edn/read-string
 ([s] [opts s])
   Reads one object from the string s.
    Returns nil when s is nil or empty.
@@ -7598,8 +7639,8 @@ line]">StackTraceElement-&gt;vec</a> (1.10) <a href="https://clojuredocs.org/clo
 ([ex])
   Returns the message attached to ex if ex is a Throwable.
   Otherwise returns nil.">ex-message</a> (clojure.main/) <a href="https://clojuredocs.org/clojure_core/clojure.main/ex-str" title="clojure.main/ex-str
-([{:clojure.error/keys [phase source line column symbol class cause spec], :as
-triage-data}])
+([{:clojure.error/keys [phase source path line column symbol class cause spec],
+:as triage-data}])
   Returns a string from exception data, as produced by ex-triage.
   The first line summarizes the exception phase and location.
   The subsequent lines describe the cause.">clojure.main/ex-str</a> <a href="https://clojuredocs.org/clojure_core/clojure.main/ex-triage" title="clojure.main/ex-triage
@@ -7614,6 +7655,7 @@ than phase
 :macroexpansion
       :execution :read-eval-result :print-eval-result
     :clojure.error/source - file name (no path)
+    :clojure.error/path - source path
     :clojure.error/line - integer line number
     :clojure.error/column - integer column number
     :clojure.error/symbol - symbol being expanded/compiled/invoked
