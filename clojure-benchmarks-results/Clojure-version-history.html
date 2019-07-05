@@ -1,1193 +1,1136 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en-us"><head>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Clojure version history</title>
-  <meta content="Andy Fingerhut" name="author"></head><body>[<a href="Clojure-benchmarks.html">benchmarks main page</a>] [<a href="Clojure-whole-program-benchmarks.html">whole program benchmarks</a>] [<a href="Clojure-expression-benchmarks.html">expression benchmarks</a>] [Clojure version history] [<a href="Hardware-and-software-used-for-Clojure-benchmarks.html">hardware and software used</a>]
-<h1>Clojure version history</h1>There are two tables below: First the
-short table containing only the final releases, followed by the longer
-table containing alpha, beta, and RC (Release Candidate)
-releases.&nbsp; This list is focused on versions with performance
-results included in
-the Clojure benchmarks graphs.&nbsp; Some are intentionally left out
-because they are nearly identical to the preceding or following version.<br>
-<br>
-The column giving the number of "non-trivial" commits to the source
-code since the previous version is estimated by looking through the git
-commit history, and trying to avoid counting commits that only update a
-README or change log file, and not counting commits with comments like
-"[maven-release-plugin] prepare release clojure &lt;version&gt;" and
-"[maven-release-plugin] prepare for next development iteration".&nbsp;
-No other judgement has been made about the commits, e.g. some of the
-commits included in the counts below may be changes to doc strings
-only, and thus have little or no effect on the run-time performance of
-the benchmarks.<br>
-<br>
-No versions before Clojure 1.2.0 are recorded here except final releases 1.0 and 1.1.0.&nbsp; Feel free to
-contact me if you have details on those earlier versions you are
-interested in seeing added.<br>
-<h2>Final Clojure Releases</h2>
-This table also contains a few older historical dates for reference.<br>
-<br>
-<table style="text-align: left; width: 600px;" border="1" cellpadding="2" cellspacing="2">
-
-  <tbody>
-    <tr>
-      <th style="vertical-align: top;">Clojure version<br>
-      </th>
-      <th style="vertical-align: top;">Date<br>
-(MM/DD/YYYY)<br>
-      </th>
-      <td style="vertical-align: top;">Minimum Java version required<br>
-      </td>
-<th style="vertical-align: top;">Notes, or # of "non-trivial" commits to source code since previous version<br>
-      </th>
-      <th style="vertical-align: top;">Included in these Clojure benchmarks results?<br>
-      </th>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;"><br>
-      </td>
-      <td style="vertical-align: top;">03/24/2006<br>
-      </td>
-      <td style="vertical-align: top;"><br>
-      </td>
-<td style="vertical-align: top;">first commit in Github repo<br>
-      </td>
-      <td style="vertical-align: top;">no<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;"><br>
-      </td>
-      <td style="vertical-align: top;">10/16/2007<br>
-      </td>
-      <td style="vertical-align: top;"><br>
-      </td>
-<td style="vertical-align: top;">first version released to the public (reference: the <a href="http://clojure.blogspot.com/2009/10/clojure-is-two.html">announcement</a> that Clojure is 2 years old)<br>
-      </td>
-      <td style="vertical-align: top;">no<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.0<br>
-      </td>
-      <td style="vertical-align: top;">05/04/2009<br>
-      </td>
-      <td style="vertical-align: top;"><br>
-      </td>
-<td style="vertical-align: top;">1.0 <a href="https://groups.google.com/d/msg/clojure/HmYdFr2RDd0/9dInE2etvbwJ">announced</a> on Clojure Google group (also <a href="http://clojure.blogspot.com/2009/05/clojure-10.html">blog post</a>)<br>
-      </td>
-      <td style="vertical-align: top;">no<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.1.0<br>
-      </td>
-      <td style="vertical-align: top;">12/31/2009<br>
-      </td>
-      <td style="vertical-align: top;"><br>
-      </td>
-<td style="vertical-align: top;">208 since 1.0<br>
-      </td>
-      <td style="vertical-align: top;">no<br>
-      </td>
-    </tr>
-<tr>
-      <td style="vertical-align: top;">1.2.0<br>
-      </td>
-      <td style="vertical-align: top;">08/19/2010<br>
-      </td>
-      <td style="vertical-align: top;"><br>
-      </td>
-<td style="vertical-align: top;">243 since 1.1.0<br>
-      </td>
-      <td style="vertical-align: top;">no<br>
-      </td>
-    </tr>
-    
-    
-    
-    
-    
-    
-    <tr>
-      <td style="vertical-align: top;">1.2.1<br>
-      </td>
-      <td style="vertical-align: top;">03/25/2011<br>
-      </td>
-      <td style="vertical-align: top;"><br>
-      </td>
-<td style="vertical-align: top;">10 since 1.2.0<br>
-      </td>
-      <td style="vertical-align: top;">no<br>
-      </td>
-    </tr>
-    
-    
-    
-    
-    
-    <tr>
-      <td style="vertical-align: top;">1.3.0<br>
-      </td>
-      <td style="vertical-align: top;">09/23/2011<br>
-      </td>
-      <td style="vertical-align: top;"><br>
-      </td>
-<td style="vertical-align: top;">212 since 1.2.0<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <tr>
-      <td style="vertical-align: top;">1.4.0<br>
-      </td>
-      <td style="vertical-align: top;">04/15/2012<br>
-      </td>
-      <td style="vertical-align: top;"><br>
-      </td>
-<td style="vertical-align: top;">89 since 1.3.0<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    <tr>
-      <td style="vertical-align: top;">1.5.0<br>
-      </td>
-      <td style="vertical-align: top;">03/01/2013<br>
-      </td>
-      <td style="vertical-align: top;">same as Clojure 1.5.1 below<br>
-      </td>
-<td style="vertical-align: top;">137 since 1.4.0<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.5.1<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.1<br>
-      </td>
-      <td style="vertical-align: top;">03/10/2013<br>
-      </td>
-      <td style="vertical-align: top;">5, but reducers library requires 6<br>
-      </td>
-<td style="vertical-align: top;">1 since 1.5.0<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr>
-    
-    
-    <tr>
-      <td style="vertical-align: top;">1.6.0<br>
-      </td>
-      <td style="vertical-align: top;">03/25/2014<br>
-      </td>
-      <td style="vertical-align: top;">6<br>
-      </td>
-<td style="vertical-align: top;">115 since 1.5.1<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.7.0<br>
-      </td>
-      <td style="vertical-align: top;">06/30/2015<br>
-      </td>
-      <td style="vertical-align: top;">6<br>
-      </td>
-<td style="vertical-align: top;">118 since 1.6.0<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.8.0<br>
-      </td>
-      <td style="vertical-align: top;">01/19/2016<br>
-      </td>
-      <td style="vertical-align: top;">6<br>
-      </td>
-      <td style="vertical-align: top;">94 since 1.7.0</td>
-      <td style="vertical-align: top;">not yet<br>
-      </td>
-    </tr>
-
-
-
-
-
-
-
-
-
-
-
-
-  </tbody>
-</table>
-<h2>Java SE dates</h2>Source: http://www.oracle.com/technetwork/java/eol-135779.html<br>
-<br>
-<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
-  <tbody>
-    <tr>
-      <td style="vertical-align: top;"><span style="font-weight: bold;">Major Release</span><br>
-      </td>
-      <td style="vertical-align: top;"><span style="font-weight: bold;">General Availability Date</span><br>
-      </td>
-      <td style="vertical-align: top;"><span style="font-weight: bold;">End of Public Updates</span><br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">5<br>
-      </td>
-      <td style="vertical-align: top;">May 2004<br>
-      </td>
-      <td style="vertical-align: top;">Oct 2009<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">6<br>
-      </td>
-      <td style="vertical-align: top;">Dec 2006<br>
-      </td>
-      <td style="vertical-align: top;">Feb 2013<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">7<br>
-      </td>
-      <td style="vertical-align: top;">Jul 2011<br>
-      </td>
-      <td style="vertical-align: top;">Apr 2015<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">8<br>
-      </td>
-      <td style="vertical-align: top;">Mar 2014<br>
-      </td>
-      <td style="vertical-align: top;">TBD<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">9<br>
-      </td>
-      <td style="vertical-align: top;">only beta versions available as of Jan 2016<br>
-      </td>
-      <td style="vertical-align: top;">TBD<br>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<br>
-<h2>All Clojure releases, including alpha, beta, RC, and final<br>
-</h2>
-
-
-
-<table style="text-align: left; width: 600px;" border="1" cellpadding="2" cellspacing="2">
-  <tbody>
-    <tr>
-      <th style="vertical-align: top;">Clojure version<br>
-      </th>
-      <th style="vertical-align: top;">Date<br>
-(MM/DD/YYYY)<br>
-      </th>
-      <th style="vertical-align: top;"># of "non-trivial" commits to source code since previous version<br>
-      </th>
-      <th style="vertical-align: top;">Included in these Clojure benchmarks results?<br>
-      </th>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.2.0<br>
-      </td>
-      <td style="vertical-align: top;">08/19/2010<br>
-      </td>
-      <td style="vertical-align: top;"><br>
-      </td>
-      <td style="vertical-align: top;">no, criterium lib does not run on it<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.3.0-alpha1<br>
-      </td>
-      <td style="vertical-align: top;">09/23/2010<br>
-      </td>
-      <td style="vertical-align: top;">12<br>
-      </td>
-      <td style="vertical-align: top;">no, not available in Maven repo<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.3.0-alpha2<br>
-      </td>
-      <td style="vertical-align: top;">10/25/2010<br>
-      </td>
-      <td style="vertical-align: top;">45<br>
-      </td>
-      <td style="vertical-align: top;">no, not available in Maven repo</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.3.0-alpha3<br>
-      </td>
-      <td style="vertical-align: top;">11/05/2010<br>
-      </td>
-      <td style="vertical-align: top;">11<br>
-      </td>
-      <td style="vertical-align: top;">no, not available in Maven repo</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.3.0-alpha4<br>
-      </td>
-      <td style="vertical-align: top;">12/12/2010<br>
-      </td>
-      <td style="vertical-align: top;">24<br>
-      </td>
-      <td style="vertical-align: top;">no, not available in Maven repo</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.3.0-alpha5<br>
-      </td>
-      <td style="vertical-align: top;">01/14/2011<br>
-      </td>
-      <td style="vertical-align: top;">22<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.3.0-alpha6<br>
-      </td>
-      <td style="vertical-align: top;">03/11/2011<br>
-      </td>
-      <td style="vertical-align: top;">31<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.2.1<br>
-      </td>
-      <td style="vertical-align: top;">03/25/2011<br>
-      </td>
-      <td style="vertical-align: top;">10<br>
-(commits made to 1.2.0 to create 1.2.1)<br>
-      </td>
-      <td style="vertical-align: top;">no, criterium lib does not run on it<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.3.0-alpha7<br>
-      </td>
-      <td style="vertical-align: top;">05/13/2011<br>
-      </td>
-      <td style="vertical-align: top;">32 (since 1.3.0-alpha6)<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.3.0-alpha8<br>
-      </td>
-      <td style="vertical-align: top;">05/27/2011<br>
-      </td>
-      <td style="vertical-align: top;">11<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.3.0-beta1<br>
-      </td>
-      <td style="vertical-align: top;">06/21/2011<br>
-      </td>
-      <td style="vertical-align: top;">4<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.3.0-beta2<br>
-      </td>
-      <td style="vertical-align: top;">08/26/2011<br>
-      </td>
-      <td style="vertical-align: top;">12<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.3.0-beta3<br>
-      </td>
-      <td style="vertical-align: top;">09/02/2011<br>
-      </td>
-      <td style="vertical-align: top;">4<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.3.0<br>
-      </td>
-      <td style="vertical-align: top;">09/23/2011<br>
-      </td>
-      <td style="vertical-align: top;">4&nbsp; (212 since 1.2.0)<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.4.0-alpha1<br>
-      </td>
-      <td style="vertical-align: top;">10/07/2011<br>
-      </td>
-      <td style="vertical-align: top;">10<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.4.0-alpha2<br>
-      </td>
-      <td style="vertical-align: top;">10/25/2011<br>
-      </td>
-      <td style="vertical-align: top;">9<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.4.0-alpha3<br>
-      </td>
-      <td style="vertical-align: top;">12/13/2011<br>
-      </td>
-      <td style="vertical-align: top;">22<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.4.0-alpha4<br>
-      </td>
-      <td style="vertical-align: top;">01/13/2012<br>
-      </td>
-      <td style="vertical-align: top;">6<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.4.0-alpha5<br>
-      </td>
-      <td style="vertical-align: top;">01/27/2012<br>
-      </td>
-      <td style="vertical-align: top;">6<br>
-      </td>
-      <td style="vertical-align: top;">no, same as 1.4.0-beta1<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.4.0-beta1<br>
-      </td>
-      <td style="vertical-align: top;">02/03/2012<br>
-      </td>
-      <td style="vertical-align: top;">0 (6 since 1.4.0-alpha4)<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.4.0-beta2<br>
-      </td>
-      <td style="vertical-align: top;">02/29/2012<br>
-      </td>
-      <td style="vertical-align: top;">10<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.4.0-beta3<br>
-      </td>
-      <td style="vertical-align: top;">03/01/2012<br>
-      </td>
-      <td style="vertical-align: top;">1<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.4.0-beta2<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.4.0-beta4<br>
-      </td>
-      <td style="vertical-align: top;">03/09/2012<br>
-      </td>
-      <td style="vertical-align: top;">5 (6 since 1.4.0-beta2)<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.4.0-beta5<br>
-      </td>
-      <td style="vertical-align: top;">03/13/2012<br>
-      </td>
-      <td style="vertical-align: top;">2<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.4.0-beta4<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.4.0-beta6<br>
-      </td>
-      <td style="vertical-align: top;">03/30/2012<br>
-      </td>
-      <td style="vertical-align: top;">13 (15 since 1.4.0-beta4)<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.4.0-beta7<br>
-      </td>
-      <td style="vertical-align: top;">04/10/2012<br>
-      </td>
-      <td style="vertical-align: top;">3<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.4.0<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.4.0<br>
-      </td>
-      <td style="vertical-align: top;">04/15/2012<br>
-      </td>
-      <td style="vertical-align: top;">2 (5 since 1.4.0-beta6, 89 since 1.3.0)<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-alpha1<br>
-      </td>
-      <td style="vertical-align: top;">05/18/2012<br>
-      </td>
-      <td style="vertical-align: top;">28<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-alpha2<br>
-      </td>
-      <td style="vertical-align: top;">06/16/2012<br>
-      </td>
-      <td style="vertical-align: top;">11<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-alpha3<br>
-      </td>
-      <td style="vertical-align: top;">07/21/2012<br>
-      </td>
-      <td style="vertical-align: top;">4<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-alpha4<br>
-      </td>
-      <td style="vertical-align: top;">08/18/2012<br>
-      </td>
-      <td style="vertical-align: top;">26<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-alpha5<br>
-      </td>
-      <td style="vertical-align: top;">10/04/2012<br>
-      </td>
-      <td style="vertical-align: top;">17<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-alpha6<br>
-      </td>
-      <td style="vertical-align: top;">10/07/2012<br>
-      </td>
-      <td style="vertical-align: top;">1<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.5.0-alpha5<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-alpha7<br>
-      </td>
-      <td style="vertical-align: top;">10/16/2012<br>
-      </td>
-      <td style="vertical-align: top;">1<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.5.0-alpha5<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-beta1<br>
-      </td>
-      <td style="vertical-align: top;">10/22/2012<br>
-      </td>
-      <td style="vertical-align: top;">12 (14 since 1.5.0-alpha5)<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.5.0-beta2<br>
-      </td>
-      <td style="vertical-align: top;">12/11/2012<br>
-      </td>
-      <td style="vertical-align: top;">8<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-RC1<br>
-      </td>
-      <td style="vertical-align: top;">12/22/2012<br>
-      </td>
-      <td style="vertical-align: top;">2<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.5.0-beta10<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-RC2<br>
-      </td>
-      <td style="vertical-align: top;">01/12/2013<br>
-      </td>
-      <td style="vertical-align: top;">0<br>
-      </td>
-      <td style="vertical-align: top;">no, same as 1.5.0-RC1<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-RC3<br>
-      </td>
-      <td style="vertical-align: top;">01/25/2013<br>
-      </td>
-      <td style="vertical-align: top;">1<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.5.0-beta10</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-RC4<br>
-      </td>
-      <td style="vertical-align: top;">01/29/2013<br>
-      </td>
-      <td style="vertical-align: top;">1<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.5.0-beta10</td>
-    </tr>
-    <tr>
-      <td colspan="4" rowspan="1" style="vertical-align: top;">Leaving out the flurry of RC5, RC6, beta7, beta8, and beta9<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-beta10<br>
-      </td>
-      <td style="vertical-align: top;">02/05/2013<br>
-      </td>
-      <td style="vertical-align: top;">9 (since 1.5.0-RC4, 13 since 1.5.0-beta2)<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-beta11<br>
-      </td>
-      <td style="vertical-align: top;">02/07/2013<br>
-      </td>
-      <td style="vertical-align: top;">2<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.5.0-beta10<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-beta12<br>
-      </td>
-      <td style="vertical-align: top;">02/08/2013<br>
-      </td>
-      <td style="vertical-align: top;">3 (5 since 1.5.0-beta10)<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-beta13<br>
-      </td>
-      <td style="vertical-align: top;">02/09/2013<br>
-      </td>
-      <td style="vertical-align: top;">2<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.5.0-beta12<br>
-      </td>
-    </tr>
-
-    <tr>
-      <td style="vertical-align: top;">1.5.0-RC14<br>
-      </td>
-      <td style="vertical-align: top;">02/09/2013<br>
-      </td>
-      <td style="vertical-align: top;">4 (6 since 1.5.0-beta12)<br>
-      </td>
-      <td style="vertical-align: top;">yes
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-RC15<br>
-      </td>
-      <td style="vertical-align: top;">02/10/2013<br>
-      </td>
-      <td style="vertical-align: top;">2<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.5.1
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.0-RC16<br>
-      </td>
-      <td style="vertical-align: top;">02/13/2013<br>
-      </td>
-      <td style="vertical-align: top;">1<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.5.1
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.5.0-RC17<br>
-      </td>
-      <td style="vertical-align: top;">02/22/2013<br>
-      </td>
-      <td style="vertical-align: top;">1<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.5.1
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.5.0<br>
-      </td>
-      <td style="vertical-align: top;">03/01/2013<br>
-      </td>
-      <td style="vertical-align: top;">1<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.5.1<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.5.1<br>
-      </td>
-      <td style="vertical-align: top;">03/10/2013<br>
-      </td>
-      <td style="vertical-align: top;">1 (6 since 1.5.0-RC14, 138 since 1.4.0)<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.6.0-alpha1<br>
-      </td>
-      <td style="vertical-align: top;">10/25/2013<br>
-      </td>
-      <td style="vertical-align: top;">50<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.6.0-alpha2<br>
-      </td>
-      <td style="vertical-align: top;">11/07/2013<br>
-      </td>
-      <td style="vertical-align: top;">3<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.6.0-alpha3<br>
-      </td>
-      <td style="vertical-align: top;">11/22/2013<br>
-      </td>
-      <td style="vertical-align: top;">18<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.6.0-beta1<br>
-      </td>
-      <td style="vertical-align: top;">02/14/2014<br>
-      </td>
-      <td style="vertical-align: top;">29<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.6.0-beta2<br>
-      </td>
-      <td style="vertical-align: top;">02/27/2014<br>
-      </td>
-      <td style="vertical-align: top;">6<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.6.0-RC1<br>
-      </td>
-      <td style="vertical-align: top;">03/11/2014<br>
-      </td>
-      <td style="vertical-align: top;">2 (108 since 1.5.1)<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.6.0-RC2<br>
-      </td>
-      <td style="vertical-align: top;">03/21/2014<br>
-      </td>
-      <td style="vertical-align: top;">3<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.6.0-RC3<br>
-      </td>
-      <td style="vertical-align: top;">03/23/2014<br>
-      </td>
-      <td style="vertical-align: top;">3<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.6.0-RC4<br>
-      </td>
-      <td style="vertical-align: top;">03/24/2014<br>
-      </td>
-      <td style="vertical-align: top;">1<br>
-      </td>
-      <td style="vertical-align: top;">no, identical to 1.6.0<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.6.0<br>
-      </td>
-      <td style="vertical-align: top;">03/25/2014<br>
-      </td>
-      <td style="vertical-align: top;">0 (115 since 1.5.1)<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.7.0-alpha1<br>
-      </td>
-      <td style="vertical-align: top;">08/06/2014<br>
-      </td>
-      <td style="vertical-align: top;">2<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.6.0<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.7.0-alpha2<br>
-      </td>
-      <td style="vertical-align: top;">09/05/2014<br>
-      </td>
-      <td style="vertical-align: top;">29<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.7.0-alpha3<br>
-      </td>
-      <td style="vertical-align: top;">10/26/2014<br>
-      </td>
-      <td style="vertical-align: top;">13<br>
-      </td>
-      <td style="vertical-align: top;">yes
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.7.0-alpha4<br>
-      </td>
-      <td style="vertical-align: top;">11/14/2014<br>
-      </td>
-      <td style="vertical-align: top;">7<br>
-      </td>
-      <td style="vertical-align: top;">yes
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.7.0-alpha5<br>
-      </td>
-      <td style="vertical-align: top;">01/10/2015<br>
-      </td>
-      <td style="vertical-align: top;">14<br>
-      </td>
-      <td style="vertical-align: top;">yes
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.7.0-alpha6<br>
-      </td>
-      <td style="vertical-align: top;">03/31/2015<br>
-      </td>
-      <td style="vertical-align: top;">28<br>
-      </td>
-      <td style="vertical-align: top;">yes
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.7.0-beta1<br>
-      </td>
-      <td style="vertical-align: top;">04/10/2015<br>
-      </td>
-      <td style="vertical-align: top;">6<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.7.0-beta2<br>
-      </td>
-      <td style="vertical-align: top;">04/24/2015<br>
-      </td>
-      <td style="vertical-align: top;">7<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.7.0-beta3<br>
-      </td>
-      <td style="vertical-align: top;">05/13/2015<br>
-      </td>
-      <td style="vertical-align: top;">7<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.7.0-RC1<br>
-</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.7.0-RC1<br>
-      </td>
-      <td style="vertical-align: top;">05/21/2015<br>
-      </td>
-      <td style="vertical-align: top;">1<br>
-      </td>
-      <td style="vertical-align: top;">yes</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.7.0-RC2<br>
-      </td>
-      <td style="vertical-align: top;">06/17/2015<br>
-      </td>
-      <td style="vertical-align: top;">4<br>
-      </td>
-      <td style="vertical-align: top;">no, identical to 1.7.0<br>
-</td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.7.0<br>
-      </td>
-      <td style="vertical-align: top;">06/30/2015<br>
-      </td>
-      <td style="vertical-align: top;">0 (118 since 1.6.0)<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-</td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.8.0-alpha1<br>
-      </td>
-      <td style="vertical-align: top;">07/17/2015<br>
-      </td>
-      <td style="vertical-align: top;">3<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.7.0<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.8.0-alpha2<br>
-      </td>
-      <td style="vertical-align: top;">07/17/2015<br>
-      </td>
-      <td style="vertical-align: top;">17<br>
-      </td>
-      <td style="vertical-align: top;">yes<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.8.0-alpha3<br>
-      </td>
-      <td style="vertical-align: top;">07/29/2015<br>
-      </td>
-      <td style="vertical-align: top;">7<br>
-      </td>
-      <td style="vertical-align: top;">yes
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.8.0-alpha4<br>
-      </td>
-      <td style="vertical-align: top;">08/03/2015<br>
-      </td>
-      <td style="vertical-align: top;">15<br>
-      </td>
-      <td style="vertical-align: top;">yes
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.8.0-alpha5<br>
-      </td>
-      <td style="vertical-align: top;">09/11/2015<br>
-      </td>
-      <td style="vertical-align: top;">13<br>
-      </td>
-      <td style="vertical-align: top;">yes
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.8.0-beta1<br>
-      </td>
-      <td style="vertical-align: top;">10/13/2015<br>
-      </td>
-      <td style="vertical-align: top;">17<br>
-      </td>
-      <td style="vertical-align: top;">yes
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.8.0-beta2<br>
-      </td>
-      <td style="vertical-align: top;">10/27/2015<br>
-      </td>
-      <td style="vertical-align: top;">8<br>
-      </td>
-      <td style="vertical-align: top;">no, too similar to 1.8.0-RC1<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.8.0-RC1<br>
-      </td>
-      <td style="vertical-align: top;">11/10/2015<br>
-      </td>
-      <td style="vertical-align: top;">1<br>
-      </td>
-      <td style="vertical-align: top;">yes
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.8.0-RC2<br>
-      </td>
-      <td style="vertical-align: top;">11/16/2015<br>
-      </td>
-      <td style="vertical-align: top;">3<br>
-      </td>
-      <td style="vertical-align: top;">yes
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.8.0-RC3<br>
-      </td>
-      <td style="vertical-align: top;">12/02/2015<br>
-      </td>
-      <td style="vertical-align: top;">5<br>
-      </td>
-      <td style="vertical-align: top;">yes
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.8.0-RC4<br>
-      </td>
-      <td style="vertical-align: top;">12/16/2015<br>
-      </td>
-      <td style="vertical-align: top;">3<br>
-      </td>
-      <td style="vertical-align: top;">yes
-      </td>
-    </tr><tr>
-      <td style="vertical-align: top;">1.8.0-RC5<br>
-      </td>
-      <td style="vertical-align: top;">01/11/2016<br>
-      </td>
-      <td style="vertical-align: top;">2<br>
-      </td>
-      <td style="vertical-align: top;">no, identical to 1.8.0<br>
-      </td>
-    </tr>
-    <tr>
-      <td style="vertical-align: top;">1.8.0<br>
-      </td>
-      <td style="vertical-align: top;">01/19/2016<br>
-      </td>
-      <td style="vertical-align: top;">0 (94 since 1.7.0)<br>
-      </td>
-      <td style="vertical-align: top;">not yet<br>
-      </td>
-    </tr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </tbody>
-</table>
-
-  <br>
-
-</body></html>
+<html lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <title>Clojure version history</title>
+    <meta content="Andy Fingerhut" name="author">
+  </head>
+  <body>[<a href="Clojure-benchmarks.html">benchmarks main page</a>] [<a href="Clojure-whole-program-benchmarks.html">whole
+      program benchmarks</a>] [<a href="Clojure-expression-benchmarks.html">expression
+      benchmarks</a>] [Clojure version history] [<a href="Hardware-and-software-used-for-Clojure-benchmarks.html">hardware
+      and software used</a>]
+    <h1>Clojure version history</h1>
+    There are two tables below: First the
+    short table containing only the final releases, followed by the longer
+    table containing alpha, beta, and RC (Release Candidate)
+    releases.&nbsp; This list is focused on versions with performance
+    results included in
+    the Clojure benchmarks graphs.&nbsp; Some are intentionally left out
+    because they are nearly identical to the preceding or following version.<br>
+    <br>
+    The column giving the number of "non-trivial" commits to the source
+    code since the previous version is estimated by looking through the git
+    commit history, and trying to avoid counting commits that only update a
+    README or change log file, and not counting commits with comments like
+    "[maven-release-plugin] prepare release clojure &lt;version&gt;" and
+    "[maven-release-plugin] prepare for next development iteration".&nbsp;
+    No other judgement has been made about the commits, e.g. some of the
+    commits included in the counts below may be changes to doc strings
+    only, and thus have little or no effect on the run-time performance of
+    the benchmarks.<br>
+    <br>
+    No versions before Clojure 1.2.0 are recorded here except final releases 1.0
+    and 1.1.0.&nbsp; Feel free to
+    contact me if you have details on those earlier versions you are
+    interested in seeing added.<br>
+    <h2>Final Clojure Releases</h2>
+    This table also contains a few older historical dates for reference.<br>
+    <br>
+    <table style="text-align: left; width: 600px;" cellspacing="2" cellpadding="2"
+      border="1">
+      <tbody>
+        <tr>
+          <th style="vertical-align: top;">Clojure version<br>
+          </th>
+          <th style="vertical-align: top;">Date<br>
+            (MM/DD/YYYY)<br>
+          </th>
+          <td style="vertical-align: top;">Minimum Java version required<br>
+          </td>
+          <th style="vertical-align: top;">Notes, or # of "non-trivial" commits
+            to source code since previous version<br>
+          </th>
+          <th style="vertical-align: top;">Included in these Clojure benchmarks
+            results?<br>
+          </th>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><br>
+          </td>
+          <td style="vertical-align: top;">03/24/2006<br>
+          </td>
+          <td style="vertical-align: top;"><br>
+          </td>
+          <td style="vertical-align: top;">first commit in Github repo<br>
+          </td>
+          <td style="vertical-align: top;">no<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><br>
+          </td>
+          <td style="vertical-align: top;">10/16/2007<br>
+          </td>
+          <td style="vertical-align: top;"><br>
+          </td>
+          <td style="vertical-align: top;">first version released to the public
+            (reference: the <a href="http://clojure.blogspot.com/2009/10/clojure-is-two.html">announcement</a>
+            that Clojure is 2 years old)<br>
+          </td>
+          <td style="vertical-align: top;">no<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.0<br>
+          </td>
+          <td style="vertical-align: top;">05/04/2009<br>
+          </td>
+          <td style="vertical-align: top;"><br>
+          </td>
+          <td style="vertical-align: top;">1.0 <a href="https://groups.google.com/d/msg/clojure/HmYdFr2RDd0/9dInE2etvbwJ">announced</a>
+            on Clojure Google group (also <a href="http://clojure.blogspot.com/2009/05/clojure-10.html">blog
+              post</a>)<br>
+          </td>
+          <td style="vertical-align: top;">no<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.1.0<br>
+          </td>
+          <td style="vertical-align: top;">12/31/2009<br>
+          </td>
+          <td style="vertical-align: top;"><br>
+          </td>
+          <td style="vertical-align: top;">208 since 1.0<br>
+          </td>
+          <td style="vertical-align: top;">no<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.2.0<br>
+          </td>
+          <td style="vertical-align: top;">08/19/2010<br>
+          </td>
+          <td style="vertical-align: top;"><br>
+          </td>
+          <td style="vertical-align: top;">243 since 1.1.0<br>
+          </td>
+          <td style="vertical-align: top;">no<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.2.1<br>
+          </td>
+          <td style="vertical-align: top;">03/25/2011<br>
+          </td>
+          <td style="vertical-align: top;"><br>
+          </td>
+          <td style="vertical-align: top;">10 since 1.2.0<br>
+          </td>
+          <td style="vertical-align: top;">no<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.3.0<br>
+          </td>
+          <td style="vertical-align: top;">09/23/2011<br>
+          </td>
+          <td style="vertical-align: top;"><br>
+          </td>
+          <td style="vertical-align: top;">212 since 1.2.0<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.4.0<br>
+          </td>
+          <td style="vertical-align: top;">04/15/2012<br>
+          </td>
+          <td style="vertical-align: top;"><br>
+          </td>
+          <td style="vertical-align: top;">89 since 1.3.0<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0<br>
+          </td>
+          <td style="vertical-align: top;">03/01/2013<br>
+          </td>
+          <td style="vertical-align: top;">same as Clojure 1.5.1 below<br>
+          </td>
+          <td style="vertical-align: top;">137 since 1.4.0<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.5.1<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.1<br>
+          </td>
+          <td style="vertical-align: top;">03/10/2013<br>
+          </td>
+          <td style="vertical-align: top;">5, but reducers library requires 6<br>
+          </td>
+          <td style="vertical-align: top;">1 since 1.5.0<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.6.0<br>
+          </td>
+          <td style="vertical-align: top;">03/25/2014<br>
+          </td>
+          <td style="vertical-align: top;">6<br>
+          </td>
+          <td style="vertical-align: top;">115 since 1.5.1<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.7.0<br>
+          </td>
+          <td style="vertical-align: top;">06/30/2015<br>
+          </td>
+          <td style="vertical-align: top;">6<br>
+          </td>
+          <td style="vertical-align: top;">118 since 1.6.0<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.8.0<br>
+          </td>
+          <td style="vertical-align: top;">01/19/2016<br>
+          </td>
+          <td style="vertical-align: top;">6<br>
+          </td>
+          <td style="vertical-align: top;">94 since 1.7.0</td>
+          <td style="vertical-align: top;">no<br>
+          </td>
+        </tr>
+        <tr>
+          <td>1.9.0</td>
+          <td>12/08/2017</td>
+          <td>6</td>
+          <td>192 since 1.8.0</td>
+          <td>no</td>
+        </tr>
+        <tr>
+          <td>1.10.0</td>
+          <td>12/17/2018</td>
+          <td>8</td>
+          <td>74 since 1.9.0</td>
+          <td>no</td>
+        </tr>
+        <tr>
+          <td>1.10.1</td>
+          <td>06/06/2019</td>
+          <td>8</td>
+          <td>6 since 1.10.0</td>
+          <td>no</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Java SE dates</h2>
+    Source: http://www.oracle.com/technetwork/java/eol-135779.html<br>
+    <br>
+    <table style="text-align: left; width: 100%;" cellspacing="2" cellpadding="2"
+      border="1">
+      <tbody>
+        <tr>
+          <td style="vertical-align: top;"><span style="font-weight: bold;">Major
+              Release</span><br>
+          </td>
+          <td style="vertical-align: top;"><span style="font-weight: bold;">General
+              Availability Date</span><br>
+          </td>
+          <td style="vertical-align: top;"><span style="font-weight: bold;">End
+              of Public Updates</span><br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">5<br>
+          </td>
+          <td style="vertical-align: top;">May 2004<br>
+          </td>
+          <td style="vertical-align: top;">Oct 2009<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">6<br>
+          </td>
+          <td style="vertical-align: top;">Dec 2006<br>
+          </td>
+          <td style="vertical-align: top;">Feb 2013<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">7<br>
+          </td>
+          <td style="vertical-align: top;">Jul 2011<br>
+          </td>
+          <td style="vertical-align: top;">Apr 2015<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">8<br>
+          </td>
+          <td style="vertical-align: top;">Mar 2014<br>
+          </td>
+          <td style="vertical-align: top;">TBD<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">9<br>
+          </td>
+          <td style="vertical-align: top;">only beta versions available as of
+            Jan 2016<br>
+          </td>
+          <td style="vertical-align: top;">TBD<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <h2>All Clojure releases, including alpha, beta, RC, and final<br>
+    </h2>
+    <table style="text-align: left; width: 600px;" cellspacing="2" cellpadding="2"
+      border="1">
+      <tbody>
+        <tr>
+          <th style="vertical-align: top;">Clojure version<br>
+          </th>
+          <th style="vertical-align: top;">Date<br>
+            (MM/DD/YYYY)<br>
+          </th>
+          <th style="vertical-align: top;"># of "non-trivial" commits to source
+            code since previous version<br>
+          </th>
+          <th style="vertical-align: top;">Included in these Clojure benchmarks
+            results?<br>
+          </th>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.2.0<br>
+          </td>
+          <td style="vertical-align: top;">08/19/2010<br>
+          </td>
+          <td style="vertical-align: top;"><br>
+          </td>
+          <td style="vertical-align: top;">no, criterium lib does not run on it<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.3.0-alpha1<br>
+          </td>
+          <td style="vertical-align: top;">09/23/2010<br>
+          </td>
+          <td style="vertical-align: top;">12<br>
+          </td>
+          <td style="vertical-align: top;">no, not available in Maven repo<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.3.0-alpha2<br>
+          </td>
+          <td style="vertical-align: top;">10/25/2010<br>
+          </td>
+          <td style="vertical-align: top;">45<br>
+          </td>
+          <td style="vertical-align: top;">no, not available in Maven repo</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.3.0-alpha3<br>
+          </td>
+          <td style="vertical-align: top;">11/05/2010<br>
+          </td>
+          <td style="vertical-align: top;">11<br>
+          </td>
+          <td style="vertical-align: top;">no, not available in Maven repo</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.3.0-alpha4<br>
+          </td>
+          <td style="vertical-align: top;">12/12/2010<br>
+          </td>
+          <td style="vertical-align: top;">24<br>
+          </td>
+          <td style="vertical-align: top;">no, not available in Maven repo</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.3.0-alpha5<br>
+          </td>
+          <td style="vertical-align: top;">01/14/2011<br>
+          </td>
+          <td style="vertical-align: top;">22<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.3.0-alpha6<br>
+          </td>
+          <td style="vertical-align: top;">03/11/2011<br>
+          </td>
+          <td style="vertical-align: top;">31<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.2.1<br>
+          </td>
+          <td style="vertical-align: top;">03/25/2011<br>
+          </td>
+          <td style="vertical-align: top;">10<br>
+            (commits made to 1.2.0 to create 1.2.1)<br>
+          </td>
+          <td style="vertical-align: top;">no, criterium lib does not run on it<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.3.0-alpha7<br>
+          </td>
+          <td style="vertical-align: top;">05/13/2011<br>
+          </td>
+          <td style="vertical-align: top;">32 (since 1.3.0-alpha6)<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.3.0-alpha8<br>
+          </td>
+          <td style="vertical-align: top;">05/27/2011<br>
+          </td>
+          <td style="vertical-align: top;">11<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.3.0-beta1<br>
+          </td>
+          <td style="vertical-align: top;">06/21/2011<br>
+          </td>
+          <td style="vertical-align: top;">4<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.3.0-beta2<br>
+          </td>
+          <td style="vertical-align: top;">08/26/2011<br>
+          </td>
+          <td style="vertical-align: top;">12<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.3.0-beta3<br>
+          </td>
+          <td style="vertical-align: top;">09/02/2011<br>
+          </td>
+          <td style="vertical-align: top;">4<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.3.0<br>
+          </td>
+          <td style="vertical-align: top;">09/23/2011<br>
+          </td>
+          <td style="vertical-align: top;">4&nbsp; (212 since 1.2.0)<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.4.0-alpha1<br>
+          </td>
+          <td style="vertical-align: top;">10/07/2011<br>
+          </td>
+          <td style="vertical-align: top;">10<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.4.0-alpha2<br>
+          </td>
+          <td style="vertical-align: top;">10/25/2011<br>
+          </td>
+          <td style="vertical-align: top;">9<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.4.0-alpha3<br>
+          </td>
+          <td style="vertical-align: top;">12/13/2011<br>
+          </td>
+          <td style="vertical-align: top;">22<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.4.0-alpha4<br>
+          </td>
+          <td style="vertical-align: top;">01/13/2012<br>
+          </td>
+          <td style="vertical-align: top;">6<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.4.0-alpha5<br>
+          </td>
+          <td style="vertical-align: top;">01/27/2012<br>
+          </td>
+          <td style="vertical-align: top;">6<br>
+          </td>
+          <td style="vertical-align: top;">no, same as 1.4.0-beta1<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.4.0-beta1<br>
+          </td>
+          <td style="vertical-align: top;">02/03/2012<br>
+          </td>
+          <td style="vertical-align: top;">0 (6 since 1.4.0-alpha4)<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.4.0-beta2<br>
+          </td>
+          <td style="vertical-align: top;">02/29/2012<br>
+          </td>
+          <td style="vertical-align: top;">10<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.4.0-beta3<br>
+          </td>
+          <td style="vertical-align: top;">03/01/2012<br>
+          </td>
+          <td style="vertical-align: top;">1<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.4.0-beta2<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.4.0-beta4<br>
+          </td>
+          <td style="vertical-align: top;">03/09/2012<br>
+          </td>
+          <td style="vertical-align: top;">5 (6 since 1.4.0-beta2)<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.4.0-beta5<br>
+          </td>
+          <td style="vertical-align: top;">03/13/2012<br>
+          </td>
+          <td style="vertical-align: top;">2<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.4.0-beta4<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.4.0-beta6<br>
+          </td>
+          <td style="vertical-align: top;">03/30/2012<br>
+          </td>
+          <td style="vertical-align: top;">13 (15 since 1.4.0-beta4)<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.4.0-beta7<br>
+          </td>
+          <td style="vertical-align: top;">04/10/2012<br>
+          </td>
+          <td style="vertical-align: top;">3<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.4.0<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.4.0<br>
+          </td>
+          <td style="vertical-align: top;">04/15/2012<br>
+          </td>
+          <td style="vertical-align: top;">2 (5 since 1.4.0-beta6, 89 since
+            1.3.0)<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-alpha1<br>
+          </td>
+          <td style="vertical-align: top;">05/18/2012<br>
+          </td>
+          <td style="vertical-align: top;">28<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-alpha2<br>
+          </td>
+          <td style="vertical-align: top;">06/16/2012<br>
+          </td>
+          <td style="vertical-align: top;">11<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-alpha3<br>
+          </td>
+          <td style="vertical-align: top;">07/21/2012<br>
+          </td>
+          <td style="vertical-align: top;">4<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-alpha4<br>
+          </td>
+          <td style="vertical-align: top;">08/18/2012<br>
+          </td>
+          <td style="vertical-align: top;">26<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-alpha5<br>
+          </td>
+          <td style="vertical-align: top;">10/04/2012<br>
+          </td>
+          <td style="vertical-align: top;">17<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-alpha6<br>
+          </td>
+          <td style="vertical-align: top;">10/07/2012<br>
+          </td>
+          <td style="vertical-align: top;">1<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.5.0-alpha5<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-alpha7<br>
+          </td>
+          <td style="vertical-align: top;">10/16/2012<br>
+          </td>
+          <td style="vertical-align: top;">1<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.5.0-alpha5<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-beta1<br>
+          </td>
+          <td style="vertical-align: top;">10/22/2012<br>
+          </td>
+          <td style="vertical-align: top;">12 (14 since 1.5.0-alpha5)<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-beta2<br>
+          </td>
+          <td style="vertical-align: top;">12/11/2012<br>
+          </td>
+          <td style="vertical-align: top;">8<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-RC1<br>
+          </td>
+          <td style="vertical-align: top;">12/22/2012<br>
+          </td>
+          <td style="vertical-align: top;">2<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.5.0-beta10<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-RC2<br>
+          </td>
+          <td style="vertical-align: top;">01/12/2013<br>
+          </td>
+          <td style="vertical-align: top;">0<br>
+          </td>
+          <td style="vertical-align: top;">no, same as 1.5.0-RC1<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-RC3<br>
+          </td>
+          <td style="vertical-align: top;">01/25/2013<br>
+          </td>
+          <td style="vertical-align: top;">1<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.5.0-beta10</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-RC4<br>
+          </td>
+          <td style="vertical-align: top;">01/29/2013<br>
+          </td>
+          <td style="vertical-align: top;">1<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.5.0-beta10</td>
+        </tr>
+        <tr>
+          <td colspan="4" rowspan="1" style="vertical-align: top;">Leaving out
+            the flurry of RC5, RC6, beta7, beta8, and beta9<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-beta10<br>
+          </td>
+          <td style="vertical-align: top;">02/05/2013<br>
+          </td>
+          <td style="vertical-align: top;">9 (since 1.5.0-RC4, 13 since
+            1.5.0-beta2)<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-beta11<br>
+          </td>
+          <td style="vertical-align: top;">02/07/2013<br>
+          </td>
+          <td style="vertical-align: top;">2<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.5.0-beta10<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-beta12<br>
+          </td>
+          <td style="vertical-align: top;">02/08/2013<br>
+          </td>
+          <td style="vertical-align: top;">3 (5 since 1.5.0-beta10)<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-beta13<br>
+          </td>
+          <td style="vertical-align: top;">02/09/2013<br>
+          </td>
+          <td style="vertical-align: top;">2<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.5.0-beta12<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-RC14<br>
+          </td>
+          <td style="vertical-align: top;">02/09/2013<br>
+          </td>
+          <td style="vertical-align: top;">4 (6 since 1.5.0-beta12)<br>
+          </td>
+          <td style="vertical-align: top;">yes </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-RC15<br>
+          </td>
+          <td style="vertical-align: top;">02/10/2013<br>
+          </td>
+          <td style="vertical-align: top;">2<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.5.1 </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-RC16<br>
+          </td>
+          <td style="vertical-align: top;">02/13/2013<br>
+          </td>
+          <td style="vertical-align: top;">1<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.5.1 </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0-RC17<br>
+          </td>
+          <td style="vertical-align: top;">02/22/2013<br>
+          </td>
+          <td style="vertical-align: top;">1<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.5.1 </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.0<br>
+          </td>
+          <td style="vertical-align: top;">03/01/2013<br>
+          </td>
+          <td style="vertical-align: top;">1<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.5.1<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.5.1<br>
+          </td>
+          <td style="vertical-align: top;">03/10/2013<br>
+          </td>
+          <td style="vertical-align: top;">1 (6 since 1.5.0-RC14, 138 since
+            1.4.0)<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.6.0-alpha1<br>
+          </td>
+          <td style="vertical-align: top;">10/25/2013<br>
+          </td>
+          <td style="vertical-align: top;">50<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.6.0-alpha2<br>
+          </td>
+          <td style="vertical-align: top;">11/07/2013<br>
+          </td>
+          <td style="vertical-align: top;">3<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.6.0-alpha3<br>
+          </td>
+          <td style="vertical-align: top;">11/22/2013<br>
+          </td>
+          <td style="vertical-align: top;">18<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.6.0-beta1<br>
+          </td>
+          <td style="vertical-align: top;">02/14/2014<br>
+          </td>
+          <td style="vertical-align: top;">29<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.6.0-beta2<br>
+          </td>
+          <td style="vertical-align: top;">02/27/2014<br>
+          </td>
+          <td style="vertical-align: top;">6<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.6.0-RC1<br>
+          </td>
+          <td style="vertical-align: top;">03/11/2014<br>
+          </td>
+          <td style="vertical-align: top;">2 (108 since 1.5.1)<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.6.0-RC2<br>
+          </td>
+          <td style="vertical-align: top;">03/21/2014<br>
+          </td>
+          <td style="vertical-align: top;">3<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.6.0-RC3<br>
+          </td>
+          <td style="vertical-align: top;">03/23/2014<br>
+          </td>
+          <td style="vertical-align: top;">3<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.6.0-RC4<br>
+          </td>
+          <td style="vertical-align: top;">03/24/2014<br>
+          </td>
+          <td style="vertical-align: top;">1<br>
+          </td>
+          <td style="vertical-align: top;">no, identical to 1.6.0<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.6.0<br>
+          </td>
+          <td style="vertical-align: top;">03/25/2014<br>
+          </td>
+          <td style="vertical-align: top;">0 (115 since 1.5.1)<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.7.0-alpha1<br>
+          </td>
+          <td style="vertical-align: top;">08/06/2014<br>
+          </td>
+          <td style="vertical-align: top;">2<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.6.0<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.7.0-alpha2<br>
+          </td>
+          <td style="vertical-align: top;">09/05/2014<br>
+          </td>
+          <td style="vertical-align: top;">29<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.7.0-alpha3<br>
+          </td>
+          <td style="vertical-align: top;">10/26/2014<br>
+          </td>
+          <td style="vertical-align: top;">13<br>
+          </td>
+          <td style="vertical-align: top;">yes </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.7.0-alpha4<br>
+          </td>
+          <td style="vertical-align: top;">11/14/2014<br>
+          </td>
+          <td style="vertical-align: top;">7<br>
+          </td>
+          <td style="vertical-align: top;">yes </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.7.0-alpha5<br>
+          </td>
+          <td style="vertical-align: top;">01/10/2015<br>
+          </td>
+          <td style="vertical-align: top;">14<br>
+          </td>
+          <td style="vertical-align: top;">yes </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.7.0-alpha6<br>
+          </td>
+          <td style="vertical-align: top;">03/31/2015<br>
+          </td>
+          <td style="vertical-align: top;">28<br>
+          </td>
+          <td style="vertical-align: top;">yes </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.7.0-beta1<br>
+          </td>
+          <td style="vertical-align: top;">04/10/2015<br>
+          </td>
+          <td style="vertical-align: top;">6<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.7.0-beta2<br>
+          </td>
+          <td style="vertical-align: top;">04/24/2015<br>
+          </td>
+          <td style="vertical-align: top;">7<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.7.0-beta3<br>
+          </td>
+          <td style="vertical-align: top;">05/13/2015<br>
+          </td>
+          <td style="vertical-align: top;">7<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.7.0-RC1<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.7.0-RC1<br>
+          </td>
+          <td style="vertical-align: top;">05/21/2015<br>
+          </td>
+          <td style="vertical-align: top;">1<br>
+          </td>
+          <td style="vertical-align: top;">yes</td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.7.0-RC2<br>
+          </td>
+          <td style="vertical-align: top;">06/17/2015<br>
+          </td>
+          <td style="vertical-align: top;">4<br>
+          </td>
+          <td style="vertical-align: top;">no, identical to 1.7.0<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.7.0<br>
+          </td>
+          <td style="vertical-align: top;">06/30/2015<br>
+          </td>
+          <td style="vertical-align: top;">0 (118 since 1.6.0)<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.8.0-alpha1<br>
+          </td>
+          <td style="vertical-align: top;">07/17/2015<br>
+          </td>
+          <td style="vertical-align: top;">3<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.7.0<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.8.0-alpha2<br>
+          </td>
+          <td style="vertical-align: top;">07/17/2015<br>
+          </td>
+          <td style="vertical-align: top;">17<br>
+          </td>
+          <td style="vertical-align: top;">yes<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.8.0-alpha3<br>
+          </td>
+          <td style="vertical-align: top;">07/29/2015<br>
+          </td>
+          <td style="vertical-align: top;">7<br>
+          </td>
+          <td style="vertical-align: top;">yes </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.8.0-alpha4<br>
+          </td>
+          <td style="vertical-align: top;">08/03/2015<br>
+          </td>
+          <td style="vertical-align: top;">15<br>
+          </td>
+          <td style="vertical-align: top;">yes </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.8.0-alpha5<br>
+          </td>
+          <td style="vertical-align: top;">09/11/2015<br>
+          </td>
+          <td style="vertical-align: top;">13<br>
+          </td>
+          <td style="vertical-align: top;">yes </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.8.0-beta1<br>
+          </td>
+          <td style="vertical-align: top;">10/13/2015<br>
+          </td>
+          <td style="vertical-align: top;">17<br>
+          </td>
+          <td style="vertical-align: top;">yes </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.8.0-beta2<br>
+          </td>
+          <td style="vertical-align: top;">10/27/2015<br>
+          </td>
+          <td style="vertical-align: top;">8<br>
+          </td>
+          <td style="vertical-align: top;">no, too similar to 1.8.0-RC1<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.8.0-RC1<br>
+          </td>
+          <td style="vertical-align: top;">11/10/2015<br>
+          </td>
+          <td style="vertical-align: top;">1<br>
+          </td>
+          <td style="vertical-align: top;">yes </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.8.0-RC2<br>
+          </td>
+          <td style="vertical-align: top;">11/16/2015<br>
+          </td>
+          <td style="vertical-align: top;">3<br>
+          </td>
+          <td style="vertical-align: top;">yes </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.8.0-RC3<br>
+          </td>
+          <td style="vertical-align: top;">12/02/2015<br>
+          </td>
+          <td style="vertical-align: top;">5<br>
+          </td>
+          <td style="vertical-align: top;">yes </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.8.0-RC4<br>
+          </td>
+          <td style="vertical-align: top;">12/16/2015<br>
+          </td>
+          <td style="vertical-align: top;">3<br>
+          </td>
+          <td style="vertical-align: top;">yes </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.8.0-RC5<br>
+          </td>
+          <td style="vertical-align: top;">01/11/2016<br>
+          </td>
+          <td style="vertical-align: top;">2<br>
+          </td>
+          <td style="vertical-align: top;">no, identical to 1.8.0<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;">1.8.0<br>
+          </td>
+          <td style="vertical-align: top;">01/19/2016<br>
+          </td>
+          <td style="vertical-align: top;">0 (94 since 1.7.0)<br>
+          </td>
+          <td style="vertical-align: top;">no<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+  </body>
+</html>
