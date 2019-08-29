@@ -30,3 +30,30 @@ and found to explain quite a few of these options very well.
 * `-XX:+PrintCompilation` - false by default.  When the option is
   given, details about when code is JIT compiled is printed to the
   output.
+
+
+
+# Getting information about a running JVM
+
+Show process IDs of JVMs currently running on the system: `jcmd -l`
+also: `ps axguwww | grep java`
+
+List what kinds of information `jcmd` can give about a particular JVM,
+given its processed ID <pid>: `jcmd <pid> help`
+
+For example, you can show system properties with:
+`jcmd <pid> VM.system_properties`
+
+or JVM command line options with: `jcmd <pid> VM.command_line`
+
+Brief version of JVM flags, showing which flags were set on the
+ command line, plus some flags that were set directly by the JVM,
+ because their value was determined ergonomically: `jcmd <pid>
+ VM.flags`
+
+All JVM flags, whether they were specified on the command line or not.
+Produced 670 lines of output when run on Ubuntu 18.04.3 with
+AdoptOpenJDK 11: `jvm <pid> VM.flags -all`
+
+To see what all flags are set to on a particular platform: `java
+-XX:+PrintFlagsFinal -version`
