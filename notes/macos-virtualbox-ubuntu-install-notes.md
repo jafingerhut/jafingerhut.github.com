@@ -67,6 +67,39 @@ Off.  Same reason as for "Security & Privacy" settings for Ubuntu
 16.04, but it has been moved to a different "place" in Ubuntu 18.04.
 
 
+### MATE Terminal settings
+
+I like the MATE Terminal application slightly better than the default
+Terminal, because it is fairly straightforward from the menu settings
+to rename tabs after you create them, and I do not know how to do this
+from Terminal.  I do prefer the default colors used in the default
+Terminal over the ones used by MATE Terminal in Ubuntu 18.04, though.
+Here is how to change them to my preferred settings:
+
+* From MATE Terminal, choose menu item Edit -> Profiles...
+* With the profile named "Default" selected in the list (probably the
+  only item in the list), click the Edit button on the right.
+* Click General tab, check box next to "Use custom default terminal
+  size".  Change rows to 40.  Leave columns at 80.
+* Click Scrolling tab, change Scrollback value to 10,000 lines (or
+  more, or check the box next to Unlimited).
+* Click Colors tab, uncheck the box next to "Use colors from system
+  theme".
+  * Click box to right of "Background color:" label.  In window that
+    appears, click + symbol in bottom left below the word "Custom".
+    In the text box that contains a "#" character followed by 6
+    letters and/or digits (hex digits), select its contents and type
+    to replace it with: "#300A24".  Click "Select" button.
+  * Leave the "Text color" setting at the default, which appears to be
+    the lightest white possible.
+* Click Close button, then in the original "Profiles" window, click
+  Close again.
+
+I found the "gpick" program to make it straightforward for me to point
+the cursor at a pixel on the screen, and see what the 6-digit hex
+string should be to make it that color.
+
+
 # Resizing guest OS window
 
 I have found combinations of versions of VirtualBox and Ubuntu guest
