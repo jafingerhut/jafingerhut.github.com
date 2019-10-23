@@ -67,6 +67,23 @@ Off.  Same reason as for "Security & Privacy" settings for Ubuntu
 16.04, but it has been moved to a different "place" in Ubuntu 18.04.
 
 
+# Debian 8 notes
+
+I do not normally use Debian, except by way of using it through
+Ubuntu, but I did recently try installing Debian 8.11 as a VM, and
+found these setup steps useful for me to have a more familiar
+environment for building other open source tools.
+
+```bash
+$ su - root
+[ enter root password ]
+# apt-get install sudo
+# adduser andy sudo
+# exit
+$ echo '/usr/sbin:/sbin:$PATH' >> $HOME/.bashrc
+```
+
+
 ### MATE Terminal settings
 
 I like the MATE Terminal application slightly better than the default
