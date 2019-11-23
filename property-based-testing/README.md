@@ -101,3 +101,13 @@ Thomas Arts, John Hughes, "Erlang/QuickCheck",
 John Hughes started the company [QuviQ](http://www.quviq.com) in order
 to sell tools and services to industry for testing software using
 these methods.
+
+
+
+# Resources yet to be read and categorized by me
+
+https://johanneslink.net/how-to-specify-it/
+
+https://www.amazon.com/Property-Based-Testing-PropEr-Erlang-Elixir/dp/1680506218
+
+https://wickstrom.tech/programming/2019/03/02/property-based-testing-in-a-screencast-editor-introduction.html
