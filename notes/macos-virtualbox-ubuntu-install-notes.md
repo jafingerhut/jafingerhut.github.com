@@ -57,6 +57,9 @@ Settings -> Security & Privacy -> uncheck "Waking from suspend" and
 require me to enter a password.  I do not need the annoyance of a
 separate layer of password entering for the guest OS's, too.
 
+Settings -> Brightness & Lock -> move "Lock" slider to "Off" position,
+and change "Turn screen off when inactive for:" to "Never".
+
 
 ## Ubuntu 18.04 Desktop Linux
 
@@ -65,6 +68,13 @@ Settings -> Dock -> Icon size: reduce from default 48 to 24 pixels
 Settings -> Privacy -> Screen Lock -> Automatic Screen Lock: change to
 Off.  Same reason as for "Security & Privacy" settings for Ubuntu
 16.04, but it has been moved to a different "place" in Ubuntu 18.04.
+
+Settings -> Power -> Power Saving -> change Blank screen to "Never".
+
+
+## Ubuntu 19.10 Desktop Linux
+
+Same settings changes as for Ubuntu 18.04 Desktop Linux
 
 
 # Debian 8 notes
