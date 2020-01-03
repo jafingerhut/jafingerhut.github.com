@@ -1,25 +1,50 @@
-# Using a Socket REPL to connect to Clojure from an editor/IDE
+# Introduction
 
-Right now this document limits its instructions for editor/IDE to
-Emacs only.  I have successfully done this with the Atom editor plus
-the Chlorine add-on package, too, and may add instructions for doing
-that in the future.
+The original purpose of writing this was to give fairly short and
+correct instructions for starting from a computer with one of these
+freshly installed operating systems:
+
++ Ubuntu Linux
++ macOS
+
+and install this software, all of which is open source unless stated
+otherwise:
+
++ A Java development kit (JDK)
+  + Not only installing a JDK, but doing so in a way that makes it
+    straightforward to later install multiple JDK versions side by
+    side on the same system, easily switching between them.  Not
+    everyone needs this, but sometimes it can be useful to quickly
+    experiment with a different JDK version.
++ Clojure CLI tools
++ At least one editor/IDE setup with a few Clojure-specific add-ons:
+  + GNU Emacs, but using
+    [`inf-clojure`](https://github.com/clojure-emacs/inf-clojure), not
+    the more-widely-used Cider
 
 Prerequisites: You know how to start and use a terminal on a Linux or
-macOS system (the `Terminal` program in the Utiliities folder inside
-your Applications folder on macOS, for example).
+macOS system (e.g. the `Terminal` program in the Utiliities folder
+inside your Applications folder on macOS).
+
+I could imagine this perhaps growing in the future to include other
+editor/IDE setups such as the following, but right now they are only
+mentioned in this list:
+
++ Cognitect's [REBL](https://github.com/cognitect-labs/REBL-distro)
+  (free for non-commercial use, costs money to use commercially)
++ Emacs plus [Cider](https://cider.mx)
++ [Atom](https://atom.io) plus
+  [Chlorine](https://atom.io/packages/chlorine)
++ [IntelliJ IDEA](https://www.jetbrains.com/idea/) plus
+  [Cursive](https://cursive-ide.com) (free for non-commercial use,
+  costs money to use commercially)
+
+I do not use Windows much, so do not have any detailed steps or
+recommendations here.  If you have similarly detailed steps that work,
+I would consider adding them here, or linking to them from here.
 
 
-## Ubuntu Linux
-
-I have tested these steps starting from a freshly installed Ubuntu
-18.04 Desktop Linux system, the amd64 architecture.  I believe similar
-steps should work on most other Linux distributions, if you replace
-the `sudo apt-get` commands below with whatever works on your Linux
-distribution to install GNU Emacs.
-
-
-### Install a Java VM on Ubuntu Linux
+# Install a Java Development Kit (JDK) on Ubuntu Linux or macOS
 
 If you want to get started with the fewest steps possible on an Ubuntu
 Linux system, you can use this command to install OpenJDK 11:
@@ -33,8 +58,8 @@ for installing one particular version of Zulu OpenJDK 11 on your
 system.
 
 However, if later you decide you want to try out additional JDK
-versions, you can follow these instructions again to install other
-versions on the same system, side-by-side with the first JDK you
+versions, you can follow these instructions again to install other JDK
+versions on the same system, side-by-side with the first one you
 installed, and easily choose between them in each shell/terminal you
 use.
 
@@ -50,9 +75,10 @@ Zulu OpenJDK 11 has a couple of nice properties:
   REBL](https://github.com/cognitect-labs/REBL-distro) software with
   it, if you wish.
 
-The steps here suggest you create a new directory named `$HOME/jdks`,
-and to install some files there.  Customize that directory if you wish
-the files to be installed elsewhere on your system.
+The steps here suggest that you create a new directory named
+`$HOME/jdks`, and to install some files there.  Customize that
+directory if you wish the files to be installed elsewhere on your
+system.
 
 The particular version of the Zulu OpenJDK 11 given in these commands
 was the latest one available as of 2020-Jan-02, but see ["Finding
@@ -65,10 +91,6 @@ $ cd $HOME
 $ mkdir jdks
 $ cd jdks
 ```
-
-The next commands have different file names depending upon whether you
-are running Ubuntu Linux or macOS.  Both sets of instructions are
-mingled together here because they are otherwise identical.
 
 Ubuntu Linux:
 ```bash
@@ -110,7 +132,15 @@ the one above.  Simply create a separate bash script like
 `setup-zulu-11.sh` for each version, naming each script as you prefer.
 
 
-### Install Clojure on Ubuntu Linux
+# Install Clojure CLI tools
+
+Note: It is possible to install [Leiningen](https://leiningen.org)
+and/or [Boot](https://github.com/boot-clj/boot) on the same system
+with the Clojure CLI tools, and pick which one to use for each Clojure
+project independently.
+
+
+## Install Clojure CLI tools on Ubuntu Linux
 
 Here are the [getting started
 instructions](https://clojure.org/guides/getting_started#_installation_on_linux)
@@ -126,29 +156,43 @@ $ chmod +x linux-install-1.10.1.492.sh
 $ sudo ./linux-install-1.10.1.492.sh
 ```
 
-Note: It is possible to install [Leiningen](https://leiningen.org)
-and/or [Boot](https://github.com/boot-clj/boot) on the same system
-with the Clojure CLI tools, and pick which one to use for each Clojure
-project independently.
+
+## Install Clojure CLI tools on macOS
+
+Here are the [getting started
+instructions](https://clojure.org/guides/getting_started#_installation_on_mac_via_homebrew)
+on the Clojure web site to install Clojure's CLI tools.
 
 
-### Install GNU Emacs on Ubuntu Linux
+# Install GNU Emacs
 
-I have not tried, but perhaps some of the steps below will work for
-"enhanced" versions of Emacs that come with some packages and
-customizations pre-installed (e.g. [Doom
-Emacs](https://github.com/hlissner/doom-emacs) or
-[spacemacs](https://www.spacemacs.org)).  I can list at least some
-variations here if you know (and have tested, starting from a freshly
-installed Ubuntu Linux system) any differences in the instructions for
-them.
+
+## Install GNU Emacs on Ubuntu Linux
 
 ```bash
 $ sudo apt-get install --yes emacs
 ```
 
 
-### Install the `inf-clojure` package in Emacs on Ubuntu Linux
+## Install GNU Emacs on macOS
+
+You can get a copy of GNU Emacs that is as drag-and-drop easy to
+install as any other macOS application on the [Emacs for Mac OS
+X](https://emacsformacosx.com) site.
+
+
+# Installing the Emacs `inf-clojure` package
+
+A widely-used Emacs add-on for Clojure development is
+[Cider](https://cider.mx).  It is definitely possible to install one
+of `inf-clojure` and `Cider`, then make changes to your setup to use
+the other instead, but I do not know how many changes are required to
+do so.  If you know, please let me know.
+
+These instructions are common for at least Ubuntu Linux and macOS
+after one has installed GNU Emacs as described above.  They might also
+work for a GNU Emacs installation on Windows, but I have not tested
+this.
 
 There are many other packages one could also install in Emacs, but I
 will only explain how to install `inf-clojure` here, plus one other
@@ -189,14 +233,10 @@ same.  When you have marked the packages you want to install, type the
 it is complete, type `q` to quit from the package list.
 
 
-### Starting a JVM with Clojure listening on a socket REPL connection using the Clojure CLI tool on Ubuntu Linux
-
-All of the setup in the previous sections need only be done once for a
-particular computer -- or per user account on a computer, for the
-Emacs init file customizations.
+# Starting a JVM with Clojure listening for a socket REPL connection
 
 The options described in this section can be specified differently
-every time you start up a Java VM process.
+every time you start up a new JVM process.
 
 As described in the Clojure documentation for ["Launching a Socket
 Server"](https://clojure.org/reference/repl_and_main#_launching_a_socket_server),
@@ -213,6 +253,9 @@ options when starting the `java` command:
 50505 is an example TCP port number.  At most one running process in
 the same system can be listening on the same TCP port number at the
 same time.
+
+
+## Socket REPL using the Clojure CLI tools
 
 Using a `deps.edn` file (either a user-account-wide one in
 `$HOME/.clojure/deps.edn`, or a project-specific one), you can create
@@ -242,6 +285,14 @@ the Java VM will be started with the necessary command line options so
 that the Java VM process listens on TCP port 50505 for socket REPL
 connections.
 
+
+## Socket REPL using Leiningen
+
+TBD
+
+
+## Socket REPL details
+
 Detail that you might never need: Only the last such option given on
 the Java VM command line is used, overriding any earlier ones.  If for
 some reason you wish to run a Java VM listening on multiple TCP ports
@@ -257,50 +308,69 @@ to listen on:
 ```
 
 
-## macOS
+# Using the Emacs `inf-clojure` package to connect to a socket REPL
+
+When this was written, I was testing with `inf-clojure` version
+2.2.0-snapshot, as determined by first installing `inf-clojure` and
+then typing `M-x inf-clojure-display-version RET`.
+
+Note that the JVM process that you are connecting to need not be
+started from within Emacs.  You can use these steps to connect to a
+JVM process that was started before Emacs was started, or from a
+terminal after Emacs was started, etc.  You can also use these steps
+to connect to a JVM process running on another machine over the
+network (as long as you are not blocked by network firewalls that
+might be in the way, and likely you would want to use some form of
+encryption software like a VPN or SSH tunneling to avoid sending
+development information over the network in the clear).
+
+In Emacs, enter this:
+```
+M-x inf-clojure-connect RET
+```
+
+At the "host:" prompt at the bottom left of the window, type
+`localhost RET` to connect to a JVM process that is running on the
+same system as the Emacs process, or use an IP address or machine name
+to connect to another machine over the network.
+
+Now you should see a prompt "port:".  Type `50505 RET` to use TCP port
+50505, which is the TCP port that the JVM process is listening on if
+you followed the example in the previous section.
+
+Now a new Emacs buffer named `*inf-clojure*` should be created
+containing a Clojure REPL prompt, most often `user=>`, which indicates
+that its current Clojure namespace is `user`.
 
 
-### Install a Java VM on macOS
+# Interacting with a socket REPL using Emacs `inf-clojure`
 
-See the section ["Install a Java VM on Ubuntu
-Linux"](#install-a-java-vm-on-ubuntu-linux) for one way to install one
-JDK on your system, leaving open the option to later have multiple
-JDKs installed on your system, and easily choose which one you want to
-use independently in each terminal/shell.
+You can type Clojure expressions in that Emacs buffer much like you
+would at any other Clojure REPL prompt, using Emacs key bindings to do
+any editing you wish on them before sending them to the JVM process.
+By default, every time you press Return, the current line of text is
+sent to the JVM process.  As a quick example, try typing something
+short like "(+ 2 3) RET" into the `*inf-clojure*` buffer, and you
+should see the result 5 shown, followed by another REPL prompt.
 
+While you can type expressions into the `*inf-clojure*` buffer
+directly, many Cloure developers find it preferable to _never_ type
+into a REPL session.  Instead, they type everything into a normal text
+editor buffer that is saved to a file, either a file of Clojure code
+that is part of the project they are working on, or a "scratch" file
+intended to store code snippets they are experimenting with.  Such
+Clojure expressions that you type require insignificant amounts of
+storage, even if you save many years of such history, and having such
+a history can be valuable to refer to later.
 
-### Install Clojure on macOS
+You may use the editor's normal copy and paste mechanisms to copy
+expressions from one buffer, and paste them into the `*inf-clojure*`
+buffer.  While certainly possible, it is far more convenient to
+configure an easily-typed keystroke to have the effect "select the
+Clojure expression just before, or surrounding, the cursor, and copy
+and paste it into the REPL buffer, and send it".
 
-Here are the [getting started
-instructions](https://clojure.org/guides/getting_started#_installation_on_mac_via_homebrew)
-on the Clojure web site to install Clojure's CLI tools.
-
-
-### Install GNU Emacs on macOS
-
-You can get a copy of GNU Emacs for macOS on the [Emacs for Mac OS
-X](https://emacsformacosx.com) site.
-
-
-### Install the `inf-clojure` package in Emacs on Ubuntu Linux
-
-These instructions for macOS are identical to those for Ubuntu Linux
-in [this
-section](#install-the-inf-clojure-package-in-emacs-on-ubuntu-linux).
-
-
-### Starting a JVM with Clojure listening on a socket REPL connection using the Clojure CLI tool on macOS
-
-These instructions for macOS are identical to those for Ubuntu Linux
-in [this
-section](#starting-a-jvm-with-clojure-listening-on-a-socket-repl-connection-using-the-clojure-cli-tool-on-ubuntu-linux).
-
-
-## Windows
-
-I do not use Windows, so do not have any detailed steps or
-recommendations here.  If you have similarly detailed steps that work,
-I would consider adding them here, or linking to them from here.
+Let us set that up now.
 
 
 # Finding available versions of Zulu OpenJDK
