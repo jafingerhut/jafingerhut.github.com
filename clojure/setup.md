@@ -16,7 +16,7 @@ open source unless stated otherwise:
     more disk space, and can be useful if you ever encounter Clojure
     projects that do include Java code that needs to be compiled.
 + Clojure CLI tools
-+ At least one editor/IDE setup with a few Clojure-specific add-ons:
++ At least one editor/IDE with a few Clojure-specific add-ons:
   + GNU Emacs, using the
     [`inf-clojure`](https://github.com/clojure-emacs/inf-clojure)
     package
@@ -28,8 +28,8 @@ Prerequisites:
   Applications folder on macOS).
 + You know how to use a text editor to create files.
 
-Perhaps in the future this may grow to include other editor/IDE setups
-such as the following, but right now we only mention them here:
+Perhaps in the future this may grow to include other editors/IDEs such
+as the following, but right now we only mention them here:
 
 + Emacs plus [CIDER](https://cider.mx)
 + [Atom](https://atom.io) plus
