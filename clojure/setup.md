@@ -44,15 +44,14 @@ for Clojure:
 + Cognitect's [REBL](https://github.com/cognitect-labs/REBL-distro)
   (free for non-commercial use, costs money to use commercially)
 
-I do not use Windows much, so do not have any instructions for that
-here.  If you have similarly detailed steps that work, I can consider
-adding them, or a link to them, here.
+If you have similarly detailed steps that work for Windows, I would
+consider adding them here, or a link to them.
 
 
 # Install a Java Development Kit (JDK) on Ubuntu Linux or macOS
 
 I suggest that you create a new directory to contain all JDK versions
-installed on your system.  The commands below will install them in a
+installed on your system.  The commands below will install one in a
 directory named `jdks` in your home directory.  Choose another if you
 prefer.
 
@@ -68,6 +67,7 @@ cd jdks
 
 Ubuntu Linux:
 ```bash
+sudo apt-get install --yes curl
 curl -O https://cdn.azul.com/zulu/bin/zulu11.35.15-ca-fx-jdk11.0.5-linux_x64.tar.gz
 tar xzf zulu11.35.15-ca-fx-jdk11.0.5-linux_x64.tar.gz
 ```
@@ -170,17 +170,6 @@ X](https://emacsformacosx.com) site.
 
 # Installing the Emacs `inf-clojure` package
 
-See the main documentation for
-[`inf-clojure`](https://github.com/clojure-emacs/inf-clojure) if you
-explore the limits of what is described here, and would like to find
-out what else it can do.
-
-A widely-used Emacs add-on for Clojure development is
-[CIDER](https://cider.mx).  It is definitely possible to install one
-of `inf-clojure` and `CIDER`, then make changes to your Emacs setup to
-use the other instead, but I do not know exactly what changes are
-required to do so.  If you know, I can add some notes about that here.
-
 These instructions are common for Ubuntu Linux and macOS, after one
 has installed GNU Emacs.  They might also work for a GNU Emacs
 installation on Windows, but I have not tested this.
@@ -222,6 +211,17 @@ If you wish, find the line for the `clojure-mode` package and do the
 same.  When you have marked the packages you want to install, type the
 `x` key to actually install them.  Confirm the installation, and when
 it is complete, type `q` to quit from the package list.
+
+See the main documentation for
+[`inf-clojure`](https://github.com/clojure-emacs/inf-clojure) if you
+explore the limits of what is described here, and would like to find
+out what else it can do.
+
+A widely-used Emacs add-on for Clojure development is
+[CIDER](https://cider.mx).  It is definitely possible to install one
+of `inf-clojure` and `CIDER`, then make changes to your Emacs setup to
+use the other instead, but I do not know exactly what steps are
+required to do so.
 
 
 # Starting a JVM with Clojure listening for a socket REPL connection
@@ -379,7 +379,7 @@ The Zulu OpenJDK 11 recommended above has a couple of nice properties:
   Community Edition
   downloads](https://www.azul.com/downloads/zulu-community).
 + It includes Java FX libraries (from OpenJFX source code), which
-  makes it easy to use it to run [Cognitect's
+  makes it easy to run [Cognitect's
   REBL](https://github.com/cognitect-labs/REBL-distro) software.
 
 As of January 2020, JDK 8 is a bit late in its support cycle, but is
@@ -387,10 +387,9 @@ still often the version best supported by some Clojure and Java
 libraries, so you may find it helpful to install some JDK 8 release as
 well as JDK 11.
 
-JDK 8, 11, and 17 are LTS (Long Term Support) releases, expected to be
-deployed and supported by many developers for years after they are
-released.  Other versions are expected to be supported for only 6
-months after they are released.  See [this
+JDK 8, 11, and 17 are LTS (Long Term Support) releases, supported for
+years after they are released.  Other JDK versions are expected to be
+supported for only 6 months after they are released.  See [this
 artice](https://en.wikipedia.org/wiki/Java_version_history) for more
 details.
 
