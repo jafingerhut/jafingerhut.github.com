@@ -53,6 +53,14 @@ Linux system, you can use this command to install OpenJDK 11:
 $ sudo apt-get install --yes openjdk-11-jre-headless
 ```
 
+This command is a good way to verify which version of the JVM is first
+in your command path:
+```bash
+$ java -version
+```
+On an Ubuntu Linux system, if there is no `java` command in your path,
+it will also show you a list of possible packages you can install.
+
 The rest of the instructions in this section are a short list of steps
 for installing one particular version of Zulu OpenJDK 11 on your
 system.
@@ -187,26 +195,25 @@ A widely-used Emacs add-on for Clojure development is
 [Cider](https://cider.mx).  It is definitely possible to install one
 of `inf-clojure` and `Cider`, then make changes to your setup to use
 the other instead, but I do not know how many changes are required to
-do so.  If you know, please let me know.
+do so.  If you know, I can add some notes about that here.
 
 These instructions are common for at least Ubuntu Linux and macOS
-after one has installed GNU Emacs as described above.  They might also
-work for a GNU Emacs installation on Windows, but I have not tested
-this.
+after one has installed GNU Emacs.  They might also work for a GNU
+Emacs installation on Windows, but I have not tested this.
 
-There are many other packages one could also install in Emacs, but I
-will only explain how to install `inf-clojure` here, plus one other
-called `clojure-mode`, which enables some color syntax highlighting
-that I find indispensable when reading Clojure code.
+There are many more packages one could install in Emacs, but I will
+only explain how to install `inf-clojure` here, plus one other called
+`clojure-mode`, which enables some color syntax highlighting that I
+find indispensable when reading Clojure code.
 
 First, set up Emacs to access the collection of packages available on
 MELPA (Milkypostman's Emacs Lisp Package Archive).  Instructions are
 given here: https://melpa.org/#/getting-started
 
 If you used Emacs to edit your `$HOME/.emacs` or
-`$HOME/.emacs.d/init.el` init file, then one straigtforward way to
-ensure that those changes take effect is to quit and restart Emacs,
-causing it to read that init file when it starts again.
+`$HOME/.emacs.d/init.el` initialization file, then one straigtforward
+way to ensure that those changes take effect is to quit and restart
+Emacs.
 
 ```bash
 $ emacs
@@ -215,8 +222,8 @@ $ emacs
 In the Emacs window, get a list of Emacs packages available for
 installation by typing the following (in case you are not familiar
 with Emacs abbreviations for key sequences, you can type `M-x` by
-typing the Escape key followed by `x`, and `RET` is typing the Return
-key):
+typing the Escape key followed by `x`, and `RET` means to type the
+Return key):
 
 ```
 M-x package-list-packages RET
@@ -261,16 +268,18 @@ Using a `deps.edn` file (either a user-account-wide one in
 `$HOME/.clojure/deps.edn`, or a project-specific one), you can create
 an alias that adds this command line option when it starts the JVM,
 but only when you provide the alias as a command line option when you
-run the `clj` or `clojure` commands.  Using commas instead of spaces
-is a trick that helps avoid some issues with string quoting/escaping.
-It takes advantage of the fact that commas are treated as whitespace
-by the Clojure reader.
+run the `clj` or `clojure` commands.
 
 ```clojure
+# Example deps.edn file contents
 {:aliases {
    ;; - start a Clojure/Java Socket REPL on port 50505
    :socket {:jvm-opts ["-Dclojure.server.repl={:port,50505,:accept,clojure.core.server/repl}"]}}}
 ```
+
+Note: Using commas instead of spaces is a trick that helps avoid some
+issues with string quoting/escaping.  It takes advantage of the fact
+that commas are treated as whitespace by the Clojure reader.
 
 With the above as your entire `deps.edn` file, or at least with that
 `:socket` alias in the map that is the value associated the `:aliases`
@@ -316,13 +325,14 @@ then typing `M-x inf-clojure-display-version RET`.
 
 Note that the JVM process that you are connecting to need not be
 started from within Emacs.  You can use these steps to connect to a
-JVM process that was started before Emacs was started, or from a
-terminal after Emacs was started, etc.  You can also use these steps
-to connect to a JVM process running on another machine over the
-network (as long as you are not blocked by network firewalls that
-might be in the way, and likely you would want to use some form of
-encryption software like a VPN or SSH tunneling to avoid sending
-development information over the network in the clear).
+JVM process that was started before Emacs was started, or to a JVM
+process started after Emacs was started, e.g. from a terminal.
+
+You can also use these steps to connect to a JVM process running on
+another machine over the network (as long as you are not blocked by
+network firewalls that might be in the way, and likely you would want
+to use some form of encryption software like a VPN or SSH tunneling to
+avoid sending development information over the network in the clear).
 
 In Emacs, enter this:
 ```
@@ -345,13 +355,14 @@ that its current Clojure namespace is `user`.
 
 # Interacting with a socket REPL using Emacs `inf-clojure`
 
-You can type Clojure expressions in that Emacs buffer much like you
-would at any other Clojure REPL prompt, using Emacs key bindings to do
-any editing you wish on them before sending them to the JVM process.
-By default, every time you press Return, the current line of text is
-sent to the JVM process.  As a quick example, try typing something
-short like "(+ 2 3) RET" into the `*inf-clojure*` buffer, and you
-should see the result 5 shown, followed by another REPL prompt.
+You can type Clojure expressions in the `*inf-clojure*` Emacs buffer
+much like you would at any other Clojure REPL prompt, using Emacs key
+bindings to do any editing you wish on them before sending them to the
+JVM process.  By default, every time you press Return, the current
+line of text is sent to the JVM process.  As a quick example, try
+typing something short like `(+ 2 3)`, then the Return key, into the
+`*inf-clojure*` buffer, and you should see the result 5 shown,
+followed by another REPL prompt.
 
 While you can type expressions into the `*inf-clojure*` buffer
 directly, many Cloure developers find it preferable to _never_ type
