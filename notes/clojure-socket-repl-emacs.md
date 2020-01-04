@@ -50,13 +50,13 @@ If you want to get started with the fewest steps possible on an Ubuntu
 Linux system, you can use this command to install OpenJDK 11:
 
 ```bash
-$ sudo apt-get install --yes openjdk-11-jre-headless
+sudo apt-get install --yes openjdk-11-jre-headless
 ```
 
 This command is a good way to verify which version of the JVM is first
 in your command path:
 ```bash
-$ java -version
+java -version
 ```
 On an Ubuntu Linux system, if there is no `java` command in your path,
 it will also show you a list of possible packages you can install.
@@ -95,21 +95,21 @@ OpenJDK"](#finding-available-versions-of-zulu-openjdk) below for
 finding other versions.
 
 ```bash
-$ cd $HOME
-$ mkdir jdks
-$ cd jdks
+cd $HOME
+mkdir jdks
+cd jdks
 ```
 
 Ubuntu Linux:
 ```bash
-$ curl -O https://cdn.azul.com/zulu/bin/zulu11.35.15-ca-fx-jdk11.0.5-linux_x64.tar.gz
-$ tar xzf zulu11.35.15-ca-fx-jdk11.0.5-linux_x64.tar.gz
+curl -O https://cdn.azul.com/zulu/bin/zulu11.35.15-ca-fx-jdk11.0.5-linux_x64.tar.gz
+tar xzf zulu11.35.15-ca-fx-jdk11.0.5-linux_x64.tar.gz
 ```
 
 macOS:
 ```bash
-$ curl -O https://cdn.azul.com/zulu/bin/zulu11.35.15-ca-fx-jdk11.0.5-macosx_x64.tar.gz
-$ tar xzf zulu11.35.15-ca-fx-jdk11.0.5-macosx_x64.tar.gz
+curl -O https://cdn.azul.com/zulu/bin/zulu11.35.15-ca-fx-jdk11.0.5-macosx_x64.tar.gz
+tar xzf zulu11.35.15-ca-fx-jdk11.0.5-macosx_x64.tar.gz
 ```
 
 Create a text file named `$HOME/jdks/setup-zulu-11.sh` with these
@@ -131,7 +131,7 @@ Then in any bash shell where you want that JDK version to be used, you
 can execute the command:
 
 ```bash
-$ source $HOME/jdks/setup-zulu-11.sh
+source $HOME/jdks/setup-zulu-11.sh
 ```
 
 You can install multiple JDK versions on a macOS or Linux system, and
@@ -158,10 +158,10 @@ those instructions below for quick reference, plus added the first
 non-Debian-based Linux distributions).
 
 ```bash
-$ sudo apt-get install --yes curl rlwrap
-$ curl -O https://download.clojure.org/install/linux-install-1.10.1.492.sh
-$ chmod +x linux-install-1.10.1.492.sh
-$ sudo ./linux-install-1.10.1.492.sh
+sudo apt-get install --yes curl rlwrap
+curl -O https://download.clojure.org/install/linux-install-1.10.1.492.sh
+chmod +x linux-install-1.10.1.492.sh
+sudo ./linux-install-1.10.1.492.sh
 ```
 
 
@@ -178,7 +178,7 @@ on the Clojure web site to install Clojure's CLI tools.
 ## Install GNU Emacs on Ubuntu Linux
 
 ```bash
-$ sudo apt-get install --yes emacs
+sudo apt-get install --yes emacs
 ```
 
 
@@ -191,20 +191,25 @@ X](https://emacsformacosx.com) site.
 
 # Installing the Emacs `inf-clojure` package
 
+See the main documentation for
+[`inf-clojure`](https://github.com/clojure-emacs/inf-clojure) if you
+explore the limits of what is described here, and would like to find
+out what else it can do.
+
 A widely-used Emacs add-on for Clojure development is
 [Cider](https://cider.mx).  It is definitely possible to install one
-of `inf-clojure` and `Cider`, then make changes to your setup to use
-the other instead, but I do not know how many changes are required to
-do so.  If you know, I can add some notes about that here.
+of `inf-clojure` and `Cider`, then make changes to your Emacs setup to
+use the other instead, but I do not know exactly what changes are
+required to do so.  If you know, I can add some notes about that here.
 
-These instructions are common for at least Ubuntu Linux and macOS
-after one has installed GNU Emacs.  They might also work for a GNU
-Emacs installation on Windows, but I have not tested this.
+These instructions are common for Ubuntu Linux and macOS, after one
+has installed GNU Emacs.  They might also work for a GNU Emacs
+installation on Windows, but I have not tested this.
 
 There are many more packages one could install in Emacs, but I will
 only explain how to install `inf-clojure` here, plus one other called
-`clojure-mode`, which enables some color syntax highlighting that I
-find indispensable when reading Clojure code.
+`clojure-mode`, which enables some color syntax highlighting and
+auto-indenting that I find indispensable when editing Clojure code.
 
 First, set up Emacs to access the collection of packages available on
 MELPA (Milkypostman's Emacs Lisp Package Archive).  Instructions are
@@ -216,7 +221,7 @@ way to ensure that those changes take effect is to quit and restart
 Emacs.
 
 ```bash
-$ emacs
+emacs
 ```
 
 In the Emacs window, get a list of Emacs packages available for
@@ -286,7 +291,7 @@ With the above as your entire `deps.edn` file, or at least with that
 key of your `deps.edn` file, you can start Clojure with this command:
 
 ```bash
-$ clojure -A:socket
+clojure -A:socket
 ```
 
 plus any other aliases or command line options you wish to add, and
