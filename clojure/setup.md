@@ -1,101 +1,67 @@
 # Introduction
 
-The original purpose of writing this was to give fairly short and
-correct instructions for starting from a computer with one of these
-freshly installed operating systems:
+These are instructions for starting from a computer with one of these
+operating systems:
 
 + Ubuntu Linux
 + macOS
 
-and install this software, all of which is open source unless stated
-otherwise:
+and install some or all of the following software, all of which is
+open source unless stated otherwise:
 
 + A Java development kit (JDK)
-  + Not only installing a JDK, but doing so in a way that makes it
-    straightforward to later install multiple JDK versions side by
-    side on the same system, easily switching between them.  Not
-    everyone needs this, but sometimes it can be useful to quickly
-    experiment with a different JDK version.
+  + You may never write a line of Java code yourself, but some Java
+    runtime environment is required to develop and run Clojure or
+    ClojureScript.  Having a full JDK installed does not take much
+    more disk space, and can be useful if you ever encounter Clojure
+    projects that do include Java code that needs to be compiled.
 + Clojure CLI tools
 + At least one editor/IDE setup with a few Clojure-specific add-ons:
-  + GNU Emacs, but using
-    [`inf-clojure`](https://github.com/clojure-emacs/inf-clojure), not
-    the more-widely-used Cider
+  + GNU Emacs, using the
+    [`inf-clojure`](https://github.com/clojure-emacs/inf-clojure)
+    package
 
-Prerequisites: You know how to start and use a terminal on a Linux or
-macOS system (e.g. the `Terminal` program in the Utiliities folder
-inside your Applications folder on macOS).
+Prerequisites:
 
-I could imagine this perhaps growing in the future to include other
-editor/IDE setups such as the following, but right now they are only
-mentioned in this list:
++ You know how to start and use a terminal on a Linux or macOS system
+  (e.g. the `Terminal` program in the Utiliities folder inside your
+  Applications folder on macOS).
++ You know how to use a text editor to create files.
 
-+ Cognitect's [REBL](https://github.com/cognitect-labs/REBL-distro)
-  (free for non-commercial use, costs money to use commercially)
-+ Emacs plus [Cider](https://cider.mx)
+Perhaps in the future this may grow to include other editor/IDE setups
+such as the following, but right now we only mention them here:
+
++ Emacs plus [CIDER](https://cider.mx)
 + [Atom](https://atom.io) plus
   [Chlorine](https://atom.io/packages/chlorine)
 + [IntelliJ IDEA](https://www.jetbrains.com/idea/) plus
   [Cursive](https://cursive-ide.com) (free for non-commercial use,
   costs money to use commercially)
 
-I do not use Windows much, so do not have any detailed steps or
-recommendations here.  If you have similarly detailed steps that work,
-I would consider adding them here, or linking to them from here.
+This is not really an editor/IDE, but it is a useful development tool
+for Clojure:
+
++ Cognitect's [REBL](https://github.com/cognitect-labs/REBL-distro)
+  (free for non-commercial use, costs money to use commercially)
+
+I do not use Windows much, so do not have any instructions for that
+here.  If you have similarly detailed steps that work, I can consider
+adding them, or a link to them, here.
 
 
 # Install a Java Development Kit (JDK) on Ubuntu Linux or macOS
 
-If you want to get started with the fewest steps possible on an Ubuntu
-Linux system, you can use this command to install OpenJDK 11:
+I suggest that you create a new directory to contain all JDK versions
+installed on your system.  The commands below will install them in a
+directory named `jdks` in your home directory.  Choose another if you
+prefer.
+
+JDK 11 is a solid choice for many purposes as of January 2020.  See
+["Installing other JDK versions"](#installing-other-jdk-versions)
+below for other versions.
 
 ```bash
-sudo apt-get install --yes openjdk-11-jre-headless
-```
-
-This command is a good way to verify which version of the JVM is first
-in your command path:
-```bash
-java -version
-```
-On an Ubuntu Linux system, if there is no `java` command in your path,
-it will also show you a list of possible packages you can install.
-
-The rest of the instructions in this section are a short list of steps
-for installing one particular version of Zulu OpenJDK 11 on your
-system.
-
-However, if later you decide you want to try out additional JDK
-versions, you can follow these instructions again to install other JDK
-versions on the same system, side-by-side with the first one you
-installed, and easily choose between them in each shell/terminal you
-use.
-
-Zulu OpenJDK 11 has a couple of nice properties:
-
-+ It is based upon OpenJDK source code, and is not encumbered with any
-  license from Oracle.  Azul releases it under very permissive terms
-  (for full legal versions of such notices, do not trust what I say
-  here -- see Azul's web site regarding the Zulu Community Edition
-  downloads).
-+ It includes Java FX libraries (the OpenJFX flavor), which makes it
-  more straightforward to run [Cognitect's
-  REBL](https://github.com/cognitect-labs/REBL-distro) software with
-  it, if you wish.
-
-The steps here suggest that you create a new directory named
-`$HOME/jdks`, and to install some files there.  Customize that
-directory if you wish the files to be installed elsewhere on your
-system.
-
-The particular version of the Zulu OpenJDK 11 given in these commands
-was the latest one available as of 2020-Jan-02, but see ["Finding
-available versions of Zulu
-OpenJDK"](#finding-available-versions-of-zulu-openjdk) below for
-finding other versions.
-
-```bash
-cd $HOME
+cd
 mkdir jdks
 cd jdks
 ```
@@ -112,8 +78,8 @@ curl -O https://cdn.azul.com/zulu/bin/zulu11.35.15-ca-fx-jdk11.0.5-macosx_x64.ta
 tar xzf zulu11.35.15-ca-fx-jdk11.0.5-macosx_x64.tar.gz
 ```
 
-Create a text file named `$HOME/jdks/setup-zulu-11.sh` with these
-lines:
+Create a text file named `setup-zulu-11.sh` in the `jdks` directory
+with these lines:
 
 Ubuntu Linux:
 ```bash
@@ -134,18 +100,31 @@ can execute the command:
 source $HOME/jdks/setup-zulu-11.sh
 ```
 
-You can install multiple JDK versions on a macOS or Linux system, and
-switch between them whenever you wish using a `source` command like
-the one above.  Simply create a separate bash script like
-`setup-zulu-11.sh` for each version, naming each script as you prefer.
+If later you want to try out other JDK versions, you can follow
+similar steps as shown above, with different `.tar.gz` files
+downloaded elsewhere, to install other versions on the same system.
+
+Then you can choose which one to use in a particular shell by entering
+a `source` command like the one above.  Simply create a separate bash
+script like `setup-zulu-11.sh` for each JDK version on your system,
+naming each script as you prefer.  Not everyone needs this capability,
+but sometimes it can be useful to quickly experiment with a different
+JDK version.
+
+The command `java -version` is a good way to verify which version of
+the JVM is first in your command path.
 
 
 # Install Clojure CLI tools
 
-Note: It is possible to install [Leiningen](https://leiningen.org)
-and/or [Boot](https://github.com/boot-clj/boot) on the same system
-with the Clojure CLI tools, and pick which one to use for each Clojure
-project independently.
+Note: It is easy to install [Leiningen](https://leiningen.org) and/or
+[Boot](https://github.com/boot-clj/boot) on the same system with the
+Clojure CLI tools, and pick which one to use for each Clojure project
+independently.
+
+TBD: Link to quick introduction about the basic differences between
+Leiningen, Boot, and Clojure CLI tools, and how to determine which one
+(or ones) a Clojure project uses.
 
 
 ## Install Clojure CLI tools on Ubuntu Linux
@@ -197,8 +176,8 @@ explore the limits of what is described here, and would like to find
 out what else it can do.
 
 A widely-used Emacs add-on for Clojure development is
-[Cider](https://cider.mx).  It is definitely possible to install one
-of `inf-clojure` and `Cider`, then make changes to your Emacs setup to
+[CIDER](https://cider.mx).  It is definitely possible to install one
+of `inf-clojure` and `CIDER`, then make changes to your Emacs setup to
 use the other instead, but I do not know exactly what changes are
 required to do so.  If you know, I can add some notes about that here.
 
@@ -389,12 +368,34 @@ and paste it into the REPL buffer, and send it".
 Let us set that up now.
 
 
-# Finding available versions of Zulu OpenJDK
+# Installing other JDK versions
 
-These instructions are for finding a version of a JDK that includes
-the Java FX libraries, which makes it more straightforward to run
-[Cognitect's REBL](https://github.com/cognitect-labs/REBL-distro)
-software with it, if you wish.
+The Zulu OpenJDK 11 recommended above has a couple of nice properties:
+
++ It is based upon OpenJDK source code, and is not encumbered with any
+  license from Oracle.  The company Azul releases it under very
+  permissive terms.  For full legal versions of such notices, do not
+  rely on what I say here -- see Azul's web site regarding the [Zulu
+  Community Edition
+  downloads](https://www.azul.com/downloads/zulu-community).
++ It includes Java FX libraries (from OpenJFX source code), which
+  makes it easy to use it to run [Cognitect's
+  REBL](https://github.com/cognitect-labs/REBL-distro) software.
+
+As of January 2020, JDK 8 is a bit late in its support cycle, but is
+still often the version best supported by some Clojure and Java
+libraries, so you may find it helpful to install some JDK 8 release as
+well as JDK 11.
+
+JDK 8, 11, and 17 are LTS (Long Term Support) releases, expected to be
+deployed and supported by many developers for years after they are
+released.  Other versions are expected to be supported for only 6
+months after they are released.  See [this
+artice](https://en.wikipedia.org/wiki/Java_version_history) for more
+details.
+
+The instructions below are for finding a version of a JDK from the
+company Azul that includes the Java FX libraries.
 
 + Go to the [Download Zulu
   Community](https://www.azul.com/downloads/zulu-community) page.
