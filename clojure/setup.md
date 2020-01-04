@@ -31,10 +31,6 @@ Prerequisites:
 There are a couple of things about these instructions that might be
 distinctive:
 
-+ They give easy to follow instructions for installing multiple
-  versions of JDK (Java Development Kit) on your system.
-  + You might not need that now, but it is often useful in the long
-    run.
 + They emphasize REPL-Driven Development.
   + One part of that is setting things up to the point where you can
     edit Clojure code, and with the cursor in or just after some
@@ -44,6 +40,10 @@ distinctive:
 + (Future addition) Describe how to use Cognitect's
   [REBL](https://github.com/cognitect-labs/REBL-distro) -- Read Eval
   Browse Loop
++ They give easy to follow instructions for installing multiple
+  versions of JDK (Java Development Kit) on your system.
+  + You might not need that now, but it is often useful in the long
+    run.
 
 Recommendation: Stuart Halloway's talk ["REPL-Driven
 Development"](https://github.com/matthiasn/talk-transcripts/blob/master/Halloway_Stuart/REPLDrivenDevelopment.md)
