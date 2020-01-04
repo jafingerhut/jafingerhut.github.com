@@ -28,15 +28,40 @@ Prerequisites:
   Applications folder on macOS).
 + You know how to use a text editor to create files.
 
+There are a couple of things about these instructions that might be
+distinctive:
+
++ They give easy to follow instructions for installing multiple
+  versions of JDK (Java Development Kit) on your system.
+  + You might not need that now, but it is often useful in the long
+    run.
++ They emphasize REPL-Driven Development.
+  + One part of that is setting things up to the point where you can
+    edit Clojure code, and with the cursor in or just after some
+    expression, type one key to send it to a live Clojure REPL session
+    and evaluate it (or at most type only a few keys).  No explicit
+    copy and paste required by you -- the environment does it for you.
++ (Future addition) Describe how to use Cognitect's
+  [REBL](https://github.com/cognitect-labs/REBL-distro) -- Read Eval
+  Browse Loop
+
+Recommendation: Stuart Halloway's talk ["REPL-Driven
+Development"](https://github.com/matthiasn/talk-transcripts/blob/master/Halloway_Stuart/REPLDrivenDevelopment.md)
+
 Perhaps in the future this may grow to include other editors/IDEs such
-as the following, but right now we only mention them here:
+as the following, but right I only list them here:
 
 + Emacs plus [CIDER](https://cider.mx)
-+ [Atom](https://atom.io) plus
-  [Chlorine](https://atom.io/packages/chlorine)
 + [IntelliJ IDEA](https://www.jetbrains.com/idea/) plus
   [Cursive](https://cursive-ide.com) (free for non-commercial use,
   costs money to use commercially)
++ [Vim](https://www.vim.org) plus
+  [vim-fireplace](https://github.com/tpope/vim-fireplace) or
+  [vimclojure](https://github.com/vim-scripts/VimClojure).
++ [Visual Studio Code](https://code.visualstudio.com) plus
+  [Calva](https://github.com/BetterThanTomorrow/calva)
++ [Atom](https://atom.io) plus
+  [Chlorine](https://atom.io/packages/chlorine)
 
 This is not really an editor/IDE, but it is a useful development tool
 for Clojure:
@@ -368,9 +393,6 @@ intended to store code snippets they are experimenting with.  Such
 Clojure expressions that you type require insignificant amounts of
 storage, even if you save many years of such history, and having such
 a history can be valuable to refer to later.
-
-Recommendation: Stuart Halloway's talk ["REPL-Driven
-Development"](https://github.com/matthiasn/talk-transcripts/blob/master/Halloway_Stuart/REPLDrivenDevelopment.md)
 
 You may use the editor's normal copy and paste mechanisms to copy
 expressions from one buffer, and paste them into the `*inf-clojure*`
