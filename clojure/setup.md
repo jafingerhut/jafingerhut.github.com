@@ -250,9 +250,8 @@ same time.
 
 Using a `deps.edn` file (either a user-account-wide one in
 `$HOME/.clojure/deps.edn`, or a project-specific one), you can create
-an alias that adds this command line option when it starts the JVM,
-but only when you provide the alias as a command line option when you
-run the `clj` or `clojure` commands.
+an alias that enables you to add this command line option when the
+`clj` or `clojure` command starts the JVM.
 
 ```clojure
 # Example deps.edn file contents
@@ -265,18 +264,30 @@ Note: Using commas instead of spaces is a trick that helps avoid some
 issues with string quoting/escaping.  It takes advantage of the fact
 that commas are treated as whitespace by the Clojure reader.
 
-With the above as your entire `deps.edn` file, or at least with that
-`:socket` alias in the map that is the value associated the `:aliases`
-key of your `deps.edn` file, you can start Clojure with this command:
+With the above as your entire `deps.edn` file, you can start Clojure
+with this command:
 
 ```bash
 clojure -A:socket
 ```
 
-plus any other aliases or command line options you wish to add, and
-the Java VM will be started with the necessary command line options so
-that the Java VM process listens on TCP port 50505 for socket REPL
-connections.
+and the Java VM will be started listening on TCP port 50505 for socket
+REPL connections.
+
+Note: The keys in the `:aliases` map of your `deps.edn` file have
+names that are all up to you.  `:socket` is just an example alias name
+here.  You can have as many such keys as you wish, and indicate that
+you want to use more than one by providing them one after the other on
+the `clojure` command line, e.g. here is a command that indicates that
+all of the aliases `:socket`, `:1.9`, and `:rebl-11` should be used:
+
+```bash
+clojure -A:socket:1.9:rebl-11
+```
+
+Sean Corfield publishes an example `deps.edn` file that defines many
+useful aliases in his [dot-clojure
+repository](https://github.com/seancorfield/dot-clojure).
 
 
 ## Socket REPL using Leiningen
@@ -357,6 +368,9 @@ intended to store code snippets they are experimenting with.  Such
 Clojure expressions that you type require insignificant amounts of
 storage, even if you save many years of such history, and having such
 a history can be valuable to refer to later.
+
+Recommendation: Stuart Halloway's talk ["REPL-Driven
+Development"](https://github.com/matthiasn/talk-transcripts/blob/master/Halloway_Stuart/REPLDrivenDevelopment.md)
 
 You may use the editor's normal copy and paste mechanisms to copy
 expressions from one buffer, and paste them into the `*inf-clojure*`
