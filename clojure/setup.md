@@ -12,9 +12,7 @@ open source unless stated otherwise:
 + A Java development kit (JDK)
   + You may never write a line of Java code yourself, but some Java
     runtime environment is required to develop and run Clojure or
-    ClojureScript.  Having a full JDK installed does not take much
-    more disk space, and can be useful if you ever encounter Clojure
-    projects that do include Java code that needs to be compiled.
+    ClojureScript.
 + Clojure CLI tools
 + At least one editor/IDE with a few Clojure-specific add-ons:
   + GNU Emacs, using the
@@ -27,6 +25,7 @@ Prerequisites:
   (e.g. the `Terminal` program in the Utiliities folder inside your
   Applications folder on macOS).
 + You know how to use a text editor to create files.
++ Most software installation steps require Internet access.
 
 There are a couple of things about these instructions that might be
 distinctive:
@@ -41,7 +40,7 @@ distinctive:
   [REBL](https://github.com/cognitect-labs/REBL-distro) -- Read Eval
   Browse Loop
 + They give easy to follow instructions for installing multiple
-  versions of JDK (Java Development Kit) on your system.
+  versions of JDK on your system.
   + You might not need that now, but it is often useful in the long
     run.
 
@@ -57,7 +56,7 @@ as the following, but right I only list them here:
   costs money to use commercially)
 + [Vim](https://www.vim.org) plus
   [vim-fireplace](https://github.com/tpope/vim-fireplace) or
-  [vimclojure](https://github.com/vim-scripts/VimClojure).
+  [vimclojure](https://github.com/vim-scripts/VimClojure)
 + [Visual Studio Code](https://code.visualstudio.com) plus
   [Calva](https://github.com/BetterThanTomorrow/calva)
 + [Atom](https://atom.io) plus
@@ -136,8 +135,8 @@ naming each script as you prefer.  Not everyone needs this capability,
 but sometimes it can be useful to quickly experiment with a different
 JDK version.
 
-The command `java -version` is a good way to verify which version of
-the JVM is first in your command path.
+The commands `java -version` and `which java` are good ways to verify
+which version of the JVM is first in your command path.
 
 
 # Install Clojure CLI tools
@@ -176,6 +175,13 @@ instructions](https://clojure.org/guides/getting_started#_installation_on_mac_vi
 on the Clojure web site to install Clojure's CLI tools.
 
 
+## Troubleshooting
+
+The command `clj -Sdescribe` shows version and other information about
+your Clojure CLI tools installation.  There is no command line option
+like `-v` or `--version` for the Clojure CLI tools.
+
+
 # Install GNU Emacs
 
 
@@ -192,50 +198,74 @@ You can get a copy of GNU Emacs that is as drag-and-drop easy to
 install as any other macOS application on the [Emacs for Mac OS
 X](https://emacsformacosx.com) site.
 
+If you wish to start Emacs from the command line on macOS, you could
+type this whole command after installing Emacs in your Applications
+folder:
+
+```bash
+/Applications/Emacs.app/Contents/MacOS/Emacs
+```
+
+However, defining a bash alias is one way to enable you to type a much
+shorter command, e.g. add a line like this to the file `.bashrc` in
+your home directory to enable the command `emacs` to work:
+
+```bash
+alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
+```
+
 
 # Installing the Emacs `inf-clojure` package
 
 These instructions are common for Ubuntu Linux and macOS, after one
 has installed GNU Emacs.  They might also work for a GNU Emacs
-installation on Windows, but I have not tested this.
+installation on Windows, but I have not tested this yet.
 
-There are many more packages one could install in Emacs, but I will
-only explain how to install `inf-clojure` here, plus one other called
-`clojure-mode`, which enables some color syntax highlighting and
-auto-indenting that I find indispensable when editing Clojure code.
+There are _many_ packages one can install in Emacs.  I will explain
+how to install `inf-clojure` and `clojure-mode` here, but the method
+described makes it straightforward to see a list of many other
+packages available, and install the ones you want.
 
 First, set up Emacs to access the collection of packages available on
 MELPA (Milkypostman's Emacs Lisp Package Archive).  Instructions are
 given here: https://melpa.org/#/getting-started
 
-If you used Emacs to edit your `$HOME/.emacs` or
-`$HOME/.emacs.d/init.el` initialization file, then one straigtforward
-way to ensure that those changes take effect is to quit and restart
-Emacs.
+If you used Emacs to edit your `$HOME/.emacs.d/init.el` initialization
+file, then one way to ensure that those changes take effect is to quit
+and restart Emacs.
 
 ```bash
 emacs
 ```
 
 In the Emacs window, get a list of Emacs packages available for
-installation by typing the following (in case you are not familiar
+installation by typing the following.  In case you are not familiar
 with Emacs abbreviations for key sequences, you can type `M-x` by
 typing the Escape key followed by `x`, and `RET` means to type the
-Return key):
+Return key:
 
 ```
 M-x package-list-packages RET
 ```
+
+Troubleshooting: I have sometimes seen error messages related to GnuPG
+(aka GPG) keys and authentication when the `package-list-packages`
+command is trying to access a server to get an updated list of
+packages.  I am happy to add some instructions here for resolving such
+problems, if someone knows a reliable way.  I suspect some of the
+problems I have seen may be due to testing on older Ubuntu Linux
+versons like 16.04, and/or Emacs versions 24 or older, and are solved
+with more recent versions.
 
 In the list of packages that appears, either search for the string
 `inf-clojure`, or scroll down the alphabetical list until you find the
 line with that package.  With the cursor on that line, type the `i`
 key to mark it for installation.
 
-If you wish, find the line for the `clojure-mode` package and do the
-same.  When you have marked the packages you want to install, type the
-`x` key to actually install them.  Confirm the installation, and when
-it is complete, type `q` to quit from the package list.
+Find the line for the `clojure-mode` package and do the same.  When
+you have marked the packages you want to install, type the `x` key to
+actually install them.  Confirm the installation, and when it is
+complete, type `q` to quit from the package list.
 
 See the main documentation for
 [`inf-clojure`](https://github.com/clojure-emacs/inf-clojure) if you
