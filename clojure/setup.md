@@ -17,9 +17,11 @@ mentioned is open source unless stated otherwise.
 
 There are companion follow-up articles that explain how to set up the
 following editor/IDE environments, at least at a basic level, but
-enough to have some useful Clojure-specific capabilities:
+enough to have some useful Clojure-specific capabilities.  I recommend
+you finish following the instructions in this article before going to
+any of them.
 
-+ GNU Emacs, using the
++ [Emacs + inf-clojure]: GNU Emacs, using the
   [`inf-clojure`](https://github.com/clojure-emacs/inf-clojure)
   package
 
