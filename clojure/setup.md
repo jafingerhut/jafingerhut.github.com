@@ -21,7 +21,8 @@ enough to have some useful Clojure-specific capabilities.  I recommend
 you finish following the instructions in this article before going to
 any of them.
 
-+ [Emacs + inf-clojure]: GNU Emacs, using the
++ [Emacs + inf-clojure](setup-gnu-emacs-with-inf-clojure.md): GNU
+  Emacs, using the
   [`inf-clojure`](https://github.com/clojure-emacs/inf-clojure)
   package
 
