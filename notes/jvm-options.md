@@ -1,5 +1,9 @@
 # JVM command line options
 
+[This web site](https://chriswhocodes.com/hotspot_options_jdk6.html)
+lets you explore JVM command line options across many different JVM
+versions.
+
 ## Stack traces
 
 This is simply a list of JVM command line options I have found to be
