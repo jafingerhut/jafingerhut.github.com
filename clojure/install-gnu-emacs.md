@@ -73,7 +73,11 @@ To quit Emacs, you can:
 + macOS: Select menu "Emacs", entry "Quit Emacs"
 + Ubuntu Linux: Select menu "File", entry "Quit"
 
-If you are instructed to edit the Emacs initialization file, it is in
-your user account home directory, then the directory `.emacs.d`, and
-inside of that directory, the file named `init.el`.  You may create
-the file if it has not been created for you already.
+If you are instructed to edit the Emacs init file, it is in your user
+account home directory, then the directory `.emacs.d`, and inside of
+that directory, the file named `init.el`.  You may create the file if
+it has not been created for you already.
+
+To find out what version of Emacs you have installed, type `M-x
+emacs-version RET` while Emacs is running, or `emacs --version` from a
+terminal.

@@ -11,16 +11,15 @@ installation on Windows, but I have not tested this yet.
 
 There are _many_ packages one can install in Emacs.  I will explain
 how to install `inf-clojure` and `clojure-mode` here, but the method
-described makes it straightforward to see a list of many other
-packages available, and install the ones you want.
+described makes it straightforward to see a list of other packages
+available, and install the ones you want.
 
 First, set up Emacs to access the collection of packages available on
 MELPA (Milkypostman's Emacs Lisp Package Archive).  Instructions are
 given here: https://melpa.org/#/getting-started
 
-If you used Emacs to edit your `$HOME/.emacs.d/init.el` initialization
-file, then one way to ensure that those changes take effect is to quit
-and restart Emacs.
+If you used Emacs to edit your Emacs init file, then one way to ensure
+that those changes take effect is to quit and restart Emacs.
 
 ```bash
 emacs
@@ -132,3 +131,5 @@ Clojure expression just before, or surrounding, the cursor, and copy
 and paste it into the REPL buffer, and send it".
 
 Let us set that up now.
+
+TBD
