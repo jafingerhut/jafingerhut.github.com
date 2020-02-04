@@ -30,6 +30,7 @@ and found to explain quite a few of these options very well.
 
 * [The book as a whole](https://www.oreilly.com/library/view/java-performance-the/9781449363512/)
 * [Chapter 4](https://www.oreilly.com/library/view/java-performance-the/9781449363512/ch04.html)
+* [PrintCompilation JVM flag](https://blog.joda.org/2011/08/printcompilation-jvm-flag.html)
 
 * `-XX:+PrintCompilation` - false by default.  When the option is
   given, details about when code is JIT compiled is printed to the
