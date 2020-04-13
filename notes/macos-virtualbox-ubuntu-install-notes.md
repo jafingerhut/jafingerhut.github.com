@@ -77,6 +77,17 @@ Settings -> Power -> Power Saving -> change Blank screen to "Never".
 Same settings changes as for Ubuntu 18.04 Desktop Linux
 
 
+## Ubuntu 20.04 Desktop Linux
+
+Settings -> Appearance: reduce Icon size from default 48 to 24 pixels
+
+Settings -> Privacy -> Screen Lock -> Automatic Screen Lock: change to
+Off.  Same reason as for "Security & Privacy" settings for Ubuntu
+16.04, but it has been moved to a different "place" in Ubuntu 18.04.
+
+Settings -> Power -> Power Saving -> change Blank screen to "Never".
+
+
 # Debian 8 notes
 
 I do not normally use Debian, except by way of using it through
