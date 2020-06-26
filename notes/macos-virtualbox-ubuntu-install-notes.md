@@ -19,6 +19,9 @@ image to add guest additions)
 
 # General notes on VM settings
 
+[I have verified that these settings are the same in VirtualBox 6.0.x
+running on a Windows 10 host OS, as well as macOS 10.14.x host]
+
 System -> Motherboard -> Base Memory: While there might be uses for a
 Linux guest VM with only 1 GByte of RAM, I typically change that to 4
 Gbyte when creating new VMs.
@@ -46,6 +49,9 @@ guest VM.
 
 
 # Ubuntu Linux Desktop settings I like
+
+[The notes in this section are all specific to the guest OS, and
+should independently of the host OS.]
 
 ## Ubuntu 16.04 Desktop Linux
 
@@ -88,7 +94,7 @@ Off.  Same reason as for "Security & Privacy" settings for Ubuntu
 Settings -> Power -> Power Saving -> change Blank screen to "Never".
 
 
-# Debian 8 notes
+## Debian 8 notes
 
 I do not normally use Debian, except by way of using it through
 Ubuntu, but I did recently try installing Debian 8.11 as a VM, and
@@ -105,7 +111,7 @@ $ echo '/usr/sbin:/sbin:$PATH' >> $HOME/.bashrc
 ```
 
 
-### MATE Terminal settings
+## MATE Terminal settings
 
 I like the MATE Terminal application slightly better than the default
 Terminal, because it is fairly straightforward from the menu settings
@@ -252,6 +258,9 @@ module, and shut down the VM afterwards.
 
 
 # Set up shared folders between Ubuntu guest OS and host macOS
+
+[Instructions in this section verified to work for Ubuntu Linux guest
+OS, for both macOS 10.14.x and Windows 10 host OS.]
 
 Prerequisite: You have successfully installed guest additions kernel
 module, and shut down the VM afterwards.
