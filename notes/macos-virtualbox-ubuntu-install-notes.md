@@ -604,3 +604,27 @@ Once you are done, unmount everything and disconnect the device:
 
     sudo umount /dev/nbd0
     sudo qemu-nbd -d /dev/nbd0
+
+
+# Changing Ubuntu host name
+
+I found these instructions worked for me, at least on Ubuntu 16.04 and
+18.04 Linux VMs I have used.
+
+Instructions found here: https://www.cyberciti.biz/faq/ubuntu-18-04-lts-change-hostname-permanently/
+
+To see the current host name, use the following command.  You will need
+to know this for the last step below:
+
+    hostnamectl
+
+To permanently change the host name to 'linwin-vm':
+
+    sudo hostnamectl set-hostname linwin-vm
+
+Now use this command to edit the /etc/hosts file, replacing all
+occurrences of the old hostname with linwin-vm:
+
+    sudo vi /etc/hosts
+
+Reboot the system for the changes to take effect.
