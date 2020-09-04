@@ -111,3 +111,7 @@ https://johanneslink.net/how-to-specify-it/
 https://www.amazon.com/Property-Based-Testing-PropEr-Erlang-Elixir/dp/1680506218
 
 https://wickstrom.tech/programming/2019/03/02/property-based-testing-in-a-screencast-editor-introduction.html
+
+https://medium.com/appsflyer/clojure-automated-property-based-tests-for-complicated-inputs-786de23de8f0
+
+https://medium.com/swlh/how-to-test-clojure-systems-using-different-seam-techniques-df0300df893f
