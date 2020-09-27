@@ -53,6 +53,24 @@ guest VM.
 [The notes in this section are all specific to the guest OS, and
 should independently of the host OS.]
 
+## Dock icons
+
+I often remove any icons in the dock that are not in the list below,
+and add any that are not in the list below so they are locked in the
+dock, in this order from top to bottom:
+
++ MATE Terminal
++ Firefox
++ Ubuntu Software
++ System Settings
++ Synaptic Package Manager
++ Software Updater
+
+Doing so requires installing these packages:
+```
+sudo apt-get install git mate-terminal synaptic
+```
+
 ## Ubuntu 16.04 Desktop Linux
 
 Settings -> Appearance -> Launcher icon size: reduce from default 48
