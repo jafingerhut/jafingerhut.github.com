@@ -120,12 +120,15 @@ class name.
 
 The end of the class definition has a `static` block that initializes
 the value of `const__0` to the Clojure var `clojure.core/reduce`.
+This block of code is executed only once when the class is loaded
+(i.e. shortly after the Clojure function is defined and thus also
+compiled), not on every call to `my-transform`.
 
 The bulk of the work is done in the `invokeStatic` method.  This takes
 parameters `prefix` and `input` just as the Clojure function
 `my-transform` does.
 
-Let us take this method definition:
+Let us take this method definition that appears in the code above:
 
 ```java
     public static Object invokeStatic(final Object prefix, final Object input) {
@@ -134,7 +137,7 @@ Let us take this method definition:
 ```
 
 and rewrite it in a way that behaves the same, but makes each of the
-steps a bit smaller and easier to understand:
+steps smaller and easier to understand:
 
 ```java
     public static Object invokeStatic(final Object prefix, final Object input) {
