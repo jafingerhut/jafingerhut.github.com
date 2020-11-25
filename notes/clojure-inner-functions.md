@@ -160,29 +160,40 @@ maintained inside the Clojure compiler that is incremented when some
 new class name is needed, to guarantee that the class names are
 unique.
 
-If we look at the definition of the construct for that class in the
-first class definition above, we see that all it does is store a copy
-of a reference to the parameter `prefix` in a field of the class.  So
-every time `my-transform` is called, it is constructing a new instance
-of this class `user$my_transform$fn__192`, and that does allocate
-enough memory to store that object, but it only has one `Object`
-reference named `prefix`, so this is fairly quick as far as
-constructing a new JVM object goes.
+If we look at the definition of the constructor for class
+`user$my_transform$fn__192` in the first class definition above,
+copied here:
 
-If you experiment with this, you will find that inner functions that
-use multiple parameter values from an enclosing function in their
-definitions will have constructurs that take one parameter for each
-such value they use from their environment.  This is an implementation
-of
+```java
+    public user$my_transform$fn__192(final Object prefix) {
+        this.prefix = prefix;
+    }
+```
+
+we see that all it does is store a copy of a reference to the
+parameter `prefix` in a field of the class.  So every time
+`my-transform` is called, it is constructing a new instance of this
+class `user$my_transform$fn__192`.  That does allocate enough memory
+to hold that object, but the new object only has one `Object`
+reference named `prefix`, so this is about as fast as constructing a
+new JVM object can be.
+
+If you do experiments with other inner functions, you will find that
+when an inner function uses the value of parameters from an enclosing
+function, the inner function's class constructor will take one
+parameter for each of them, and that constructor will save a reference
+to each of them in a field.
+
+This is an implementation of
 a [closure](https://en.wikipedia.org/wiki/Closure_(computer_programming)),
 which is just a function bundled together with the necessary
 information about its environment, so that there can be multiple
 closures for a single function definition, each with a different set
 of values that they have "captured" from their environment.
 
-The third line is simply an assignment of a constant value to the
-local variable `empty_map`.  That is simply there to give a name to
-that constant.
+The third line is an assignment of a constant value to the local
+variable `empty_map`.  That is there simply to give a name to that
+constant.
 
 The last line calls the `invoke` method on the object that is the
 value of `reduce_fn`, which is the function that was created when
