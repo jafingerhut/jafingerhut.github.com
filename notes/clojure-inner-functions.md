@@ -200,7 +200,7 @@ constant.
 
 The last line calls the `invoke` method on the object that is the
 value of `reduce_fn`, which is the function that was created when
-Clojure's `clojure.core/reduce-fn` was compiled.
+Clojure's function `clojure.core/reduce` was compiled.
 
 So we can see that the inner function is not compiled on every call to
 `my-transform`.  The Clojure compiler has created a separate class for
