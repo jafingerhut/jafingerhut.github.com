@@ -71,12 +71,17 @@ was added to #channel-name`.
 
 Yes, someone could choose to pay for this.  If someone chose to do
 this, they would be legally responsible to pay the bill to Slack for
-_all_ users of Clojurians Slack.  The current pricing as of 2020 puts
-the bill at somewhere near USD $1,200 per month.  This amount could
-change later based upon Slack's pricing model, but it could also go up
-or down as the number of active users of Clojurians Slack changes.
-Slack does not provide a way to bill every user of Clojurians Slack
-separately for an equal fraction of that amount.
+_all_ users of Clojurians Slack.  The current pricing as of Jan 2021
+puts the bill at somewhere near USD $7,600 per month (with a 50%
+discount for the first 3 months).  This amount could change later
+based upon Slack's pricing model, but it could also go up or down as
+the number of active users of Clojurians Slack changes.  Slack does
+not provide a way to bill every user of Clojurians Slack separately
+for an equal fraction of that amount.
+
+    2021-Jan-06 snapshot of Clojurians Slack price estimate
+    calculation: $8 USD x 952 members x 1 month = $7,616 USD, billed
+    monthly.
 
 Given this price, it is perhaps quite understandable that no one has
 volunteered to take on such a financial obligation themselves.
