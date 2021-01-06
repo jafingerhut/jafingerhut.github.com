@@ -1,8 +1,10 @@
 # Why doesn't Clojurians Slack let me search through old messages?
 
-Someone created the Slack workspace https://clojurians.slack.com circa
-2015.  By about 2017, it was probably the most popular on-line chat
-location for topics related to Clojure development.
+Gavin-John Noonan created the Slack workspace
+https://clojurians.slack.com on March 1, 2015.  By the beginning of
+2017 (and perhaps earlier), it was already the most popular on-line
+chat location for topics related to Clojure development (chart and
+data linked below if you are curious).
 
 This Slack community was created via a free plan provided by Slack for
 open source communities.  The advantage is that Slack pays for all of
@@ -153,3 +155,20 @@ The Clojurians Slack channel #community-development is the most
 appropriate place on Slack to discuss this.  It has been discussed
 several times per year for N years, so it is not easy to come up with
 a novel idea in this area.
+
+
+# State of Clojure Survey results for ecosystem involvement
+
+The State of Clojure Survey has had a little over 2,000 responders
+(i.e. people who choose to fill out the questionnaire) from 2016
+through 2020.  The results for all questions can be found here:
+https://clojure.org/news/2020/02/20/state-of-clojure-2020
+
+The chart below shows the percentage of people who responded to the
+question "My involvement in the Clojure ecosystem includes".  The
+first survey year shown is 2017, since the results were published in
+Jan 2017, but it is from the State of Clojure 2016 survey results,
+probably called that since the questionnaire was sent out and
+responded to late in 2016.
+
+![ecosystem-involvement-survey-results](clojure-survey-ecosystem-involvement-chart.pdf)
