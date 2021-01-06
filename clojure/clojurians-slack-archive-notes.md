@@ -1,9 +1,8 @@
 # Why doesn't Clojurians Slack let me search through old messages?
 
-Someone created the Slack "community" (TBD the correct Slack
-terminology for this) https://clojurians.slack.com circa 2015.  By
-about 2017, it was probably the most popular on-line chat location for
-topics related to Clojure development.
+Someone created the Slack workspace https://clojurians.slack.com circa
+2015.  By about 2017, it was probably the most popular on-line chat
+location for topics related to Clojure development.
 
 This Slack community was created via a free plan provided by Slack for
 open source communities.  The advantage is that Slack pays for all of
@@ -20,6 +19,12 @@ Let me know if you have better ways than described here.
 
 Browse clojurians-log: https://clojurians-log.clojureverse.org
 
+For several channels, the earliest messages recorded in clojurians-log
+go back to 2015.  Others start later, e.g. because the channel was
+created later, and/or no one started logging the channel on
+clojurians-log until later.  There are likely some 'gaps' in the
+middle where messages were not being logged.
+
 On Google, you can limit searches to any web site by appending
 `site:site-url` to the end of the search, e.g. to search for
 occurrences of `defmacro` only on the Clojurians log site, use the
@@ -31,6 +36,9 @@ defmacro site:clojurians-log.clojureverse.org
 
 ## Clojurians Zulip
 
+The mirroring of many Clojurians Slack channels began on Clojurians
+Zulip Chat near the beginning of 2019.
+
 At least in the web browser UI for Zulip, after joining you should see
 a wide text box near the top center of the page, with a magnifying
 glass icon on its right side.  Click on that magnifying glass icon, or
@@ -38,9 +46,9 @@ in the text box, and type in your search terms, and press
 return/enter.
 
 As of 2020, most of the messages on Clojurians Zulip are in the
-`slack-archive` stream, with a separate topic (TBD the correct Zulip
-terminology here) for each Clojurians Slack channel that is mirrored.
-Very likely most of your search results will appear in one of those.
+`slack-archive` stream, with a separate topic for each Clojurians
+Slack channel that is mirrored.  Very likely most of your search
+results will appear in one of those.
 
 TBD how to limit the search to a single Zulip topic.  Zulip's help
 page on advanced search is probably a good place to read about more
