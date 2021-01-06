@@ -171,4 +171,4 @@ Jan 2017, but it is from the State of Clojure 2016 survey results,
 probably called that since the questionnaire was sent out and
 responded to late in 2016.
 
-![ecosystem-involvement-survey-results](clojure-survey-ecosystem-involvement-chart.pdf)
+![ecosystem-involvement-survey-results](clojure-survey-ecosystem-involvement-chart.png)
