@@ -47,12 +47,11 @@ For every mirrored Slack channel there's a separate topic. Very likely
 most of your search results will appear in one of those.
 
 To search it (using the browser):
-- go to the [#slack-archive
-  stream](https://clojurians.zulipchat.com/#narrow/stream/180378-slack-archive)
+- go to the [#slack-archive stream](https://clojurians.zulipchat.com/#narrow/stream/180378-slack-archive)
 - type `/` (or click the magnifying class in the top right)
 - append the search terms or string to the query,
-  e.g. [`stream:slack-archive "cannot be cast to
-  class"`](https://clojurians.zulipchat.com/#narrow/stream/180378-slack-archive/search/.22cannot.20be.20cast.20to.20class.22)
+  e.g. `stream:slack-archive "cannot be cast to class"`
+  - link to results for this example search: [`stream:slack-archive "cannot be cast to class"`](https://clojurians.zulipchat.com/#narrow/stream/180378-slack-archive/search/.22cannot.20be.20cast.20to.20class.22)
 
 You'll see that it yields results from several topics (i.e. Slack
 channels) under the `slack-archive` stream.
@@ -61,6 +60,11 @@ To see the original conversation that any of the found messages
 appeared in, do the following:
 - select the message (a thick border will appear around it)
 - click the topic (e.g. `slack-archive > beginners`)
+- Note: As of 2021-Jan-07, it seems that these steps sometimes gets
+  you to the message in the context of its conversation, but sometimes
+  you end up at a completely different message in the topic.  If you
+  experience this, it is not only you it happens for.  This might be a
+  bug in Zulip.
 
 Use the back-button to return to the search results.
 
