@@ -73,9 +73,10 @@ corresponding name of the channel to the query, e.g.
 - `stream:slack-archive topic:beginners "cannot be cast to class"`
 - link to results for this example search: [`stream:slack-archive topic:beginners "cannot be cast to class"`](https://clojurians.zulipchat.com/#narrow/stream/180378-slack-archive/search/.22cannot.20be.20cast.20to.20class.22).
 
-As Clojurians Zulip has its own streams where people discuss Clojure,
-you can also search across _all_ public streams (note "streams:"
-instead of "stream:" here:
+As Clojurians Zulip has its own streams where people discuss Clojure
+(i.e. ones that are not copies of messages that were sent to
+Clojurians Slack), you can also search across _all_ public streams
+(note "streams:" instead of "stream:" here:
 - `streams:public "cannot be cast to class"`
 - link to results for this example search: [`streams:public "cannot be cast to class"`](https://clojurians.zulipchat.com/#narrow/streams/public/search/.22cannot.20be.20cast.20to.20class.22).
 
