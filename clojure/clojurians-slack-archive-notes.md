@@ -41,25 +41,39 @@ defmacro site:clojurians-log.clojureverse.org
 The mirroring of many Clojurians Slack channels began on [Clojurians
 Zulip Chat](https://clojurians.zulipchat.com/) near the beginning of 2019.
 
-The archive can be found in the [#slack-archive stream](https://clojurians.zulipchat.com/#narrow/stream/180378-slack-archive). For every mirrored Slack channel there's a separate topic. Very likely most of your search
-results will appear in one of those.
+The archive can be found in the [#slack-archive
+stream](https://clojurians.zulipchat.com/#narrow/stream/180378-slack-archive).
+For every mirrored Slack channel there's a separate topic. Very likely
+most of your search results will appear in one of those.
 
 To search it (using the browser):
-- go to the [#slack-archive stream](https://clojurians.zulipchat.com/#narrow/stream/180378-slack-archive)
+- go to the [#slack-archive
+  stream](https://clojurians.zulipchat.com/#narrow/stream/180378-slack-archive)
 - type `/` (or click the magnifying class in the top right)
-- append the search terms or string to the query, e.g. [`stream:slack-archive "cannot be cast to class"`](https://clojurians.zulipchat.com/#narrow/stream/180378-slack-archive/search/.22cannot.20be.20cast.20to.20class.22)
+- append the search terms or string to the query,
+  e.g. [`stream:slack-archive "cannot be cast to
+  class"`](https://clojurians.zulipchat.com/#narrow/stream/180378-slack-archive/search/.22cannot.20be.20cast.20to.20class.22)
 
-You'll see that it yields results from several topics (i.e. Slack channels) under the `slack-archive` stream.
+You'll see that it yields results from several topics (i.e. Slack
+channels) under the `slack-archive` stream.
 
-To see the original conversation that any of the found messages appeared in, do the following:
+To see the original conversation that any of the found messages
+appeared in, do the following:
 - select the message (a thick border will appear around it)
 - click the topic (e.g. `slack-archive > beginners`)
 
 Use the back-button to return to the search results.
 
-To search within a specific Slack channel, add `topic:` with the corresponding name of the channel to the query, e.g. [`stream:slack-archive topic:beginners "cannot be cast to class"`](https://clojurians.zulipchat.com/#narrow/stream/180378-slack-archive/search/.22cannot.20be.20cast.20to.20class.22).
+To search within a specific Slack channel, add `topic:` with the
+corresponding name of the channel to the query, e.g.
+- `stream:slack-archive topic:beginners "cannot be cast to class"`
+- link to results for this example search: [`stream:slack-archive topic:beginners "cannot be cast to class"`](https://clojurians.zulipchat.com/#narrow/stream/180378-slack-archive/search/.22cannot.20be.20cast.20to.20class.22).
 
-As Clojurians Zulip has its own streams where people discuss Clojure, you can also search across _all_ public streams: [`stream:public "cannot be cast to class"`](https://clojurians.zulipchat.com/#narrow/streams/public/search/.22cannot.20be.20cast.20to.20class.22).
+As Clojurians Zulip has its own streams where people discuss Clojure,
+you can also search across _all_ public streams (note "streams:"
+instead of "stream:" here:
+- `streams:public "cannot be cast to class"
+- link to results for this example search: [`streams:public "cannot be cast to class"`](https://clojurians.zulipchat.com/#narrow/streams/public/search/.22cannot.20be.20cast.20to.20class.22).
 
 Zulip's help page on advanced search is probably a good place to read about more
 features: https://clojurians.zulipchat.com/help/search-for-messages
