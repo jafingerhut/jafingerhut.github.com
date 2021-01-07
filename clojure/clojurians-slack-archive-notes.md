@@ -15,8 +15,6 @@ across all channels.
 
 # Searching the existing logs of Clojurians Slack messages
 
-Let me know if you have better ways than described here.
-
 ## clojurians-log
 
 Browse clojurians-log: https://clojurians-log.clojureverse.org
@@ -43,7 +41,7 @@ Zulip Chat](https://clojurians.zulipchat.com/) near the beginning of 2019.
 
 The archive can be found in the [#slack-archive
 stream](https://clojurians.zulipchat.com/#narrow/stream/180378-slack-archive).
-For every mirrored Slack channel there's a separate topic. Very likely
+FOR every mirrored Slack channel there's a separate topic. Very likely
 most of your search results will appear in one of those.
 
 To search it (using the browser):
