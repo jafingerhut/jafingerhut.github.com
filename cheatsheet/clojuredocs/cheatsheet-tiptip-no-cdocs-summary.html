@@ -707,10 +707,12 @@ format
 ([] [to] [to from] [to xform from])
   Returns a new coll consisting of to-coll with all of the items of
   from-coll conjoined. A transducer may be supplied.</pre>">into</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/conj" class="tooltip" title="<pre>clojure.core/conj
-([coll x] [coll x &amp; xs])
+([] [coll] [coll x] [coll x &amp; xs])
   conj[oin]. Returns a new collection with the xs
-    'added'. (conj nil item) returns (item).  The 'addition' may
-    happen at different 'places' depending on the concrete type.</pre>">conj</a> (clojure.walk/) <a href="https://clojuredocs.org/clojure_core/clojure.walk/walk" class="tooltip" title="<pre>clojure.walk/walk
+    'added'. (conj nil item) returns (item).
+    (conj coll) returns coll. (conj) returns [].
+    The 'addition' may happen at different 'places' depending
+    on the concrete type.</pre>">conj</a> (clojure.walk/) <a href="https://clojuredocs.org/clojure_core/clojure.walk/walk" class="tooltip" title="<pre>clojure.walk/walk
 ([inner outer form])
   Traverses form, an arbitrary data structure.  inner and outer are
   functions.  Applies inner to each element of form, building up a
@@ -832,10 +834,12 @@ format
 ([x seq])
   Returns a new seq where x is the first element and seq is
     the rest.</pre>">cons</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/conj" class="tooltip" title="<pre>clojure.core/conj
-([coll x] [coll x &amp; xs])
+([] [coll] [coll x] [coll x &amp; xs])
   conj[oin]. Returns a new collection with the xs
-    'added'. (conj nil item) returns (item).  The 'addition' may
-    happen at different 'places' depending on the concrete type.</pre>">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/rest" class="tooltip" title="<pre>clojure.core/rest
+    'added'. (conj nil item) returns (item).
+    (conj coll) returns coll. (conj) returns [].
+    The 'addition' may happen at different 'places' depending
+    on the concrete type.</pre>">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/rest" class="tooltip" title="<pre>clojure.core/rest
 ([coll])
   Returns a possibly empty seq of the items after the first. Calls seq on its
   argument.</pre>">rest</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/pop" class="tooltip" title="<pre>clojure.core/pop
@@ -930,10 +934,12 @@ format
   vector/seq with any elements = a key in smap replaced with the
   corresponding val in smap.  Returns a transducer when no collection
   is provided.</pre>">replace</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/conj" class="tooltip" title="<pre>clojure.core/conj
-([coll x] [coll x &amp; xs])
+([] [coll] [coll x] [coll x &amp; xs])
   conj[oin]. Returns a new collection with the xs
-    'added'. (conj nil item) returns (item).  The 'addition' may
-    happen at different 'places' depending on the concrete type.</pre>">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/rseq" class="tooltip" title="<pre>clojure.core/rseq
+    'added'. (conj nil item) returns (item).
+    (conj coll) returns coll. (conj) returns [].
+    The 'addition' may happen at different 'places' depending
+    on the concrete type.</pre>">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/rseq" class="tooltip" title="<pre>clojure.core/rseq
 ([rev])
   Returns, in constant time, a seq of the items in rev (which
   can be a vector or sorted-map), in reverse order. If rev is empty returns nil</pre>">rseq</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/update" class="tooltip" title="<pre>clojure.core/update
@@ -1023,10 +1029,12 @@ used only if elements are densely
               <tr class="even">
                 <td>'Change'</td>
                 <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/conj" class="tooltip" title="<pre>clojure.core/conj
-([coll x] [coll x &amp; xs])
+([] [coll] [coll x] [coll x &amp; xs])
   conj[oin]. Returns a new collection with the xs
-    'added'. (conj nil item) returns (item).  The 'addition' may
-    happen at different 'places' depending on the concrete type.</pre>">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/disj" class="tooltip" title="<pre>clojure.core/disj
+    'added'. (conj nil item) returns (item).
+    (conj coll) returns coll. (conj) returns [].
+    The 'addition' may happen at different 'places' depending
+    on the concrete type.</pre>">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/disj" class="tooltip" title="<pre>clojure.core/disj
 ([set] [set key] [set key &amp; ks])
   disj[oin]. Returns a new set of the same (hashed/sorted) type, that
   does not contain key(s).</pre>">disj</a></code></td>
@@ -1253,10 +1261,12 @@ default-comparator.</pre>">ordering-map</a> (clojure.data.int-map/) <a href="htt
               <tr class="odd">
                 <td>'Change'</td>
                 <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/conj" class="tooltip" title="<pre>clojure.core/conj
-([coll x] [coll x &amp; xs])
+([] [coll] [coll x] [coll x &amp; xs])
   conj[oin]. Returns a new collection with the xs
-    'added'. (conj nil item) returns (item).  The 'addition' may
-    happen at different 'places' depending on the concrete type.</pre>">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/pop" class="tooltip" title="<pre>clojure.core/pop
+    'added'. (conj nil item) returns (item).
+    (conj coll) returns coll. (conj) returns [].
+    The 'addition' may happen at different 'places' depending
+    on the concrete type.</pre>">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/pop" class="tooltip" title="<pre>clojure.core/pop
 ([coll])
   For a list or queue, returns a new list/queue without the first
   item, for a vector, returns a new vector without the last item. If
@@ -1547,10 +1557,12 @@ Macro
 ([x seq])
   Returns a new seq where x is the first element and seq is
     the rest.</pre>">cons</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/conj" class="tooltip" title="<pre>clojure.core/conj
-([coll x] [coll x &amp; xs])
+([] [coll] [coll x] [coll x &amp; xs])
   conj[oin]. Returns a new collection with the xs
-    'added'. (conj nil item) returns (item).  The 'addition' may
-    happen at different 'places' depending on the concrete type.</pre>">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/concat" class="tooltip" title="<pre>clojure.core/concat
+    'added'. (conj nil item) returns (item).
+    (conj coll) returns coll. (conj) returns [].
+    The 'addition' may happen at different 'places' depending
+    on the concrete type.</pre>">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/concat" class="tooltip" title="<pre>clojure.core/concat
 ([] [x] [x y] [x y &amp; zs])
   Returns a lazy seq representing the concatenation of the elements in the
 supplied colls.</pre>">concat</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/lazy-cat" class="tooltip" title="<pre>clojure.core/lazy-cat
@@ -1640,10 +1652,12 @@ Macro
               <tr class="odd">
                 <td>'Change'</td>
                 <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/conj" class="tooltip" title="<pre>clojure.core/conj
-([coll x] [coll x &amp; xs])
+([] [coll] [coll x] [coll x &amp; xs])
   conj[oin]. Returns a new collection with the xs
-    'added'. (conj nil item) returns (item).  The 'addition' may
-    happen at different 'places' depending on the concrete type.</pre>">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/concat" class="tooltip" title="<pre>clojure.core/concat
+    'added'. (conj nil item) returns (item).
+    (conj coll) returns coll. (conj) returns [].
+    The 'addition' may happen at different 'places' depending
+    on the concrete type.</pre>">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/concat" class="tooltip" title="<pre>clojure.core/concat
 ([] [x] [x y] [x y &amp; zs])
   Returns a lazy seq representing the concatenation of the elements in the
 supplied colls.</pre>">concat</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/distinct" class="tooltip" title="<pre>clojure.core/distinct

@@ -707,10 +707,12 @@ format
 ([] [to] [to from] [to xform from])
   Returns a new coll consisting of to-coll with all of the items of
   from-coll conjoined. A transducer may be supplied.">into</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/conj" title="clojure.core/conj
-([coll x] [coll x &amp; xs])
+([] [coll] [coll x] [coll x &amp; xs])
   conj[oin]. Returns a new collection with the xs
-    'added'. (conj nil item) returns (item).  The 'addition' may
-    happen at different 'places' depending on the concrete type.">conj</a> (clojure.walk/) <a href="https://clojuredocs.org/clojure_core/clojure.walk/walk" title="clojure.walk/walk
+    'added'. (conj nil item) returns (item).
+    (conj coll) returns coll. (conj) returns [].
+    The 'addition' may happen at different 'places' depending
+    on the concrete type.">conj</a> (clojure.walk/) <a href="https://clojuredocs.org/clojure_core/clojure.walk/walk" title="clojure.walk/walk
 ([inner outer form])
   Traverses form, an arbitrary data structure.  inner and outer are
   functions.  Applies inner to each element of form, building up a
@@ -832,10 +834,12 @@ format
 ([x seq])
   Returns a new seq where x is the first element and seq is
     the rest.">cons</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/conj" title="clojure.core/conj
-([coll x] [coll x &amp; xs])
+([] [coll] [coll x] [coll x &amp; xs])
   conj[oin]. Returns a new collection with the xs
-    'added'. (conj nil item) returns (item).  The 'addition' may
-    happen at different 'places' depending on the concrete type.">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/rest" title="clojure.core/rest
+    'added'. (conj nil item) returns (item).
+    (conj coll) returns coll. (conj) returns [].
+    The 'addition' may happen at different 'places' depending
+    on the concrete type.">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/rest" title="clojure.core/rest
 ([coll])
   Returns a possibly empty seq of the items after the first. Calls seq on its
   argument.">rest</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/pop" title="clojure.core/pop
@@ -930,10 +934,12 @@ format
   vector/seq with any elements = a key in smap replaced with the
   corresponding val in smap.  Returns a transducer when no collection
   is provided.">replace</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/conj" title="clojure.core/conj
-([coll x] [coll x &amp; xs])
+([] [coll] [coll x] [coll x &amp; xs])
   conj[oin]. Returns a new collection with the xs
-    'added'. (conj nil item) returns (item).  The 'addition' may
-    happen at different 'places' depending on the concrete type.">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/rseq" title="clojure.core/rseq
+    'added'. (conj nil item) returns (item).
+    (conj coll) returns coll. (conj) returns [].
+    The 'addition' may happen at different 'places' depending
+    on the concrete type.">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/rseq" title="clojure.core/rseq
 ([rev])
   Returns, in constant time, a seq of the items in rev (which
   can be a vector or sorted-map), in reverse order. If rev is empty returns nil">rseq</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/update" title="clojure.core/update
@@ -1023,10 +1029,12 @@ used only if elements are densely
               <tr class="even">
                 <td>'Change'</td>
                 <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/conj" title="clojure.core/conj
-([coll x] [coll x &amp; xs])
+([] [coll] [coll x] [coll x &amp; xs])
   conj[oin]. Returns a new collection with the xs
-    'added'. (conj nil item) returns (item).  The 'addition' may
-    happen at different 'places' depending on the concrete type.">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/disj" title="clojure.core/disj
+    'added'. (conj nil item) returns (item).
+    (conj coll) returns coll. (conj) returns [].
+    The 'addition' may happen at different 'places' depending
+    on the concrete type.">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/disj" title="clojure.core/disj
 ([set] [set key] [set key &amp; ks])
   disj[oin]. Returns a new set of the same (hashed/sorted) type, that
   does not contain key(s).">disj</a></code></td>
@@ -1253,10 +1261,12 @@ default-comparator.">ordering-map</a> (clojure.data.int-map/) <a href="https://g
               <tr class="odd">
                 <td>'Change'</td>
                 <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/conj" title="clojure.core/conj
-([coll x] [coll x &amp; xs])
+([] [coll] [coll x] [coll x &amp; xs])
   conj[oin]. Returns a new collection with the xs
-    'added'. (conj nil item) returns (item).  The 'addition' may
-    happen at different 'places' depending on the concrete type.">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/pop" title="clojure.core/pop
+    'added'. (conj nil item) returns (item).
+    (conj coll) returns coll. (conj) returns [].
+    The 'addition' may happen at different 'places' depending
+    on the concrete type.">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/pop" title="clojure.core/pop
 ([coll])
   For a list or queue, returns a new list/queue without the first
   item, for a vector, returns a new vector without the last item. If
@@ -1547,10 +1557,12 @@ Macro
 ([x seq])
   Returns a new seq where x is the first element and seq is
     the rest.">cons</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/conj" title="clojure.core/conj
-([coll x] [coll x &amp; xs])
+([] [coll] [coll x] [coll x &amp; xs])
   conj[oin]. Returns a new collection with the xs
-    'added'. (conj nil item) returns (item).  The 'addition' may
-    happen at different 'places' depending on the concrete type.">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/concat" title="clojure.core/concat
+    'added'. (conj nil item) returns (item).
+    (conj coll) returns coll. (conj) returns [].
+    The 'addition' may happen at different 'places' depending
+    on the concrete type.">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/concat" title="clojure.core/concat
 ([] [x] [x y] [x y &amp; zs])
   Returns a lazy seq representing the concatenation of the elements in the
 supplied colls.">concat</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/lazy-cat" title="clojure.core/lazy-cat
@@ -1640,10 +1652,12 @@ Macro
               <tr class="odd">
                 <td>'Change'</td>
                 <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/conj" title="clojure.core/conj
-([coll x] [coll x &amp; xs])
+([] [coll] [coll x] [coll x &amp; xs])
   conj[oin]. Returns a new collection with the xs
-    'added'. (conj nil item) returns (item).  The 'addition' may
-    happen at different 'places' depending on the concrete type.">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/concat" title="clojure.core/concat
+    'added'. (conj nil item) returns (item).
+    (conj coll) returns coll. (conj) returns [].
+    The 'addition' may happen at different 'places' depending
+    on the concrete type.">conj</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/concat" title="clojure.core/concat
 ([] [x] [x y] [x y &amp; zs])
   Returns a lazy seq representing the concatenation of the elements in the
 supplied colls.">concat</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/distinct" title="clojure.core/distinct
