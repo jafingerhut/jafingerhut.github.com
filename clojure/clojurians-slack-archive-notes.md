@@ -75,9 +75,8 @@ corresponding name of the channel to the query, e.g.
 
 As Clojurians Zulip has its own streams where people discuss Clojure
 (i.e. ones that are not copies of messages that were sent to
-Clojurians Slack), you can also search across _all_ public streams
-(note "streams:" instead of "stream:" here:
-- `streams:public "cannot be cast to class"`
+Clojurians Slack), you can also search across _all_ public streams:
+- `streams:public "cannot be cast to class"` (note "streams:" not "stream:" here)
 - link to results for this example search: [`streams:public "cannot be cast to class"`](https://clojurians.zulipchat.com/#narrow/streams/public/search/.22cannot.20be.20cast.20to.20class.22).
 
 Zulip's help page on advanced search is a good place to read about
