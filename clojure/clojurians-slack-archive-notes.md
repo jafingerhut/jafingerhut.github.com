@@ -173,13 +173,13 @@ article.
 
 IRC was the most popular on-line chat forum for Clojure for several
 years, and then the majority of people gradually changed their primary
-choice to Slack.  No one forced everyone to switch, and IRC is
-probably still used by at least a few people for Clojure discussion.
+choice to Slack.  No one forced everyone to switch, and IRC is still
+used by a few people for discussing Clojure.
 
 The Clojurians Slack channel #community-development is the most
 appropriate place on Slack to discuss this.  It has been discussed
-several times per year for N years, so it is not easy to come up with
-a novel idea in this area.
+several times per year for several years, so please realize that it is
+not trivial to come up with a novel idea in this area.
 
 
 # State of Clojure Survey results for ecosystem involvement
