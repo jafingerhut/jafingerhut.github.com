@@ -60,7 +60,7 @@ To see the original conversation that any of the found messages
 appeared in, do the following:
 - select the message (a thick border will appear around it)
 - click the topic (e.g. `slack-archive > beginners`)
-- Note: As of 2021-Jan-07, it seems that these steps sometimes gets
+- Note: As of 2021-Jan-07, it seems that these steps sometimes get
   you to the message in the context of its conversation, but sometimes
   you end up at a completely different message in the topic.  If you
   experience this, it is not only you it happens for.  This might be a
@@ -76,11 +76,12 @@ corresponding name of the channel to the query, e.g.
 As Clojurians Zulip has its own streams where people discuss Clojure,
 you can also search across _all_ public streams (note "streams:"
 instead of "stream:" here:
-- `streams:public "cannot be cast to class"
+- `streams:public "cannot be cast to class"`
 - link to results for this example search: [`streams:public "cannot be cast to class"`](https://clojurians.zulipchat.com/#narrow/streams/public/search/.22cannot.20be.20cast.20to.20class.22).
 
-Zulip's help page on advanced search is probably a good place to read about more
-features: https://clojurians.zulipchat.com/help/search-for-messages
+Zulip's help page on advanced search is a good place to read about
+more features:
+https://clojurians.zulipchat.com/help/search-for-messages
 
 
 # How to start logging a Clojurians Slack channel
