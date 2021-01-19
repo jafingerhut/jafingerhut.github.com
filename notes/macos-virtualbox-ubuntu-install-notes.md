@@ -383,10 +383,20 @@ This is the comment that I found helped:
 
 # Shrinking a guest OS disk image
 
+Currently these options are covered here, although some of the links
+to other articles may cover more cases:
+
++ guest OS: Linux
++ host OS: macOS, Windows 10
+
 A StackOverflow Q&A on compacting/shrinking a guest OS VDI file
 system:
 
     https://superuser.com/questions/529149/how-to-compact-virtualboxs-vdi-file-size
+
+Another article that might cover cases not included here:
+
+    https://www.howtogeek.com/312883/how-to-shrink-a-virtualbox-virtual-machine-and-free-up-disk-space/
 
 The `dd` command will eventually fill up the disk with a file
 containing nothing but 0 bytes.  Then delete it.
@@ -394,9 +404,21 @@ containing nothing but 0 bytes.  Then delete it.
     dd if=/dev/zero of=/var/tmp/bigemptyfile bs=4096k
     rm /var/tmp/bigemptyfile
 
-After shutting down the VM, run this command on the Mac OS host:
+After shutting down the VM, run this command on a macOS host:
 
     VBoxManage modifymedium --compact /path/to/thedisk.vdi
+
+On a Windows 10 host with VirtualBox stored in the default directory
+`C:\Program Files\Oracle\VirtualBox`, open a `cmd.exe` window by
+entering `cmd` in start box search, and pressing enter.  Then in that
+window:
+
+    cd "C:\Program Files\Oracle\VirtualBox"
+    VBoxManage list hdds
+
+    # Replace the path name inside double quotes in the example
+    # command below with the path to your guest OS's .vdi file
+    VBoxManage modifymedium disk "C:\path\to\disk.vdi" --compact
 
 
 # Sample sshfs commands
