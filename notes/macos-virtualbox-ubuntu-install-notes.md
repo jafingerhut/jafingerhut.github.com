@@ -1,21 +1,4 @@
-# Notes on installing Ubuntu guest VMs in VirtualBox on a macOS host
-
-2017-Apr-07: On Mac OS X 10.11.6 system,
-installed VirtualBox 5.1.18 r114002,
-and created new Ubuntu 14.04.1 64-bit VM
-
-Update from 2017-Nov-07:
-On macOS Sierra 10.12.6 system,
-installed VirtualBox 5.1.30 r118389,
-and created Ubuntu 16.04.3 64-bit desktop VM
-
-Update from 2018-Apr-20:
-On macOS Sierra 10.12.6 system,
-installed VirtualBox 5.2.8 r121009,
-and created Ubuntu 16.04.4 64-bit desktop VM
-and also an Ubuntu 14.04.5 64-bit desktop VM (using VirtualBox CD
-image to add guest additions)
-
+# Notes on installing Ubuntu guest VMs in VirtualBox on a macOS or Windows 10 host
 
 # General notes on VM settings
 
@@ -233,6 +216,10 @@ if they have already been installed in the VM.
 
 ## Approach installing virtualbox-guest-* packages
 
+Note: As of 2021-Feb, I have not used the instructions in this section
+for over a year.  The previous section instructions have worked
+reliably for a long time now.
+
 I was able to get host/guest copy and paste working using this
 approach for Ubuntu 14.04.1 guest OS.  See above for steps for an
 Ubuntu 16.04 guest OS.
@@ -336,6 +323,79 @@ your home directory, e.g.:
 ```bash
 % ln -s /media/sf_p4-docs/ ~/p4-docs
 ```
+
+## Removing Emacs lock files on Windows 10 host OS
+
+When I share a folder from a Windows 10 host OS with an Ubuntu Linux
+guest VM from VirtualBox, and then use Emacs in the Ubuntu guest VM to
+edit text files, it often creates files whose names are the same as
+the original, in the same directory, except the name is prefixed with
+`.#`
+
+These files contain one line of text that looks like this:
+
+```
+andy@linwin-vm.1820:1600715087
+```
+
+There is a way to prevent Emacs from creating them, but sometimes I
+want to have multiple guest VMs running, either at the same time, or
+taking turns editing the same text files, and such lock files may help
+me accidentally clobber such changes.
+
+https://www.reddit.com/r/emacs/comments/29zm3q/how_to_get_rid_of_filename_files_that_emacs_is/
+
+The Ubuntu VMs do not seem to have permission to delete such files.
+Attempting so fails with error messages like those below:
+
+```bash
+$ rm .#readme-delete-dot-sharp-emacs-lock-files.txt
+rm: remove regular file '.#readme-delete-dot-sharp-emacs-lock-files.txt'? y
+rm: cannot remove '.#readme-delete-dot-sharp-emacs-lock-files.txt': Operation not permitted
+
+$ \rm -f .#readme-delete-dot-sharp-emacs-lock-files.txt
+rm: cannot remove '.#readme-delete-dot-sharp-emacs-lock-files.txt': Operation not permitted
+```
+
+I can delete them from Windows Explorer in Windows 10, but if there
+are many such files, in many directories, it is tedious to do it that
+way.
+
+I can delete them from a `cmd.exe` command prompt in the Windows 10
+host machine.  The only way I have found so far that succeeds is like
+this:
+
+```cmd.exe
+C:\Users\jfingerh> cd "OneDrive - Intel Corporation"
+C:\Users\jfingerh\OneDrive - Intel Corporation> cd Documents
+C:\Users\jfingerh\OneDrive - Intel Corporation\Documents> cd p4-docs
+C:\Users\jfingerh\OneDrive - Intel Corporation\Documents\p4-docs>
+```
+
+To delete them in only the current directory, use the command below.
+The "/f" option means to force the deletion:
+
+```
+del /f .#*
+```
+
+To delete them in the current directory and all subdirectories, use
+the command below.  The "/s" option means to delete files from all
+subdirectories, too.
+
+```
+del /f /s .#*
+```
+
+You can also delete all Emacs auto-save files, with names ending in
+the "~" character, using the similar command:
+
+```
+del /f /s *~
+```
+
+I have permission to delete those files from the Ubuntu VMs, though,
+so my usual Linux commands work there.
 
 
 # Customizations that I personally like to make on some Ubuntu VMs
@@ -546,61 +606,6 @@ while you are connected via VPN, the host only network adapter will
 not be able to send or receive packets between the host and the guest.
 Bummer.  Shared folders seems like a better way to go, then, for
 sharing files on the host file system with the guest OS.
-
-
-# Notes on VirtualBox and VMware Fusion on OSX 10.6.8 Snow Leopard
-
-The only reason for this section is that I have an older MacPro model
-MacPro2,1 that cannot run any more recent versions of OSX than 10.6.8
-(maybe 10.7.x, maybe not).  It isn't the fastest machine as of 2017,
-but it does have 32 GB of RAM, which is still the most RAM in one
-machine I own.  I can run Linux on it as the host OS, but I am curious
-to know about running recent versions of Linux as a guest VM.
-
-I have a copy of VMware Fusion 3.1.4 that I bought years ago, and
-installed there.  I found recently that when upgrading Ubuntu 16.04 to
-the most recent version as of Oct 2017, the GUI no longer worked.
-Only console-based access was available in the VM, which is annoying.
-
-Error message I see during boot of guest before GUI fails:
-
-    nsc-ircc, Wrong chip version 00
-
-
-I believe that VirtualBox 4.3.40 is the latest version supported on
-OSX 10.6.8 hosts.  I have a copy of that installed, and I can run the
-most recent 2017-Oct versions of Ubuntu 16.04 in it, but with at most
-2 GB of guest OS RAM.  This is usable, but I'd like to do better.  I
-have tried it with 2.5 GB and 3 GB of guest OS RAM, and the Ubuntu
-install steps failed with an error from VirtualBox about not enough
-memory being available on the host OS.  There is certainly enough
-physical RAM, so this might be some kind of limitation with virtual
-memory in that version of VirtualBox.  Not sure why that happens.
-
-I did a little bit of Google searching for the error message, and some
-people experienced problems on 64-bit Windows host OS's with guest
-Linux VM, when the host had a particular range of versions of the
-Google Chrome browser, which installed some 64-bit application that
-may have been preventing VirtualBox from allocating as much physically
-contiguous RAM as it wanted.  That is just a guess from reading the
-descriptions of the problem briefly.
-
-
-
-I found a VMware Fusion page describing which versions of VMware
-Fusion are supported on which versions of Mac OSX, and found that
-VMware Fusion 5 is the latest one supported, and perhaps only for OSX
-10.6.8 (i.e., no earlier versions of OSX 10.6.x supported).
-
-I would have tried that version of VMware Fusion on that old Mac to
-see if it allows me to run the latest versions of Ubuntu 16.04, with
-GUI, and relatively large guest OS memory (e.g. 8 GB or maybe even
-more), but I do not own a copy, and I don't think it is easy in 2017
-to get a free trial copy (and maybe not even to buy one, since it is
-fairly old).
-
-
-Of course I can also just run Ubuntu as the host OS, too.
 
 
 # Mounting a VirtualBox VDI file containing an Ubuntu disk image on a newer Ubuntu VM
