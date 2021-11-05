@@ -214,6 +214,34 @@ Following the instructions above re-installs the guest additions even
 if they have already been installed in the VM.
 
 
+### Modifications for installing Guest Additions via VirtualBox CD image on Ubuntu Server
+
+You still need to install the `build-essential` package, as above.
+You can still go to the Devices menu of VirtualBox and choose the item
+"Insert Guest Additions CD image...", as above.
+
+Then to see its contents:
+
+```bash
+sudo mkdir /media/cdrom
+sudo mount /dev/cdrom /media/cdrom
+ls /media/cdrom
+```
+
+To start the installer:
+
+```bash
+sudo /media/cdrom/VBoxLinuxAdditions.run
+```
+
+Reboot for the changes to take effect:
+
+```bash
+sudo shutdown -r now
+```
+
+
+
 ## Approach installing virtualbox-guest-* packages
 
 Note: As of 2021-Feb, I have not used the instructions in this section
@@ -478,7 +506,14 @@ window:
 
     # Replace the path name inside double quotes in the example
     # command below with the path to your guest OS's .vdi file
-    VBoxManage modifymedium disk "C:\path\to\disk.vdi" --compact
+    VBoxManage modifymedium disk --compact "C:\path\to\disk.vdi"
+
+Another way to do it is from within a `bash` terminal window, e.g. one
+installed via the Windows version of Git.
+
+    cd VirtualBox\ VMs
+    cd Ubuntu\ 18.04\ SDE\ 9.4.0
+    du -sh . ; /c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe modifymedium disk --compact Ubuntu\ 18.04\ SDE\ 9.4.0.vdi
 
 
 # Sample sshfs commands
