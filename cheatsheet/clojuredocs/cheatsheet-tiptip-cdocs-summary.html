@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Clojure Cheat Sheet (Clojure 1.7 - 1.10, sheet v52)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.8 - 1.11, sheet v53)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -319,7 +319,13 @@ See also: inc, dec'</pre>">inc'</a> <a href="https://clojuredocs.org/clojure_cor
   See also: dec
 
 2 examples totaling 17 lines on Sun Jan 23 2022
-See also: dec, inc'</pre>">dec'</a></code></td>
+See also: dec, inc'</pre>">dec'</a> (1.11) <a href="https://clojuredocs.org/clojure_core/clojure.core/abs" class="tooltip" title="<pre>clojure.core/abs
+([a])
+  Returns the absolute value of a.
+  If a is Long/MIN_VALUE =&gt; Long/MIN_VALUE
+  If a is a double and zero =&gt; +0.0
+  If a is a double and ##Inf or ##-Inf =&gt; ##Inf
+  If a is a double and ##NaN =&gt; ##NaN</pre>">abs</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Compare</td>
@@ -564,7 +570,11 @@ See also: pos-int?, nat-int?, int?</pre>">neg-int?</a> <a href="https://clojured
   Return true if x is a positive fixed precision integer
 
 1 example with 25 lines on Sun Jan 23 2022
-See also: neg-int?, nat-int?, int?</pre>">pos-int?</a></code></td>
+See also: neg-int?, nat-int?, int?</pre>">pos-int?</a> (1.11) <a href="https://clojuredocs.org/clojure_core/clojure.core/NaN_q" class="tooltip" title="<pre>clojure.core/NaN?
+([num])
+  Returns true if num is NaN, else false</pre>">NaN?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/infinite_q" class="tooltip" title="<pre>clojure.core/infinite?
+([num])
+  Returns true if num is negative or positive infinity, else false</pre>">infinite?</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Random</td>
@@ -687,7 +697,8 @@ See also: printf, clojure.pprint/cl-format, clojure.pprint/print-table</pre>">fo
 3 examples totaling 29 lines on Sun Jan 23 2022
 See also: counted?</pre>">count</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/get" class="tooltip" title="<pre>clojure.core/get
 ([map key] [map key not-found])
-  Returns the value mapped to key, not-found or nil if key not present.
+  Returns the value mapped to key, not-found or nil if key not present
+  in associative collection, set, string, array, or ILookup instance.
 
 9 examples totaling 103 lines on Sun Jan 23 2022
 See also: map-indexed, get-in, find, select-keys, nth</pre>">get</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/subs" class="tooltip" title="<pre>clojure.core/subs
@@ -723,13 +734,14 @@ See also: split-at, split-with, interpose, apply</pre>">join</a> <a href="https:
 4 examples totaling 42 lines on Sun Jan 23 2022</pre>">escape</a> <a href="https://clojuredocs.org/clojure_core/clojure.string/split" class="tooltip" title="<pre>clojure.string/split
 ([s re] [s re limit])
   Splits string on a regular expression.  Optional argument limit is
-  the maximum number of splits. Not lazy. Returns vector of the splits.
+  the maximum number of parts. Not lazy. Returns vector of the parts.
+  Trailing empty strings are not returned - pass limit of -1 to return all.
 
 8 examples totaling 138 lines on Sun Jan 23 2022
 See also: subs, clojure.string/replace, re-seq,
 clojure.string/split-lines, clojure.string/trim, clojure.string/join</pre>">split</a> <a href="https://clojuredocs.org/clojure_core/clojure.string/split-lines" class="tooltip" title="<pre>clojure.string/split-lines
 ([s])
-  Splits s on \n or \r\n.
+  Splits s on \n or \r\n. Trailing empty lines are not returned.
 
 3 examples totaling 12 lines on Sun Jan 23 2022
 See also: clojure.string/split</pre>">split-lines</a> <a href="https://clojuredocs.org/clojure_core/clojure.string/replace" class="tooltip" title="<pre>clojure.string/replace
@@ -794,7 +806,7 @@ clojure.string/re-quote-replacement</pre>">replace-first</a> <a href="https://cl
 ([s])
   Returns s with its characters reversed.
 
-2 examples totaling 17 lines on Sun Jan 23 2022</pre>">reverse</a> (1.8) <a href="https://clojuredocs.org/clojure_core/clojure.string/index-of" class="tooltip" title="<pre>clojure.string/index-of
+2 examples totaling 17 lines on Sun Jan 23 2022</pre>">reverse</a> <a href="https://clojuredocs.org/clojure_core/clojure.string/index-of" class="tooltip" title="<pre>clojure.string/index-of
 ([s value] [s value from-index])
   Return index of value (string or char) in s, optionally searching
   forward from from-index. Return nil if value not found.
@@ -806,7 +818,24 @@ See also: clojure.string/last-index-of</pre>">index-of</a> <a href="https://cloj
   searching backward from from-index. Return nil if value not found.
 
 1 example with 21 lines on Sun Jan 23 2022
-See also: clojure.string/index-of</pre>">last-index-of</a></code></td>
+See also: clojure.string/index-of</pre>">last-index-of</a> (1.11) (clojure.core/) <a href="https://clojuredocs.org/clojure_core/clojure.core/parse-boolean" class="tooltip" title="<pre>clojure.core/parse-boolean
+([s])
+  Parse strings &quot;true&quot; or &quot;false&quot; and return a boolean, or nil if invalid</pre>">parse-boolean</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/parse-double" class="tooltip" title="<pre>clojure.core/parse-double
+([s])
+  Parse string with floating point components and return a Double value,
+  or nil if parse fails.
+
+  Grammar:
+https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html#valueOf-java.lang.String-</pre>">parse-double</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/parse-long" class="tooltip" title="<pre>clojure.core/parse-long
+([s])
+  Parse string of decimal digits with optional leading -/+ and return a
+  Long value, or nil if parse fails</pre>">parse-long</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/parse-uuid" class="tooltip" title="<pre>clojure.core/parse-uuid
+([s])
+  Parse a string representing a UUID and return a java.util.UUID instance,
+  or nil if parse fails.
+
+  Grammar:
+https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html#toString--</pre>">parse-uuid</a></code></td>
               </tr>
               <tr class="odd">
                 <td><a href="http://www.regular-expressions.info">Regex</a></td>
@@ -981,7 +1010,7 @@ See also: str</pre>">string?</a> (clojure.string/) <a href="https://clojuredocs.
 
 3 examples totaling 39 lines on Sun Jan 23 2022
 See also: clojure.string/trim, clojure.string/triml,
-clojure.string/trimr</pre>">blank?</a> (1.8) <a href="https://clojuredocs.org/clojure_core/clojure.string/starts-with_q" class="tooltip" title="<pre>clojure.string/starts-with?
+clojure.string/trimr</pre>">blank?</a> <a href="https://clojuredocs.org/clojure_core/clojure.string/starts-with_q" class="tooltip" title="<pre>clojure.string/starts-with?
 ([s substr])
   True if s starts with substr.
 
@@ -1275,7 +1304,7 @@ See also: seq, sequential?, vector?, coll?, list?, map?, set?, seqable?</pre>">s
 ([x])
   Returns true if x is a record
 
-1 example with 30 lines on Sun Jan 23 2022</pre>">record?</a> (1.8) <a href="https://clojuredocs.org/clojure_core/clojure.core/map-entry_q" class="tooltip" title="<pre>clojure.core/map-entry?
+1 example with 30 lines on Sun Jan 23 2022</pre>">record?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/map-entry_q" class="tooltip" title="<pre>clojure.core/map-entry?
 ([x])
   Return true if x is a map entry
 
@@ -1427,7 +1456,8 @@ See also: filter, mapv</pre>">filterv</a> (clojure.core.rrb-vector/) <a href="ht
 2 examples totaling 15 lines on Sun Jan 23 2022
 See also: first, second, nthnext, get, take-nth, nthrest, rand-nth</pre>">nth</a>  my-vec idx)</code> <a href="https://clojuredocs.org/clojure_core/clojure.core/get" class="tooltip" title="<pre>clojure.core/get
 ([map key] [map key not-found])
-  Returns the value mapped to key, not-found or nil if key not present.
+  Returns the value mapped to key, not-found or nil if key not present
+  in associative collection, set, string, array, or ILookup instance.
 
 9 examples totaling 103 lines on Sun Jan 23 2022
 See also: map-indexed, get-in, find, select-keys, nth</pre>">get</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/peek" class="tooltip" title="<pre>clojure.core/peek
@@ -1598,7 +1628,8 @@ used only if elements are densely
                 <td>Examine</td>
                 <td><code><code>(my-set item)</code> &rarr; <code>( <a href="https://clojuredocs.org/clojure_core/clojure.core/get" class="tooltip" title="<pre>clojure.core/get
 ([map key] [map key not-found])
-  Returns the value mapped to key, not-found or nil if key not present.
+  Returns the value mapped to key, not-found or nil if key not present
+  in associative collection, set, string, array, or ILookup instance.
 
 9 examples totaling 103 lines on Sun Jan 23 2022
 See also: map-indexed, get-in, find, select-keys, nth</pre>">get</a>  my-set item)</code> <a href="https://clojuredocs.org/clojure_core/clojure.core/contains_q" class="tooltip" title="<pre>clojure.core/contains?
@@ -1798,12 +1829,14 @@ default-comparator.</pre>">ordering-map</a> (clojure.data.int-map/) <a href="htt
                 <td>Examine</td>
                 <td><code><code>(my-map k)</code> &rarr; <code>( <a href="https://clojuredocs.org/clojure_core/clojure.core/get" class="tooltip" title="<pre>clojure.core/get
 ([map key] [map key not-found])
-  Returns the value mapped to key, not-found or nil if key not present.
+  Returns the value mapped to key, not-found or nil if key not present
+  in associative collection, set, string, array, or ILookup instance.
 
 9 examples totaling 103 lines on Sun Jan 23 2022
 See also: map-indexed, get-in, find, select-keys, nth</pre>">get</a>  my-map k)</code> also <code>(:key my-map)</code> &rarr; <code>( <a href="https://clojuredocs.org/clojure_core/clojure.core/get" class="tooltip" title="<pre>clojure.core/get
 ([map key] [map key not-found])
-  Returns the value mapped to key, not-found or nil if key not present.
+  Returns the value mapped to key, not-found or nil if key not present
+  in associative collection, set, string, array, or ILookup instance.
 
 9 examples totaling 103 lines on Sun Jan 23 2022
 See also: map-indexed, get-in, find, select-keys, nth</pre>">get</a>  my-map :key)</code> <a href="https://clojuredocs.org/clojure_core/clojure.core/get-in" class="tooltip" title="<pre>clojure.core/get-in
@@ -1908,7 +1941,20 @@ See also: clojure.set/rename</pre>">rename-keys</a> <a href="https://clojuredocs
 ([m])
   Returns the map with the vals mapped to the keys.
 
-3 examples totaling 40 lines on Sun Jan 23 2022</pre>">map-invert</a> GitHub: <a href="https://github.com/weavejester/medley">Medley</a></code></td>
+3 examples totaling 40 lines on Sun Jan 23 2022</pre>">map-invert</a> (1.11) (clojure.core/) <a href="https://clojuredocs.org/clojure_core/clojure.core/update-keys" class="tooltip" title="<pre>clojure.core/update-keys
+([m f])
+  m f =&gt; {(f k) v ...}
+
+  Given a map m and a function f of 1-argument, returns a new map whose
+  keys are the result of applying f to the keys of m, mapped to the
+  corresponding values of m.
+  f must return a unique key for each key of m, else the behavior is undefined.</pre>">update-keys</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/update-vals" class="tooltip" title="<pre>clojure.core/update-vals
+([m f])
+  m f =&gt; {k (f v) ...}
+
+  Given a map m and a function f of 1-argument, returns a new map where the keys
+of m
+  are mapped to result of applying f to the corresponding values of m.</pre>">update-vals</a> GitHub: <a href="https://github.com/weavejester/medley">Medley</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Ops</td>
@@ -4635,12 +4681,14 @@ See also: tap>, add-tap</pre>">remove-tap</a></code></td>
   (fn name? ([params*] exprs*) +)
 ([&amp; sigs])
 Special Form
-  params =&gt; positional-params* , or positional-params* &amp; next-param
+  params =&gt; positional-params*, or positional-params* &amp; rest-param
   positional-param =&gt; binding-form
-  next-param =&gt; binding-form
-  name =&gt; symbol
+  rest-param =&gt; binding-form
+  binding-form =&gt; name, or destructuring-form
 
-  Defines a function
+  Defines a function.
+
+  See https://clojure.org/reference/special_forms#fn for more information
 
   Please see http://clojure.org/special_forms#fn
 Spec
@@ -4974,6 +5022,7 @@ See also: extend, extend-protocol, defprotocol</pre>">extend-type</a> <code>nil 
                 <td><code><code>(</code> <a href="https://clojuredocs.org/clojure_core/clojure.core/reify" class="tooltip" title="<pre>clojure.core/reify
 ([&amp; opts+specs])
 Macro
+  reify creates an object implementing a protocol or interface.
   reify is a macro with the following structure:
 
  (reify options* specs*)
@@ -4994,8 +5043,6 @@ Macro
   interface declarations.  Note also that recur calls to the method
   head should *not* pass the target object, it will be supplied
   automatically and can not be substituted.
-
-  The return type can be indicated by a type hint on the method name,
 
 [ documentation truncated.  Click link for the rest. ]
 
@@ -6287,10 +6334,15 @@ Special Form
 ([bindings &amp; body])
 Special Form
   binding =&gt; binding-form init-expr
+  binding-form =&gt; name, or destructuring-form
+  destructuring-form =&gt; map-destructure-form, or seq-destructure-form
 
   Evaluates the exprs in a lexical context in which the symbols in
   the binding-forms are bound to their respective init-exprs or parts
   therein.
+
+  See https://clojure.org/reference/special_forms#binding-forms for
+  more information about destructuring.
 
   Please see http://clojure.org/special_forms#let
 Spec
@@ -6332,12 +6384,14 @@ with-redefs-fn, set!, var-set, var-get, with-local-vars</pre>">var</a> <a href="
   (fn name? ([params*] exprs*) +)
 ([&amp; sigs])
 Special Form
-  params =&gt; positional-params* , or positional-params* &amp; next-param
+  params =&gt; positional-params*, or positional-params* &amp; rest-param
   positional-param =&gt; binding-form
-  next-param =&gt; binding-form
-  name =&gt; symbol
+  rest-param =&gt; binding-form
+  binding-form =&gt; name, or destructuring-form
 
-  Defines a function
+  Defines a function.
+
+  See https://clojure.org/reference/special_forms#fn for more information
 
   Please see http://clojure.org/special_forms#fn
 Spec
@@ -6426,10 +6480,15 @@ Special Form
 ([bindings &amp; body])
 Special Form
   binding =&gt; binding-form init-expr
+  binding-form =&gt; name, or destructuring-form
+  destructuring-form =&gt; map-destructure-form, or seq-destructure-form
 
   Evaluates the exprs in a lexical context in which the symbols in
   the binding-forms are bound to their respective init-exprs or parts
   therein.
+
+  See https://clojure.org/reference/special_forms#binding-forms for
+  more information about destructuring.
 
   Please see http://clojure.org/special_forms#let
 Spec
@@ -6442,12 +6501,14 @@ See also: letfn, if-let, fn, for</pre>">let</a> <a href="https://clojuredocs.org
   (fn name? ([params*] exprs*) +)
 ([&amp; sigs])
 Special Form
-  params =&gt; positional-params* , or positional-params* &amp; next-param
+  params =&gt; positional-params*, or positional-params* &amp; rest-param
   positional-param =&gt; binding-form
-  next-param =&gt; binding-form
-  name =&gt; symbol
+  rest-param =&gt; binding-form
+  binding-form =&gt; name, or destructuring-form
 
-  Defines a function
+  Defines a function.
+
+  See https://clojure.org/reference/special_forms#fn for more information
 
   Please see http://clojure.org/special_forms#fn
 Spec
@@ -8734,7 +8795,11 @@ See also: clojure.zip/zipper</pre>">end?</a></code></td>
   which has the keys :tag, :attrs, and :content. and accessor fns tag,
   attrs, and content. Other parsers can be supplied by passing
   startparse, a fn taking a source and a ContentHandler and returning
-  a parser
+  a parser.
+
+  Prior to 1.11, used startparse-sax by default. As of 1.11, uses
+  startparse-sax-safe, which disables XXE (XML External Entity)
+  processing. Pass startparse-sax to revert to prior behavior.
 
 2 examples totaling 46 lines on Sun Jan 23 2022
 See also: clojure.xml/emit-element, with-out-str, clojure.xml/element</pre>">clojure.xml/parse</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/xml-seq" class="tooltip" title="<pre>clojure.core/xml-seq
@@ -8886,7 +8951,12 @@ See also: *clojure-version*</pre>">clojure-version</a> <a href="https://clojured
   A sequence of the supplied command line arguments, or nil if
   none were supplied
 
-1 example with 18 lines on Sun Jan 23 2022</pre>">*command-line-args*</a></code></td>
+1 example with 18 lines on Sun Jan 23 2022</pre>">*command-line-args*</a> (1.11) <a href="https://clojuredocs.org/clojure_core/clojure.core/random-uuid" class="tooltip" title="<pre>clojure.core/random-uuid
+([])
+  Returns a pseudo-randomly generated java.util.UUID instance (i.e. type 4).
+
+  See:
+https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html#randomUUID--</pre>">random-uuid</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Browser / Shell</td>
