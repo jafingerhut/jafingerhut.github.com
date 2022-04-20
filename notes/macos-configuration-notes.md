@@ -23,7 +23,7 @@ Icons that I keep in the dock, from top to bottom:
 Top right of menu bar at top of screen:
 
 + iStat menus showing CPU, MEM, SSD, Network, Sensors
-+ DropBox (when it was free to use)
++ DropBox
 + ClamXAV
 + Default Folder X
 + Karabiner Elements (see below)
@@ -38,7 +38,7 @@ Login Items:
 
 + Activity Monitor
 + Caffeine
-+ DropBox (when it was free to use)
++ DropBox
 + Default Folder X
 + Karabiner-Elements (see below)
 
