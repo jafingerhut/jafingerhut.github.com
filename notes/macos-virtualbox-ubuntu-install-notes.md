@@ -22,13 +22,13 @@ default of 1.  The guest seems to definitely get benefits from having
 at least 2 in many common use scenarios.
 
 Display -> Screen -> Video Memory: The default size is 16 MB.  I plan
-to consistently change that to 32 MB going forward.  I have often
-experienced issues where an Ubuntu Linux guest VM has the screen
-remain black after booting is nearly complete, but before showing the
-desktop GUI.  Several VMs that had that issue worked normally after I
-changed their Video Memory to 32 MB.  If that is the root cause and
-fix for that issue, then good to make that change when creating a new
-guest VM.
+to consistently change that to 32 MB going forward, or perhaps to 64
+MB for Ubuntu 22.04 VMs.  I have often experienced issues where an
+Ubuntu Linux guest VM has the screen remain black after booting is
+nearly complete, but before showing the desktop GUI.  Several VMs that
+had that issue worked normally after I changed their Video Memory to
+32 MB.  If that is the root cause and fix for that issue, then good to
+make that change when creating a new guest VM.
 
 
 # Ubuntu Linux Desktop settings I like
@@ -88,11 +88,23 @@ Same settings changes as for Ubuntu 18.04 Desktop Linux
 
 Settings -> Appearance: reduce Icon size from default 48 to 24 pixels
 
-Settings -> Privacy -> Screen Lock -> Automatic Screen Lock: change to
+Settings -> Privacy -> Screen -> Automatic Screen Lock: change to
 Off.  Same reason as for "Security & Privacy" settings for Ubuntu
 16.04, but it has been moved to a different "place" in Ubuntu 18.04.
 
 Settings -> Power -> Power Saving -> change Blank screen to "Never".
+
+
+## Ubuntu 22.04 Desktop Linux
+
+Settings -> Appearance: reduce Icon size from default 48 to 24 pixels
+
+Settings -> Privacy -> Screen Lock -> Automatic Screen Lock: change to
+Off.  Same reason as for "Security & Privacy" settings for Ubuntu
+16.04, but it has been moved to a different "place" in Ubuntu 18.04.
+
+Settings -> Power -> Power Saving Options -> change Screen Blank to
+"Never".
 
 
 ## Debian 8 notes
