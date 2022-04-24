@@ -1,6 +1,14 @@
 # Attempts to configure Emacs to use a Clojure LSP
 
 
+## Some possibly useful links
+
+An article about a possible Elisp definition in Emacs for "Peek
+definition" like VSCode has:
+
++ https://tuhdo.github.io/emacs-frame-peek.html#:~:text=In%20many%20IDEs%2C%20peek%20definition,without%20leaving%20the%20current%20buffer.
+
+
 ## Try 1, failed
 
 Ubuntu 20.04 desktop Linux system.
@@ -26,6 +34,10 @@ I tried:
 but saw this error in the minibuffer:
 
     Symbol's function definition is void: -compose
+
+See Try 4 below, which succeeded with a modified version of my
+dotfiles repo, after updating clojure-mode and a few other packages to
+the most recent versions available on 2022-Apr-24.
 
 
 ## Try 2, successful
@@ -346,3 +358,120 @@ treemacs-20220411.1944
 
 The rest of the steps from Try 2 above went as well as they did for
 Try 2.
+
+
+## Try 4, successful
+
+Ubuntu 20.04 desktop Linux system.
+
+I started with the emacs-gtk package PLUS the `.emacs.d` file
+installed by my dotfiles repo in
+https://github.com/jafingerhut/dotfiles, which is quite a lot of
+non-default GNU Emacs configuration.
+
+Then I updated several of my Emacs packages in my dotfiles repo, on a
+branch named '2022-apr-several-emacs-package-updates' in case I messed
+anything up.
+
+On examining this set of code that I made my entire `.emacs.d/init.el`
+file in Try 3 above:
+
+```
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(package-initialize)
+
+(setq package-selected-packages '(clojure-mode lsp-mode lsp-treemacs flycheck))
+
+(when (cl-find-if-not #'package-installed-p package-selected-packages)
+  (package-refresh-contents)
+  (mapc #'package-install package-selected-packages))
+
+(add-hook 'clojure-mode-hook 'lsp)
+(add-hook 'clojurescript-mode-hook 'lsp)
+(add-hook 'clojurec-mode-hook 'lsp)
+
+(setq gc-cons-threshold (* 100 1024 1024)
+      read-process-output-max (* 1024 1024)
+      treemacs-space-between-root-nodes nil
+      company-minimum-prefix-length 1
+      lsp-lens-enable t
+      lsp-signature-auto-activate nil
+      ; lsp-enable-indentation nil ; uncomment to use cider indentation instead of lsp
+      ; lsp-enable-completion-at-point nil ; uncomment to use cider completion instead of lsp
+      )
+```
+
+I noticed that the first 3 lines are near the beginning of the
+dotfiles version of my `init.el` file already, so I don't need to add
+those again.
+
+I already have the package clojure-mode installed.
+
+I manually evaluated these expressions in my `*scratch*` buffer of a
+live Emacs session:
+
+    (package-install 'lsp-mode)
+
+This added the following packages to my `.emacs.d/elpa` directory:
+
+    f-20220405.1534
+    ht-20210119.741
+    lsp-mode-20220422.2059
+    lv-20200507.1518
+    s-20210616.619
+
+When I evaluated this:
+
+    (package-install 'lsp-treemacs)
+
+it caused these packages to be installed in my `.emacs.d/elpa`
+directory, over and above the ones listed above:
+
+    ace-window-20200606.1259/
+    cfrs-20220129.1149/
+    hydra-20220102.803/
+    lsp-treemacs-20220328.625/
+    pfuture-20211229.1513/
+    posframe-20220124.859/
+    treemacs-20220411.1944/
+
+When I evaluated this:
+
+    (package-install 'flycheck)
+
+it caused these packages to be installed in my `.emacs.d/elpa`
+directory, over and above the ones listed above:
+
+    flycheck-20220328.1518/
+
+I already had these lines in my personal `init.el` file:
+
+    (require 'clojure-mode)
+    (add-hook 'clojure-mode-hook
+              (lambda ()
+                (setq indent-tabs-mode nil)
+                (viper-mode)))
+
+I added this line from the above, immediately after the last of those
+lines:
+
+    (add-hook 'clojure-mode-hook 'lsp)
+    (add-hook 'clojurescript-mode-hook 'lsp)
+    (add-hook 'clojurec-mode-hook 'lsp)
+
+    (setq gc-cons-threshold (* 100 1024 1024)
+          read-process-output-max (* 1024 1024)
+          treemacs-space-between-root-nodes nil
+          company-minimum-prefix-length 1
+          lsp-lens-enable t
+          lsp-signature-auto-activate nil
+          ; lsp-enable-indentation nil ; uncomment to use cider indentation instead of lsp
+          ; lsp-enable-completion-at-point nil ; uncomment to use cider completion instead of lsp
+          )
+
+Then I quit and restarted my Emacs session.
+
+Everything from Try 2 worked here as well.  Cool.  I suspect that
+probably the reason that Try 1 above failed was because I had a 3 year
+old version of clojure-mode installed via my dotfiles.
