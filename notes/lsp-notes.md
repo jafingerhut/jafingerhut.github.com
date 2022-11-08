@@ -453,8 +453,10 @@ I already had these lines in my personal `init.el` file:
                 (setq indent-tabs-mode nil)
                 (viper-mode)))
 
-I added this line from the above, immediately after the last of those
-lines:
+I added the following text, copied from the last part of the big block
+of recommended `init.el` code above, and put it in my dotfiles
+`init.el` immediately after the `(add-hook 'clojure-mode-hook ...)`
+expression that it currently contains:
 
     (add-hook 'clojure-mode-hook 'lsp)
     (add-hook 'clojurescript-mode-hook 'lsp)
