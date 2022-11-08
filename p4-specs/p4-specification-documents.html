@@ -3,6 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>P4 Specification Documents</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
     <h1 dir="auto">Test page of links to P4 spec documents</h1>
@@ -11,6 +12,19 @@
       <li>Version 1.2.3 [ <a href="https://p4.org/p4-spec/docs/P4-16-v-1.2.3.html" rel="nofollow">HTML</a> | <a href="https://p4.org/p4-spec/docs/P4-16-v1.2.3.pdf" rel="nofollow">PDF</a> ] (July 2022)</li>
       <li>Bad: Working draft [ <a href="https://p4.org/p4-spec/docs/P4-16-working-spec.html" rel="nofollow">HTML</a> | <a href="https://p4.org/p4-spec/docs/P4-16-working-spec.pdf" rel="nofollow">PDF</a> ] (bad links copied from 2022-Nov-03 version of p4.org specs page)</li>
       <li>Good: Working draft [ <a href="https://raw.githack.com/p4lang/p4-spec/gh-pages/docs/P4-16-working-spec.html" rel="nofollow">HTML</a> | <a href="https://raw.githack.com/p4lang/p4-spec/gh-pages/docs/P4-16-working-spec.pdf" rel="nofollow">PDF</a> ] (using raw.githack.com service)</li>
+      <li>Good? Working draft [
+	HTML-before-script
+	<script>
+	  $(document).ready(function() {
+	      $.get("https://raw.githubusercontent.com/p4lang/p4-spec/gh-pages/docs/P4-16-working-spec.html", function( response ) {
+		  var newDoc = document.open("text/html", "replace");
+		  newDoc.write( response );
+		  newDoc.close();
+	      });
+	  });
+	</script>
+	HTML-after-script
+	] (using Nate Foster's jquery code)</li>
       <li>Source: <a href="https://github.com/p4lang/p4-spec/blob/main/p4-16/spec/P4-16-spec.mdk">MDK</a></li>
     </ul>
     <p dir="auto">P4Runtime</p>
