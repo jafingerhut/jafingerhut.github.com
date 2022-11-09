@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+const url = "https://raw.githubusercontent.com/p4lang/p4-spec/gh-pages/docs/PSA.pdf";
+const req = new XMLHttpRequest();
+req.open("GET", url, true);
+req.responseType = "arraybuffer";
+req.onload = (_) => {
+  const blob = new Blob([new Uint8Array(req.response)], { type: "application/pdf" });
+  var newUrl = URL.createObjectURL(blob);
+  window.location.href = newUrl;
+};
+req.send(null);
+</script>
+</head>
+<body>
+</body>
+</html>
