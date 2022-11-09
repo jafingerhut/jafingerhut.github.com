@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-$(document).ready(function() {
-  $.get("https://raw.githubusercontent.com/p4lang/pna/gh-pages/docs/PNA-working-draft.html", function( response ) {
-    var newDoc = document.open("text/html", "replace");
-    newDoc.write( response );
-    newDoc.close();
-  });
-});
+const url = "https://raw.githubusercontent.com/p4lang/pna/gh-pages/docs/PNA-working-draft.html";
+const req = new XMLHttpRequest();
+req.open("GET", url, true);
+req.onload = (_) => {
+    const doc = document.open("text/html", "replace");
+    doc.write( req.response );
+    doc.close();
+};
+req.send(null)
 </script>
 </head>
 <body></body>
