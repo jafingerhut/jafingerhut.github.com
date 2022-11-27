@@ -106,6 +106,26 @@ Off.  Same reason as for "Security & Privacy" settings for Ubuntu
 Settings -> Power -> Power Saving Options -> change Screen Blank to
 "Never".
 
+I have found with Ubuntu 22.04 in VirtualBox 6.1.x that the GUI is
+often sluggish in moving around or resizing windows, and often the
+keys will auto-repeat when I do not want them to.  One possible
+culprit is the Wayland server.  Some on-line articles I have found
+suggest using X windows instead.
+
+Edit the file /etc/gdm3/custom.conf as root:
+
+```bash
+$ sudo vi /etc/gdm3/custom.conf
+```
+
+If there is a line `WaylandEnable=true` change `true` to `false`.
+Otherwise explicitly add a line `WaylandEanble=false`.
+
+Sources:
+
++ https://askubuntu.com/questions/1410256/how-do-i-use-x-instead-of-wayland-on-22-04
++ https://askubuntu.com/questions/1402124/problems-dsplaying-windows-vm-on-virtualbox-on-22-04-with-wayland
+
 
 ## Debian 8 notes
 
