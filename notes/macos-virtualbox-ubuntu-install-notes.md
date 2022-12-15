@@ -740,3 +740,71 @@ occurrences of the old hostname with linwin-vm:
     sudo vi /etc/hosts
 
 Reboot the system for the changes to take effect.
+
+
+# A little bit of Ubuntu package managment
+
+## See a list of installed package names and sizes, sorted by size
+
+I have a small Python3 program in my repo
+https://github.com/jafingerhut/dotfiles in the `bin` directory called
+`large-pkgs.py` that does exactly this:
+
+```bash
+large-pkgs.py
+```
+
+# Remove old kernel versions on Ubuntu
+
+See the current kernel version running:
+```
+uname -a
+```
+
+List all kernel package names in a file:
+```bash
+large-pkgs.py | grep linux > rm.sh
+```
+
+Use a text editor to edit the file `rm.sh` and delete package names
+for the current kernel version, leaving only package names you want to
+remove.  Then put all package names on the same line and prepend it
+with the command:
+
+```
+sudo apt purge <package names go here ...>
+```
+
+Then save that file, exit the editor, and run `source rm.sh`
+
+
+# A little bit of Fedora package managment
+
+## See a list of installed package names and sizes, sorted by size
+
+```bash
+rpm -qa --queryformat '%10{size} - %-25{name} \t %{version}\n' | sort -n
+```
+
+## Remove old kernel versions on Fedora
+
+See the current kernel version running:
+```
+uname -a
+```
+
+List all kernel package names in a file:
+```bash
+dnf repoquery --installonly -q > rm.sh
+```
+
+Use a text editor to edit the file `rm.sh` and delete package names
+for the current kernel version, leaving only package names you want to
+remove.  Then put all package names on the same line and prepend it
+with the command:
+
+```
+sudo dnf remove <package names go here ...>
+```
+
+Then save that file, exit the editor, and run `source rm.sh`
