@@ -538,14 +538,14 @@ window:
 
     # Replace the path name inside double quotes in the example
     # command below with the path to your guest OS's .vdi file
-    VBoxManage modifymedium disk --compact "C:\path\to\disk.vdi"
+    VBoxManage modifymedium --compact "C:\path\to\disk.vdi"
 
 Another way to do it is from within a `bash` terminal window, e.g. one
 installed via the Windows version of Git.
 
     cd VirtualBox\ VMs
     cd Ubuntu\ 18.04\ SDE\ 9.4.0
-    du -sh . ; /c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe modifymedium disk --compact Ubuntu\ 18.04\ SDE\ 9.4.0.vdi
+    du -sh . ; /c/Program\ Files/Oracle/VirtualBox/VBoxManage.exe modifymedium --compact Ubuntu\ 18.04\ SDE\ 9.4.0.vdi
 
 
 # Sample sshfs commands
