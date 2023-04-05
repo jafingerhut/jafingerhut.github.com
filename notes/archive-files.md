@@ -51,6 +51,13 @@ To list-contents-of/unpack `.7z` file:
 7za -h    # get help on other command line options
 ```
 
+To list-contents-of/unpack an rpm file:
+```bash
+rpm -qlp archivename.rpm       # list
+rpm2cpio archivename.rpm | cpio -idmv    # extract files, but do not install rpm
+rpm --help    # get help on other command line options
+```
+
 To list-contents-of/unpack a cpio file:
 ```bash
 cpio -l < archivename          # list
