@@ -1,9 +1,10 @@
-# Notes on installing Ubuntu guest VMs in VirtualBox on a macOS or Windows 10 host
+# Notes on installing Ubuntu guest VMs in VirtualBox on a macOS or Windows 10/11 host
 
 # General notes on VM settings
 
-[I have verified that these settings are the same in VirtualBox 6.0.x
-running on a Windows 10 host OS, as well as macOS 10.14.x host]
+[I have verified that these settings are the same in VirtualBox 6.x
+and 7.x running on a Windows 10/11 host OS, as well as many versions
+of macOS from 10.14.x and later as host.]
 
 System -> Motherboard -> Base Memory: While there might be uses for a
 Linux guest VM with only 1 GByte of RAM, I typically change that to 4
@@ -145,6 +146,12 @@ $ echo '/usr/sbin:/sbin:$PATH' >> $HOME/.bashrc
 
 
 ## MATE Terminal settings
+
+While I have found the MATE Terminal an improvement over the default
+Terminal in the past, in more recent versions of Ubuntu and Fedora
+Linux, there is an odd bug where every time you switch to/from a MATE
+Terminal window, the MATE terminal window gets _smaller_.  Unless this
+is fixed, I will not be using MATE Terminal.
 
 I like the MATE Terminal application slightly better than the default
 Terminal, because it is fairly straightforward from the menu settings
@@ -325,7 +332,8 @@ module, and shut down the VM afterwards.
 # Set up shared folders between Ubuntu guest OS and host macOS
 
 [Instructions in this section verified to work for Ubuntu Linux guest
-OS, for both macOS 10.14.x and Windows 10 host OS.]
+OS, and host OS ranging across many versions of macOS and Windows
+10/11.]
 
 Prerequisite: You have successfully installed guest additions kernel
 module, and shut down the VM afterwards.
@@ -384,9 +392,9 @@ your home directory, e.g.:
 % ln -s /media/sf_p4-docs/ ~/p4-docs
 ```
 
-## Removing Emacs lock files on Windows 10 host OS
+## Removing Emacs lock files on Windows host OS
 
-When I share a folder from a Windows 10 host OS with an Ubuntu Linux
+When I share a folder from a Windows 10/11 host OS with an Ubuntu Linux
 guest VM from VirtualBox, and then use Emacs in the Ubuntu guest VM to
 edit text files, it often creates files whose names are the same as
 the original, in the same directory, except the name is prefixed with
@@ -417,13 +425,12 @@ $ \rm -f .#readme-delete-dot-sharp-emacs-lock-files.txt
 rm: cannot remove '.#readme-delete-dot-sharp-emacs-lock-files.txt': Operation not permitted
 ```
 
-I can delete them from Windows Explorer in Windows 10, but if there
+I can delete them from File Explorer in Windows 10/11, but if there
 are many such files, in many directories, it is tedious to do it that
 way.
 
-I can delete them from a `cmd.exe` command prompt in the Windows 10
-host machine.  The only way I have found so far that succeeds is like
-this:
+I can delete them from a `cmd.exe` command prompt in the Windows host
+machine.  The only way I have found so far that succeeds is like this:
 
 ```cmd.exe
 C:\Users\jfingerh> cd "OneDrive - Intel Corporation"
@@ -456,6 +463,86 @@ del /f /s *~
 
 I have permission to delete those files from the Ubuntu VMs, though,
 so my usual Linux commands work there.
+
+
+# Removing older kernel packages on Linux systems
+
+At least on Ubuntu and Fedora Linux, when a new kernel version is
+available, and you update to add it, the older version that you were
+using remains in the file system, taking up space.  I often like to
+remove the older versions to save storage space.
+
+For any version of Linux, you should not try to remove the packages
+for the Linux kernel verion that is currently running, so after
+updating, reboot, check the current version of the kernel that is now
+running in the output of the `uname -a` command, and then delete older
+unused kernel versions.
+
+
+## Removing older kernel packages on Ubuntu Linux
+
+If you are OK with keeping the current version of the kernel, and the
+most recent older version, then this page:
++ https://linuxconfig.org/how-to-remove-old-kernels-on-ubuntu
+
+claims that the following command will do so, but I have not verified
+this myself yet:
+
+```bash
+sudo apt autoremove --purge
+```
+
+If you want to remove all kernel packages except the one currently in
+use, read on.
+
+```bash
+$ dpkg --list | egrep 'linux-(image|headers|hwe|modules)-' | awk '{print $2}'
+linux-headers-5.19.0-35-generic
+linux-headers-5.19.0-38-generic
+linux-headers-generic-hwe-22.04
+linux-hwe-5.19-headers-5.19.0-35
+linux-hwe-5.19-headers-5.19.0-38
+linux-image-5.19.0-35-generic
+linux-image-5.19.0-38-generic
+linux-image-generic-hwe-22.04
+linux-modules-5.19.0-35-generic
+linux-modules-5.19.0-38-generic
+linux-modules-extra-5.19.0-35-generic
+linux-modules-extra-5.19.0-38-generic
+```
+
+Then I typically put that output into a text file with redirection:
+
+```bash
+$ dpkg --list | egrep 'linux-(image|headers|hwe|modules)-' | awk '{print $2}' > rm.sh
+```
+
+then hand-edit that file to remove all lines except those naming the
+packages I want to remove, combine them all into one line with spaces
+between them, and prepend `sudo apt purge ` at the beginning of that
+one line.  Then save that file and run:
+
+```bash
+source rm.sh
+```
+
+
+## Removing older kernel packages on Fedora Linux
+
+Source: https://discussion.fedoraproject.org/t/old-kernels-removal/77046
+
+```bash
+$ rpm -q kernel-core
+kernel-core-5.6.8-300.fc32.x86_64
+kernel-core-5.6.10-300.fc32.x86_64
+kernel-core-5.6.11-300.fc32.x86_64
+```
+
+Remove the version(s) you wish with a command like this:
+
+```bash
+sudo dnf remove kernel-core-5.6.8-300.fc32
+```
 
 
 # Customizations that I personally like to make on some Ubuntu VMs
@@ -507,7 +594,7 @@ Currently these options are covered here, although some of the links
 to other articles may cover more cases:
 
 + guest OS: Linux
-+ host OS: macOS, Windows 10
++ host OS: macOS (many versions from 10.14.x and later), Windows 10/11
 
 A StackOverflow Q&A on compacting/shrinking a guest OS VDI file
 system:
@@ -528,7 +615,7 @@ After shutting down the VM, run this command on a macOS host:
 
     VBoxManage modifymedium --compact /path/to/thedisk.vdi
 
-On a Windows 10 host with VirtualBox stored in the default directory
+On a Windows host with VirtualBox stored in the default directory
 `C:\Program Files\Oracle\VirtualBox`, open a `cmd.exe` window by
 entering `cmd` in start box search, and pressing enter.  Then in that
 window:
