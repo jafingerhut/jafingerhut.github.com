@@ -465,6 +465,33 @@ I have permission to delete those files from the Ubuntu VMs, though,
 so my usual Linux commands work there.
 
 
+# Updating installed packages on Linux systems
+
+On Ubuntu with a desktop GUI, the "Software Updater" application that
+can be found by searching for that name in the Activities search seems
+to do a good job of searching for newer versions of packages that were
+installed on the system via `apt-get`, and letting you install the
+newer versions with a few button clicks.
+
+On Fedora with a desktop GUI, the "Software" application "Updates"
+table sometimes does this, but sometimes seems to mention no updates
+available even when the method below does find updates.  I do not know
+why this difference exists.
+
+Fedora command line method of seeing what updated packages are
+available, without installing them:
+
+```bash
+dnf check-update
+```
+
+To install new packages:
+
+```bash
+sudo dnf upgrade
+```
+
+
 # Removing older kernel packages on Linux systems
 
 At least on Ubuntu and Fedora Linux, when a new kernel version is
