@@ -32,6 +32,41 @@ had that issue worked normally after I changed their Video Memory to
 make that change when creating a new guest VM.
 
 
+# Additional install steps for Rocky Linux guest OS in VirtualBox
+
+I often create VM images in VirtualBox that have the base OS
+installation only, so that I can later create clones of that VM to
+have some particular version of some particular Linux distribution set
+up very quickly, without going through the install DVD/ISO process
+again.  This works as long as cloning this base OS image works.
+
+When making a clone of a Rocky Linux VM in VirtualBox, I found that
+the clone would not boot.  I found the following Q&A with a bit of
+searching on the Internet:
+
++ https://forums.virtualbox.org/viewtopic.php?f=1&t=108202
+
+Following these steps suggested by someone there helped me create
+clones of the Rocky Linux 9.2 VM in VirtualBox, and the clone VMs
+would boot successfully:
+
+```bash
+sudo rm /etc/lvm/devices/system.devices
+```
+
+Edit the file `/etc/lvm/lvm.conf` to replace this line:
+
+```
+# use_devicesfile = 1
+```
+
+with this:
+
+```
+use_devicesfile = 0
+```
+
+
 # Ubuntu Linux Desktop settings I like
 
 [The notes in this section are all specific to the guest OS, and
@@ -216,10 +251,6 @@ This is needed in order either to get copy/paste between host and
 guest OS working, or to get shared folders working.  You can skip this
 if you do not want those features.
 
-The older approach I used for Ubuntu 14.04 is described in its own
-subsection later below, involving installing virtualbox-guest-dkms and
-virtualbox-guest-x11 packages.
-
 
 ## Approach installing Guest Additions via VirtualBox CD image
 
@@ -229,12 +260,21 @@ In a Terminal window, type this command to install essential packages
 needed for compiling C programs, including the kernel extensions that
 the Guest Additions contain:
 
-    sudo apt install build-essential
+```bash
+# Ubuntu systems:
+sudo apt install build-essential
 
-Start VirtualBox and boot the Ubuntu VM without a CD/DVD in the
-"drive".  Log in to the desktop (assuming you're using the desktop
-edition).  Now on the Mac go to the Devices menu of VirtualBox.  The
-last item will be "Insert Guest Additions CD image...".  Select it.
+# Fedora systems:
+TODO
+
+# Rocky systems:
+sudo dnf install kernel-devel kernel-headers gcc make bzip2 perl elfutils-libelf-devel
+```
+
+Start VirtualBox and boot the VM without a CD/DVD in the "drive".  Log
+in to the desktop (assuming you're using the desktop edition).  Now on
+the host OS go to the Devices menu of VirtualBox.  Near the bottom of
+that menu will be "Insert Guest Additions CD image...".  Select it.
 In the VM, a CD will appear in the dock and a dialog should pop up
 asking if you want to allow the software on the CD to autorun.  Let it
 run.  A second dialog will ask you to authenticate (sudo) to install
@@ -280,40 +320,6 @@ sudo shutdown -r now
 ```
 
 
-
-## Approach installing virtualbox-guest-* packages
-
-Note: As of 2021-Feb, I have not used the instructions in this section
-for over a year.  The previous section instructions have worked
-reliably for a long time now.
-
-I was able to get host/guest copy and paste working using this
-approach for Ubuntu 14.04.1 guest OS.  See above for steps for an
-Ubuntu 16.04 guest OS.
-
-    # This might be necessary to get copy/paste to work between guest
-    # and host OS
-    sudo apt install virtualbox-guest-dkms
-
-Reboot system for newly installed kernel modules (installed by
-virtualbox-guest-dkms package) to take effect.  Larger display size
-choices are now available in System Settings -> Displays
-
-To get other custom display sizes not on that menu, just click and
-drag the bottom right corner of the VirtualBox window to resize it,
-then wait several seconds until the guest Ubuntu desktop changes to
-match it.
-
-Way more details than one probably would like on this issue:
-
-    http://askubuntu.com/questions/451805/screen-resolution-problem-with-ubuntu-14-04-and-virtualbox/595192#595192
-
-With Ubuntu 14.04 I could get copy and paste between guest and Mac OS
-X to work.  With Ubuntu 16.04.2 I could not using this approach.
-Fortunately the approach using the guest additions CD image described
-in the previous section does work for Ubuntu 16.04.
-
-
 # Getting copy/paste working between host and guest OS
 
 Prerequisite: You have successfully installed guest additions kernel
@@ -331,15 +337,12 @@ module, and shut down the VM afterwards.
 
 # Set up shared folders between Ubuntu guest OS and host macOS
 
-[Instructions in this section verified to work for Ubuntu Linux guest
-OS, and host OS ranging across many versions of macOS and Windows
-10/11.]
+[Instructions in this section verified to work for Ubuntu, Fedora, and
+Rocky Linux guest OS, and host OS ranging across many versions of
+macOS and Windows 10/11.]
 
 Prerequisite: You have successfully installed guest additions kernel
 module, and shut down the VM afterwards.
-
-I was able to get shared folders working for both Ubuntu 14.04 and
-Ubuntu 16.04 guest OS's using these instructions.
 
 I believe I had trouble with shared folder settings disappearing if I
 tried creating them while the guest OS was running.  Shutting down the
@@ -364,20 +367,14 @@ Boot guest OS and log in.
 should show a new directory sf_p4-docs/
 Trying to list it will likely give 'Permission denied'.
 
-Command to add a user to a group:
-
-```bash
-% sudo usermod -a -G <groupName> <userName>
-```
-
-In this particular case for the group 'vboxsf':
+Command to add a user to group `vboxsf`:
 
 ```bash
 % sudo usermod -a -G vboxsf $USER
 ```
 
 Log out and log back in, or shut down and reboot guest OS.  Run the
-command 'id' to confirm that the group 'vboxsf' now shows up in the
+command `id` to confirm that the group `vboxsf` now shows up in the
 output.  If so, then this command should now show you the contents of
 the shared folder:
 
@@ -391,6 +388,7 @@ your home directory, e.g.:
 ```bash
 % ln -s /media/sf_p4-docs/ ~/p4-docs
 ```
+
 
 ## Removing Emacs lock files on Windows host OS
 
@@ -473,12 +471,12 @@ to do a good job of searching for newer versions of packages that were
 installed on the system via `apt-get`, and letting you install the
 newer versions with a few button clicks.
 
-On Fedora with a desktop GUI, the "Software" application "Updates"
-table sometimes does this, but sometimes seems to mention no updates
-available even when the method below does find updates.  I do not know
-why this difference exists.
+On Fedora and Rocky with a desktop GUI, the "Software" application
+"Updates" table sometimes does this, but sometimes seems to mention no
+updates available even when the method below does find updates.  I do
+not know why this difference exists.
 
-Fedora command line method of seeing what updated packages are
+Fedora/Rocky command line method of seeing what updated packages are
 available, without installing them:
 
 ```bash
@@ -494,10 +492,10 @@ sudo dnf upgrade
 
 # Removing older kernel packages on Linux systems
 
-At least on Ubuntu and Fedora Linux, when a new kernel version is
-available, and you update to add it, the older version that you were
-using remains in the file system, taking up space.  I often like to
-remove the older versions to save storage space.
+At least on Ubuntu, Fedora, and Rocky Linux, when a new kernel version
+is available, and you update to add it, the older version that you
+were using remains in the file system, taking up space.  I often like
+to remove the older versions to save storage space.
 
 For any version of Linux, you should not try to remove the packages
 for the Linux kernel verion that is currently running, so after
@@ -522,39 +520,32 @@ sudo apt autoremove --purge
 If you want to remove all kernel packages except the one currently in
 use, read on.
 
-```bash
-$ dpkg --list | egrep 'linux-(image|headers|hwe|modules)-' | awk '{print $2}'
-linux-headers-5.19.0-35-generic
-linux-headers-5.19.0-38-generic
-linux-headers-generic-hwe-22.04
-linux-hwe-5.19-headers-5.19.0-35
-linux-hwe-5.19-headers-5.19.0-38
-linux-image-5.19.0-35-generic
-linux-image-5.19.0-38-generic
-linux-image-generic-hwe-22.04
-linux-modules-5.19.0-35-generic
-linux-modules-5.19.0-38-generic
-linux-modules-extra-5.19.0-35-generic
-linux-modules-extra-5.19.0-38-generic
+See the current kernel version running:
+```
+uname -a
 ```
 
-Then I typically put that output into a text file with redirection:
-
+List all kernel package names in a file:
 ```bash
-$ dpkg --list | egrep 'linux-(image|headers|hwe|modules)-' | awk '{print $2}' > rm.sh
+large-pkgs.py | grep linux > rm.sh
 ```
 
-then hand-edit that file to remove all lines except those naming the
-packages I want to remove, combine them all into one line with spaces
-between them, and prepend `sudo apt purge ` at the beginning of that
-one line.  Then save that file and run:
+(`large-pkgs.py` is in `bin` directory of
+https://github.com/jafingerhut/dotfiles )
 
-```bash
-source rm.sh
+Use a text editor to edit the file `rm.sh` and delete package names
+for the current kernel version, leaving only package names you want to
+remove.  Then put all package names on the same line and prepend it
+with the command:
+
+```
+sudo apt purge <package names go here ...>
 ```
 
+Then save that file, exit the editor, and run `source rm.sh`
 
-## Removing older kernel packages on Fedora Linux
+
+## Removing older kernel packages on Fedora/Rocky Linux
 
 Source: https://discussion.fedoraproject.org/t/old-kernels-removal/77046
 
@@ -603,24 +594,12 @@ select "Lock to Launcher" so it will always be there.
 ```
 
 
-# Solving screen flicker issue with Ubuntu 17.10 guest VM in VirtualBox
-
-Found this solution here: https://forums.virtualbox.org/viewtopic.php?f=8&t=85110
-
-This is the comment that I found helped:
-
-    I found this to be a bug with the new Ubuntu 17.10 in Sierra and
-    VBox 5.2.0 and fixed it by selecting Xorg instead of default
-    Wheland window system. You will find this option in the Ubuntu
-    login dialog under the gear.
-
-
 # Shrinking a guest OS disk image
 
 Currently these options are covered here, although some of the links
 to other articles may cover more cases:
 
-+ guest OS: Linux
++ guest OS: Ubuntu Linux, and perhaps any guest Linux using ext4 file system
 + host OS: macOS (many versions from 10.14.x and later), Windows 10/11
 
 A StackOverflow Q&A on compacting/shrinking a guest OS VDI file
@@ -858,6 +837,7 @@ Reboot the system for the changes to take effect.
 
 # A little bit of Ubuntu package managment
 
+
 ## See a list of installed package names and sizes, sorted by size
 
 I have a small Python3 program in my repo
@@ -868,57 +848,4 @@ https://github.com/jafingerhut/dotfiles in the `bin` directory called
 large-pkgs.py
 ```
 
-# Remove old kernel versions on Ubuntu
-
-See the current kernel version running:
-```
-uname -a
-```
-
-List all kernel package names in a file:
-```bash
-large-pkgs.py | grep linux > rm.sh
-```
-
-Use a text editor to edit the file `rm.sh` and delete package names
-for the current kernel version, leaving only package names you want to
-remove.  Then put all package names on the same line and prepend it
-with the command:
-
-```
-sudo apt purge <package names go here ...>
-```
-
-Then save that file, exit the editor, and run `source rm.sh`
-
-
-# A little bit of Fedora package managment
-
-## See a list of installed package names and sizes, sorted by size
-
-```bash
-rpm -qa --queryformat '%10{size} - %-25{name} \t %{version}\n' | sort -n
-```
-
-## Remove old kernel versions on Fedora
-
-See the current kernel version running:
-```
-uname -a
-```
-
-List all kernel package names in a file:
-```bash
-dnf repoquery --installonly -q > rm.sh
-```
-
-Use a text editor to edit the file `rm.sh` and delete package names
-for the current kernel version, leaving only package names you want to
-remove.  Then put all package names on the same line and prepend it
-with the command:
-
-```
-sudo dnf remove <package names go here ...>
-```
-
-Then save that file, exit the editor, and run `source rm.sh`
+Also `installed-pkgs.py`.
