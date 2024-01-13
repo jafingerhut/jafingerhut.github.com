@@ -105,3 +105,14 @@ The reboot the system.  To create a symbolic link to the shared directory:
 ln -s /media/shared/p4-docs $HOME/p4-docs
 ```
 
+
+## Shrinking a guest OS disk image
+
+TODO: Test out the instructions here to see if they work:
+
++ https://docs.getutm.app/settings-qemu/drive/resize-and-compress/
+
+When I installed UTM on my macOS system, the VM images were stored in
+directories inside of this one:
+
++ `~/Library/Containers/com.utmapp.UTM/Data/Documents`
