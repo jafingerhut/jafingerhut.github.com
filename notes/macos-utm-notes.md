@@ -116,3 +116,15 @@ When I installed UTM on my macOS system, the VM images were stored in
 directories inside of this one:
 
 + `~/Library/Containers/com.utmapp.UTM/Data/Documents`
+
+I looked around in the UTM GUI for options to shrink/compress the
+drive of the VMs I have created, but did not find any.
+
+I tried running my little bash script `zero-empty-disk-space.sh`:
+
++ https://github.com/jafingerhut/dotfiles/blob/master/bin/zero-empty-disk-space.sh
+
+that I use just before shrinking VirtualBox drive files on the host
+OS, but the only effect that seemed to have was to _increase_ the size
+of the `.img` file that UTM creates for the VM's drive to be the
+maximum size (64 GB in my scenario).
