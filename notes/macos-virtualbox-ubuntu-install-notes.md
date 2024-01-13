@@ -1,5 +1,10 @@
 # Notes on installing Ubuntu guest VMs in VirtualBox on a macOS or Windows 10/11 host
 
+See also the article [`macos-utm-notes.md`](macos-utm-notes.md) for
+notes on installing a guest Linux VM on an Apple Silicon Mac using the
+UTM application.
+
+
 # General notes on VM settings
 
 [I have verified that these settings are the same in VirtualBox 6.x
