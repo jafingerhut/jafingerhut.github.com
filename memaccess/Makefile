@@ -9,4 +9,4 @@ lfsr32: lfsr32.c
 	$(CC) $(CFLAGS) -o $@ $<
 
 clean:
-	/bin/rm -f memaccess
+	/bin/rm -f memaccess lfsr32

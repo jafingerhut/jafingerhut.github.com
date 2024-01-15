@@ -2,37 +2,13 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
+#include <ctype.h>
 #include <sys/time.h>
 #include <sys/errno.h>
 
-#undef ALLOC_AT_MOST_512MBYTES
-
-size_t sizes_bytes[] = {
-    256,
-    1 * 1024,
-    2 * 1024,
-    4 * 1024,
-    8 * 1024,
-    16 * 1024,
-    32 * 1024,
-    64 * 1024,
-    128 * 1024,
-    256 * 1024,
-    512 * 1024,
-    1 * 1024 * 1024,
-    2 * 1024 * 1024,
-    4 * 1024 * 1024,
-    8 * 1024 * 1024,
-    16 * 1024 * 1024,
-    32 * 1024 * 1024,
-    64 * 1024 * 1024,
-    128 * 1024 * 1024,
-    256 * 1024 * 1024,
-    512 * 1024 * 1024,
-#ifdef ALLOC_AT_MOST_512MBYTES
-    1 * 1024 * 1024 * 1024,
-#endif  // ALLOC_AT_MOST_512MBYTES
-};
+FILE *outf = NULL;
+int power_of_2_for_min_block_size = 10;
+int power_of_2_for_max_block_size = 30;
 
 void print_type_sizes(FILE *f) {
     fprintf(f, "Size of some signed C types, in bytes:\n");
@@ -192,6 +168,70 @@ uint32_t get_stride(int idx) {
     return stride;
 }
 
+void print_usage(FILE *f, char *progname) {
+    fprintf(f, "%s [ -h ] [-m <power_of_2_for_max_block_size> ] <output_filename>\n", progname);
+    fprintf(f, "\n");
+    fprintf(f, "    e.g. -m 28 means the maximum block size allocated will be\n");
+    fprintf(f, "    2^28 = 256 MBytes in length.\n");
+    fflush(f);
+}
+
+void parse_args(int argc, char *argv[]) {
+    int i = 1;
+    int j;
+    int remaining_args;
+    char *powerstr;
+    char *fname;
+
+    while (i < argc && argv[i][0] == '-') {
+        switch (argv[i][1]) {
+        case 'h':
+            print_usage(stderr, argv[0]);
+            exit(0);
+        case 'm':
+            if ((i + 1) >= argc) {
+                fprintf(stderr, "Expected a numeric value after '-m' option.\n");
+                exit(1);
+            }
+            powerstr = argv[i+1];
+            for (j = 0; powerstr[j] != '\0'; j++) {
+                if (! isdigit(powerstr[j])) {
+                    fprintf(stderr, "Expected parameter after '-m' option to be a decimal number, but found '%s'\n",
+                            powerstr);
+                    exit(1);
+                }
+            }
+            power_of_2_for_max_block_size = atoi(powerstr);
+            if (power_of_2_for_max_block_size < 10 || power_of_2_for_max_block_size > 40) {
+                fprintf(stderr, "Value of '-m' option must be in range [10,40].  Found '%s'\n",
+                        powerstr);
+                exit(1);
+            }
+            i += 2;
+            break;
+        default:
+            fprintf(stderr, "Unrecognized command line option '%s'\n",
+                    argv[i]);
+            print_usage(stderr, argv[0]);
+            exit(1);
+        }
+    }
+    remaining_args = argc - i;
+    if (remaining_args != 1) {
+        fprintf(stderr, "Expecting an output file name but found none\n");
+        print_usage(stderr, argv[0]);
+        exit(1);
+    }
+    fname = argv[i];
+    outf = fopen(fname, "w");
+    if (outf == NULL) {
+        fprintf(stderr, "Failed to open file '%s' for writing: %s\n",
+                fname, strerror(errno));
+        fflush(stderr);
+        exit(1);
+    }
+}
+
 
 int main(int argc, char *argv[]) {
     int num_sizes;
@@ -201,48 +241,58 @@ int main(int argc, char *argv[]) {
     uint32_t *vals;
     int num_strides = 9;
     uint32_t stride;
-    uint32_t i, j;
+    uint32_t j;
     uint32_t num_trials;
     double elapsed_time;
+    size_t min_block_size, max_block_size;
 
-    print_type_sizes(stdout);
+    parse_args(argc, argv);
+    print_type_sizes(outf);
 
-    num_sizes = sizeof(sizes_bytes) / sizeof(size_t);
-    printf("%d elements in array sizes_bytes\n", num_sizes);
+    fprintf(stderr, "\n");
+    min_block_size = 1ULL << power_of_2_for_min_block_size;
+    max_block_size = 1ULL << power_of_2_for_max_block_size;
+
+    num_sizes = (power_of_2_for_max_block_size
+                 - power_of_2_for_min_block_size + 1);
+    fprintf(stderr, "%d different block sizes to test in this range:\n",
+            num_sizes);
+    fprintf(stderr, "min block size: %lu bytes\n", min_block_size);
+    fprintf(stderr, "max block size: %lu bytes\n", max_block_size);
 
     for (stride_direction = -1; stride_direction <= 1; stride_direction += 2) {
-        printf("\nstride_direction\t%d\n", stride_direction);
-        printf("size_bytes");
+        fprintf(stderr, "\nstride_direction\t%d\n", stride_direction);
+        fprintf(outf, "\nstride_direction\t%d\n", stride_direction);
+        fprintf(outf, "size_bytes");
         for (j = 0; j < num_strides; j++) {
-            printf("\t%u", get_stride(j));
+            fprintf(outf, "\t%u", get_stride(j));
         }
-        printf("\n");
-        for (i = 0; i < num_sizes; i++) {
-            sz = sizes_bytes[i];
+        fprintf(outf, "\n");
+        for (sz = min_block_size; sz < max_block_size; sz <<= 1) {
             num_uint32s = sz / sizeof(uint32_t);
             vals = (uint32_t *) alloc_block(sz);
-            printf("%lu", sz);
+            fprintf(outf, "%lu", sz);
             for (j = 0; j < num_strides; j++) {
                 stride = get_stride(j);
                 num_trials = (1024 * 1024 * 1024) / sz;
                 if (stride > (num_uint32s / 2)) {
-                    printf("\t-");
+                    fprintf(outf, "\t-");
                     fprintf(stderr, "%lu\t%u\t%u\t--\t(stride is more than half the number of elements)\n",
                             sz, stride, num_trials);
                 } else {
                     elapsed_time = one_experiment(vals, num_uint32s, stride,
                                                   stride_direction, num_trials);
-                    printf("\t%.6f", elapsed_time);
+                    fprintf(outf, "\t%.6f", elapsed_time);
                     fprintf(stderr, "%lu\t%u\t%u\t%.6f\n",
                             sz, stride, num_trials, elapsed_time);
                 }
             }
-            printf("\n");
-            fflush(stdout);
+            fprintf(outf, "\n");
+            fflush(outf);
             fflush(stderr);
             free(vals);
         }
     }
+    fclose(outf);
     exit(0);
 }
-    
