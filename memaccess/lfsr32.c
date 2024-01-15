@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdint.h>
 
 void mu_lfsr_gal_two_length()
