@@ -10,6 +10,19 @@ FILE *outf = NULL;
 int power_of_2_for_min_block_size = 10;
 int power_of_2_for_max_block_size = 30;
 
+const uint32_t lfsr32a_mask = (1U << 31) | (1 << 29) | (1 << 25) | (1 << 24);
+uint32_t lfsr32a_state;
+
+void lfsr32a_set_seed(uint32_t seed) {
+    lfsr32a_state = seed;
+}
+
+inline uint32_t lfsr32a_rand() {
+    lfsr32a_state = ((lfsr32a_state >> 1)
+                     ^ (-(lfsr32a_state & 1) & lfsr32a_mask));
+    return lfsr32a_state;
+}
+
 void print_type_sizes(FILE *f) {
     fprintf(f, "Size of some signed C types, in bytes:\n");
     fprintf(f, "%2lu char\n", sizeof(char));
@@ -148,6 +161,66 @@ double one_experiment(uint32_t *vals, uint32_t num_vals, uint32_t stride,
     return time_diff(&start_time, &end_time);
 }
 
+uint32_t random_sum_vals(uint32_t *vals, uint32_t num_vals, uint32_t index_mask)
+{
+    uint32_t i;
+    uint32_t idx;
+    uint32_t sum = 0;
+
+    for (i = 0; i < num_vals; i++) {
+        idx = lfsr32a_rand() & index_mask;
+        sum += vals[idx];
+    }
+    return sum;
+}
+
+double random_experiment(uint32_t *vals, uint32_t num_vals, uint32_t trials)
+{
+    uint32_t trial;
+    uint32_t total, tmp;
+    struct timeval start_time, end_time;
+    int ret;
+    uint32_t index_mask;
+
+    index_mask = 1;
+    while (index_mask < num_vals) {
+        index_mask <<= 1;
+    }
+    if (index_mask != num_vals) {
+        fprintf(stderr, "random_experiment() only supports num_vals that is a power of 2 with the power in range [1,31].  num_vals=%u is not supported.\n",
+                num_vals);
+        exit(1);
+    }
+    --index_mask;
+
+    init_array(vals, num_vals);
+    lfsr32a_set_seed(0xdeadbeef);
+    total = random_sum_vals(vals, num_vals, index_mask);
+
+    ret = gettimeofday(&start_time, NULL);
+    if (ret != 0) {
+        fprintf(stderr, "gettimeofday() returned %d with errno %d: %s",
+                ret, errno, strerror(errno));
+        exit(1);
+    }
+    for (trial = 0; trial < trials; trial++) {
+        lfsr32a_set_seed(0xdeadbeef);
+        tmp = random_sum_vals(vals, num_vals, index_mask);
+        if (tmp != total) {
+            fprintf(stderr, "one_experiment expected total %u but got %u instead\n",
+                    total, tmp);
+            exit(1);
+        }
+    }
+    ret = gettimeofday(&end_time, NULL);
+    if (ret != 0) {
+        fprintf(stderr, "gettimeofday() returned %d with errno %d: %s",
+                ret, errno, strerror(errno));
+        exit(1);
+    }
+    return time_diff(&start_time, &end_time);
+}
+
 uint32_t get_stride(int idx) {
     uint32_t stride;
     switch (idx) {
@@ -202,8 +275,8 @@ void parse_args(int argc, char *argv[]) {
                 }
             }
             power_of_2_for_max_block_size = atoi(powerstr);
-            if (power_of_2_for_max_block_size < 10 || power_of_2_for_max_block_size > 40) {
-                fprintf(stderr, "Value of '-m' option must be in range [10,40].  Found '%s'\n",
+            if (power_of_2_for_max_block_size < 10 || power_of_2_for_max_block_size > 31) {
+                fprintf(stderr, "Value of '-m' option must be in range [10,31].  Found '%s'\n",
                         powerstr);
                 exit(1);
             }
@@ -260,31 +333,42 @@ int main(int argc, char *argv[]) {
     fprintf(stderr, "min block size: %lu bytes\n", min_block_size);
     fprintf(stderr, "max block size: %lu bytes\n", max_block_size);
 
-    for (stride_direction = -1; stride_direction <= 1; stride_direction += 2) {
+    for (stride_direction = -1; stride_direction <= 1; stride_direction++) {
         fprintf(stderr, "\nstride_direction\t%d\n", stride_direction);
         fprintf(outf, "\nstride_direction\t%d\n", stride_direction);
         fprintf(outf, "size_bytes");
-        for (j = 0; j < num_strides; j++) {
-            fprintf(outf, "\t%u", get_stride(j));
+        if (stride_direction != 0) {
+            for (j = 0; j < num_strides; j++) {
+                fprintf(outf, "\t%u", get_stride(j));
+            }
         }
         fprintf(outf, "\n");
-        for (sz = min_block_size; sz < max_block_size; sz <<= 1) {
+        for (sz = min_block_size; sz <= max_block_size; sz <<= 1) {
             num_uint32s = sz / sizeof(uint32_t);
             vals = (uint32_t *) alloc_block(sz);
+            num_trials = (1024 * 1024 * 1024) / sz;
             fprintf(outf, "%lu", sz);
-            for (j = 0; j < num_strides; j++) {
-                stride = get_stride(j);
-                num_trials = (1024 * 1024 * 1024) / sz;
-                if (stride > (num_uint32s / 2)) {
-                    fprintf(outf, "\t-");
-                    fprintf(stderr, "%lu\t%u\t%u\t--\t(stride is more than half the number of elements)\n",
-                            sz, stride, num_trials);
-                } else {
-                    elapsed_time = one_experiment(vals, num_uint32s, stride,
-                                                  stride_direction, num_trials);
-                    fprintf(outf, "\t%.6f", elapsed_time);
-                    fprintf(stderr, "%lu\t%u\t%u\t%.6f\n",
-                            sz, stride, num_trials, elapsed_time);
+            if (stride_direction == 0) {
+                // Use pseudo-random order to access the array indices.
+                elapsed_time = random_experiment(vals, num_uint32s, num_trials);
+                fprintf(outf, "\t%.6f", elapsed_time);
+                fprintf(stderr, "%lu\t%u\t%.6f\n",
+                        sz, num_trials, elapsed_time);
+            } else {
+                for (j = 0; j < num_strides; j++) {
+                    stride = get_stride(j);
+                    if (stride > (num_uint32s / 2)) {
+                        fprintf(outf, "\t-");
+                        fprintf(stderr, "%lu\t%u\t%u\t--\t(stride is more than half the number of elements)\n",
+                                sz, stride, num_trials);
+                    } else {
+                        elapsed_time = one_experiment(vals, num_uint32s,
+                                                      stride, stride_direction,
+                                                      num_trials);
+                        fprintf(outf, "\t%.6f", elapsed_time);
+                        fprintf(stderr, "%lu\t%u\t%u\t%.6f\n",
+                                sz, stride, num_trials, elapsed_time);
+                    }
                 }
             }
             fprintf(outf, "\n");
