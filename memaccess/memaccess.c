@@ -5,6 +5,8 @@
 #include <sys/time.h>
 #include <sys/errno.h>
 
+#undef ALLOC_AT_MOST_512MBYTES
+
 size_t sizes_bytes[] = {
     256,
     1 * 1024,
@@ -27,7 +29,9 @@ size_t sizes_bytes[] = {
     128 * 1024 * 1024,
     256 * 1024 * 1024,
     512 * 1024 * 1024,
+#ifdef ALLOC_AT_MOST_512MBYTES
     1 * 1024 * 1024 * 1024,
+#endif  // ALLOC_AT_MOST_512MBYTES
 };
 
 void print_type_sizes(FILE *f) {
@@ -52,6 +56,7 @@ void print_type_sizes(FILE *f) {
     fprintf(f, "Size of pointers, in bytes:\n");
     fprintf(f, "%2lu void *\n", sizeof(void *));
     fprintf(f, "%2lu char *\n", sizeof(char *));
+    fflush(f);
 }
 
 char *alloc_block(size_t sz) {
@@ -196,7 +201,7 @@ int main(int argc, char *argv[]) {
     uint32_t *vals;
     int num_strides = 9;
     uint32_t stride;
-    uint32_t j;
+    uint32_t i, j;
     uint32_t num_trials;
     double elapsed_time;
 
@@ -212,7 +217,7 @@ int main(int argc, char *argv[]) {
             printf("\t%u", get_stride(j));
         }
         printf("\n");
-        for (int i = 0; i < num_sizes; i++) {
+        for (i = 0; i < num_sizes; i++) {
             sz = sizes_bytes[i];
             num_uint32s = sz / sizeof(uint32_t);
             vals = (uint32_t *) alloc_block(sz);
@@ -222,19 +227,22 @@ int main(int argc, char *argv[]) {
                 num_trials = (1024 * 1024 * 1024) / sz;
                 if (stride > (num_uint32s / 2)) {
                     printf("\t-");
-                    //printf("%u\t%u\t--\t(stride is more than half the number of elements)\n",
-                    //       stride, num_trials);
+                    fprintf(stderr, "%lu\t%u\t%u\t--\t(stride is more than half the number of elements)\n",
+                            sz, stride, num_trials);
                 } else {
                     elapsed_time = one_experiment(vals, num_uint32s, stride,
                                                   stride_direction, num_trials);
                     printf("\t%.6f", elapsed_time);
-                    //printf("%u\t%u\t%.6f\n", stride, num_trials,
-                    //       elapsed_time);
+                    fprintf(stderr, "%lu\t%u\t%u\t%.6f\n",
+                            sz, stride, num_trials, elapsed_time);
                 }
             }
             printf("\n");
+            fflush(stdout);
+            fflush(stderr);
             free(vals);
         }
     }
+    exit(0);
 }
     
