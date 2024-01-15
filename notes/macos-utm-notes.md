@@ -12,20 +12,24 @@ I have tested these instructions on the following kind of system:
 + UTM version 4.4.5
   + https://mac.getutm.app
 
-I was able to successfully install and run an Ubuntu 22.04 Desktop
-Linux VM from an image named `jammy-desktop-arm64.iso` downloaded from
-this page:
+I was able to successfully install and run these arm64 versions of
+Linux:
 
-+ https://cdimage.ubuntu.com/jammy/daily-live/current/
++ Ubuntu 20.04 Server, and Desktop
+  + I installed Desktop by first installing Server, then `sudo apt-get
+    install ubuntu-desktop-minimal`
+  + Other instructions for installing and Ubuntu Desktop GUI on Ubuntu
+    server can be found here:
+    https://phoenixnap.com/kb/how-to-install-a-gui-on-ubuntu
++ Ubuntu 22.04 Desktop
+  + ISO image `jammy-desktop-arm64.iso` downloaded from here:
+    https://cdimage.ubuntu.com/jammy/daily-live/current/
 
-Instructions for installing a Desktop GUI on Ubuntu server, in case I
-want to try out other versions of Ubuntu for arm64 and can only find a
-server version:
 
-+ https://phoenixnap.com/kb/how-to-install-a-gui-on-ubuntu
+## Steps to create a new Ubuntu VM in UTM, for arm64 guest OS
 
-
-## Steps to create a new Ubuntu VM in UTM
+These instructions should work for any Linux guest OS that expects an
+arm64 CPU.
 
 + Run the UTM application.
 + Click button "Create a New Virtual Machine"
