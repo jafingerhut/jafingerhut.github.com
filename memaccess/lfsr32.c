@@ -81,4 +81,5 @@ void mu_lfsr_gal_two_length_v2()
 int main(int argc, char *argv[]) {
     //mu_lfsr_gal_two_length();
     mu_lfsr_gal_two_length_v2();
+    exit(0);
 }
