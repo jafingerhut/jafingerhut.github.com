@@ -247,6 +247,7 @@ void init_ptrs_random_pattern_1(uintptr_t *ptrs, uint64_t num_ptrs)
         tmp = ptrs[i];
         ptrs[i] = ptrs[next_idx];
         ptrs[next_idx] = tmp;
+        --num_remaining;
     }
     fprintf(stderr, "Generated %" PRIu64 " extra random values to maintain invairiant that ptr[i] != i\n",
             count_rands - num_ptrs);
@@ -438,7 +439,7 @@ int main(int argc, char *argv[]) {
         }
         fprintf(outf, "\n");
         for (sz = min_block_size; sz <= max_block_size; sz <<= 1) {
-            num_ptrs = sz / sizeof(void *);
+            num_ptrs = sz / sizeof(uintptr_t *);
             ptrs = (uintptr_t *) alloc_block(sz);
             num_trials = (256 * 1024 * 1024);
             fprintf(outf, "%lu", sz);
