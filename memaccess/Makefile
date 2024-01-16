@@ -1,8 +1,11 @@
 CFLAGS=-Wall -O2
 
-all: memaccess lfsr32
+all: memaccess memaccess2 lfsr32
 
 memaccess: memaccess.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+memaccess2: memaccess2.c
 	$(CC) $(CFLAGS) -o $@ $<
 
 lfsr32: lfsr32.c
