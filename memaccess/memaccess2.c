@@ -43,6 +43,7 @@ void print_type_sizes(FILE *f) {
     fprintf(f, "%2lu unsigned int\n", sizeof(unsigned int));
     fprintf(f, "%2lu unsigned long\n", sizeof(unsigned long));
     fprintf(f, "%2lu unsigned long long\n", sizeof(unsigned long long));
+    fprintf(f, "%2lu uintptr_t\n", sizeof(uintptr_t));
     fprintf(f, "%2lu size_t\n", sizeof(size_t));
     fprintf(f, "Size of pointers, in bytes:\n");
     fprintf(f, "%2lu void *\n", sizeof(void *));
@@ -50,8 +51,9 @@ void print_type_sizes(FILE *f) {
     fprintf(f, "%2lu uintptr_t *\n", sizeof(uintptr_t));
     fprintf(f, "PRIx64 format string=:%s:\n", PRIx64);
     fprintf(f, "PRIX64 format string=:%s:\n", PRIX64);
-    fprintf(f, "PRIu64 format string=:%s:\n", PRIu64);
     fprintf(f, "PRId64 format string=:%s:\n", PRId64);
+    fprintf(f, "PRIu64 format string=:%s:\n", PRIu64);
+    fprintf(f, "PRIuPTR format string=:%s:\n", PRIuPTR);
     fflush(f);
 }
 
@@ -64,7 +66,7 @@ char *alloc_block(size_t sz) {
     return block;
 }
 
-uint64_t follow_pointers(uintptr_t *ptrs, uint64_t count) {
+uintptr_t follow_pointers(uintptr_t *ptrs, uintptr_t count) {
     uintptr_t ptr = ptrs[0];
 
     while (count != 0) {
@@ -74,16 +76,16 @@ uint64_t follow_pointers(uintptr_t *ptrs, uint64_t count) {
     return (((uintptr_t *) ptr) - ptrs);
 }
 
-uint64_t cycle_len_starting_at_index(uintptr_t *ptrs, uint64_t idx) {
-    uint64_t count = 0;
-    uint64_t ptr = ptrs[idx];
-    uint64_t start = ptr;
-    uint64_t tmp;
+uintptr_t cycle_len_starting_at_index(uintptr_t *ptrs, uintptr_t idx) {
+    uintptr_t count = 0;
+    uintptr_t ptr = ptrs[idx];
+    uintptr_t start = ptr;
+    uintptr_t tmp;
     if (debug_level >= 2) {
-        fprintf(stderr, "dbg cycle_len start %" PRIu64 "\n", start);
+        fprintf(stderr, "dbg cycle_len start %" PRIuPTR "\n", start);
         tmp = ((uintptr_t *) ptr) - ptrs;
-        fprintf(stderr, "dbg cycle_len count %10" PRIu64 " ptr %" PRIu64
-                " tmp %" PRIu64 "\n",
+        fprintf(stderr, "dbg cycle_len count %10" PRIuPTR " ptr %" PRIuPTR
+                " tmp %" PRIuPTR "\n",
                 count, ptr, tmp);
     }
     do {
@@ -91,23 +93,36 @@ uint64_t cycle_len_starting_at_index(uintptr_t *ptrs, uint64_t idx) {
         ptr = *((uintptr_t *) ptr);
         if (debug_level >= 2) {
             tmp = ((uintptr_t *) ptr) - ptrs;
-            fprintf(stderr, "dbg cycle_len count %10" PRIu64 " ptr %" PRIu64
-                    " tmp %" PRIu64 "\n",
+            fprintf(stderr, "dbg cycle_len count %10" PRIuPTR " ptr %" PRIuPTR
+                    " tmp %" PRIuPTR "\n",
                     count, ptr, tmp);
         }
     } while (ptr != start);
     return count;
 }
 
-void warn_if_cycle_too_short(uintptr_t *ptrs, uint64_t num_ptrs) {
-    uint64_t cycle_len;
+void debug_print_ptrs(uintptr_t *ptrs, uintptr_t num_ptrs) {
+    uintptr_t i;
+    uintptr_t idx_of_ptr;
+
+    for (i = 0; i < num_ptrs; i++) {
+        idx_of_ptr = ((uintptr_t *) ptrs[i]) - ptrs;
+        fprintf(stderr, "idx %10" PRIuPTR " ptrs[idx] as index %10" PRIuPTR "\n",
+                i, idx_of_ptr);
+    }
+}
+
+void warn_if_cycle_too_short(uintptr_t *ptrs, uintptr_t num_ptrs) {
+    uintptr_t cycle_len;
 
     cycle_len = cycle_len_starting_at_index(ptrs, 0);
     if (cycle_len != num_ptrs) {
-        fprintf(stderr, "Cycle len starting at index %" PRIu64
-                " is %" PRIu64,
-                (uint64_t) 0, cycle_len);
-        fprintf(stderr, "   WARNING not equal to num_ptrs=%" PRIu64,
+        debug_print_ptrs(ptrs, num_ptrs);
+        fprintf(stderr, "\n");
+        fprintf(stderr, "Cycle len starting at index %" PRIuPTR
+                " is %" PRIuPTR,
+                (uintptr_t) 0, cycle_len);
+        fprintf(stderr, "   WARNING not equal to num_ptrs=%" PRIuPTR,
                 num_ptrs);
         fprintf(stderr, "\n");
         exit(1);
@@ -130,15 +145,20 @@ double time_diff(struct timeval *t1, struct timeval *t2)
     return ((usec2 - usec1) / 1000000.0) + (double) diff_sec;
 }
 
-void init_ptrs_with_constant_stride(uintptr_t *ptrs, uint64_t num_ptrs,
-                                    uint64_t stride, int stride_direction)
+void init_ptrs_with_constant_stride(uintptr_t *ptrs, uintptr_t num_ptrs,
+                                    uintptr_t stride, int stride_direction)
 {
-    uint64_t i, j;
+    uintptr_t i, j;
     uintptr_t *prev_loc;
-    int first;
+    uintptr_t prev_loc_idx;
 
+    if (debug_level >= 2) {
+        fprintf(stderr, "init_ptrs_with_constant_stride num_ptrs %" PRIuPTR
+                " stride %" PRIuPTR " stride_direction %d\n",
+                num_ptrs, stride, stride_direction);
+    }
     if ((num_ptrs % stride) != 0) {
-        fprintf(stderr, "init_ptrs_with_constant_stride only intended to work if stride divides num_ptrs evenly, but (%" PRIu64 " %% %" PRIu64 ") = %" PRIu64 "\n",
+        fprintf(stderr, "init_ptrs_with_constant_stride only intended to work if stride divides num_ptrs evenly, but (%" PRIuPTR " %% %" PRIuPTR ") = %" PRIuPTR "\n",
                 num_ptrs, stride, (num_ptrs % stride));
         exit(1);
     }
@@ -152,16 +172,11 @@ void init_ptrs_with_constant_stride(uintptr_t *ptrs, uint64_t num_ptrs,
     //      j 3
     //      j 5 (do not enter inner loop - exit)
     // i 2 (do not enter outer loop - exit)
-    first = 1;
     prev_loc = &(ptrs[0]);
     if (stride_direction > 0) {
         for (i = 0; i < stride; i++) {
             for (j = i; j < num_ptrs; j += stride) {
-                if (first) {
-                    first = 0;
-                } else {
-                    *prev_loc = (uintptr_t) &(ptrs[j]);
-                }
+                *prev_loc = (uintptr_t) &(ptrs[j]);
                 prev_loc = &(ptrs[j]);
             }
         }
@@ -171,22 +186,30 @@ void init_ptrs_with_constant_stride(uintptr_t *ptrs, uint64_t num_ptrs,
         for (i = 0; i < stride; i++) {
             for (j = num_ptrs + i; j >= stride;) {
                 j -= stride;
-                if (first) {
-                    first = 0;
-                } else {
+                if (j > 0) {
+                    if (debug_level >= 2) {
+                        prev_loc_idx = prev_loc - ptrs;
+                        fprintf(stderr, "Assigning pointer at idx %10" PRIuPTR " to point at index %10" PRIuPTR "\n",
+                                prev_loc_idx, j);
+                    }
                     *prev_loc = (uintptr_t) &(ptrs[j]);
+                    prev_loc = &(ptrs[j]);
                 }
-                prev_loc = &(ptrs[j]);
             }
         }
         // Set last entry to point back at the first
+        if (debug_level >= 2) {
+            prev_loc_idx = prev_loc - ptrs;
+            fprintf(stderr, "Assigning pointer at idx %10" PRIuPTR " to point at index %10" PRIuPTR "\n",
+                    prev_loc_idx, (uintptr_t) 0);
+        }
         *prev_loc = (uintptr_t) &(ptrs[0]);
     }
 }
 
-double one_experiment(uintptr_t *ptrs, uint64_t trials)
+double one_experiment(uintptr_t *ptrs, uintptr_t trials)
 {
-    uint64_t end_index;
+    uintptr_t end_index;
     struct timeval start_time, end_time;
     int ret;
 
@@ -198,7 +221,7 @@ double one_experiment(uintptr_t *ptrs, uint64_t trials)
     }
     end_index = follow_pointers(ptrs, trials);
     if (debug_level >= 1) {
-        fprintf(stderr, "After %" PRIu64 " pointer followings reached index %" PRIu64 "\n",
+        fprintf(stderr, "After %" PRIuPTR " pointer followings reached index %" PRIuPTR "\n",
                 trials, end_index);
     }
     ret = gettimeofday(&end_time, NULL);
@@ -259,14 +282,14 @@ double random_experiment(uint32_t *ptrs, uint32_t num_ptrs, uint32_t trials)
 }
 */
 
-void init_ptrs_random_pattern_1(uintptr_t *ptrs, uint64_t num_ptrs)
+void init_ptrs_random_pattern_1(uintptr_t *ptrs, uintptr_t num_ptrs)
 {
-    uint64_t i, next_idx;
+    uintptr_t i, next_idx;
     unsigned short seed16v[3];
-    uint64_t num_remaining;
-    uint64_t tmp;
-    uint64_t *P;
-    uint64_t cur_idx;
+    uintptr_t num_remaining;
+    uintptr_t tmp;
+    uintptr_t *P;
+    uintptr_t cur_idx;
 
     // Ideally I would like to generate a permutation of the indices
     // in [0, num_ptrs-1] such that if we call follow_pointers() on
@@ -292,10 +315,10 @@ void init_ptrs_random_pattern_1(uintptr_t *ptrs, uint64_t num_ptrs)
     //////////////////////////////////////////////////////////////
     // Step 1
     //////////////////////////////////////////////////////////////
-    P = (uint64_t *) calloc(num_ptrs, sizeof(uint64_t));
+    P = (uintptr_t *) calloc(num_ptrs, sizeof(uintptr_t));
     if (P == NULL) {
-        fprintf(stderr, "Failed to allocate block of %" PRIu64 " bytes\n",
-                num_ptrs * sizeof(uint64_t));
+        fprintf(stderr, "Failed to allocate block of %" PRIuPTR " bytes\n",
+                num_ptrs * sizeof(uintptr_t));
         exit(1);
     }
     // Create array of only values [1,num_ptrs-1], intentionally
@@ -336,17 +359,17 @@ void init_ptrs_random_pattern_1(uintptr_t *ptrs, uint64_t num_ptrs)
     }
     for (i = 0; i < num_ptrs; i++) {
         if (ptrs[i] >= num_ptrs) {
-            fprintf(stderr, "ptrs[%" PRIu64 "] = %lu >= %" PRIu64 " = num_ptrs\n",
+            fprintf(stderr, "ptrs[%" PRIuPTR "] = %lu >= %" PRIuPTR " = num_ptrs\n",
                     i, ptrs[i], num_ptrs);
             exit(1);
         }
         if (ptrs[i] == i) {
-            fprintf(stderr, "ptrs[%" PRIu64 "] = %lu = %" PRIu64 "\n",
+            fprintf(stderr, "ptrs[%" PRIuPTR "] = %lu = %" PRIuPTR "\n",
                     i, ptrs[i], i);
             exit(1);
         }
         if (debug_level >= 2) {
-            fprintf(stderr, "dbg ptrs[%10" PRIu64 "] = %10lu\n",
+            fprintf(stderr, "dbg ptrs[%10" PRIuPTR "] = %10lu\n",
                     i, ptrs[i]);
         }
     }
@@ -363,7 +386,7 @@ void init_ptrs_random_pattern_1(uintptr_t *ptrs, uint64_t num_ptrs)
         if ((((uintptr_t *) ptrs[i]) < ptrs) ||
             (((uintptr_t *) ptrs[i]) > &(ptrs[num_ptrs-1])))
         {
-            fprintf(stderr, "ptrs[%" PRIu64 "] = %lu is outside of array bounds of [%lu, %lu]\n",
+            fprintf(stderr, "ptrs[%" PRIuPTR "] = %lu is outside of array bounds of [%lu, %lu]\n",
                     i, ptrs[i], (uintptr_t) ptrs,
                     (uintptr_t) &(ptrs[num_ptrs-1]));
             exit(1);
@@ -459,17 +482,17 @@ void parse_args(int argc, char *argv[]) {
 
 int main(int argc, char *argv[]) {
     int num_sizes;
-    int stride_direction;
     size_t sz;
-    uint64_t num_ptrs;
+    uintptr_t num_ptrs;
     uintptr_t *ptrs;
     int num_access_patterns = 3;
     int access_pattern;
-    int constant_stride;
+    int constant_stride = 0;
     int num_strides = 9;
-    uint64_t stride;
-    uint64_t j;
-    uint64_t num_trials;
+    int stride_direction = 1;
+    uintptr_t stride;
+    uintptr_t j;
+    uintptr_t num_trials;
     double elapsed_time;
     double avg_nsec_per_iteration;
     size_t min_block_size, max_block_size;
@@ -488,8 +511,7 @@ int main(int argc, char *argv[]) {
     fprintf(stderr, "min block size: %lu bytes\n", min_block_size);
     fprintf(stderr, "max block size: %lu bytes\n", max_block_size);
 
-    //for (access_pattern = 0; access_pattern < num_access_patterns; access_pattern++) {
-    for (access_pattern = 2; access_pattern < num_access_patterns; access_pattern++) {
+    for (access_pattern = 0; access_pattern < num_access_patterns; access_pattern++) {
         fprintf(stderr, "\naccess_pattern\t%d\n", access_pattern);
         fprintf(outf, "\naccess_pattern\t%d\n", access_pattern);
         constant_stride = 0;
@@ -534,7 +556,7 @@ int main(int argc, char *argv[]) {
                     stride = get_stride(j);
                     if (stride > (num_ptrs / 2)) {
                         fprintf(outf, "\t-");
-                        fprintf(stderr, "%lu\t%" PRIu64 "\t%" PRIu64 "\t--\t(stride is more than half the number of elements)\n",
+                        fprintf(stderr, "%lu\t%" PRIuPTR "\t%" PRIuPTR "\t--\t(stride is more than half the number of elements)\n",
                                 sz, stride, num_trials);
                     } else {
                         init_ptrs_with_constant_stride(ptrs, num_ptrs,
@@ -544,7 +566,7 @@ int main(int argc, char *argv[]) {
                         avg_nsec_per_iteration = ((1000000000.0 * elapsed_time)
                                                   / num_trials);
                         fprintf(outf, "\t%.3f", avg_nsec_per_iteration);
-                        fprintf(stderr, "%lu\t%" PRIu64 "\t%" PRIu64 "\t%.3f\n",
+                        fprintf(stderr, "%lu\t%" PRIuPTR "\t%" PRIuPTR "\t%.3f\n",
                                 sz, stride, num_trials, avg_nsec_per_iteration);
                     }
                 }
@@ -558,7 +580,7 @@ int main(int argc, char *argv[]) {
                     avg_nsec_per_iteration = ((1000000000.0 * elapsed_time)
                                               / num_trials);
                     fprintf(outf, "\t%.3f", avg_nsec_per_iteration);
-                    fprintf(stderr, "%lu\t%d\t%" PRIu64 "\t%.3f\n",
+                    fprintf(stderr, "%lu\t%d\t%" PRIuPTR "\t%.3f\n",
                             sz, access_pattern, num_trials,
                             avg_nsec_per_iteration);
                     break;
