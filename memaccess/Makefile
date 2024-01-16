@@ -1,4 +1,5 @@
 CFLAGS=-Wall -O2
+#CFLAGS=-Wall -ggdb
 
 all: memaccess memaccess2 lfsr32
 
