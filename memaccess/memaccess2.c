@@ -72,7 +72,7 @@ uint64_t follow_pointers(uintptr_t *ptrs, uint64_t count) {
     }
     return (((uintptr_t *) ptr) - ptrs);
 }
-        
+
 /* Return t2 - t1.  Assumes t2 is after t1. */
 double time_diff(struct timeval *t1, struct timeval *t2)
 {
@@ -89,15 +89,15 @@ double time_diff(struct timeval *t1, struct timeval *t2)
     return ((usec2 - usec1) / 1000000.0) + (double) diff_sec;
 }
 
-void init_ptrs_with_stride(uintptr_t *ptrs, uint64_t num_ptrs, uint64_t stride,
-                           int stride_direction)
+void init_ptrs_with_constant_stride(uintptr_t *ptrs, uint64_t num_ptrs,
+                                    uint64_t stride, int stride_direction)
 {
     uint64_t i, j;
     uintptr_t *prev_loc;
     int first;
 
     if ((num_ptrs % stride) != 0) {
-        fprintf(stderr, "init_ptrs_with_stride only intended to work if stride divides num_ptrs evenly, but (%" PRIu64 " %% %" PRIu64 ") = %" PRIu64 "\n",
+        fprintf(stderr, "init_ptrs_with_constant_stride only intended to work if stride divides num_ptrs evenly, but (%" PRIu64 " %% %" PRIu64 ") = %" PRIu64 "\n",
                 num_ptrs, stride, (num_ptrs % stride));
         exit(1);
     }
@@ -143,14 +143,12 @@ void init_ptrs_with_stride(uintptr_t *ptrs, uint64_t num_ptrs, uint64_t stride,
     }
 }
 
-double one_experiment(uintptr_t *ptrs, uint64_t num_ptrs, uint64_t stride,
-                      int stride_direction, uint64_t trials)
+double one_experiment(uintptr_t *ptrs, uint64_t trials)
 {
     uint64_t end_index;
     struct timeval start_time, end_time;
     int ret;
 
-    init_ptrs_with_stride(ptrs, num_ptrs, stride, stride_direction);
     ret = gettimeofday(&start_time, NULL);
     if (ret != 0) {
         fprintf(stderr, "gettimeofday() returned %d with errno %d: %s",
@@ -170,7 +168,7 @@ double one_experiment(uintptr_t *ptrs, uint64_t num_ptrs, uint64_t stride,
 }
 
 /*
-double random_experiment(uint32_t *vals, uint32_t num_vals, uint32_t trials)
+double random_experiment(uint32_t *ptrs, uint32_t num_ptrs, uint32_t trials)
 {
     uint32_t trial;
     uint32_t total, tmp;
@@ -179,19 +177,19 @@ double random_experiment(uint32_t *vals, uint32_t num_vals, uint32_t trials)
     uint32_t index_mask;
 
     index_mask = 1;
-    while (index_mask < num_vals) {
+    while (index_mask < num_ptrs) {
         index_mask <<= 1;
     }
-    if (index_mask != num_vals) {
-        fprintf(stderr, "random_experiment() only supports num_vals that is a power of 2 with the power in range [1,31].  num_vals=%u is not supported.\n",
-                num_vals);
+    if (index_mask != num_ptrs) {
+        fprintf(stderr, "random_experiment() only supports num_ptrs that is a power of 2 with the power in range [1,31].  num_ptrs=%u is not supported.\n",
+                num_ptrs);
         exit(1);
     }
     --index_mask;
 
-    init_array(vals, num_vals);
+    init_array(ptrs, num_ptrs);
     lfsr32a_set_seed(0xdeadbeef);
-    total = random_sum_vals(vals, num_vals, index_mask);
+    total = random_sum_vals(ptrs, num_ptrs, index_mask);
 
     ret = gettimeofday(&start_time, NULL);
     if (ret != 0) {
@@ -201,7 +199,7 @@ double random_experiment(uint32_t *vals, uint32_t num_vals, uint32_t trials)
     }
     for (trial = 0; trial < trials; trial++) {
         lfsr32a_set_seed(0xdeadbeef);
-        tmp = random_sum_vals(vals, num_vals, index_mask);
+        tmp = random_sum_vals(ptrs, num_ptrs, index_mask);
         if (tmp != total) {
             fprintf(stderr, "one_experiment expected total %u but got %u instead\n",
                     total, tmp);
@@ -218,58 +216,74 @@ double random_experiment(uint32_t *vals, uint32_t num_vals, uint32_t trials)
 }
 */
 
-/*
-double random2_experiment(uint32_t *vals, uint32_t num_vals, uint32_t trials)
+void init_ptrs_random_pattern_1(uintptr_t *ptrs, uint64_t num_ptrs)
 {
-    uint32_t trial;
-    uint32_t total, tmp;
-    struct timeval start_time, end_time;
-    int ret;
-    uint32_t index_mask;
+    uint64_t i, next_idx;
     unsigned short seed16v[3];
+    uint64_t num_remaining;
+    uint64_t tmp;
+    uint64_t count_rands = 0;
 
-    index_mask = 1;
-    while (index_mask < num_vals) {
-        index_mask <<= 1;
-    }
-    if (index_mask != num_vals) {
-        fprintf(stderr, "random2_experiment() only supports num_vals that is a power of 2 with the power in range [1,31].  num_vals=%u is not supported.\n",
-                num_vals);
-        exit(1);
-    }
-    --index_mask;
+    /* Fill ptrs with a randomly generated permutation of the index
+     * values in [0, num_ptrs-1], with the only restriction that
+     * (ptrs[i] != i) for all i.  After that, replace all indexes with
+     * pointers to the value at that index. */
 
-    init_array(vals, num_vals);
+    /* First create array with ptrs[i]=i for all i. */
+    for (i = 0; i < num_ptrs; i++) {
+        ptrs[i] = i;
+    }
+    /* Now randomly permute it, with restriction that ptr[i] != i */
     seed16v[0] = 0xdead;
     seed16v[1] = 0xbeef;
     seed16v[2] = 0xcafe;
     seed48(seed16v);
-    total = random2_sum_vals(vals, num_vals, index_mask);
-
-    ret = gettimeofday(&start_time, NULL);
-    if (ret != 0) {
-        fprintf(stderr, "gettimeofday() returned %d with errno %d: %s",
-                ret, errno, strerror(errno));
-        exit(1);
+    num_remaining = num_ptrs;
+    for (i = 0; i < num_ptrs; i++) {
+        do {
+            next_idx = i + (lrand48() % num_remaining);
+            ++count_rands;
+        } while (ptrs[next_idx] == i);
+        tmp = ptrs[i];
+        ptrs[i] = ptrs[next_idx];
+        ptrs[next_idx] = tmp;
     }
-    for (trial = 0; trial < trials; trial++) {
-        seed48(seed16v);
-        tmp = random2_sum_vals(vals, num_vals, index_mask);
-        if (tmp != total) {
-            fprintf(stderr, "one_experiment expected total %u but got %u instead\n",
-                    total, tmp);
+    fprintf(stderr, "Generated %" PRIu64 " extra random values to maintain invairiant that ptr[i] != i\n",
+            count_rands - num_ptrs);
+
+    /* Sanity check that all index values are in range, and ptrs[i] !=
+     * i for all i. */
+    for (i = 0; i < num_ptrs; i++) {
+        if (ptrs[i] >= num_ptrs) {
+            fprintf(stderr, "ptrs[%" PRIu64 "] = %lu >= %" PRIu64 " = num_ptrs\n",
+                    i, ptrs[i], num_ptrs);
+            exit(1);
+        }
+        if (ptrs[i] == i) {
+            fprintf(stderr, "ptrs[%" PRIu64 "] = %lu = %" PRIu64 "\n",
+                    i, ptrs[i], i);
             exit(1);
         }
     }
-    ret = gettimeofday(&end_time, NULL);
-    if (ret != 0) {
-        fprintf(stderr, "gettimeofday() returned %d with errno %d: %s",
-                ret, errno, strerror(errno));
-        exit(1);
+
+    /* Replace all indices with pointers. */
+    for (i = 0; i < num_ptrs; i++) {
+        ptrs[i] = (uintptr_t) &(ptrs[i]);
     }
-    return time_diff(&start_time, &end_time);
+
+    /* Sanity check that all pointers are within the bounds of the
+     * array. */
+    for (i = 0; i < num_ptrs; i++) {
+        if ((((uintptr_t *) ptrs[i]) < ptrs) ||
+            (((uintptr_t *) ptrs[i]) > &(ptrs[num_ptrs-1])))
+        {
+            fprintf(stderr, "ptrs[%" PRIu64 "] = %lu is outside of array bounds of [%lu, %lu]\n",
+                    i, ptrs[i], (uintptr_t) ptrs,
+                    (uintptr_t) &(ptrs[num_ptrs-1]));
+            exit(1);
+        }
+    }
 }
-*/
 
 uint32_t get_stride(int idx) {
     uint32_t stride;
@@ -362,7 +376,7 @@ int main(int argc, char *argv[]) {
     size_t sz;
     uint64_t num_ptrs;
     uintptr_t *ptrs;
-    int num_access_patterns = 2;
+    int num_access_patterns = 3;
     int access_pattern;
     int constant_stride;
     int num_strides = 9;
@@ -387,7 +401,8 @@ int main(int argc, char *argv[]) {
     fprintf(stderr, "min block size: %lu bytes\n", min_block_size);
     fprintf(stderr, "max block size: %lu bytes\n", max_block_size);
 
-    for (access_pattern = 0; access_pattern < num_access_patterns; access_pattern++) {
+    //for (access_pattern = 0; access_pattern < num_access_patterns; access_pattern++) {
+    for (access_pattern = 2; access_pattern < num_access_patterns; access_pattern++) {
         fprintf(stderr, "\naccess_pattern\t%d\n", access_pattern);
         fprintf(outf, "\naccess_pattern\t%d\n", access_pattern);
         constant_stride = 0;
@@ -427,15 +442,6 @@ int main(int argc, char *argv[]) {
             ptrs = (uintptr_t *) alloc_block(sz);
             num_trials = (256 * 1024 * 1024);
             fprintf(outf, "%lu", sz);
-            /*
-            if (!constant_stride) {
-                // Use pseudo-random order to access the array indices.
-                elapsed_time = random2_experiment(ptrs, num_ptrs, num_trials);
-                fprintf(outf, "\t%.6f", elapsed_time);
-                fprintf(stderr, "%lu\t%u\t%.6f\n",
-                        sz, num_trials, elapsed_time);
-            }
-            */
             if (constant_stride) {
                 for (j = 0; j < num_strides; j++) {
                     stride = get_stride(j);
@@ -444,15 +450,33 @@ int main(int argc, char *argv[]) {
                         fprintf(stderr, "%lu\t%" PRIu64 "\t%" PRIu64 "\t--\t(stride is more than half the number of elements)\n",
                                 sz, stride, num_trials);
                     } else {
-                        elapsed_time = one_experiment(ptrs, num_ptrs,
-                                                      stride, stride_direction,
-                                                      num_trials);
+                        init_ptrs_with_constant_stride(ptrs, num_ptrs,
+                                                       stride, stride_direction);
+                        elapsed_time = one_experiment(ptrs, num_trials);
                         avg_nsec_per_iteration = ((1000000000.0 * elapsed_time)
                                                   / num_trials);
                         fprintf(outf, "\t%.3f", avg_nsec_per_iteration);
                         fprintf(stderr, "%lu\t%" PRIu64 "\t%" PRIu64 "\t%.3f\n",
                                 sz, stride, num_trials, avg_nsec_per_iteration);
                     }
+                }
+            } else {
+                switch (access_pattern) {
+                case 2:
+                    // Pseudo-random pattern #1
+                    init_ptrs_random_pattern_1(ptrs, num_ptrs);
+                    elapsed_time = one_experiment(ptrs, num_trials);
+                    avg_nsec_per_iteration = ((1000000000.0 * elapsed_time)
+                                              / num_trials);
+                    fprintf(outf, "\t%.3f", avg_nsec_per_iteration);
+                    fprintf(stderr, "%lu\t%d\t%" PRIu64 "\t%.3f\n",
+                            sz, access_pattern, num_trials,
+                            avg_nsec_per_iteration);
+                    break;
+                default:
+                    fprintf(stderr, "Unsupported value access_pattern=%d\n",
+                            access_pattern);
+                    exit(1);
                 }
             }
             fprintf(outf, "\n");
