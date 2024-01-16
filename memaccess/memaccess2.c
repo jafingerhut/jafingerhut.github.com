@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <inttypes.h>
 #include <string.h>
 #include <ctype.h>
 #include <sys/time.h>
@@ -46,6 +47,10 @@ void print_type_sizes(FILE *f) {
     fprintf(f, "%2lu void *\n", sizeof(void *));
     fprintf(f, "%2lu char *\n", sizeof(char *));
     fprintf(f, "%2lu uintptr_t *\n", sizeof(uintptr_t));
+    fprintf(f, "PRIx64 format string=:%s:\n", PRIx64);
+    fprintf(f, "PRIX64 format string=:%s:\n", PRIX64);
+    fprintf(f, "PRIu64 format string=:%s:\n", PRIu64);
+    fprintf(f, "PRId64 format string=:%s:\n", PRId64);
     fflush(f);
 }
 
@@ -92,7 +97,7 @@ void init_ptrs_with_stride(uintptr_t *ptrs, uint64_t num_ptrs, uint64_t stride,
     int first;
 
     if ((num_ptrs % stride) != 0) {
-        fprintf(stderr, "init_ptrs_with_stride only intended to work if stride divides num_ptrs evenly, but (%llu %% %llu) = %llu\n",
+        fprintf(stderr, "init_ptrs_with_stride only intended to work if stride divides num_ptrs evenly, but (%" PRIu64 " %% %" PRIu64 ") = %" PRIu64 "\n",
                 num_ptrs, stride, (num_ptrs % stride));
         exit(1);
     }
@@ -106,9 +111,9 @@ void init_ptrs_with_stride(uintptr_t *ptrs, uint64_t num_ptrs, uint64_t stride,
     //      j 3
     //      j 5 (do not enter inner loop - exit)
     // i 2 (do not enter outer loop - exit)
+    first = 1;
+    prev_loc = &(ptrs[0]);
     if (stride_direction > 0) {
-        first = 1;
-        prev_loc = &(ptrs[0]);
         for (i = 0; i < stride; i++) {
             for (j = i; j < num_ptrs; j += stride) {
                 if (first) {
@@ -153,7 +158,7 @@ double one_experiment(uintptr_t *ptrs, uint64_t num_ptrs, uint64_t stride,
         exit(1);
     }
     end_index = follow_pointers(ptrs, trials);
-    fprintf(stderr, "After %llu pointer followings reached index %llu\n",
+    fprintf(stderr, "After %" PRIu64 " pointer followings reached index %" PRIu64 "\n",
             trials, end_index);
     ret = gettimeofday(&end_time, NULL);
     if (ret != 0) {
@@ -392,7 +397,7 @@ int main(int argc, char *argv[]) {
         for (sz = min_block_size; sz <= max_block_size; sz <<= 1) {
             num_ptrs = sz / sizeof(void *);
             ptrs = (uintptr_t *) alloc_block(sz);
-            num_trials = (1024 * 1024 * 1024) / sz;
+            num_trials = (256 * 1024 * 1024);
             fprintf(outf, "%lu", sz);
             /*
             if (stride_direction == 0) {
@@ -407,14 +412,14 @@ int main(int argc, char *argv[]) {
                     stride = get_stride(j);
                     if (stride > (num_ptrs / 2)) {
                         fprintf(outf, "\t-");
-                        fprintf(stderr, "%lu\t%llu\t%llu\t--\t(stride is more than half the number of elements)\n",
+                        fprintf(stderr, "%lu\t%" PRIu64 "\t%" PRIu64 "\t--\t(stride is more than half the number of elements)\n",
                                 sz, stride, num_trials);
                     } else {
                         elapsed_time = one_experiment(ptrs, num_ptrs,
                                                       stride, stride_direction,
                                                       num_trials);
                         fprintf(outf, "\t%.6f", elapsed_time);
-                        fprintf(stderr, "%lu\t%llu\t%llu\t%.6f\n",
+                        fprintf(stderr, "%lu\t%" PRIu64 "\t%" PRIu64 "\t%.6f\n",
                                 sz, stride, num_trials, elapsed_time);
                     }
                 }
