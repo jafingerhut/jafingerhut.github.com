@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <inttypes.h>
 
 void mu_lfsr_gal_two_length()
 {
@@ -16,7 +17,7 @@ void mu_lfsr_gal_two_length()
             printf("%08x\n", bits);
         }
     } while (bits != 0xffffffff);
-    printf("count=%llu\n", count);
+    printf("count=%" PRIu64 "\n", count);
 }
 
 const uint32_t lfsr32a_mask = (1U << 31) | (1 << 29) | (1 << 25) | (1 << 24);
@@ -44,6 +45,10 @@ void mu_lfsr_gal_two_length_v2()
 
     printf("\nmu_lfsr_gal_two_length_v2()\n");
     lfsr32a_set_seed(0xffffffff);
+    // Next line does not affect code behavior, but does avoid
+    // compiler warning about prev_rand possibly being used
+    // uninitialized.
+    prev_rand = 0;
     do {
         ++count;
         bits = lfsr32a_rand();
@@ -70,12 +75,12 @@ void mu_lfsr_gal_two_length_v2()
         }
         prev_rand = rand;
     } while (bits != 0xffffffff);
-    printf("count=%llu\n", count);
+    printf("count=%" PRIu64 "\n", count);
     printf("average absolute difference between consecutive samples=%.1f\n",
            (double) sum / count);
     printf("min diff=%u\n", min_diff);
     printf("max diff=%u\n", max_diff);
-    printf("# of times the difference between consecutive random numbers was 0=%llu\n",
+    printf("# of times the difference between consecutive random numbers was 0=%" PRIu64 "\n",
            count_diff_0);
 }
 
