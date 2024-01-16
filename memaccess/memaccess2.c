@@ -10,6 +10,7 @@
 FILE *outf = NULL;
 int power_of_2_for_min_block_size = 10;
 int power_of_2_for_max_block_size = 30;
+int debug_level = 0;
 
 const uint32_t lfsr32a_mask = (1U << 31) | (1 << 29) | (1 << 25) | (1 << 24);
 uint32_t lfsr32a_state;
@@ -71,6 +72,46 @@ uint64_t follow_pointers(uintptr_t *ptrs, uint64_t count) {
         ptr = *((uintptr_t *) ptr);
     }
     return (((uintptr_t *) ptr) - ptrs);
+}
+
+uint64_t cycle_len_starting_at_index(uintptr_t *ptrs, uint64_t idx) {
+    uint64_t count = 0;
+    uint64_t ptr = ptrs[idx];
+    uint64_t start = ptr;
+    uint64_t tmp;
+    if (debug_level >= 2) {
+        fprintf(stderr, "dbg cycle_len start %" PRIu64 "\n", start);
+        tmp = ((uintptr_t *) ptr) - ptrs;
+        fprintf(stderr, "dbg cycle_len count %10" PRIu64 " ptr %" PRIu64
+                " tmp %" PRIu64 "\n",
+                count, ptr, tmp);
+    }
+    do {
+        ++count;
+        ptr = *((uintptr_t *) ptr);
+        if (debug_level >= 2) {
+            tmp = ((uintptr_t *) ptr) - ptrs;
+            fprintf(stderr, "dbg cycle_len count %10" PRIu64 " ptr %" PRIu64
+                    " tmp %" PRIu64 "\n",
+                    count, ptr, tmp);
+        }
+    } while (ptr != start);
+    return count;
+}
+
+void warn_if_cycle_too_short(uintptr_t *ptrs, uint64_t num_ptrs) {
+    uint64_t cycle_len;
+
+    cycle_len = cycle_len_starting_at_index(ptrs, 0);
+    if (cycle_len != num_ptrs) {
+        fprintf(stderr, "Cycle len starting at index %" PRIu64
+                " is %" PRIu64,
+                (uint64_t) 0, cycle_len);
+        fprintf(stderr, "   WARNING not equal to num_ptrs=%" PRIu64,
+                num_ptrs);
+        fprintf(stderr, "\n");
+        exit(1);
+    }
 }
 
 /* Return t2 - t1.  Assumes t2 is after t1. */
@@ -156,8 +197,10 @@ double one_experiment(uintptr_t *ptrs, uint64_t trials)
         exit(1);
     }
     end_index = follow_pointers(ptrs, trials);
-    fprintf(stderr, "After %" PRIu64 " pointer followings reached index %" PRIu64 "\n",
-            trials, end_index);
+    if (debug_level >= 1) {
+        fprintf(stderr, "After %" PRIu64 " pointer followings reached index %" PRIu64 "\n",
+                trials, end_index);
+    }
     ret = gettimeofday(&end_time, NULL);
     if (ret != 0) {
         fprintf(stderr, "gettimeofday() returned %d with errno %d: %s",
@@ -222,38 +265,75 @@ void init_ptrs_random_pattern_1(uintptr_t *ptrs, uint64_t num_ptrs)
     unsigned short seed16v[3];
     uint64_t num_remaining;
     uint64_t tmp;
-    uint64_t count_rands = 0;
+    uint64_t *P;
+    uint64_t cur_idx;
 
-    /* Fill ptrs with a randomly generated permutation of the index
-     * values in [0, num_ptrs-1], with the only restriction that
-     * (ptrs[i] != i) for all i.  After that, replace all indexes with
-     * pointers to the value at that index. */
+    // Ideally I would like to generate a permutation of the indices
+    // in [0, num_ptrs-1] such that if we call follow_pointers() on
+    // the resulting array ptrs, it will cycle exactly once through
+    // each location, returning back to index 0 at the end.
+    //
+    // There might be a way to do this with only (num_ptrs *
+    // sizeof(uintptr_t)), memory and linear time, but if so, I have
+    // not thought of one yet.
+    //
+    // The next best idea I have is to do it with twice that much
+    // memory and linear time.
+    //
+    // Step 1 is to create a random permutation 'P' of the values in
+    // [1, num_ptrs-1], and append 0 to the end of that.
+    //
+    // The desired order of visiting indices is then 0, P[0], P[1],
+    // P[2], ..., P[num_ptrs-2], P[num_ptrs-1], where P[num_ptrs-1]=0.
+    //
+    // Step 2 is to then use that array, without modifying it, to
+    // initialize the array ptrs.
 
-    /* First create array with ptrs[i]=i for all i. */
-    for (i = 0; i < num_ptrs; i++) {
-        ptrs[i] = i;
+    //////////////////////////////////////////////////////////////
+    // Step 1
+    //////////////////////////////////////////////////////////////
+    P = (uint64_t *) calloc(num_ptrs, sizeof(uint64_t));
+    if (P == NULL) {
+        fprintf(stderr, "Failed to allocate block of %" PRIu64 " bytes\n",
+                num_ptrs * sizeof(uint64_t));
+        exit(1);
     }
-    /* Now randomly permute it, with restriction that ptr[i] != i */
+    // Create array of only values [1,num_ptrs-1], intentionally
+    // omitting 0, which we know we want to be at the very end.
+    for (i = 0; i < num_ptrs-1; i++) {
+        P[i] = i+1;
+    }
+    /* Now randomly permute values in [1,num_ptr-1] */
     seed16v[0] = 0xdead;
     seed16v[1] = 0xbeef;
     seed16v[2] = 0xcafe;
     seed48(seed16v);
-    num_remaining = num_ptrs;
-    for (i = 0; i < num_ptrs; i++) {
-        do {
-            next_idx = i + (lrand48() % num_remaining);
-            ++count_rands;
-        } while (ptrs[next_idx] == i);
-        tmp = ptrs[i];
-        ptrs[i] = ptrs[next_idx];
-        ptrs[next_idx] = tmp;
-        --num_remaining;
+    num_remaining = num_ptrs-1;
+    for (i = 0; i < num_ptrs-1; i++) {
+        num_remaining = (num_ptrs - 1 - i);
+        next_idx = i + (lrand48() % num_remaining);
+        tmp = P[i];
+        P[i] = P[next_idx];
+        P[next_idx] = tmp;
     }
-    fprintf(stderr, "Generated %" PRIu64 " extra random values to maintain invairiant that ptr[i] != i\n",
-            count_rands - num_ptrs);
+    /* Put 0 at the end. */
+    P[num_ptrs-1] = 0;
+
+    //////////////////////////////////////////////////////////////
+    // Step 2
+    //////////////////////////////////////////////////////////////
+    cur_idx = 0;
+    for (i = 0; i < num_ptrs; i++) {
+        ptrs[cur_idx] = P[i];
+        cur_idx = P[i];
+    }
+    free(P);
 
     /* Sanity check that all index values are in range, and ptrs[i] !=
      * i for all i. */
+    if (debug_level >= 2) {
+        fprintf(stderr, "dbg init_ptrs_random_pattern_1:\n");
+    }
     for (i = 0; i < num_ptrs; i++) {
         if (ptrs[i] >= num_ptrs) {
             fprintf(stderr, "ptrs[%" PRIu64 "] = %lu >= %" PRIu64 " = num_ptrs\n",
@@ -265,11 +345,16 @@ void init_ptrs_random_pattern_1(uintptr_t *ptrs, uint64_t num_ptrs)
                     i, ptrs[i], i);
             exit(1);
         }
+        if (debug_level >= 2) {
+            fprintf(stderr, "dbg ptrs[%10" PRIu64 "] = %10lu\n",
+                    i, ptrs[i]);
+        }
     }
 
     /* Replace all indices with pointers. */
     for (i = 0; i < num_ptrs; i++) {
-        ptrs[i] = (uintptr_t) &(ptrs[i]);
+        tmp = ptrs[i];
+        ptrs[i] = (uintptr_t) &(ptrs[tmp]);
     }
 
     /* Sanity check that all pointers are within the bounds of the
@@ -284,6 +369,7 @@ void init_ptrs_random_pattern_1(uintptr_t *ptrs, uint64_t num_ptrs)
             exit(1);
         }
     }
+
 }
 
 uint32_t get_stride(int idx) {
@@ -453,6 +539,7 @@ int main(int argc, char *argv[]) {
                     } else {
                         init_ptrs_with_constant_stride(ptrs, num_ptrs,
                                                        stride, stride_direction);
+                        warn_if_cycle_too_short(ptrs, num_ptrs);
                         elapsed_time = one_experiment(ptrs, num_trials);
                         avg_nsec_per_iteration = ((1000000000.0 * elapsed_time)
                                                   / num_trials);
@@ -466,6 +553,7 @@ int main(int argc, char *argv[]) {
                 case 2:
                     // Pseudo-random pattern #1
                     init_ptrs_random_pattern_1(ptrs, num_ptrs);
+                    warn_if_cycle_too_short(ptrs, num_ptrs);
                     elapsed_time = one_experiment(ptrs, num_trials);
                     avg_nsec_per_iteration = ((1000000000.0 * elapsed_time)
                                               / num_trials);
