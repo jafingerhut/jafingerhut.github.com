@@ -362,11 +362,15 @@ int main(int argc, char *argv[]) {
     size_t sz;
     uint64_t num_ptrs;
     uintptr_t *ptrs;
+    int num_access_patterns = 2;
+    int access_pattern;
+    int constant_stride;
     int num_strides = 9;
     uint64_t stride;
     uint64_t j;
     uint64_t num_trials;
     double elapsed_time;
+    double avg_nsec_per_iteration;
     size_t min_block_size, max_block_size;
 
     parse_args(argc, argv);
@@ -383,12 +387,36 @@ int main(int argc, char *argv[]) {
     fprintf(stderr, "min block size: %lu bytes\n", min_block_size);
     fprintf(stderr, "max block size: %lu bytes\n", max_block_size);
 
-    //for (stride_direction = -1; stride_direction <= 1; stride_direction++) {
-    for (stride_direction = 0; stride_direction <= 0; stride_direction++) {
-        fprintf(stderr, "\nstride_direction\t%d\n", stride_direction);
-        fprintf(outf, "\nstride_direction\t%d\n", stride_direction);
+    for (access_pattern = 0; access_pattern < num_access_patterns; access_pattern++) {
+        fprintf(stderr, "\naccess_pattern\t%d\n", access_pattern);
+        fprintf(outf, "\naccess_pattern\t%d\n", access_pattern);
+        constant_stride = 0;
+        switch (access_pattern) {
+        case 0:
+            // Constant stride, negative
+            constant_stride = 1;
+            stride_direction = -1;
+            break;
+        case 1:
+            // Constant stride, positive
+            constant_stride = 1;
+            stride_direction = 1;
+            break;
+        case 2:
+            // Pseudo-random pattern #1
+            break;
+        default:
+            fprintf(stderr, "Unsupported value access_pattern=%d\n",
+                    access_pattern);
+            exit(1);
+            break;
+        }
+        if (constant_stride) {
+            fprintf(stderr, "\nstride_direction\t%d\n", stride_direction);
+            fprintf(outf, "\nstride_direction\t%d\n", stride_direction);
+        }
         fprintf(outf, "size_bytes");
-        if (stride_direction != 0) {
+        if (constant_stride) {
             for (j = 0; j < num_strides; j++) {
                 fprintf(outf, "\t%u", get_stride(j));
             }
@@ -400,14 +428,15 @@ int main(int argc, char *argv[]) {
             num_trials = (256 * 1024 * 1024);
             fprintf(outf, "%lu", sz);
             /*
-            if (stride_direction == 0) {
+            if (!constant_stride) {
                 // Use pseudo-random order to access the array indices.
                 elapsed_time = random2_experiment(ptrs, num_ptrs, num_trials);
                 fprintf(outf, "\t%.6f", elapsed_time);
                 fprintf(stderr, "%lu\t%u\t%.6f\n",
                         sz, num_trials, elapsed_time);
-            } else {
+            }
             */
+            if (constant_stride) {
                 for (j = 0; j < num_strides; j++) {
                     stride = get_stride(j);
                     if (stride > (num_ptrs / 2)) {
@@ -418,14 +447,14 @@ int main(int argc, char *argv[]) {
                         elapsed_time = one_experiment(ptrs, num_ptrs,
                                                       stride, stride_direction,
                                                       num_trials);
-                        fprintf(outf, "\t%.6f", elapsed_time);
-                        fprintf(stderr, "%lu\t%" PRIu64 "\t%" PRIu64 "\t%.6f\n",
-                                sz, stride, num_trials, elapsed_time);
+                        avg_nsec_per_iteration = ((1000000000.0 * elapsed_time)
+                                                  / num_trials);
+                        fprintf(outf, "\t%.3f", avg_nsec_per_iteration);
+                        fprintf(stderr, "%lu\t%" PRIu64 "\t%" PRIu64 "\t%.3f\n",
+                                sz, stride, num_trials, avg_nsec_per_iteration);
                     }
                 }
-            /*
             }
-            */
             fprintf(outf, "\n");
             fflush(outf);
             fflush(stderr);
