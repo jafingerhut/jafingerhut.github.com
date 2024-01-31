@@ -82,6 +82,12 @@ packages", but the rest I instead use the setup steps in the article
 
 ## Enabling shared folder between host macOS and UTM guest host
 
+The instructions in this section have been confirmed working on macOS
+host system with these guest OS's:
+
++ Ubuntu 20.04, 22.04
++ Fedora 38
+
 Instructions with steps for other scenarios besides the one described
 below can be found here:
 
