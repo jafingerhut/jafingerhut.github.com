@@ -1,0 +1,12 @@
+property step : 5
+tell application "QuickTime Player"
+	set playerPosition to (current time of front document) + step
+	set movieDuration to duration of front document
+	if (playerPosition > movieDuration) then
+		if front document is playing then
+			stop front document
+		end if
+		set playerPosition to movieDuration
+	end if
+	set current time of front document to playerPosition
+end tell
