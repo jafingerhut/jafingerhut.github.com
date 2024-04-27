@@ -221,6 +221,70 @@ double random_experiment(uint32_t *vals, uint32_t num_vals, uint32_t trials)
     return time_diff(&start_time, &end_time);
 }
 
+uint32_t random2_sum_vals(uint32_t *vals, uint32_t num_vals, uint32_t index_mask)
+{
+    uint32_t i;
+    uint32_t idx;
+    uint32_t sum = 0;
+
+    for (i = 0; i < num_vals; i++) {
+        idx = lrand48() & index_mask;
+        sum += vals[idx];
+    }
+    return sum;
+}
+
+double random2_experiment(uint32_t *vals, uint32_t num_vals, uint32_t trials)
+{
+    uint32_t trial;
+    uint32_t total, tmp;
+    struct timeval start_time, end_time;
+    int ret;
+    uint32_t index_mask;
+    unsigned short seed16v[3];
+
+    index_mask = 1;
+    while (index_mask < num_vals) {
+        index_mask <<= 1;
+    }
+    if (index_mask != num_vals) {
+        fprintf(stderr, "random2_experiment() only supports num_vals that is a power of 2 with the power in range [1,31].  num_vals=%u is not supported.\n",
+                num_vals);
+        exit(1);
+    }
+    --index_mask;
+
+    init_array(vals, num_vals);
+    seed16v[0] = 0xdead;
+    seed16v[1] = 0xbeef;
+    seed16v[2] = 0xcafe;
+    seed48(seed16v);
+    total = random2_sum_vals(vals, num_vals, index_mask);
+
+    ret = gettimeofday(&start_time, NULL);
+    if (ret != 0) {
+        fprintf(stderr, "gettimeofday() returned %d with errno %d: %s",
+                ret, errno, strerror(errno));
+        exit(1);
+    }
+    for (trial = 0; trial < trials; trial++) {
+        seed48(seed16v);
+        tmp = random2_sum_vals(vals, num_vals, index_mask);
+        if (tmp != total) {
+            fprintf(stderr, "one_experiment expected total %u but got %u instead\n",
+                    total, tmp);
+            exit(1);
+        }
+    }
+    ret = gettimeofday(&end_time, NULL);
+    if (ret != 0) {
+        fprintf(stderr, "gettimeofday() returned %d with errno %d: %s",
+                ret, errno, strerror(errno));
+        exit(1);
+    }
+    return time_diff(&start_time, &end_time);
+}
+
 uint32_t get_stride(int idx) {
     uint32_t stride;
     switch (idx) {
@@ -333,7 +397,8 @@ int main(int argc, char *argv[]) {
     fprintf(stderr, "min block size: %lu bytes\n", min_block_size);
     fprintf(stderr, "max block size: %lu bytes\n", max_block_size);
 
-    for (stride_direction = -1; stride_direction <= 1; stride_direction++) {
+    //for (stride_direction = -1; stride_direction <= 1; stride_direction++) {
+    for (stride_direction = 0; stride_direction <= 0; stride_direction++) {
         fprintf(stderr, "\nstride_direction\t%d\n", stride_direction);
         fprintf(outf, "\nstride_direction\t%d\n", stride_direction);
         fprintf(outf, "size_bytes");
@@ -350,7 +415,7 @@ int main(int argc, char *argv[]) {
             fprintf(outf, "%lu", sz);
             if (stride_direction == 0) {
                 // Use pseudo-random order to access the array indices.
-                elapsed_time = random_experiment(vals, num_uint32s, num_trials);
+                elapsed_time = random2_experiment(vals, num_uint32s, num_trials);
                 fprintf(outf, "\t%.6f", elapsed_time);
                 fprintf(stderr, "%lu\t%u\t%.6f\n",
                         sz, num_trials, elapsed_time);
