@@ -191,7 +191,7 @@ run the third to disable the service intended for use in managing
 network interfaces on Ubuntu server:
 
 ```bash
-$ systemctl ss-enabled NetworkManager-wait-online.service systemd-networkd-wait-online.service
+$ systemctl is-enabled NetworkManager-wait-online.service systemd-networkd-wait-online.service
 enabled
 enabled
 
@@ -199,12 +199,11 @@ $ systemctl is-enabled NetworkManager.service systemd-networkd.service
 enabled
 enabled
 
-$ systemctl disable systemd-networkd.service
-Removed "/etc/systemd/system/multi-user.target.wants/systemd-networkd.service".
-Removed "/etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service".
-Removed "/etc/systemd/system/sockets.target.wants/systemd-networkd.socket".
-Disabling 'systemd-networkd.service', but its triggering units are still active:
-systemd-networkd.socket
+$ sudo systemctl disable systemd-networkd.service
+[sudo] password for andy:
+Removed /etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service.
+Removed /etc/systemd/system/sockets.target.wants/systemd-networkd.socket.
+Removed /etc/systemd/system/multi-user.target.wants/systemd-networkd.service.
 ```
 
 
