@@ -17,7 +17,9 @@ Linux:
 
 + Ubuntu 20.04 Server, and Desktop
   + I installed Desktop by first installing Server, then `sudo apt-get
-    install ubuntu-desktop-minimal`
+    install ubuntu-desktop-minimal` Search for `ubuntu-desktop` in
+    [this article](macos-virtualbox-ubuntu-install-notes.md) to see a
+    suggestion for reducing long boot times.
   + Other instructions for installing and Ubuntu Desktop GUI on Ubuntu
     server can be found here:
     https://phoenixnap.com/kb/how-to-install-a-gui-on-ubuntu

@@ -120,11 +120,6 @@ Off.  Same reason as for "Security & Privacy" settings for Ubuntu
 Settings -> Power -> Power Saving -> change Blank screen to "Never".
 
 
-## Ubuntu 19.10 Desktop Linux
-
-Same settings changes as for Ubuntu 18.04 Desktop Linux
-
-
 ## Ubuntu 20.04 Desktop Linux
 
 Settings -> Appearance: reduce Icon size from default 48 to 24 pixels
@@ -166,6 +161,51 @@ Sources:
 
 + https://askubuntu.com/questions/1410256/how-do-i-use-x-instead-of-wayland-on-22-04
 + https://askubuntu.com/questions/1402124/problems-dsplaying-windows-vm-on-virtualbox-on-22-04-with-wayland
+
+
+## Installing desktop GUI on Ubuntu Server Linux
+
+Sometimes it is easier to find a version of Ubuntu server for a
+particular Ubuntu version and processor architecture combination, but
+you want to run the desktop GUI on it.
+
+First install the server version of Ubuntu Linux that you want.
+
+Then use one of these commands to install the desktop GUI.  The first
+one installs less software, a bit faster and less storage required.
+The second one installs more software, such as LibreOffice.
+
+```bash
+sudo apt-get install ubuntu-desktop-minimal
+sudo apt-get install ubuntu-desktop
+```
+
+Note that a system installed this way might end up with two different
+system services running on it, which can significantly increase the
+boot time, e.g. by 2 minutes.
+
++ https://askubuntu.com/questions/1217252/boot-process-hangs-at-systemd-networkd-wait-online/1501504#1501504
+
+If you see the output shown below from the first two commands, you can
+run the third to disable the service intended for use in managing
+network interfaces on Ubuntu server:
+
+```bash
+$ systemctl ss-enabled NetworkManager-wait-online.service systemd-networkd-wait-online.service
+enabled
+enabled
+
+$ systemctl is-enabled NetworkManager.service systemd-networkd.service
+enabled
+enabled
+
+$ systemctl disable systemd-networkd.service
+Removed "/etc/systemd/system/multi-user.target.wants/systemd-networkd.service".
+Removed "/etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service".
+Removed "/etc/systemd/system/sockets.target.wants/systemd-networkd.socket".
+Disabling 'systemd-networkd.service', but its triggering units are still active:
+systemd-networkd.socket
+```
 
 
 ## Debian 8 notes
