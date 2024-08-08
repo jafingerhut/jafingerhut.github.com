@@ -64,7 +64,7 @@ link:
   font_color: 428BCA
 # codespan is currently used for monospaced phrases and table cells
 codespan:
-  font_color: B12146
+  font_color: #B12146
   font_family: OpenSans
 kbd:
   background_color: F5F5F5
@@ -97,7 +97,9 @@ heading:
   line_height: 1
   margin_top: $vertical_rhythm * 0.4
   margin_bottom: $vertical_rhythm * 0.9
-  min_height_after: $base_line_height_length * 1.5
+  min_height_after: auto
+  chapter:
+    break-before: auto
 title_page:
   font-family: OpenSans
   font-color: #080808
@@ -163,7 +165,7 @@ verse:
 code:
   font_color: #fcf3d9
   font_family: LuxiMono
-  font_size: ceil($base_font_size)
+  font_size: 9
   padding: $code_font_size
   line_height: 1.25
   # line_gap is an experimental property to control how a background color is applied to an inline block element
