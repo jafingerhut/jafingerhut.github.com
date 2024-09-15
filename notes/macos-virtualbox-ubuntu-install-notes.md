@@ -95,30 +95,6 @@ Doing so requires installing these packages:
 sudo apt-get install git mate-terminal synaptic
 ```
 
-## Ubuntu 16.04 Desktop Linux
-
-Settings -> Appearance -> Launcher icon size: reduce from default 48
-to 24 pixels
-
-Settings -> Security & Privacy -> uncheck "Waking from suspend" and
-"Returning from blank screen".  My host OS has security settings that
-require me to enter a password.  I do not need the annoyance of a
-separate layer of password entering for the guest OS's, too.
-
-Settings -> Brightness & Lock -> move "Lock" slider to "Off" position,
-and change "Turn screen off when inactive for:" to "Never".
-
-
-## Ubuntu 18.04 Desktop Linux
-
-Settings -> Dock -> Icon size: reduce from default 48 to 24 pixels
-
-Settings -> Privacy -> Screen Lock -> Automatic Screen Lock: change to
-Off.  Same reason as for "Security & Privacy" settings for Ubuntu
-16.04, but it has been moved to a different "place" in Ubuntu 18.04.
-
-Settings -> Power -> Power Saving -> change Blank screen to "Never".
-
 
 ## Ubuntu 20.04 Desktop Linux
 
@@ -145,6 +121,40 @@ Settings -> Power -> Power Saving Options -> change Screen Blank to
 I have found with Ubuntu 22.04 in VirtualBox 6.1.x that the GUI is
 often sluggish in moving around or resizing windows, and often the
 keys will auto-repeat when I do not want them to.  One possible
+culprit is the Wayland server.  Some on-line articles I have found
+suggest using X windows instead.
+
+Edit the file /etc/gdm3/custom.conf as root:
+
+```bash
+$ sudo vi /etc/gdm3/custom.conf
+```
+
+If there is a line `WaylandEnable=true` change `true` to `false`.
+Otherwise explicitly add a line `WaylandEanble=false`.
+
+Sources:
+
++ https://askubuntu.com/questions/1410256/how-do-i-use-x-instead-of-wayland-on-22-04
++ https://askubuntu.com/questions/1402124/problems-dsplaying-windows-vm-on-virtualbox-on-22-04-with-wayland
+
+
+## Ubuntu 24.04 Desktop Linux
+
+Settings -> Ubuntu Desktop: reduce Dock Icon size from default 48 to
+24 pixels
+
+Settings -> Privacy & Security -> Screen Lock -> Blank Screen Delay:
+change to "Never".
+
+Settings -> Privacy & Security -> Screen Lock -> Automatic Screen
+Lock: change to Off.
+
+System -> Users: In user account that I plan to use, click "Unlock..."
+button near upper right, enter password.  Enable "Automatic Login".
+
+If you find that the GUI is often sluggish in moving around or
+resizing windows, or often the keys will auto-repeat, one possible
 culprit is the Wayland server.  Some on-line articles I have found
 suggest using X windows instead.
 
@@ -893,3 +903,34 @@ large-pkgs.py
 ```
 
 Also `installed-pkgs.py`.
+
+
+# Ubuntu Linux Desktop settings I like (historical)
+
+These are for older versions of Ubuntu Linux that I might not use
+again.
+
+
+## Ubuntu 16.04 Desktop Linux
+
+Settings -> Appearance -> Launcher icon size: reduce from default 48
+to 24 pixels
+
+Settings -> Security & Privacy -> uncheck "Waking from suspend" and
+"Returning from blank screen".  My host OS has security settings that
+require me to enter a password.  I do not need the annoyance of a
+separate layer of password entering for the guest OS's, too.
+
+Settings -> Brightness & Lock -> move "Lock" slider to "Off" position,
+and change "Turn screen off when inactive for:" to "Never".
+
+
+## Ubuntu 18.04 Desktop Linux
+
+Settings -> Dock -> Icon size: reduce from default 48 to 24 pixels
+
+Settings -> Privacy -> Screen Lock -> Automatic Screen Lock: change to
+Off.  Same reason as for "Security & Privacy" settings for Ubuntu
+16.04, but it has been moved to a different "place" in Ubuntu 18.04.
+
+Settings -> Power -> Power Saving -> change Blank screen to "Never".
