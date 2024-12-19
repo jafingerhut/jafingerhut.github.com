@@ -5,11 +5,217 @@ notes on installing a guest Linux VM on an Apple Silicon Mac using the
 UTM application.
 
 
+# Install VirtualBox
+
+Get it from https://www.virtualbox.org
+
+I do not recall any difficulties in installing it on Windows 10, 11,
+or macOS.  Thankfully the installer asks very few questions while
+installing it.
+
+
+# Finding the Linux installer image you want
+
+Download the `.iso` file that installs the version of Linux that you
+are interested in.  An Internet search for terms like these works for
+me.  Use "amd64" for a host system with 64-bit Intel/AMD CPU, or
+"arm64" for an Apple Silicon Mac.
+
+Example search terms:
+
++ Ubuntu 20.04 arm64
++ Ubuntu 24.04 amd64
+
+An installer for Desktop Linux leads to fewer steps you need to do in
+order to get a GUI Desktop.  As of 2024, I have only been able to find
+Server Linux installers for arm64 systems.  It is not difficult to
+install that, and then later install the GUI Desktop.
+
+
+# Creating a new VM
+
+Start VirtualBox.  While there are command line ways to do all of this
+with VirtualBox (I believe), I have never used those.  The VirtualBox
+GUI takes a few minutes to use when creating a new VM, and installing
+the VM takes the computer a while longer.  I estimate around 30 to 45
+minutes total time to create a new VM where you install Linux from an
+`.iso` file.
+
+A nice thing about VirtualBox is that once you create a VM for the
+operating system you want, if you have enough free disk space to keep
+around that original VM, it is very quick (30 seconds or less) to
+create a copy of that VM, and then install a bunch of software on that
+copy.  As long as you leave the original VM there, it will not change,
+and you can create copies of it whenever you want to try experimenting
+with it.  Did you accidentally mess up the state of that VM's
+system-wide configuration files, or install some weird combination of
+software that seems to conflict with each other?  You can abandon that
+VM image, deleting it whenever you no longer find its contents useful,
+and create more clones of the original base OS for further
+experiments.
+
+In the VirtualBox GUI window:
+
++ Click the button "New"
++ In the window that appears, give a unique name to your VM,
+  e.g. "Ubuntu 24.04 base OS".
++ Select the location of the `.iso` installer file that you
+  downloaded.
++ I prefer to check the box "Skip Unattended Installation", and these
+  instructions will assume you are doing so, too.
++ Under "Hardware" choose the amount of RAM, number of virtual CPUs,
+  and hard disk space you want.
+  + In 2024, I rarely want to create a VM with less than 4 GBytes
+    (4096 MBytes) of RAM.  I typically select 4 processors, and 60
+    GBytes of disk space.  I do _not_ click the "Pre-allocate Full
+    Size" check box, since then it would immediately create a file
+    that was 60 GBytes in size.  If you do not check that box,
+    VirtualBox creates a disk image file that is only as large as it
+    needs to be to store the files currently existing within the VM's
+    file system, not the full size it might grow to later.
++ Click the "Finish" button.  This closes the window you were working
+  on, and a new VM image with the name you gave it has now been
+  created.  It does not have the OS installed yet.
++ Select that new image and click on the button "Settings".
++ Click "General".
+  + Under the "Advanced" tab, change "Shared Clipboard" to
+    "Bidirectional".
++ Click "Display".
+  + Under the "Screen" tab, change "Video Memory" from 16 MB to 32 MB.
++ If you want to create a shared folder on your host OS that is
+  readable and writable from the guest OS, too, click "Shared Folder".
+  + Click on the icon that looks like a folder with a "+" symbol on it.
+  + Change "Folder Path" to choose the host OS folder you want to share.
+  + Check the box for "Auto-mount".
+  + If you want the guest OS to only be able to read this folder, but
+    not write to it, check the box for "Read-only".
+  + Click "OK" button.
++ Back in the main settings window for the VM image, click the OK
+  button.
+
+
+# Common steps for starting any VM iamge, including a new installer one
+
++ Select the VM image and click the "Start" button.
++ If the text is uncomfortably small for reading, select the
+  VirtualBox menu item View -> Virtual Screen 1 -> Scale to 200%.
+  Adjust the scale choice to your reading comfort.
+
+
+# Installation steps
+
+These depend upon the particular guest OS that you are installing.
+
+## Ubuntu Server 24.10
+
+Choose language.  See on-screen instructions for moving the choice
+around.
+
+Choose keyboard language.
+
+On the page "Choose the type of installation", I leave the default
+choice "Ubuntu Server" selected with an "X" as is.  I press return for
+selecting "Done" at the bottom of the screen.
+
+Network Configuration: press return for Done.
+
+Proxy address: I do not need one for my home network, so press return
+for Done.
+
+Ubuntu archive mirror configuration: Wait a few seconds for it to test
+access to the default mirror archive.  Press return for Done, assuming
+that it successfully finds a mirror system to connect to.
+
+Guided storage configuration: This can be nerve-wracking for a new
+user if you are installing multiple OS's on a physical system, but
+here we have created a new virtual disk just for this guest OS's full
+use, so we want to allocate all of that virtual disk for this OS's
+purposes.  Leave the default "X" checked on "Use an entire disk".
+
+I usually press tab until the cursor is on the "X" next to "Set up
+this disk as an LLVM group", and press the space key to uncheck that
+box.  Press tab a couple more times to select "Done" near bottom of
+screen, then return to proceed.
+
+Storage configuration: Look over the info on the screen if you are
+curious, but I just press return to proceed.
+
+A "Confirm destructive action" "window" pops up.  Again, this is where
+I get nervious if I am ever installing Linux on a physical system
+where I want another OS to remain on a different disk partition, but
+VirtualBox is restricting this VM so that it can only see the virtual
+disk(s) that VirtualBox created it, and nothing else in the host OS
+file system, so confidently proceed by pressing tab to highlight the
+"Continue" choice, and press return.
+
+Enter your full name, desired system name, user name, password,
+etc. pressing tab to advance through the different boxes.  When ready,
+press tab until "Done" is highlighted at the bottom, then press
+return.
+
+SSH Configuration: I do not install an openSSH server, tab to
+highlight Done, and press return to continue.
+
+Featured server snaps: I press tab until "Done" is highlighted at the
+bottom, then return to proceed, as none of the snaps presented are
+things I typically want to install.  Any of them can be installed
+later after the base OS is installed, with appropriate install
+commands.
+
+Updating system: This can take many minutes to complete.  Grab a cup
+of coffee.  Work on something else.  Check back occasionally.  You can
+tell this step is done when the top of the screen says "Installation
+complete!".  Press tab to highlight "Reboot Now" near bottom of screen
+and press return to proceed.
+
+If the screen says "Please remove the installation medium, then press
+ENTER:", just press return/enter key to proceed.
+
+You will see many boot progress messages appear, and hopefully in
+under 1 minute you will see a login prompt that looks like:
+
+```
+<your-system-name> login:
+```
+
+Enter your user name and password to log in.
+
+Update any of the base OS packages that have newer versions available
+with these commands:
+
+```bash
+sudo apt update
+sudo apt upgrade
+```
+
+Press return if prompted to confirm the installation of new packages.
+
+If you want to install the default Ubuntu GUI desktop:
+
+```bash
+sudo apt-get install ubuntu-desktop-minimal
+```
+
+That downloads hundreds of MBytes of packages and installs them.  When
+it is complete, enter the following command to reboot the system:
+
+```bash
+sudo reboot
+```
+
+It might "pause" during the boot messages for several minutes, before
+you see a GUI login window.  See the section named "Installing desktop
+GUI on Ubuntu Server Linux" below for some commands you can run that
+disable a redundant network system service, one that significantly
+slows down the system boot process if you leave it enabled.
+
+
 # General notes on VM settings
 
 [I have verified that these settings are the same in VirtualBox 6.x
 and 7.x running on a Windows 10/11 host OS, as well as many versions
-of macOS from 10.14.x and later as host.]
+of macOS, both Intel and Apple Silicon, from 10.14.x and later as
+host.]
 
 System -> Motherboard -> Base Memory: While there might be uses for a
 Linux guest VM with only 1 GByte of RAM, I typically change that to 4
@@ -186,6 +392,7 @@ one installs less software, a bit faster and less storage required.
 The second one installs more software, such as LibreOffice.
 
 ```bash
+# You only need _one_ of these two commands.
 sudo apt-get install ubuntu-desktop-minimal
 sudo apt-get install ubuntu-desktop
 ```
