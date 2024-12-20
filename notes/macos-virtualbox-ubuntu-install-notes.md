@@ -73,6 +73,27 @@ In the VirtualBox GUI window:
     VirtualBox creates a disk image file that is only as large as it
     needs to be to store the files currently existing within the VM's
     file system, not the full size it might grow to later.
+  + With VirtualBox, changing the RAM available to a VM after you
+    create it is quick and easy, either increasing it, or decreasing
+    it.  Simply shut down the VM, select the VM in the GUI, click
+    "Settings", change the RAM setting, and start the VM image again.
+    As long as your host OS has enough free RAM, VirtualBox can use it
+    for the running VM image.  Thus, you do not need to think too hard
+    when choosing the initial RAM size while creating the VM image.
+  + I believe it is possible to increase the disk space allocated to
+    the VM later, but I have not personally done so, and you will not
+    find instructions to do so here.  It is definitely more steps than
+    changing the RAM size later.  It also might be possible to
+    decrease it later, but only if you can find and run the proper
+    utility programs in the guest VM to shrink its files into a subset
+    of the available physical disk space.  It is thus more important
+    to think of the maximum disk space you expect to use within the
+    VM, _or_ copy files out of it to another system to free up disk
+    space during the lifetime of that VM.  Fortunately you can pick a
+    large size, and choose the option not to preallocate it all when
+    the VM is created.  It might be easier to create a new VM and copy
+    files from the old one to the new one vs. increasing the disk
+    space available to an old one.
 + Click the "Finish" button.  This closes the window you were working
   on, and a new VM image with the name you gave it has now been
   created.  It does not have the OS installed yet.
@@ -94,7 +115,7 @@ In the VirtualBox GUI window:
   button.
 
 
-# Common steps for starting any VM iamge, including a new installer one
+# Common steps for starting any VM image, including a new installer one
 
 + Select the VM image and click the "Start" button.
 + If the text is uncomfortably small for reading, select the
@@ -106,7 +127,7 @@ In the VirtualBox GUI window:
 
 These depend upon the particular guest OS that you are installing.
 
-## Ubuntu Server 24.10
+## Ubuntu Server 24.04, 24.10
 
 Choose language.  See on-screen instructions for moving the choice
 around.
@@ -152,6 +173,9 @@ Enter your full name, desired system name, user name, password,
 etc. pressing tab to advance through the different boxes.  When ready,
 press tab until "Done" is highlighted at the bottom, then press
 return.
+
+Here you might see an "Upgrade to Ubuntu Pro" configuration page.  I
+always continue without upgrading to Ubuntu Pro.
 
 SSH Configuration: I do not install an openSSH server, tab to
 highlight Done, and press return to continue.
