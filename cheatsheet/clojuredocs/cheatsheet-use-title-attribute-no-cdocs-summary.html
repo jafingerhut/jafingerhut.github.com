@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Clojure Cheat Sheet (Clojure 1.8 - 1.11, sheet v55)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.9 - 1.12, sheet v56)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -494,7 +494,7 @@ to polar coordinates (r, theta).
 ([n])
   Returns true if n is a BigDecimal">decimal?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/float_q" title="clojure.core/float?
 ([n])
-  Returns true if n is a floating point number">float?</a> (1.9) <a href="https://clojuredocs.org/clojure_core/clojure.core/double_q" title="clojure.core/double?
+  Returns true if n is a floating point number">float?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/double_q" title="clojure.core/double?
 ([x])
   Return true if x is a Double">double?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/int_q" title="clojure.core/int?
 ([x])
@@ -866,14 +866,18 @@ https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html#toString--">parse-
                 <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/count" title="clojure.core/count
 ([coll])
   Returns the number of items in the collection. (count nil) returns
-  0.  Also works on strings, arrays, and Java Collections and Maps">count</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/empty" title="clojure.core/empty
+  0.  Also works on strings, arrays, and Java Collections and Maps">count</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/bounded-count" title="clojure.core/bounded-count
+([n coll])
+  If coll is counted? returns its count, else will count at most the first n
+  elements of coll using its seq">bounded-count</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/empty" title="clojure.core/empty
 ([coll])
   Returns an empty collection of the same category as coll, or nil">empty</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/not-empty" title="clojure.core/not-empty
 ([coll])
   If coll is empty, returns nil, else coll">not-empty</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/into" title="clojure.core/into
 ([] [to] [to from] [to xform from])
-  Returns a new coll consisting of to-coll with all of the items of
-  from-coll conjoined. A transducer may be supplied.">into</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/conj" title="clojure.core/conj
+  Returns a new coll consisting of to with all of the items of
+  from conjoined. A transducer may be supplied.
+  (into x) returns x. (into) returns [].">into</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/conj" title="clojure.core/conj
 ([] [coll] [coll x] [coll x &amp; xs])
   conj[oin]. Returns a new collection with the xs
     'added'. (conj nil item) returns (item).
@@ -904,10 +908,7 @@ https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html#toString--">parse-
 ([smap form])
   Recursively transforms form by replacing keys in smap with their
   values.  Like clojure/replace but works on any data structure.  Does
-  replacement at the leaves of the tree first.">postwalk-replace</a> (1.9) <a href="https://clojuredocs.org/clojure_core/clojure.core/bounded-count" title="clojure.core/bounded-count
-([n coll])
-  If coll is counted? returns its count, else will count at most the first n
-  elements of coll using its seq">bounded-count</a></code></td>
+  replacement at the leaves of the tree first.">postwalk-replace</a></code></td>
               </tr>
               <tr class="even">
                 <td>Content tests</td>
@@ -915,8 +916,8 @@ https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html#toString--">parse-
 ([x] [x y] [x y &amp; more])
   Returns true if no two of the arguments are =">distinct?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/empty_q" title="clojure.core/empty?
 ([coll])
-  Returns true if coll has no items - same as (not (seq coll)).
-  Please use the idiom (seq x) rather than (not (empty? x))">empty?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/every_q" title="clojure.core/every?
+  Returns true if coll has no items. To check the emptiness of a seq,
+  please use the idiom (seq x) rather than (not (empty? x))">empty?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/every_q" title="clojure.core/every?
 ([pred coll])
   Returns true if (pred x) is logical true for every x in coll, else
   false.">every?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/not-every_q" title="clojure.core/not-every?
@@ -1486,7 +1487,17 @@ kmap">rename</a></code></td>
                 <td>Create</td>
                 <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/transient" title="clojure.core/transient
 ([coll])
-  Returns a new, transient version of the collection, in constant time.">transient</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/persistent%21" title="clojure.core/persistent!
+  Returns a new, transient version of the collection, in constant time.
+
+  Transients support a parallel set of 'changing' operations, with similar names
+  followed by ! - assoc!, conj! etc. These do the same things as their
+persistent
+  counterparts except the return values are themselves transient.
+
+  Note in particular that transients are not designed to be bashed in-place. You
+  must capture and use the return value in the next call. In this way, they
+support
+  the same code structure as the functional persistent code they replace.">transient</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/persistent%21" title="clojure.core/persistent!
 ([coll])
   Returns a new, persistent version of the transient collection, in
   constant time. The transient collection cannot be used after this
@@ -1623,8 +1634,8 @@ Macro
   returns an infinite (or length n if supplied) lazy sequence of calls
   to it">repeatedly</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/iterate" title="clojure.core/iterate
 ([f x])
-  Returns a lazy sequence of x, (f x), (f (f x)) etc. f must be free of
-side-effects">iterate</a> (1.11) <a href="https://clojuredocs.org/clojure_core/clojure.core/iteration" title="clojure.core/iteration
+  Returns a lazy (infinite!) sequence of x, (f x), (f (f x)) etc.
+  f must be free of side-effects">iterate</a> (1.11) <a href="https://clojuredocs.org/clojure_core/clojure.core/iteration" title="clojure.core/iteration
 ([step &amp; {:keys [somef vf kf initk], :or {vf identity, kf identity, somef some?,
 initk nil}}])
   Creates a seqable/reducible via repeated calls to step,
@@ -1795,7 +1806,7 @@ Macro
 ([x])
   Same as (next (next x))">nnext</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/drop" title="clojure.core/drop
 ([n] [n coll])
-  Returns a lazy sequence of all but the first n items in coll.
+  Returns a laziness-preserving sequence of all but the first n items in coll.
   Returns a stateful transducer when no collection is provided.">drop</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/drop-while" title="clojure.core/drop-while
 ([pred] [pred coll])
   Returns a lazy sequence of the items in coll starting from the
@@ -1898,7 +1909,19 @@ supplied colls.">concat</a> <a href="https://clojuredocs.org/clojure_core/clojur
   corresponding val in smap.  Returns a transducer when no collection
   is provided.">replace</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/shuffle" title="clojure.core/shuffle
 ([coll])
-  Return a random permutation of coll">shuffle</a></code></td>
+  Return a random permutation of coll">shuffle</a> (1.12) <a href="https://clojuredocs.org/clojure_core/clojure.core/partitionv" title="clojure.core/partitionv
+([n coll] [n step coll] [n step pad coll])
+  Returns a lazy sequence of vectors of n items each, at offsets step
+  apart. If step is not supplied, defaults to n, i.e. the partitions
+  do not overlap. If a pad collection is supplied, use its elements as
+  necessary to complete last partition upto n items. In case there are
+  not enough padding elements, return a partition with less than n items.">partitionv</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/partitionv-all" title="clojure.core/partitionv-all
+([n] [n coll] [n step coll])
+  Returns a lazy sequence of vector partitions, but may include
+  partitions with fewer than n items at the end.
+  Returns a stateful transducer when no collection is provided.">partitionv-all</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/splitv-at" title="clojure.core/splitv-at
+([n coll])
+  Returns a vector of [(into [] (take n) coll) (drop n coll)]">splitv-at</a></code></td>
               </tr>
               <tr class="even">
                 <td>Rearrange</td>
@@ -2036,8 +2059,9 @@ evaluated only once">when-first</a> <a href="https://clojuredocs.org/clojure_cor
 ([keys vals])
   Returns a map with the keys mapped to the corresponding vals.">zipmap</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/into" title="clojure.core/into
 ([] [to] [to from] [to xform from])
-  Returns a new coll consisting of to-coll with all of the items of
-  from-coll conjoined. A transducer may be supplied.">into</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/reduce" title="clojure.core/reduce
+  Returns a new coll consisting of to with all of the items of
+  from conjoined. A transducer may be supplied.
+  (into x) returns x. (into) returns [].">into</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/reduce" title="clojure.core/reduce
 ([f coll] [f val coll])
   f should be a function of 2 arguments. If val is not supplied,
   returns the result of applying f to the first 2 items in coll, then
@@ -2169,7 +2193,7 @@ sequence.">realized?</a></code></td>
   Returns a lazy seq of every nth item in coll.  Returns a stateful
   transducer when no collection is provided.">take-nth</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/drop" title="clojure.core/drop
 ([n] [n coll])
-  Returns a lazy sequence of all but the first n items in coll.
+  Returns a laziness-preserving sequence of all but the first n items in coll.
   Returns a stateful transducer when no collection is provided.">drop</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/drop-while" title="clojure.core/drop-while
 ([pred] [pred coll])
   Returns a lazy sequence of the items in coll starting from the
@@ -2217,7 +2241,7 @@ sequence.">realized?</a></code></td>
   Returns a transducer when no collection is provided.">dedupe</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/random-sample" title="clojure.core/random-sample
 ([prob] [prob coll])
   Returns items from coll with random probability of prob (0.0 -
-  1.0).  Returns a transducer when no collection is provided.">random-sample</a> (1.9) <a href="https://clojuredocs.org/clojure_core/clojure.core/halt-when" title="clojure.core/halt-when
+  1.0).  Returns a transducer when no collection is provided.">random-sample</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/halt-when" title="clojure.core/halt-when
 ([pred] [pred retf])
   Returns a transducer that ends transduction when pred returns true
   for an input. When retf is supplied it must be a fn of 2 arguments -
@@ -2226,7 +2250,11 @@ sequence.">realized?</a></code></td>
   an exception) will be the return value of the transducer. If retf
   is not supplied, the input that triggered the predicate will be
   returned. If the predicate never returns true the transduction is
-  unaffected.">halt-when</a></code></td>
+  unaffected.">halt-when</a> (1.12) <a href="https://clojuredocs.org/clojure_core/clojure.core/partitionv-all" title="clojure.core/partitionv-all
+([n] [n coll] [n step coll])
+  Returns a lazy sequence of vector partitions, but may include
+  partitions with fewer than n items at the end.
+  Returns a stateful transducer when no collection is provided.">partitionv-all</a></code></td>
               </tr>
               <tr class="even">
                 <td>Create your own</td>
@@ -2244,8 +2272,9 @@ sequence.">realized?</a></code></td>
                 <td>Use</td>
                 <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/into" title="clojure.core/into
 ([] [to] [to from] [to xform from])
-  Returns a new coll consisting of to-coll with all of the items of
-  from-coll conjoined. A transducer may be supplied.">into</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/sequence" title="clojure.core/sequence
+  Returns a new coll consisting of to with all of the items of
+  from conjoined. A transducer may be supplied.
+  (into x) returns x. (into) returns [].">into</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/sequence" title="clojure.core/sequence
 ([coll] [xform coll] [xform coll &amp; colls])
   Coerces coll to a (possibly empty) sequence, if it is not already
   one. Will not force a lazy seq. (sequence nil) yields (), When a
@@ -2531,7 +2560,7 @@ Macro
 
   There are also -un versions of :req and :opt. These allow
   you to connect unqualified keys to specs.  In each case, fully
-  qualfied keywords are passed, which name the specs, but unqualified
+  qualified keywords are passed, which name the specs, but unqualified
   keys (with the same name component) are expected and checked at
   conform-time, and generated during gen:
 
@@ -2714,7 +2743,7 @@ either a
 ([n])
   Returns true if n is a floating point number">float?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/zero_q" title="clojure.core/zero?
 ([num])
-  Returns true if num is zero, else false">zero?</a> (1.9) <a href="https://clojuredocs.org/clojure_core/clojure.core/double_q" title="clojure.core/double?
+  Returns true if num is zero, else false">zero?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/double_q" title="clojure.core/double?
 ([x])
   Return true if x is a Double">double?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/int_q" title="clojure.core/int?
 ([x])
@@ -2732,7 +2761,7 @@ either a
 ([x])
   Return true if x is a Keyword">keyword?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/symbol_q" title="clojure.core/symbol?
 ([x])
-  Return true if x is a Symbol">symbol?</a> (1.9) <a href="https://clojuredocs.org/clojure_core/clojure.core/ident_q" title="clojure.core/ident?
+  Return true if x is a Symbol">symbol?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/ident_q" title="clojure.core/ident?
 ([x])
   Return true if x is a symbol or keyword">ident?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/qualified-ident_q" title="clojure.core/qualified-ident?
 ([x])
@@ -2760,7 +2789,7 @@ either a
 ([x])
   Returns true if x is nil, false otherwise.">nil?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/some_q" title="clojure.core/some?
 ([x])
-  Returns true if x is not nil, false otherwise.">some?</a> (1.9) <a href="https://clojuredocs.org/clojure_core/clojure.core/boolean_q" title="clojure.core/boolean?
+  Returns true if x is not nil, false otherwise.">some?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/boolean_q" title="clojure.core/boolean?
 ([x])
   Return true if x is a Boolean">boolean?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/bytes_q" title="clojure.core/bytes?
 ([x])
@@ -2792,8 +2821,8 @@ either a
 ([x])
   Return true if x implements ISeq">seq?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/empty_q" title="clojure.core/empty?
 ([coll])
-  Returns true if coll has no items - same as (not (seq coll)).
-  Please use the idiom (seq x) rather than (not (empty? x))">empty?</a> (1.9) <a href="https://clojuredocs.org/clojure_core/clojure.core/indexed_q" title="clojure.core/indexed?
+  Returns true if coll has no items. To check the emptiness of a seq,
+  please use the idiom (seq x) rather than (not (empty? x))">empty?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/indexed_q" title="clojure.core/indexed?
 ([coll])
   Return true if coll implements Indexed, indicating efficient lookup by index">indexed?</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/seqable_q" title="clojure.core/seqable?
 ([x])
@@ -2801,7 +2830,7 @@ either a
               </tr>
               <tr class="odd">
                 <td>Other</td>
-                <td><code>(1.9) <a href="https://clojuredocs.org/clojure_core/clojure.core/any_q" title="clojure.core/any?
+                <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/any_q" title="clojure.core/any?
 ([x])
   Returns true given any argument.">any?</a></code></td>
               </tr>
@@ -4139,8 +4168,11 @@ Macro
                 <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/assert" title="clojure.core/assert
 ([x] [x message])
 Macro
-  Evaluates expr and throws an exception if it does not evaluate to
-  logical true.">assert</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/comment" title="clojure.core/comment
+  Evaluates expression x and throws an AssertionError with optional
+  message if x does not evaluate to logical true.
+
+  Assertion checks are omitted from compiled code if '*assert*' is
+  false.">assert</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/comment" title="clojure.core/comment
 ([&amp; body])
 Macro
   Ignores body, yields nil">comment</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl/doc" title="clojure.repl/doc
@@ -4324,7 +4356,7 @@ itself (not its value) is returned. The reader macro #'x expands to (var x).
               </tr>
               <tr class="odd">
                 <td><code>##</code></td>
-                <td><code>(1.9) symbolic values: <code>##Inf ##-Inf ##NaN<code></code></td>
+                <td><code>symbolic values: <code>##Inf ##-Inf ##NaN<code></code></td>
               </tr>
               <tr class="even">
                 <td><code>$</code></td>
@@ -5148,7 +5180,7 @@ Spec
 ([atom oldval newval])
   Atomically sets the value of atom to newval if and only if the
   current value of the atom is identical to oldval. Returns true if
-  set happened, else false">compare-and-set!</a> (1.9) <a href="https://clojuredocs.org/clojure_core/clojure.core/swap-vals%21" title="clojure.core/swap-vals!
+  set happened, else false">compare-and-set!</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/swap-vals%21" title="clojure.core/swap-vals!
 ([atom f] [atom f x] [atom f x y] [atom f x y &amp; args])
   Atomically swaps the value of atom to be:
   (apply f current-value-of-atom args). Note that f may be called
@@ -5808,7 +5840,7 @@ supplied, uses the root cause of the
              :message - exception message
              :data - ex-data
              :at - top stack element
-    :trace - root cause stack elements">Throwable-&gt;map</a> (1.9) <a href="https://clojuredocs.org/clojure_core/clojure.core/StackTraceElement-%3Evec" title="clojure.core/StackTraceElement-&gt;vec
+    :trace - root cause stack elements">Throwable-&gt;map</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/StackTraceElement-%3Evec" title="clojure.core/StackTraceElement-&gt;vec
 ([o])
   Constructs a data representation for a StackTraceElement: [class method file
 line]">StackTraceElement-&gt;vec</a> (1.10) <a href="https://clojuredocs.org/clojure_core/clojure.core/ex-cause" title="clojure.core/ex-cause
@@ -5850,6 +5882,22 @@ than phase
     :target - &quot;file&quot; (default), &quot;stderr&quot;, &quot;none&quot;
 
   If file is specified but cannot be written, falls back to stderr.">report-error</a></code></td>
+              </tr>
+              <tr class="even">
+                <td>Streams</td>
+                <td><code>(1.12) <a href="https://clojuredocs.org/clojure_core/clojure.core/stream-into%21" title="clojure.core/stream-into!
+([to stream] [to xform stream])
+  Returns a new coll consisting of coll with all of the items of the
+  stream conjoined. This is a terminal operation on the stream.">stream-into!</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/stream-reduce%21" title="clojure.core/stream-reduce!
+([f s] [f init s])
+  Works like reduce but takes a java.util.stream.BaseStream as its source.
+  Honors 'reduced', is a terminal operation on the stream">stream-reduce!</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/stream-seq%21" title="clojure.core/stream-seq!
+([stream])
+  Takes a java.util.stream.BaseStream instance s and returns a seq of its
+  contents. This is a terminal operation on the stream.">stream-seq!</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/stream-transduce%21" title="clojure.core/stream-transduce!
+([xform f stream] [xform f init stream])
+  Works like transduce but takes a java.util.stream.BaseStream as its source.
+  This is a terminal operation on the stream.">stream-transduce!</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -6197,7 +6245,30 @@ Macro
   When set to logical false, strings and characters will be printed with
   non-alphanumeric characters converted to the appropriate escape sequences.
 
-  Defaults to true">*print-readably*</a></code></td>
+  Defaults to true">*print-readably*</a> (1.12) (clojure.repl.deps/) <a href="https://clojuredocs.org/clojure_core/clojure.repl.deps/add-lib" title="clojure.repl.deps/add-lib
+([lib coord] [lib])
+  Given a lib that is not yet on the repl classpath, make it available by
+  downloading the library if necessary and adding it to the classloader.
+  Libs already on the classpath are not updated. Requires a valid parent
+  DynamicClassLoader.
+
+   lib - symbol identifying a library, for Maven: groupId/artifactId
+   coord - optional map of location information specific to the procurer,
+           or latest if not supplied
+
+  Returns coll of libs loaded, including transitive (or nil if none).
+
+  For info on libs, coords, and versions, see:
+   https://clojure.org/reference/deps_and_cli">add-lib</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl.deps/add-libs" title="clojure.repl.deps/add-libs
+([lib-coords])
+  Given lib-coords, a map of lib to coord, will resolve all transitive deps for
+the libs
+  together and add them to the repl classpath, unlike separate calls to add-lib.">add-libs</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl.deps/sync-deps" title="clojure.repl.deps/sync-deps
+([&amp; {:as opts}])
+  Calls add-libs with any libs present in deps.edn but not yet present on the
+classpath.
+
+    :aliases - coll of alias keywords to use during the sync">sync-deps</a></code></td>
               </tr>
               <tr class="odd">
                 <td>Code</td>
@@ -6259,38 +6330,44 @@ https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html#randomUUID--">rand
                 <td>Browser / Shell</td>
                 <td><code>(clojure.java.browse/) <a href="https://clojuredocs.org/clojure_core/clojure.java.browse/browse-url" title="clojure.java.browse/browse-url
 ([url])
-  Open url in a browser">browse-url</a> (clojure.java.shell/) <a href="https://clojuredocs.org/clojure_core/clojure.java.shell/sh" title="clojure.java.shell/sh
-([&amp; args])
-  Passes the given strings to Runtime.exec() to launch a sub-process.
+  Open url in a browser">browse-url</a> (1.12) (clojure.java.process/) <a href="https://clojuredocs.org/clojure_core/clojure.java.process/exec" title="clojure.java.process/exec
+([&amp; opts+args])
+  Execute a command and on successful exit, return the captured output,
+  else throw RuntimeException. Args are the same as 'start' and options
+  if supplied override the default 'exec' settings.">exec</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.process/exit-ref" title="clojure.java.process/exit-ref
+([process])
+  Given a Process (the output of 'start'), return a reference that can be
+  used to wait for process completion then returns the exit value.">exit-ref</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.process/from-file" title="clojure.java.process/from-file
+([f])
+  Coerce f to a file per clojure.java.io/file and return a
+ProcessBuilder.Redirect reading from the file.
+  This can be passed to 'start' in :in.">from-file</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.process/start" title="clojure.java.process/start
+([&amp; opts+args])
+  Start an external command, defined in args.
+  The process environment vars are inherited from the parent by
+  default (use :clear-env to clear them).
 
-  Options are
+  If needed, provide options in map as first arg:
+    :in - a ProcessBuilder.Redirect (default = :pipe) or :inherit
+    :out - a ProcessBuilder.Redirect (default = :pipe) or :inherit :discard
+    :err - a ProcessBuilder.Redirect (default = :pipe) or :inherit :discard
+:stdout
+    :dir - current directory when the process runs (default=&quot;.&quot;)
+    :clear-env - if true, remove all inherited parent env vars
+    :env - {env-var value} of environment variables to set (all strings)
 
-  :in      may be given followed by any legal input source for
-           clojure.java.io/copy, e.g. InputStream, Reader, File, byte[],
-           or String, to be fed to the sub-process's stdin.
-  :in-enc  option may be given followed by a String, used as a character
-           encoding name (for example &quot;UTF-8&quot; or &quot;ISO-8859-1&quot;) to
-           convert the input string specified by the :in option to the
-           sub-process's stdin.  Defaults to UTF-8.
-           If the :in option provides a byte array, then the bytes are passed
-           unencoded, and this option is ignored.
-  :out-enc option may be given followed by :bytes or a String. If a
-           String is given, it will be used as a character encoding
-           name (for example &quot;UTF-8&quot; or &quot;ISO-8859-1&quot;) to convert
-           the sub-process's stdout to a String which is returned.
-           If :bytes is given, the sub-process's stdout will be stored
-           in a byte array and returned.  Defaults to UTF-8.
-  :env     override the process env with a map (or the underlying Java
-           String[] if you are a masochist).
-  :dir     override the process dir with a String or java.io.File.
-
-[ documentation truncated.  Click link for the rest. ]">sh</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.shell/with-sh-dir" title="clojure.java.shell/with-sh-dir
-([dir &amp; forms])
-Macro
-  Sets the directory for use with sh, see sh for details.">with-sh-dir</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.shell/with-sh-env" title="clojure.java.shell/with-sh-env
-([env &amp; forms])
-Macro
-  Sets the environment for use with sh, see sh for details.">with-sh-env</a></code></td>
+  Returns the java.lang.Process.">start</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.process/stderr" title="clojure.java.process/stderr
+([process])
+  Given a process, return the stderr of the external process (an InputStream)">stderr</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.process/stdin" title="clojure.java.process/stdin
+([process])
+  Given a process, return the stdin of the external process (an OutputStream)">stdin</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.process/stdout" title="clojure.java.process/stdout
+([process])
+  Given a process, return the stdout of the external process (an InputStream)">stdout</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.process/to-file" title="clojure.java.process/to-file
+([f &amp; {:keys [append], :as opts}])
+  Coerce f to a file per clojure.java.io/file and return a
+ProcessBuilder.Redirect writing to the file.
+  Set ':append' in opts to append. This can be passed to 'start' in :out or
+:err.">to-file</a></code></td>
               </tr>
             </tbody>
           </table>
