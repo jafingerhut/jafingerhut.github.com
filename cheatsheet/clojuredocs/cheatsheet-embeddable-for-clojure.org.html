@@ -7,12 +7,12 @@ document.write('<style type="text/css">code {\n	font-family: monospace;\n}\n\n.p
     <div class="page">
       <div class="column">
         <div class="section">
-          <h2>Documentation</h2>
+          <h2>REPL</h2>
           <table>
             <tbody>
               <tr class="odd">
-                <td>clojure.repl/</td>
-                <td><code><a href="https://clojuredocs.org/clojure_core/clojure.repl/doc" title="clojure.repl/doc
+                <td>Documentation</td>
+                <td><code>(clojure.repl/) <a href="https://clojuredocs.org/clojure_core/clojure.repl/doc" title="clojure.repl/doc
 ([name])
 Macro
   Prints documentation for a var or special form given its name,
@@ -41,6 +41,68 @@ supplied, uses the root cause of the
 ([class-or-object])
   Opens a browser window displaying the javadoc for the argument.
   Tries *local-javadocs* first, then *remote-javadocs*.">javadoc</a> (foo.bar/ is namespace for later syms)</code></td>
+              </tr>
+              <tr class="even">
+                <td>Add libs</td>
+                <td><code>(1.12) (clojure.repl.deps/) <a href="https://clojuredocs.org/clojure_core/clojure.repl.deps/add-lib" title="clojure.repl.deps/add-lib
+([lib coord] [lib])
+  Given a lib that is not yet on the repl classpath, make it available by
+  downloading the library if necessary and adding it to the classloader.
+  Libs already on the classpath are not updated. Requires a valid parent
+  DynamicClassLoader.
+
+   lib - symbol identifying a library, for Maven: groupId/artifactId
+   coord - optional map of location information specific to the procurer,
+           or latest if not supplied
+
+  Returns coll of libs loaded, including transitive (or nil if none).
+
+  For info on libs, coords, and versions, see:
+   https://clojure.org/reference/deps_and_cli">add-lib</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl.deps/add-libs" title="clojure.repl.deps/add-libs
+([lib-coords])
+  Given lib-coords, a map of lib to coord, will resolve all transitive deps for
+the libs
+  together and add them to the repl classpath, unlike separate calls to add-lib.">add-libs</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl.deps/sync-deps" title="clojure.repl.deps/sync-deps
+([&amp; {:as opts}])
+  Calls add-libs with any libs present in deps.edn but not yet present on the
+classpath.
+
+    :aliases - coll of alias keywords to use during the sync">sync-deps</a></code></td>
+              </tr>
+              <tr class="odd">
+                <td>Other</td>
+                <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/*1" title="clojure.core/*1
+  bound in a repl thread to the most recent value printed">*1</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*2" title="clojure.core/*2
+  bound in a repl thread to the second most recent value printed">*2</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*3" title="clojure.core/*3
+  bound in a repl thread to the third most recent value printed">*3</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*e" title="clojure.core/*e
+  bound in a repl thread to the most recent exception caught by the repl">*e</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-dup*" title="clojure.core/*print-dup*
+  When set to logical true, objects will be printed in a way that preserves
+  their type when read in later.
+
+  Defaults to false.">*print-dup*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-length*" title="clojure.core/*print-length*
+  *print-length* controls how many items of each collection the
+  printer will print. If it is bound to logical false, there is no
+  limit. Otherwise, it must be bound to an integer indicating the maximum
+  number of items of each collection to print. If a collection contains
+  more items, the printer will print items up to the limit followed by
+  '...' to represent the remaining items. The root binding is nil
+  indicating no limit.">*print-length*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-level*" title="clojure.core/*print-level*
+  *print-level* controls how many levels deep the printer will
+  print nested objects. If it is bound to logical false, there is no
+  limit. Otherwise, it must be bound to an integer indicating the maximum
+  level to print. Each argument to print is at level 0; if an argument is a
+  collection, its items are at level 1; and so on. If an object is a
+  collection and is at a level greater than or equal to the value bound to
+  *print-level*, the printer prints '#' to represent it. The root binding
+  is nil indicating no limit.">*print-level*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-meta*" title="clojure.core/*print-meta*
+  If set to logical true, when printing an object, its metadata will also
+  be printed in a form that can be read back by the reader.
+
+  Defaults to false.">*print-meta*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-readably*" title="clojure.core/*print-readably*
+  When set to logical false, strings and characters will be printed with
+  non-alphanumeric characters converted to the appropriate escape sequences.
+
+  Defaults to true">*print-readably*</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -6065,64 +6127,6 @@ Macro
   A tree seq on the xml elements as per xml/parse">xml-seq</a></code></td>
               </tr>
               <tr class="even">
-                <td>REPL</td>
-                <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/*1" title="clojure.core/*1
-  bound in a repl thread to the most recent value printed">*1</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*2" title="clojure.core/*2
-  bound in a repl thread to the second most recent value printed">*2</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*3" title="clojure.core/*3
-  bound in a repl thread to the third most recent value printed">*3</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*e" title="clojure.core/*e
-  bound in a repl thread to the most recent exception caught by the repl">*e</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-dup*" title="clojure.core/*print-dup*
-  When set to logical true, objects will be printed in a way that preserves
-  their type when read in later.
-
-  Defaults to false.">*print-dup*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-length*" title="clojure.core/*print-length*
-  *print-length* controls how many items of each collection the
-  printer will print. If it is bound to logical false, there is no
-  limit. Otherwise, it must be bound to an integer indicating the maximum
-  number of items of each collection to print. If a collection contains
-  more items, the printer will print items up to the limit followed by
-  '...' to represent the remaining items. The root binding is nil
-  indicating no limit.">*print-length*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-level*" title="clojure.core/*print-level*
-  *print-level* controls how many levels deep the printer will
-  print nested objects. If it is bound to logical false, there is no
-  limit. Otherwise, it must be bound to an integer indicating the maximum
-  level to print. Each argument to print is at level 0; if an argument is a
-  collection, its items are at level 1; and so on. If an object is a
-  collection and is at a level greater than or equal to the value bound to
-  *print-level*, the printer prints '#' to represent it. The root binding
-  is nil indicating no limit.">*print-level*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-meta*" title="clojure.core/*print-meta*
-  If set to logical true, when printing an object, its metadata will also
-  be printed in a form that can be read back by the reader.
-
-  Defaults to false.">*print-meta*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-readably*" title="clojure.core/*print-readably*
-  When set to logical false, strings and characters will be printed with
-  non-alphanumeric characters converted to the appropriate escape sequences.
-
-  Defaults to true">*print-readably*</a> (1.12) (clojure.repl.deps/) <a href="https://clojuredocs.org/clojure_core/clojure.repl.deps/add-lib" title="clojure.repl.deps/add-lib
-([lib coord] [lib])
-  Given a lib that is not yet on the repl classpath, make it available by
-  downloading the library if necessary and adding it to the classloader.
-  Libs already on the classpath are not updated. Requires a valid parent
-  DynamicClassLoader.
-
-   lib - symbol identifying a library, for Maven: groupId/artifactId
-   coord - optional map of location information specific to the procurer,
-           or latest if not supplied
-
-  Returns coll of libs loaded, including transitive (or nil if none).
-
-  For info on libs, coords, and versions, see:
-   https://clojure.org/reference/deps_and_cli">add-lib</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl.deps/add-libs" title="clojure.repl.deps/add-libs
-([lib-coords])
-  Given lib-coords, a map of lib to coord, will resolve all transitive deps for
-the libs
-  together and add them to the repl classpath, unlike separate calls to add-lib.">add-libs</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl.deps/sync-deps" title="clojure.repl.deps/sync-deps
-([&amp; {:as opts}])
-  Calls add-libs with any libs present in deps.edn but not yet present on the
-classpath.
-
-    :aliases - coll of alias keywords to use during the sync">sync-deps</a></code></td>
-              </tr>
-              <tr class="odd">
                 <td>Code</td>
                 <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/*compile-files*" title="clojure.core/*compile-files*
   Set to true when compiling files, false otherwise.">*compile-files*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*compile-path*" title="clojure.core/*compile-path*
@@ -6150,7 +6154,7 @@ classpath.
   test [v] finds fn at key :test in var metadata and calls it,
   presuming failure will throw exception">test</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td>Misc</td>
                 <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/eval" title="clojure.core/eval
 ([form])
@@ -6178,7 +6182,7 @@ returns x">force</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/
   See:
 https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html#randomUUID--">random-uuid</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>Browser / Shell</td>
                 <td><code>(clojure.java.browse/) <a href="https://clojuredocs.org/clojure_core/clojure.java.browse/browse-url" title="clojure.java.browse/browse-url
 ([url])

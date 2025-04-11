@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Clojure Cheat Sheet (Clojure 1.9 - 1.12, sheet v56)</title>
+  <title>Clojure Cheat Sheet (Clojure 1.9 - 1.12, sheet v57)</title>
 
   <link rel="stylesheet" href="cheatsheet_files/style.css" type="text/css" />
   <style type="text/css">
@@ -155,12 +155,20 @@ tr.even {
     <div class="page">
       <div class="column">
         <div class="section green">
-          <h2>Documentation</h2>
+          <h2>REPL</h2>
           <table>
             <tbody>
               <tr class="odd">
-                <td>clojure.repl/</td>
-                <td><code><a href="https://clojuredocs.org/clojure_core/clojure.repl/doc">doc</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl/find-doc">find-doc</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl/apropos">apropos</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl/dir">dir</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl/source">source</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl/pst">pst</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.javadoc/javadoc">javadoc</a> (foo.bar/ is namespace for later syms)</code></td>
+                <td>Documentation</td>
+                <td><code>(clojure.repl/) <a href="https://clojuredocs.org/clojure_core/clojure.repl/doc">doc</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl/find-doc">find-doc</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl/apropos">apropos</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl/dir">dir</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl/source">source</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl/pst">pst</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.javadoc/javadoc">javadoc</a> (foo.bar/ is namespace for later syms)</code></td>
+              </tr>
+              <tr class="even">
+                <td>Add libs</td>
+                <td><code>(1.12) (clojure.repl.deps/) <a href="https://clojuredocs.org/clojure_core/clojure.repl.deps/add-lib">add-lib</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl.deps/add-libs">add-libs</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl.deps/sync-deps">sync-deps</a></code></td>
+              </tr>
+              <tr class="odd">
+                <td>Other</td>
+                <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/*1">*1</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*2">*2</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*3">*3</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*e">*e</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-dup*">*print-dup*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-length*">*print-length*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-level*">*print-level*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-meta*">*print-meta*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-readably*">*print-readably*</a></code></td>
               </tr>
             </tbody>
           </table>
@@ -1309,18 +1317,14 @@ tr.even {
                 <td><code><a href="https://clojuredocs.org/clojure_core/clojure.xml/parse">clojure.xml/parse</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/xml-seq">xml-seq</a></code></td>
               </tr>
               <tr class="even">
-                <td>REPL</td>
-                <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/*1">*1</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*2">*2</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*3">*3</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*e">*e</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-dup*">*print-dup*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-length*">*print-length*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-level*">*print-level*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-meta*">*print-meta*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*print-readably*">*print-readably*</a> (1.12) (clojure.repl.deps/) <a href="https://clojuredocs.org/clojure_core/clojure.repl.deps/add-lib">add-lib</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl.deps/add-libs">add-libs</a> <a href="https://clojuredocs.org/clojure_core/clojure.repl.deps/sync-deps">sync-deps</a></code></td>
-              </tr>
-              <tr class="odd">
                 <td>Code</td>
                 <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/*compile-files*">*compile-files*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*compile-path*">*compile-path*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*file*">*file*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*warn-on-reflection*">*warn-on-reflection*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/compile">compile</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/loaded-libs">loaded-libs</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/test">test</a></code></td>
               </tr>
-              <tr class="even">
+              <tr class="odd">
                 <td>Misc</td>
                 <td><code><a href="https://clojuredocs.org/clojure_core/clojure.core/eval">eval</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/force">force</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/hash">hash</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/name">name</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*clojure-version*">*clojure-version*</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/clojure-version">clojure-version</a> <a href="https://clojuredocs.org/clojure_core/clojure.core/*command-line-args*">*command-line-args*</a> (1.11) <a href="https://clojuredocs.org/clojure_core/clojure.core/random-uuid">random-uuid</a></code></td>
               </tr>
-              <tr class="odd">
+              <tr class="even">
                 <td>Browser / Shell</td>
                 <td><code>(clojure.java.browse/) <a href="https://clojuredocs.org/clojure_core/clojure.java.browse/browse-url">browse-url</a> (1.12) (clojure.java.process/) <a href="https://clojuredocs.org/clojure_core/clojure.java.process/exec">exec</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.process/exit-ref">exit-ref</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.process/from-file">from-file</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.process/start">start</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.process/stderr">stderr</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.process/stdin">stdin</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.process/stdout">stdout</a> <a href="https://clojuredocs.org/clojure_core/clojure.java.process/to-file">to-file</a></code></td>
               </tr>
