@@ -65,10 +65,7 @@ English translation of that.
 
 Free on-line copy of John Garrett Winter's 1916 English translation of
 "De solido" available here:
-https://archive.org/details/cu31924012131458
-
-Renamed local [PDF
-copy](1669-steno-the-podromus-translated-1916-by-winter.pdf)
++ https://archive.org/details/cu31924012131458 [PDF](1669-steno-the-podromus-translated-1916-by-winter.pdf)
 
 
 ### Other books by or about Steno
@@ -107,10 +104,7 @@ shaped early classification.
 ### English translations
 
 Free on-line copy of Thomas Weaver's 1805 translation available here:
-https://archive.org/details/atreatiseonexte00werngoog
-
-Renamed local [PDF
-copy](1805-werner-treatise-on-the-external-characters-of-fossils-eng-translated-by-weaver.pdf)
++ https://archive.org/details/atreatiseonexte00werngoog [PDF](1805-werner-treatise-on-the-external-characters-of-fossils-eng-translated-by-weaver.pdf)
 
 The terminology is somewhat archaic, as expected for an early
 19th-century translation.
@@ -178,8 +172,7 @@ Burke, Authier, Kubbinga.
 
 TODO: Link to free original work?
 
-Renamed local [PDF
-copy](1822-hauy-traite-de-mineralogie-2nd-ed.pdf)
+[PDF copy](1822-hauy-traite-de-mineralogie-2nd-ed.pdf)
 
 
 ## James Hutton – Theory of the Earth (1795)
