@@ -65,7 +65,7 @@ English translation of that.
 
 Free on-line copy of John Garrett Winter's 1916 English translation of
 "De solido" available here:
-+ https://archive.org/details/cu31924012131458 [PDF](1669-steno-the-podromus-translated-1916-by-winter.pdf)
++ https://archive.org/details/cu31924012131458 [[PDF]](1669-steno-the-podromus-translated-1916-by-winter.pdf)
 
 
 ### Other books by or about Steno
@@ -104,7 +104,7 @@ shaped early classification.
 ### English translations
 
 Free on-line copy of Thomas Weaver's 1805 translation available here:
-+ https://archive.org/details/atreatiseonexte00werngoog [PDF](1805-werner-treatise-on-the-external-characters-of-fossils-eng-translated-by-weaver.pdf)
++ https://archive.org/details/atreatiseonexte00werngoog [[PDF]](1805-werner-treatise-on-the-external-characters-of-fossils-eng-translated-by-weaver.pdf)
 
 The terminology is somewhat archaic, as expected for an early
 19th-century translation.
@@ -199,13 +199,13 @@ influential than Hutton's original writing.  Some readers of Hutton's
 original work have said that his prose is difficult to read.
 
 Free on-line editions of volumes 1 through 3:
-+ Volume 1: https://www.gutenberg.org/ebooks/12861 [EPUB](1795-hutton-theory-of-the-earth-vol-1.epub)
-+ Volume 2: https://www.gutenberg.org/ebooks/14179 [EPUB](1795-hutton-theory-of-the-earth-vol-2.epub))
-+ Volume 3: https://www.google.com/books/edition/Theory_of_the_Earth/tMcQAAAAIAAJ [PDF](1899-hutton-theory-of-the-earth-vol-3.pdf)
++ Volume 1: https://www.gutenberg.org/ebooks/12861 [[EPUB]](1795-hutton-theory-of-the-earth-vol-1.epub)
++ Volume 2: https://www.gutenberg.org/ebooks/14179 [[EPUB]](1795-hutton-theory-of-the-earth-vol-2.epub))
++ Volume 3: https://www.google.com/books/edition/Theory_of_the_Earth/tMcQAAAAIAAJ [[PDF]](1899-hutton-theory-of-the-earth-vol-3.pdf)
 
 Free on-line edition of John Playfair's "Illustrations of the
 Huttonian Theory of the Earth":
-+ https://www.gutenberg.org/ebooks/67331 [EPUB](1802-playfair-illustrations-of-the-huttonian-theory-of-the-earth.epub)
++ https://www.gutenberg.org/ebooks/67331 [[EPUB]](1802-playfair-illustrations-of-the-huttonian-theory-of-the-earth.epub)
 
 
 ### Other books about Hutton
@@ -237,7 +237,7 @@ Several sizes of copies of the map can be purchased here:
 + https://uniquemaps.com/products/large-old-geology-map-of-england-scotland-wales-1815-up-to-5-meters-16ft-rare-william-smith-vintage-wall-art-framed-or-unframed
 
 Free on-line edition of the book to explain the map:
-+ https://www.google.com/books/edition/A_Memoir_to_the_Map_and_Delineation_of_t/yjoAAAAAQAAJ [PDF](1815-smith-A-memoir-to-the-map-and-delineation-of-the-strata-of-england-and-wales.pdf)
++ https://www.google.com/books/edition/A_Memoir_to_the_Map_and_Delineation_of_t/yjoAAAAAQAAJ [[PDF]](1815-smith-A-memoir-to-the-map-and-delineation-of-the-strata-of-england-and-wales.pdf)
 
 
 ### Other books about Smith
@@ -263,7 +263,7 @@ volumes. [F]
 ### Free on-line copies
 
 Free on-line copies:
-+ https://www.gutenberg.org/ebooks/33224 [EPUB](1830-lyell-principles-of-geology-with-images-3.epub)
++ https://www.gutenberg.org/ebooks/33224 [[EPUB]](1830-lyell-principles-of-geology-with-images-3.epub)
 
 
 ## Charles Darwin – On the Origin of Species (1859)
@@ -280,8 +280,8 @@ reinforcing.
 ### Free on-line copies
 
 Free on-line copy:
-+ https://www.gutenberg.org/ebooks/1228 1st ed, 1859 [EPUB](1859-darwin-the-origin-of-species-by-means-of-natural-selection.epub)
-+ https://www.gutenberg.org/ebooks/2009 6th ed, 1872 [EPUB](1872-darwin-the-origin-of-species-by-means-of-natural-selection-6th-ed.epub)
++ https://www.gutenberg.org/ebooks/1228 1st ed, 1859 [[EPUB]](1859-darwin-the-origin-of-species-by-means-of-natural-selection.epub)
++ https://www.gutenberg.org/ebooks/2009 6th ed, 1872 [[EPUB]](1872-darwin-the-origin-of-species-by-means-of-natural-selection-6th-ed.epub)
 
 
 ### Expanded editions with additional articles
@@ -307,7 +307,7 @@ This was the dominant geology textbook for decades.
 ### Free on-line copies
 
 Free on-line copy:
-+ https://archive.org/details/manualofgeologyt00dan [PDF](1867-dana-manual-of-geology.pdf)
++ https://archive.org/details/manualofgeologyt00dan [[PDF]](1867-dana-manual-of-geology.pdf)
 
 
 ## Ferdinand Zirkel & Harry Rosenbusch – Mikroskopische Physiographie der petrographisch wichtigen Mineralien (1873–1878)
@@ -329,7 +329,7 @@ Publication: New York, 1889
 ### Free on-line copies
 
 Free on-line copy of 4th edition dated 1905 found here:
-+ https://www.google.com/books/edition/Microscopical_Physiography_of_the_Rock_m/YrMyAQAAMAAJ [PDF](1905-rosenbusch-microscopic-physiography-of-the-rockmaking-minerals-4th-ed-translated-abridged-by-iddings.pdf)
++ https://www.google.com/books/edition/Microscopical_Physiography_of_the_Rock_m/YrMyAQAAMAAJ [[PDF]](1905-rosenbusch-microscopic-physiography-of-the-rockmaking-minerals-4th-ed-translated-abridged-by-iddings.pdf)
 
 
 ## E. S. Fedorov – Symmetry of Crystals (late 19th century papers; compiled works 1890s)
@@ -430,7 +430,7 @@ TODO: Free on-line copy?
 
 Archibald Geikie, "The Founders of Geology"
 Free on-line copy at Google Books:
-+ https://www.google.com/books/edition/The_Founders_of_Geology/xPYLAAAAMAAJ [PDF](1897-geikie-the-founders-of-geology.pdf)
++ https://www.google.com/books/edition/The_Founders_of_Geology/xPYLAAAAMAAJ [[PDF]](1897-geikie-the-founders-of-geology.pdf)
 
 John G. Burke "Origins of the Science of Crystals" 1966
 
@@ -452,10 +452,10 @@ Have these:
 "The Structure of Crystals", Ralph W. G. Wyckoff, 1924
 
 Free on-line copy:
-+ TODO: link? [PDF](1924-wyckoff-the-structure-of-crystals.pdf)
++ TODO: link? [[PDF]](1924-wyckoff-the-structure-of-crystals.pdf)
 
 "The Structure of Crystals: Supplement for 1930-1934 to the Second
 Edition", Ralph W. G. Wyckoff, 1935
 
 Free on-line copy:
-+ TODO: link? [PDF](1935-wyckoff-the-structure-of-crystals.pdf)
++ TODO: link? [[PDF]](1935-wyckoff-the-structure-of-crystals.pdf)
