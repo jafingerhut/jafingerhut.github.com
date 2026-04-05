@@ -70,7 +70,9 @@ Free on-line copy of John Garrett Winter's 1916 English translation of
 
 ### Other books by or about Steno
 
-TODO: Add info about Seashell on the Mountaintop
+"The Seashell on the Mountaintop: A Story of Science Sainthood and the
+Humble Genius Who Discovered a New History of the Earth", Alan Cutler,
+2003 [F]
 
 "The Earliest Geological Treatise (1667) by Nicolaus Steno",
 translated by Alex Garboe, 1958 [F]
@@ -86,9 +88,9 @@ Collection of 13 articles by different authors, five of them in
 English, others in German, Danish, and Italian.
 
 "Nicolaus Steno: Biography and Original Papers of a 17th Century
-Scientist" by Troels Kardel [F ordered, not yet arrived]
+Scientist" by Troels Kardel, 2013 [F ordered, not yet arrived]
 
-"Nicolaus Steno and His Indice" by Gustav Scherz [F]
+"Nicolaus Steno and His Indice" by Gustav Scherz, 1958 [F]
 
 
 ## Abraham Gottlob Werner – Von den äußerlichen Kennzeichen der Fossilien (1774)
@@ -181,7 +183,9 @@ Burke, Authier, Kubbinga.
 
 ### French original work
 
-TODO: Link to free original work?
+There appear to be at least two editions of this work available freely
+on various sites, fairly easily found via searches on the Internet.  I
+do not know which one(s) are most definitive.
 
 [[PDF]](books/1822-hauy-traite-de-mineralogie-2nd-ed.pdf)
 
@@ -348,7 +352,22 @@ Why it matters:
 
 These ideas underpin modern mineral structure determination.
 
-TODO: Link to free on-line copy?
+These articles were originally published in Russian.
+
+
+### English translations
+
+"Symmetry of Crystals", by Evgraf Stepanovich Fedorov, translated from
+Russian to English by David & Katherine Harker, American
+Crystallographic Association, 1971
+
+What it contains:
++ Translation of Fedorov’s key monographs on symmetry
++ His derivation and classification of space groups
++ Mathematical framework underlying modern crystallography
+
+Its contents can be viewed here, but not download as a local file:
++ https://archive.org/details/symmetryofcrysta0000fedo
 
 
 ## Alfred Wegener – Die Entstehung der Kontinente und Ozeane (1915)
@@ -465,4 +484,4 @@ Free on-line copy:
 Edition", Ralph W. G. Wyckoff, 1935
 
 Free on-line copy:
-+ TODO: link? [[PDF]](books/1935-wyckoff-the-structure-of-crystals.pdf)
++ https://archive.org/details/structureofcryst030914mbp [[PDF]](books/1935-wyckoff-the-structure-of-crystals.pdf)
