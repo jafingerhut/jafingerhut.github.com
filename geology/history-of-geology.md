@@ -366,7 +366,7 @@ What it contains:
 + His derivation and classification of space groups
 + Mathematical framework underlying modern crystallography
 
-Its contents can be viewed here, but not download as a local file:
+Free on-line copy (viewable but not downloadable):
 + https://archive.org/details/symmetryofcrysta0000fedo
 
 
@@ -400,9 +400,8 @@ Later editions: 1929 (revised), Dover reprint (1966 and later) [F]
 
 ### Free on-line copies
 
-Freely browsable on-line copy of English edition translated from 4th
-German edition here, but I do not see a way to download the entire
-thing locally onto one's own computer:
+Free on-line copy of English edition translated from 4th German
+edition here (viewable but not downloadable):
 + https://archive.org/details/originofcontinen0000unse
 
 Google Books has this entry for the 1924 English edition, but _not_ a
@@ -438,8 +437,79 @@ Effect:
 + Converted Wegener’s drift into a coherent modern plate-tectonic model
 
 Not a single book but a body of work indispensable to geology.
+These are the core papers of Wilson that historians and geologists
+consistently treat as foundational.
 
-TODO: Free on-line copy?
++ Hotspot theory: “A possible origin of the Hawaiian Islands”, 1963
++ Transform faults: “A new class of faults and their bearing on
+  continental drift”, 1965
++ The Wilson Cycle: “Did the Atlantic close and then re-open?”, 1966
++ Synthesis of plate tectonics: “Static or Mobile Earth: The Current
+  Scientific Revolution”, 1968
++ Later synthesis and exposition (1970s)
+
+
+### Hotspot theory (1963)
+
++ Title: “A possible origin of the Hawaiian Islands”
++ Journal: Canadian Journal of Physics
++ Year: 1963
++ Why it is a milestone
+  + Proposed mantle hotspots
+  + Explained volcanic chains far from plate boundaries
+
+
+### Transform faults (1965)
+
++ Title: “A new class of faults and their bearing on continental drift”
++ Journal: Nature
++ Year: 1965
++ Why it is a milestone
+  + Introduced transform faults, the third type of plate boundary
+  + Completed the kinematic framework of plate tectonics
+
+
+### The Wilson Cycle (1966)
+
++ Title: “Did the Atlantic close and then re-open?”
++ Journal: Nature
++ Year: 1966
++ Why it is a milestone
+  + Introduced the concept of cyclic opening and closing of oceans
+  + Foundation of modern supercontinent theory
+
+
+### Synthesis of plate tectonics (1968)
+
++ Title: “Static or Mobile Earth: The Current Scientific Revolution”
++ Journal: Proceedings of the American Philosophical Society
++ Year: 1968
++ Why it is a milestone
+  + One of the first clear synthetic explanations of plate tectonics
+  + Framed the theory as a scientific revolution
+
+
+### Later synthesis and exposition (1970s)
+
+Wilson continued to write overview and synthesis papers explaining:
+
++ plate motion
++ global tectonics
++ geodynamics
+
+These are less individually famous but important for dissemination.
+
+
+### Why these papers matter historically
+
+Wilson’s work helped complete plate tectonics by adding:
+
++ transform boundaries
++ hotspots
++ cyclic ocean basin evolution (Wilson Cycle)
+
+Together, these turned earlier ideas (Wegener, Hess, Vine–Matthews)
+into a coherent global theory.
 
 
 ## Naomi Oreskes (ed.) – Plate Tectonics: An Insider’s History of the Modern Theory of the Earth (2001)
@@ -449,7 +519,11 @@ Historical value:
 + First authoritative history of how plate tectonics was discovered
 + Contributions from all major figures (McKenzie, Morgan, Le Pichon, etc.)
 
-TODO: Free on-line copy?
+"Plate Tectonics: An Insider's History Of The Modern Theory Of The
+Earth", Naomi Oreskes (ed.), 2001 [F ordered, not yet arrived]
+
+No freely viewable copies on-line that I am aware of, but new and used
+copies are not difficult to purchase.
 
 
 # Other works that might be of interest
@@ -458,16 +532,13 @@ Archibald Geikie, "The Founders of Geology"
 Free on-line copy at Google Books:
 + https://www.google.com/books/edition/The_Founders_of_Geology/xPYLAAAAMAAJ [[PDF]](books/1897-geikie-the-founders-of-geology.pdf)
 
-John G. Burke "Origins of the Science of Crystals" 1966
+John G. Burke "Origins of the Science of Crystals" 1966 [F ordered
+second copy, not yet arrived, first copy missing]
 
-TODO: I think we have a physical copy of this.  Where?  Buy another
-copy if we cannot find it.
-
-Tonya has a copy of these books:
+Free on-line copy (viewable but not downloadable):
++ https://archive.org/details/originsofscience0000burk
 
 "Annals of the Former World", John McPhee, copyright 1981, 1998 [F]
-
-Have these:
 
 "Theophrastus on Stones", Earle R. Caley, John F. C. Richards, 2011 [F]
 
