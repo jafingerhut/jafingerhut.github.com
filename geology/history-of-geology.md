@@ -520,7 +520,7 @@ Historical value:
 + Contributions from all major figures (McKenzie, Morgan, Le Pichon, etc.)
 
 "Plate Tectonics: An Insider's History Of The Modern Theory Of The
-Earth", Naomi Oreskes (ed.), 2001 [F ordered, not yet arrived]
+Earth", Naomi Oreskes (ed.), 2001 [F]
 
 No freely viewable copies on-line that I am aware of, but new and used
 copies are not difficult to purchase.
