@@ -532,8 +532,7 @@ Archibald Geikie, "The Founders of Geology"
 Free on-line copy at Google Books:
 + https://www.google.com/books/edition/The_Founders_of_Geology/xPYLAAAAMAAJ [[PDF]](books/1897-geikie-the-founders-of-geology.pdf)
 
-John G. Burke "Origins of the Science of Crystals" 1966 [F ordered
-second copy, not yet arrived, first copy missing]
+John G. Burke "Origins of the Science of Crystals" 1966 [F]
 
 Free on-line copy (viewable but not downloadable):
 + https://archive.org/details/originsofscience0000burk
